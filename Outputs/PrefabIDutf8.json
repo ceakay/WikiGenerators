@@ -1,0 +1,3924 @@
+﻿{
+    "adder":  {
+                  "35":  [
+                             "ADR-A",
+                             "ADR-B",
+                             "ADR-C",
+                             "ADR-D",
+                             "ADR-PRIME",
+                             "ADR-KGL aka KEAGLE",
+                             "ADR-P aka PUMA"
+                         ],
+                  "40":  [
+                             "PCR-A",
+                             "PCR-B",
+                             "PCR-C",
+                             "PCR-D",
+                             "PCR-E",
+                             "PCR-PRIME",
+                             "PCR-H",
+                             "PCR-F"
+                         ]
+              },
+    "hellbringer":  {
+                        "95":  [
+                                   "ALB-3U",
+                                   "ALB-4U",
+                                   "ALB-3UR",
+                                   "ALB-5W"
+                               ],
+                        "65":  [
+                                   "HBR-A",
+                                   "HBR-B",
+                                   "HBR-C",
+                                   "HBR-F",
+                                   "HBR-GP",
+                                   "HBR-H",
+                                   "HBR-PRIME",
+                                   "LOKI-II PRIMEPRIME",
+                                   "LOKI-II A (A)",
+                                   "LOKI-II B (B)",
+                                   "LOKI-II C (C)",
+                                   "LOKI-II D (D)",
+                                   "LOKI-II E (E)",
+                                   "LOKI-II F (F)",
+                                   "LOKI-II G (G)",
+                                   "HBR-D",
+                                   "HBR-E",
+                                   "HBR-P aka LOKI",
+                                   "HBRII-A",
+                                   "HBRII-B",
+                                   "HBRII-PRIME"
+                               ]
+                    },
+    "arcticcheetah":  {
+                          "30":  [
+                                     "ACH-A",
+                                     "ACH-B",
+                                     "ACH-C",
+                                     "ACH-D",
+                                     "ACH-PRIME",
+                                     "ACH-H"
+                                 ]
+                      },
+    "kitfox":  {
+                   "30":  [
+                              "AF1",
+                              "AF1A",
+                              "AF1B",
+                              "AF1C",
+                              "AF1D",
+                              "KF-A",
+                              "KF-B",
+                              "KF-D",
+                              "KF-PRIME",
+                              "KF-S",
+                              "KF-COL",
+                              "KF-ID",
+                              "AF1E",
+                              "AF1F",
+                              "KF-P aka ULLR"
+                          ]
+               },
+    "atlas":  {
+                  "100":  [
+                              "AS7-A",
+                              "AS7-C",
+                              "AS7-CM",
+                              "AS7-D(C)",
+                              "AS7-D-DC",
+                              "AS7-D-HT",
+                              "AS7-D",
+                              "AS7-K-DC",
+                              "AS7-K",
+                              "AS7-RS",
+                              "AS7-S",
+                              "AS7-S2",
+                              "AS7-D-H",
+                              "AS7-D-H2",
+                              "AS7-DD (DANIELLE)",
+                              "AS7-GG",
+                              "AS7-S7",
+                              "AS7-WGS (SAMSONOV)",
+                              "AS7-BH aka BOAR\u0027S HEAD",
+                              "AS7-KR aka KRACKEN",
+                              "AS7-S3",
+                              "AS-IIC",
+                              "AS7-D3",
+                              "AS-IIC-OS aka OBSIDIAN SKULL",
+                              "AS5-HAT",
+                              "AS7-D2",
+                              "AS7-DX aka BABA YAGA"
+                          ],
+                  "30":  [
+                             "HMR-3C",
+                             "HMR-3G",
+                             "HMR-3M",
+                             "HMR-3P",
+                             "HMR-3S",
+                             "HMR-RSC"
+                         ]
+              },
+    "avatar":  {
+                   "70":  [
+                              "AV1-O",
+                              "AV1-OA",
+                              "AV1-OB",
+                              "AV1-OC",
+                              "AV1-OD",
+                              "AV1-OG",
+                              "AV1-OR",
+                              "AV1-OE",
+                              "AV1-OF",
+                              "AV1-OCC",
+                              "AV1-OH",
+                              "AV1-OI",
+                              "AV1-OJ",
+                              "AV2-O",
+                              "AV2-OA",
+                              "AV2-OB",
+                              "AV2-OC",
+                              "AV2-OD",
+                              "AV2-OE"
+                          ]
+               },
+    "awesome":  {
+                    "80":  [
+                               "AWS-8Q",
+                               "AWS-8R",
+                               "AWS-8T",
+                               "AWS-8V",
+                               "AWS-9M",
+                               "AWS-9Q",
+                               "AWS-9MA (ADAM)",
+                               "AWS-PB aka PRETTY BABY",
+                               "AWS-10KM",
+                               "AWS-8BQ",
+                               "AWS-9Q-KL (KLATT)"
+                           ],
+                    "85":  [
+                               "SVG-PRIME"
+                           ],
+                    "15":  [
+                               "SLR-1",
+                               "SPT/15-2",
+                               "SPT/15-3",
+                               "SPT/15"
+                           ]
+                },
+    "bane":  {
+                 "100":  [
+                             "B-2",
+                             "B-3",
+                             "B-PRIME",
+                             "B-4",
+                             "B-XR"
+                         ]
+             },
+    "banshee":  {
+                    "95":  [
+                               "BNC-1E",
+                               "BNC-3E",
+                               "BNC-3M",
+                               "BNC-3MC",
+                               "BNC-3Q",
+                               "BNC-3S",
+                               "BNC-5S",
+                               "BNC-5S-SR (SAWYER)",
+                               "BNC-HK",
+                               "BNC-LM (LA MALINCHE)",
+                               "BNC-5S-VDG (VANDERGRIFF)",
+                               "BNC-6S",
+                               "BNC-7S",
+                               "BNC-8S",
+                               "BNC-9S",
+                               "BNC-P",
+                               "BNC-PM aka PYROMANIAC",
+                               "BNC-5S-JB (JOHN BAUER)"
+                           ]
+                },
+    "warhammer":  {
+                      "70":  [
+                                 "BKX-7K",
+                                 "BKX-7NC",
+                                 "WHM-6D",
+                                 "WHM-6K",
+                                 "WHM-6L",
+                                 "WHM-6R",
+                                 "WHM-6RB",
+                                 "WHM-7A",
+                                 "WHM-7K",
+                                 "WHM-7M",
+                                 "WHM-7S",
+                                 "WHM-BW",
+                                 "WHM-4L",
+                                 "WHM-7S",
+                                 "WHM-5L",
+                                 "WHM-X",
+                                 "WHM-66",
+                                 "HM-O aka HEPHAISTOS",
+                                 "HM-OA aka HEPHAISTOS",
+                                 "HM-OB aka HEPHAISTOS",
+                                 "HM-OC aka HEPHAISTOS"
+                             ],
+                      "75":  [
+                                 "DFN-3A aka WARHAMMER"
+                             ]
+                  },
+    "battlemaster":  {
+                         "85":  [
+                                    "BLR-1CX",
+                                    "BLR-1D",
+                                    "BLR-1G-DC",
+                                    "BLR-1G",
+                                    "BLR-1GB",
+                                    "BLR-1GBC",
+                                    "BLR-1GC",
+                                    "BLR-1S",
+                                    "BLR-3M-DC",
+                                    "BLR-3M",
+                                    "BLR-1GHE",
+                                    "BLR-1SH (HANS)",
+                                    "BLR-4L",
+                                    "BLR-1G (RED CORSAIR)"
+                                ],
+                         "50":  [
+                                    "CLN-7V",
+                                    "CLN-7W",
+                                    "CLN-7Z",
+                                    "TRC-4B",
+                                    "END-6J",
+                                    "END-6Q",
+                                    "END-6S",
+                                    "END-6SR",
+                                    "CLN-7VQ (Q-MECH)"
+                                ],
+                         "55":  [
+                                    "GRM-R-PR29",
+                                    "GRM-R-PR30",
+                                    "GRM-R-PR31",
+                                    "GRM-R-PR62A",
+                                    "GRM-R (EINAR)"
+                                ],
+                         "70":  [
+                                    "ST-8A",
+                                    "ST-8C",
+                                    "ST-9C",
+                                    "ST-ALN (APOLLYON)"
+                                ],
+                         "35":  [
+                                    "ARB-001",
+                                    "ARB-002",
+                                    "ARB-003"
+                                ]
+                     },
+    "commando":  {
+                     "30":  [
+                                "BH-K305",
+                                "CPR-HD-002",
+                                "BH-K306",
+                                "CPR-HD-003",
+                                "CPR-HD-004"
+                            ],
+                     "25":  [
+                                "COM-2D-BI aka BLAZING INFERNO",
+                                "COM-1A",
+                                "COM-1B",
+                                "COM-1C",
+                                "COM-1D",
+                                "COM-2D",
+                                "COM-2I",
+                                "COM-3A",
+                                "COM-4H",
+                                "COM-5S",
+                                "COM-7S",
+                                "COM-7X",
+                                "COM-IIC",
+                                "COM-2DS aka FREEMAN",
+                                "COM-TDK",
+                                "MW-IIC",
+                                "COM-9S",
+                                "COM-2D-PV aka PAIN VORTEX",
+                                "COM-2DR",
+                                "COM-7B",
+                                "COM-7S2 (FREYR)",
+                                "COM-P",
+                                "COM-8S"
+                            ],
+                     "40":  [
+                                "SNT-04",
+                                "WTH-0",
+                                "WTH-1",
+                                "WTH-1S",
+                                "WTH-2",
+                                "WTH-1H",
+                                "SNT-W5",
+                                "WTH-2A",
+                                "WTH-3",
+                                "WTH-K",
+                                "WTH-5S"
+                            ],
+                     "2":  [
+                               "ENS-1",
+                               "ENS-2",
+                               "ENS-3"
+                           ],
+                     "9":  [
+                               "ENS-AKT"
+                           ],
+                     "35":  [
+                                "COM-ERI aka ERINYA"
+                            ]
+                 },
+    "stonerhino":  {
+                       "100":  [
+                                   "BM-1",
+                                   "STR-1",
+                                   "STR-2",
+                                   "STR-4",
+                                   "STR-5",
+                                   "STR-6",
+                                   "STRN",
+                                   "STR-7",
+                                   "STR-8",
+                                   "STRN-R",
+                                   "STR-3",
+                                   "DN-RSC aka MATAR",
+                                   "SHP-P aka MATAR",
+                                   "STR-X"
+                               ],
+                       "110":  [
+                                   "SAM-RS2"
+                               ]
+                   },
+    "panther":  {
+                    "25":  [
+                               "CTL-X aka BESSIE",
+                               "CTL-3R3",
+                               "CTL-3R2 aka HUNTER"
+                           ],
+                    "35":  [
+                               "PNT-10K",
+                               "PNT-10KA",
+                               "PNT-5T",
+                               "PNT-8Z",
+                               "PNT-9ALAG",
+                               "PNT-9R",
+                               "PNT-C",
+                               "PNT-CA",
+                               "PNT-9R (TANAKA)",
+                               "PNT-12A",
+                               "PNT-IIC",
+                               "PNT-IIC-GS",
+                               "PNT-14S",
+                               "PNT-16K",
+                               "PNT-9L",
+                               "WGT-2LAW",
+                               "WGT-4NC",
+                               "PNT-9R"
+                           ],
+                    "40":  [
+                               "CAL-1MAF",
+                               "CAL-1MAF-SW aka SNOW WHITE"
+                           ]
+                },
+    "blackjack":  {
+                      "45":  [
+                                 "BJ-0",
+                                 "BJ-1",
+                                 "BJ-1DB",
+                                 "BJ-1DC",
+                                 "BJ-1P",
+                                 "BJ-1X",
+                                 "BJ-2",
+                                 "BJ-3",
+                                 "BJ-3T",
+                                 "BJ-5",
+                                 "BJ-A aka ARROW",
+                                 "BJ-4",
+                                 "BJ-P",
+                                 "BJ-2A"
+                             ],
+                      "55":  [
+                                 "BJ-G"
+                             ],
+                      "50":  [
+                                 "BJ2-O",
+                                 "BJ2-OA",
+                                 "BJ2-OB",
+                                 "BJ2-OC",
+                                 "BJ2-OD",
+                                 "BJ2-OE",
+                                 "BJ2-OF",
+                                 "BJ2-OR",
+                                 "BJ2-OG",
+                                 "BJ2-OX"
+                             ],
+                      "80":  [
+                                 "NGA-A",
+                                 "NGA-B",
+                                 "NGA-C",
+                                 "NGA-D",
+                                 "NGA-PRIME",
+                                 "OBK-M10",
+                                 "NGA-E",
+                                 "NGA-Z",
+                                 "OBK-M11",
+                                 "OBK-M12"
+                             ],
+                      "40":  [
+                                 "UCU-F4",
+                                 "UCU-F4R"
+                             ]
+                  },
+    "blackknight":  {
+                        "75":  [
+                                   "BL-6-KNT",
+                                   "BL-6B-KNT",
+                                   "BL-7-KNT-L",
+                                   "BL-7-KNT",
+                                   "BL-7B-KNT",
+                                   "BL-9-KNT",
+                                   "BL-IIC",
+                                   "BLK-NT-5H",
+                                   "BL-10-KNT",
+                                   "BL-6B-P",
+                                   "CL",
+                                   "BL-11-KNT",
+                                   "BL-S7 aka GLADIATOR",
+                                   "BLK-O aka CONQUISTADOR",
+                                   "BLK-OA aka CONQUISTADOR",
+                                   "BLK-OB aka CONQUISTADOR",
+                                   "BLK-OC aka CONQUISTADOR",
+                                   "BLK-OD aka CONQUISTADOR"
+                               ],
+                        "55":  [
+                                   "GLD-1R",
+                                   "GLD-2R",
+                                   "GLD-3R",
+                                   "GLD-4R",
+                                   "GLD-5R"
+                               ]
+                    },
+    "nova":  {
+                 "60":  [
+                            "BHKU-O",
+                            "BHKU-OA",
+                            "BHKU-OB",
+                            "BHKU-OC",
+                            "BHKU-OD",
+                            "BHKU-OE",
+                            "BHKU-OF"
+                        ],
+                 "45":  [
+                            "KIM-2",
+                            "KIM-2A",
+                            "KIM-2C",
+                            "KIM-3C"
+                        ],
+                 "50":  [
+                            "NVA-A",
+                            "NVA-B",
+                            "NVA-C",
+                            "NVA-D",
+                            "NVA-E",
+                            "NVA-H",
+                            "NVA-PRIME",
+                            "NVA-S",
+                            "NVA-F",
+                            "NVA-P aka FURY"
+                        ]
+             },
+    "blacklanner":  {
+                        "55":  [
+                                   "BKL-A",
+                                   "BKL-C",
+                                   "BKL-D",
+                                   "BKL-PRIME",
+                                   "BKL-P"
+                               ]
+                    },
+    "blackpython":  {
+                        "75":  [
+                                   "BP-2",
+                                   "BP-3",
+                                   "BP-4",
+                                   "BP-PRIME",
+                                   "BP-P aka BRIGHT PYTHON"
+                               ]
+                    },
+    "blitzkrieg":  {
+                       "50":  [
+                                  "BTZ-3F",
+                                  "BTZ-4F"
+                              ]
+                   },
+    "bloodasp":  {
+                     "90":  [
+                                "BAS-A",
+                                "BAS-B",
+                                "BAS-C",
+                                "BAS-D",
+                                "BAS-PRIME",
+                                "BAS-S",
+                                "BAS-P aka CREEP"
+                            ],
+                     "80":  [
+                                "LGC-01",
+                                "LGC-02",
+                                "LGC-03",
+                                "LGC-04-WVR",
+                                "LGC-05"
+                            ]
+                 },
+    "bombard":  {
+                    "50":  [
+                               "BMB-010",
+                               "BMB-013",
+                               "BMB-016",
+                               "BMB-1X"
+                           ]
+                },
+    "grasshopper":  {
+                        "25":  [
+                                   "LDT-1",
+                                   "LDT-X"
+                               ],
+                        "70":  [
+                                   "GHR-5H",
+                                   "GHR-5J",
+                                   "GHR-5N",
+                                   "GHR-5P",
+                                   "GHR-C",
+                                   "GHR-R",
+                                   "GHR-MJ aka MJÃ¶LNIR",
+                                   "GHR-6K",
+                                   "GHR-8K",
+                                   "GHR-2I",
+                                   "GHR-5K",
+                                   "GHR-7K",
+                                   "GHR-7P",
+                                   "GHR-7KG",
+                                   "GHR-7X"
+                               ]
+                    },
+    "bushwacker":  {
+                       "55":  [
+                                  "BSW-S2",
+                                  "BSW-X1",
+                                  "BSW-X2",
+                                  "BSW-HR aka HIGH ROLLER",
+                                  "BSW-L1",
+                                  "BSW-P1",
+                                  "BSW-P2",
+                                  "BSW-DC",
+                                  "BSW-S2R",
+                                  "BSW-X3",
+                                  "BSW-X4",
+                                  "BSW-GTL",
+                                  "BSW-P",
+                                  "BSW-S2C",
+                                  "GTL-1O",
+                                  "GTL-1OA",
+                                  "GTL-1OB",
+                                  "GTL-1OC",
+                                  "BSW-GTL2",
+                                  "BSW-X5",
+                                  "BSW-XR",
+                                  "GTL-RSC",
+                                  "GTL-S7 aka DESPERADO",
+                                  "BSW-S7 aka GUERILLA"
+                              ]
+                   },
+    "cataphract":  {
+                       "70":  [
+                                  "CES-3R",
+                                  "CTF-0X",
+                                  "CTF-1X",
+                                  "CTF-2X",
+                                  "CTF-3D",
+                                  "CTF-3L",
+                                  "CTF-4X",
+                                  "CES-3R-AA aka ARCHANGEL",
+                                  "CTF-IM aka ILYA MUROMETS",
+                                  "CES-3R-GR aka GERTRUDE",
+                                  "CES-3S",
+                                  "CES-4R",
+                                  "CES-4S",
+                                  "CTF-4L",
+                                  "CTF-1E",
+                                  "CTF-3LL",
+                                  "CTF-5D",
+                                  "CTF-P"
+                              ]
+                   },
+    "k2pult":  {
+                   "65":  [
+                              "CPLT-A1",
+                              "CPLT-C1B",
+                              "CPLT-K2",
+                              "CPLT-K2K",
+                              "CPLT-K3",
+                              "CPLT-J aka JESTER",
+                              "CPLT-C2",
+                              "CPLT-H2",
+                              "CPLT-C21",
+                              "CPLT-C22",
+                              "CPLT-K4",
+                              "CPLT-K9",
+                              "CPLT-KC",
+                              "CPLT-RP"
+                          ],
+                   "75":  [
+                              "CPLT-IIC-2",
+                              "CPLT-IIC-3",
+                              "CPLT-IIC",
+                              "CPLT-IIC-4"
+                          ],
+                   "70":  [
+                              "CPLT-C7",
+                              "CPLT-L7",
+                              "CPLT-L7L"
+                          ],
+                   "55":  [
+                              "CPLT-R1",
+                              "CPLT-R2",
+                              "CPLT-R3",
+                              "CPLT-R4",
+                              "CPLT-R5",
+                              "CPLT-R6"
+                          ]
+               },
+    "catapult":  {
+                     "65":  [
+                                "CPLT-C1",
+                                "CPLT-C3",
+                                "CPLT-C4",
+                                "CPLT-C4C",
+                                "CPLT-C5",
+                                "CPLT-K5",
+                                "CPLT-C1 aka BUTTERBEE",
+                                "CPLT-C4C",
+                                "CPLT-C1 (GDL)",
+                                "CPLT-1R",
+                                "CPLT-C1M",
+                                "CPLT-C6",
+                                "CPLT-P",
+                                "CPLT-X1",
+                                "CPLT-C3 (NUKE)"
+                            ],
+                     "75":  [
+                                "CPLT-S7 aka BASILISK"
+                            ]
+                 },
+    "centurion":  {
+                      "55":  [
+                                 "CN10-B",
+                                 "CN10-7S aka IRON CURTAIN"
+                             ],
+                      "50":  [
+                                 "CN3-A",
+                                 "CN9-A",
+                                 "CN9-A2",
+                                 "CN9-AH",
+                                 "CN9-AL",
+                                 "CN9-B1",
+                                 "CN9-D",
+                                 "CN9-D3",
+                                 "CN9-D3D",
+                                 "CN9-H",
+                                 "CN9-YLW aka YEN LO WANG",
+                                 "CN9-YLW2 aka YEN LO WANG II",
+                                 "CN9-D4D",
+                                 "CN9-D5",
+                                 "CN11-O",
+                                 "CN11-OA",
+                                 "CN11-OB",
+                                 "CN11-OC",
+                                 "CN11-OD",
+                                 "CN11-OE",
+                                 "CN9-A (GDL)",
+                                 "CN9-D9",
+                                 "CN11-OP",
+                                 "CN9-P",
+                                 "CN11-H",
+                                 "CN11-PT",
+                                 "CN11-YLW3 aka YEN LO WANG III",
+                                 "CN11-OX"
+                             ],
+                      "45":  [
+                                 "SNK-1V",
+                                 "SNK-1V (ALEXI)",
+                                 "SNK-2B",
+                                 "SNK-2BR",
+                                 "SNK-1V (ARTHUR)"
+                             ],
+                      "80":  [
+                                 "VTR-DK"
+                             ]
+                  },
+    "charger":  {
+                    "80":  [
+                               "CGR-SB aka CHALLENGER",
+                               "CGR-1A1",
+                               "CGR-1A5",
+                               "CGR-1A9",
+                               "CGR-1L",
+                               "CGR-3K",
+                               "CGR-C",
+                               "CGR-N7 aka NUMBER SEVEN",
+                               "CGR-2A2",
+                               "CGR-SA5",
+                               "CGR-KMZ"
+                           ]
+                },
+    "champion":  {
+                     "60":  [
+                                "CHP-1N",
+                                "CHP-1N2",
+                                "CHP-2N",
+                                "CHP-3N",
+                                "CHP-3P",
+                                "CHP-C",
+                                "CHP-1NB",
+                                "CHP-1N2I",
+                                "CHP-INV"
+                            ]
+                 },
+    "cicada":  {
+                   "40":  [
+                              "CDA-2A",
+                              "CDA-2B",
+                              "CDA-2P",
+                              "CDA-2P2",
+                              "CDA-3C",
+                              "CDA-3D",
+                              "CDA-3E",
+                              "CDA-3F",
+                              "CDA-3G",
+                              "CDA-3K",
+                              "CDA-3L",
+                              "CDA-3M",
+                              "CDA-4L",
+                              "CDA-X5",
+                              "CDA-IIC-1",
+                              "CDA-IIC-2",
+                              "CDA-IIC-3",
+                              "CDA-IIC",
+                              "CDA-IIC-4",
+                              "CDA-3MA",
+                              "CDA-3P",
+                              "CDA-3X"
+                          ],
+                   "55":  [
+                              "MS1-O",
+                              "MS1-OA",
+                              "MS1-OB",
+                              "MS1-OC",
+                              "MS1-OD",
+                              "MS1-OG",
+                              "DCW-1",
+                              "DCW-2",
+                              "DCW-3",
+                              "MS1-OE",
+                              "MS1-OF",
+                              "DCW-4"
+                          ],
+                   "25":  [
+                              "RTX1-O",
+                              "RTX1-OA",
+                              "RTX1-OB",
+                              "RTX1-OC",
+                              "RTX1-OD",
+                              "RTX1-OE",
+                              "RTX1-OF",
+                              "RTX1-OR",
+                              "RTX1-OG"
+                          ]
+               },
+    "clint":  {
+                  "40":  [
+                             "CLNT-1-2R",
+                             "CLNT-2-2R",
+                             "CLNT-2-3T",
+                             "CLNT-2-3U",
+                             "CLNT-2-4T",
+                             "CLNT-P",
+                             "CLNT-IIC-1",
+                             "CLNT-2-3T (DENTON)",
+                             "CLNT-5U",
+                             "CLNT-IIC-3",
+                             "CLNT-ESTWD",
+                             "CLNT-2-3UL",
+                             "CLNT-3-3T",
+                             "CLNT-6S",
+                             "CLNT-IIC-2",
+                             "CLNT-1-2R-P",
+                             "CLNT-1-2R-P2",
+                             "CLNT-P2",
+                             "CLNT-IIC-2LL aka LEIA"
+                         ]
+              },
+    "hellhound":  {
+                      "50":  [
+                                 "HND-1",
+                                 "HND-2",
+                                 "HND-3",
+                                 "HND-4",
+                                 "HND-5",
+                                 "HND-GP aka GHOST PROWLER"
+                             ]
+                  },
+    "rtcorsair3":  {
+                       "95":  [
+                                  "COR-5R",
+                                  "COR-6R"
+                              ]
+                   },
+    "rtcorsair1":  {
+                       "95":  [
+                                  "COR-5T"
+                              ]
+                   },
+    "rtcorsair2":  {
+                       "95":  [
+                                  "COR-7A",
+                                  "COR-7R",
+                                  "COR-S7 aka GRACE"
+                              ]
+                   },
+    "firestarter":  {
+                        "20":  [
+                                   "C-SK1",
+                                   "C-1FC"
+                               ],
+                        "35":  [
+                                   "FS1-H",
+                                   "FS9-A",
+                                   "FS9-H",
+                                   "FS9-K",
+                                   "FS9-M",
+                                   "FS9-PM",
+                                   "FS9-S",
+                                   "FS9-S1",
+                                   "FS9-T",
+                                   "SPR-4F",
+                                   "SPR-5F",
+                                   "FS9-E aka EMBER",
+                                   "SPR-5S",
+                                   "FS-IIC",
+                                   "FS9-GS",
+                                   "FS9-B",
+                                   "FS9-S2",
+                                   "FS9-S3",
+                                   "SPR-ST",
+                                   "FS9-81X",
+                                   "FS9-M2",
+                                   "FS7-S aka GOBLIN"
+                               ],
+                        "45":  [
+                                   "FS9-O",
+                                   "FS9-OA",
+                                   "FS9-OB",
+                                   "FS9-OC",
+                                   "FS9-OD",
+                                   "FS9-OE",
+                                   "FS9-OF",
+                                   "FS9-OR",
+                                   "FS9-OX",
+                                   "FS9-OG",
+                                   "FS9-OU"
+                               ]
+                    },
+    "cougar":  {
+                   "35":  [
+                              "CGR-A",
+                              "CGR-B",
+                              "CGR-C",
+                              "CGR-D",
+                              "CGR-HR",
+                              "CGR-PRIME",
+                              "CGR-XR",
+                              "CGR-P aka GRIMALKIN"
+                          ],
+                   "40":  [
+                              "CGX-A aka ASWANG",
+                              "CGX-B aka ASWANG",
+                              "CGX-C aka ASWANG",
+                              "CGX-D aka ASWANG",
+                              "CGX-E aka ASWANG",
+                              "CGX-PRIME aka ASWANG"
+                          ]
+               },
+    "crk":  {
+                "85":  [
+                           "CRK-5003-0",
+                           "CRK-5003-1",
+                           "CRK-5003-1B",
+                           "CRK-5003-3",
+                           "CRK-5004-1",
+                           "CRK-5005-1"
+                       ]
+            },
+    "hunchback":  {
+                      "55":  [
+                                 "CNS-3M",
+                                 "CNS-5M",
+                                 "KW1-LH2",
+                                 "KW1-LH3",
+                                 "KW1-LH8",
+                                 "KW2-LHW",
+                                 "QSM-3D",
+                                 "CNS-TD9",
+                                 "KW2-LH10",
+                                 "QSM-RSC"
+                             ],
+                      "50":  [
+                                 "HBK-1G",
+                                 "HBK-4E",
+                                 "HBK-4G",
+                                 "HBK-4G (GAUSS PROTOTYPE)",
+                                 "HBK-4H",
+                                 "HBK-4J",
+                                 "HBK-4JB",
+                                 "HBK-4K",
+                                 "HBK-4N",
+                                 "HBK-4P",
+                                 "HBK-4SP",
+                                 "HBK-5A",
+                                 "HBK-5J",
+                                 "HBK-5M",
+                                 "HBK-5N",
+                                 "HBK-5S",
+                                 "HBK-6N",
+                                 "HBK-GI aka GRID IRON",
+                                 "HBK-4X",
+                                 "HBK-4X1",
+                                 "HBK-5E",
+                                 "HBK-5H",
+                                 "HBK-4GB",
+                                 "HBK-7S",
+                                 "HBK-FB",
+                                 "HBK-LGNA",
+                                 "HBK-LGND"
+                             ]
+                  },
+    "crusader":  {
+                     "60":  [
+                                "CRS-6B",
+                                "CRS-6C",
+                                "CRS-X",
+                                "CRS-9A",
+                                "CRX-A aka CROSSBOW X",
+                                "CRX-B aka CROSSBOW X",
+                                "CRX-C aka CROSSBOW X",
+                                "CRX-PRIME aka CROSSBOW X"
+                            ],
+                     "65":  [
+                                "CRS-A",
+                                "CRS-B",
+                                "CRS-PRIME",
+                                "CRD-1R",
+                                "CRD-2R",
+                                "CRD-3D",
+                                "CRD-3K",
+                                "CRD-3L",
+                                "CRD-3R",
+                                "CRD-4D",
+                                "CRD-4K",
+                                "CRD-5M",
+                                "CRS-C",
+                                "CRS-D",
+                                "CRS-H",
+                                "CRD-5K",
+                                "CRS-E",
+                                "CRD-6M",
+                                "CRD-3RP"
+                            ]
+                 },
+    "mauler":  {
+                   "90":  [
+                              "DCMS-MX90-D",
+                              "LMN-1PT5",
+                              "MAL-1P",
+                              "MAL-1R",
+                              "MAL-2P",
+                              "MAL-2R",
+                              "MAL-C",
+                              "MAL-KO",
+                              "MAL-3R",
+                              "MAL-1K",
+                              "MAL-3S",
+                              "MAL-4X",
+                              "MAL-4R",
+                              "MAL-RX"
+                          ]
+               },
+    "orion":  {
+                  "40":  [
+                             "DMO-1K",
+                             "DMO-2K",
+                             "DMO-4K",
+                             "INI-02",
+                             "DMO-5K",
+                             "INI-04"
+                         ],
+                  "75":  [
+                             "ON1-C",
+                             "ON1-H",
+                             "ON1-K",
+                             "ON1-M",
+                             "ON1-MA",
+                             "ON1-MB",
+                             "ON1-V-DC",
+                             "ON1-V",
+                             "ON1-VA",
+                             "P1",
+                             "P1A",
+                             "P1B",
+                             "P1C",
+                             "P1D",
+                             "ON1-KER (KERENSKY)",
+                             "P1E",
+                             "P1P",
+                             "P1W",
+                             "ON2-K",
+                             "ON1-X"
+                         ]
+              },
+    "spider":  {
+                   "25":  [
+                              "DRT-3S",
+                              "DRT-4S",
+                              "DRT-6S",
+                              "DRT-6T"
+                          ],
+                   "30":  [
+                              "SDR-5D",
+                              "SDR-5K",
+                              "SDR-5V",
+                              "SDR-7M",
+                              "SDR-8M",
+                              "SDR-C",
+                              "SDR-I1",
+                              "SDR-6V",
+                              "SDR-P aka CAERBANNOG"
+                          ],
+                   "35":  [
+                              "SDR-9C",
+                              "SDR-9E",
+                              "SDR-9K",
+                              "SDR-IIC-2",
+                              "SDR-IIC"
+                          ],
+                   "20":  [
+                              "RDS-2A",
+                              "RDS-2B",
+                              "RDS-3A"
+                          ],
+                   "75":  [
+                              "JHK-HZN aka HAZEN",
+                              "JHK-03",
+                              "JHK-04",
+                              "JHK-1",
+                              "JHK-2",
+                              "JHK-3"
+                          ],
+                   "45":  [
+                              "SDR-A aka ANANSI"
+                          ],
+                   "95":  [
+                              "SRK-1",
+                              "SRK-2",
+                              "SRK-BLKR"
+                          ]
+               },
+    "dasher":  {
+                   "20":  [
+                              "DSR-A",
+                              "DSR-B",
+                              "DSR-C",
+                              "DSR-D",
+                              "DSR-E",
+                              "DSR-H",
+                              "DSR-PRIME",
+                              "DSR-F",
+                              "DSR-K",
+                              "DSR-ALETHA",
+                              "DSR-G"
+                          ]
+               },
+    "dervish":  {
+                    "55":  [
+                               "DV-1S",
+                               "DV-6M",
+                               "DV-6MD",
+                               "DV-7D",
+                               "DV-7P",
+                               "DV-IIC",
+                               "DV-8D",
+                               "DV-6M (GDL)",
+                               "DV-9D",
+                               "DV-P aka BANDIT"
+                           ]
+                },
+    "masondev":  {
+                     "100":  [
+                                 "DVS-1D",
+                                 "DVS-2",
+                                 "DVS-3",
+                                 "DVS-X10"
+                             ]
+                 },
+    "direwolf":  {
+                     "100":  [
+                                 "DW-A",
+                                 "DW-B",
+                                 "DW-C",
+                                 "DW-H",
+                                 "DW-PRIME",
+                                 "DW-S",
+                                 "DW-W",
+                                 "DW-X",
+                                 "DS-PRIME aka DIRESTAR",
+                                 "DW-HK",
+                                 "DW-WM aka WIDOW MAKER",
+                                 "THW-A",
+                                 "THW-B",
+                                 "THW-C",
+                                 "THW-PRIME",
+                                 "THWII-A",
+                                 "THWII-B",
+                                 "THWII-C",
+                                 "THWII-PRIME",
+                                 "DW-LW-AP aka LONE WOLF",
+                                 "DW-LW aka LONE WOLF",
+                                 "DW-D"
+                             ]
+                 },
+    "dragonfire":  {
+                       "75":  [
+                                  "DGR-3F",
+                                  "DGR-4F",
+                                  "DGR-6FC"
+                              ]
+                   },
+    "dragon":  {
+                   "60":  [
+                              "DRG-1C",
+                              "DRG-1N",
+                              "DRG-1R",
+                              "DRG-5N",
+                              "DRG-1G",
+                              "DRG-5K",
+                              "DRG-C",
+                              "DRG-2Y (YORIOSHI)",
+                              "DRG-1G (DOUGLAS)",
+                              "DRG-7N",
+                              "DRG-7TROG"
+                          ],
+                   "45":  [
+                              "MU-TT7",
+                              "MU-TT9"
+                          ],
+                   "65":  [
+                              "DRG-3K",
+                              "DRG-P",
+                              "DRG-11K",
+                              "DRG-11R"
+                          ],
+                   "70":  [
+                              "DRX-O",
+                              "DRX-OA",
+                              "DRX-OB",
+                              "DRX-OC",
+                              "DRX-OD"
+                          ]
+               },
+    "ebonjaguar":  {
+                       "65":  [
+                                  "EBJ-B",
+                                  "EBJ-C",
+                                  "EBJ-D",
+                                  "EBJ-PRIME",
+                                  "JN-G8A",
+                                  "EBJ-H",
+                                  "EBJ-CB aka CAULDRON BORN",
+                                  "EBJ-S",
+                                  "JN-G7L",
+                                  "JN-G9CC",
+                                  "EBJ-CBII aka CAULDRON BORN II",
+                                  "JN-G8BX (RUSH)",
+                                  "EBJ-P aka CAULDRON BORN"
+                              ]
+                   },
+    "elemental":  {
+                      "5":  [
+                                "TOAD",
+                                "TOAD (FLAMER)",
+                                "IS-1",
+                                "IS-INF",
+                                "IS-MTR",
+                                "IS-TAG",
+                                "TOAD aka SALAMANDER",
+                                "TOAD aka SALAMANDER",
+                                "TOAD aka SALAMANDER",
+                                "IS-HIVE aka THE HIVE",
+                                "FS-1",
+                                "IS-RF",
+                                "IS-STL",
+                                "IS-A",
+                                "IS-A (RIFLE)",
+                                "IS-BAKA",
+                                "SPEESMAHRIN",
+                                "IS-P aka PRIVATEER",
+                                "SS-PDS aka AEGIS POINT DEFENSE SUIT",
+                                "SS-LR",
+                                "IS-RX"
+                            ]
+                  },
+    "emperor":  {
+                    "90":  [
+                               "EMP-1A",
+                               "EMP-5A",
+                               "EMP-5B",
+                               "EMP-6A",
+                               "EMP-EC",
+                               "Y-H10G",
+                               "Y-H9G",
+                               "EMP-6A (NERRAN)",
+                               "Y-H9GC",
+                               "EMP-6D",
+                               "EMP-6L",
+                               "EMP-6M",
+                               "EMP-6S",
+                               "EMP-7L",
+                               "Y-H11G",
+                               "Y-H9GB",
+                               "EMP-6ME",
+                               "EMP-8L",
+                               "EMP-5B-N"
+                           ]
+                },
+    "enforcer":  {
+                     "50":  [
+                                "ENF-3R",
+                                "ENF-4R",
+                                "ENF-5D",
+                                "ENF-5D",
+                                "ENF-6NAIS"
+                            ],
+                     "40":  [
+                                "WTC-4M",
+                                "WTC-4DM",
+                                "WTC-4DM2"
+                            ],
+                     "55":  [
+                                "ENF-7S",
+                                "ENF-GH aka GHILLIE"
+                            ]
+                 },
+    "executioner":  {
+                        "95":  [
+                                   "EXE-A",
+                                   "EXE-B",
+                                   "EXE-C",
+                                   "EXE-D",
+                                   "EXE-E",
+                                   "EXE-PRIME"
+                               ]
+                    },
+    "wolfhound":  {
+                      "30":  [
+                                 "FLC-4N",
+                                 "FLC-4NB-PP",
+                                 "FLC-4NB-PP2",
+                                 "FLC-4NB",
+                                 "FLC-4P",
+                                 "FLC-4NB-SAHO",
+                                 "FLC-5P",
+                                 "FLC-6C"
+                             ],
+                      "35":  [
+                                 "WLF-1",
+                                 "WLF-1A",
+                                 "WLF-1X",
+                                 "WLF-2",
+                                 "WLF-7S",
+                                 "WLF-GRN",
+                                 "WLF-3M",
+                                 "WLF-4WB",
+                                 "WLF-2X",
+                                 "WLF-P",
+                                 "WLF-RX"
+                             ]
+                  },
+    "ostwar":  {
+                   "20":  [
+                              "ALM-7D",
+                              "ALM-8D",
+                              "ALM-9D",
+                              "ALM-10D",
+                              "ALM-XF"
+                          ],
+                   "65":  [
+                              "OWR-2M",
+                              "OWR-2MB",
+                              "OWR-2MX",
+                              "OWR-3M"
+                          ],
+                   "80":  [
+                              "OSL-9R"
+                          ]
+               },
+    "firebee":  {
+                    "35":  [
+                               "FRB-1E",
+                               "FRB-2E",
+                               "FRB-2EP",
+                               "FRB-3E",
+                               "FRB-P aka BEEKEEPER",
+                               "FRB-3ER",
+                               "FRB-S7 aka KUN LUN FENG"
+                           ]
+                },
+    "locust":  {
+                   "30":  [
+                              "FFL-3SLE",
+                              "FFL-4C"
+                          ],
+                   "20":  [
+                              "KBO-7A",
+                              "KBO-7A1",
+                              "LCT-0P",
+                              "LCT-1E",
+                              "LCT-1L",
+                              "LCT-1M",
+                              "LCT-1S",
+                              "LCT-1V",
+                              "LCT-1VB",
+                              "LCT-2S",
+                              "LCT-3D",
+                              "LCT-3M",
+                              "LCT-3S",
+                              "LCT-3V",
+                              "LCT-PB aka PIRATES BANE",
+                              "LCT-1V2",
+                              "GN-2OR",
+                              "GN-2O",
+                              "GN-2OA",
+                              "GN-2OB",
+                              "GN-2OC",
+                              "GN-2OD",
+                              "KBO-7B",
+                              "KBO-7B1",
+                              "LCT-2V",
+                              "LCT-P"
+                          ]
+               },
+    "imp":  {
+                "75":  [
+                           "FLS-7K",
+                           "FLS-8K",
+                           "FLS-9C",
+                           "FLS-8KK (KALASA)",
+                           "FLS-C",
+                           "FLS-9B",
+                           "FLS-9M"
+                       ],
+                "100":  [
+                            "IMP-1A",
+                            "IMP-1B",
+                            "IMP-1C",
+                            "IMP-2E",
+                            "IMP-3E",
+                            "IMP-4E",
+                            "IMP-C",
+                            "GFZ-2G aka GIFTZWERG"
+                        ]
+            },
+    "gspider":  {
+                    "50":  [
+                               "GLH-1D"
+                           ],
+                    "60":  [
+                               "GLH-2D",
+                               "GLS-1",
+                               "GLS-2",
+                               "GLS-3",
+                               "GLH-3D",
+                               "GLH-3D (LAODICES)"
+                           ]
+                },
+    "gargoyle":  {
+                     "80":  [
+                                "GAR-A",
+                                "GAR-B",
+                                "GAR-C",
+                                "GAR-D",
+                                "GAR-E",
+                                "GAR-H",
+                                "GAR-PRIME"
+                            ],
+                     "60":  [
+                                "SJN-A",
+                                "SJN-B",
+                                "SJN-C",
+                                "SJN-D",
+                                "SJN-PRIME"
+                            ]
+                 },
+    "grandtitan":  {
+                       "100":  [
+                                   "T-IT-N10M",
+                                   "T-IT-N11M",
+                                   "T-IT-N13M",
+                                   "T-IT-N14R"
+                               ]
+                   },
+    "grendel":  {
+                    "45":  [
+                               "GRD-A",
+                               "GRD-B",
+                               "GRD-C",
+                               "GRD-D",
+                               "GRD-E",
+                               "GRD-PRIME",
+                               "GRD-H",
+                               "GRD-G",
+                               "GRD-I",
+                               "GRD-J",
+                               "GRD-M",
+                               "GRD-T",
+                               "GRD-F"
+                           ]
+                },
+    "griffin":  {
+                    "55":  [
+                               "GRF-1DS",
+                               "GRF-1N",
+                               "GRF-1S",
+                               "GRF-2N",
+                               "GRF-2NB",
+                               "GRF-3M",
+                               "GRF-6CV",
+                               "GRF-SP aka SPARKY",
+                               "GRF-5L",
+                               "GRF-5M",
+                               "GRF-6CS",
+                               "GRF-6S",
+                               "GRF-3N",
+                               "GRF-C",
+                               "GRF-1N (GDL)",
+                               "GRF-1N",
+                               "GRF-4N",
+                               "GRF-4R",
+                               "GRF-5K",
+                               "GRF-P",
+                               "GRF-6S2",
+                               "GRF-S7 aka ECHIDNAE"
+                           ],
+                    "40":  [
+                               "GRF-IIC"
+                           ],
+                    "60":  [
+                               "GRF-2N-X",
+                               "GRF-3-X"
+                           ],
+                    "50":  [
+                               "GST-90",
+                               "GST-10",
+                               "GST-11",
+                               "GST-50",
+                               "GST-10A aka AURORA"
+                           ],
+                    "65":  [
+                               "GRF-S"
+                           ]
+                },
+    "highlander":  {
+                       "70":  [
+                                  "GRZ-1"
+                              ],
+                       "90":  [
+                                  "HGN-732",
+                                  "HGN-732B",
+                                  "HGN-733",
+                                  "HGN-733C",
+                                  "HGN-733P",
+                                  "HGN-736",
+                                  "HGN-HM aka HEAVY METAL",
+                                  "HGN-694",
+                                  "HGN-734",
+                                  "HGN-738",
+                                  "HGN-732-P aka MEGAS",
+                                  "HGN-641-X-2"
+                              ],
+                       "75":  [
+                                  "GTD-20S"
+                              ],
+                       "95":  [
+                                  "HGN-EXB aka EXECUTIONIER"
+                              ]
+                   },
+    "glt":  {
+                "70":  [
+                           "GLT-3N",
+                           "GLT-4L",
+                           "GLT-4P",
+                           "GLT-5M",
+                           "GLT-IIC",
+                           "GLT-8D",
+                           "GLT-IIC-2"
+                       ]
+            },
+    "hatamotochi":  {
+                        "80":  [
+                                   "HTM-26T",
+                                   "HTM-27T",
+                                   "HTM-27V",
+                                   "HTM-27W"
+                               ]
+                    },
+    "hauptmann":  {
+                      "95":  [
+                                 "HA1-O",
+                                 "HA1-OA",
+                                 "HA1-OB",
+                                 "HA1-OC",
+                                 "HA1-OT",
+                                 "HA1-OD",
+                                 "HA1-OE",
+                                 "HA1-OF",
+                                 "HA1-OM"
+                             ]
+                  },
+    "hazard":  {
+                   "45":  [
+                              "HZD-1A",
+                              "HZD-1B",
+                              "HZD-2",
+                              "HZD-2A"
+                          ]
+               },
+    "ioncyclops":  {
+                       "65":  [
+                                  "HEC-4C",
+                                  "HEC-4CM",
+                                  "HEC-4H",
+                                  "HEC-6C",
+                                  "HEC-6CM",
+                                  "HEC-5C",
+                                  "HEC-5H"
+                              ]
+                   },
+    "marauder":  {
+                     "70":  [
+                                "HOR-1B",
+                                "HOR-2B"
+                            ],
+                     "75":  [
+                                "MAD-1R",
+                                "MAD-2R",
+                                "MAD-3D",
+                                "MAD-3L",
+                                "MAD-3M",
+                                "MAD-3R",
+                                "MAD-3S",
+                                "MAD-4X",
+                                "MAD-5M",
+                                "MAD-5S",
+                                "MAD-8A",
+                                "MAD-C",
+                                "MAD-BH-II",
+                                "MAD-BH",
+                                "MAD-CM",
+                                "MAD-9S",
+                                "MAD-DER",
+                                "MAD-3R (GDL)",
+                                "MAD-4S",
+                                "MAD-5L",
+                                "MAD-7D-SKV",
+                                "MAD-LT",
+                                "MAD-S7 aka GUNGNIR",
+                                "ANU-O aka ANAND",
+                                "ANU-OA aka ANAND",
+                                "ANU-OB aka ANAND",
+                                "ANU-OC aka ANAND"
+                            ],
+                     "65":  [
+                                "NJT-2",
+                                "NJT-3",
+                                "NJT-4",
+                                "NJT-EMP"
+                            ],
+                     "100":  [
+                                 "MAD-BH-R aka MARAUDER"
+                             ],
+                     "200":  [
+                                 "LVT-RACZII aka RACZILLA II",
+                                 "LVT-RACZ aka RACZILLA",
+                                 "LVT-C",
+                                 "LVT-PRIME"
+                             ],
+                     "95":  [
+                                "TN-10-O",
+                                "TN-10-OA",
+                                "TN-10-OB",
+                                "TN-10-OR"
+                            ]
+                 },
+    "helepolis":  {
+                      "75":  [
+                                 "HEP-0H",
+                                 "HEP-1H",
+                                 "HEP-2H",
+                                 "HEP-3H",
+                                 "HEP-4A",
+                                 "HEP-4H",
+                                 "HEP-7H",
+                                 "HEP-FC",
+                                 "HEP-4R"
+                             ]
+                  },
+    "hellfire":  {
+                     "60":  [
+                                "HLF-1",
+                                "HLF-COL",
+                                "HLF-2",
+                                "HLF-P"
+                            ]
+                 },
+    "highlanderiic":  {
+                          "90":  [
+                                     "HGN-IIC-1",
+                                     "HGN-IIC-A",
+                                     "HGN-IIC-B",
+                                     "HGN-IIC-C",
+                                     "HGN-IIC-KP (KEEPER) aka KEEPER",
+                                     "HGN-IIC-2",
+                                     "HGN-IIC-3"
+                                 ]
+                      },
+    "vaporeagle":  {
+                       "30":  [
+                                  "HM-1",
+                                  "HM-2",
+                                  "HM-1R"
+                              ],
+                       "55":  [
+                                  "GWK-1",
+                                  "GWK-2",
+                                  "GWK-VGL-RIVAL aka RIVAL",
+                                  "GWK-3"
+                              ],
+                       "50":  [
+                                  "AGT-1A"
+                              ],
+                       "45":  [
+                                  "GHII-1",
+                                  "GHII-2",
+                                  "GHII-3",
+                                  "GHII-RX"
+                              ]
+                   },
+    "hollander":  {
+                      "35":  [
+                                 "BZK-F3",
+                                 "BZK-G1",
+                                 "BZK-T2 aka TSARBOMBA",
+                                 "BZK-T3 aka TSARBOMBA",
+                                 "BZK-0P",
+                                 "BZK-P",
+                                 "BZK-RX"
+                             ],
+                      "45":  [
+                                 "BZK-F5",
+                                 "BZK-F7",
+                                 "BZK-P",
+                                 "BZK-RX",
+                                 "BZK-S7"
+                             ],
+                      "30":  [
+                                 "PH",
+                                 "PH2",
+                                 "PHII-1",
+                                 "PHII-2",
+                                 "PHII-3",
+                                 "PH3",
+                                 "PH4"
+                             ],
+                      "25":  [
+                                 "SIE",
+                                 "SIE-2"
+                             ]
+                  },
+    "kingcrab":  {
+                     "55":  [
+                                "HOP-4A",
+                                "HOP-4B",
+                                "HOP-4BB",
+                                "HOP-4C",
+                                "HOP-4CB",
+                                "HOP-4D",
+                                "HOP-C",
+                                "HOP-4X"
+                            ],
+                     "100":  [
+                                 "KGC-0000",
+                                 "KGC-0",
+                                 "KGC-000B",
+                                 "KGC-001",
+                                 "KGC-002",
+                                 "KGC-010",
+                                 "KGC-KJ aka KAIJU",
+                                 "KGC-005",
+                                 "KGC-AL aka ARGENT LEVIATHAN",
+                                 "KGC-005R",
+                                 "KGC-007",
+                                 "KGC-008",
+                                 "KGC-008B",
+                                 "KGC-009",
+                                 "B-XR aka KRAKEN-XR",
+                                 "KGC-020",
+                                 "KGC-RSC",
+                                 "KGC-B aka BEHEMOTH",
+                                 "KGC-P aka KRAKEN",
+                                 "PT-O aka PROTEUS",
+                                 "PT-OA aka PROTEUS",
+                                 "PT-OB aka PROTEUS",
+                                 "PT-OC aka PROTEUS",
+                                 "PT-OD aka PROTEUS",
+                                 "PT-OE aka PROTEUS",
+                                 "PT-OF aka PROTEUS"
+                             ],
+                     "200":  [
+                                 "OC-1X"
+                             ]
+                 },
+    "hornet":  {
+                   "20":  [
+                              "HNT-151",
+                              "HNT-152",
+                              "HNT-161",
+                              "HNT-171",
+                              "HNT-172",
+                              "HNT-181",
+                              "HNT-182"
+                          ]
+               },
+    "hunchbackiic":  {
+                         "50":  [
+                                    "HBK-IIC-1",
+                                    "HBK-IIC-2",
+                                    "HBK-IIC-3",
+                                    "HBK-IIC-4"
+                                ]
+                     },
+    "huntsman":  {
+                     "50":  [
+                                "HMN-A",
+                                "HMN-B",
+                                "HMN-C",
+                                "HMN-PRIME"
+                            ]
+                 },
+    "huronwarrior":  {
+                         "50":  [
+                                    "HUR-WO-R4L",
+                                    "HUR-WO-TC",
+                                    "HUR-WO-R4N",
+                                    "HUR-WO-R4O",
+                                    "HUR-WO-RX4"
+                                ]
+                     },
+    "hussar":  {
+                   "30":  [
+                              "HSR-200-D",
+                              "HSR-200-DB",
+                              "HSR-300-D",
+                              "HSR-350-D",
+                              "HSR-400-D",
+                              "HSR-450-D",
+                              "HSR-500-D",
+                              "HSR-900-D",
+                              "HSR-1000-X"
+                          ]
+               },
+    "icarusii":  {
+                     "40":  [
+                                "ICR-1S",
+                                "ICR-1X",
+                                "ICR-2S",
+                                "ICR-2P",
+                                "ICR-2R"
+                            ]
+                 },
+    "iceferret":  {
+                      "45":  [
+                                 "IFR-A",
+                                 "IFR-B",
+                                 "IFR-C",
+                                 "IFR-PRIME"
+                             ]
+                  },
+    "incubus":  {
+                    "30":  [
+                               "INC-2",
+                               "INC-3",
+                               "VIXEN-1",
+                               "INC-SA",
+                               "INC-4",
+                               "INC-5",
+                               "INC-6",
+                               "INC-II",
+                               "INC-II",
+                               "INC-II",
+                               "INC-II",
+                               "INC-II",
+                               "INC-II",
+                               "INC-II"
+                           ]
+                },
+    "ionraptor":  {
+                      "70":  [
+                                 "ION-2R",
+                                 "ION-3R",
+                                 "ION-4R",
+                                 "ION-5R"
+                             ]
+                  },
+    "jagermech":  {
+                      "65":  [
+                                 "JM6-A",
+                                 "JM6-B",
+                                 "JM6-S",
+                                 "JM6-X",
+                                 "JM6-FB aka FIREBRAND",
+                                 "JM6-DD",
+                                 "JM6-E",
+                                 "JM6-H",
+                                 "JM6-S (GDL)",
+                                 "JM6-JO",
+                                 "JM-P"
+                             ],
+                      "75":  [
+                                 "TYM-1A",
+                                 "TYM-1B",
+                                 "TYM-1C"
+                             ],
+                      "70":  [
+                                 "JM7-F",
+                                 "JM-IIC"
+                             ]
+                  },
+    "jenneriic":  {
+                      "35":  [
+                                 "JR7-IIC-1",
+                                 "JR7-IIC-2",
+                                 "JR7-IIC-3",
+                                 "JR7-IIC-4",
+                                 "STO-4A",
+                                 "JR7-IIC-FY",
+                                 "JR7-IIC-A",
+                                 "STO-4B",
+                                 "STO-4C",
+                                 "STO-6S",
+                                 "STO-4X",
+                                 "JR7-IICV aka VENTILATOR"
+                             ]
+                  },
+    "jenner":  {
+                   "35":  [
+                              "JR7-A",
+                              "JR7-C",
+                              "JR7-D",
+                              "JR7-F",
+                              "JR7-K",
+                              "JR7-R",
+                              "JR7-K (GRACE)",
+                              "JR7-K (SAMULI)",
+                              "JR7-O aka OXIDE",
+                              "JR7-X",
+                              "JR10-X",
+                              "JR7-RX",
+                              "ER-1"
+                          ]
+               },
+    "juggernaut":  {
+                       "90":  [
+                                  "JG-R9T1",
+                                  "JG-R9T2",
+                                  "JG-R9T3",
+                                  "JG-R9X1 aka LEAPIN LIL",
+                                  "JG-R9T14"
+                              ]
+                   },
+    "kanazuchi":  {
+                      "10":  [
+                                 "KZ-1",
+                                 "WB-1",
+                                 "WB-GSS"
+                             ]
+                  },
+    "kintaro":  {
+                    "55":  [
+                               "KTO-IIC",
+                               "KTO-18",
+                               "KTO-18K",
+                               "KTO-18S",
+                               "KTO-19",
+                               "KTO-19B",
+                               "KTO-20",
+                               "KTO-21",
+                               "KTO-C",
+                               "KTO-K"
+                           ],
+                    "20":  [
+                               "THE-N",
+                               "THE-N1",
+                               "THE-N2",
+                               "THE-NB",
+                               "THE-S",
+                               "THE-T"
+                           ]
+                },
+    "kodiak":  {
+                   "100":  [
+                               "KDK-1",
+                               "KDK-5",
+                               "KDK-2",
+                               "KDK-4",
+                               "KDK-S",
+                               "KDK-SB aka SPIRIT BEAR",
+                               "KDK-3",
+                               "KDK-GBL",
+                               "KDK-CB aka CARE BEAR"
+                           ],
+                   "25":  [
+                              "BC-1",
+                              "BC-2",
+                              "BC-3"
+                          ]
+               },
+    "stormcrow":  {
+                      "55":  [
+                                 "SCR-LA aka LACERATOR",
+                                 "SCR-A",
+                                 "SCR-B",
+                                 "SCR-C",
+                                 "SCR-D",
+                                 "SCR-E",
+                                 "SCR-H",
+                                 "SCR-I",
+                                 "SCR-L",
+                                 "SCR-PRIME",
+                                 "RIII-XP",
+                                 "RIII-XPA",
+                                 "RIII-XPB",
+                                 "RIII-XPC",
+                                 "RIII-XPD",
+                                 "SCR-S",
+                                 "SCR-F",
+                                 "SCR-G",
+                                 "SCR-Z",
+                                 "SCR-P",
+                                 "RIII-XPE"
+                             ],
+                      "75":  [
+                                 "RYO-II-GB",
+                                 "RYO-II-S",
+                                 "RYO-II"
+                             ]
+                  },
+    "linebacker":  {
+                       "65":  [
+                                  "LBK-A",
+                                  "LBK-B",
+                                  "LBK-D",
+                                  "LBK-PRIME"
+                              ]
+                   },
+    "roughneckcrane":  {
+                           "65":  [
+                                      "LDK-5C"
+                                  ]
+                       },
+    "locustiic":  {
+                      "25":  [
+                                 "LCT-IIC-1",
+                                 "LCT-IIC-2",
+                                 "LCT-IIC-3",
+                                 "LCT-IIC-4",
+                                 "LCT-IIC-5",
+                                 "LCT-IIC-6",
+                                 "LCT-IIC-7"
+                             ]
+                  },
+    "ionlongbow":  {
+                       "85":  [
+                                  "LGB-0C",
+                                  "LGB-0W",
+                                  "LGB-7Q",
+                                  "LGB-7V",
+                                  "LGB-P",
+                                  "LGB-RX"
+                              ]
+                   },
+    "longbow":  {
+                    "85":  [
+                               "LGB-12C",
+                               "LGB-12R",
+                               "LGB-13C",
+                               "LGB-13NAIS",
+                               "LGB-14C",
+                               "LGB-8V",
+                               "LGB-14C2"
+                           ],
+                    "100":  [
+                                "LGB0F-MG aka JOERMUNGANDR"
+                            ]
+                },
+    "lupus":  {
+                  "60":  [
+                             "LUPUS-A",
+                             "LUPUS-B",
+                             "LUPUS-PRIME"
+                         ]
+              },
+    "mackie":  {
+                   "100":  [
+                               "MSK-5S",
+                               "MSK-6S",
+                               "MSK-8B",
+                               "MSK-9H",
+                               "MSK-9HB",
+                               "MSK-9HC",
+                               "MSK-9GSK",
+                               "MSK-P",
+                               "MSK-RSC aka BIG MAC"
+                           ]
+               },
+    "maddog":  {
+                   "60":  [
+                              "MDD-A",
+                              "MDD-B",
+                              "MDD-C",
+                              "MDD-D",
+                              "MDD-H",
+                              "MDD-PRIME",
+                              "MDD-E",
+                              "MDD-F",
+                              "MDD-P aka SCAVENGER",
+                              "VLTIII-A",
+                              "VLTIII-B",
+                              "VLTIII-C",
+                              "VLTIII-D",
+                              "VLTIII-PRIME"
+                          ],
+                   "95":  [
+                              "TKR-A",
+                              "TKR-B",
+                              "TKR-C",
+                              "TKR-D",
+                              "TKR-PRIME",
+                              "TKR-H",
+                              "TKR-E",
+                              "TKR-U",
+                              "TKR-X",
+                              "TKR-Z"
+                          ],
+                   "70":  [
+                              "MDD-MKIIP",
+                              "MDD-MKIIE",
+                              "MDD-MKII",
+                              "MDD-MKIIA",
+                              "MDD-MKIIB",
+                              "MDD-MKIIC",
+                              "MDD-MKIID",
+                              "MDD-MKIIF"
+                          ]
+               },
+    "marauderiic":  {
+                        "85":  [
+                                   "MAD-IIC-1",
+                                   "MAD-IIC-A",
+                                   "MAD-IIC-S",
+                                   "DEI-A",
+                                   "DEI-B",
+                                   "DEI-PRIME",
+                                   "MAD-IIC-H",
+                                   "MAD-IIC-LA aka MARAUDER",
+                                   "DEI-C",
+                                   "DEI-D",
+                                   "DEI-S"
+                               ]
+                    },
+    "marauderii":  {
+                       "100":  [
+                                   "MAD-2K",
+                                   "MAD-4A",
+                                   "MAD-4B",
+                                   "MAD-4HB",
+                                   "MAD-5D",
+                                   "MAD-6A",
+                                   "MAD-BH",
+                                   "MAD-4H",
+                                   "MAD-4S",
+                                   "MAD-4L",
+                                   "MAD-RX",
+                                   "MAD-P"
+                               ]
+                   },
+    "medusa":  {
+                   "50":  [
+                              "MED-1",
+                              "MED-2",
+                              "MED-3",
+                              "MED-4",
+                              "MED-5"
+                          ]
+               },
+    "merlin":  {
+                   "60":  [
+                              "MLN-1A",
+                              "MLN-1A1",
+                              "MLN-1AR",
+                              "MLN-1B",
+                              "MLN-1B1",
+                              "MLN-2A",
+                              "MLN-1BP",
+                              "MLN-1C",
+                              "MLN-1D",
+                              "MLN-1X",
+                              "MLN-SX",
+                              "MLN-1E"
+                          ]
+               },
+    "mistlynx":  {
+                     "25":  [
+                                "MLX-B",
+                                "MLX-C",
+                                "MLX-PRIME",
+                                "SL-1G",
+                                "SL-1GM",
+                                "SL-1H",
+                                "MLX-G",
+                                "KS-1",
+                                "KS-2",
+                                "KS-3"
+                            ]
+                 },
+    "mongoose":  {
+                     "25":  [
+                                "MON-66",
+                                "MON-66B",
+                                "MON-66CG",
+                                "MON-67",
+                                "MON-67L",
+                                "MON-68",
+                                "MON-68B",
+                                "MON-69",
+                                "MON-69K",
+                                "MON-70",
+                                "MON-C",
+                                "MON-C2",
+                                "CH11-NG",
+                                "MON-76",
+                                "MON-86",
+                                "MON-90",
+                                "MON-66GX aka GUNSLINGER",
+                                "CH11-NGC"
+                            ]
+                 },
+    "nightstar":  {
+                      "95":  [
+                                 "NSR-7J",
+                                 "NSR-9J",
+                                 "NSR-9JC"
+                             ]
+                  },
+    "nightgyr":  {
+                     "75":  [
+                                "NTG-B",
+                                "NTG-D",
+                                "NTG-PRIME",
+                                "NTG-JK"
+                            ]
+                 },
+    "novacat":  {
+                    "70":  [
+                               "NCT-A",
+                               "NCT-B",
+                               "NCT-C",
+                               "NCT-D",
+                               "NCT-PRIME",
+                               "NCT-CC aka COBRA CAT",
+                               "NCT-E",
+                               "NCT-P",
+                               "NCT-MRX aka MIRAX"
+                           ]
+                },
+    "orioniic":  {
+                     "75":  [
+                                "ON1-IIC-1",
+                                "ON1-IIC-A",
+                                "ON1-IIC-B",
+                                "ON1-IIC-C",
+                                "ON1-IIC-SK aka SKÃ¶LL",
+                                "ON1-IIC-BTN"
+                            ]
+                 },
+    "osprey":  {
+                   "55":  [
+                              "OSP-15",
+                              "OSP-25",
+                              "OSP-26",
+                              "OSP-26L",
+                              "OSP-36"
+                          ]
+               },
+    "ostroc":  {
+                   "60":  [
+                              "OSR-9C",
+                              "OSR-2C",
+                              "OSR-2CB",
+                              "OSR-2CR",
+                              "OSR-2D",
+                              "OSR-2L",
+                              "OSR-2M",
+                              "OSR-3C",
+                              "OSR-2C-MICHI",
+                              "OSR-2X",
+                              "OSR-4C",
+                              "OSR-4L",
+                              "OSR-4K",
+                              "OSR-5C",
+                              "OSR-5W"
+                          ],
+                   "35":  [
+                              "OTT-7J",
+                              "OTT-7JB",
+                              "OTT-7JR",
+                              "OTT-7K",
+                              "OTT-9CS",
+                              "OTT-9S",
+                              "OTT-12R",
+                              "OTT-8J",
+                              "OTT-10CS",
+                              "OTT-11J"
+                          ]
+               },
+    "ostsol":  {
+                   "60":  [
+                              "OTL-4D",
+                              "OTL-4DR",
+                              "OTL-4F",
+                              "OTL-5M",
+                              "OTL-5D",
+                              "OTL-6D",
+                              "OTL-7M",
+                              "OTL-8M",
+                              "OTL-8D",
+                              "OTL-9M",
+                              "OTL-9R"
+                          ]
+               },
+    "owens":  {
+                  "35":  [
+                             "OW-1",
+                             "OW-1A",
+                             "OW-1AR",
+                             "OW-1B",
+                             "OW-1C",
+                             "OW-1D",
+                             "OW-1E",
+                             "OW-1R",
+                             "OW-1F",
+                             "OW-P",
+                             "OW-RSC"
+                         ]
+              },
+    "pen":  {
+                "75":  [
+                           "PTR-4D",
+                           "PTR-4F",
+                           "PTR-4FX",
+                           "PTR-6M",
+                           "PTR-6S",
+                           "PTR-4DC (CHRISTIFORI)",
+                           "PTR-6T",
+                           "PTR-7D",
+                           "PTR-5D"
+                       ]
+            },
+    "ionphantom":  {
+                       "40":  [
+                                  "PTM-A",
+                                  "PTM-B",
+                                  "PTM-C",
+                                  "PTM-D",
+                                  "PTM-E",
+                                  "PTM-PRIME",
+                                  "PTM-F",
+                                  "PTM-H"
+                              ]
+                   },
+    "phawklam":  {
+                     "50":  [
+                                "PHX-HK1",
+                                "PHX-HK1R",
+                                "PHX-HK2",
+                                "PHX-HK2M",
+                                "PHX-HK1RB",
+                                "PHX-PHK"
+                            ],
+                     "55":  [
+                                "PHX-HK5 aka PHOENIX"
+                            ]
+                 },
+    "piranha":  {
+                    "20":  [
+                               "PRA",
+                               "PIR-CT (CIPHER)",
+                               "PIR-A",
+                               "PRA-2",
+                               "PIR-B",
+                               "PRA-3",
+                               "PRA-4",
+                               "PIR-P"
+                           ],
+                    "2":  [
+                              "HRP-1",
+                              "HRP-2",
+                              "HRP-3",
+                              "HRP-4",
+                              "HRP-SHT"
+                          ]
+                },
+    "quickdraw":  {
+                      "60":  [
+                                 "QKD-4G",
+                                 "QKD-4H",
+                                 "QKD-5A",
+                                 "QKD-5K",
+                                 "QKD-5M",
+                                 "QKD-7X",
+                                 "QKD-P"
+                             ],
+                      "70":  [
+                                 "CRN-7M"
+                             ],
+                      "150":  [
+                                  "CM-XXX",
+                                  "CM-XXX2",
+                                  "CM-XXX3"
+                              ]
+                  },
+    "madcatmkii":  {
+                       "75":  [
+                                  "MDG-1A",
+                                  "MCIV-D",
+                                  "MCIV-A",
+                                  "MCIV-B",
+                                  "MCIV-C",
+                                  "MCIV-PRIME",
+                                  "MDG-X aka ASURA",
+                                  "MDG-1AR",
+                                  "MCIV-PR2",
+                                  "MCIV-PR"
+                              ],
+                       "90":  [
+                                  "MCII-DS aka DEATHSTRIKE",
+                                  "MCII-1",
+                                  "MCII-A",
+                                  "MCII-B",
+                                  "MCII-FIS",
+                                  "MCII-2",
+                                  "MCII-ECD",
+                                  "MCII-P",
+                                  "MCII-4",
+                                  "MCII-RSC",
+                                  "MC-MKII-M aka LADY KILLER"
+                              ],
+                       "95":  [
+                                  "MCII-AN aka ANGRBODA"
+                              ]
+                   },
+    "riflemaniic":  {
+                        "65":  [
+                                   "RFL-IIC-1",
+                                   "RFL-IIC-2",
+                                   "RFL-IIC-A",
+                                   "RFL-IIC-3",
+                                   "RFL-IIC-4"
+                               ]
+                    },
+    "roughneck":  {
+                      "65":  [
+                                 "RGH-1A",
+                                 "RGH-1B",
+                                 "RGH-1C",
+                                 "RGH-3A",
+                                 "RGH-1P",
+                                 "RGH-RSC",
+                                 "RGH-7S"
+                             ]
+                  },
+    "shadowhawk":  {
+                       "55":  [
+                                  "SHD-2D",
+                                  "SHD-2H",
+                                  "SHD-2HB",
+                                  "SHD-2I",
+                                  "SHD-2K",
+                                  "SHD-2KI",
+                                  "SHD-5M",
+                                  "SHD-5MI",
+                                  "SHD-5S",
+                                  "SHD-2H (GDL)",
+                                  "GDL SHD-2H",
+                                  "SHD-V aka VALKYRJA",
+                                  "SHD-SX aka SLAYER"
+                              ],
+                       "45":  [
+                                  "SHD-IIC-1",
+                                  "SHD-IIC-2",
+                                  "SHD-IIC-3",
+                                  "SHD-IIC-4",
+                                  "SHD-IIC-5",
+                                  "SHD-IIC-6",
+                                  "SHD-IIC-7",
+                                  "SHD-IIC-8"
+                              ],
+                       "50":  [
+                                  "SHD-1R"
+                              ]
+                   },
+    "shadowcat":  {
+                      "45":  [
+                                 "SHC-A",
+                                 "SHC-B",
+                                 "SHC-C",
+                                 "SHC-H",
+                                 "SHC-PRIME",
+                                 "SHC-P aka NEKO KAGE"
+                             ]
+                  },
+    "shawklam":  {
+                     "55":  [
+                                "SHD-X1",
+                                "SHD-X2",
+                                "SHD-X4",
+                                "SHX-O aka BERKUT",
+                                "SHX-OA aka BERKUT",
+                                "SHX-OB aka BERKUT",
+                                "SHX-OC aka BERKUT",
+                                "SHX-OD aka BERKUT",
+                                "SHX-OE aka BERKUT",
+                                "SHX-OF aka BERKUT"
+                            ],
+                     "5":  [
+                               "LBD"
+                           ]
+                 },
+    "madcat":  {
+                   "75":  [
+                              "SW-PRIME",
+                              "TW-A",
+                              "TW-B",
+                              "TW-C",
+                              "TW-D",
+                              "TW-E",
+                              "TW-H",
+                              "TW-PRIME",
+                              "TW-GW aka GREAT WHITE",
+                              "TW-CNR (CONNOR)",
+                              "TW-PRYDE",
+                              "TW-VLAD",
+                              "TW-Z",
+                              "TW-F",
+                              "TW-P aka BLACK CAT",
+                              "TW-RC",
+                              "TW-S7 aka MAD CAT"
+                          ],
+                   "55":  [
+                              "MCIII-E",
+                              "MCIII-Z",
+                              "MCIII-X",
+                              "MCIII-1"
+                          ]
+               },
+    "stalker":  {
+                    "85":  [
+                               "STK-3F",
+                               "STK-3FB",
+                               "STK-3H",
+                               "STK-4N",
+                               "STK-5M",
+                               "STK-M aka MISERY",
+                               "STK-3F (JAGAWEN)",
+                               "STK-9A",
+                               "STK-3HB aka SHINIGAMI"
+                           ],
+                    "75":  [
+                               "STK-4P"
+                           ],
+                    "90":  [
+                               "OR-3K",
+                               "OR-2I"
+                           ]
+                },
+    "starslayer":  {
+                       "50":  [
+                                  "STY-2C-EC",
+                                  "STY-2C",
+                                  "STY-3C",
+                                  "STY-3D",
+                                  "STY-3DR"
+                              ]
+                   },
+    "stingerlam":  {
+                       "30":  [
+                                  "STG-A1",
+                                  "STG-A10",
+                                  "STG-A5"
+                              ]
+                   },
+    "stinger":  {
+                    "20":  [
+                               "STG-3G",
+                               "STG-3GB",
+                               "STG-3R",
+                               "STG-5M",
+                               "STG-IIC-3",
+                               "STG-3P",
+                               "STG-5G",
+                               "STG-IIC-1",
+                               "STG-IIC-2"
+                           ]
+                },
+    "strider":  {
+                    "40":  [
+                               "SR1-O",
+                               "SR1-OA",
+                               "SR1-OB",
+                               "SR1-OBD",
+                               "SR1-OC",
+                               "SR1-OD",
+                               "SR1-OE",
+                               "SR1-OF",
+                               "SR1-OG",
+                               "SR1-OX",
+                               "SR1-OH"
+                           ]
+                },
+    "summoner":  {
+                     "70":  [
+                                "SMN-A",
+                                "SMN-B",
+                                "SMN-C",
+                                "SMN-PRIME",
+                                "SMN-P aka THOR",
+                                "GSMN-A",
+                                "GSMN-B",
+                                "GSMN-C",
+                                "GSMN-D",
+                                "GSMN-PRIME"
+                            ],
+                     "200":  [
+                                 "SMN-MSTR"
+                             ],
+                     "60":  [
+                                "ZU-P66",
+                                "ZU-G60",
+                                "ZU-J70",
+                                "ZU-R88"
+                            ]
+                 },
+    "ionsunder":  {
+                      "90":  [
+                                 "SD1-O",
+                                 "SD1-OA",
+                                 "SD1-OB",
+                                 "SD1-OC",
+                                 "SD1-OR",
+                                 "SD1-OS",
+                                 "SD1-OF",
+                                 "SD1-OG",
+                                 "SD1-OE",
+                                 "SD1-OX"
+                             ]
+                  },
+    "sunspider":  {
+                      "70":  [
+                                 "SNS-A",
+                                 "SNS-B",
+                                 "SNS-C",
+                                 "SNS-D",
+                                 "SNS-F",
+                                 "SNS-PRIME",
+                                 "SNS-ML (MANUL)",
+                                 "SNS-VG aka VANGUARD",
+                                 "SNS-G",
+                                 "SNS-E"
+                             ]
+                  },
+    "supernova":  {
+                      "90":  [
+                                 "SNV-A",
+                                 "SNV-C",
+                                 "SNV-BR aka BOILER",
+                                 "SNV-4"
+                             ],
+                      "150":  [
+                                  "SNV-KB aka KUGELBLITZ"
+                              ]
+                  },
+    "swd":  {
+                "40":  [
+                           "SWD-1",
+                           "SWD-2",
+                           "SWD-3",
+                           "SWD-4",
+                           "SWD-P"
+                       ]
+            },
+    "talos":  {
+                  "50":  [
+                             "TLS-1B",
+                             "TLS-1P",
+                             "TLS-4A",
+                             "TLS-4B",
+                             "TLS-4C",
+                             "TLS-5A",
+                             "TLS-HB aka HONEY BADGER",
+                             "TLS-7RSC",
+                             "TLS-0",
+                             "TLS-0A",
+                             "TLS-0B",
+                             "TLS-0C",
+                             "TLS-0D",
+                             "TLS-0E"
+                         ]
+              },
+    "thanatos":  {
+                     "75":  [
+                                "TNS-4S",
+                                "TNS-4T",
+                                "TNS-8S"
+                            ]
+                 },
+    "thug":  {
+                 "80":  [
+                            "THG-10E",
+                            "THG-11E",
+                            "THG-11EB",
+                            "THG-11ECX",
+                            "THG-11EM",
+                            "THG-11ER",
+                            "THG-12E",
+                            "THG-12K",
+                            "THG-13K"
+                        ]
+             },
+    "thunderbolt":  {
+                        "65":  [
+                                   "TDR-1C",
+                                   "TDR-5L",
+                                   "TDR-5LS",
+                                   "TDR-5S",
+                                   "TDR-5SB",
+                                   "TDR-5SE",
+                                   "TDR-5SS",
+                                   "TDR-7M",
+                                   "TDR-F4X",
+                                   "TDR-5S-T (TALLMAN)",
+                                   "TDR-8S",
+                                   "TDR-5P"
+                               ],
+                        "60":  [
+                                   "VLP-1D",
+                                   "VLP-1DX"
+                               ],
+                        "70":  [
+                                   "TDR-IIC-1",
+                                   "TDR-IIC-2",
+                                   "TDR-E5 aka ERIS"
+                               ]
+                    },
+    "titanii":  {
+                    "100":  [
+                                "TI-1A",
+                                "TI-1AR",
+                                "TI-2P",
+                                "TI-2PA",
+                                "TI-1AJ"
+                            ]
+                },
+    "toro":  {
+                 "35":  [
+                            "TR-A-1",
+                            "TR-A-6",
+                            "TR-A-11",
+                            "TR-A-8",
+                            "TR-P aka MATADOR",
+                            "TR-S-7"
+                        ]
+             },
+    "trebuchet":  {
+                      "50":  [
+                                 "TBT-3C",
+                                 "TBT-4M",
+                                 "TBT-5J",
+                                 "TBT-5N",
+                                 "TBT-5S",
+                                 "TBT-5SP",
+                                 "TBT-7K",
+                                 "TBT-7M",
+                                 "TBT-8K",
+                                 "TBT-9K",
+                                 "TBT-LG aka LOUPDEGUERRE",
+                                 "TBT-5N (GDL)",
+                                 "TBT-7MM"
+                             ],
+                      "55":  [
+                                 "TBT-6X"
+                             ]
+                  },
+    "urbie":  {
+                  "30":  [
+                             "UM-IIC-1",
+                             "UM-R63",
+                             "UM-R68",
+                             "UM-R69",
+                             "UM-R70",
+                             "UM-IICR",
+                             "UM-R93",
+                             "UM-R96",
+                             "UM-IIC-LF",
+                             "UM-IIC-2",
+                             "UM-AIV",
+                             "UM-R80",
+                             "UM-P",
+                             "UM-RCM",
+                             "UM-R8Q-B aka THE BISHOP",
+                             "UM-IIC-A",
+                             "UM-LAMA",
+                             "UM-R60LLA",
+                             "UM-R61LA",
+                             "UM-R8QA",
+                             "UM-R1005",
+                             "UM-R1010",
+                             "UM-AIV-N",
+                             "UM-R10",
+                             "UM-R20",
+                             "UM-R25",
+                             "UM-R25A",
+                             "UM-R25B",
+                             "UM-R5",
+                             "UM-R59",
+                             "UM-R6",
+                             "UM-R60H",
+                             "UM-R60LL",
+                             "UM-R60LRM",
+                             "UM-R61L",
+                             "UM-R7",
+                             "UM-R8Q",
+                             "UM-RFF1",
+                             "UM-RHW",
+                             "UM-RLG",
+                             "UM-IIC-2G",
+                             "UM-IIC-3X",
+                             "UM-R100X",
+                             "UM-R60LRM-EN",
+                             "UM-R71",
+                             "UM-R81",
+                             "UM-RCR"
+                         ],
+                  "35":  [
+                             "UM-R666",
+                             "UM-R1000"
+                         ],
+                  "70":  [
+                             "UBL-06",
+                             "UBL-20",
+                             "UBL-77",
+                             "UBL-RX"
+                         ]
+              },
+    "urbanmech":  {
+                      "30":  [
+                                 "UM-R60",
+                                 "UM-R60C",
+                                 "UM-R60L",
+                                 "UM-R60SB",
+                                 "UM-R60X",
+                                 "UM-R90",
+                                 "UM-RK9A1 aka DEPUTY DAWG",
+                                 "UM-CR aka COCKROACH",
+                                 "UM-RISC-II",
+                                 "UM-RISC-III",
+                                 "UM-RISC-IV",
+                                 "UM-RISC",
+                                 "UM-R26"
+                             ],
+                      "2":  [
+                                "OSCAR-P"
+                            ],
+                      "35":  [
+                                 "MBT-O",
+                                 "MBT-OA",
+                                 "MBT-OB",
+                                 "MBT-OC",
+                                 "MBT-OD",
+                                 "MBT-OE"
+                             ]
+                  },
+    "valkyrieii":  {
+                       "60":  [
+                                  "VLK-II-1A",
+                                  "VLK-II-HLD",
+                                  "VLK-II-SIG",
+                                  "VLK-II-2A"
+                              ]
+                   },
+    "valkyrie":  {
+                     "30":  [
+                                "VLK-QA",
+                                "VLK-QD",
+                                "VLK-QE",
+                                "VLK-QD1",
+                                "VLK-BA",
+                                "VLK-QS5"
+                            ]
+                 },
+    "victor":  {
+                   "80":  [
+                              "VTR-10B",
+                              "VTR-9A",
+                              "VTR-9A1",
+                              "VTR-9B(C)",
+                              "VTR-9B",
+                              "VTR-9BR",
+                              "VTR-9D-2",
+                              "VTR-9D",
+                              "VTR-9DB",
+                              "VTR-9K",
+                              "VTR-9S",
+                              "VTR-C",
+                              "VTR-9AC",
+                              "VTR-9B-L (LI)",
+                              "VTR-9B-S (SHOJI)",
+                              "VTR-9SI",
+                              "VTR-DS aka DRAGON SLAYER",
+                              "VTR-10D",
+                              "VTR-10L",
+                              "VTR-10S",
+                              "VTR-11D",
+                              "VTR-9-GD",
+                              "VTR-9KA",
+                              "VTR-CR",
+                              "VTR-9K2",
+                              "VTR-P"
+                          ],
+                   "85":  [
+                              "SQS-TH-002",
+                              "C-SRP-O-A (ARCQIEL)",
+                              "C-SRP-O-O (ORSSOS)"
+                          ]
+               },
+    "masonviking":  {
+                        "90":  [
+                                   "VKG-2F",
+                                   "VKG-2G",
+                                   "VKG-3A",
+                                   "VKG-3W",
+                                   "VKG-3X",
+                                   "VKG-IIC",
+                                   "VKG-RX"
+                               ]
+                    },
+    "vindicator":  {
+                       "45":  [
+                                  "VND-1AA",
+                                  "VND-1R",
+                                  "VND-1SIC",
+                                  "VND-1X",
+                                  "VND-3L",
+                                  "VND-BR aka BUTCHER",
+                                  "VND-1R (VONG)",
+                                  "VND-1AAX",
+                                  "VND-6L",
+                                  "VND-3LD",
+                                  "VND-P",
+                                  "VND-RSC"
+                              ]
+                   },
+    "viper":  {
+                  "40":  [
+                             "VPR-A",
+                             "VPR-B",
+                             "VPR-C",
+                             "VPR-D",
+                             "VPR-E",
+                             "VPR-PRIME",
+                             "VPR-H",
+                             "VPR-I",
+                             "VPR-P aka DRAGONFLY"
+                         ]
+              },
+    "visionquest":  {
+                        "60":  [
+                                   "VQ-1",
+                                   "VQ-1NC",
+                                   "VQ-2"
+                               ]
+                    },
+    "warhammeriic":  {
+                         "80":  [
+                                    "WMR-IIC-1",
+                                    "WMR-IIC-2",
+                                    "WMR-IIC-3",
+                                    "WMR-IIC-4",
+                                    "WMR-IIC-12",
+                                    "WMR-IIC-5",
+                                    "WMR-IIC-6",
+                                    "WMR-IIC-7",
+                                    "WMR-IIC-8",
+                                    "WMR-IIC-10",
+                                    "WMR-IIC-11",
+                                    "WMR-IIC-9"
+                                ]
+                     },
+    "warhawk":  {
+                    "85":  [
+                               "WHK-A",
+                               "WHK-B",
+                               "WHK-C",
+                               "WHK-D",
+                               "WHK-F",
+                               "WHK-H",
+                               "WHK-PRIME",
+                               "WHK-P"
+                           ]
+                },
+    "wasplam":  {
+                    "30":  [
+                               "WSP-100A",
+                               "WSP-100B",
+                               "WSP-100 LAM MK I (LAM MK I)",
+                               "WSP-105",
+                               "WSP-105M",
+                               "WSP-110"
+                           ]
+                },
+    "wasp":  {
+                 "20":  [
+                            "WSP-1",
+                            "WSP-1A",
+                            "WSP-1D",
+                            "WSP-1K",
+                            "WSP-1L",
+                            "WSP-1P",
+                            "WSP-1P2",
+                            "WSP-1S",
+                            "WSP-1W",
+                            "WSP-3M",
+                            "WSP-P",
+                            "WSP-P2",
+                            "WSP-P3",
+                            "WSP-P4",
+                            "WSP-P5",
+                            "WSP-P6",
+                            "WSP-P7",
+                            "WSP-P8"
+                        ],
+                 "25":  [
+                            "WSP-2A-X",
+                            "WSP-3-X"
+                        ]
+             },
+    "wolverine":  {
+                      "55":  [
+                                 "WVR-1R",
+                                 "WVR-6K",
+                                 "WVR-6M",
+                                 "WVR-6R",
+                                 "WVR-6T",
+                                 "WVR-7D",
+                                 "WVR-7H",
+                                 "WVR-7K",
+                                 "WVR-7M",
+                                 "WVR-C",
+                                 "WVR-Q aka QUARANTINE",
+                                 "WVR-6R (GDL)",
+                                 "WVR-6R",
+                                 "WVR-DS",
+                                 "WVR-X"
+                             ]
+                  },
+    "wraith":  {
+                   "55":  [
+                              "TR1-TR2",
+                              "TR1",
+                              "TR1-TR3",
+                              "TR2-X aka ALEXANDER",
+                              "TR2-P aka POCAHONTAS"
+                          ]
+               },
+    "yeoman":  {
+                   "60":  [
+                              "YMN-6Y",
+                              "YMN-6D",
+                              "YMN-6K",
+                              "YMN-11R",
+                              "YMN-10-OR",
+                              "YMN-P",
+                              "YMN-LSD"
+                          ]
+               },
+    "zeus":  {
+                 "80":  [
+                            "ZEU-5S",
+                            "ZEU-5T",
+                            "ZEU-6S-DC",
+                            "ZEU-6S",
+                            "ZEU-6T",
+                            "ZEU-6Y",
+                            "ZEU-IS",
+                            "ZEU-11S",
+                            "ZEU-10WB"
+                        ],
+                 "85":  [
+                            "ZEU-C"
+                        ]
+             },
+    "zeusx":  {
+                  "80":  [
+                             "ZEU-X",
+                             "ZEU-9WD",
+                             "ZEU-X2",
+                             "ZEU-9WD (STACY)",
+                             "ZEU-XP",
+                             "ZEU-X3",
+                             "ZEU-X4",
+                             "ZEU-XR"
+                         ]
+              },
+    "hatchetman":  {
+                       "65":  [
+                                  "AXM-1N",
+                                  "AXM-2N",
+                                  "AXM-3S",
+                                  "AXM-4D",
+                                  "AXM-6XFLAMER",
+                                  "AXM-6XLAC5",
+                                  "AXM-6XMML",
+                                  "AXM-6XMRM",
+                                  "AXM-6XPPC"
+                              ],
+                       "100":  [
+                                   "BRZ-A3"
+                               ],
+                       "45":  [
+                                  "HCT-3F",
+                                  "HCT-3X",
+                                  "HCT-5S",
+                                  "HCT-5D",
+                                  "HCT-5DD",
+                                  "HCT-5K"
+                              ],
+                       "70":  [
+                                  "NDA-1K",
+                                  "NDA-2K0",
+                                  "NDA-RYU aka MITSURUGI-RYU"
+                              ],
+                       "55":  [
+                                  "HK-1F",
+                                  "HK-1P",
+                                  "HCT-S7"
+                              ],
+                       "50":  [
+                                  "HCT-P"
+                              ],
+                       "75":  [
+                                  "MS-1A",
+                                  "MS-1P",
+                                  "MTS-PV"
+                              ]
+                   },
+    "crab":  {
+                 "50":  [
+                            "CRB-20",
+                            "CRB-27",
+                            "CRB-27B",
+                            "CRB-27SL",
+                            "CRB-30",
+                            "CRB-C",
+                            "CRB-FL aka FLORENTINE",
+                            "CRB-S",
+                            "CRB-IIC",
+                            "CRB-21",
+                            "CRB-22S",
+                            "CRB-IIC-2",
+                            "CRB-GI aka GEMJI",
+                            "CRB-27-H"
+                        ],
+                 "40":  [
+                            "STN-1S",
+                            "STN-3K",
+                            "STN-3KA",
+                            "STN-3KB",
+                            "STN-3L",
+                            "STN-3LB",
+                            "STN-3M",
+                            "STN-4D",
+                            "STN-C",
+                            "STN-5WB"
+                        ]
+             },
+    "cyclops":  {
+                    "90":  [
+                               "CP-10-HQ",
+                               "CP-10-Q",
+                               "CP-10-Z",
+                               "CP-11-A-DC",
+                               "CP-11-A",
+                               "CP-11-C",
+                               "CP-11-G",
+                               "CP-12-K",
+                               "CP-11-H",
+                               "CP-11-Z",
+                               "CP-11-P"
+                           ],
+                    "30":  [
+                               "CP-50-T aka SCOTT"
+                           ]
+                },
+    "screamer":  {
+                     "55":  [
+                                "SCR-1X-LAM"
+                            ]
+                 },
+    "annihilator":  {
+                        "100":  [
+                                    "ANH-1A",
+                                    "ANH-1E",
+                                    "ANH-2A",
+                                    "ANH-IIC",
+                                    "ANH-GSZ aka GAUSSZILLA",
+                                    "ANH-GSZC aka GAUSSZILLA",
+                                    "ANH-3A",
+                                    "ANH-4A",
+                                    "ANH-2AX",
+                                    "ANH-SG aka SCHWERER GUSTAV",
+                                    "ANH-RC",
+                                    "ANH-JH",
+                                    "ANH-THP aka THUMPERILLA",
+                                    "ANH-KS aka KURO SHI",
+                                    "ANH-GZ aka MECHAGODZILLA"
+                                ]
+                    },
+    "archer":  {
+                   "55":  [
+                              "APL-1M",
+                              "APL-1R",
+                              "APL-2S",
+                              "APL-3T",
+                              "APL-3F",
+                              "APL-4M"
+                          ],
+                   "70":  [
+                              "ARC-1A",
+                              "ARC-2K",
+                              "ARC-2R",
+                              "ARC-2RB",
+                              "ARC-2S",
+                              "ARC-2W",
+                              "ARC-4M",
+                              "ARC-5R",
+                              "ARC-5S",
+                              "ARC-5W",
+                              "ARC-8L",
+                              "ARC-C",
+                              "ARC-4MI",
+                              "ARC-WLF (WOLF)",
+                              "ARC-6S",
+                              "ARC-6W",
+                              "ARC-7L",
+                              "ARC-8M",
+                              "ARC-C2",
+                              "ARC-4M",
+                              "ARC-2R (GDL)",
+                              "ARC-7S",
+                              "ARC-9K",
+                              "ARC-9M",
+                              "ARC-9W",
+                              "ARC-0",
+                              "ARC-P",
+                              "ARC-9KC",
+                              "ARC-LS",
+                              "ARC-XO",
+                              "ARC-XR aka ATHENA",
+                              "BC-O aka BABD CATHA",
+                              "BC-OA aka BABD CATHA",
+                              "BC-OB aka BABD CATHA",
+                              "BC-OC aka BABD CATHA",
+                              "BC-OD aka BABD CATHA"
+                          ],
+                   "65":  [
+                              "BMB-05A",
+                              "BMB-10D",
+                              "BMB-12D",
+                              "BMB-14C",
+                              "BMB-14K"
+                          ],
+                   "45":  [
+                              "STH-1D",
+                              "STH-2D",
+                              "STH-2D1",
+                              "STH-2D2",
+                              "STH-3S",
+                              "STH-1D (ANNA)",
+                              "STH-5X"
+                          ]
+               },
+    "assassin":  {
+                     "40":  [
+                                "ASN-101",
+                                "ASN-21",
+                                "ASN-23",
+                                "ASN-30",
+                                "ASN-SRV aka SERVITOR",
+                                "ASN-21 (GDL)",
+                                "ASN-99",
+                                "ASNII-O",
+                                "ASNII-OA",
+                                "ASNII-OB",
+                                "ASNII-OC",
+                                "ASNII-OD",
+                                "ASNII-RX",
+                                "ASNII-S7"
+                            ],
+                     "65":  [
+                                "EXT-4D",
+                                "EXT-4DB",
+                                "EXT-6W"
+                            ],
+                     "55":  [
+                                "MHL-X1",
+                                "MHL-2L",
+                                "MHL-6MC",
+                                "MHL-3MC"
+                            ],
+                     "75":  [
+                                "WW1-PRIME"
+                            ]
+                 },
+    "flea":  {
+                 "15":  [
+                            "FLE-14",
+                            "PY-SR10"
+                        ],
+                 "20":  [
+                            "FLE-15",
+                            "FLE-16",
+                            "FLE-17",
+                            "FLE-4",
+                            "FLE-RS",
+                            "TP-1R aka TROOPER",
+                            "FLE-FA aka FIRE ANT",
+                            "FLE-19",
+                            "FLE-20",
+                            "FLE-4 (NUKER)"
+                        ]
+             },
+    "phoenixhawk":  {
+                        "45":  [
+                                   "PXH-1",
+                                   "PXH-1B",
+                                   "PXH-1K",
+                                   "PXH-1C",
+                                   "PXH-1D",
+                                   "PXH-1GS",
+                                   "PXH-2",
+                                   "PXH-2L",
+                                   "PXH-3D",
+                                   "PXH-3K",
+                                   "PXH-3M",
+                                   "PXH-3S",
+                                   "PXH-1",
+                                   "PXH-JMN (JIEMIN)"
+                               ],
+                        "55":  [
+                                   "GF-1",
+                                   "GF-2",
+                                   "GF-3",
+                                   "GF-4",
+                                   "GF-WL"
+                               ],
+                        "80":  [
+                                   "PXH-IIC aka PHOENIXHAWK"
+                               ]
+                    },
+    "rifleman":  {
+                     "80":  [
+                                "RFL-3N-2",
+                                "RFL-3N-2P aka RIFLEMAN"
+                            ],
+                     "50":  [
+                                "RFL-1N"
+                            ],
+                     "60":  [
+                                "RFL-3C",
+                                "RFL-3N",
+                                "RFL-3N (C) ((C))",
+                                "RFL-4D",
+                                "RFL-LK aka LEGEND-KILLER",
+                                "RFL-3N (GDL)",
+                                "RFL-3N (GDL)",
+                                "RFL-3N",
+                                "RFL-3CR",
+                                "RFL-X3",
+                                "RFL-RIP",
+                                "MHC-O aka MHACHA",
+                                "MHC-OA aka MHACHA",
+                                "MHC-OB aka MHACHA"
+                            ],
+                     "55":  [
+                                "WVR-RFL",
+                                "WVR-RFL2",
+                                "WVR-RFL3"
+                            ],
+                     "90":  [
+                                "RFL-III-C"
+                            ]
+                 },
+    "vulcan":  {
+                   "45":  [
+                              "ST-24G",
+                              "ST-14G"
+                          ],
+                   "40":  [
+                              "VL-2T",
+                              "VL-2TR",
+                              "VL-5T",
+                              "VL-6M",
+                              "VL-VT-5M",
+                              "VL-VT-5S",
+                              "VL-2TT (TIMMS)",
+                              "VL-VT-BL",
+                              "VLC-N3",
+                              "VLC-N4M",
+                              "VL-7M",
+                              "VL-VT-5ML",
+                              "VT-5SR",
+                              "VT-6C",
+                              "VT-6M"
+                          ]
+               },
+    "argus":  {
+                  "60":  [
+                             "AGS-1X",
+                             "AGS-2D",
+                             "AGS-3D",
+                             "AGS-4D",
+                             "AGS-5D",
+                             "AGS-6F",
+                             "AGS-8DX",
+                             "AGS-P aka ARRRRGUS"
+                         ]
+              },
+    "chargerpb":  {
+                      "75":  [
+                                 "CGR-PB aka PUNCH BOT"
+                             ]
+                  },
+    "rtcorsair4":  {
+                       "95":  [
+                                  "COR-RA"
+                              ]
+                   },
+    "hatamotochisam":  {
+                           "80":  [
+                                      "HTM-27T (DANIEL)",
+                                      "HTM-SAM"
+                                  ]
+                       },
+    "javelin":  {
+                    "30":  [
+                               "JVN-10A",
+                               "JVN-10F",
+                               "JVN-10N",
+                               "JVN-10P",
+                               "JVN-11A",
+                               "JVN-11B",
+                               "JVN-11D",
+                               "JVN-11F"
+                           ]
+                },
+    "raven":  {
+                  "35":  [
+                             "RVN-1X",
+                             "RVN-2X",
+                             "RVN-3L",
+                             "RVN-3M",
+                             "RVN-3X",
+                             "RVN-H aka HUGINN",
+                             "RVN-M aka MUNINN",
+                             "RVN-LR aka DAGGER",
+                             "RVN-4L",
+                             "RVN-LR-P aka RAPIER"
+                         ],
+                  "40":  [
+                             "RVN-G aka GRIP",
+                             "RPT-2L",
+                             "RPT-2X",
+                             "RPT-2X1",
+                             "RPT-3X",
+                             "RPT-5X",
+                             "RPT-2X2",
+                             "RVN-5X",
+                             "RPT-RX",
+                             "RPT3-O aka RAPTOR III",
+                             "RPT3-OA aka RAPTOR III",
+                             "RPT3-OB aka RAPTOR III",
+                             "RPT3-OC aka RAPTOR III",
+                             "RPT3-OD aka RAPTOR III",
+                             "RPT3-OE aka RAPTOR III",
+                             "RPT3-OF aka RAPTOR III"
+                         ]
+              },
+    "arcticwolf":  {
+                       "40":  [
+                                  "ACW-BK",
+                                  "ACW-P",
+                                  "ACW-1",
+                                  "ACW-PRIME",
+                                  "ACW-X",
+                                  "ACWII-PRIME"
+                              ],
+                       "45":  [
+                                  "AWII-S7 aka STORM WOLF"
+                              ]
+                   },
+    "anubis":  {
+                   "30":  [
+                              "ABS-3L",
+                              "ABS-3R",
+                              "ABS-3T",
+                              "ABS-4C",
+                              "ABS-3MC",
+                              "ABS-P",
+                              "ABS-5Y",
+                              "ABS-5Z",
+                              "ABS-RX",
+                              "ABS-S7"
+                          ],
+                   "55":  [
+                              "RB-1",
+                              "RB-2",
+                              "RB-P",
+                              "RB-3"
+                          ],
+                   "45":  [
+                              "ABSII-O aka IMIUT",
+                              "ABSII-OA aka IMIUT",
+                              "ABSII-OB aka IMIUT"
+                          ]
+               },
+    "chimera":  {
+                    "40":  [
+                               "CMA-1S",
+                               "CMA-C",
+                               "CMA-2K"
+                           ]
+                },
+    "fafnir":  {
+                   "100":  [
+                               "DKA-1S",
+                               "FNR-5",
+                               "FNR-5B",
+                               "FNR-5C",
+                               "FNR-P",
+                               "FNR-5X",
+                               "FNR-4A",
+                               "FNR-S7"
+                           ],
+                   "200":  [
+                               "FNR-SH aka TIAMAT"
+                           ]
+               },
+    "hellspawn":  {
+                      "45":  [
+                                 "HSN-7D",
+                                 "HSN-8D",
+                                 "HSN-10G",
+                                 "HSN-10SR",
+                                 "HSN-8E",
+                                 "HSN-9F",
+                                 "HSN-7D2",
+                                 "HSN-V",
+                                 "HSN-7S"
+                             ]
+                  },
+    "laohu":  {
+                  "75":  [
+                             "LHU-2B",
+                             "LHU-3B",
+                             "LHU-3C",
+                             "LHU-3L",
+                             "LHU-4E"
+                         ]
+              },
+    "osiris":  {
+                   "30":  [
+                              "OSR-1P",
+                              "OSR-1V",
+                              "OSR-2V",
+                              "OSR-3D",
+                              "OSR-4C",
+                              "OSR-4D",
+                              "OSR-5D",
+                              "OSR-SE"
+                          ]
+               },
+    "kanazuchis":  {
+                       "10":  [
+                                  "PX-A"
+                              ]
+                   },
+    "razorback":  {
+                      "30":  [
+                                 "RZK-9S",
+                                 "RZK-9T",
+                                 "RZK-11T",
+                                 "RZK-10S",
+                                 "RZK-10T",
+                                 "RZK-P"
+                             ]
+                  },
+    "templar":  {
+                    "85":  [
+                               "TLR1-O",
+                               "TLR1-OA",
+                               "TLR1-OB",
+                               "TLR1-OC",
+                               "TLR1-OD",
+                               "TLR1-OE",
+                               "TLR2-O",
+                               "TLR2-OA",
+                               "TLR2-OB",
+                               "TLR2-OC",
+                               "TLR2-OD",
+                               "TLR1-OR",
+                               "TLR1-OF",
+                               "TLR1-OG",
+                               "TLR1-OH",
+                               "TLR1-OI",
+                               "TLR2-RX",
+                               "TLR1-OS"
+                           ]
+                },
+    "uziel":  {
+                  "50":  [
+                             "UZL-2S",
+                             "UZL-3S",
+                             "UZL-4L",
+                             "UZL-2SJ",
+                             "UZL-2SJII",
+                             "UZL-P",
+                             "UZL-RX"
+                         ]
+              },
+    "vanquisher":  {
+                       "100":  [
+                                   "VQR-2A",
+                                   "VQR-2B",
+                                   "VQR-5V",
+                                   "VQR-7U",
+                                   "VQR-7V",
+                                   "VQR-7V (PRAVUIL)"
+                               ]
+                   },
+    "archangel":  {
+                      "55":  [
+                                 "KHP-7R",
+                                 "KHP-8R",
+                                 "KHP-9R"
+                             ],
+                      "100":  [
+                                  "C-ANG-O-C (CIROSS)",
+                                  "C-ANG-O-DAM (DAM)",
+                                  "C-ANG-O-S (SNAFU)",
+                                  "C-ANG-OA (DOMINUS)",
+                                  "C-ANG-OB (INFERNUS)",
+                                  "C-ANG-OC (COMMINUS)",
+                                  "C-ANG-OD (LUMINOS)",
+                                  "C-ANG-OE (EMINUS)",
+                                  "C-ANG-OS (CAELESTIS)",
+                                  "C-ANG-O (INVICTUS)",
+                                  "C-ANG-O-B (BERITH)",
+                                  "C-ANG-O-RX (RX)"
+                              ],
+                      "70":  [
+                                 "C-DVA-OA (DOMINUS)",
+                                 "C-DVA-OB (INFERNUS)",
+                                 "C-DVA-OC (COMMINUS)",
+                                 "C-DVA-OD (LUMINOS)",
+                                 "C-DVA-OE (EMINUS)",
+                                 "C-DVA-OS (CAELESTIS)",
+                                 "C-DVA-O (INVICTUS)",
+                                 "C-DVA-O-A (ACHILLEUS)"
+                             ],
+                      "85":  [
+                                 "C-SRP-OA (DOMINUS)",
+                                 "C-SRP-OB (INFERNUS)",
+                                 "C-SRP-OC (COMMINUS)",
+                                 "C-SRP-OD (LUMINOS)",
+                                 "C-SRP-OE (EMINUS)",
+                                 "C-SRP-OS (CAELESTIS)",
+                                 "C-SRP-O (INVICTUS)",
+                                 "C-SRP-O-H (HAVALAH)",
+                                 "C-SRP-O-R (RAVANA)"
+                             ]
+                  },
+    "bullshark":  {
+                      "85":  [
+                                 "OM-2",
+                                 "OM-1"
+                             ],
+                      "95":  [
+                                 "BSK-M3",
+                                 "BSK-MAZ"
+                             ]
+                  },
+    "bruin":  {
+                  "80":  [
+                             "BRN-1",
+                             "BRN-2"
+                         ]
+              },
+    "cephalus":  {
+                     "25":  [
+                                "CPH-A",
+                                "CPH-B",
+                                "CPH-C",
+                                "CPH-D",
+                                "CPH-E",
+                                "CPH-PRIME"
+                            ]
+                 },
+    "preta":  {
+                  "60":  [
+                             "C-GRG-OA (DOMINUS)",
+                             "C-GRG-OB (INFERNUS)",
+                             "C-GRG-OC (COMMINUS)",
+                             "C-GRG-OD (LUMINOS)",
+                             "C-GRG-OE (EMINUS)",
+                             "C-GRG-OS (CAELESTIS)",
+                             "C-GRG-O (INVICTUS)",
+                             "C-GRG-O-R (RUFUS)",
+                             "C-GRG-O-T (TAMIEL)"
+                         ],
+                  "30":  [
+                             "C-MK-OA (DOMINUS)",
+                             "C-MK-OB (INFERNUS)",
+                             "C-MK-OC (COMMINUS)",
+                             "C-MK-OD (LUMINOS)",
+                             "C-MK-OE (EMINUS)",
+                             "C-MK-OS (CAELESTIS)",
+                             "C-MK-O (INVICTUS)",
+                             "C-MK-O-M (MI)"
+                         ],
+                  "45":  [
+                             "C-PRT-OA (DOMINUS)",
+                             "C-PRT-OB (INFERNUS)",
+                             "C-PRT-OC (COMMINUS)",
+                             "C-PRT-OD (LUMINOS)",
+                             "C-PRT-OE (EMINUS)",
+                             "C-PRT-OS (CAELESTIS)",
+                             "C-PRT-O (INVICTUS)",
+                             "D2X-G",
+                             "C-PRT-O-K (KENDALI)",
+                             "C-PRT-O-PX (PX) aka KERES"
+                         ]
+              },
+    "Brawler":  {
+                    "30":  [
+                               "HSR-950-D"
+                           ]
+                },
+    "osteon":  {
+                   "85":  [
+                              "OTN-A",
+                              "OTN-B",
+                              "OTN-C",
+                              "OTN-D",
+                              "OTN-E",
+                              "OTN-F",
+                              "OTN-G",
+                              "OTN-PRIME",
+                              "OTN-J"
+                          ]
+               },
+    "sluf":  {
+                 "30":  [
+                            "S-PW-1LAM",
+                            "S-PW-2LAM",
+                            "S-PW-3LAM"
+                        ]
+             },
+    "septicemia":  {
+                       "55":  [
+                                  "SPT-A-Z",
+                                  "SPT-A",
+                                  "SPT-B-Z",
+                                  "SPT-B",
+                                  "SPT-D-Z",
+                                  "SPT-D",
+                                  "SPT-E",
+                                  "SPT-F",
+                                  "SPT-PRIME",
+                                  "SPT-US"
+                              ]
+                   },
+    "valiant":  {
+                    "30":  [
+                               "V4-LNT-K7",
+                               "V4-VAL-NT-JX",
+                               "V4-VAL-NT-P"
+                           ]
+                },
+    "waneta":  {
+                   "55":  [
+                              "S-WN-1LAM",
+                              "S-WN-2LAM",
+                              "S-WN-3LAM"
+                          ]
+               },
+    "jaguarlam":  {
+                      "40":  [
+                                 "S-YR-1LAM",
+                                 "S-YR-2LAM",
+                                 "S-YR-3LAM"
+                             ]
+                  },
+    "arthur":  {
+                   "95":  [
+                              "PDG-1X",
+                              "PDG-1R",
+                              "PDG-2R",
+                              "PDG-3R"
+                          ]
+               },
+    "redreaper":  {
+                      "75":  [
+                                 "BL-X-KNT aka RED REAPER",
+                                 "BL-X2-KNT aka RED REAPER"
+                             ],
+                      "40":  [
+                                 "CDR-1X",
+                                 "CDR-2X"
+                             ]
+                  },
+    "xenorauder":  {
+                       "200":  [
+                                   "LVT-BKQN aka BLACK QUEEN"
+                               ],
+                       "75":  [
+                                  "MAD-PX"
+                              ]
+                   },
+    "blackbeard":  {
+                       "100":  [
+                                   "AS7-D-HBB aka BLACK BEARD"
+                               ]
+                   },
+    "shankey":  {
+                    "25":  [
+                               "COM-SP-2",
+                               "COM-SP"
+                           ]
+                },
+    "rtcorsair5":  {
+                       "95":  [
+                                  "COR-8R",
+                                  "COR-8R2",
+                                  "COR-8R3"
+                              ]
+                   },
+    "warthoglamv2":  {
+                         "55":  [
+                                    "WTG-A10"
+                                ]
+                     },
+    "iondoloire":  {
+                       "80":  [
+                                  "DLR-O",
+                                  "DLR-OA",
+                                  "DLR-OB",
+                                  "DLR-OBLO",
+                                  "DLR-OC",
+                                  "DLR-OD"
+                              ]
+                   },
+    "neand":  {
+                  "80":  [
+                             "NTL-AG",
+                             "NTL-UG"
+                         ]
+              },
+    "iononanger":  {
+                       "90":  [
+                                  "OGR-1",
+                                  "OGR-2"
+                              ]
+                   },
+    "lament":  {
+                   "65":  [
+                              "LMT-2D",
+                              "LMT-2R",
+                              "LMT-3C",
+                              "LMT-3L",
+                              "LMT-3M",
+                              "LMT-3R",
+                              "LMT-4RC",
+                              "LMT-5D"
+                          ],
+                   "75":  [
+                              "LMT-S7 aka DIRGE"
+                          ]
+               },
+    "groovey":  {
+                    "40":  [
+                               "PNT-P aka EX MORTIS"
+                           ]
+                },
+    "omega":  {
+                  "200":  [
+                              "SHP-C"
+                          ],
+                  "150":  [
+                              "SHP-X4"
+                          ]
+              },
+    "clif":  {
+                 "25":  [
+                            "BEE-17989 aka BEETLE RED"
+                        ]
+             },
+    "bumb":  {
+                 "25":  [
+                            "BEE-17989 aka BEETLE YELLOW"
+                        ]
+             },
+    "star":  {
+                 "55":  [
+                            "CS-1X aka COMET SCREAM"
+                        ]
+             },
+    "arce":  {
+                 "55":  [
+                            "EC-131"
+                        ]
+             },
+    "grimlock":  {
+                     "100":  [
+                                 "GRD aka GRIMDARK"
+                             ]
+                 },
+    "side":  {
+                 "65":  [
+                            "LBR-R1 aka LAMBOR RED"
+                        ]
+             },
+    "sun":  {
+                "65":  [
+                           "LBR-Y1 aka LAMBOR YELLOW"
+                       ]
+            },
+    "swav":  {
+                 "85":  [
+                            "NOJAM-0101 aka NOISE JAMMER"
+                        ]
+             },
+    "mira":  {
+                 "45":  [
+                            "MK-109"
+                        ]
+             },
+    "opt":  {
+                "85":  [
+                           "OPT-PRIME aka PRIMUS OPTIMAL"
+                       ]
+            },
+    "urbielord":  {
+                      "30":  [
+                                 "UM-LAM",
+                                 "UM-R60-LAM-MKII",
+                                 "UM-R60-LAM"
+                             ]
+                  }
+}

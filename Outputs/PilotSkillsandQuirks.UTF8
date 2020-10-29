@@ -1,0 +1,337 @@
+﻿{{-start-}}
+'''Pilot Skills and Quirks'''
+This page provides overview of mechwarriors passive/active Skills and Quirks in the RogueTech mod:
+
+* Reworked skill tree with additional bonuses provided to mechwarriors
+* Reworked abilities
+* Mechwarrior/Pilot quirks now provide benefits or penalties to various skills and other benefits
+
+= Resetting the Skill Tree =
+To reset the skill tree, SHIFT+LMB the Skills Tab. This will cost 500K.
+
+''aka Reskill, Re-skill, change skill, respec''
+
+= Skill Tree =
+== Passive Roll Bonus (PRB)==
+Each point in a skill provides a passive bonus to rolls, and can go beyond the 10 through additional equipment and pilot's quirks.
+
+* Gunnery: Accuracy, Weapon Jamming
+* Piloting: Initiative, Melee
+* Guts: Panic, Injury Resist, Heat (i.e. Shutdown Override, Ammo Explosion, etc.)
+* Tactics: Sensor, Initiative
+
+Special article on [[How Gunnery Affects CTH]], since the maths is ''special''.
+
+In addition to these passive bonuses, there are other explicit bonuses. See the Skills Table below.
+
+== Skills Table ==
+
+{| class="wikitable"
+! colspan="2" |
+!1
+!2
+!3
+!4
+!5
+!6
+!7
+!8
+!9
+!10
+|-
+! rowspan="3" |<small>Gunnery</small>
+!<small>Base CTH%<br>(+Acc Equivalent)</small>
+|<small>+1%</small>
+|<small>+2%</small>
+|<small>+3%</small>
+|<small>+4%</small>
+|<small>+5%</small>
+|<small>+6%</small>
+|<small>+7%</small>
+|<small>+8%</small>
+|<small>+9%</small>
+|<small>+10%</small>
+|-
+!<small>Jam Chance</small>
+|<small>-1%</small>
+|<small>-2%</small>
+|<small>-3%</small>
+|<small>-4%</small>
+|<small>-5%</small>
+|<small>-6%</small>
+|<small>-7%</small>
+|<small>-8%</small>
+|<small>-9%</small>
+|<small>-10%</small>
+|-
+!<small>Unjam Chance</small>
+|<small>+10%</small>
+|<small>+20%</small>
+|<small>+30%</small>
+|<small>+40%</small>
+|<small>+50%</small>
+|<small>+60%</small>
+|<small>+70%</small>
+|<small>+80%</small>
+|<small>+90%</small>
+|<small>+100%</small>
+|-
+! rowspan="2" |<small>Piloting</small>
+!<small>Melee Accuracy</small>
+|<small>+2%</small>
+|<small>+4%</small>
+|<small>+6%</small>
+|<small>+8%</small>
+|<small>+10%</small>
+|<small>+12%</small>
+|<small>+14%</small>
+|<small>+16%</small>
+|<small>+18%</small>
+|<small>+20%</small>
+|-
+!<small>Initiative Randomness</small>
+|
+|<small>-1</small>
+|
+|<small>-2</small>
+|
+|<small>-3</small>
+|
+|<small>-4</small>
+|
+|<small>-5</small>
+|-
+! rowspan="1" |<small>Guts</small>
+!<small>Resist:<br>Initiative,&nbsp;Injury,&nbsp;& Melee</small>
+|
+|<small>1</small>
+|
+|<small>2</small>
+|
+|<small>3</small>
+|
+|<small>4</small>
+|
+|<small>5</small>
+|-
+! rowspan="1" |<small>Tactics</small>
+!<small>Initiative, Reduced&nbsp;Hesitation</small>
+|
+|<small>1</small>
+|
+|<small>2</small>
+|
+|<small>3</small>
+|
+|<small>4</small>
+|
+|<small>5</small>
+|}
+
+== Abilities ==
+The table below provides overview of active skills in the RogueTech. There are two types:
+* Passive: these skills are always 'on' and apply their bonuses.
+* Active: these skills require to be activated to apply their bonuses, but do not end turn. 
+
+{| class="wikitable"
+!
+!Tier
+!Abilities
+!Description
+|-
+! rowspan="4" |Gunnery
+! rowspan="2" |Level 5</br>Passive
+!Bandit
+|
+* Critical Strike Chance Increase: 25%
+* Clustering Roll Modifiers: +6
+|-
+!Focus Fire</br><small>Passive</small>
+|
+* Improved Called Shot Multiplier: 6% 
+* Recoil: -1
+|-
+! rowspan="2" |Level 8</br>Active
+!Warlord
+|
+* Accuracy: +1
+* Clustering Roll Modifiers: +10
+* Improved Called Shot Multiplier: 10%
+* Cooldown: 3 turns
+|-
+!Controlled Bursts
+|
+* Heat Generated: -10%, 2 turns
+* Recoil: -1, 2 turns
+* Cooldown: 3 Turns
+|-
+! rowspan="4" |Piloting
+! rowspan="2" |Level 5</br>Passive
+!Awareness
+|
+* Evasive Pips are immune to sensor locks
+|-
+!Escapist
+|
+* Max Evasive Pips: +2
+|-
+! rowspan="2" |Level 8</br>Active
+!Mobility
+|
+* Walk MovePoints: +1
+* Cooldown: 3 Turns
+|-
+!Phantom Mech
+|
+* ECM: +2, 2 turns
+* Visibility and Sensor Signatures: -50%, 2 turns
+* Cooldown: 3 turns
+|-
+! rowspan="4" |Guts
+! rowspan="2" |Level 5</br>Passive
+!Hardcase
+|
+* Stability Damage Taken: -10%
+|-
+!Juggernaut
+|
+* Initiative, Injury, and Melle Resist: +1
+* Braces afer Melee and DFA
+|-
+! rowspan="2" |Level 8</br>Active
+!Berserker
+|
+* For All Melee Attacks:
+** Accuracy: +1
+** Damage: +20%
+** Charge Self Damage: -10%
+** DFA Self Damage: -15%
+* Cooldown: 3 turns
+|-
+!Coolant Vent
+|
+* Heat Sink Capacity: +60
+* Cooling Penalty: -30, 3 turns
+** Cooling improves by 10 each turn until recovered.
+* Cooldown: 4 turns
+|-
+! rowspan="4" |Tactics
+! rowspan="2" |Level 5</br>Passive
+!Cautious
+|
+* Stability Bars Removed When Reserving: 1
+* Initiative and Tactics Rolls: +1
+|-
+!Tactician
+|
+* Maximum Sight/Sensor Distance: +15%
+* Initiative and Tactics Rolls: +1
+|-
+! rowspan="2" |Level 8</br>Active
+!Field Command
+|
+* All player units gain:
+** Sensors: +1, 2 turns
+** Sensors/Sight Distance: +15%, 2 turns
+* Initiative and Tactics Rolls: +1
+* Cooldown: 3 turns
+|-
+!Sensor Lock
+|
+* Target 1 enemy unit in sensor range
+** Revealed until end of round
+** 1 Evasive Pip removed
+** Sensor Signature and Visibility: +100%
+* Initiative and Tactics Rolls: +1
+* DOES NOT END YOUR TURN
+|}
+
+== Pilot Quirks ==
+The table below provides an overview of the mechwarrior quirks.
+
+{| class="wikitable"
+!Quirk
+!Description
+|-
+| Assassin
+| +10% Called Shot. +5% Upkeep
+|-
+| Athletic
+| +1 Bonus Health. +5% Upkeep
+|-
+| Bookish
+| +5%Sight&Sensors. +5% Pilot Upkeep
+|-
+| Brave
+| +1 Resolve. Improved Panic Resistance. +5% Upkeep.
+|-
+| Cautious
+| +1 Evasion Generated. -1 Accuracy.
+|-
+| Commander
+| +1 Lance Resolve. +1 Morale. +10% Pilot Upkeep
+|-
+| Criminal
+| 10% Chance to Steal 1000 Cbills From OR For You.
+|-
+| Dependable
+| -5% Stability Taken. Improved Panic Resist. +5% Upkeep
+|-
+| Digraced
+| +1 ECM Shield and Probe. -1 Morale.
+|-
+| Dishonest
+| 5% Chance to Steal 500 Cbills From OR For You.
+|-
+| Drunk
+| +5% Stability Taken. Avoids Panic Eject.
+|-
+| Ex-Comstar
+| +5%Sight&Sensors. +0.5 MechTech. +10% Pilot Upkeep
+|-
+| Ex-Military
+| +1 Bonus Health. -1 Recoil. +15% Upkeep
+|-
+| Gladiator
+| +15% Punch/Kick/Phys Melee Damage % Stability. +20% Upkeep.
+|-
+| Honest
+| +1 Morale. +5% Upkeep.
+|-
+| Jinxed
+| +1 Evasion Gained & Max. -1 Defense.
+|-
+| Klutz
+| +1 Evasion Gain. May Eject when Knockdown.
+|-
+| LosTech Experience
+| +0.5 MechTech. Reduces Cost and Upkeep for Argo System Upgrades by 5%. 10% Pilot Upkeep.
+|-
+| Lucky
+| +1 Clustering. +5% Upkeep
+|-
+| Mechwarrior
+| +1 Initiative. +5% Upkeep
+|-
+| Merchant
+| Reduces Argo Upkeep by 5%. 5% Chance for 1000Cbills/Day. 10% Pilot Upkeep.
+|-
+| Noble
+| Reduces Cost and Upkeep for Argo Morale and Med Upgrades by 5%. 15% Pilot Upkeep.
+|-
+| Officer
+| +2.5 Lance Sight&Sensors. +10% Upkeep
+|-
+| Reckless
+| +1 Evasion Ignore. -1 Max Evasion.
+|-
+| Spacer
+| Reduces Argo Upkeep and Upgrade Costs by 5%. 10% Pilot Upkeep.
+|-
+| Technician
+| +1 MechTech. Reduces Cost and Upkeep for Mechbay Upgrades by 5%. 10% Pilot Upkeep.
+|-
+| Wealthy
+| -50% Pilot Upkeep.
+|}
+{{-stop-}}

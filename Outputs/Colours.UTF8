@@ -1,0 +1,55 @@
+﻿{{-start-}}
+'''Contract Cosmetic Rework'''
+= Contract Cosmetics =
+
+== Contract Name ==
+Contract Names are now randomly generated from a pool of possible combinations. 
+
+== Contract Colors ==
+{| class="wikitable sortable"
+|-
+! Color !! Contract Type
+|-
+! <span style="color:#4FAA3F; opacity:0.8">'''#4FAA3F'''</span>
+| SimpleBattle, ThreeWayBattle
+|-
+! <span style="color:#F12C0E; opacity:0.75">'''#F12C0E'''</span>
+| DestroyBase
+|-
+! <span style="color:#0EF1A5; opacity:0.78">'''#0EF1A5'''</span>
+| CaptureBase
+|-
+! <span style="color:#F1690E; opacity:0.86">'''#F1690E'''</span>
+| CaptureEscort
+|-
+! <span style="color:#7A0B8E; opacity:0.76">'''#7A0B8E'''</span>
+| Rescue
+|-
+! <span style="color:#300B9A; opacity:0.70">'''#300B9A'''</span>
+| Assassinate
+|-
+! <span style="color:#0ECFF1; opacity:0.83">'''#0ECFF1'''</span>
+| DefendBase
+|-
+! <span style="color:#7A0B8E; opacity:0.66">'''#7A0B8E'''</span>
+| EscortSingle
+|-
+! <span style="color:#ADF13E; opacity:0.8">'''#ADF13E'''</span>
+| AmbushConvoy
+|-
+! <span style="color:#F10ECB; opacity:0.86">'''#F10ECB'''</span>
+| FireMission
+|-
+! <span style="color:#A40A38; opacity:0.76">'''#A40A38'''</span>
+| AttackDefend
+|-
+! <span style="color:#FA003E; opacity:0.76">'''#FA003E'''</span>
+| SoloDuel
+|-
+! <span style="color:#8E280B; opacity:0.83">'''#8E280B'''</span>
+| DouDuel
+|-
+! <span style="color:#0F0F0F; opacity:0.86">'''#0F0F0F'''</span>
+| Blackout
+|}
+{{-stop-}}
