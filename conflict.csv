@@ -1,0 +1,5 @@
+Comparing
+CDEF=,OmniMech,Primitive,EliteMech,PrototypeMech,ProtoMech,SLDFMech,HeroMech,ClanMech,SocietyMech
+MDEF=,,unit_primitive,unit_elite,unit_prototype,unit_protomech,unit_sldf,unit_hero,,
+===================,headerlines,4
+|CONFLICT| ,CDef // MDef, || ,Missing Tag, |Missing in| ,file

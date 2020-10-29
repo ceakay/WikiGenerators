@@ -1,0 +1,11 @@
+TagTitle,CDEF,MDEF,Friendly
+OMNI,OmniMech,,OmniMech
+PRIMI,Primitive,unit_primitive,Primitive
+ELITE,EliteMech,unit_elite,Elite
+PTYPE,PrototypeMech,unit_prototype,Prototype
+PROTO,ProtoMech,unit_protomech,ProtoMech
+SLDF,SLDFMech,unit_sldf,SLDF Royal
+HERO,HeroMech,unit_hero,Heroic
+CLAN,ClanMech,,Clan
+SOCIETY,SocietyMech,,Society
+LEGEND,,unit_legendary,Legendary

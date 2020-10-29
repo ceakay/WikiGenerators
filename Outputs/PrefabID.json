@@ -1,0 +1,4711 @@
+{
+  "adder": {
+    "35": [
+      "ADR-A",
+      "ADR-B",
+      "ADR-C",
+      "ADR-D",
+      "ADR-PRIME",
+      "ADR-KGL aka KEAGLE",
+      "ADR-P aka PUMA",
+      "ADR-Z"
+    ]
+  },
+  "Albatross": {
+    "95": [
+      "ALB-3U",
+      "ALB-4U",
+      "ALB-3UR"
+    ]
+  },
+  "anvil": {
+    "60": [
+      "ANV-3M",
+      "ANV-5M",
+      "ANV-6M",
+      "ANV-8M",
+      "ANV-3R",
+      "ANV-5Q"
+    ]
+  },
+  "arcticcheetah": {
+    "30": [
+      "ACH-A",
+      "ACH-B",
+      "ACH-C",
+      "ACH-D",
+      "ACH-PRIME",
+      "ACH-H"
+    ]
+  },
+  "Arcticfox": {
+    "30": [
+      "AF1",
+      "AF1A",
+      "AF1B",
+      "AF1C",
+      "AF1D",
+      "AF1E",
+      "AF1F"
+    ]
+  },
+  "atlas": {
+    "100": [
+      "AS7-A",
+      "AS7-C",
+      "AS7-CM",
+      "AS7-D(C)",
+      "AS7-D",
+      "AS7-D-DC",
+      "AS7-K",
+      "AS7-K-DC",
+      "AS7-RS",
+      "AS7-S",
+      "AS7-S2",
+      "AS7-DDDANIELLE",
+      "AS7-GG",
+      "AS7-S7",
+      "AS7-WGSSAMSONOV",
+      "AS7-BH aka BOAR'S HEAD",
+      "AS7-KR aka KRACKEN",
+      "AS7-S3",
+      "AS7-D+FP (THERAID) aka ATLAS Flashpoint-The-Raid",
+      "AS7-D-HT+FP (THERAID) Flashpoint-The-Raid",
+      "AS5-HAT",
+      "AS7-DX aka BABA YAGA"
+    ]
+  },
+  "atlasii": {
+    "100": [
+      "AS7-D-HT",
+      "AS7-D-H",
+      "AS7-D-H2",
+      "AS7-D-HBB aka BLACK BEARD"
+    ]
+  },
+  "avatarii": {
+    "70": [
+      "AV1-O",
+      "AV1-OA",
+      "AV1-OB",
+      "AV1-OC",
+      "AV1-OD",
+      "AV1-OG",
+      "AV1-OR",
+      "AV1-OE",
+      "AV1-OF",
+      "AV1-OCC",
+      "AV1-OH",
+      "AV1-OI",
+      "AV1-OJ",
+      "AV2-O",
+      "AV2-OA",
+      "AV2-OB",
+      "AV2-OC",
+      "AV2-OD",
+      "AV2-OE"
+    ]
+  },
+  "awesome": {
+    "80": [
+      "AWS-8Q",
+      "AWS-8R",
+      "AWS-8T",
+      "AWS-8V",
+      "AWS-9M",
+      "AWS-9Q",
+      "AWS-9MAADAM",
+      "AWS-PB aka PRETTY BABY",
+      "AWS-11H",
+      "AWS-8Q Flashpoint-The-Raid",
+      "AWS-8T Flashpoint-The-Raid",
+      "AWS-10KM",
+      "AWS-8BQ",
+      "AWS-9Q-KLKLATT"
+    ]
+  },
+  "bane": {
+    "100": [
+      "B-2",
+      "B-3",
+      "B-PRIME",
+      "B-4",
+      "B-XR"
+    ]
+  },
+  "banshee": {
+    "95": [
+      "BNC-1E",
+      "BNC-3E",
+      "BNC-3M",
+      "BNC-3MC",
+      "BNC-3Q",
+      "BNC-3S",
+      "BNC-5S",
+      "BNC-5S-SRSAWYER",
+      "BNC-HK",
+      "BNC-LMLA (MALINCHE)",
+      "BNC-5S-VDGVANDERGRIFF",
+      "BNC-6S",
+      "BNC-7S",
+      "BNC-8S",
+      "BNC-9S",
+      "BNC-P",
+      "BNC-PM aka PYROMANIAC",
+      "BNC-5S-JBJOHN (BAUER)"
+    ]
+  },
+  "Battlehawk": {
+    "30": [
+      "BH-K305",
+      "BH-K306"
+    ]
+  },
+  "BattleAxe": {
+    "70": [
+      "BKX-1X",
+      "BKX-7K",
+      "BKX-7NC",
+      "BKX-8D"
+    ]
+  },
+  "battlemaster": {
+    "85": [
+      "BLR-1CX",
+      "BLR-1D",
+      "BLR-1G",
+      "BLR-1GB",
+      "BLR-1GBC",
+      "BLR-1GC",
+      "BLR-1G-DC",
+      "BLR-1S",
+      "BLR-3M",
+      "BLR-3M-DC",
+      "BLR-1GHE",
+      "BLR-1SHHANS",
+      "BLR-1G+FP (THERAID) aka BATTLEMASTER Flashpoint-The-Raid",
+      "BLR-4L",
+      "BLR-1G RogueFlashPointModule",
+      "BLR-1GRED (CORSAIR)"
+    ]
+  },
+  "stonerhino": {
+    "100": [
+      "BM-1",
+      "STR-1",
+      "STR-2",
+      "STR-4",
+      "STR-5",
+      "STR-6",
+      "STR-7",
+      "STRN",
+      "STR-8",
+      "STRN-R",
+      "STR-3",
+      "STR-X"
+    ]
+  },
+  "bellerophon": {
+    "60": [
+      "BEL-1X"
+    ]
+  },
+  "berserker": {
+    "100": [
+      "BRZ-A3"
+    ]
+  },
+  "CattleMaster": {
+    "25": [
+      "CTL-X aka BESSIE",
+      "CTL-3R3",
+      "CTL-3R2 aka HUNTER"
+    ]
+  },
+  "blackhawk-ku": {
+    "60": [
+      "BHKU-O",
+      "BHKU-OA",
+      "BHKU-OB",
+      "BHKU-OC",
+      "BHKU-OD",
+      "BHKU-OE",
+      "BHKU-OF"
+    ]
+  },
+  "blackknight": {
+    "75": [
+      "BL-7B-KNT",
+      "BL-7-KNT",
+      "BL-7-KNT-L",
+      "BL-9-KNT",
+      "BL-6B-KNT",
+      "BL-6-KNT",
+      "BLK-NT-5H",
+      "BL-6-KNT Flashpoint-The-Raid",
+      "BL-10-KNT",
+      "BL-X-KNT aka RED REAPER",
+      "BL-6B-P",
+      "BL-11-KNT",
+      "BL-S7 aka GLADIATOR",
+      "BL-X2-KNT aka RED REAPER"
+    ]
+  },
+  "blacklanner": {
+    "55": [
+      "BKL-A",
+      "BKL-C",
+      "BKL-D",
+      "BKL-PRIME",
+      "BKL-P"
+    ]
+  },
+  "blackpython": {
+    "75": [
+      "BP-2",
+      "BP-3",
+      "BP-4",
+      "BP-PRIME",
+      "BP-P aka BRIGHT PYTHON"
+    ]
+  },
+  "blackjack": {
+    "45": [
+      "BJ-0",
+      "BJ-1",
+      "BJ-1DB",
+      "BJ-1DC",
+      "BJ-1P",
+      "BJ-1X",
+      "BJ-2",
+      "BJ-3",
+      "BJ-3T",
+      "BJ-A aka ARROW",
+      "BJ-1CR",
+      "BJ-4",
+      "BJ-P",
+      "BJ-5",
+      "BJ-2A"
+    ],
+    "50": [
+      "BJ2-O",
+      "BJ2-OA",
+      "BJ2-OB",
+      "BJ2-OC",
+      "BJ2-OD",
+      "BJ2-OE",
+      "BJ2-OF",
+      "BJ2-OR",
+      "BJ2-OG",
+      "BJ2-OX"
+    ],
+    "55": [
+      "BJ-G"
+    ]
+  },
+  "commando": {
+    "25": [
+      "COM-2D-BI aka BLAZING INFERNO",
+      "COM-1A",
+      "COM-1B",
+      "COM-1C",
+      "COM-1D",
+      "COM-2D",
+      "COM-2I",
+      "COM-3A",
+      "COM-4H",
+      "COM-5S",
+      "COM-7S",
+      "COM-7X",
+      "COM-2DS aka FREEMAN",
+      "COM-TDK",
+      "COM-9S",
+      "COM-2D-PV aka PAIN VORTEX",
+      "COM-2DR",
+      "COM-7B",
+      "COM-7S2FREYR",
+      "COM-P",
+      "COM-SP",
+      "COM-SP-2",
+      "COM-8S"
+    ],
+    "35": [
+      "COM-ERI aka ERINYA"
+    ]
+  },
+  "Blitzkrieg": {
+    "50": [
+      "BTZ-3F",
+      "BTZ-4F"
+    ]
+  },
+  "bloodasp": {
+    "90": [
+      "BAS-A",
+      "BAS-B",
+      "BAS-C",
+      "BAS-D",
+      "BAS-PRIME",
+      "BAS-S",
+      "BAS-P aka CREEP",
+      "BAS-Z"
+    ]
+  },
+  "bombard": {
+    "50": [
+      "BMB-010",
+      "BMB-013",
+      "BMB-016",
+      "BMB-1X"
+    ]
+  },
+  "Brigand": {
+    "25": [
+      "LDT-1",
+      "LDT-X"
+    ]
+  },
+  "bushwacker": {
+    "55": [
+      "BSW-S2",
+      "BSW-X1",
+      "BSW-X2",
+      "BSW-HR aka HIGH ROLLER",
+      "BSW-L1",
+      "BSW-P1",
+      "BSW-P2",
+      "BSW-DC",
+      "BSW-X4",
+      "BSW-S2R",
+      "BSW-X3",
+      "BSW-X5",
+      "BSW-GTL",
+      "BSW-P",
+      "BSW-S2C",
+      "BSW-GTL2",
+      "BSW-X56",
+      "BSW-XR",
+      "BSW-S7 aka GUERILLA"
+    ]
+  },
+  "Caesar": {
+    "70": [
+      "CES-3R",
+      "CES-3R-AA aka ARCHANGEL",
+      "CES-3R-GR aka GERTRUDE",
+      "CES-3S",
+      "CES-4R",
+      "CES-4S"
+    ]
+  },
+  "cataphract": {
+    "70": [
+      "CTF-0X",
+      "CTF-1X",
+      "CTF-2X",
+      "CTF-3D",
+      "CTF-3L",
+      "CTF-4X",
+      "CTF-IM aka ILYA MUROMETS",
+      "CTF-4L",
+      "CTF-1E",
+      "CTF-3LL",
+      "CTF-5D",
+      "CTF-P"
+    ]
+  },
+  "Catapult": {
+    "65": [
+      "CPLT-A1",
+      "CPLT-C1",
+      "CPLT-C1B",
+      "CPLT-C3",
+      "CPLT-C4",
+      "CPLT-C4C",
+      "CPLT-C5",
+      "CPLT-K2",
+      "CPLT-K2K",
+      "CPLT-K3",
+      "CPLT-K5",
+      "CPLT-C1 aka BUTTERBEE",
+      "CPLT-J aka JESTER",
+      "CPLT-C2",
+      "CPLT-H2",
+      "CPLT-K6",
+      "CPLT-C1 (GDL) Flashpoint_FightingGhosts",
+      "CPLT-C4C Flashpoint_FightingGhosts",
+      "CPLT-1R",
+      "CPLT-C1M",
+      "CPLT-C21",
+      "CPLT-C22",
+      "CPLT-C6",
+      "CPLT-K4",
+      "CPLT-K9",
+      "CPLT-KC",
+      "CPLT-P",
+      "CPLT-RP",
+      "CPLT-X1",
+      "CPLT-C1 aka OCCAM'S MISSILE RogueFlashPointModule",
+      "CPLT-C3NUKE"
+    ],
+    "75": [
+      "CPLT-IIC",
+      "CPLT-IIC-2",
+      "CPLT-IIC-3",
+      "CPLT-S7 aka BASILISK"
+    ]
+  },
+  "centurion": {
+    "55": [
+      "CN10-B",
+      "CN10-7S aka IRON CURTAIN"
+    ],
+    "50": [
+      "CN3-A",
+      "CN9-A",
+      "CN9-A2",
+      "CN9-AH",
+      "CN9-AL",
+      "CN9-B1",
+      "CN9-D",
+      "CN9-D3",
+      "CN9-D3D",
+      "CN9-H",
+      "CN9-PA",
+      "CN9-YLW aka YEN LO WANG",
+      "CN9-YLW2 aka YEN LO WANG II",
+      "CN9-D4D",
+      "CN9-D5",
+      "CN9-A (GDL) Flashpoint_FightingGhosts",
+      "CN9-D9",
+      "CN9-P",
+      "CN9-A aka RHYTHM NATION RogueFlashPointModule"
+    ]
+  },
+  "charger": {
+    "80": [
+      "CGR-SB aka CHALLENGER",
+      "CGR-1A1",
+      "CGR-1A5",
+      "CGR-1A9",
+      "CGR-1L",
+      "CGR-3K",
+      "CGR-C -CHARGER-",
+      "CGR-N7 aka NUMBER SEVEN",
+      "CGR-2A2",
+      "CGR-SA5",
+      "CGR-KMZ"
+    ],
+    "75": [
+      "CGR-PB aka PUNCH BOT"
+    ]
+  },
+  "Chameleon": {
+    "50": [
+      "CLN-7V",
+      "CLN-7W",
+      "CLN-7Z",
+      "TRC-4B",
+      "CLN-7VQQ-MECH"
+    ]
+  },
+  "champion": {
+    "60": [
+      "CHP-1N",
+      "CHP-1N2",
+      "CHP-2N",
+      "CHP-3N",
+      "CHP-3P",
+      "CHP-C",
+      "CHP-1NB",
+      "CHP-1N2I",
+      "CHP-INV"
+    ]
+  },
+  "cicada": {
+    "40": [
+      "CDA-2A",
+      "CDA-2B",
+      "CDA-2P",
+      "CDA-2P2",
+      "CDA-3C",
+      "CDA-3D",
+      "CDA-3E",
+      "CDA-3F",
+      "CDA-3G",
+      "CDA-3K",
+      "CDA-3L",
+      "CDA-3M",
+      "CDA-4L",
+      "CDA-X5",
+      "CDA-3MA",
+      "CDA-3P",
+      "CDA-3X"
+    ]
+  },
+  "clint": {
+    "40": [
+      "CLNT-1-2R",
+      "CLNT-2-2R",
+      "CLNT-2-3T",
+      "CLNT-2-3U",
+      "CLNT-2-4T",
+      "CLNT-2-3TDENTON",
+      "CLNT-5U",
+      "CLNT-ESTWD",
+      "CLNT-2-3UL",
+      "CLNT-3-3T",
+      "CLNT-6S",
+      "CLNT-1-2R-P",
+      "CLNT-1-2R-P2",
+      "CLNT-P",
+      "CLNT-P2"
+    ]
+  },
+  "ClintIIC": {
+    "40": [
+      "CLNT-IIC-1",
+      "CLNT-IIC-3",
+      "CLNT-IIC-2",
+      "CLNT-IIC-2LL aka LEIA RogueFlashPointModule"
+    ]
+  },
+  "CommandoIIC": {
+    "25": [
+      "COM-IIC",
+      "MW-IIC",
+      "COM-IIC-Z"
+    ]
+  },
+  "conjurer": {
+    "50": [
+      "HND-1",
+      "HND-2",
+      "HND-3",
+      "HND-4",
+      "HND-5",
+      "HND-GP aka GHOST PROWLER"
+    ]
+  },
+  "Copperhead": {
+    "30": [
+      "CPR-HD-002",
+      "CPR-HD-003",
+      "CPR-HD-004"
+    ]
+  },
+  "Corsair": {
+    "95": [
+      "COR-5R",
+      "COR-5T",
+      "COR-6R",
+      "COR-7A",
+      "COR-7R",
+      "COR-S7 aka GRACE",
+      "COR-RA",
+      "COR-8R",
+      "COR-8R2",
+      "COR-8R3"
+    ]
+  },
+  "Cossack": {
+    "20": [
+      "C-SK1",
+      "C-1FC"
+    ]
+  },
+  "cougar": {
+    "35": [
+      "CGR-A",
+      "CGR-B",
+      "CGR-C -COUGAR-",
+      "CGR-D",
+      "CGR-HR",
+      "CGR-PRIME",
+      "CGR-XR",
+      "CGR-P aka GRIMALKIN"
+    ]
+  },
+  "crockett": {
+    "85": [
+      "CRK-5003-0",
+      "CRK-5003-1",
+      "CRK-5003-1B",
+      "CRK-5003-3",
+      "CRK-5004-1",
+      "CRK-5005-1"
+    ]
+  },
+  "Cronus": {
+    "55": [
+      "CNS-3M",
+      "CNS-5M",
+      "CNS-TD9"
+    ]
+  },
+  "Crossbow": {
+    "60": [
+      "CRS-6B",
+      "CRS-6C",
+      "CRS-X",
+      "CRS-9A"
+    ],
+    "65": [
+      "CRS-A",
+      "CRS-B",
+      "CRS-PRIME",
+      "CRS-C",
+      "CRS-D",
+      "CRS-H",
+      "CRS-E"
+    ]
+  },
+  "crusader": {
+    "65": [
+      "CRD-1R",
+      "CRD-2R",
+      "CRD-3D",
+      "CRD-3K",
+      "CRD-3L",
+      "CRD-3R",
+      "CRD-4D",
+      "CRD-4K",
+      "CRD-5M",
+      "CRD-5K",
+      "CRD-6M",
+      "CRD-3RP"
+    ]
+  },
+  "mauler": {
+    "90": [
+      "DCMS-MX90-D",
+      "LMN-1PT5",
+      "MAL-1P",
+      "MAL-1R",
+      "MAL-2P",
+      "MAL-2R",
+      "MAL-C",
+      "MAL-KO",
+      "MAL-3R",
+      "MAL-1K",
+      "MAL-3S",
+      "MAL-4X",
+      "MAL-4R",
+      "MAL-RX"
+    ]
+  },
+  "Daimyo": {
+    "40": [
+      "DMO-1K",
+      "DMO-2K",
+      "DMO-4K",
+      "DMO-5K"
+    ]
+  },
+  "Dart": {
+    "25": [
+      "DRT-3S",
+      "DRT-4S",
+      "DRT-6S",
+      "DRT-6T"
+    ]
+  },
+  "dasher": {
+    "20": [
+      "DSR-A",
+      "DSR-B",
+      "DSR-C",
+      "DSR-D",
+      "DSR-E",
+      "DSR-H",
+      "DSR-PRIME",
+      "DSR-F",
+      "DSR-K",
+      "DSR-ALETHA",
+      "DSR-G"
+    ]
+  },
+  "dervish": {
+    "55": [
+      "DV-1S",
+      "DV-6M",
+      "DV-6MD",
+      "DV-7D",
+      "DV-7P",
+      "DV-8D",
+      "DV-6M (GDL) Flashpoint_FightingGhosts",
+      "DV-9D",
+      "DV-P aka BANDIT"
+    ]
+  },
+  "dervishiic": {
+    "55": [
+      "DV-IIC"
+    ]
+  },
+  "devastator": {
+    "100": [
+      "DVS-1D",
+      "DVS-2",
+      "DVS-3",
+      "DVS-X10"
+    ]
+  },
+  "direwolf": {
+    "100": [
+      "DW-A",
+      "DW-B",
+      "DW-C",
+      "DW-H",
+      "DW-PRIME",
+      "DW-S",
+      "DW-W",
+      "DW-X",
+      "DW-HK",
+      "DS-PRIME aka DIRESTAR",
+      "DW-WM aka WIDOW MAKER",
+      "DW-LW aka LONE WOLF",
+      "DW-LW-AP aka LONE WOLF",
+      "DW-D"
+    ]
+  },
+  "dragon": {
+    "60": [
+      "DRG-1C",
+      "DRG-1N",
+      "DRG-1R",
+      "DRG-5N",
+      "DRG-2YYORIOSHI",
+      "DRG-7N",
+      "DRG-1N RogueFlashPointModule",
+      "DRG-7TROG"
+    ],
+    "65": [
+      "DRG-P"
+    ]
+  },
+  "dragonfire": {
+    "75": [
+      "DGR-3F",
+      "DGR-4F",
+      "DGR-6FC",
+      "DGR-IIC-PRIME"
+    ]
+  },
+  "ebonjaguar": {
+    "65": [
+      "EBJ-B",
+      "EBJ-C",
+      "EBJ-D",
+      "EBJ-PRIME",
+      "EBJ-H",
+      "EBJ-CB aka CAULDRON BORN",
+      "EBJ-S",
+      "EBJ-CBII aka CAULDRON BORN II",
+      "EBJ-P aka CAULDRON BORN"
+    ]
+  },
+  "Toadie": {
+    "5": [
+      "TOAD",
+      "TOADFLAMER"
+    ]
+  },
+  "emperor": {
+    "90": [
+      "EMP-1A",
+      "EMP-5A",
+      "EMP-5B",
+      "EMP-6A",
+      "EMP-EC",
+      "EMP-6ANERRAN",
+      "EMP-6D",
+      "EMP-6L",
+      "EMP-6M",
+      "EMP-6S",
+      "EMP-7L",
+      "EMP-6ME",
+      "EMP-8L",
+      "EMP-6Z",
+      "EMP-5B-N"
+    ]
+  },
+  "Enfield": {
+    "50": [
+      "END-6J",
+      "END-6Q",
+      "END-6S",
+      "END-6SR"
+    ]
+  },
+  "enforcer": {
+    "50": [
+      "ENF-3R",
+      "ENF-4R",
+      "ENF-5D",
+      "ENF-6NAIS",
+      "ENF-4R RogueFlashPointModule"
+    ],
+    "55": [
+      "ENF-7S",
+      "ENF-GH aka GHILLIE"
+    ]
+  },
+  "executioner": {
+    "95": [
+      "EXE-A",
+      "EXE-B",
+      "EXE-C",
+      "EXE-D",
+      "EXE-E",
+      "EXE-PRIME"
+    ]
+  },
+  "falcon": {
+    "30": [
+      "FLC-4N",
+      "FLC-4NB",
+      "FLC-4NB-PP",
+      "FLC-4NB-PP2",
+      "FLC-4P",
+      "FLC-4NB-SAHO",
+      "FLC-5P",
+      "FLC-6C"
+    ]
+  },
+  "Fireball": {
+    "20": [
+      "ALM-7D",
+      "ALM-8D",
+      "ALM-9D",
+      "ALM-10D",
+      "ALM-XF"
+    ]
+  },
+  "firebee": {
+    "35": [
+      "FRB-1E",
+      "FRB-2E",
+      "FRB-2EP",
+      "FRB-3E",
+      "FRB-P aka BEEKEEPER",
+      "FRB-3ER",
+      "FRB-S7 aka KUN LUN FENG"
+    ]
+  },
+  "Firefly": {
+    "30": [
+      "FFL-3SLE",
+      "FFL-4C"
+    ]
+  },
+  "firestarter": {
+    "35": [
+      "FS1-H",
+      "FS9-A",
+      "FS9-H",
+      "FS9-K",
+      "FS9-M",
+      "FS9-PM",
+      "FS9-S",
+      "FS9-S1",
+      "FS9-E aka EMBER",
+      "FS9-GS",
+      "FS9-H+FP (THERAID) aka FIRESTARTER Flashpoint-The-Raid",
+      "FS9-B",
+      "FS9-S2",
+      "FS9-S3",
+      "FS9-81X",
+      "FS9-T",
+      "FS9-M2",
+      "FS7-S aka GOBLIN"
+    ],
+    "45": [
+      "FS9-O",
+      "FS9-OA",
+      "FS9-OB",
+      "FS9-OC",
+      "FS9-OD",
+      "FS9-OE",
+      "FS9-OF",
+      "FS9-OR",
+      "FS9-OX",
+      "FS9-OG",
+      "FS9-OU"
+    ]
+  },
+  "Flashman": {
+    "75": [
+      "FLS-7K",
+      "FLS-8K",
+      "FLS-9C",
+      "FLS-8KKKALASA",
+      "FLS-C",
+      "FLS-9B",
+      "FLS-9M"
+    ]
+  },
+  "franky": {
+    "45": [
+      "MU-TT7",
+      "MU-TT9"
+    ]
+  },
+  "Galahad": {
+    "50": [
+      "GLH-1D"
+    ],
+    "60": [
+      "GLH-2D",
+      "GLH-3D"
+    ]
+  },
+  "gargoyle": {
+    "80": [
+      "GAR-A",
+      "GAR-B",
+      "GAR-C",
+      "GAR-D",
+      "GAR-E",
+      "GAR-H",
+      "GAR-PRIME"
+    ]
+  },
+  "Gladiator": {
+    "55": [
+      "GLD-1R",
+      "GLD-2R",
+      "GLD-3R",
+      "GLD-4R",
+      "GLD-5R"
+    ]
+  },
+  "GlassSpider": {
+    "60": [
+      "GLS-1",
+      "GLS-2",
+      "GLS-3"
+    ]
+  },
+  "granddragon": {
+    "65": [
+      "DRG-3K"
+    ],
+    "60": [
+      "DRG-1G",
+      "DRG-5K",
+      "DRG-C",
+      "DRG-1GDOUGLAS"
+    ]
+  },
+  "grandtitan": {
+    "100": [
+      "T-IT-N10M",
+      "T-IT-N11M",
+      "T-IT-N13M",
+      "T-IT-N14R"
+    ]
+  },
+  "grasshopper": {
+    "70": [
+      "GHR-5H",
+      "GHR-5J",
+      "GHR-5N",
+      "GHR-5P",
+      "GHR-C",
+      "GHR-R",
+      "GHR-MJ aka MJÖLNIR",
+      "GHR-6K",
+      "GHR-5H Flashpoint-The-Raid",
+      "GHR-2I",
+      "GHR-5K",
+      "GHR-7K",
+      "GHR-7P",
+      "GHR-7KG",
+      "GHR-7X",
+      "GHR-8K"
+    ]
+  },
+  "Grendel": {
+    "45": [
+      "GRD-A",
+      "GRD-B",
+      "GRD-C",
+      "GRD-D",
+      "GRD-E",
+      "GRD-PRIME",
+      "GRD-H",
+      "GRD-G",
+      "GRD-I",
+      "GRD-J",
+      "GRD-M",
+      "GRD-T",
+      "GRD-F"
+    ]
+  },
+  "griffin": {
+    "55": [
+      "GRF-1DS",
+      "GRF-1N",
+      "GRF-1S",
+      "GRF-2N",
+      "GRF-2NB",
+      "GRF-3M",
+      "GRF-6CV",
+      "GRF-SP aka SPARKY",
+      "GRF-5L",
+      "GRF-5M",
+      "GRF-6CS",
+      "GRF-6S",
+      "GRF-C",
+      "GRF-1N (GDL) Flashpoint_FightingGhosts",
+      "GRF-1N Flashpoint_FightingGhosts",
+      "GRF-1N+FP (THERAID) aka GRIFFIN Flashpoint-The-Raid",
+      "GRF-4N",
+      "GRF-4R",
+      "GRF-5K",
+      "GRF-P",
+      "GRF-3N",
+      "GRF-6S2",
+      "GRF-1N aka KOSCHEI RogueFlashPointModule",
+      "GRF-4NFP (GREED) RogueFlashPointModule",
+      "GRF-S7 aka ECHIDNAE"
+    ],
+    "65": [
+      "GRF-S"
+    ]
+  },
+  "griffiniic": {
+    "40": [
+      "GRF-IIC",
+      "GRF-IIC-2",
+      "GRF-IIC-9",
+      "GRF-IIC Z-Z",
+      "GRF-IIC ZA-ZA"
+    ]
+  },
+  "Grimreaper": {
+    "55": [
+      "GRM-R-PR29",
+      "GRM-R-PR30",
+      "GRM-R-PR31",
+      "GRM-REINAR"
+    ]
+  },
+  "Grizzly": {
+    "70": [
+      "GRZ-1"
+    ]
+  },
+  "guillotine": {
+    "70": [
+      "GLT-3N",
+      "GLT-4L",
+      "GLT-4P",
+      "GLT-5M",
+      "GLT-IIC",
+      "GLT-8D",
+      "GLT-IIC-2"
+    ]
+  },
+  "Hammer": {
+    "30": [
+      "HMR-3C",
+      "HMR-3G",
+      "HMR-3M",
+      "HMR-3P",
+      "HMR-3S",
+      "HMR-RSC"
+    ]
+  },
+  "hatamoto-chi": {
+    "80": [
+      "HTM-26T",
+      "HTM-27T",
+      "HTM-27V",
+      "HTM-27W",
+      "HTM-27TDANIEL",
+      "HTM-SAM"
+    ]
+  },
+  "Hauptmann": {
+    "95": [
+      "HA1-O",
+      "HA1-OA",
+      "HA1-OB",
+      "HA1-OC",
+      "HA1-OT",
+      "HA1-OD",
+      "HA1-OE",
+      "HA1-OF",
+      "HA1-OM"
+    ]
+  },
+  "hazard": {
+    "45": [
+      "HZD-1A",
+      "HZD-1B",
+      "HZD-2",
+      "HZD-2A"
+    ]
+  },
+  "hecatoncheires": {
+    "65": [
+      "HEC-4C",
+      "HEC-4CM",
+      "HEC-4H",
+      "HEC-6C",
+      "HEC-6CM",
+      "HEC-5C",
+      "HEC-5H"
+    ]
+  },
+  "hector": {
+    "70": [
+      "HOR-1B",
+      "HOR-2B"
+    ]
+  },
+  "helepolis": {
+    "75": [
+      "HEP-0H",
+      "HEP-1H",
+      "HEP-2H",
+      "HEP-3H",
+      "HEP-4A",
+      "HEP-4H",
+      "HEP-7H",
+      "HEP-FC",
+      "HEP-4R"
+    ]
+  },
+  "hellbringer": {
+    "65": [
+      "HBR-A",
+      "HBR-B",
+      "HBR-C",
+      "HBR-F",
+      "HBR-GP",
+      "HBR-H",
+      "HBR-PRIME",
+      "HBR-D",
+      "HBR-E",
+      "HBR-P aka LOKI"
+    ]
+  },
+  "hellfire": {
+    "60": [
+      "HLF-1",
+      "HLF-COL",
+      "HLF-2",
+      "HLF-P"
+    ]
+  },
+  "highlander": {
+    "90": [
+      "HGN-732",
+      "HGN-732B",
+      "HGN-733",
+      "HGN-733C",
+      "HGN-733P",
+      "HGN-736",
+      "HGN-HM aka HEAVY METAL",
+      "HGN-694",
+      "HGN-734",
+      "HGN-738",
+      "HGN-732-P aka MEGAS",
+      "HGN-641-X-2 RogueFlashPointModule"
+    ],
+    "95": [
+      "HGN-EXB aka EXECUTIONIER"
+    ]
+  },
+  "highlanderiic": {
+    "90": [
+      "HGN-IIC-1",
+      "HGN-IIC-A",
+      "HGN-IIC-B",
+      "HGN-IIC-C",
+      "HGN-IIC-KPKEEPER",
+      "HGN-IIC-2",
+      "HGN-IIC-3",
+      "HGN-IIC-Z"
+    ]
+  },
+  "Hitman": {
+    "30": [
+      "HM-1",
+      "HM-2",
+      "HM-1R"
+    ]
+  },
+  "hollander": {
+    "35": [
+      "BZK-F3",
+      "BZK-G1",
+      "BZK-T2 aka TSARBOMBA",
+      "BZK-T3 aka TSARBOMBA",
+      "BZK-0P",
+      "BZK-P -HOLLANDER-",
+      "BZK-RX -HOLLANDER-",
+      "BZK-T2N aka TSARBOMBA",
+      "BZK-T3N aka TSARBOMBA"
+    ]
+  },
+  "hollanderii": {
+    "45": [
+      "BZK-F5",
+      "BZK-F7",
+      "BZK-P -HOLLANDER II-",
+      "BZK-RX -HOLLANDER II-",
+      "BZK-S7"
+    ]
+  },
+  "Hoplite": {
+    "55": [
+      "HOP-4A",
+      "HOP-4B",
+      "HOP-4BB",
+      "HOP-4C",
+      "HOP-4CB",
+      "HOP-4D",
+      "HOP-C",
+      "HOP-4X"
+    ]
+  },
+  "hornet": {
+    "20": [
+      "HNT-151",
+      "HNT-152",
+      "HNT-161",
+      "HNT-171",
+      "HNT-172",
+      "HNT-181",
+      "HNT-182"
+    ]
+  },
+  "hunchback": {
+    "50": [
+      "HBK-1G",
+      "HBK-4E",
+      "HBK-4G",
+      "HBK-4GGAUSS (PROTOTYPE)",
+      "HBK-4H",
+      "HBK-4J",
+      "HBK-4JB",
+      "HBK-4K",
+      "HBK-4N",
+      "HBK-4P",
+      "HBK-4SP",
+      "HBK-5A",
+      "HBK-5J",
+      "HBK-5M",
+      "HBK-5N",
+      "HBK-5S",
+      "HBK-6N",
+      "HBK-GI aka GRID IRON",
+      "HBK-4X",
+      "HBK-4X1",
+      "HBK-5E",
+      "HBK-5H",
+      "HBK-4GB",
+      "HBK-7S",
+      "HBK-FB",
+      "HBK-POW aka PUNCHBACK",
+      "HBK-LGNA RogueFlashPointModule",
+      "HBK-LGND RogueFlashPointModule"
+    ]
+  },
+  "hunchbackiic": {
+    "50": [
+      "HBK-IIC-1",
+      "HBK-IIC-2",
+      "HBK-IIC-3",
+      "HBK-IIC-4"
+    ]
+  },
+  "huntsman": {
+    "50": [
+      "HMN-A",
+      "HMN-B",
+      "HMN-C",
+      "HMN-PRIME"
+    ]
+  },
+  "huronwarrior": {
+    "50": [
+      "HUR-WO-R4L",
+      "HUR-WO-TC",
+      "HUR-WO-R4N",
+      "HUR-WO-R4O",
+      "HUR-WO-RX4"
+    ]
+  },
+  "hussar": {
+    "30": [
+      "HSR-200-D",
+      "HSR-200-DB",
+      "HSR-300-D",
+      "HSR-350-D",
+      "HSR-400-D",
+      "HSR-450-D",
+      "HSR-500-D",
+      "HSR-900-D",
+      "HSR-950-D",
+      "HSR-1000-X"
+    ]
+  },
+  "icarusii": {
+    "40": [
+      "ICR-1S",
+      "ICR-1X",
+      "ICR-2S",
+      "ICR-2P",
+      "ICR-2R"
+    ]
+  },
+  "iceferret": {
+    "45": [
+      "IFR-A",
+      "IFR-B",
+      "IFR-C",
+      "IFR-PRIME"
+    ]
+  },
+  "imp": {
+    "100": [
+      "IMP-1A",
+      "IMP-1B",
+      "IMP-1C",
+      "IMP-2E",
+      "IMP-3E",
+      "IMP-4E",
+      "IMP-C",
+      "GFZ-2G aka GIFTZWERG"
+    ]
+  },
+  "incubus": {
+    "30": [
+      "INC-2",
+      "INC-3",
+      "INC-1",
+      "INC-SA",
+      "INC-4",
+      "INC-5",
+      "INC-6",
+      "INC-Z"
+    ]
+  },
+  "initiate": {
+    "40": [
+      "INI-02",
+      "INI-04"
+    ]
+  },
+  "ISSTandard": {
+    "5": [
+      "IS-1",
+      "IS-INF",
+      "IS-MTR",
+      "IS-TAG",
+      "IS-HIVE aka THE HIVE",
+      "IS-RF",
+      "IS-STL",
+      "IS-BAKA",
+      "IS-P aka PRIVATEER",
+      "IS-RX"
+    ]
+  },
+  "ionraptor": {
+    "70": [
+      "ION-2R",
+      "ION-3R",
+      "ION-4R",
+      "ION-5R"
+    ]
+  },
+  "jagermech": {
+    "65": [
+      "JM6-A",
+      "JM6-B",
+      "JM6-DG",
+      "JM6-S",
+      "JM6-X",
+      "JM6-FB aka FIREBRAND",
+      "JM6-DD",
+      "JM6-E",
+      "JM6-H",
+      "JM6-S (GDL) Flashpoint_FightingGhosts",
+      "JM6-DDA",
+      "JM6-JO",
+      "JM-P",
+      "JM6-S RogueFlashPointModule"
+    ],
+    "70": [
+      "JM7-F"
+    ]
+  },
+  "jenneriic": {
+    "35": [
+      "JR7-IIC-1",
+      "JR7-IIC-2",
+      "JR7-IIC-3",
+      "JR7-IIC-4",
+      "JR7-IIC-FY",
+      "JR7-IIC-A",
+      "JR7-IICV aka VENTILATOR"
+    ]
+  },
+  "jenner": {
+    "35": [
+      "JR7-A",
+      "JR7-C",
+      "JR7-D",
+      "JR7-F",
+      "JR7-K",
+      "JR7-R",
+      "JR7-KGRACE",
+      "JR7-KSAMULI",
+      "JR7-O aka OXIDE",
+      "JR7-X",
+      "JR10-X",
+      "JR7-RX",
+      "JR7-D RogueFlashPointModule",
+      "JR7-CHP aka CHOMPIE"
+    ]
+  },
+  "Jinggau": {
+    "65": [
+      "JN-G8A",
+      "JN-G7L",
+      "JN-G9CC",
+      "JN-G8BXRUSH"
+    ]
+  },
+  "juggernaut": {
+    "90": [
+      "JG-R9T1",
+      "JG-R9T2",
+      "JG-R9T3",
+      "JG-R9X1 aka LEAPIN LIL",
+      "JG-R9T14"
+    ]
+  },
+  "Kabuto": {
+    "20": [
+      "KBO-7A",
+      "KBO-7A1",
+      "KBO-7B",
+      "KBO-7B1"
+    ]
+  },
+  "Kanazuchi": {
+    "10": [
+      "KZ-1"
+    ]
+  },
+  "kingcrab": {
+    "100": [
+      "KGC-0",
+      "KGC-000B",
+      "KGC-001",
+      "KGC-002",
+      "KGC-010",
+      "KGC-0000",
+      "KGC-KJ aka KAIJU",
+      "KGC-005",
+      "KGC-011",
+      "KGC-AL aka ARGENT LEVIATHAN",
+      "KGC-0000 Flashpoint-The-Raid",
+      "KGC-005R",
+      "KGC-007",
+      "KGC-008",
+      "KGC-008B",
+      "KGC-009",
+      "KGC-020",
+      "KGC-RSC",
+      "KGC-B aka BEHEMOTH",
+      "KGC-P aka KRAKEN"
+    ]
+  },
+  "kingfisher": {
+    "90": [
+      "KNF-A",
+      "KNF-B",
+      "KNF-C",
+      "KNF-D",
+      "KNF-H",
+      "KNF-PRIME",
+      "KNF-E",
+      "KNF-F",
+      "KNF-X"
+    ]
+  },
+  "kintaro": {
+    "55": [
+      "KTO-18",
+      "KTO-18K",
+      "KTO-18S",
+      "KTO-19",
+      "KTO-19B",
+      "KTO-20",
+      "KTO-21",
+      "KTO-C",
+      "KTO-K"
+    ]
+  },
+  "kitfox": {
+    "30": [
+      "KF-A",
+      "KF-B",
+      "KF-D",
+      "KF-PRIME",
+      "KF-S",
+      "KF-COL",
+      "KF-ID",
+      "KF-P aka ULLR",
+      "KF-Z"
+    ]
+  },
+  "kodiak": {
+    "100": [
+      "KDK-1",
+      "KDK-5",
+      "KDK-2",
+      "KDK-4",
+      "KDK-S",
+      "KDK-SB aka SPIRIT BEAR",
+      "KDK-3",
+      "KDK-GBL",
+      "KDK-CB aka CARE BEAR"
+    ]
+  },
+  "Komodo": {
+    "45": [
+      "KIM-2",
+      "KIM-2A",
+      "KIM-2C",
+      "KIM-3C"
+    ]
+  },
+  "stormcrow": {
+    "55": [
+      "SCR-LA aka LACERATOR",
+      "SCR-A",
+      "SCR-B",
+      "SCR-C",
+      "SCR-D",
+      "SCR-E",
+      "SCR-H",
+      "SCR-I",
+      "SCR-L",
+      "SCR-PRIME",
+      "SCR-S",
+      "SCR-F",
+      "SCR-G",
+      "SCR-Z",
+      "SCR-P"
+    ]
+  },
+  "lancelot": {
+    "60": [
+      "LNC25-01",
+      "LNC25-01SL",
+      "LNC25-01X",
+      "LNC25-02",
+      "LNC25-03",
+      "LNC25-04",
+      "LNC25-05",
+      "LNC25-C",
+      "LNC25-C2",
+      "LNC25-06",
+      "LNC25-08"
+    ]
+  },
+  "linebacker": {
+    "65": [
+      "LBK-A",
+      "LBK-B",
+      "LBK-D",
+      "LBK-PRIME"
+    ]
+  },
+  "Lineholder": {
+    "55": [
+      "KW1-LH2",
+      "KW1-LH3",
+      "KW1-LH8",
+      "KW2-LHW",
+      "KW2-LH10"
+    ]
+  },
+  "loaderking": {
+    "65": [
+      "LDK-5C"
+    ]
+  },
+  "LocustIIC": {
+    "25": [
+      "LCT-IIC-1",
+      "LCT-IIC-2",
+      "LCT-IIC-3",
+      "LCT-IIC-4",
+      "LCT-IIC-5",
+      "LCT-IIC-6",
+      "LCT-IIC-7",
+      "LCT-IIC-Z"
+    ]
+  },
+  "locust": {
+    "20": [
+      "LCT-0P",
+      "LCT-1E",
+      "LCT-1L",
+      "LCT-1M",
+      "LCT-1S",
+      "LCT-1V",
+      "LCT-1VB",
+      "LCT-2S",
+      "LCT-3D",
+      "LCT-3M",
+      "LCT-3S",
+      "LCT-3V",
+      "LCT-PA",
+      "LCT-PB aka PIRATES BANE",
+      "LCT-1V2",
+      "LCT-2V",
+      "LCT-P"
+    ]
+  },
+  "longbow": {
+    "85": [
+      "LGB-0C",
+      "LGB-0W",
+      "LGB-12C",
+      "LGB-7Q",
+      "LGB-7V",
+      "LGB-12R",
+      "LGB-13C",
+      "LGB-13NAIS",
+      "LGB-14C",
+      "LGB-8V",
+      "LGB-P",
+      "LGB-14C2",
+      "LGB-RX"
+    ],
+    "100": [
+      "LGB0F-MG aka JOERMUNGANDR"
+    ]
+  },
+  "lupus": {
+    "60": [
+      "LUPUS-A",
+      "LUPUS-B",
+      "LUPUS-PRIME",
+      "LUPUS-C",
+      "LUPUS-D"
+    ]
+  },
+  "Lynx": {
+    "55": [
+      "LNX-8Q",
+      "LNX-9C",
+      "LNX-9Q",
+      "LNX-9R",
+      "LNX-C"
+    ]
+  },
+  "Mackie": {
+    "100": [
+      "MSK-5S",
+      "MSK-6S",
+      "MSK-6S2",
+      "MSK-8B",
+      "MSK-9H",
+      "MSK-9HB",
+      "MSK-9HC",
+      "MSK-P",
+      "MSK-RSC aka BIG MAC"
+    ]
+  },
+  "maddog": {
+    "60": [
+      "MDD-A",
+      "MDD-B",
+      "MDD-C",
+      "MDD-D",
+      "MDD-H",
+      "MDD-PRIME",
+      "MDD-E",
+      "MDD-F",
+      "MDD-P aka SCAVENGER"
+    ]
+  },
+  "marauderii": {
+    "100": [
+      "MAD-2K",
+      "MAD-4A",
+      "MAD-4B",
+      "MAD-4HB",
+      "MAD-5D",
+      "MAD-6A",
+      "MAD-BH -MARAUDER II-",
+      "MAD-4H",
+      "MAD-4S -MARAUDER II-",
+      "MAD-BH-R aka MARAUDER",
+      "MAD-4L",
+      "MAD-RX",
+      "MAD-P"
+    ]
+  },
+  "marauderiic": {
+    "85": [
+      "MAD-IIC-1",
+      "MAD-IIC-A",
+      "MAD-IIC-S",
+      "MAD-IIC-H",
+      "MAD-IIC-LA aka MARAUDER",
+      "MAD-IIC-Z"
+    ]
+  },
+  "marauder": {
+    "75": [
+      "MAD-1R",
+      "MAD-2R",
+      "MAD-3D",
+      "MAD-3L",
+      "MAD-3M",
+      "MAD-3R",
+      "MAD-3S",
+      "MAD-4X",
+      "MAD-5M",
+      "MAD-5S",
+      "MAD-C",
+      "MAD-BH -MARAUDER-",
+      "MAD-BH-II",
+      "MAD-CM",
+      "MAD-9S",
+      "MAD-DER",
+      "MAD-3R (GDL) Flashpoint_FightingGhosts",
+      "MAD-4S -MARAUDER-",
+      "MAD-5L",
+      "MAD-8A",
+      "MAD-7D-SKV",
+      "MAD-LT",
+      "MAD-S7 aka GUNGNIR"
+    ]
+  },
+  "medusa": {
+    "50": [
+      "MED-1",
+      "MED-2",
+      "MED-3",
+      "MED-4",
+      "MED-5",
+      "MED-Z"
+    ]
+  },
+  "Menshen": {
+    "55": [
+      "MS1-O",
+      "MS1-OA",
+      "MS1-OB",
+      "MS1-OC",
+      "MS1-OD",
+      "MS1-OG",
+      "MS1-OE",
+      "MS1-OF"
+    ]
+  },
+  "merlin": {
+    "60": [
+      "MLN-1A",
+      "MLN-1A1",
+      "MLN-1AR",
+      "MLN-1B",
+      "MLN-1B1",
+      "MLN-2A",
+      "MLN-1BP",
+      "MLN-1C",
+      "MLN-1D",
+      "MLN-1X",
+      "MLN-SX",
+      "MLN-1E"
+    ]
+  },
+  "mistlynx": {
+    "25": [
+      "MLX-B",
+      "MLX-C",
+      "MLX-PRIME",
+      "MLX-G",
+      "MLX-Z-A"
+    ]
+  },
+  "mongoose": {
+    "25": [
+      "MON-66",
+      "MON-66B",
+      "MON-66CG",
+      "MON-67",
+      "MON-67L",
+      "MON-68",
+      "MON-68B",
+      "MON-69",
+      "MON-69K",
+      "MON-70",
+      "MON-C",
+      "MON-C2",
+      "MON-76",
+      "MON-86",
+      "MON-90",
+      "MON-66GX aka GUNSLINGER RogueFlashPointModule"
+    ]
+  },
+  "naga": {
+    "80": [
+      "NGA-A",
+      "NGA-B",
+      "NGA-C",
+      "NGA-D",
+      "NGA-PRIME",
+      "NGA-E",
+      "NGA-Z"
+    ]
+  },
+  "Naja": {
+    "55": [
+      "KTO-19B-EC",
+      "NAJA-1"
+    ]
+  },
+  "nightgyr": {
+    "75": [
+      "NTG-B",
+      "NTG-D",
+      "NTG-PRIME",
+      "NTG-JK"
+    ]
+  },
+  "NightHawk": {
+    "35": [
+      "NTK-2Q",
+      "NTK-2Q-EC",
+      "NTK-2S"
+    ]
+  },
+  "nightstar": {
+    "95": [
+      "NSR-7J",
+      "NSR-9J",
+      "NSR-9JC"
+    ]
+  },
+  "novacat": {
+    "70": [
+      "NCT-A",
+      "NCT-B",
+      "NCT-C",
+      "NCT-D",
+      "NCT-PRIME",
+      "NCT-CC aka COBRA CAT",
+      "NCT-E",
+      "NCT-P",
+      "NCT-MRX aka MIRAX"
+    ]
+  },
+  "nova": {
+    "50": [
+      "NVA-A",
+      "NVA-B",
+      "NVA-C",
+      "NVA-D",
+      "NVA-E",
+      "NVA-H",
+      "NVA-PRIME",
+      "NVA-S",
+      "NVA-F",
+      "NVA-P aka FURY"
+    ]
+  },
+  "O-Bakemono": {
+    "80": [
+      "OBK-M10",
+      "OBK-M11",
+      "OBK-M12"
+    ]
+  },
+  "orioniic": {
+    "75": [
+      "ON1-IIC-1",
+      "ON1-IIC-A",
+      "ON1-IIC-B",
+      "ON1-IIC-C",
+      "ON1-IIC-SK aka SKÖLL",
+      "ON1-IIC-BTN"
+    ]
+  },
+  "orion": {
+    "75": [
+      "ON1-C",
+      "ON1-H",
+      "ON1-K",
+      "ON1-M",
+      "ON1-MA",
+      "ON1-MB",
+      "ON1-V",
+      "ON1-VA",
+      "ON1-V-DC",
+      "ON1-KERKERENSKY",
+      "ON2-K",
+      "ON1-X",
+      "ON1-K RogueFlashPointModule"
+    ]
+  },
+  "osprey": {
+    "55": [
+      "OSP-15",
+      "OSP-25",
+      "OSP-26",
+      "OSP-26L",
+      "OSP-36"
+    ]
+  },
+  "ostrocmkii": {
+    "60": [
+      "OSR-9C"
+    ]
+  },
+  "ostroc": {
+    "60": [
+      "OSR-2C",
+      "OSR-2CB",
+      "OSR-2CR",
+      "OSR-2D",
+      "OSR-2L",
+      "OSR-2M",
+      "OSR-3C",
+      "OSR-2C-MICHI",
+      "OSR-2X",
+      "OSR-4C -OSTROC-",
+      "OSR-4L",
+      "OSR-4K",
+      "OSR-5C",
+      "OSR-5W"
+    ]
+  },
+  "Ostscout": {
+    "35": [
+      "OTT-7J",
+      "OTT-7JB",
+      "OTT-7JR",
+      "OTT-7K",
+      "OTT-9CS",
+      "OTT-9S",
+      "OTT-12R",
+      "OTT-8J",
+      "OTT-10CS",
+      "OTT-11J"
+    ]
+  },
+  "ostsol": {
+    "60": [
+      "OTL-4D",
+      "OTL-4DR",
+      "OTL-4F",
+      "OTL-5M",
+      "OTL-5D",
+      "OTL-6D",
+      "OTL-7M",
+      "OTL-8M",
+      "OTL-8D",
+      "OTL-9M",
+      "OTL-9R"
+    ]
+  },
+  "ostwar": {
+    "65": [
+      "OWR-2M",
+      "OWR-2MB",
+      "OWR-2MX",
+      "OWR-3M"
+    ]
+  },
+  "Owens": {
+    "35": [
+      "OW-1",
+      "OW-1A",
+      "OW-1AR",
+      "OW-1B",
+      "OW-1C",
+      "OW-1D",
+      "OW-1E",
+      "OW-1R",
+      "OW-1F",
+      "OW-P",
+      "OW-RSC"
+    ]
+  },
+  "packhunter": {
+    "30": [
+      "PH",
+      "PH2",
+      "PH3",
+      "PH4"
+    ]
+  },
+  "panther": {
+    "35": [
+      "PNT-10K",
+      "PNT-10KA",
+      "PNT-5T",
+      "PNT-8Z",
+      "PNT-9ALAG",
+      "PNT-9R",
+      "PNT-C",
+      "PNT-CA",
+      "PNT-9RTANAKA",
+      "PNT-12A",
+      "PNT-14S",
+      "PNT-16K",
+      "PNT-9L",
+      "PNT-9R RogueFlashPointModule"
+    ],
+    "40": [
+      "PNT-P aka EX MORTIS"
+    ]
+  },
+  "Penetrator": {
+    "75": [
+      "PTR-4D",
+      "PTR-4F",
+      "PTR-4FX",
+      "PTR-6M",
+      "PTR-6S",
+      "PTR-4DCCHRISTIFORI",
+      "PTR-6T",
+      "PTR-7D",
+      "PTR-5D"
+    ]
+  },
+  "Perseus": {
+    "75": [
+      "P1",
+      "P1A",
+      "P1B",
+      "P1C",
+      "P1D",
+      "P1E",
+      "P1P",
+      "P1W"
+    ]
+  },
+  "phantom": {
+    "40": [
+      "PTM-A",
+      "PTM-B",
+      "PTM-C",
+      "PTM-D",
+      "PTM-E",
+      "PTM-PRIME",
+      "PTM-F",
+      "PTM-H"
+    ]
+  },
+  "PhoenixHawkLAM": {
+    "50": [
+      "PHX-HK1",
+      "PHX-HK1R",
+      "PHX-HK2",
+      "PHX-HK2M",
+      "PHX-HK1RB",
+      "PHX-PHK"
+    ],
+    "55": [
+      "PHX-HK5 aka PHOENIX"
+    ]
+  },
+  "piranha": {
+    "20": [
+      "PRA",
+      "PIR-CTCIPHER",
+      "PIR-A",
+      "PRA-2",
+      "PIR-B",
+      "PRA-3",
+      "PRA-4",
+      "PIR-P"
+    ]
+  },
+  "pouncer": {
+    "40": [
+      "PCR-A",
+      "PCR-B",
+      "PCR-C",
+      "PCR-D",
+      "PCR-E",
+      "PCR-PRIME",
+      "PCR-H",
+      "PCR-F"
+    ]
+  },
+  "quickdraw": {
+    "60": [
+      "QKD-4G",
+      "QKD-4H",
+      "QKD-5A",
+      "QKD-5K",
+      "QKD-5M",
+      "QKD-7X",
+      "QKD-P"
+    ]
+  },
+  "rakshasa": {
+    "75": [
+      "MDG-1A",
+      "MDG-X aka ASURA",
+      "MDG-1AR"
+    ]
+  },
+  "Raptor": {
+    "25": [
+      "RTX1-O",
+      "RTX1-OA",
+      "RTX1-OB",
+      "RTX1-OC",
+      "RTX1-OD",
+      "RTX1-OE",
+      "RTX1-OF",
+      "RTX1-OR",
+      "RTX1-OG"
+    ]
+  },
+  "riflemaniic": {
+    "65": [
+      "RFL-IIC-1",
+      "RFL-IIC-2",
+      "RFL-IIC-A",
+      "RFL-IIC-3",
+      "RFL-IIC-4",
+      "RFL-IIC-Z"
+    ]
+  },
+  "roughneck": {
+    "65": [
+      "RGH-1A",
+      "RGH-1B",
+      "RGH-1C",
+      "RGH-3A",
+      "RGH-1P",
+      "RGH-RSC",
+      "RGH-7S"
+    ]
+  },
+  "Salamander": {
+    "5": [
+      "TOAD aka SALAMANDER",
+      "TOAD aka SALAMANDER",
+      "TOAD aka SALAMANDER"
+    ],
+    "80": [
+      "PPR-5S",
+      "PPR-5T",
+      "PPR-6S",
+      "PPR-6T",
+      "PPR-7S",
+      "PPR-7T"
+    ]
+  },
+  "SavageCoyote": {
+    "85": [
+      "SVG-PRIME"
+    ]
+  },
+  "Sentinel": {
+    "40": [
+      "STN-1S",
+      "STN-3K",
+      "STN-3KA",
+      "STN-3KB",
+      "STN-3L",
+      "STN-3LB",
+      "STN-3M",
+      "STN-4D",
+      "STN-C",
+      "STN-5WB"
+    ]
+  },
+  "Sentry": {
+    "40": [
+      "SNT-04",
+      "SNT-W5"
+    ]
+  },
+  "shadowcat": {
+    "45": [
+      "SHC-A",
+      "SHC-B",
+      "SHC-C",
+      "SHC-H",
+      "SHC-PRIME",
+      "SHC-P aka NEKO KAGE",
+      "SHC-Z"
+    ]
+  },
+  "shadowhawkiic": {
+    "45": [
+      "SHD-IIC-1",
+      "SHD-IIC-2",
+      "SHD-IIC-3",
+      "SHD-IIC-4",
+      "SHD-IIC-5",
+      "SHD-IIC-6",
+      "SHD-IIC-7",
+      "SHD-IIC-8",
+      "SHD-IIC-Z"
+    ]
+  },
+  "shadowhawklam": {
+    "55": [
+      "SHD-X1",
+      "SHD-X2",
+      "SHD-X4"
+    ]
+  },
+  "shadowhawk": {
+    "50": [
+      "SHD-1R"
+    ],
+    "55": [
+      "SHD-2HB",
+      "SHD-2I",
+      "SHD-2K",
+      "SHD-2KI",
+      "SHD-5M",
+      "SHD-5MI",
+      "SHD-5S",
+      "SHD-2D",
+      "SHD-2H",
+      "SHD-2PA",
+      "SHD-2H (GDL) Flashpoint_FightingGhosts",
+      "GDL SHD-2H Flashpoint_FightingGhosts",
+      "SHD-2D+FP (THERAID) aka SHADOW HAWK Flashpoint-The-Raid",
+      "SHD-V aka VALKYRJA",
+      "SHD-SX aka SLAYER"
+    ]
+  },
+  "Shootist": {
+    "70": [
+      "ST-8A",
+      "ST-8C",
+      "ST-9C"
+    ]
+  },
+  "sidewinder": {
+    "75": [
+      "SW-PRIME"
+    ]
+  },
+  "Sling": {
+    "25": [
+      "SL-1G",
+      "SL-1GM",
+      "SL-1H"
+    ]
+  },
+  "Snake": {
+    "45": [
+      "SNK-1V",
+      "SNK-1VALEXI",
+      "SNK-2B",
+      "SNK-2BR",
+      "SNK-1VARTHUR"
+    ]
+  },
+  "sorcerer": {
+    "95": [
+      "SRC-1A",
+      "SRC-1B",
+      "SRC-1C",
+      "SRC-1CC",
+      "SRC-1X",
+      "SRC-2D",
+      "SRC-2L"
+    ]
+  },
+  "Spector": {
+    "35": [
+      "SPR-4F",
+      "SPR-5F",
+      "SPR-5S",
+      "SPR-ST"
+    ]
+  },
+  "spider": {
+    "30": [
+      "SDR-5D",
+      "SDR-5K",
+      "SDR-5V",
+      "SDR-7M",
+      "SDR-8M",
+      "SDR-C",
+      "SDR-I1",
+      "SDR-6V",
+      "SDR-P aka CAERBANNOG"
+    ],
+    "45": [
+      "SDR-A aka ANANSI"
+    ]
+  },
+  "stalker": {
+    "85": [
+      "STK-3F",
+      "STK-3FB",
+      "STK-3H",
+      "STK-4N",
+      "STK-5M",
+      "STK-M aka MISERY",
+      "STK-3FJAGAWEN",
+      "STK-3F Flashpoint-The-Raid",
+      "STK-3F Flashpoint-The-Raid",
+      "STK-3F RogueFlashPointModule",
+      "STK-3HB aka SHINIGAMI"
+    ],
+    "75": [
+      "STK-4P"
+    ]
+  },
+  "starslayer": {
+    "50": [
+      "STY-2C",
+      "STY-2C-EC",
+      "STY-3C",
+      "STY-3D",
+      "STY-3DR"
+    ]
+  },
+  "Stiletto": {
+    "35": [
+      "STO-4A",
+      "STO-4B",
+      "STO-4C",
+      "STO-6S",
+      "STO-4X"
+    ]
+  },
+  "stingerlam": {
+    "30": [
+      "STG-A1",
+      "STG-A10",
+      "STG-A5"
+    ]
+  },
+  "stinger": {
+    "20": [
+      "STG-3G",
+      "STG-3GB",
+      "STG-3R",
+      "STG-5M",
+      "STG-3P",
+      "STG-5G"
+    ]
+  },
+  "StormGiant": {
+    "100": [
+      "STG-1",
+      "STG-2"
+    ]
+  },
+  "Strider": {
+    "40": [
+      "SR1-O",
+      "SR1-OA",
+      "SR1-OB",
+      "SR1-OBD",
+      "SR1-OC",
+      "SR1-OD",
+      "SR1-OE",
+      "SR1-OF",
+      "SR1-OG",
+      "SR1-OX",
+      "SR1-OH"
+    ]
+  },
+  "summoner": {
+    "70": [
+      "SMN-A",
+      "SMN-B",
+      "SMN-C",
+      "SMN-PRIME",
+      "SMN-P aka THOR"
+    ],
+    "200": [
+      "SMN-MSTR"
+    ]
+  },
+  "sunspider": {
+    "70": [
+      "SNS-A",
+      "SNS-B",
+      "SNS-C",
+      "SNS-D",
+      "SNS-F",
+      "SNS-PRIME",
+      "SNS-MLMANUL",
+      "SNS-VG aka VANGUARD",
+      "SNS-E",
+      "SNS-G",
+      "SNS-Z"
+    ]
+  },
+  "Sunder": {
+    "90": [
+      "SD1-O",
+      "SD1-OA",
+      "SD1-OB",
+      "SD1-OC",
+      "SD1-OR",
+      "SD1-OS",
+      "SD1-OD",
+      "SD1-OF",
+      "SD1-OG",
+      "SD1-OE",
+      "SD1-OX"
+    ]
+  },
+  "supernova": {
+    "90": [
+      "SNV-A",
+      "SNV-C",
+      "SNV-BR aka BOILER",
+      "SNV-4"
+    ],
+    "150": [
+      "SNV-KB aka KUGELBLITZ"
+    ]
+  },
+  "Swordsman": {
+    "40": [
+      "SWD-1",
+      "SWD-2",
+      "SWD-3",
+      "SWD-4",
+      "SWD-P"
+    ]
+  },
+  "talon": {
+    "35": [
+      "TLN-5V",
+      "TLN-5W",
+      "TLN-5Z",
+      "TLN-6W"
+    ]
+  },
+  "talos": {
+    "50": [
+      "TLS-1B",
+      "TLS-1P",
+      "TLS-4A",
+      "TLS-4B",
+      "TLS-4C",
+      "TLS-5A",
+      "TLS-HB aka HONEY BADGER",
+      "TLS-7RSC",
+      "TLS-0",
+      "TLS-0A",
+      "TLS-0B",
+      "TLS-0C",
+      "TLS-0D",
+      "TLS-0E"
+    ]
+  },
+  "thanatos": {
+    "75": [
+      "TNS-4S",
+      "TNS-4T",
+      "TNS-8S"
+    ]
+  },
+  "Thorn": {
+    "20": [
+      "THE-N",
+      "THE-N1",
+      "THE-N2",
+      "THE-NB",
+      "THE-S",
+      "THE-T"
+    ]
+  },
+  "thug": {
+    "80": [
+      "THG-10E",
+      "THG-11E",
+      "THG-11EB",
+      "THG-11ECX",
+      "THG-11EM",
+      "THG-11ER",
+      "THG-12E",
+      "THG-12K",
+      "THG-13K"
+    ]
+  },
+  "thunderbolt": {
+    "65": [
+      "TDR-1C",
+      "TDR-5L",
+      "TDR-5LS",
+      "TDR-5PA",
+      "TDR-5S",
+      "TDR-5SB",
+      "TDR-5SE",
+      "TDR-5SS",
+      "TDR-7M",
+      "TDR-F4X",
+      "TDR-5S-TTALLMAN",
+      "TDR-8S",
+      "TDR-5P",
+      "TDR-5SE RogueFlashPointModule"
+    ],
+    "70": [
+      "TDR-E5 aka ERIS"
+    ]
+  },
+  "thunderhawk": {
+    "100": [
+      "TDK-7KMA",
+      "TDK-7X",
+      "TDK-7Y",
+      "TDK-7S"
+    ]
+  },
+  "timberwolf": {
+    "75": [
+      "TW-A",
+      "TW-B",
+      "TW-C",
+      "TW-D",
+      "TW-E",
+      "TW-H",
+      "TW-PRIME",
+      "TW-GW aka GREAT WHITE",
+      "TW-CNRCONNOR",
+      "TW-PRYDE",
+      "TW-VLAD",
+      "TW-Z",
+      "TW-F",
+      "TW-P aka BLACK CAT",
+      "TW-RC",
+      "TW-S7 aka MAD CAT",
+      "TW-Z-A",
+      "TW-Z-B"
+    ]
+  },
+  "titan": {
+    "100": [
+      "TI-1A",
+      "TI-1AR",
+      "TI-1AJ"
+    ]
+  },
+  "toro": {
+    "35": [
+      "TR-A-1",
+      "TR-A-6",
+      "TR-A-11",
+      "TR-A-8",
+      "TR-P aka MATADOR",
+      "TR-S-7"
+    ]
+  },
+  "toyama": {
+    "75": [
+      "TYM-1A",
+      "TYM-1B",
+      "TYM-1C"
+    ]
+  },
+  "trebuchet": {
+    "50": [
+      "TBT-3C",
+      "TBT-4M",
+      "TBT-5J",
+      "TBT-5N",
+      "TBT-5S",
+      "TBT-5SP",
+      "TBT-7K",
+      "TBT-7M",
+      "TBT-8K",
+      "TBT-9K",
+      "TBT-LG aka LOUPDEGUERRE",
+      "TBT-9N",
+      "TBT-5N (GDL) Flashpoint_FightingGhosts",
+      "TBT-7MM RogueFlashPointModule"
+    ],
+    "55": [
+      "TBT-6X"
+    ]
+  },
+  "turkina": {
+    "95": [
+      "TKR-A",
+      "TKR-B",
+      "TKR-C",
+      "TKR-D",
+      "TKR-PRIME",
+      "TKR-H",
+      "TKR-E",
+      "TKR-U",
+      "TKR-X",
+      "TKR-Z"
+    ]
+  },
+  "UrbanmechIIC": {
+    "30": [
+      "UM-IIC-1",
+      "UM-IICR",
+      "UM-IIC-LF",
+      "UM-IIC-2",
+      "UM-IIC-Z",
+      "UM-IIC-A",
+      "UM-IIC-2G",
+      "UM-IIC-3X"
+    ]
+  },
+  "UrbanMech": {
+    "30": [
+      "UM-R60",
+      "UM-R60C",
+      "UM-R60L",
+      "UM-R60SB",
+      "UM-R60X",
+      "UM-R63",
+      "UM-R90",
+      "UM-RK9A1 aka DEPUTY DAWG",
+      "UM-R68",
+      "UM-R69",
+      "UM-R70",
+      "UM-R93",
+      "UM-R96",
+      "UM-AIV",
+      "UM-R80",
+      "UM-CR aka COCKROACH LV426",
+      "UM-P",
+      "UM-RISC",
+      "UM-RISC-II",
+      "UM-RISC-III",
+      "UM-RISC-IV",
+      "UM-RCM RogueFlashPointModule",
+      "UM-R8Q-B aka THE BISHOP",
+      "UM-LAMA",
+      "UM-R60LLA",
+      "UM-R61LA",
+      "UM-R8QA",
+      "UM-R1005",
+      "UM-R1010",
+      "UM-AIV-N",
+      "UM-LAM",
+      "UM-R10",
+      "UM-R20",
+      "UM-R25",
+      "UM-R25A",
+      "UM-R25B",
+      "UM-R5",
+      "UM-R59",
+      "UM-R6",
+      "UM-R60H",
+      "UM-R60-LAM",
+      "UM-R60-LAM-MKII",
+      "UM-R60LL",
+      "UM-R60LRM",
+      "UM-R61L",
+      "UM-R62",
+      "UM-R7",
+      "UM-R8Q",
+      "UM-RFF1",
+      "UM-RHW",
+      "UM-RLG",
+      "UM-R100X",
+      "UM-R26",
+      "UM-R60LRM-EN",
+      "UM-R71",
+      "UM-R81",
+      "UM-RCR"
+    ],
+    "2": [
+      "OSCAR-P"
+    ],
+    "35": [
+      "UM-R666",
+      "UM-R1000"
+    ]
+  },
+  "valkyrieii": {
+    "60": [
+      "VLK-II-1A",
+      "VLK-II-HLD",
+      "VLK-II-SIG",
+      "VLK-II-2A"
+    ]
+  },
+  "valkyrie": {
+    "30": [
+      "VLK-QA",
+      "VLK-QD",
+      "VLK-QE",
+      "VLK-QD1",
+      "VLK-BA",
+      "VLK-QS5"
+    ]
+  },
+  "vaporeagle": {
+    "55": [
+      "GWK-1",
+      "GWK-2",
+      "GWK-VGL-RIVAL aka RIVAL",
+      "GWK-3",
+      "GWK-Z"
+    ]
+  },
+  "venom": {
+    "35": [
+      "SDR-9C",
+      "SDR-9E",
+      "SDR-9K"
+    ]
+  },
+  "victor": {
+    "80": [
+      "VTR-10B",
+      "VTR-9A",
+      "VTR-9A1",
+      "VTR-9B(C)",
+      "VTR-9B",
+      "VTR-9BR",
+      "VTR-9D",
+      "VTR-9D-2",
+      "VTR-9DB",
+      "VTR-9K",
+      "VTR-9S",
+      "VTR-C",
+      "VTR-9AC",
+      "VTR-9B-LLI",
+      "VTR-9B-SSHOJI",
+      "VTR-9SI",
+      "VTR-DS aka DRAGON SLAYER",
+      "VTR-10D",
+      "VTR-10L",
+      "VTR-10S",
+      "VTR-11D",
+      "VTR-9-GD",
+      "VTR-9B Flashpoint-The-Raid",
+      "VTR-9KA",
+      "VTR-CR",
+      "VTR-9K2",
+      "VTR-DK",
+      "VTR-P"
+    ]
+  },
+  "viking": {
+    "90": [
+      "VKG-2F",
+      "VKG-2G",
+      "VKG-3A",
+      "VKG-3W",
+      "VKG-3X",
+      "VKG-IIC",
+      "VKG-RX"
+    ]
+  },
+  "vindicator": {
+    "45": [
+      "VND-1AA",
+      "VND-1R",
+      "VND-1SIC",
+      "VND-1X",
+      "VND-3L",
+      "VND-BR aka BUTCHER",
+      "VND-1RVONG",
+      "VND-1AAX",
+      "VND-6L",
+      "VND-3LD",
+      "VND-P",
+      "VND-RSC"
+    ]
+  },
+  "viper": {
+    "40": [
+      "VPR-A",
+      "VPR-B",
+      "VPR-C",
+      "VPR-D",
+      "VPR-E",
+      "VPR-PRIME",
+      "VPR-H",
+      "VPR-I",
+      "VPR-P aka DRAGONFLY"
+    ]
+  },
+  "visionquest": {
+    "60": [
+      "VQ-1",
+      "VQ-1NC",
+      "VQ-2"
+    ]
+  },
+  "warhammeriic": {
+    "80": [
+      "WMR-IIC-1",
+      "WMR-IIC-2",
+      "WMR-IIC-3",
+      "WMR-IIC-4",
+      "WMR-IIC-12",
+      "WMR-IIC-5",
+      "WMR-IIC-6",
+      "WMR-IIC-7",
+      "WMR-IIC-8",
+      "WMR-IIC-10",
+      "WMR-IIC-11",
+      "WMR-IIC-9",
+      "WMR-IIC-Z"
+    ]
+  },
+  "warhammer": {
+    "70": [
+      "WHM-6D",
+      "WHM-6K",
+      "WHM-6L",
+      "WHM-6R",
+      "WHM-6RB",
+      "WHM-7A",
+      "WHM-7K",
+      "WHM-7M",
+      "WHM-7S",
+      "WHM-BW",
+      "WHM-4L",
+      "WHM-5L",
+      "WHM-X",
+      "WHM-66"
+    ]
+  },
+  "warhawk": {
+    "85": [
+      "WHK-A",
+      "WHK-B",
+      "WHK-C",
+      "WHK-D",
+      "WHK-F",
+      "WHK-H",
+      "WHK-PRIME",
+      "WHK-P"
+    ]
+  },
+  "WaspLAM": {
+    "30": [
+      "WSP-100 LAM MK ILAM (MK I)",
+      "WSP-100A",
+      "WSP-100B",
+      "WSP-105",
+      "WSP-105M",
+      "WSP-110"
+    ]
+  },
+  "wasp": {
+    "20": [
+      "WSP-1",
+      "WSP-1A",
+      "WSP-1D",
+      "WSP-1K",
+      "WSP-1L",
+      "WSP-1P",
+      "WSP-1P2",
+      "WSP-1S",
+      "WSP-1W",
+      "WSP-3M"
+    ]
+  },
+  "Watchman": {
+    "40": [
+      "WTC-4M",
+      "WTC-4DM",
+      "WTC-4DM2"
+    ]
+  },
+  "Whitworth": {
+    "40": [
+      "WTH-0",
+      "WTH-1",
+      "WTH-1S",
+      "WTH-2",
+      "WTH-1H",
+      "WTH-2A",
+      "WTH-3",
+      "WTH-K",
+      "WTH-5S"
+    ]
+  },
+  "wolfhound": {
+    "35": [
+      "WLF-1",
+      "WLF-1A",
+      "WLF-1X",
+      "WLF-2",
+      "WLF-7S",
+      "WLF-3M",
+      "WLF-4WB",
+      "WLF-2X",
+      "WLF-P",
+      "WLF-RX"
+    ]
+  },
+  "wolverine": {
+    "55": [
+      "WVR-1R",
+      "WVR-6K",
+      "WVR-6M",
+      "WVR-6R",
+      "WVR-6T",
+      "WVR-7D",
+      "WVR-7H",
+      "WVR-7K",
+      "WVR-7M",
+      "WVR-C",
+      "WVR-Q aka QUARANTINE",
+      "WVR-6R (GDL) Flashpoint_FightingGhosts",
+      "WVR-6R Flashpoint_FightingGhosts",
+      "WVR-6R Flashpoint-The-Raid",
+      "WVR-DS",
+      "WVR-X"
+    ]
+  },
+  "Wraith": {
+    "55": [
+      "TR1",
+      "TR1-TR2",
+      "TR1-TR3",
+      "TR2-X aka ALEXANDER RogueFlashPointModule",
+      "TR2-P aka POCAHONTAS RogueFlashPointModule"
+    ]
+  },
+  "wyvern": {
+    "45": [
+      "WVE-5N",
+      "WVE-5NB",
+      "WVE-5NSL",
+      "WVE-5UX",
+      "WVE-6N",
+      "WVE-9N",
+      "WVE-10N"
+    ]
+  },
+  "wyvernIIC": {
+    "45": [
+      "WVE-IIC",
+      "WVE-IIC-2"
+    ]
+  },
+  "yeoman": {
+    "60": [
+      "YMN-6Y",
+      "YMN-6D",
+      "YMN-6K",
+      "YMN-11R",
+      "YMN-10-OR",
+      "YMN-P",
+      "YMN-LSD"
+    ]
+  },
+  "YuHuang": {
+    "90": [
+      "Y-H10G",
+      "Y-H9G",
+      "Y-H9GC",
+      "Y-H11G",
+      "Y-H9GB"
+    ]
+  },
+  "zeus": {
+    "80": [
+      "ZEU-5S",
+      "ZEU-5T",
+      "ZEU-6S",
+      "ZEU-6S-DC",
+      "ZEU-6T",
+      "ZEU-6Y",
+      "ZEU-IS",
+      "ZEU-X",
+      "ZEU-9WD",
+      "ZEU-11S",
+      "ZEU-10WB",
+      "ZEU-X2",
+      "ZEU-9WDSTACY",
+      "ZEU-XP",
+      "ZEU-X3",
+      "ZEU-X4",
+      "ZEU-XR"
+    ],
+    "85": [
+      "ZEU-C"
+    ]
+  },
+  "axman": {
+    "65": [
+      "AXM-1N Base FlashPoint",
+      "AXM-2N Base FlashPoint",
+      "AXM-3S Base FlashPoint",
+      "AXM-4D Jihad Flashpoint"
+    ]
+  },
+  "crab": {
+    "50": [
+      "CRB-20 Base FlashPoint",
+      "CRB-27 Base FlashPoint",
+      "CRB-27B Base FlashPoint",
+      "CRB-27SL Base FlashPoint",
+      "CRB-30 Base FlashPoint",
+      "CRB-C Base FlashPoint",
+      "CRB-FL aka FLORENTINE Base FlashPoint",
+      "CRB-S ClanUpgrades Flashpoint",
+      "CRB-54 FlashPointDarkAge",
+      "CRB-21 Jihad Flashpoint",
+      "CRB-22S Jihad Flashpoint",
+      "CRB-GI aka GEMJI PirateTech Flashpoint Module",
+      "BSC-27 RogueFlashPointModule",
+      "CRB-27-H RogueModuleElitesFlashpoint"
+    ]
+  },
+  "cyclops": {
+    "90": [
+      "CP-10-HQ Base FlashPoint",
+      "CP-10-Q Base FlashPoint",
+      "CP-10-Z Base FlashPoint",
+      "CP-11-A Base FlashPoint",
+      "CP-11-A-DC Base FlashPoint",
+      "CP-11-C Base FlashPoint",
+      "CP-11-G Base FlashPoint",
+      "CP-12-K Base FlashPoint",
+      "CP-11-H Civil War FlashPoint",
+      "CP-10-Z Flashpoint-The-Raid",
+      "CP-11-Z Jihad Flashpoint",
+      "CP-11-P PirateTech Flashpoint Module"
+    ],
+    "30": [
+      "CP-50-T aka SCOTT"
+    ]
+  },
+  "hatchetman": {
+    "45": [
+      "HCT-3F Base FlashPoint",
+      "HCT-3X Base FlashPoint",
+      "HCT-5S Base FlashPoint",
+      "HCT-5D Civil War FlashPoint",
+      "HCT-5DD Civil War FlashPoint",
+      "HCT-5K Jihad Flashpoint"
+    ],
+    "50": [
+      "HCT-P PirateTech Flashpoint Module"
+    ],
+    "55": [
+      "HCT-S7 RogueModuleElitesFlashpoint"
+    ]
+  },
+  "no-dachi": {
+    "70": [
+      "NDA-1K Base FlashPoint",
+      "NDA-2K0 Base FlashPoint",
+      "NDA-RYU aka MITSURUGI-RYU RogueModuleElitesFlashpoint"
+    ]
+  },
+  "screamer": {
+    "55": [
+      "SCR-1X-LAM Base FlashPoint"
+    ]
+  },
+  "annihilator": {
+    "100": [
+      "ANH-1A",
+      "ANH-1E",
+      "ANH-2A",
+      "ANH-GSZ aka GAUSSZILLA",
+      "ANH-GSZC aka GAUSSZILLA",
+      "ANH-3A",
+      "ANH-4A",
+      "ANH-2AX",
+      "ANH-SG aka SCHWERER GUSTAV",
+      "ANH-RC",
+      "ANH-JH",
+      "ANH-THP aka THUMPERILLA",
+      "ANH-KS aka KURO SHI",
+      "ANH-GZ aka MECHAGODZILLA"
+    ]
+  },
+  "annihilatoriic": {
+    "100": [
+      "ANH-IIC"
+    ]
+  },
+  "Apollo": {
+    "55": [
+      "APL-1M",
+      "APL-1R",
+      "APL-2S",
+      "APL-3T",
+      "APL-3F",
+      "APL-4M"
+    ]
+  },
+  "archer": {
+    "70": [
+      "ARC-1A",
+      "ARC-2K",
+      "ARC-2R",
+      "ARC-2RB",
+      "ARC-2S",
+      "ARC-2W",
+      "ARC-4M",
+      "ARC-5R",
+      "ARC-5S",
+      "ARC-5W",
+      "ARC-8L",
+      "ARC-C",
+      "ARC-4MI",
+      "ARC-WLFWOLF",
+      "ARC-6S",
+      "ARC-6W",
+      "ARC-7L",
+      "ARC-8M",
+      "ARC-C2",
+      "ARC-2R (GDL) Flashpoint_FightingGhosts",
+      "ARC-7S",
+      "ARC-9K",
+      "ARC-9M",
+      "ARC-9W",
+      "ARC-0",
+      "ARC-P",
+      "ARC-9KC",
+      "ARC-LS",
+      "ARC-XO",
+      "ARC-XR aka ATHENA"
+    ]
+  },
+  "assassin": {
+    "40": [
+      "ASN-101",
+      "ASN-21",
+      "ASN-23",
+      "ASN-30",
+      "ASN-SRV aka SERVITOR",
+      "ASN-21 (GDL) Flashpoint_FightingGhosts",
+      "ASN-99"
+    ]
+  },
+  "bombardier": {
+    "65": [
+      "BMB-05A",
+      "BMB-10D",
+      "BMB-12D",
+      "BMB-14C",
+      "BMB-14K"
+    ]
+  },
+  "bullshark": {
+    "95": [
+      "BSK-M3",
+      "BSK-MAZ"
+    ]
+  },
+  "exterminator": {
+    "65": [
+      "EXT-4D",
+      "EXT-4DB",
+      "EXT-6W"
+    ]
+  },
+  "flea": {
+    "15": [
+      "FLE-14"
+    ],
+    "20": [
+      "FLE-15",
+      "FLE-16",
+      "FLE-17",
+      "FLE-4",
+      "FLE-RS",
+      "TP-1R aka TROOPER",
+      "FLE-FA aka FIRE ANT",
+      "FLE-19",
+      "FLE-20",
+      "FLE-4NUKER"
+    ]
+  },
+  "marshal": {
+    "55": [
+      "MHL-X1",
+      "MHL-2L",
+      "MHL-6MC",
+      "MHL-3MC"
+    ]
+  },
+  "phoenixhawk": {
+    "45": [
+      "PXH-1C",
+      "PXH-1D",
+      "PXH-1GS",
+      "PXH-2",
+      "PXH-2L",
+      "PXH-3D",
+      "PXH-3K",
+      "PXH-3M",
+      "PXH-3S",
+      "PXH-1",
+      "PXH-1B",
+      "PXH-1K",
+      "PXH-1 Flashpoint_FightingGhosts",
+      "PXH-JMNJIEMIN"
+    ]
+  },
+  "riflemanii": {
+    "80": [
+      "RFL-3N-2",
+      "RFL-3N-2P aka RIFLEMAN"
+    ]
+  },
+  "rifleman": {
+    "50": [
+      "RFL-1N"
+    ],
+    "60": [
+      "RFL-3C",
+      "RFL-3N",
+      "RFL-3N (C)(C)",
+      "RFL-4D",
+      "RFL-LK aka LEGEND-KILLER",
+      "RFL-3N (GDL) Flashpoint_FightingGhosts",
+      "RFL-3N (GDL) Flashpoint_FightingGhosts",
+      "RFL-3N Flashpoint_FightingGhosts",
+      "RFL-3CR",
+      "RFL-X3",
+      "RFL-RIP"
+    ]
+  },
+  "Stag II": {
+    "45": [
+      "ST-24G"
+    ]
+  },
+  "Stag": {
+    "45": [
+      "ST-14G"
+    ]
+  },
+  "Stealth": {
+    "45": [
+      "STH-1D",
+      "STH-2D",
+      "STH-2D1",
+      "STH-2D2",
+      "STH-3S",
+      "STH-1DANNA"
+    ]
+  },
+  "vulcan": {
+    "40": [
+      "VL-2T",
+      "VL-2TR",
+      "VL-5T",
+      "VL-6M",
+      "VT-5M",
+      "VT-5S",
+      "VL-2TTTIMMS",
+      "VT-BL",
+      "VL-7M",
+      "VT-5ML aka ALADDIN",
+      "VT-5SR",
+      "VT-6C",
+      "VT-6M"
+    ]
+  },
+  "wolfman": {
+    "55": [
+      "WVR-RFL",
+      "WVR-RFL2",
+      "WVR-RFL3"
+    ]
+  },
+  "argus": {
+    "60": [
+      "AGS-1X",
+      "AGS-2D",
+      "AGS-3D",
+      "AGS-4D",
+      "AGS-5D",
+      "AGS-6F",
+      "AGS-8DX",
+      "AGS-P aka ARRRRGUS"
+    ]
+  },
+  "Hades": {
+    "65": [
+      "LOKI-II AA",
+      "LOKI-II BB",
+      "LOKI-II CC",
+      "LOKI-II DD",
+      "LOKI-II EE",
+      "LOKI-II FF",
+      "LOKI-II GG",
+      "LOKI-II PRIMEPRIME"
+    ]
+  },
+  "Ostlord": {
+    "80": [
+      "OSL-9R"
+    ]
+  },
+  "SuperGriffin": {
+    "60": [
+      "GRF-2N-X",
+      "GRF-3-X"
+    ]
+  },
+  "SuperWasp": {
+    "25": [
+      "WSP-2A-X",
+      "WSP-3-X"
+    ]
+  },
+  "wolfhoundiic": {
+    "35": [
+      "WLF-GRN"
+    ]
+  },
+  "javelin": {
+    "30": [
+      "JVN-10A",
+      "JVN-10F",
+      "JVN-10N",
+      "JVN-10P",
+      "JVN-11A",
+      "JVN-11B",
+      "JVN-11D",
+      "JVN-11F"
+    ]
+  },
+  "raven": {
+    "35": [
+      "RVN-1X",
+      "RVN-2X",
+      "RVN-3L",
+      "RVN-3M",
+      "RVN-3X",
+      "RVN-H aka HUGINN",
+      "RVN-M aka MUNINN",
+      "RVN-4L"
+    ],
+    "40": [
+      "RVN-G aka GRIP"
+    ]
+  },
+  "Vulcan II": {
+    "40": [
+      "VLC-N3",
+      "VLC-N4M"
+    ]
+  },
+  "arcticwolf": {
+    "40": [
+      "ACW-BK",
+      "ACW-P",
+      "ACW-1",
+      "ACW-PRIME",
+      "ACW-X LV426"
+    ]
+  },
+  "madcatmkii": {
+    "90": [
+      "MCII-DS aka DEATHSTRIKE",
+      "MCII-1",
+      "MCII-A",
+      "MCII-B",
+      "MCII-FIS",
+      "MCII-2",
+      "MCII-ECD",
+      "MCII-P",
+      "MCII-4",
+      "MCII-RSC",
+      "MC-MKII-M aka LADY KILLER"
+    ],
+    "95": [
+      "MCII-AN aka ANGRBODA"
+    ]
+  },
+  "Dagger": {
+    "35": [
+      "RVN-LR aka DAGGER",
+      "RVN-LR-P aka RAPIER"
+    ]
+  },
+  "Anubis": {
+    "30": [
+      "ABS-3L",
+      "ABS-3R",
+      "ABS-3T",
+      "ABS-4C",
+      "ABS-3MC",
+      "ABS-P",
+      "ABS-5Y",
+      "ABS-5Z",
+      "ABS-RX",
+      "ABS-S7"
+    ]
+  },
+  "chimera": {
+    "40": [
+      "CMA-1S",
+      "CMA-C",
+      "CMA-2K"
+    ]
+  },
+  "dreka": {
+    "100": [
+      "DKA-1S"
+    ]
+  },
+  "Fashih": {
+    "5": [
+      "FS-1"
+    ]
+  },
+  "fafnir": {
+    "100": [
+      "FNR-5",
+      "FNR-5B",
+      "FNR-5C",
+      "FNR-P",
+      "FNR-5X",
+      "FNR-4A",
+      "FNR-S7"
+    ],
+    "200": [
+      "FNR-SH aka TIAMAT"
+    ]
+  },
+  "hellspawn": {
+    "45": [
+      "HSN-7D",
+      "HSN-8D",
+      "HSN-10G",
+      "HSN-10SR",
+      "HSN-8E",
+      "HSN-9F",
+      "HSN-7D2",
+      "HSN-V",
+      "HSN-7S"
+    ]
+  },
+  "laohu": {
+    "75": [
+      "LHU-2B",
+      "LHU-3B",
+      "LHU-3C",
+      "LHU-3L",
+      "LHU-4E"
+    ]
+  },
+  "legacy": {
+    "80": [
+      "LGC-01",
+      "LGC-02",
+      "LGC-03",
+      "LGC-04-WVR",
+      "LGC-05"
+    ]
+  },
+  "ninja-to": {
+    "65": [
+      "NJT-2",
+      "NJT-3",
+      "NJT-4",
+      "NJT-EMP"
+    ]
+  },
+  "osiris": {
+    "30": [
+      "OSR-1P",
+      "OSR-1V",
+      "OSR-2V",
+      "OSR-3D",
+      "OSR-4C -OSIRIS-",
+      "OSR-4D",
+      "OSR-5D",
+      "OSR-SE"
+    ]
+  },
+  "Phalanx": {
+    "10": [
+      "PX-A"
+    ]
+  },
+  "RabidCoyote": {
+    "55": [
+      "RB-1",
+      "RB-2",
+      "RB-P",
+      "RB-3",
+      "RB-Z"
+    ]
+  },
+  "Razorback": {
+    "30": [
+      "RZK-9S",
+      "RZK-9T",
+      "RZK-11T",
+      "RZK-10S",
+      "RZK-10T",
+      "RZK-P"
+    ]
+  },
+  "Redshift": {
+    "20": [
+      "RDS-2A",
+      "RDS-2B",
+      "RDS-3A"
+    ]
+  },
+  "Sasquatch": {
+    "85": [
+      "SQS-TH-002"
+    ]
+  },
+  "Scyla": {
+    "100": [
+      "SCY-1",
+      "SCY-2",
+      "SCY-3"
+    ]
+  },
+  "solitaire": {
+    "25": [
+      "SIE",
+      "SIE-2"
+    ]
+  },
+  "templar": {
+    "85": [
+      "TLR1-O",
+      "TLR1-OA",
+      "TLR1-OB",
+      "TLR1-OC",
+      "TLR1-OD",
+      "TLR1-OE",
+      "TLR1-OR",
+      "TLR1-OF",
+      "TLR1-OG",
+      "TLR1-OH",
+      "TLR1-OI",
+      "TLR1-OS"
+    ]
+  },
+  "TomaHawk": {
+    "100": [
+      "THW-A",
+      "THW-B",
+      "THW-C",
+      "THW-PRIME"
+    ]
+  },
+  "uziel": {
+    "50": [
+      "UZL-2S",
+      "UZL-3S",
+      "UZL-4L",
+      "UZL-2SJ",
+      "UZL-2SJII",
+      "UZL-P",
+      "UZL-RX"
+    ]
+  },
+  "Vanquisher": {
+    "100": [
+      "VQR-2A",
+      "VQR-2B",
+      "VQR-5V",
+      "VQR-7U",
+      "VQR-7V"
+    ]
+  },
+  "atlasiic": {
+    "100": [
+      "AS-IIC",
+      "AS-IIC-OS aka OBSIDIAN SKULL"
+    ]
+  },
+  "blackknightiic": {
+    "75": [
+      "BL-IIC"
+    ]
+  },
+  "CicadaIIC": {
+    "40": [
+      "CDA-IIC",
+      "CDA-IIC-1",
+      "CDA-IIC-2",
+      "CDA-IIC-3",
+      "CDA-IIC-4"
+    ]
+  },
+  "firestarteriic": {
+    "35": [
+      "FS-IIC"
+    ]
+  },
+  "jagermechiic": {
+    "70": [
+      "JM-IIC"
+    ]
+  },
+  "pantheriic": {
+    "35": [
+      "PNT-IIC",
+      "PNT-IIC-GS"
+    ]
+  },
+  "crabiic": {
+    "50": [
+      "CRB-IIC ClanUpgrades Flashpoint",
+      "CRB-IIC-2 Jihad Flashpoint"
+    ]
+  },
+  "CatapultII": {
+    "75": [
+      "CPLT-IIC-4"
+    ],
+    "70": [
+      "CPLT-C7",
+      "CPLT-L7",
+      "CPLT-L7L"
+    ]
+  },
+  "SavageWolf": {
+    "75": [
+      "MCIV-D",
+      "MCIV-A",
+      "MCIV-B",
+      "MCIV-C",
+      "MCIV-PRIME"
+    ]
+  },
+  "Spider IIC": {
+    "35": [
+      "SDR-IIC",
+      "SDR-IIC-2"
+    ]
+  },
+  "stingeriic": {
+    "20": [
+      "STG-IIC-3",
+      "STG-IIC-1",
+      "STG-IIC-2"
+    ]
+  },
+  "Gun": {
+    "20": [
+      "GN-2OR",
+      "GN-2O",
+      "GN-2OA",
+      "GN-2OB",
+      "GN-2OC",
+      "GN-2OD"
+    ]
+  },
+  "jadehawk": {
+    "75": [
+      "JHK-HZN aka HAZEN",
+      "JHK-03",
+      "JHK-04",
+      "JHK-1",
+      "JHK-2",
+      "JHK-3"
+    ]
+  },
+  "madcatiii": {
+    "55": [
+      "MCIII-E",
+      "MCIII-Z",
+      "MCIII-X",
+      "MCIII-1"
+    ]
+  },
+  "Skinwalker": {
+    "55": [
+      "RIII-XP",
+      "RIII-XPA",
+      "RIII-XPB",
+      "RIII-XPC",
+      "RIII-XPD",
+      "RIII-XPE"
+    ]
+  },
+  "Amazon": {
+    "5": [
+      "IS-A",
+      "IS-ARIFLE"
+    ]
+  },
+  "atlasiii": {
+    "100": [
+      "AS7-D3",
+      "AS7-D2"
+    ]
+  },
+  "Cazador": {
+    "35": [
+      "CZR-1"
+    ]
+  },
+  "OmniCenturion": {
+    "50": [
+      "CN11-O",
+      "CN11-OA",
+      "CN11-OB",
+      "CN11-OC",
+      "CN11-OD",
+      "CN11-OE",
+      "CN11-OP",
+      "CN11-H",
+      "CN11-PT",
+      "CN11-YLW3 aka YEN LO WANG III",
+      "CN11-OX"
+    ]
+  },
+  "Ghost": {
+    "50": [
+      "GST-90",
+      "GST-10",
+      "GST-11",
+      "GST-50",
+      "GST-10A aka AURORA RogueFlashPointModule"
+    ]
+  },
+  "Goetterdaemmerung": {
+    "75": [
+      "GTD-20S"
+    ]
+  },
+  "Gunsmith": {
+    "25": [
+      "CH11-NG",
+      "CH11-NGC RogueFlashPointModule"
+    ]
+  },
+  "Kheper": {
+    "55": [
+      "KHP-7R",
+      "KHP-8R",
+      "KHP-9R"
+    ]
+  },
+  "lament": {
+    "65": [
+      "LMT-2D",
+      "LMT-2R",
+      "LMT-3C",
+      "LMT-3R",
+      "LMT-4RC",
+      "LMT-3L",
+      "LMT-3M",
+      "LMT-5D"
+    ],
+    "75": [
+      "LMT-S7 aka DIRGE"
+    ]
+  },
+  "orochi": {
+    "90": [
+      "OR-3K",
+      "OR-2I"
+    ]
+  },
+  "Preyseeker": {
+    "15": [
+      "PY-SR10"
+    ]
+  },
+  "quasimodo": {
+    "55": [
+      "QSM-3D",
+      "QSM-RSC"
+    ]
+  },
+  "ryokenii": {
+    "75": [
+      "RYO-II-GB",
+      "RYO-II-S",
+      "RYO-II"
+    ]
+  },
+  "Sojourner": {
+    "60": [
+      "SJN-A",
+      "SJN-B",
+      "SJN-C",
+      "SJN-D",
+      "SJN-PRIME"
+    ]
+  },
+  "stalkerii": {
+    "85": [
+      "STK-9A"
+    ]
+  },
+  "templariii": {
+    "85": [
+      "TLR2-O",
+      "TLR2-OA",
+      "TLR2-OB",
+      "TLR2-OC",
+      "TLR2-OD",
+      "TLR2-RX"
+    ]
+  },
+  "TomaHawkII": {
+    "100": [
+      "THWII-A",
+      "THWII-B",
+      "THWII-C",
+      "THWII-PRIME"
+    ]
+  },
+  "vulpes": {
+    "60": [
+      "VLP-1D",
+      "VLP-1DX RogueFlashPointModule"
+    ]
+  },
+  "omen": {
+    "85": [
+      "OM-2",
+      "OM-1"
+    ]
+  },
+  "warwolf": {
+    "75": [
+      "WW1-PRIME"
+    ]
+  },
+  "Archangel": {
+    "100": [
+      "C-ANG-O-CCIROSS",
+      "C-ANG-O-DAMDAM",
+      "C-ANG-O-SSNAFU",
+      "C-ANG-OINVICTUS",
+      "C-ANG-OADOMINUS",
+      "C-ANG-OBINFERNUS",
+      "C-ANG-OCCOMMINUS",
+      "C-ANG-ODLUMINOS",
+      "C-ANG-OEEMINUS",
+      "C-ANG-OSCAELESTIS",
+      "C-ANG-O-BBERITH",
+      "C-ANG-O-RXRX"
+    ]
+  },
+  "leviathan": {
+    "200": [
+      "LVT-RACZII aka RACZILLA II",
+      "LVT-RACZ aka RACZILLA",
+      "LVT-C",
+      "LVT-PRIME"
+    ]
+  },
+  "Seraph": {
+    "85": [
+      "C-SRP-O-AARCQIEL",
+      "C-SRP-O-OORSSOS",
+      "C-SRP-OINVICTUS",
+      "C-SRP-OADOMINUS",
+      "C-SRP-OBINFERNUS",
+      "C-SRP-OCCOMMINUS",
+      "C-SRP-ODLUMINOS",
+      "C-SRP-OEEMINUS",
+      "C-SRP-OSCAELESTIS",
+      "C-SRP-O-HHAVALAH",
+      "C-SRP-O-RRAVANA"
+    ]
+  },
+  "riflemaniii": {
+    "90": [
+      "RFL-III-C"
+    ]
+  },
+  "archergdl": {
+    "70": [
+      "ARC-4M Flashpoint_FightingGhosts"
+    ]
+  },
+  "enforcergdl": {
+    "50": [
+      "ENF-5D Flashpoint_FightingGhosts"
+    ]
+  },
+  "warhammergdl": {
+    "70": [
+      "WHM-7S Flashpoint_FightingGhosts"
+    ]
+  },
+  "HitotsumeKozo": {
+    "55": [
+      "HK-1F FlashPointDarkAge",
+      "HK-1P FlashPointDarkAge"
+    ]
+  },
+  "SpaceMarine": {
+    "5": [
+      "SPEESMAHRIN"
+    ]
+  },
+  "Arbiter": {
+    "35": [
+      "ARB-001",
+      "ARB-002",
+      "ARB-003"
+    ]
+  },
+  "bearcub": {
+    "25": [
+      "BC-1",
+      "BC-2",
+      "BC-3"
+    ]
+  },
+  "bruin": {
+    "80": [
+      "BRN-1",
+      "BRN-2"
+    ]
+  },
+  "cephalus": {
+    "25": [
+      "CPH-A",
+      "CPH-B",
+      "CPH-C",
+      "CPH-D",
+      "CPH-E",
+      "CPH-PRIME"
+    ]
+  },
+  "Darkcrow": {
+    "55": [
+      "DCW-1",
+      "DCW-2",
+      "DCW-3",
+      "DCW-4"
+    ]
+  },
+  "Deimos": {
+    "85": [
+      "DEI-A",
+      "DEI-B",
+      "DEI-PRIME",
+      "DEI-C",
+      "DEI-D",
+      "DEI-S"
+    ]
+  },
+  "Deva": {
+    "70": [
+      "C-DVA-OINVICTUS",
+      "C-DVA-OADOMINUS",
+      "C-DVA-OBINFERNUS",
+      "C-DVA-OCCOMMINUS",
+      "C-DVA-ODLUMINOS",
+      "C-DVA-OEEMINUS",
+      "C-DVA-OSCAELESTIS",
+      "C-DVA-O-AACHILLEUS"
+    ]
+  },
+  "Grigori": {
+    "60": [
+      "C-GRG-OINVICTUS",
+      "C-GRG-OADOMINUS",
+      "C-GRG-OBINFERNUS",
+      "C-GRG-OCCOMMINUS",
+      "C-GRG-ODLUMINOS",
+      "C-GRG-OEEMINUS",
+      "C-GRG-OSCAELESTIS",
+      "C-GRG-O-RRUFUS",
+      "C-GRG-O-TTAMIEL"
+    ]
+  },
+  "IncubusII": {
+    "30": [
+      "INC-IIGAUSS",
+      "INC-IILRM",
+      "INC-IIMRIFLE",
+      "INC-IISLRM",
+      "INC-IISSRM",
+      "INC-IITAG",
+      "INC-IILRIFLE"
+    ]
+  },
+  "malak": {
+    "30": [
+      "C-MK-OINVICTUS",
+      "C-MK-OADOMINUS",
+      "C-MK-OBINFERNUS",
+      "C-MK-OCCOMMINUS",
+      "C-MK-ODLUMINOS",
+      "C-MK-OEEMINUS",
+      "C-MK-OSCAELESTIS",
+      "C-MK-O-MMI"
+    ]
+  },
+  "Nephilim": {
+    "10": [
+      "WB-1",
+      "WB-GSS"
+    ]
+  },
+  "osteon": {
+    "85": [
+      "OTN-A",
+      "OTN-B",
+      "OTN-C",
+      "OTN-D",
+      "OTN-E",
+      "OTN-F",
+      "OTN-G",
+      "OTN-PRIME",
+      "OTN-J"
+    ]
+  },
+  "packhunterii": {
+    "30": [
+      "PHII-1",
+      "PHII-2",
+      "PHII-3"
+    ]
+  },
+  "Preta": {
+    "45": [
+      "C-PRT-OINVICTUS",
+      "C-PRT-OADOMINUS",
+      "C-PRT-OBINFERNUS",
+      "C-PRT-OCCOMMINUS",
+      "C-PRT-ODLUMINOS",
+      "C-PRT-OEEMINUS",
+      "C-PRT-OSCAELESTIS",
+      "C-PRT-O-KKENDALI",
+      "C-PRT-O-PXPX aka KERES"
+    ]
+  },
+  "pwwka": {
+    "30": [
+      "S-PW-1LAM",
+      "S-PW-2LAM",
+      "S-PW-3LAM Jihad Flashpoint"
+    ]
+  },
+  "RaptorII": {
+    "40": [
+      "RPT-2L",
+      "RPT-2X",
+      "RPT-2X1",
+      "RPT-3X",
+      "RPT-5X",
+      "RPT-2X2",
+      "RPT-RX"
+    ]
+  },
+  "septicemia": {
+    "55": [
+      "SPT-A",
+      "SPT-A-Z",
+      "SPT-B",
+      "SPT-B-Z",
+      "SPT-D",
+      "SPT-D-Z",
+      "SPT-E",
+      "SPT-F",
+      "SPT-PRIME",
+      "SPT-US"
+    ]
+  },
+  "titanii": {
+    "100": [
+      "TI-2P",
+      "TI-2PA"
+    ]
+  },
+  "valiant": {
+    "30": [
+      "V4-LNT-K7",
+      "V4-VAL-NT-JX",
+      "V4-VAL-NT-P"
+    ]
+  },
+  "waneta": {
+    "55": [
+      "S-WN-1LAM",
+      "S-WN-2LAM",
+      "S-WN-3LAM Jihad Flashpoint"
+    ]
+  },
+  "Wight": {
+    "35": [
+      "WGT-2LAW",
+      "WGT-4NC"
+    ]
+  },
+  "yurei": {
+    "40": [
+      "S-YR-1LAM",
+      "S-YR-2LAM",
+      "S-YR-3LAM Jihad Flashpoint"
+    ]
+  },
+  "Axman6X": {
+    "65": [
+      "AXM-6XFLAMER Jihad Flashpoint",
+      "AXM-6XLAC5 Jihad Flashpoint",
+      "AXM-6XMML Jihad Flashpoint",
+      "AXM-6XMRM Jihad Flashpoint",
+      "AXM-6XPPC Jihad Flashpoint"
+    ]
+  },
+  "Gestalt": {
+    "45": [
+      "D2X-G"
+    ]
+  },
+  "pendragon": {
+    "95": [
+      "PDG-1X",
+      "PDG-1R",
+      "PDG-2R",
+      "PDG-3R"
+    ]
+  },
+  "xenoqueen": {
+    "200": [
+      "LVT-BKQN aka BLACK QUEEN LV426"
+    ]
+  },
+  "xenorauder": {
+    "75": [
+      "MAD-PX LV426"
+    ]
+  },
+  "anzu": {
+    "60": [
+      "ZU-P66",
+      "ZU-G60",
+      "ZU-J70",
+      "ZU-R88"
+    ]
+  },
+  "VultureMKII": {
+    "70": [
+      "MDD-MKIIP",
+      "MDD-MKIIE",
+      "MDD-MKII",
+      "MDD-MKIIA",
+      "MDD-MKIIB",
+      "MDD-MKIIC",
+      "MDD-MKIID",
+      "MDD-MKIIF"
+    ]
+  },
+  "warthog": {
+    "55": [
+      "WTG-A10"
+    ]
+  },
+  "PirateWasp": {
+    "20": [
+      "WSP-P",
+      "WSP-P2",
+      "WSP-P3",
+      "WSP-P4",
+      "WSP-P5",
+      "WSP-P6",
+      "WSP-P7",
+      "WSP-P8"
+    ]
+  },
+  "Erinyes": {
+    "2": [
+      "ENS-1",
+      "ENS-2",
+      "ENS-3"
+    ],
+    "9": [
+      "ENS-AKT"
+    ]
+  },
+  "Harpy": {
+    "2": [
+      "HRP-1",
+      "HRP-2",
+      "HRP-3",
+      "HRP-4",
+      "HRP-SHT"
+    ]
+  },
+  "Sprite": {
+    "15": [
+      "SLR-1",
+      "SPT/15",
+      "SPT/15-2",
+      "SPT/15-3"
+    ]
+  },
+  "Agrotera": {
+    "50": [
+      "AGT-1A"
+    ]
+  },
+  "arcticwolfii": {
+    "40": [
+      "ACWII-PRIME"
+    ],
+    "45": [
+      "AWII-S7 aka STORM WOLF"
+    ]
+  },
+  "calliope": {
+    "40": [
+      "CAL-1MAF",
+      "CAL-1MAF-SW aka SNOW WHITE RogueFlashPointModule"
+    ]
+  },
+  "carronade": {
+    "70": [
+      "CRN-7M"
+    ]
+  },
+  "CaveLion": {
+    "75": [
+      "CL"
+    ]
+  },
+  "cuirass": {
+    "40": [
+      "CDR-1X",
+      "CDR-2X"
+    ]
+  },
+  "doloire": {
+    "80": [
+      "DLR-O",
+      "DLR-OA",
+      "DLR-OB",
+      "DLR-OBLO",
+      "DLR-OC",
+      "DLR-OD"
+    ]
+  },
+  "dragonii": {
+    "65": [
+      "DRG-11K",
+      "DRG-11R"
+    ]
+  },
+  "Eyrie": {
+    "35": [
+      "ER-1"
+    ]
+  },
+  "Gauntlet": {
+    "55": [
+      "GTL-1O",
+      "GTL-1OA",
+      "GTL-1OB",
+      "GTL-1OC",
+      "GTL-RSC",
+      "GTL-S7 aka DESPERADO"
+    ]
+  },
+  "GoshawkII": {
+    "45": [
+      "GHII-1",
+      "GHII-2",
+      "GHII-3",
+      "GHII-RX"
+    ]
+  },
+  "grandsummoner": {
+    "70": [
+      "GSMN-A",
+      "GSMN-B",
+      "GSMN-C",
+      "GSMN-D",
+      "GSMN-PRIME"
+    ]
+  },
+  "hel": {
+    "65": [
+      "HBRII-A",
+      "HBRII-B",
+      "HBRII-PRIME"
+    ]
+  },
+  "Koshi": {
+    "25": [
+      "KS-1",
+      "KS-2",
+      "KS-3"
+    ]
+  },
+  "neanderthal": {
+    "80": [
+      "NTL-AG",
+      "NTL-UG"
+    ]
+  },
+  "onager": {
+    "90": [
+      "OGR-1",
+      "OGR-2"
+    ]
+  },
+  "Reptar": {
+    "35": [
+      "EPT-C-1"
+    ]
+  },
+  "scarecrow": {
+    "40": [
+      "UCU-F4",
+      "UCU-F4R"
+    ]
+  },
+  "shrike": {
+    "95": [
+      "SRK-1",
+      "SRK-2",
+      "SRK-BLKR"
+    ]
+  },
+  "tenshi": {
+    "95": [
+      "TN-10-O",
+      "TN-10-OA",
+      "TN-10-OB",
+      "TN-10-OR"
+    ]
+  },
+  "thunderboltiic": {
+    "70": [
+      "TDR-IIC-1",
+      "TDR-IIC-2"
+    ]
+  },
+  "VultureMkIII": {
+    "60": [
+      "VLTIII-A",
+      "VLTIII-B",
+      "VLTIII-C",
+      "VLTIII-D",
+      "VLTIII-PRIME"
+    ]
+  },
+  "mortis": {
+    "75": [
+      "MS-1A Republic FlashPoint",
+      "MS-1P Republic FlashPoint",
+      "MTS-PV Republic FlashPoint"
+    ]
+  },
+  "Gyrfalcon": {
+    "55": [
+      "GF-1",
+      "GF-2",
+      "GF-3",
+      "GF-4",
+      "GF-WL"
+    ]
+  },
+  "SavageWolfProto": {
+    "75": [
+      "MCIV-PR2",
+      "MCIV-PR"
+    ]
+  },
+  "ravenii": {
+    "40": [
+      "RVN-5X"
+    ]
+  },
+  "Angerona": {
+    "5": [
+      "SS-PDS aka AEGIS POINT DEFENSE SUIT",
+      "SS-LR"
+    ]
+  },
+  "Matar": {
+    "100": [
+      "DN-RSC aka MATAR",
+      "SHP-P aka MATAR"
+    ],
+    "110": [
+      "SAM-RS2 RogueFlashPointModule"
+    ]
+  },
+  "defiance": {
+    "75": [
+      "DFN-3A aka WARHAMMER"
+    ]
+  },
+  "phoenixhawkiic": {
+    "80": [
+      "PXH-IIC aka PHOENIXHAWK"
+    ]
+  },
+  "Anand": {
+    "75": [
+      "ANU-O aka ANAND",
+      "ANU-OA aka ANAND",
+      "ANU-OB aka ANAND",
+      "ANU-OC aka ANAND"
+    ]
+  },
+  "Aswang": {
+    "40": [
+      "CGX-A aka ASWANG",
+      "CGX-B aka ASWANG",
+      "CGX-C aka ASWANG",
+      "CGX-D aka ASWANG",
+      "CGX-E aka ASWANG",
+      "CGX-PRIME aka ASWANG"
+    ]
+  },
+  "SHDLAMOMNI": {
+    "55": [
+      "SHX-O aka BERKUT",
+      "SHX-OA aka BERKUT",
+      "SHX-OB aka BERKUT",
+      "SHX-OC aka BERKUT",
+      "SHX-OD aka BERKUT",
+      "SHX-OE aka BERKUT",
+      "SHX-OF aka BERKUT"
+    ]
+  },
+  "Catapult3": {
+    "55": [
+      "CPLT-R1",
+      "CPLT-R2",
+      "CPLT-R3",
+      "CPLT-R4",
+      "CPLT-R5",
+      "CPLT-R6"
+    ]
+  },
+  "OmniBlackKnight": {
+    "75": [
+      "BLK-O aka CONQUISTADOR",
+      "BLK-OA aka CONQUISTADOR",
+      "BLK-OB aka CONQUISTADOR",
+      "BLK-OC aka CONQUISTADOR",
+      "BLK-OD aka CONQUISTADOR"
+    ]
+  },
+  "CrossbowX": {
+    "60": [
+      "CRX-A aka CROSSBOW X",
+      "CRX-B aka CROSSBOW X",
+      "CRX-C aka CROSSBOW X",
+      "CRX-PRIME aka CROSSBOW X"
+    ]
+  },
+  "DragonX": {
+    "70": [
+      "DRX-O",
+      "DRX-OA",
+      "DRX-OB",
+      "DRX-OC",
+      "DRX-OD"
+    ]
+  },
+  "Hammertime": {
+    "70": [
+      "HM-O aka HEPHAISTOS",
+      "HM-OA aka HEPHAISTOS",
+      "HM-OB aka HEPHAISTOS",
+      "HM-OC aka HEPHAISTOS"
+    ]
+  },
+  "Imiut": {
+    "45": [
+      "ABSII-O aka IMIUT",
+      "ABSII-OA aka IMIUT",
+      "ABSII-OB aka IMIUT"
+    ]
+  },
+  "OmniKGC": {
+    "100": [
+      "PT-O aka PROTEUS",
+      "PT-OA aka PROTEUS",
+      "PT-OB aka PROTEUS",
+      "PT-OC aka PROTEUS",
+      "PT-OD aka PROTEUS",
+      "PT-OE aka PROTEUS",
+      "PT-OF aka PROTEUS"
+    ]
+  },
+  "RaptorIII": {
+    "40": [
+      "RPT3-O aka RAPTOR III",
+      "RPT3-OA aka RAPTOR III",
+      "RPT3-OB aka RAPTOR III",
+      "RPT3-OC aka RAPTOR III",
+      "RPT3-OD aka RAPTOR III",
+      "RPT3-OE aka RAPTOR III",
+      "RPT3-OF aka RAPTOR III"
+    ]
+  },
+  "AssassinII": {
+    "40": [
+      "ASNII-O",
+      "ASNII-OA",
+      "ASNII-OB",
+      "ASNII-OC",
+      "ASNII-OD",
+      "ASNII-RX",
+      "ASNII-S7"
+    ]
+  },
+  "BadbCatha": {
+    "70": [
+      "BC-O aka BABD CATHA",
+      "BC-OA aka BABD CATHA",
+      "BC-OB aka BABD CATHA",
+      "BC-OC aka BABD CATHA",
+      "BC-OD aka BABD CATHA"
+    ]
+  },
+  "Mhacha": {
+    "60": [
+      "MHC-O aka MHACHA",
+      "MHC-OA aka MHACHA",
+      "MHC-OB aka MHACHA"
+    ]
+  },
+  "dragonfireiic": {
+    "75": [
+      "DGR-IIC-A",
+      "DGR-IIC-B"
+    ]
+  },
+  "helepolisiic": {
+    "85": [
+      "HEP-IIC Z-Z",
+      "HEP-IIC ZA-ZA"
+    ]
+  },
+  "hyperion": {
+    "125": [
+      "HYP-A",
+      "HYP-B",
+      "HYP-C",
+      "HYP-PRIME"
+    ]
+  },
+  "icarusiic": {
+    "40": [
+      "ICR-IIC-A",
+      "ICR-IIC-B",
+      "ICR-IIC-C",
+      "ICR-IIC-D",
+      "ICR-IIC-PRIME"
+    ]
+  },
+  "victoriic": {
+    "80": [
+      "VTR-IIC-Z",
+      "VTR-IIC ZA-ZA"
+    ]
+  },
+  "Moozilla": {
+    "150": [
+      "CM-XXX",
+      "CM-XXX2",
+      "CM-XXX3"
+    ]
+  },
+  "omega": {
+    "200": [
+      "SHP-C"
+    ],
+    "150": [
+      "SHP-X4"
+    ]
+  },
+  "orca": {
+    "200": [
+      "OC-1X"
+    ]
+  },
+  "beetledrone": {
+    "25": [
+      "BEE-17989 aka BEETLE RED",
+      "BEE-17989 aka BEETLE YELLOW"
+    ]
+  },
+  "cometscream": {
+    "55": [
+      "CS-1X aka COMET SCREAM"
+    ]
+  },
+  "ecee": {
+    "55": [
+      "EC-131"
+    ]
+  },
+  "grimdark": {
+    "100": [
+      "GRD aka GRIMDARK"
+    ]
+  },
+  "sounder": {
+    "65": [
+      "LBR-R1 aka LAMBOR RED",
+      "LBR-Y1 aka LAMBOR YELLOW"
+    ]
+  },
+  "noisejammer": {
+    "85": [
+      "NOJAM-0101 aka NOISE JAMMER"
+    ]
+  },
+  "phantasm": {
+    "45": [
+      "MK-109"
+    ]
+  },
+  "PlasmaBeak": {
+    "5": [
+      "LBD"
+    ]
+  },
+  "leader": {
+    "85": [
+      "OPT-PRIME aka PRIMUS OPTIMAL"
+    ]
+  },
+  "urbanlord": {
+    "70": [
+      "UBL-06",
+      "UBL-20",
+      "UBL-77",
+      "UBL-RX"
+    ]
+  },
+  "mobileturret": {
+    "35": [
+      "MBT-O",
+      "MBT-OA",
+      "MBT-OB",
+      "MBT-OC",
+      "MBT-OD",
+      "MBT-OE"
+    ]
+  }
+}

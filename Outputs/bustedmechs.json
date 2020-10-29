@@ -1,0 +1,674 @@
+[
+  {
+    "Values": [
+      "RFL-3N (GDL) Flashpoint_FightingGhosts"
+    ],
+    "Count": 2,
+    "Group": [
+      {
+        "MechDefFile": "\\Flashpoint_FightingGhosts\\mech\\mechdef_gdl_RFL-3N.json",
+        "ChassisDefFile": "\\Flashpoint_FightingGhosts\\chassis\\chassisdef_gdl_RFL-3N.json",
+        "ID": "gdl_RFL-3N",
+        "Special": [],
+        "Mod": "Flashpoint_FightingGhosts",
+        "Tonnage": 60,
+        "Class": "HEAVY",
+        "Name": {
+          "Variant": "RFL-3N (GDL)",
+          "SubVariant": "",
+          "Hero": "",
+          "Chassis": "RIFLEMAN",
+          "Unique": ""
+        },
+        "Factions": [],
+        "BLACKLIST": true,
+        "CLAN": false,
+        "INNERSPHERE": false,
+        "MERC": false,
+        "PERIPHERY": false,
+        "PIRATE": false,
+        "WeaponMounts": {
+          "OmniSlot": 0,
+          "EnergySlot": 4,
+          "BallisticSlot": 2,
+          "MissileSlot": 0,
+          "SupportSlot": 1,
+          "BASlot": 0,
+          "JJSlot": 20
+        },
+        "Hardpoint": {
+          "Head": [],
+          "LeftArm": [
+            "Ballistic",
+            "Energy"
+          ],
+          "LeftTorso": [
+            "Energy"
+          ],
+          "CenterTorso": [
+            "AntiPersonnel"
+          ],
+          "RightTorso": [
+            "Energy"
+          ],
+          "RightArm": [
+            "Ballistic",
+            "Energy"
+          ],
+          "LeftLeg": [],
+          "RightLeg": []
+        },
+        "Loadout": {
+          "Dynamic": {
+            "LA": [
+              "emod_arm_part_shoulder",
+              "emod_arm_part_upper",
+              "Weapon_Autocannon_AC5_1-Kali_Yama",
+              "Weapon_Laser_LargeLaser_1-Intek"
+            ],
+            "LT": "Weapon_Laser_MediumLaser_1-Intek",
+            "RA": [
+              "emod_arm_part_shoulder",
+              "emod_arm_part_upper",
+              "Weapon_Autocannon_AC5_1-Kali_Yama",
+              "Weapon_Laser_LargeLaser_1-Intek"
+            ],
+            "HD": [
+              "Gear_Cockpit_LifeSupportA_Standard",
+              "Gear_Cockpit_LifeSupportB_Standard",
+              "Gear_Cockpit_Majesty_M_M_180KL",
+              "Gear_FCS_Autocannon",
+              "Gear_Sensors_Sniper"
+            ],
+            "RL": [
+              "emod_leg_hip",
+              "emod_leg_upper",
+              "emod_leg_lower",
+              "emod_leg_foot",
+              "Gear_HeatSink_Generic_Standard"
+            ],
+            "CT": [
+              "emod_armorslots_standard",
+              "emod_structureslots_standard",
+              "Gear_Gyro_Ultralight",
+              "Gear_Engine_240",
+              "emod_engineslots_std_center",
+              "Gear_Engine_Heatsinks",
+              "emod_kit_shs",
+              "Gear_HandHeld_Slot",
+              "Gear_HandHeld_Slot",
+              "Ammo_AmmunitionBox_Generic_AC5",
+              "Gear_HeatSink_Generic_Standard"
+            ],
+            "RT": "Weapon_Laser_MediumLaser_1-Intek",
+            "LL": [
+              "emod_leg_hip",
+              "emod_leg_upper",
+              "emod_leg_lower",
+              "emod_leg_foot",
+              "Gear_HeatSink_Generic_Standard"
+            ]
+          },
+          "Fixed": {
+            "LA": [],
+            "LT": [],
+            "RA": [],
+            "HD": [],
+            "RL": [],
+            "CT": "Special_Anti_Air_Targeting",
+            "RT": [],
+            "LL": []
+          }
+        },
+        "Icon": "Rifleman",
+        "HP": {
+          "Structure": {
+            "LA": 50,
+            "RA": 50,
+            "LL": 70,
+            "RT": 70,
+            "RL": 70,
+            "HD": 16,
+            "LT": 70,
+            "CT": 70
+          },
+          "SetArmor": {
+            "RA": 75,
+            "LTF": 75,
+            "CTR": 20,
+            "RL": 60,
+            "LA": 75,
+            "HD": 30,
+            "LL": 60,
+            "RTR": 10,
+            "LTR": 10,
+            "CTF": 110,
+            "RTF": 75
+          },
+          "MaxArmor": {
+            "RA": 100,
+            "LTF": 140,
+            "CTR": 100,
+            "RL": 140,
+            "LA": 100,
+            "HD": 45,
+            "LL": 140,
+            "RTR": 70,
+            "LTR": 70,
+            "CTF": 200,
+            "RTF": 140
+          }
+        },
+        "Blurb": "Designed as a medium fire-support platform, the Rifleman was plagued with a variety of problems since its debut and was ill-suited as a front-line combatant. ",
+        "PrefabID": "rifleman",
+        "ChassisID": "chassisdef_gdl_RFL-3N",
+        "TempID": "RFL-3N (GDL) Flashpoint_FightingGhosts"
+      },
+      {
+        "MechDefFile": "\\Flashpoint_FightingGhosts\\mech\\mechdef_rifleman_GDL RFL-3N.json",
+        "ChassisDefFile": "\\Flashpoint_FightingGhosts\\chassis\\chassisdef_rifleman_GDL RFL-3N.json",
+        "ID": "rifleman_GDL RFL-3N",
+        "Special": [],
+        "Mod": "Flashpoint_FightingGhosts",
+        "Tonnage": 60,
+        "Class": "HEAVY",
+        "Name": {
+          "Variant": "RFL-3N (GDL)",
+          "SubVariant": "",
+          "Hero": "",
+          "Chassis": "RIFLEMAN",
+          "Unique": ""
+        },
+        "Factions": [],
+        "BLACKLIST": true,
+        "CLAN": false,
+        "INNERSPHERE": false,
+        "MERC": false,
+        "PERIPHERY": false,
+        "PIRATE": false,
+        "WeaponMounts": {
+          "OmniSlot": 0,
+          "EnergySlot": 4,
+          "BallisticSlot": 2,
+          "MissileSlot": 0,
+          "SupportSlot": 1,
+          "BASlot": 0,
+          "JJSlot": 20
+        },
+        "Hardpoint": {
+          "Head": [],
+          "LeftArm": [
+            "Ballistic",
+            "Energy"
+          ],
+          "LeftTorso": [
+            "Energy"
+          ],
+          "CenterTorso": [
+            "AntiPersonnel"
+          ],
+          "RightTorso": [
+            "Energy"
+          ],
+          "RightArm": [
+            "Ballistic",
+            "Energy"
+          ],
+          "LeftLeg": [],
+          "RightLeg": []
+        },
+        "Loadout": {
+          "Dynamic": {
+            "LA": [
+              "emod_arm_part_shoulder",
+              "emod_arm_part_upper",
+              "Weapon_Autocannon_AC5_2-Mydron",
+              "Weapon_Laser_LargeLaser_1-Intek"
+            ],
+            "LT": "Weapon_Laser_MediumLaser_1-Intek",
+            "RA": [
+              "emod_arm_part_shoulder",
+              "emod_arm_part_upper",
+              "Weapon_Autocannon_AC5_2-Mydron",
+              "Weapon_Laser_LargeLaser_1-Intek"
+            ],
+            "HD": [
+              "Gear_Cockpit_Generic_Standard",
+              "Gear_Cockpit_LifeSupportA_Standard",
+              "Gear_Cockpit_LifeSupportB_Standard",
+              "Gear_FCS_Generic_Standard",
+              "Gear_Sensors_Generic_Standard"
+            ],
+            "RL": [
+              "emod_leg_hip",
+              "emod_leg_upper",
+              "emod_leg_lower",
+              "emod_leg_foot"
+            ],
+            "CT": [
+              "emod_armorslots_standard",
+              "emod_structureslots_standard",
+              "Gear_Gyro_Generic_Standard",
+              "Gear_Engine_240",
+              "emod_engineslots_std_center",
+              "Gear_Engine_Heatsinks",
+              "emod_kit_shs",
+              "Gear_HandHeld_Slot",
+              "Gear_HandHeld_Slot",
+              "Ammo_AmmunitionBox_Generic_AC5"
+            ],
+            "RT": "Weapon_Laser_MediumLaser_1-Intek",
+            "LL": [
+              "emod_leg_hip",
+              "emod_leg_upper",
+              "emod_leg_lower",
+              "emod_leg_foot",
+              "Gear_HeatSink_Generic_Standard"
+            ]
+          },
+          "Fixed": {
+            "LA": [],
+            "LT": [],
+            "RA": [],
+            "HD": [],
+            "RL": [],
+            "CT": "Special_Anti_Air_Targeting",
+            "RT": [],
+            "LL": []
+          }
+        },
+        "Icon": "Rifleman",
+        "HP": {
+          "Structure": {
+            "LA": 50,
+            "RA": 50,
+            "LL": 70,
+            "RT": 70,
+            "RL": 70,
+            "HD": 16,
+            "LT": 70,
+            "CT": 70
+          },
+          "SetArmor": {
+            "RA": 75,
+            "LTF": 75,
+            "CTR": 20,
+            "RL": 60,
+            "LA": 75,
+            "HD": 30,
+            "LL": 60,
+            "RTR": 10,
+            "LTR": 10,
+            "CTF": 110,
+            "RTF": 75
+          },
+          "MaxArmor": {
+            "RA": 100,
+            "LTF": 140,
+            "CTR": 100,
+            "RL": 140,
+            "LA": 100,
+            "HD": 45,
+            "LL": 140,
+            "RTR": 70,
+            "LTR": 70,
+            "CTF": 200,
+            "RTF": 140
+          }
+        },
+        "Blurb": "Designed as a medium fire-support platform, the Rifleman was plagued with a variety of problems since its debut and was ill-suited as a front-line combatant.",
+        "PrefabID": "rifleman",
+        "ChassisID": "chassisdef_rifleman_GDL RFL-3N",
+        "TempID": "RFL-3N (GDL) Flashpoint_FightingGhosts"
+      }
+    ],
+    "Name": "RFL-3N (GDL) Flashpoint_FightingGhosts"
+  },
+  {
+    "Values": [
+      "STK-3F Flashpoint-The-Raid"
+    ],
+    "Count": 2,
+    "Group": [
+      {
+        "MechDefFile": "\\Flashpoint-The-Raid\\mech\\mechdef_stalker_STK-3F_fp_theRaid.json",
+        "ChassisDefFile": "\\Base 3061\\chassis\\chassisdef_stalker_STK-3F.json",
+        "ID": "stalker_STK-3F",
+        "Special": [],
+        "Mod": "Flashpoint-The-Raid",
+        "Tonnage": 85,
+        "Class": "ASSAULT",
+        "Name": {
+          "Variant": "STK-3F",
+          "SubVariant": "",
+          "Hero": "",
+          "Chassis": "STALKER",
+          "Unique": ""
+        },
+        "Factions": [],
+        "BLACKLIST": true,
+        "CLAN": false,
+        "INNERSPHERE": false,
+        "MERC": false,
+        "PERIPHERY": false,
+        "PIRATE": false,
+        "WeaponMounts": {
+          "OmniSlot": 0,
+          "EnergySlot": 6,
+          "BallisticSlot": 0,
+          "MissileSlot": 4,
+          "SupportSlot": 1,
+          "BASlot": 0,
+          "JJSlot": 20
+        },
+        "Hardpoint": {
+          "Head": [],
+          "LeftArm": [
+            "Energy",
+            "Energy",
+            "Missile"
+          ],
+          "LeftTorso": [
+            "Energy",
+            "Missile"
+          ],
+          "CenterTorso": [
+            "AntiPersonnel"
+          ],
+          "RightTorso": [
+            "Energy",
+            "Missile"
+          ],
+          "RightArm": [
+            "Energy",
+            "Energy",
+            "Missile"
+          ],
+          "LeftLeg": [],
+          "RightLeg": []
+        },
+        "Loadout": {
+          "Dynamic": {
+            "LA": [
+              "emod_arm_part_shoulder",
+              "emod_arm_part_upper",
+              "Weapon_Laser_MediumLaser_2-Diverse_Optics",
+              "Weapon_LRM_LRM15_2-Zeus",
+              "Gear_HeatSink_Generic_Standard"
+            ],
+            "LT": [
+              "Weapon_LRM_LRM15_2-Zeus",
+              "Gear_HeatSink_Generic_Standard",
+              "Ammo_AmmunitionBox_Generic_LRM",
+              "Ammo_AmmunitionBox_Generic_LRM",
+              "Ammo_AmmunitionBox_Generic_LRM"
+            ],
+            "RA": [
+              "emod_arm_part_shoulder",
+              "emod_arm_part_upper",
+              "Weapon_Laser_MediumLaser_2-Diverse_Optics",
+              "Weapon_LRM_LRM15_2-Zeus",
+              "Gear_HeatSink_Generic_Standard"
+            ],
+            "HD": "Gear_Cockpit_Majesty_M_M_MagestrixAlpha",
+            "RL": [
+              "emod_leg_hip",
+              "emod_leg_upper",
+              "emod_leg_lower",
+              "emod_leg_foot",
+              "Gear_HeatSink_Generic_Standard"
+            ],
+            "CT": [
+              "emod_armorslots_standard",
+              "emod_structureslots_standard",
+              "Gear_Engine_255",
+              "emod_kit_shs",
+              "Gear_Engine_Heatsinks",
+              "Gear_Gyro_Friedhof_Sparrow",
+              "Gear_HeatSink_Generic_Standard"
+            ],
+            "RT": [
+              "Weapon_LRM_LRM15_2-Zeus",
+              "Gear_HeatSink_Generic_Standard",
+              "Ammo_AmmunitionBox_Generic_LRM",
+              "Ammo_AmmunitionBox_Generic_LRM",
+              "Ammo_AmmunitionBox_Generic_LRM"
+            ],
+            "LL": [
+              "emod_leg_hip",
+              "emod_leg_upper",
+              "emod_leg_lower",
+              "emod_leg_foot",
+              "Gear_HeatSink_Generic_Standard"
+            ]
+          },
+          "Fixed": {
+            "LA": [],
+            "LT": [],
+            "RA": [],
+            "HD": [],
+            "RL": [],
+            "CT": "Special_Combat_Computer",
+            "RT": [],
+            "LL": []
+          }
+        },
+        "Icon": "uixTxrIcon_stalker",
+        "HP": {
+          "Structure": {
+            "LA": 70,
+            "RA": 70,
+            "LL": 90,
+            "RT": 90,
+            "RL": 90,
+            "HD": 16,
+            "LT": 90,
+            "CT": 90
+          },
+          "SetArmor": {
+            "RA": 130,
+            "LTF": 145,
+            "CTR": 55,
+            "RL": 125,
+            "LA": 130,
+            "HD": 45,
+            "LL": 125,
+            "RTR": 35,
+            "LTR": 35,
+            "CTF": 190,
+            "RTF": 145
+          },
+          "MaxArmor": {
+            "RA": 140,
+            "LTF": 180,
+            "CTR": 135,
+            "RL": 180,
+            "LA": 140,
+            "HD": 45,
+            "LL": 180,
+            "RTR": 90,
+            "LTR": 90,
+            "CTF": 270,
+            "RTF": 180
+          }
+        },
+        "Blurb": "The Stalker 3F mounts a ridiculous amount of weaponry—even for an assault 'Mech. It is also notable for its incredibly poor heat management, which is the cost it pays for such amazing damage output. Powerful, but to be used wisely.",
+        "PrefabID": "stalker",
+        "ChassisID": "chassisdef_stalker_STK-3F",
+        "TempID": "STK-3F Flashpoint-The-Raid"
+      },
+      {
+        "MechDefFile": "\\Flashpoint-The-Raid\\mech\\mechdef_stalker_STK-3F_fp_theRaid2.json",
+        "ChassisDefFile": "\\Base 3061\\chassis\\chassisdef_stalker_STK-3F.json",
+        "ID": "stalker_STK-3F",
+        "Special": [],
+        "Mod": "Flashpoint-The-Raid",
+        "Tonnage": 85,
+        "Class": "ASSAULT",
+        "Name": {
+          "Variant": "STK-3F",
+          "SubVariant": "",
+          "Hero": "",
+          "Chassis": "STALKER",
+          "Unique": ""
+        },
+        "Factions": [],
+        "BLACKLIST": true,
+        "CLAN": false,
+        "INNERSPHERE": false,
+        "MERC": false,
+        "PERIPHERY": false,
+        "PIRATE": false,
+        "WeaponMounts": {
+          "OmniSlot": 0,
+          "EnergySlot": 6,
+          "BallisticSlot": 0,
+          "MissileSlot": 4,
+          "SupportSlot": 1,
+          "BASlot": 0,
+          "JJSlot": 20
+        },
+        "Hardpoint": {
+          "Head": [],
+          "LeftArm": [
+            "Energy",
+            "Energy",
+            "Missile"
+          ],
+          "LeftTorso": [
+            "Energy",
+            "Missile"
+          ],
+          "CenterTorso": [
+            "AntiPersonnel"
+          ],
+          "RightTorso": [
+            "Energy",
+            "Missile"
+          ],
+          "RightArm": [
+            "Energy",
+            "Energy",
+            "Missile"
+          ],
+          "LeftLeg": [],
+          "RightLeg": []
+        },
+        "Loadout": {
+          "Dynamic": {
+            "LA": [
+              "emod_arm_part_shoulder",
+              "emod_arm_part_upper",
+              "Weapon_Laser_MediumLaser_2-Diverse_Optics",
+              "Weapon_Laser_MediumLaser_2-Diverse_Optics",
+              "Weapon_LRM_LRM10_2-Zeus",
+              "Ammo_AmmunitionBox_Generic_LRM",
+              "Gear_HeatSink_Generic_Standard"
+            ],
+            "LT": [
+              "Weapon_Laser_LargeLaser_2-Magna",
+              "Weapon_SRM_SRM6_2-Valiant",
+              "Ammo_AmmunitionBox_Generic_SRM",
+              "Gear_HeatSink_Generic_Standard"
+            ],
+            "RA": [
+              "emod_arm_part_shoulder",
+              "emod_arm_part_upper",
+              "Weapon_Laser_MediumLaser_2-Diverse_Optics",
+              "Weapon_Laser_MediumLaser_2-Diverse_Optics",
+              "Weapon_LRM_LRM10_2-Zeus",
+              "Ammo_AmmunitionBox_Generic_LRM",
+              "Gear_HeatSink_Generic_Standard"
+            ],
+            "HD": "Gear_Cockpit_Majesty_M_M_MagestrixAlpha",
+            "RL": [
+              "emod_leg_hip",
+              "emod_leg_upper",
+              "emod_leg_lower",
+              "emod_leg_foot",
+              "Gear_HeatSink_Generic_Standard",
+              "Gear_HeatSink_Generic_Standard"
+            ],
+            "CT": [
+              "emod_armorslots_standard",
+              "emod_structureslots_standard",
+              "Gear_Engine_255",
+              "emod_kit_shs",
+              "Gear_Engine_Heatsinks",
+              "Gear_HeatSink_Generic_Standard",
+              "Gear_HeatSink_Generic_Standard"
+            ],
+            "RT": [
+              "Weapon_Laser_LargeLaser_2-Magna",
+              "Weapon_SRM_SRM6_2-Valiant",
+              "Ammo_AmmunitionBox_Generic_SRM",
+              "Gear_HeatSink_Generic_Standard"
+            ],
+            "LL": [
+              "emod_leg_hip",
+              "emod_leg_upper",
+              "emod_leg_lower",
+              "emod_leg_foot",
+              "Gear_HeatSink_Generic_Standard",
+              "Gear_HeatSink_Generic_Standard"
+            ]
+          },
+          "Fixed": {
+            "LA": [],
+            "LT": [],
+            "RA": [],
+            "HD": [],
+            "RL": [],
+            "CT": "Special_Combat_Computer",
+            "RT": [],
+            "LL": []
+          }
+        },
+        "Icon": "uixTxrIcon_stalker",
+        "HP": {
+          "Structure": {
+            "LA": 70,
+            "RA": 70,
+            "LL": 90,
+            "RT": 90,
+            "RL": 90,
+            "HD": 16,
+            "LT": 90,
+            "CT": 90
+          },
+          "SetArmor": {
+            "RA": 115,
+            "LTF": 125,
+            "CTR": 55,
+            "RL": 125,
+            "LA": 115,
+            "HD": 45,
+            "LL": 125,
+            "RTR": 35,
+            "LTR": 35,
+            "CTF": 180,
+            "RTF": 125
+          },
+          "MaxArmor": {
+            "RA": 140,
+            "LTF": 180,
+            "CTR": 135,
+            "RL": 180,
+            "LA": 140,
+            "HD": 45,
+            "LL": 180,
+            "RTR": 90,
+            "LTR": 90,
+            "CTF": 270,
+            "RTF": 180
+          }
+        },
+        "Blurb": "The Stalker 3F mounts a ridiculous amount of weaponry—even for an assault 'Mech. It is also notable for its incredibly poor heat management, which is the cost it pays for such amazing damage output. Powerful, but to be used wisely.",
+        "PrefabID": "stalker",
+        "ChassisID": "chassisdef_stalker_STK-3F",
+        "TempID": "STK-3F Flashpoint-The-Raid"
+      }
+    ],
+    "Name": "STK-3F Flashpoint-The-Raid"
+  }
+]

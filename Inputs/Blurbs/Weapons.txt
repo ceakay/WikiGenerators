@@ -1,0 +1,18 @@
+Weapons are anything that occupies a hardpoint on the mech: if you don't have the required hardpoint and sufficient slots in the location, you won't be able to install it, even if you have sufficient free tonnage and slots on the mech as a whole. It may still be possible to fit them in though with some creative shuffling.
+
+[[Equipment]] is everything else.
+
+Hardpoints are broken down into 4 categories much like in vanilla: Ballistic, Energy, Missile, and Support. Each has a bunch of support equipment associated with them to buff the weapons on your mech, while other equipment may provide more defence against some weapons, or increase/decrease the damage done to you by them.
+
+Ballistics, Energy, and Missile are what they say on the tin, though some weapons will have moved categories from vanilla along with the many new additions. Support weapons are a mixed category, containing genuine support weapons that debuff the enemy such as narc beacons and paint sprayers, as well as weapons designed to trigger on melee and point blank attacks, from micro lasers to the fearsome plasma lance.
+
+On the pages below you will find comparison tables for groups of weapons with links to pages detailing the individual specifics of each weapon, firing modes, chances to jam etc. If you want to know the nitty gritty details about how weapon jamming/misfires work please consult [[Weapon Jams]]
+
+
+[[Weapons/Ballistic]]
+
+[[Weapons/Energy]]
+
+[[Weapons/Missile]]
+
+[[Weapons/Support]]

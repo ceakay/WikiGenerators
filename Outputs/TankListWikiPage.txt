@@ -1,0 +1,6939 @@
+{{-start-}}
+'''Vehicles'''
+Last Updated RT Version Treadnought 1.0 HF13
+
+[This page was recently overhauled with scripted generation. Please report any errors on [https://discord.gg/roguetech Discord] to @ceakay]
+
+Old page can be found here: [[Vehicles (Deprecated)]]
+
+A list of every Vehicle and their variants currently found in Roguetech. Click on each vehicle to find a list of variants and their attached weapons/equipment. Unless other wise stated,  vehicles will use re-purposed HBS assets, these are referenced in the Vehicle Model category. Please post any errors or inconsistencies you find, in the Roguetech discord so we can correct them.
+
+==Table Legend==
+{| class="wikitable mw-collapsible mw-collapsed"
+|+
+| Hardpoint Abbreviations:
+* (B) Ballistic
+* (E) Energy
+* (M) Missile
+* (S) Support (aka AntiPersonnel)
+* (O) OmniPoint
+* (JJ) JumpJet
+|-
+| HP Abbreviations:
+* (A) Armor (X/Y)
+** (X) Set Armor / (Y) Max Armor
+* (S) Structure
+|-
+| Special Tags
+*'''Clan:''' Clan vehicles hit hard and faster than their Inner Sphere counterparts. Equipped with the latest products of Clan science, these vehicles are a treasure trove of Clan technology - if you can kill it. Clan tank crews, except Hell's Horses, have less training or combat experience than their IS counterparts which has resulted in lower quality crews. '''Equipped with Clan weapons and technology as standard.'''
+
+*'''Legendary:''' Rare, experimental, and unusually powerful and expensive units. Generally only a maximum of one such unit can spawn per lance.
+
+*'''Primitive:'''  If it ain't broke, don't fix it. If it breaks, swap in something else and its as good as new. These units are generally poorly equipped in comparison to regular IS units, with low tech alternatives to conventional technology.  '''Lower tech alternative vehicles.'''
+
+*'''SLDF:''' Dating back to the Star League days, and often featuring what was once Lostech, SLDF Royal units are mostly found in the ranks of Comstar, at least in the Inner Sphere. The Clans still field some models they brought with them on the Exodus largely unchanged, despite their own advancing technology. Generally a cut above average IS units they're considered good enough for second line and garrison units.
+|}
+
+
+==Tanks==
+
+=== Light Tanks === 
+
+{| class="wikitable sortable mw-collapsible"
+|+
+! Chassis !! Variant !! Weight !! Hardpoints !! HP !! Special
+|-
+|colspan="1" rowspan="1" | AMMO TRANSPORT
+|[[Vehicles/AMMUNITION TRANSPORT AMMOTRANSPORT|'''AMMUNITION TRANSPORT AMMOTRANSPORT''']]
+|25 [LIGHT]
+|CLASSIFIED
+| CLASSIFIED 
+|
+|-
+|colspan="1" rowspan="1" | ANAT APC
+|[[Vehicles/ANAT APC|'''ANAT APC''']]
+|25 [LIGHT]
+|2E
+| A=324.8/336.8 ''S=150''
+|Clan<br>
+|-
+|colspan="1" rowspan="2" | ASSHUR SCOUT VEHICLE
+|[[Vehicles/ASSHUR ARTILLERY SPOTTER ARTY CLAN|'''ASSHUR ARTILLERY SPOTTER ARTY CLAN''']]
+|20 [LIGHT]
+|2E 1M 1S
+| A=214.4/228 ''S=100''
+|Clan<br>
+|-
+|[[Vehicles/ASSHUR FAST RECONNAISSANCE VEHICLE RECON CLAN|'''ASSHUR FAST RECONNAISSANCE VEHICLE RECON CLAN''']]
+|20 [LIGHT]
+|2B 2E 1M
+| A=211.2/228 ''S=100''
+|Clan<br>
+|-
+|colspan="1" rowspan="16" | BADGER TRACKED TRANSPORT
+|[[Vehicles/BADGER (C) TRACKED TRANSPORT (E)|'''BADGER (C) TRACKED TRANSPORT (E)''']]
+|30 [LIGHT]
+|1E 1M
+| A=371.2/371.2 ''S=150''
+|Clan<br>
+|-
+|[[Vehicles/BADGER (C) TRACKED TRANSPORT (F)|'''BADGER (C) TRACKED TRANSPORT (F)''']]
+|30 [LIGHT]
+|4B
+| A=358.4/358.4 ''S=150''
+|Clan<br>
+|-
+|[[Vehicles/BADGER (C) TRACKED TRANSPORT (H)|'''BADGER (C) TRACKED TRANSPORT (H)''']]
+|30 [LIGHT]
+|1E 1M
+| A=364.8/364.8 ''S=150''
+|Clan<br>
+|-
+|[[Vehicles/BADGER TRACKED TRANSPORT PRIME|'''BADGER TRACKED TRANSPORT PRIME''']]
+|30 [LIGHT]
+|3E 1M
+| A=364.8/364.8 ''S=150''
+|
+|-
+|[[Vehicles/BADGER TRACKED TRANSPORT (C) PRIME|'''BADGER TRACKED TRANSPORT (C) PRIME''']]
+|30 [LIGHT]
+|1E 1M
+| A=364.8/364.8 ''S=150''
+|Clan<br>
+|-
+|[[Vehicles/BADGER TRACKED TRANSPORT (G)|'''BADGER TRACKED TRANSPORT (G)''']]
+|30 [LIGHT]
+|1E 1M
+| A=358.4/358.4 ''S=150''
+|
+|-
+|[[Vehicles/BADGER-A TRACKED TRANSPORT|'''BADGER-A TRACKED TRANSPORT''']]
+|30 [LIGHT]
+|4M
+| A=364.8/364.8 ''S=150''
+|
+|-
+|[[Vehicles/BADGER-A TRACKED TRANSPORT (C)|'''BADGER-A TRACKED TRANSPORT (C)''']]
+|30 [LIGHT]
+|5B 3E
+| A=382.4/382.4 ''S=150''
+|Clan<br>
+|-
+|[[Vehicles/BADGER-B TRACKED TRANSPORT|'''BADGER-B TRACKED TRANSPORT''']]
+|30 [LIGHT]
+|2M
+| A=371.2/371.2 ''S=150''
+|
+|-
+|[[Vehicles/BADGER-B TRACKED TRANSPORT (C)|'''BADGER-B TRACKED TRANSPORT (C)''']]
+|30 [LIGHT]
+|1E 1M
+| A=364.8/364.8 ''S=150''
+|Clan<br>
+|-
+|[[Vehicles/BADGER-C TRACKED TRANSPORT|'''BADGER-C TRACKED TRANSPORT''']]
+|30 [LIGHT]
+|2M
+| A=371.2/371.2 ''S=150''
+|
+|-
+|[[Vehicles/BADGER-C TRACKED TRANSPORT (C)|'''BADGER-C TRACKED TRANSPORT (C)''']]
+|30 [LIGHT]
+|1E 1M
+| A=364.8/364.8 ''S=150''
+|Clan<br>
+|-
+|[[Vehicles/BADGER-D TRACKED TRANSPORT|'''BADGER-D TRACKED TRANSPORT''']]
+|30 [LIGHT]
+|5E
+| A=364.8/364.8 ''S=150''
+|
+|-
+|[[Vehicles/BADGER-D TRACKED TRANSPORT (C)|'''BADGER-D TRACKED TRANSPORT (C)''']]
+|30 [LIGHT]
+|1M
+| A=364.8/364.8 ''S=150''
+|Clan<br>
+|-
+|[[Vehicles/BADGER-E TRACKED TRANSPORT|'''BADGER-E TRACKED TRANSPORT''']]
+|30 [LIGHT]
+|10E
+| A=364.8/364.8 ''S=150''
+|
+|-
+|[[Vehicles/BADGER-F TRACKED TRANSPORT|'''BADGER-F TRACKED TRANSPORT''']]
+|30 [LIGHT]
+|1E
+| A=377.6/377.6 ''S=150''
+|
+|-
+|colspan="1" rowspan="1" | BAILEY ARMOURED CAR
+|[[Vehicles/BAILEY ARMOURED CAR|'''BAILEY ARMOURED CAR''']]
+|27 [LIGHT]
+|2E 1S
+| A=236.8/244.8 ''S=150''
+|
+|-
+|colspan="1" rowspan="4" | BEAGLE HOVER SCOUT
+|[[Vehicles/BEAGLE HOVER SCOUT (C3I)|'''BEAGLE HOVER SCOUT (C3I)''']]
+|15 [LIGHT]
+|1S
+| A=336/336 ''S=100''
+|
+|-
+|[[Vehicles/BEAGLE HOVER SCOUT (LRRP)|'''BEAGLE HOVER SCOUT (LRRP)''']]
+|15 [LIGHT]
+|1E 2S
+| A=200/200 ''S=80''
+|
+|-
+|[[Vehicles/BEAGLE HOVER SCOUT (TAG)|'''BEAGLE HOVER SCOUT (TAG)''']]
+|15 [LIGHT]
+|1S
+| A=332/332 ''S=100''
+|
+|-
+|[[Vehicles/BEAGLE HOVER SCOUT|'''BEAGLE HOVER SCOUT''']]
+|15 [LIGHT]
+|2E
+| A=246.4/246.4 ''S=100''
+|
+|-
+|colspan="1" rowspan="1" | BEARCAT AMPHIBIOUS APC
+|[[Vehicles/BEARCAT AMPHIBIOUS APC|'''BEARCAT AMPHIBIOUS APC''']]
+|35 [LIGHT]
+|1E
+| A=291.2/416 ''S=200''
+|
+|-
+|colspan="1" rowspan="1" | CANDIRU
+|[[Vehicles/CANDIRU LIGHT TANK PRIMITIVE|'''CANDIRU LIGHT TANK PRIMITIVE''']]
+|35 [LIGHT]
+|3B 3M 2S
+| A=483.2/483.2 ''S=200''
+|Primitive<br>
+|-
+|colspan="1" rowspan="11" | CARGO TRUCK
+|[[Vehicles/CARGO TRUCK VBIED FIRE MEDIUM|'''CARGO TRUCK VBIED FIRE MEDIUM''']]
+|15 [LIGHT]
+|1S
+| A=176/176 ''S=100''
+|Legendary<br>
+Primitive<br>
+|-
+|[[Vehicles/CARGO TRUCK VBIED NUKE MEDIUM|'''CARGO TRUCK VBIED NUKE MEDIUM''']]
+|15 [LIGHT]
+|1S
+| A=368/368 ''S=100''
+|Legendary<br>
+|-
+|[[Vehicles/CARGO TRUCK VBIED HE MEDIUM|'''CARGO TRUCK VBIED HE MEDIUM''']]
+|15 [LIGHT]
+|1S
+| A=176/176 ''S=100''
+|Legendary<br>
+Primitive<br>
+|-
+|[[Vehicles/GUN TECHNICAL (L) LARGE PRIMITIVE|'''GUN TECHNICAL (L) LARGE PRIMITIVE''']]
+|20 [LIGHT]
+|3B 1M
+| A=217.6/224 ''S=100''
+|Primitive<br>
+|-
+|[[Vehicles/GUN TECHNICAL (M) MEDIUM PRIMITIVE|'''GUN TECHNICAL (M) MEDIUM PRIMITIVE''']]
+|15 [LIGHT]
+|3B 1M
+| A=176/176 ''S=100''
+|Primitive<br>
+|-
+|[[Vehicles/GUN TECHNICAL (S) SMALL PRIMITIVE|'''GUN TECHNICAL (S) SMALL PRIMITIVE''']]
+|10 [LIGHT]
+|2B
+| A=179.2/179.2 ''S=50''
+|Primitive<br>
+|-
+|[[Vehicles/LASER TECHNICAL (M) CHEMLASER MEDIUM PRIMITIVE|'''LASER TECHNICAL (M) CHEMLASER MEDIUM PRIMITIVE''']]
+|15 [LIGHT]
+|2B 1E
+| A=182.4/182.4 ''S=100''
+|Primitive<br>
+|-
+|[[Vehicles/MINELAYER TRUCK (L) TECHNICAL MINE LARGE PRIMITIVE|'''MINELAYER TRUCK (L) TECHNICAL MINE LARGE PRIMITIVE''']]
+|20 [LIGHT]
+|2B 6S
+| A=243.2/243.2 ''S=100''
+|Primitive<br>
+|-
+|[[Vehicles/MORTAR TECHNICAL (L) LARGE|'''MORTAR TECHNICAL (L) LARGE''']]
+|20 [LIGHT]
+|4B
+| A=236.8/236.8 ''S=100''
+|Primitive<br>
+|-
+|[[Vehicles/ROCKET TECHIE (L) TECHNICAL LARGE PRIMITIVE|'''ROCKET TECHIE (L) TECHNICAL LARGE PRIMITIVE''']]
+|20 [LIGHT]
+|2M
+| A=224/224 ''S=100''
+|Primitive<br>
+|-
+|[[Vehicles/ROCKET TECHIE (M) TECHNICAL MEDIUM PRIMITIVE|'''ROCKET TECHIE (M) TECHNICAL MEDIUM PRIMITIVE''']]
+|15 [LIGHT]
+|4M
+| A=201.6/201.6 ''S=100''
+|Primitive<br>
+|-
+|colspan="1" rowspan="1" | CENTAURUS IFV
+|[[Vehicles/CENTAURUS IFV|'''CENTAURUS IFV''']]
+|15 [LIGHT]
+|1E
+| A=339.2/359.2 ''S=100''
+|
+|-
+|colspan="1" rowspan="4" | CHEVALIER LIGHT TANK
+|[[Vehicles/CHEVALIER LIGHT TANK (BAP)|'''CHEVALIER LIGHT TANK (BAP)''']]
+|35 [LIGHT]
+|1B 1E 2M
+| A=288/288 ''S=200''
+|
+|-
+|[[Vehicles/CHEVALIER LIGHT TANK (MML)|'''CHEVALIER LIGHT TANK (MML)''']]
+|35 [LIGHT]
+|1E 1M
+| A=480/480 ''S=200''
+|
+|-
+|[[Vehicles/CHEVALIER LIGHT TANK (SPEED)|'''CHEVALIER LIGHT TANK (SPEED)''']]
+|35 [LIGHT]
+|1E 1M
+| A=304/304 ''S=200''
+|
+|-
+|[[Vehicles/CHEVALIER LIGHT TANK|'''CHEVALIER LIGHT TANK''']]
+|35 [LIGHT]
+|1E 2M
+| A=448/448 ''S=200''
+|
+|-
+|colspan="1" rowspan="2" | COBRA ARMOURED RECON VEHICLE
+|[[Vehicles/COBRA ARMOURED RECON VEHICLE (3020) ARV|'''COBRA ARMOURED RECON VEHICLE (3020) ARV''']]
+|25 [LIGHT]
+|3B
+| A=355.2/355.2 ''S=150''
+|
+|-
+|[[Vehicles/COBRA ARMOURED RECON VEHICLE ARV|'''COBRA ARMOURED RECON VEHICLE ARV''']]
+|25 [LIGHT]
+|3B
+| A=425.6/425.6 ''S=150''
+|Primitive<br>
+|-
+|colspan="1" rowspan="3" | COPPERHEAD MKII TANK DESTROYER
+|[[Vehicles/COPPERHEAD MKII CHII-1 CopperheadII CHII-1|'''COPPERHEAD MKII CHII-1 CopperheadII CHII-1''']]
+|30 [LIGHT]
+|2B 1M
+| A=224/224 ''S=150''
+|
+|-
+|[[Vehicles/COPPERHEAD MKII CHII-2 CopperheadII CHII-2|'''COPPERHEAD MKII CHII-2 CopperheadII CHII-2''']]
+|30 [LIGHT]
+|2B 1M 1S
+| A=233.6/233.6 ''S=150''
+|
+|-
+|[[Vehicles/COPPERHEAD MKII CHII-3 CopperheadII CHII-3|'''COPPERHEAD MKII CHII-3 CopperheadII CHII-3''']]
+|30 [LIGHT]
+|2B 1M
+| A=220.8/220.8 ''S=150''
+|
+|-
+|colspan="1" rowspan="3" | COPPERHEAD TANK DESTROYER
+|[[Vehicles/COPPERHEAD CH-1|'''COPPERHEAD CH-1''']]
+|30 [LIGHT]
+|2B 1M
+| A=176/176 ''S=150''
+|
+|-
+|[[Vehicles/COPPERHEAD CH-2 CH-2|'''COPPERHEAD CH-2 CH-2''']]
+|30 [LIGHT]
+|2B 1M
+| A=176/176 ''S=150''
+|
+|-
+|[[Vehicles/COPPERHEAD CH-3 CH-3|'''COPPERHEAD CH-3 CH-3''']]
+|30 [LIGHT]
+|2B 1M
+| A=182.4/182.4 ''S=150''
+|
+|-
+|colspan="1" rowspan="1" | DEFENDER LIGHT TANK
+|[[Vehicles/DEFENDER LIGHT TANK|'''DEFENDER LIGHT TANK''']]
+|35 [LIGHT]
+|2B 1E
+| A=195.2/448 ''S=200''
+|
+|-
+|colspan="1" rowspan="1" | DESERT SCORPION LIGHT TANK
+|[[Vehicles/DESERT SCORPION DESERTSCORPION|'''DESERT SCORPION DESERTSCORPION''']]
+|25 [LIGHT]
+|2B 1E
+| A=452/452 ''S=150''
+|
+|-
+|colspan="1" rowspan="1" | DIGGS DRONE CONTROL TANK
+|[[Vehicles/DIGGS DRONE CONTROL TANK|'''DIGGS DRONE CONTROL TANK''']]
+|35 [LIGHT]
+|2B 1E
+| A=644/644 ''S=200''
+|
+|-
+|colspan="1" rowspan="6" | FIRETRUCK
+|[[Vehicles/FIRETRUCK (ACID)|'''FIRETRUCK (ACID)''']]
+|25 [LIGHT]
+|4B 2S
+| A=374.4/374.4 ''S=150''
+|Primitive<br>
+|-
+|[[Vehicles/FIRETRUCK (INFERNO) FIRE|'''FIRETRUCK (INFERNO) FIRE''']]
+|25 [LIGHT]
+|2B 2E 2S
+| A=304/304 ''S=150''
+|Primitive<br>
+|-
+|[[Vehicles/FIRETRUCK (OILSLICK) OIL|'''FIRETRUCK (OILSLICK) OIL''']]
+|25 [LIGHT]
+|1M 3S
+| A=323.2/323.2 ''S=150''
+|Primitive<br>
+|-
+|[[Vehicles/FIRETRUCK (PAINT)|'''FIRETRUCK (PAINT)''']]
+|25 [LIGHT]
+|3S
+| A=310.4/310.4 ''S=150''
+|Primitive<br>
+|-
+|[[Vehicles/FIRETRUCK SUSPICIOUS|'''FIRETRUCK SUSPICIOUS''']]
+|25 [LIGHT]
+|2B 1E 2S
+| A=380.8/380.8 ''S=150''
+|Legendary<br>
+Primitive<br>
+|-
+|[[Vehicles/YOU SEE IVAN WHEN TO FIRING ALL THE DEBUFFS... FIRETRUCK|'''YOU SEE IVAN WHEN TO FIRING ALL THE DEBUFFS... FIRETRUCK''']]
+|25 [LIGHT]
+|2B 4S
+| A=329.6/352 ''S=150''
+|Legendary<br>
+Primitive<br>
+|-
+|colspan="1" rowspan="3" | GABRIEL RECONNAISSANCE HOVERCRAFT
+|[[Vehicles/GABRIEL RECONNAISSANCE HOVERCRAFT (ERSL)|'''GABRIEL RECONNAISSANCE HOVERCRAFT (ERSL)''']]
+|5 [LIGHT]
+|2E
+| A=105.6/109.6 ''S=50''
+|
+|-
+|[[Vehicles/GABRIEL RECONNAISSANCE HOVERCRAFT (TDF)|'''GABRIEL RECONNAISSANCE HOVERCRAFT (TDF)''']]
+|5 [LIGHT]
+|2M
+| A=105.6/109.6 ''S=50''
+|
+|-
+|[[Vehicles/GABRIEL RECONNAISSANCE HOVERCRAFT|'''GABRIEL RECONNAISSANCE HOVERCRAFT''']]
+|5 [LIGHT]
+|1E
+| A=105.6/109.6 ''S=50''
+|
+|-
+|colspan="1" rowspan="9" | GALLEON LIGHT TANK
+|[[Vehicles/GALLEON GAL-100|'''GALLEON GAL-100''']]
+|30 [LIGHT]
+|3E
+| A=268.8/268.8 ''S=150''
+|
+|-
+|[[Vehicles/GALLEON GAL-101 GAL101|'''GALLEON GAL-101 GAL101''']]
+|30 [LIGHT]
+|1E 1M
+| A=582.4/582.4 ''S=150''
+|
+|-
+|[[Vehicles/GALLEON GAL-102 GAL102|'''GALLEON GAL-102 GAL102''']]
+|30 [LIGHT]
+|3E
+| A=450.4/450.4 ''S=150''
+|
+|-
+|[[Vehicles/GALLEON GAL-103 GAL103|'''GALLEON GAL-103 GAL103''']]
+|30 [LIGHT]
+|3E
+| A=654.4/654.4 ''S=150''
+|
+|-
+|[[Vehicles/GALLEON GAL-104 GAL104|'''GALLEON GAL-104 GAL104''']]
+|30 [LIGHT]
+|1E
+| A=482.4/482.4 ''S=150''
+|
+|-
+|[[Vehicles/GALLEON GAL-200 GAL200|'''GALLEON GAL-200 GAL200''']]
+|30 [LIGHT]
+|2B 1E
+| A=339.2/339.2 ''S=150''
+|
+|-
+|[[Vehicles/GALLEON GAL-201 TAG|'''GALLEON GAL-201 TAG''']]
+|30 [LIGHT]
+|2B 1E 1S
+| A=336/336 ''S=150''
+|
+|-
+|[[Vehicles/GALLEON GAL-300|'''GALLEON GAL-300''']]
+|30 [LIGHT]
+|1B 3E
+| A=262.4/262.4 ''S=150''
+|
+|-
+|[[Vehicles/GALLEON GAL-350|'''GALLEON GAL-350''']]
+|30 [LIGHT]
+|3E 3M
+| A=262.4/262.4 ''S=150''
+|
+|-
+|colspan="1" rowspan="1" | GUARDIAN CIVIL DEFENCE TANK
+|[[Vehicles/GUARDIAN CIVIL DEFENCE TANK|'''GUARDIAN CIVIL DEFENCE TANK''']]
+|15 [LIGHT]
+|2B 2E
+| A=156.8/156.8 ''S=100''
+|
+|-
+|colspan="1" rowspan="1" | HARASSER
+|[[Vehicles/PIRATE HARASSER VBIED|'''PIRATE HARASSER VBIED''']]
+|25 [LIGHT]
+|2M 1S
+| A=156.8/156.8 ''S=150''
+|Legendary<br>
+|-
+|colspan="1" rowspan="12" | HARASSER SCOUT TANK
+|[[Vehicles/HARASSER (FLAMERS) FLAMER|'''HARASSER (FLAMERS) FLAMER''']]
+|25 [LIGHT]
+|4E
+| A=214.4/214.4 ''S=150''
+|
+|-
+|[[Vehicles/HARASSER B NARC|'''HARASSER B NARC''']]
+|25 [LIGHT]
+|1M 1S
+| A=144/144 ''S=150''
+|
+|-
+|[[Vehicles/HARASSER LASER PLATFORM|'''HARASSER LASER PLATFORM''']]
+|25 [LIGHT]
+|2E
+| A=150.4/150.4 ''S=150''
+|
+|-
+|[[Vehicles/HARASSER LASER PLATFORM FWL|'''HARASSER LASER PLATFORM FWL''']]
+|25 [LIGHT]
+|4E 2M
+| A=201.6/201.6 ''S=150''
+|
+|-
+|[[Vehicles/HARASSER LASER PLATFORM (UPGRADE) STREAK|'''HARASSER LASER PLATFORM (UPGRADE) STREAK''']]
+|25 [LIGHT]
+|4E 2M
+| A=131.2/131.2 ''S=150''
+|
+|-
+|[[Vehicles/HARASSER MISSILE PLATFORM|'''HARASSER MISSILE PLATFORM''']]
+|25 [LIGHT]
+|2M
+| A=137.6/137.6 ''S=150''
+|
+|-
+|[[Vehicles/HARASSER MISSILE PLATFORM (LRM)|'''HARASSER MISSILE PLATFORM (LRM)''']]
+|25 [LIGHT]
+|1M
+| A=144/144 ''S=150''
+|
+|-
+|[[Vehicles/HARASSER MISSILE PLATFORM (MINI-PEGGY) MP|'''HARASSER MISSILE PLATFORM (MINI-PEGGY) MP''']]
+|25 [LIGHT]
+|2M
+| A=182.4/182.4 ''S=150''
+|
+|-
+|[[Vehicles/HARASSER MISSILE PLATFORM (MML) Stealth|'''HARASSER MISSILE PLATFORM (MML) Stealth''']]
+|25 [LIGHT]
+|2M
+| A=201.6/205.6 ''S=150''
+|
+|-
+|[[Vehicles/HARASSER MISSILE PLATFORM (MML) TWINS|'''HARASSER MISSILE PLATFORM (MML) TWINS''']]
+|25 [LIGHT]
+|2M
+| A=189.6/189.6 ''S=150''
+|
+|-
+|[[Vehicles/HARASSER MISSILE PLATFORM (MML)|'''HARASSER MISSILE PLATFORM (MML)''']]
+|25 [LIGHT]
+|2M
+| A=265.6/265.6 ''S=150''
+|
+|-
+|[[Vehicles/HARASSER THUNDERBOLT PLATFORM|'''HARASSER THUNDERBOLT PLATFORM''']]
+|25 [LIGHT]
+|2M
+| A=169.6/173.6 ''S=150''
+|
+|-
+|colspan="1" rowspan="1" | HEAVY APC
+|[[Vehicles/BATTLE BUS BATTLEBUS PRIMITIVE|'''BATTLE BUS BATTLEBUS PRIMITIVE''']]
+|35 [LIGHT]
+|10B 2S
+| A=387.2/387.2 ''S=200''
+|Primitive<br>
+|-
+|colspan="1" rowspan="5" | HEAVY WHEELED APC
+|[[Vehicles/HEAVY WHEELED APC (LRM) HeavyWheeled|'''HEAVY WHEELED APC (LRM) HeavyWheeled''']]
+|20 [LIGHT]
+|2B 1M
+| A=224/224 ''S=80''
+|
+|-
+|[[Vehicles/HEAVY WHEELED APC (SRM) HeavyWheeled|'''HEAVY WHEELED APC (SRM) HeavyWheeled''']]
+|20 [LIGHT]
+|2B 1M
+| A=224/224 ''S=80''
+|
+|-
+|[[Vehicles/HEAVY WHEELED APC HeavyWheeled|'''HEAVY WHEELED APC HeavyWheeled''']]
+|20 [LIGHT]
+|2B
+| A=224/224 ''S=80''
+|
+|-
+|[[Vehicles/HEAVY WHEELED APC HeavyWheeled VBIED|'''HEAVY WHEELED APC HeavyWheeled VBIED''']]
+|20 [LIGHT]
+|2B 1S
+| A=352/224 ''S=80''
+|Legendary<br>
+Primitive<br>
+|-
+|[[Vehicles/HEAVY WHEELED APC (MG) HeavyWheeled|'''HEAVY WHEELED APC (MG) HeavyWheeled''']]
+|20 [LIGHT]
+|3B
+| A=224/224 ''S=80''
+|
+|-
+|colspan="1" rowspan="1" | HUNTER
+|[[Vehicles/PIRATE HUNTER HNT-3RS HUNTER-B|'''PIRATE HUNTER HNT-3RS HUNTER-B''']]
+|35 [LIGHT]
+|1B 3E 1M
+| A=400/400 ''S=160''
+|
+|-
+|colspan="1" rowspan="9" | HUNTER LIGHT SUPPORT TANK
+|[[Vehicles/HUNTER HNT-3R|'''HUNTER HNT-3R''']]
+|35 [LIGHT]
+|1E 1M
+| A=400/400 ''S=160''
+|
+|-
+|[[Vehicles/HUNTER HNT-3RA 3054|'''HUNTER HNT-3RA 3054''']]
+|35 [LIGHT]
+|2M
+| A=375.2/375.2 ''S=160''
+|
+|-
+|[[Vehicles/HUNTER HNT-3RA AMMO|'''HUNTER HNT-3RA AMMO''']]
+|35 [LIGHT]
+|1M
+| A=400/400 ''S=160''
+|
+|-
+|[[Vehicles/HUNTER HNT-3RE ERL|'''HUNTER HNT-3RE ERL''']]
+|35 [LIGHT]
+|1E 1M
+| A=375.2/375.2 ''S=160''
+|
+|-
+|[[Vehicles/HUNTER HNT-3RM LRM15|'''HUNTER HNT-3RM LRM15''']]
+|35 [LIGHT]
+|4B 1E 1M
+| A=400/400 ''S=160''
+|
+|-
+|[[Vehicles/HUNTER HNT-3RP LPL|'''HUNTER HNT-3RP LPL''']]
+|35 [LIGHT]
+|1E 1M
+| A=375.2/375.2 ''S=160''
+|
+|-
+|[[Vehicles/HUNTER HNT-3RS LRM10|'''HUNTER HNT-3RS LRM10''']]
+|35 [LIGHT]
+|4B 3E 1M
+| A=400/400 ''S=160''
+|
+|-
+|[[Vehicles/HUNTER HNT-3RSK RISC|'''HUNTER HNT-3RSK RISC''']]
+|35 [LIGHT]
+|2B 2E 1M
+| A=464.8/500.8 ''S=160''
+|Legendary<br>
+|-
+|[[Vehicles/HUNTER HNT-3RT LA|'''HUNTER HNT-3RT LA''']]
+|35 [LIGHT]
+|4B 1E 1M 1S
+| A=411.2/411.2 ''S=160''
+|
+|-
+|colspan="1" rowspan="1" | IGNIS
+|[[Vehicles/PIRATE IGNIS|'''PIRATE IGNIS''']]
+|30 [LIGHT]
+|1B 4E
+| A=595.2/595.2 ''S=150''
+|
+|-
+|colspan="1" rowspan="2" | IGNIS INFANTRY SUPPORT TANK
+|[[Vehicles/IGNIS|'''IGNIS''']]
+|30 [LIGHT]
+|1B 2E
+| A=604.8/604.8 ''S=150''
+|
+|-
+|[[Vehicles/IGNIS (SRM) IGNISSRM|'''IGNIS (SRM) IGNISSRM''']]
+|30 [LIGHT]
+|1B 2E 2M
+| A=592/592 ''S=150''
+|
+|-
+|colspan="1" rowspan="2" | INDRA TRANSPORT
+|[[Vehicles/INDRA BATTLE ARMOR TRANSPORT APC BA CLAN|'''INDRA BATTLE ARMOR TRANSPORT APC BA CLAN''']]
+|35 [LIGHT]
+|4B 1E 1S
+| A=436/436 ''S=200''
+|Clan<br>
+|-
+|[[Vehicles/INDRA INFANTRY TRANSPORT APC CLAN|'''INDRA INFANTRY TRANSPORT APC CLAN''']]
+|35 [LIGHT]
+|4B 1E
+| A=421.6/421.6 ''S=200''
+|Clan<br>
+|-
+|colspan="1" rowspan="8" | J.EDGAR RECON TANK
+|[[Vehicles/J EDGAR JEdgar|'''J EDGAR JEdgar''']]
+|25 [LIGHT]
+|1E 2M
+| A=444.8/444.8 ''S=150''
+|
+|-
+|[[Vehicles/J EDGAR (FLAMERS) JEdgar Flamer|'''J EDGAR (FLAMERS) JEdgar Flamer''']]
+|25 [LIGHT]
+|3E
+| A=451.2/451.2 ''S=150''
+|
+|-
+|[[Vehicles/J EDGAR (ICE) JEdgar|'''J EDGAR (ICE) JEdgar''']]
+|25 [LIGHT]
+|1E 2M
+| A=406.4/406.4 ''S=150''
+|
+|-
+|[[Vehicles/J EDGAR (KURITA) JEdgar|'''J EDGAR (KURITA) JEdgar''']]
+|25 [LIGHT]
+|4E
+| A=457.6/457.6 ''S=150''
+|
+|-
+|[[Vehicles/J EDGAR (MG) JEdgar|'''J EDGAR (MG) JEdgar''']]
+|25 [LIGHT]
+|4B 1E
+| A=444.8/444.8 ''S=150''
+|
+|-
+|[[Vehicles/J EDGAR (TAG) JEdgar|'''J EDGAR (TAG) JEdgar''']]
+|25 [LIGHT]
+|2E 1S
+| A=460.8/460.8 ''S=150''
+|
+|-
+|[[Vehicles/JED JEdgar PRIMITIVE VBIED|'''JED JEdgar PRIMITIVE VBIED''']]
+|25 [LIGHT]
+|2M 1S
+| A=451.2/451.2 ''S=150''
+|Legendary<br>
+Primitive<br>
+|-
+|[[Vehicles/JED JEdgar PRIMITIVE|'''JED JEdgar PRIMITIVE''']]
+|25 [LIGHT]
+|1E 2M
+| A=411.2/424 ''S=150''
+|Primitive<br>
+|-
+|colspan="1" rowspan="4" | J-27 TRANSPORT
+|[[Vehicles/J-27 TRANSPORT (KILLJOY) J-27|'''J-27 TRANSPORT (KILLJOY) J-27''']]
+|20 [LIGHT]
+|1M
+| A=243.2/243.2 ''S=100''
+|
+|-
+|[[Vehicles/J-27 TRANSPORT J-27 FUSION|'''J-27 TRANSPORT J-27 FUSION''']]
+|20 [LIGHT]
+|1B
+| A=204.8/204.8 ''S=100''
+|
+|-
+|[[Vehicles/J-27 TRANSPORT J-27 ARMOR|'''J-27 TRANSPORT J-27 ARMOR''']]
+|20 [LIGHT]
+|1B
+| A=156.8/156.8 ''S=100''
+|
+|-
+|[[Vehicles/J-27 TRANSPORT J-27|'''J-27 TRANSPORT J-27''']]
+|20 [LIGHT]
+|1B
+| A=124.8/124.8 ''S=100''
+|
+|-
+|colspan="1" rowspan="1" | KING SCORPION LIGHT TANK
+|[[Vehicles/KING SCORPION KINGSCORPION|'''KING SCORPION KINGSCORPION''']]
+|35 [LIGHT]
+|2B
+| A=411.2/411.2 ''S=200''
+|
+|-
+|colspan="1" rowspan="1" | KNOX ARMOURED CAR
+|[[Vehicles/KNOX ARMOURED CAR|'''KNOX ARMOURED CAR''']]
+|12 [LIGHT]
+|1B
+| A=105.6/105.6 ''S=100''
+|
+|-
+|colspan="1" rowspan="4" | KOBOLD SKIRMISHER
+|[[Vehicles/KOBOLD 0|'''KOBOLD 0''']]
+|35 [LIGHT]
+|1B 3M 1S
+| A=320/320 ''S=200''
+|
+|-
+|[[Vehicles/KOBOLD 0A|'''KOBOLD 0A''']]
+|35 [LIGHT]
+|2E 2M
+| A=320/320 ''S=200''
+|
+|-
+|[[Vehicles/KOBOLD 0B|'''KOBOLD 0B''']]
+|35 [LIGHT]
+|1B 1M
+| A=320/320 ''S=200''
+|
+|-
+|[[Vehicles/KOBOLD 0C|'''KOBOLD 0C''']]
+|35 [LIGHT]
+|3M
+| A=320/320 ''S=200''
+|
+|-
+|colspan="1" rowspan="1" | LASERSTRIKE LIGHT TANK
+|[[Vehicles/LASERSTRIKE PRIMITIVE|'''LASERSTRIKE PRIMITIVE''']]
+|35 [LIGHT]
+|2B 2S
+| A=416/416 ''S=200''
+|Primitive<br>
+|-
+|colspan="1" rowspan="6" | LIGHTNING ATTACK HOVERCRAFT
+|[[Vehicles/LIGHTNING ATTACK HOVERCRAFT (CX-3) CX-3|'''LIGHTNING ATTACK HOVERCRAFT (CX-3) CX-3''']]
+|35 [LIGHT]
+|1E 6M
+| A=208/208 ''S=200''
+|
+|-
+|[[Vehicles/LIGHTNING ATTACK HOVERCRAFT (ERML)|'''LIGHTNING ATTACK HOVERCRAFT (ERML)''']]
+|35 [LIGHT]
+|2E 7M
+| A=268/268 ''S=160''
+|
+|-
+|[[Vehicles/LIGHTNING ATTACK HOVERCRAFT (ERSL)|'''LIGHTNING ATTACK HOVERCRAFT (ERSL)''']]
+|35 [LIGHT]
+|3E 7M
+| A=268/268 ''S=160''
+|
+|-
+|[[Vehicles/LIGHTNING ATTACK HOVERCRAFT (ROYAL)|'''LIGHTNING ATTACK HOVERCRAFT (ROYAL)''']]
+|35 [LIGHT]
+|2E 2M 1S
+| A=268/268 ''S=160''
+|
+|-
+|[[Vehicles/LIGHTNING ATTACK HOVERCRAFT|'''LIGHTNING ATTACK HOVERCRAFT''']]
+|35 [LIGHT]
+|2E 2M
+| A=304/304 ''S=200''
+|
+|-
+|[[Vehicles/LIGHTNING ATTACK HOVERCRAFT (RL)|'''LIGHTNING ATTACK HOVERCRAFT (RL)''']]
+|35 [LIGHT]
+|7M 2S
+| A=268/268 ''S=160''
+|
+|-
+|colspan="1" rowspan="5" | M.A.S.H TRUCK
+|[[Vehicles/M.A.S.H. TRUCK MASHTruck-ICE|'''M.A.S.H. TRUCK MASHTruck-ICE''']]
+|20 [LIGHT]
+|
+| A=256/288 ''S=80''
+|
+|-
+|[[Vehicles/M.A.S.H. TRUCK MASHTruck VBIED|'''M.A.S.H. TRUCK MASHTruck VBIED''']]
+|20 [LIGHT]
+|2S
+| A=336/336 ''S=100''
+|Legendary<br>
+Primitive<br>
+|-
+|[[Vehicles/M.A.S.H. TRUCK MASHTruck|'''M.A.S.H. TRUCK MASHTruck''']]
+|20 [LIGHT]
+|2E
+| A=272/272 ''S=80''
+|
+|-
+|[[Vehicles/M.A.S.H. TRUCK MASHTruck-L|'''M.A.S.H. TRUCK MASHTruck-L''']]
+|20 [LIGHT]
+|2S
+| A=256/208 ''S=80''
+|
+|-
+|[[Vehicles/M.A.S.H. TRUCK MASHTruck-UA|'''M.A.S.H. TRUCK MASHTruck-UA''']]
+|20 [LIGHT]
+|
+| A=336/336 ''S=80''
+|
+|-
+|colspan="1" rowspan="1" | MHI AMPHIBIOUS APC
+|[[Vehicles/MHI AMPHIBIOUS APC|'''MHI AMPHIBIOUS APC''']]
+|35 [LIGHT]
+|1E
+| A=569.6/569.6 ''S=200''
+|
+|-
+|colspan="1" rowspan="2" | MITHRAS LIGHT TANK
+|[[Vehicles/MITHRAS LIGHT TANK (ERLL) ERL|'''MITHRAS LIGHT TANK (ERLL) ERL''']]
+|25 [LIGHT]
+|1B 1E
+| A=292.8/292.8 ''S=150''
+|Clan<br>
+|-
+|[[Vehicles/MITHRAS LIGHT TANK|'''MITHRAS LIGHT TANK''']]
+|25 [LIGHT]
+|1B 2E
+| A=278.4/278.4 ''S=150''
+|Clan<br>
+|-
+|colspan="1" rowspan="4" | MOBILE HQ
+|[[Vehicles/MOBILE HQ (LRM) MOBILEHQ|'''MOBILE HQ (LRM) MOBILEHQ''']]
+|25 [LIGHT]
+|1M
+| A=352/352 ''S=150''
+|
+|-
+|[[Vehicles/ARMORED MOBILE HQ MOBILEHQ|'''ARMORED MOBILE HQ MOBILEHQ''']]
+|25 [LIGHT]
+|1E
+| A=569.6/569.6 ''S=150''
+|
+|-
+|[[Vehicles/MOBILE HQ MK.2B MOBILEHQ LL|'''MOBILE HQ MK.2B MOBILEHQ LL''']]
+|25 [LIGHT]
+|1E
+| A=352/352 ''S=150''
+|
+|-
+|[[Vehicles/MOBILE HQ MOBILEHQ|'''MOBILE HQ MOBILEHQ''']]
+|25 [LIGHT]
+|1E
+| A=377.6/377.6 ''S=150''
+|
+|-
+|colspan="1" rowspan="1" | NACON ARMORED SCOUT
+|[[Vehicles/NACON ARMORED SCOUT|'''NACON ARMORED SCOUT''']]
+|20 [LIGHT]
+|2B 1M
+| A=375.2/384 ''S=80''
+|Clan<br>
+|-
+|colspan="1" rowspan="2" | ODIN SCOUT TANK
+|[[Vehicles/ODIN SCOUT TANK (SPOTTER)|'''ODIN SCOUT TANK (SPOTTER)''']]
+|20 [LIGHT]
+|2B 2S
+| A=185.6/185.6 ''S=100''
+|Clan<br>
+|-
+|[[Vehicles/ODIN SCOUT TANK|'''ODIN SCOUT TANK''']]
+|20 [LIGHT]
+|3E 1M
+| A=108/112 ''S=100''
+|Clan<br>
+|-
+|colspan="1" rowspan="5" | PACKRAT SUPPORT VEHICLE
+|[[Vehicles/PACKRAT (ICE)|'''PACKRAT (ICE)''']]
+|20 [LIGHT]
+|1M
+| A=192/192 ''S=80''
+|
+|-
+|[[Vehicles/PACKRAT (ML)|'''PACKRAT (ML)''']]
+|20 [LIGHT]
+|2E 1M
+| A=256/256 ''S=80''
+|
+|-
+|[[Vehicles/PACKRAT (SRM2)|'''PACKRAT (SRM2)''']]
+|20 [LIGHT]
+|1E 1M
+| A=256/256 ''S=80''
+|
+|-
+|[[Vehicles/PACKRAT SUPPORT VEHICLE|'''PACKRAT SUPPORT VEHICLE''']]
+|20 [LIGHT]
+|1E
+| A=256/240 ''S=80''
+|
+|-
+|[[Vehicles/PACKRAT SUPPORT VEHICLE 1|'''PACKRAT SUPPORT VEHICLE 1''']]
+|20 [LIGHT]
+|1E 1M
+| A=256/240 ''S=80''
+|
+|-
+|colspan="1" rowspan="13" | PEGASUS SCOUT HOVERTANK
+|[[Vehicles/PEGASUS RISC2|'''PEGASUS RISC2''']]
+|35 [LIGHT]
+|1E 2M
+| A=400/408 ''S=200''
+|Legendary<br>
+|-
+|[[Vehicles/PEGASUS|'''PEGASUS''']]
+|35 [LIGHT]
+|1E 2M
+| A=476.8/476.8 ''S=200''
+|
+|-
+|[[Vehicles/PEGASUS (C3)|'''PEGASUS (C3)''']]
+|35 [LIGHT]
+|2E 2M
+| A=411.2/411.2 ''S=200''
+|
+|-
+|[[Vehicles/PEGASUS (MG)|'''PEGASUS (MG)''']]
+|35 [LIGHT]
+|3B 1E 2M
+| A=457.6/457.6 ''S=200''
+|
+|-
+|[[Vehicles/PEGASUS (MRM)|'''PEGASUS (MRM)''']]
+|35 [LIGHT]
+|1E 1M
+| A=396.8/396.8 ''S=200''
+|
+|-
+|[[Vehicles/PEGASUS (PIRATE)|'''PEGASUS (PIRATE)''']]
+|35 [LIGHT]
+|1E 2M
+| A=371.2/371.2 ''S=200''
+|
+|-
+|[[Vehicles/PEGASUS (RECON) 3058|'''PEGASUS (RECON) 3058''']]
+|35 [LIGHT]
+|1E 2M 1S
+| A=346.4/346.4 ''S=200''
+|
+|-
+|[[Vehicles/PEGASUS (RISC)|'''PEGASUS (RISC)''']]
+|35 [LIGHT]
+|1E 2M 1S
+| A=405.6/405.6 ''S=200''
+|Legendary<br>
+|-
+|[[Vehicles/PEGASUS (SEALED)|'''PEGASUS (SEALED)''']]
+|35 [LIGHT]
+|1E 2M 1S
+| A=332/332 ''S=200''
+|
+|-
+|[[Vehicles/PEGASUS (SENSOR)|'''PEGASUS (SENSOR)''']]
+|35 [LIGHT]
+|1E 2M
+| A=489.6/489.6 ''S=200''
+|
+|-
+|[[Vehicles/PEGASUS (SRM)|'''PEGASUS (SRM)''']]
+|35 [LIGHT]
+|3M
+| A=470.4/470.4 ''S=200''
+|
+|-
+|[[Vehicles/PEGASUS SCOUT HOVERTANK CLAN|'''PEGASUS SCOUT HOVERTANK CLAN''']]
+|35 [LIGHT]
+|2E 2M
+| A=396.8/420 ''S=200''
+|Clan<br>
+|-
+|[[Vehicles/PEGASUS SCOUT HOVERTANK LRM CLAN|'''PEGASUS SCOUT HOVERTANK LRM CLAN''']]
+|35 [LIGHT]
+|2E 2M
+| A=419.2/419.2 ''S=200''
+|Clan<br>
+|-
+|colspan="1" rowspan="14" | PELE LIGHT TANK
+|[[Vehicles/PELE LIGHT TANK (ATM)|'''PELE LIGHT TANK (ATM)''']]
+|35 [LIGHT]
+|2B 2M
+| A=496/496 ''S=200''
+|Clan<br>
+|-
+|[[Vehicles/PELE LIGHT TANK (CHEMICAL LASER) LCHEM|'''PELE LIGHT TANK (CHEMICAL LASER) LCHEM''']]
+|35 [LIGHT]
+|4B 2E
+| A=496/496 ''S=200''
+|Clan<br>
+|-
+|[[Vehicles/PELE LIGHT TANK (HYPER GAUSS) HAG|'''PELE LIGHT TANK (HYPER GAUSS) HAG''']]
+|35 [LIGHT]
+|3B
+| A=496/496 ''S=200''
+|Clan<br>
+|-
+|[[Vehicles/PELE LIGHT TANK (LB 10/X) LLBX|'''PELE LIGHT TANK (LB 10/X) LLBX''']]
+|35 [LIGHT]
+|3B
+| A=496/496 ''S=200''
+|Clan<br>
+|-
+|[[Vehicles/PELE LIGHT TANK (LB 2/X) LBX|'''PELE LIGHT TANK (LB 2/X) LBX''']]
+|35 [LIGHT]
+|5B
+| A=483.2/483.2 ''S=200''
+|Clan<br>
+|-
+|[[Vehicles/PELE LIGHT TANK (LRM)|'''PELE LIGHT TANK (LRM)''']]
+|35 [LIGHT]
+|2B 2M
+| A=496/496 ''S=200''
+|Clan<br>
+|-
+|[[Vehicles/PELE LIGHT TANK (MORTAR)|'''PELE LIGHT TANK (MORTAR)''']]
+|35 [LIGHT]
+|4B
+| A=496/496 ''S=200''
+|Clan<br>
+|-
+|[[Vehicles/PELE LIGHT TANK (PLASMA)|'''PELE LIGHT TANK (PLASMA)''']]
+|35 [LIGHT]
+|5B 1E
+| A=521.6/521.6 ''S=200''
+|Clan<br>
+|-
+|[[Vehicles/PELE LIGHT TANK (PRIME)|'''PELE LIGHT TANK (PRIME)''']]
+|35 [LIGHT]
+|2B 1E 2M
+| A=473.6/480 ''S=200''
+|Clan<br>
+|-
+|[[Vehicles/PELE LIGHT TANK (PROTOMECH AC/2) PROTO|'''PELE LIGHT TANK (PROTOMECH AC/2) PROTO''']]
+|35 [LIGHT]
+|8B
+| A=502.4/502.4 ''S=200''
+|Clan<br>
+|-
+|[[Vehicles/PELE LIGHT TANK (RAC/5)|'''PELE LIGHT TANK (RAC/5)''']]
+|35 [LIGHT]
+|3B
+| A=496/496 ''S=200''
+|Clan<br>
+|-
+|[[Vehicles/PELE LIGHT TANK (SRM)|'''PELE LIGHT TANK (SRM)''']]
+|35 [LIGHT]
+|2B 6M
+| A=502.4/502.4 ''S=200''
+|Clan<br>
+|-
+|[[Vehicles/PELE LIGHT TANK (UAC/10) LUAC|'''PELE LIGHT TANK (UAC/10) LUAC''']]
+|35 [LIGHT]
+|5B
+| A=489.6/489.6 ''S=200''
+|Clan<br>
+|-
+|[[Vehicles/PELE LIGHT TANK (UAC/2)|'''PELE LIGHT TANK (UAC/2)''']]
+|35 [LIGHT]
+|4B
+| A=496/496 ''S=200''
+|Clan<br>
+|-
+|colspan="1" rowspan="1" | PETARD SUPPORT VEHICLE
+|[[Vehicles/PETARD SUPPORT VEHICLE|'''PETARD SUPPORT VEHICLE''']]
+|25 [LIGHT]
+|2B
+| A=288/288 ''S=150''
+|
+|-
+|colspan="1" rowspan="4" | PLAINSMAN
+|[[Vehicles/PLAINSMAN MEDIUM HOVERTANK|'''PLAINSMAN MEDIUM HOVERTANK''']]
+|35 [LIGHT]
+|3M
+| A=361.6/361.6 ''S=200''
+|
+|-
+|[[Vehicles/PLAINSMAN MEDIUM HOVERTANK (LRM)|'''PLAINSMAN MEDIUM HOVERTANK (LRM)''']]
+|35 [LIGHT]
+|1M 1S
+| A=355.2/361.6 ''S=200''
+|
+|-
+|[[Vehicles/PLAINSMAN MEDIUM HOVERTANK (SCOUT)|'''PLAINSMAN MEDIUM HOVERTANK (SCOUT)''']]
+|35 [LIGHT]
+|2M
+| A=393.6/393.6 ''S=200''
+|
+|-
+|[[Vehicles/PLAINSMAN MEDIUM HOVERTANK (STREAK)|'''PLAINSMAN MEDIUM HOVERTANK (STREAK)''']]
+|35 [LIGHT]
+|3M
+| A=361.6/361.6 ''S=200''
+|
+|-
+|colspan="1" rowspan="3" | ROTUNDA RECON VEHICLE
+|[[Vehicles/ROTUNDA RECON VEHICLE RL|'''ROTUNDA RECON VEHICLE RL''']]
+|20 [LIGHT]
+|5M
+| A=128.8/140 ''S=100''
+|
+|-
+|[[Vehicles/ROTUNDA RECON VEHICLE J111|'''ROTUNDA RECON VEHICLE J111''']]
+|20 [LIGHT]
+|1E 1M
+| A=72/156 ''S=100''
+|
+|-
+|[[Vehicles/ROTUNDA RECON VEHICLE|'''ROTUNDA RECON VEHICLE''']]
+|20 [LIGHT]
+|1E
+| A=71.2/256 ''S=80''
+|
+|-
+|colspan="1" rowspan="6" | SALADIN ASSAULT HOVER TANK
+|[[Vehicles/PIRATE SALADIN|'''PIRATE SALADIN''']]
+|35 [LIGHT]
+|3B
+| A=271.2/271.2 ''S=160''
+|
+|-
+|[[Vehicles/SALADIN|'''SALADIN''']]
+|35 [LIGHT]
+|1B
+| A=144/144 ''S=160''
+|
+|-
+|[[Vehicles/SALADIN IFRIT|'''SALADIN IFRIT''']]
+|35 [LIGHT]
+|1E
+| A=496/496 ''S=160''
+|Legendary<br>
+|-
+|[[Vehicles/SALADIN MK.2 UAC|'''SALADIN MK.2 UAC''']]
+|35 [LIGHT]
+|1B
+| A=160.8/160.8 ''S=160''
+|
+|-
+|[[Vehicles/SALADIN MK.3 LBX|'''SALADIN MK.3 LBX''']]
+|35 [LIGHT]
+|1B
+| A=304/304 ''S=160''
+|
+|-
+|[[Vehicles/UP-ARMORED SALADIN ARMOR|'''UP-ARMORED SALADIN ARMOR''']]
+|35 [LIGHT]
+|1B
+| A=208/208 ''S=160''
+|
+|-
+|colspan="1" rowspan="2" | SALADIN II ASSAULT HOVER TANK
+|[[Vehicles/SALADIN II BC3|'''SALADIN II BC3''']]
+|35 [LIGHT]
+|1E 2M
+| A=460/460 ''S=160''
+|
+|-
+|[[Vehicles/SALADIN II|'''SALADIN II''']]
+|35 [LIGHT]
+|1E 1M
+| A=460/460 ''S=160''
+|
+|-
+|colspan="1" rowspan="2" | SARACEN SKIRMISH TANK
+|[[Vehicles/SARACEN|'''SARACEN''']]
+|35 [LIGHT]
+|4M
+| A=476.8/476.8 ''S=200''
+|
+|-
+|[[Vehicles/SARACEN (MRM)|'''SARACEN (MRM)''']]
+|35 [LIGHT]
+|2M
+| A=493.6/493.6 ''S=200''
+|
+|-
+|colspan="1" rowspan="2" | SAVANNAH MASTER
+|[[Vehicles/SAVANNAH MASTER SAVANNAHMASTER|'''SAVANNAH MASTER SAVANNAHMASTER''']]
+|5 [LIGHT]
+|1E
+| A=112/112 ''S=40''
+|
+|-
+|[[Vehicles/SAVANNAH MASTER SL SAVANNAHMASTER|'''SAVANNAH MASTER SL SAVANNAHMASTER''']]
+|5 [LIGHT]
+|2E
+| A=112/112 ''S=40''
+|
+|-
+|colspan="1" rowspan="8" | SCIMITAR MEDIUM HOVERTANK
+|[[Vehicles/SCIMITAR|'''SCIMITAR''']]
+|35 [LIGHT]
+|1B 2M
+| A=400/400 ''S=200''
+|
+|-
+|[[Vehicles/SCIMITAR PRIMITIVE|'''SCIMITAR PRIMITIVE''']]
+|35 [LIGHT]
+|1B 2M
+| A=400/400 ''S=200''
+|
+|-
+|[[Vehicles/SCIMITAR (LRM)|'''SCIMITAR (LRM)''']]
+|35 [LIGHT]
+|3M
+| A=406.4/406.4 ''S=200''
+|
+|-
+|[[Vehicles/SCIMITAR (RAC2) C3|'''SCIMITAR (RAC2) C3''']]
+|35 [LIGHT]
+|1B
+| A=596/596 ''S=200''
+|
+|-
+|[[Vehicles/SCIMITAR (RECON) TAG|'''SCIMITAR (RECON) TAG''']]
+|35 [LIGHT]
+|2M 2S
+| A=547.2/547.2 ''S=200''
+|
+|-
+|[[Vehicles/SCIMITAR MKII HCV|'''SCIMITAR MKII HCV''']]
+|35 [LIGHT]
+|2B 5E 1M
+| A=451.2/451.2 ''S=200''
+|
+|-
+|[[Vehicles/SCIMITAR MKII HCV (BC3)|'''SCIMITAR MKII HCV (BC3)''']]
+|35 [LIGHT]
+|1E 1M
+| A=500/500 ''S=200''
+|
+|-
+|[[Vehicles/SCIMITAR MKII HCV (ECM) 3136|'''SCIMITAR MKII HCV (ECM) 3136''']]
+|35 [LIGHT]
+|5E 1M
+| A=460/460 ''S=200''
+|
+|-
+|colspan="1" rowspan="1" | SCORPION
+|[[Vehicles/SCORPION IIC CLAN|'''SCORPION IIC CLAN''']]
+|25 [LIGHT]
+|3B
+| A=383.2/383.2 ''S=150''
+|Clan<br>
+|-
+|colspan="1" rowspan="11" | SCORPION LIGHT TANK
+|[[Vehicles/SCORPION|'''SCORPION''']]
+|25 [LIGHT]
+|2B
+| A=281.6/281.6 ''S=150''
+|
+|-
+|[[Vehicles/SCORPION (LAC)|'''SCORPION (LAC)''']]
+|25 [LIGHT]
+|3B
+| A=281.6/284 ''S=150''
+|
+|-
+|[[Vehicles/SCORPION (LASER) ML|'''SCORPION (LASER) ML''']]
+|25 [LIGHT]
+|1B 2E
+| A=307.2/307.2 ''S=150''
+|
+|-
+|[[Vehicles/SCORPION (LPPC)|'''SCORPION (LPPC)''']]
+|25 [LIGHT]
+|1E 1M
+| A=393.6/393.6 ''S=150''
+|
+|-
+|[[Vehicles/SCORPION (LRM)|'''SCORPION (LRM)''']]
+|25 [LIGHT]
+|2M
+| A=355.2/355.2 ''S=150''
+|
+|-
+|[[Vehicles/SCORPION (LRM) ARTLRM|'''SCORPION (LRM) ARTLRM''']]
+|25 [LIGHT]
+|1B 1M
+| A=323.2/323.2 ''S=150''
+|
+|-
+|[[Vehicles/SCORPION (MRM)|'''SCORPION (MRM)''']]
+|25 [LIGHT]
+|1B 1M
+| A=290.4/290.4 ''S=150''
+|
+|-
+|[[Vehicles/SCORPION (SRM)|'''SCORPION (SRM)''']]
+|25 [LIGHT]
+|1B 2M
+| A=297.6/297.6 ''S=150''
+|
+|-
+|[[Vehicles/SCORPION (STREAK SRM) SSRM|'''SCORPION (STREAK SRM) SSRM''']]
+|25 [LIGHT]
+|1B 2M
+| A=278.4/278.4 ''S=150''
+|
+|-
+|[[Vehicles/SCORPION (THUMPER)|'''SCORPION (THUMPER)''']]
+|25 [LIGHT]
+|1B
+| A=272/272 ''S=150''
+|
+|-
+|[[Vehicles/SCORPION MK.II MKII|'''SCORPION MK.II MKII''']]
+|25 [LIGHT]
+|1B
+| A=278.4/278.4 ''S=150''
+|
+|-
+|colspan="1" rowspan="3" | SHAMASH RECONNAISSANCE VEHICLE
+|[[Vehicles/SHAMASH INTERDICTOR CLAN ECM|'''SHAMASH INTERDICTOR CLAN ECM''']]
+|11 [LIGHT]
+|1E
+| A=249.6/249.6 ''S=100''
+|Clan<br>
+|-
+|[[Vehicles/SHAMASH RECONNAISSANCE VEHICLE FLAMER|'''SHAMASH RECONNAISSANCE VEHICLE FLAMER''']]
+|11 [LIGHT]
+|2E
+| A=243.2/243.2 ''S=100''
+|Clan<br>
+|-
+|[[Vehicles/SHAMASH RECONNAISSANCE VEHICLE CLAN|'''SHAMASH RECONNAISSANCE VEHICLE CLAN''']]
+|11 [LIGHT]
+|4E
+| A=243.2/243.2 ''S=100''
+|Clan<br>
+|-
+|colspan="1" rowspan="1" | SHAN SHI ARMOURED CAR
+|[[Vehicles/SHAN SHI ARMORED CAR|'''SHAN SHI ARMORED CAR''']]
+|30 [LIGHT]
+|1E 1M
+| A=432/432 ''S=150''
+|
+|-
+|colspan="1" rowspan="2" | SHANDRA ADVANCED SCOUT VEHICLE
+|[[Vehicles/SHANDRA ADVANCED SCOUT VEHICLE (ICE)|'''SHANDRA ADVANCED SCOUT VEHICLE (ICE)''']]
+|25 [LIGHT]
+|2B
+| A=272/272 ''S=120''
+|
+|-
+|[[Vehicles/SHANDRA ADVANCED SCOUT VEHICLE|'''SHANDRA ADVANCED SCOUT VEHICLE''']]
+|25 [LIGHT]
+|2B 1E 1M
+| A=272/272 ''S=120''
+|
+|-
+|colspan="1" rowspan="1" | SKANDA LIGHT TANK
+|[[Vehicles/SKANDA LIGHT TANK|'''SKANDA LIGHT TANK''']]
+|35 [LIGHT]
+|2B 2E
+| A=482.4/496.8 ''S=160''
+|Clan<br>
+|-
+|colspan="1" rowspan="1" | SKORPIO LIGHT TANK
+|[[Vehicles/SKORPIO LIGHT TANK SCORPION RIFLE|'''SKORPIO LIGHT TANK SCORPION RIFLE''']]
+|25 [LIGHT]
+|1B
+| A=284.8/284.8 ''S=150''
+|
+|-
+|colspan="1" rowspan="6" | SKULKER WHEELED SCOUT TANK
+|[[Vehicles/SKULKER WHEELED SCOUT TANK (C3M)|'''SKULKER WHEELED SCOUT TANK (C3M)''']]
+|20 [LIGHT]
+|1E
+| A=285.6/285.6 ''S=80''
+|
+|-
+|[[Vehicles/SKULKER WHEELED SCOUT TANK (MK-II) MKII|'''SKULKER WHEELED SCOUT TANK (MK-II) MKII''']]
+|20 [LIGHT]
+|1E
+| A=345.6/345.6 ''S=80''
+|
+|-
+|[[Vehicles/SKULKER WHEELED SCOUT TANK (SRM)|'''SKULKER WHEELED SCOUT TANK (SRM)''']]
+|20 [LIGHT]
+|1M
+| A=320/320 ''S=80''
+|
+|-
+|[[Vehicles/SKULKER WHEELED SCOUT TANK (X-5) X5|'''SKULKER WHEELED SCOUT TANK (X-5) X5''']]
+|20 [LIGHT]
+|1E
+| A=320/320 ''S=80''
+|Legendary<br>
+|-
+|[[Vehicles/SKULKER WHEELED SCOUT TANK|'''SKULKER WHEELED SCOUT TANK''']]
+|20 [LIGHT]
+|1E
+| A=313.6/313.6 ''S=80''
+|
+|-
+|[[Vehicles/SKULKER WHEELED SCOUT TANK (MG)|'''SKULKER WHEELED SCOUT TANK (MG)''']]
+|20 [LIGHT]
+|2B
+| A=320/320 ''S=80''
+|
+|-
+|colspan="1" rowspan="1" | STRIKER
+|[[Vehicles/PIRATE STRIKER DIRECT|'''PIRATE STRIKER DIRECT''']]
+|35 [LIGHT]
+|2M
+| A=444.8/444.8 ''S=200''
+|
+|-
+|colspan="1" rowspan="1" | STRIKER (SEALED)
+|[[Vehicles/STRIKER (SEALED)|'''STRIKER (SEALED)''']]
+|35 [LIGHT]
+|1B 2M
+| A=454.4/454.4 ''S=200''
+|
+|-
+|colspan="1" rowspan="12" | STRIKER LIGHT TANK
+|[[Vehicles/STRIKER IIC FuelCell|'''STRIKER IIC FuelCell''']]
+|35 [LIGHT]
+|3M 1S
+| A=493.6/497.6 ''S=200''
+|Clan<br>
+|-
+|[[Vehicles/STRIKER IIC STREAK|'''STRIKER IIC STREAK''']]
+|35 [LIGHT]
+|2M
+| A=454.4/454.4 ''S=200''
+|Clan<br>
+|-
+|[[Vehicles/STRIKER IIC ATM|'''STRIKER IIC ATM''']]
+|35 [LIGHT]
+|2M 1S
+| A=493.6/493.6 ''S=200''
+|Clan<br>
+|-
+|[[Vehicles/STRIKER IIC|'''STRIKER IIC''']]
+|35 [LIGHT]
+|4M
+| A=500.8/500.8 ''S=200''
+|Clan<br>
+|-
+|[[Vehicles/STRIKER MK.1|'''STRIKER MK.1''']]
+|35 [LIGHT]
+|2M
+| A=444/444 ''S=200''
+|
+|-
+|[[Vehicles/STRIKER MK.1-L LRM|'''STRIKER MK.1-L LRM''']]
+|35 [LIGHT]
+|1M
+| A=451.2/451.2 ''S=200''
+|
+|-
+|[[Vehicles/STRIKER MK.1-N Narc|'''STRIKER MK.1-N Narc''']]
+|35 [LIGHT]
+|4M 1S
+| A=536/536 ''S=200''
+|
+|-
+|[[Vehicles/STRIKER MK.1-S SRM|'''STRIKER MK.1-S SRM''']]
+|35 [LIGHT]
+|5M
+| A=438.4/438.4 ''S=200''
+|
+|-
+|[[Vehicles/STRIKER MK.2 AMMO|'''STRIKER MK.2 AMMO''']]
+|35 [LIGHT]
+|3M
+| A=536/536 ''S=200''
+|
+|-
+|[[Vehicles/STRIKER MK.3 3053|'''STRIKER MK.3 3053''']]
+|35 [LIGHT]
+|3M
+| A=536/536 ''S=200''
+|
+|-
+|[[Vehicles/STRIKER MK.4-C3 3061|'''STRIKER MK.4-C3 3061''']]
+|35 [LIGHT]
+|2E 1M
+| A=508/508 ''S=200''
+|
+|-
+|[[Vehicles/STRIKER MK.4-L LASER|'''STRIKER MK.4-L LASER''']]
+|35 [LIGHT]
+|2E 1M
+| A=508/508 ''S=200''
+|
+|-
+|colspan="1" rowspan="4" | SVANTOVIT IFV
+|[[Vehicles/SVANTOVIT IFV ORIGINAL CLAN|'''SVANTOVIT IFV ORIGINAL CLAN''']]
+|35 [LIGHT]
+|2B 4M
+| A=239.2/247.2 ''S=200''
+|Clan<br>
+|-
+|[[Vehicles/SVANTOVIT IFV ATM CLAN|'''SVANTOVIT IFV ATM CLAN''']]
+|35 [LIGHT]
+|2B 1M
+| A=253.6/253.6 ''S=200''
+|Clan<br>
+|-
+|[[Vehicles/SVANTOVIT IFV MORTAR CLAN|'''SVANTOVIT IFV MORTAR CLAN''']]
+|35 [LIGHT]
+|4B 2M
+| A=239.2/247.2 ''S=200''
+|Clan<br>
+|-
+|[[Vehicles/SVANTOVIT IFV CLAN|'''SVANTOVIT IFV CLAN''']]
+|35 [LIGHT]
+|2B 4M
+| A=253.6/253.6 ''S=200''
+|Clan<br>
+|-
+|colspan="1" rowspan="2" | SWIFT WIND SCOUT CAR
+|[[Vehicles/ARMORED SWIFT WIND SWIFTWIND|'''ARMORED SWIFT WIND SWIFTWIND''']]
+|8 [LIGHT]
+|
+| A=291.2/291.2 ''S=40''
+|
+|-
+|[[Vehicles/SWIFT WIND SWIFTWIND|'''SWIFT WIND SWIFTWIND''']]
+|8 [LIGHT]
+|
+| A=131.2/131.2 ''S=40''
+|
+|-
+|colspan="1" rowspan="1" | THANG-TA APC
+|[[Vehicles/THANG-TA APC THANG-TA|'''THANG-TA APC THANG-TA''']]
+|10 [LIGHT]
+|2E
+| A=243.2/243.2 ''S=50''
+|
+|-
+|colspan="1" rowspan="4" | ULTRA-LIGHT CARRIER
+|[[Vehicles/LIGHT MML CARRIER VLIGHT|'''LIGHT MML CARRIER VLIGHT''']]
+|20 [LIGHT]
+|2M 1S
+| A=211.2/211.2 ''S=100''
+|
+|-
+|[[Vehicles/LIGHT MML CARRIER VLIGHT PATM|'''LIGHT MML CARRIER VLIGHT PATM''']]
+|20 [LIGHT]
+|1M
+| A=211.2/211.2 ''S=100''
+|
+|-
+|[[Vehicles/ULTRA-LIGHT LRM CARRIER VLIGHT|'''ULTRA-LIGHT LRM CARRIER VLIGHT''']]
+|20 [LIGHT]
+|1M
+| A=211.2/211.2 ''S=100''
+|
+|-
+|[[Vehicles/ULTRA-LIGHT MARS CARRIER VLIGHT ROCKETS|'''ULTRA-LIGHT MARS CARRIER VLIGHT ROCKETS''']]
+|20 [LIGHT]
+|1M
+| A=192/192 ''S=100''
+|Primitive<br>
+|-
+|colspan="1" rowspan="1" | VEL HARASSER STRIKE HOVERCRAFT
+|[[Vehicles/VEL HARASSER STRIKE HOVERCRAFT VELHARASSER|'''VEL HARASSER STRIKE HOVERCRAFT VELHARASSER''']]
+|25 [LIGHT]
+|3E 2M
+| A=250.4/268 ''S=150''
+|Clan<br>
+|-
+|colspan="1" rowspan="3" | WEAPONS CARRIER
+|[[Vehicles/WEAPONS CARRIER (LARGE LASER)|'''WEAPONS CARRIER (LARGE LASER)''']]
+|30 [LIGHT]
+|1E
+| A=160/160 ''S=150''
+|
+|-
+|[[Vehicles/WEAPONS CARRIER (LRM)|'''WEAPONS CARRIER (LRM)''']]
+|30 [LIGHT]
+|1M
+| A=160/160 ''S=150''
+|
+|-
+|[[Vehicles/PPC WEAPONS CARRIER PPCCarrier|'''PPC WEAPONS CARRIER PPCCarrier''']]
+|20 [LIGHT]
+|1E
+| A=211.2/224 ''S=100''
+|
+|-
+|colspan="1" rowspan="4" | WHEELED APC
+|[[Vehicles/WHEELED APC (LRM)|'''WHEELED APC (LRM)''']]
+|10 [LIGHT]
+|CLASSIFIED
+| CLASSIFIED 
+|
+|-
+|[[Vehicles/WHEELED APC (SRM)|'''WHEELED APC (SRM)''']]
+|10 [LIGHT]
+|1M
+| A=217.6/217.6 ''S=50''
+|
+|-
+|[[Vehicles/WHEELED APC|'''WHEELED APC''']]
+|10 [LIGHT]
+|2B
+| A=217.6/217.6 ''S=50''
+|
+|-
+|[[Vehicles/WHEELED APC MK.2 MG|'''WHEELED APC MK.2 MG''']]
+|10 [LIGHT]
+|1B
+| A=208/208 ''S=50''
+|
+|-
+|colspan="1" rowspan="1" | WINTERHAWK APC
+|[[Vehicles/WINTERHAWK APC|'''WINTERHAWK APC''']]
+|20 [LIGHT]
+|1B 1M
+| A=188.8/188.8 ''S=100''
+|
+|-
+|colspan="1" rowspan="1" | ZEPHYROS INFANTRY SUPPORT VEHICLE
+|[[Vehicles/ZEPHYROS INFANTRY SUPPORT VEHICLE|'''ZEPHYROS INFANTRY SUPPORT VEHICLE''']]
+|25 [LIGHT]
+|2B 2E
+| A=428.8/444 ''S=150''
+|Clan<br>
+|-
+|colspan="1" rowspan="4" | ZORYA LIGHT TANK
+|[[Vehicles/ZORYA LIGHT TANK (ATM) CLAN|'''ZORYA LIGHT TANK (ATM) CLAN''']]
+|35 [LIGHT]
+|1B 1M
+| A=307.2/307.2 ''S=200''
+|Clan<br>
+|-
+|[[Vehicles/ZORYA (LRM) AMMO CLAN|'''ZORYA (LRM) AMMO CLAN''']]
+|35 [LIGHT]
+|1B 1M
+| A=281.6/281.6 ''S=200''
+|Clan<br>
+|-
+|[[Vehicles/ZORYA (LRM) CLAN|'''ZORYA (LRM) CLAN''']]
+|35 [LIGHT]
+|1B 1M
+| A=275.2/275.2 ''S=200''
+|Clan<br>
+|-
+|[[Vehicles/ZORYA (MORTAR)|'''ZORYA (MORTAR)''']]
+|35 [LIGHT]
+|2B
+| A=275.2/275.2 ''S=200''
+|Clan<br>
+
+|}
+
+
+=== Medium Tanks === 
+
+{| class="wikitable sortable mw-collapsible"
+|+
+! Chassis !! Variant !! Weight !! Hardpoints !! HP !! Special
+|-
+|colspan="1" rowspan="3" | ARES MEDIUM TANK
+|[[Vehicles/ARES FIRE SUPPORT TANK CLAN|'''ARES FIRE SUPPORT TANK CLAN''']]
+|40 [MEDIUM]
+|1E 2M
+| A=346.4/368.8 ''S=200''
+|Clan<br>
+|-
+|[[Vehicles/ARES PLASMA TANK CLAN|'''ARES PLASMA TANK CLAN''']]
+|40 [MEDIUM]
+|1E 2M
+| A=353.6/369.6 ''S=200''
+|Clan<br>
+|-
+|[[Vehicles/SOCIETY ARES TANK|'''SOCIETY ARES TANK''']]
+|40 [MEDIUM]
+|1E 1M
+| A=346.4/368.8 ''S=200''
+|Clan<br>
+|-
+|colspan="1" rowspan="1" | ASHER HOVERTANK
+|[[Vehicles/ASHER|'''ASHER''']]
+|45 [MEDIUM]
+|3B 1E 2M
+| A=592/608 ''S=250''
+|Primitive<br>
+|-
+|colspan="1" rowspan="17" | BANDIT HOVERCRAFT
+|[[Vehicles/BANDIT HOVERCRAFT|'''BANDIT HOVERCRAFT''']]
+|50 [MEDIUM]
+|1B 3E 2M
+| A=732.8/732.8 ''S=250''
+|
+|-
+|[[Vehicles/BANDIT-H HOVERCRAFT BANDIT-H|'''BANDIT-H HOVERCRAFT BANDIT-H''']]
+|50 [MEDIUM]
+|1E 1M
+| A=739.2/739.2 ''S=250''
+|
+|-
+|[[Vehicles/BANDIT-G HOVERCRAFT BANDIT-G|'''BANDIT-G HOVERCRAFT BANDIT-G''']]
+|50 [MEDIUM]
+|8E
+| A=739.2/739.2 ''S=250''
+|
+|-
+|[[Vehicles/BANDIT-F HOVERCRAFT BANDIT-F|'''BANDIT-F HOVERCRAFT BANDIT-F''']]
+|50 [MEDIUM]
+|2E
+| A=720/720 ''S=250''
+|
+|-
+|[[Vehicles/BANDIT-E HOVERCRAFT BANDIT-E|'''BANDIT-E HOVERCRAFT BANDIT-E''']]
+|50 [MEDIUM]
+|1E 1M
+| A=720/720 ''S=250''
+|
+|-
+|[[Vehicles/BANDIT-D HOVERCRAFT (C) BANDIT-D CLAN|'''BANDIT-D HOVERCRAFT (C) BANDIT-D CLAN''']]
+|50 [MEDIUM]
+|1B 2E
+| A=697.6/705.6 ''S=250''
+|Clan<br>
+|-
+|[[Vehicles/BANDIT-D HOVERCRAFT BANDIT-D VBIED|'''BANDIT-D HOVERCRAFT BANDIT-D VBIED''']]
+|50 [MEDIUM]
+|3M 1S
+| A=697.6/704 ''S=250''
+|Legendary<br>
+Primitive<br>
+|-
+|[[Vehicles/BANDIT-I HOVERCRAFT BANDIT-I|'''BANDIT-I HOVERCRAFT BANDIT-I''']]
+|50 [MEDIUM]
+|1B 2E
+| A=713.6/713.6 ''S=250''
+|
+|-
+|[[Vehicles/BANDIT-D HOVERCRAFT BANDIT-D|'''BANDIT-D HOVERCRAFT BANDIT-D''']]
+|50 [MEDIUM]
+|3M
+| A=713.6/713.6 ''S=250''
+|
+|-
+|[[Vehicles/BANDIT-C HOVERCRAFT BANDIT-C|'''BANDIT-C HOVERCRAFT BANDIT-C''']]
+|50 [MEDIUM]
+|2M
+| A=713.6/713.6 ''S=250''
+|
+|-
+|[[Vehicles/BANDIT-B HOVERCRAFT (C) BANDIT-B CLAN|'''BANDIT-B HOVERCRAFT (C) BANDIT-B CLAN''']]
+|50 [MEDIUM]
+|1M
+| A=697.6/705.6 ''S=250''
+|Clan<br>
+|-
+|[[Vehicles/BANDIT-B HOVERCRAFT BANDIT-B|'''BANDIT-B HOVERCRAFT BANDIT-B''']]
+|50 [MEDIUM]
+|3M
+| A=726.4/726.4 ''S=250''
+|
+|-
+|[[Vehicles/BANDIT-A HOVERCRAFT (C) BANDIT-A CLAN|'''BANDIT-A HOVERCRAFT (C) BANDIT-A CLAN''']]
+|50 [MEDIUM]
+|1E 2M
+| A=700.8/708.8 ''S=250''
+|Clan<br>
+|-
+|[[Vehicles/BANDIT-A HOVERCRAFT BANDIT-A|'''BANDIT-A HOVERCRAFT BANDIT-A''']]
+|50 [MEDIUM]
+|1E
+| A=707.2/707.2 ''S=250''
+|
+|-
+|[[Vehicles/BANDIT HOVERCRAFT (C) CLAN|'''BANDIT HOVERCRAFT (C) CLAN''']]
+|50 [MEDIUM]
+|2M
+| A=690.4/698.4 ''S=250''
+|Clan<br>
+|-
+|[[Vehicles/BANDIT-C HOVERCRAFT (C) BANDIT-C CLAN|'''BANDIT-C HOVERCRAFT (C) BANDIT-C CLAN''']]
+|50 [MEDIUM]
+|3E
+| A=690.4/698.4 ''S=250''
+|Clan<br>
+|-
+|[[Vehicles/BANDIT-I HOVERCRAFT (C) BANDIT-I CLAN|'''BANDIT-I HOVERCRAFT (C) BANDIT-I CLAN''']]
+|50 [MEDIUM]
+|2B
+| A=697.6/705.6 ''S=250''
+|Clan<br>
+|-
+|colspan="1" rowspan="4" | BANDIT HOVERCRAFT (C)
+|[[Vehicles/BANDIT HOVERCRAFT (C) BANDIT-E CLAN|'''BANDIT HOVERCRAFT (C) BANDIT-E CLAN''']]
+|50 [MEDIUM]
+|1M
+| A=697.6/705.6 ''S=250''
+|Clan<br>
+|-
+|[[Vehicles/BANDIT HOVERCRAFT (C) BANDIT-H CLAN|'''BANDIT HOVERCRAFT (C) BANDIT-H CLAN''']]
+|50 [MEDIUM]
+|2E 1M
+| A=704.8/712.8 ''S=250''
+|Clan<br>
+|-
+|[[Vehicles/BANDIT-F (C) BANDIT-F CLAN|'''BANDIT-F (C) BANDIT-F CLAN''']]
+|50 [MEDIUM]
+|2B 1E 1M
+| A=697.6/705.6 ''S=250''
+|Clan<br>
+|-
+|[[Vehicles/BANDIT-G (C) BANDIT-G CLAN|'''BANDIT-G (C) BANDIT-G CLAN''']]
+|50 [MEDIUM]
+|8B 1E
+| A=718.4/726.4 ''S=250''
+|Clan<br>
+|-
+|colspan="1" rowspan="2" | BELLONA CAVALRY TANK
+|[[Vehicles/BELLONA (AC10) CLAN RT|'''BELLONA (AC10) CLAN RT''']]
+|45 [MEDIUM]
+|5B 2E
+| A=521.6/521.6 ''S=250''
+|Clan<br>
+|-
+|[[Vehicles/BELLONA (LASER) BELLONA2 CLAN RT|'''BELLONA (LASER) BELLONA2 CLAN RT''']]
+|45 [MEDIUM]
+|4B 2E 1M
+| A=483.2/483.2 ''S=250''
+|Clan<br>
+|-
+|colspan="1" rowspan="1" | BRADFORD IFV
+|[[Vehicles/BRADFORD IFV APC NOTABRADLEY PRIMITIVE|'''BRADFORD IFV APC NOTABRADLEY PRIMITIVE''']]
+|40 [MEDIUM]
+|2B 1M
+| A=384/384 ''S=200''
+|Primitive<br>
+|-
+|colspan="1" rowspan="3" | CARRIER
+|[[Vehicles/AC2 CARRIER Primitive|'''AC2 CARRIER Primitive''']]
+|55 [MEDIUM]
+|4B
+| A=368/368 ''S=240''
+|
+|-
+|[[Vehicles/LRM CARRIER Primitive|'''LRM CARRIER Primitive''']]
+|55 [MEDIUM]
+|3M
+| A=368/368 ''S=240''
+|
+|-
+|[[Vehicles/SRM CARRIER Primitive|'''SRM CARRIER Primitive''']]
+|55 [MEDIUM]
+|10M
+| A=432/432 ''S=240''
+|
+|-
+|colspan="1" rowspan="1" | CEMENT MIXER
+|[[Vehicles/BOOMBOX PIRATE|'''BOOMBOX PIRATE''']]
+|50 [MEDIUM]
+|1B 2S
+| A=768/768 ''S=200''
+|
+|-
+|colspan="1" rowspan="1" | CESTRUS HOVERTANK
+|[[Vehicles/CESTRUS HOVER TANK|'''CESTRUS HOVER TANK''']]
+|50 [MEDIUM]
+|1E 1M
+| A=384/384 ''S=250''
+|
+|-
+|colspan="1" rowspan="4" | CHALCHIUHTOTOLIN
+|[[Vehicles/CHALCHIUHTOTOLIN (BOMBAST) CHALCHIUHTTOTOLIN|'''CHALCHIUHTOTOLIN (BOMBAST) CHALCHIUHTTOTOLIN''']]
+|50 [MEDIUM]
+|4B 1E 2M
+| A=582.4/582.4 ''S=250''
+|Clan<br>
+|-
+|[[Vehicles/CHALCHIUHTOTOLIN SUPPORT TANK CHALCHIUHTTOTOLIN|'''CHALCHIUHTOTOLIN SUPPORT TANK CHALCHIUHTTOTOLIN''']]
+|50 [MEDIUM]
+|4B 4E 2M
+| A=586.4/586.4 ''S=250''
+|Clan<br>
+|-
+|[[Vehicles/CHALCHIUHTOTOLIN SUPPORT TANK (CHEMICAL LASER) CHALCHIUHTTOTOLIN CHEM|'''CHALCHIUHTOTOLIN SUPPORT TANK (CHEMICAL LASER) CHALCHIUHTTOTOLIN CHEM''']]
+|50 [MEDIUM]
+|4B 5E 2M 2S
+| A=554.4/554.4 ''S=250''
+|Clan<br>
+|-
+|[[Vehicles/CHALCHIUHTOTOLIN SUPPORT TANK (XL ENGINE) CHALCHIUHTTOTOLIN|'''CHALCHIUHTOTOLIN SUPPORT TANK (XL ENGINE) CHALCHIUHTTOTOLIN''']]
+|50 [MEDIUM]
+|4B 4E 1M
+| A=560/560 ''S=250''
+|Clan<br>
+|-
+|colspan="1" rowspan="5" | CHAPARRAL MISSILE ARTILLERY TANK
+|[[Vehicles/CHAPARRAL MISSILE ARTILLERY TANK ERML|'''CHAPARRAL MISSILE ARTILLERY TANK ERML''']]
+|50 [MEDIUM]
+|2E 2M
+| A=368/368 ''S=200''
+|
+|-
+|[[Vehicles/CHAPARRAL MISSILE ARTILLERY TANK MG|'''CHAPARRAL MISSILE ARTILLERY TANK MG''']]
+|50 [MEDIUM]
+|1B 2E 2M
+| A=368/368 ''S=200''
+|
+|-
+|[[Vehicles/CHAPARRAL MISSILE ARTILLERY TANK SRM|'''CHAPARRAL MISSILE ARTILLERY TANK SRM''']]
+|50 [MEDIUM]
+|2E 2M
+| A=368/368 ''S=200''
+|
+|-
+|[[Vehicles/CHAPARRAL MISSILE ARTILLERY TANK CASE|'''CHAPARRAL MISSILE ARTILLERY TANK CASE''']]
+|50 [MEDIUM]
+|2E 2M
+| A=375.2/375.2 ''S=200''
+|
+|-
+|[[Vehicles/CHAPARRAL MISSILE ARTILLERY TANK|'''CHAPARRAL MISSILE ARTILLERY TANK''']]
+|50 [MEDIUM]
+|2E 2M
+| A=368/368 ''S=200''
+|
+|-
+|colspan="1" rowspan="1" | CHARIOT
+|[[Vehicles/CHARIOT CHAR-10T PRIMITIVE|'''CHARIOT CHAR-10T PRIMITIVE''']]
+|50 [MEDIUM]
+|1B 2M
+| A=422.4/422.4 ''S=250''
+|Primitive<br>
+|-
+|colspan="1" rowspan="1" | CLOUD BUSTER AA TANK
+|[[Vehicles/CLOUD BUSTER AA TANK CLOUDBUSTER|'''CLOUD BUSTER AA TANK CLOUDBUSTER''']]
+|45 [MEDIUM]
+|2B
+| A=521.6/533.6 ''S=250''
+|
+|-
+|colspan="1" rowspan="10" | CONDOR CAVALRY TANK
+|[[Vehicles/CONDOR (DAVION)|'''CONDOR (DAVION)''']]
+|50 [MEDIUM]
+|4B
+| A=531.2/531.2 ''S=250''
+|
+|-
+|[[Vehicles/CONDOR (FLAMER)|'''CONDOR (FLAMER)''']]
+|50 [MEDIUM]
+|2B 5E
+| A=563.2/563.2 ''S=250''
+|
+|-
+|[[Vehicles/CONDOR (LASER)|'''CONDOR (LASER)''']]
+|50 [MEDIUM]
+|4E 3M
+| A=499.2/499.2 ''S=250''
+|
+|-
+|[[Vehicles/CONDOR (LASER) RELASER|'''CONDOR (LASER) RELASER''']]
+|50 [MEDIUM]
+|4E
+| A=582.4/582.4 ''S=250''
+|
+|-
+|[[Vehicles/CONDOR (LIAO)|'''CONDOR (LIAO)''']]
+|50 [MEDIUM]
+|4E
+| A=556.8/556.8 ''S=250''
+|
+|-
+|[[Vehicles/CONDOR (UAC10)|'''CONDOR (UAC10)''']]
+|50 [MEDIUM]
+|3B 2E
+| A=464.8/464.8 ''S=250''
+|
+|-
+|[[Vehicles/CONDOR CAVALRY TANK|'''CONDOR CAVALRY TANK''']]
+|50 [MEDIUM]
+|2B 2E
+| A=403.2/403.2 ''S=250''
+|
+|-
+|[[Vehicles/CONDOR CND-P3W LASER PIRATE|'''CONDOR CND-P3W LASER PIRATE''']]
+|50 [MEDIUM]
+|3E
+| A=472/496 ''S=250''
+|
+|-
+|[[Vehicles/CONDOR MK.2 UPGRADE|'''CONDOR MK.2 UPGRADE''']]
+|50 [MEDIUM]
+|3B 1M
+| A=522.4/522.4 ''S=250''
+|
+|-
+|[[Vehicles/CONDOR CAVALRY TANK MK.2B UPGRADE LASER|'''CONDOR CAVALRY TANK MK.2B UPGRADE LASER''']]
+|50 [MEDIUM]
+|2B 1E 1M 1S
+| A=447.2/447.2 ''S=250''
+|
+|-
+|colspan="1" rowspan="2" | DECURION HOVERTANK
+|[[Vehicles/DECURION CAVALRY TANK ADVANCED|'''DECURION CAVALRY TANK ADVANCED''']]
+|45 [MEDIUM]
+|2E 2M
+| A=700.8/700.8 ''S=250''
+|
+|-
+|[[Vehicles/DECURION CAVALRY TANK|'''DECURION CAVALRY TANK''']]
+|45 [MEDIUM]
+|1E 2M
+| A=547.2/547.2 ''S=250''
+|
+|-
+|colspan="1" rowspan="6" | DRILLSON HEAVY HOVERTANK
+|[[Vehicles/ANTIQUE DRILLSON ICE|'''ANTIQUE DRILLSON ICE''']]
+|50 [MEDIUM]
+|2B 1E 2M
+| A=409.6/416 ''S=250''
+|
+|-
+|[[Vehicles/DRILLSON (ENVIRO-SEALED)|'''DRILLSON (ENVIRO-SEALED)''']]
+|50 [MEDIUM]
+|2E 1M
+| A=480/480 ''S=250''
+|
+|-
+|[[Vehicles/DRILLSON (ER) ERLL|'''DRILLSON (ER) ERLL''']]
+|50 [MEDIUM]
+|2B 1E 2M
+| A=393.6/393.6 ''S=250''
+|
+|-
+|[[Vehicles/DRILLSON (SRM)|'''DRILLSON (SRM)''']]
+|50 [MEDIUM]
+|2B 1E 6M
+| A=451.2/451.2 ''S=250''
+|
+|-
+|[[Vehicles/DRILLSON (STREAK)|'''DRILLSON (STREAK)''']]
+|50 [MEDIUM]
+|1E 4M
+| A=464/464 ''S=250''
+|
+|-
+|[[Vehicles/DRILLSON HOVER TANK|'''DRILLSON HOVER TANK''']]
+|50 [MEDIUM]
+|2B 1E 3M
+| A=451.2/451.2 ''S=250''
+|
+|-
+|colspan="1" rowspan="3" | ELDINGAR HOVER SLED
+|[[Vehicles/ELDINGAR HOVER SLED (HMMHV)|'''ELDINGAR HOVER SLED (HMMHV)''']]
+|50 [MEDIUM]
+|1B 2E
+| A=579.2/579.2 ''S=250''
+|Clan<br>
+|-
+|[[Vehicles/ELDINGAR HOVER SLED (STREAK)|'''ELDINGAR HOVER SLED (STREAK)''']]
+|50 [MEDIUM]
+|2M
+| A=579.2/579.2 ''S=250''
+|Clan<br>
+|-
+|[[Vehicles/ELDINGAR HOVER SLED|'''ELDINGAR HOVER SLED''']]
+|50 [MEDIUM]
+|4M
+| A=622.4/626.4 ''S=250''
+|Clan<br>
+|-
+|colspan="1" rowspan="1" | ENYO STRIKE TANK
+|[[Vehicles/ENYO STRIKE TANK CLAN|'''ENYO STRIKE TANK CLAN''']]
+|55 [MEDIUM]
+|2B 1E 3M
+| A=544/841.6 ''S=300''
+|Clan<br>
+|-
+|colspan="1" rowspan="8" | EPONA PURSUIT TANK
+|[[Vehicles/EPONA PURSUIT TANK (PRIME) CLAN RT|'''EPONA PURSUIT TANK (PRIME) CLAN RT''']]
+|50 [MEDIUM]
+|4E 1M
+| A=375.2/399.2 ''S=250''
+|Clan<br>
+|-
+|[[Vehicles/EPONA-A PURSUIT TANK EPONA-A CLAN RT|'''EPONA-A PURSUIT TANK EPONA-A CLAN RT''']]
+|50 [MEDIUM]
+|2E 2M 1S
+| A=375.2/399.2 ''S=250''
+|Clan<br>
+|-
+|[[Vehicles/EPONA-B PURSUIT TANK EPONA-B CLAN RT|'''EPONA-B PURSUIT TANK EPONA-B CLAN RT''']]
+|50 [MEDIUM]
+|1B 2M
+| A=375.2/399.2 ''S=250''
+|Clan<br>
+|-
+|[[Vehicles/EPONA-C PURSUIT TANK EPONA-C CLAN RT|'''EPONA-C PURSUIT TANK EPONA-C CLAN RT''']]
+|50 [MEDIUM]
+|1E 1M 1S
+| A=382.4/404.8 ''S=250''
+|Clan<br>
+|-
+|[[Vehicles/EPONA-D PURSUIT TANK EPONA-D CLAN RT|'''EPONA-D PURSUIT TANK EPONA-D CLAN RT''']]
+|50 [MEDIUM]
+|1B 2E
+| A=375.2/399.2 ''S=250''
+|Clan<br>
+|-
+|[[Vehicles/EPONA-E PURSUIT TANK EPONA-E CLAN RT|'''EPONA-E PURSUIT TANK EPONA-E CLAN RT''']]
+|50 [MEDIUM]
+|5B 2E
+| A=389.6/405.6 ''S=250''
+|Clan<br>
+|-
+|[[Vehicles/EPONA-Z PURSUIT TANK EPONA-Z CLAN RT|'''EPONA-Z PURSUIT TANK EPONA-Z CLAN RT''']]
+|50 [MEDIUM]
+|1B 1M
+| A=385.6/404.8 ''S=250''
+|Clan<br>
+|-
+|[[Vehicles/EPONA-Z-A PURSUIT TANK EPONA-ZA CLAN RT|'''EPONA-Z-A PURSUIT TANK EPONA-ZA CLAN RT''']]
+|50 [MEDIUM]
+|2M 1S
+| A=407.2/423.2 ''S=250''
+|Clan<br>
+|-
+|colspan="1" rowspan="1" | FALCON HOVERTANK
+|[[Vehicles/FALCON|'''FALCON''']]
+|50 [MEDIUM]
+|1E 2M
+| A=428.8/665.6 ''S=250''
+|
+|-
+|colspan="1" rowspan="3" | FERRET
+|[[Vehicles/FERRET MK.1|'''FERRET MK.1''']]
+|45 [MEDIUM]
+|4E 2M 1S
+| A=496/496 ''S=200''
+|
+|-
+|[[Vehicles/FERRET MK.2 CATSNAKE|'''FERRET MK.2 CATSNAKE''']]
+|45 [MEDIUM]
+|8B 1E 1S
+| A=496/496 ''S=200''
+|Legendary<br>
+|-
+|[[Vehicles/FERRET MK.3 POLECAT|'''FERRET MK.3 POLECAT''']]
+|45 [MEDIUM]
+|1B 1S
+| A=496/496 ''S=200''
+|Legendary<br>
+|-
+|colspan="1" rowspan="3" | FULCRUM HEAVY HOVERTANK
+|[[Vehicles/FULCRUM I 1|'''FULCRUM I 1''']]
+|50 [MEDIUM]
+|2E 1M 1S
+| A=665.6/665.6 ''S=250''
+|
+|-
+|[[Vehicles/FULCRUM II 2|'''FULCRUM II 2''']]
+|50 [MEDIUM]
+|3E 2M 1S
+| A=665.6/665.6 ''S=250''
+|
+|-
+|[[Vehicles/FULCRUM III HOVERTANK 3|'''FULCRUM III HOVERTANK 3''']]
+|50 [MEDIUM]
+|1E 1M 1S
+| A=796/796 ''S=250''
+|
+|-
+|colspan="1" rowspan="2" | GIGGINS APC
+|[[Vehicles/GIGGINS APC (FIRE SUPPORT) FS|'''GIGGINS APC (FIRE SUPPORT) FS''']]
+|40 [MEDIUM]
+|2E 1M
+| A=520/512 ''S=200''
+|
+|-
+|[[Vehicles/GIGGINS APC|'''GIGGINS APC''']]
+|40 [MEDIUM]
+|2B
+| A=544/544 ''S=200''
+|
+|-
+|colspan="1" rowspan="2" | GLADIUS MEDIUM HOVERTANK
+|[[Vehicles/GLADIUS HOVERTANK MK.2 MKII|'''GLADIUS HOVERTANK MK.2 MKII''']]
+|40 [MEDIUM]
+|2B 4M
+| A=384/384 ''S=160''
+|
+|-
+|[[Vehicles/GLADIUS MK.1|'''GLADIUS MK.1''']]
+|40 [MEDIUM]
+|1B
+| A=384/384 ''S=160''
+|
+|-
+|colspan="1" rowspan="6" | GOBLIN MEDIUM TANK
+|[[Vehicles/GOBLIN (LRM)|'''GOBLIN (LRM)''']]
+|45 [MEDIUM]
+|1B 2M
+| A=528/528 ''S=250''
+|
+|-
+|[[Vehicles/GOBLIN (MG)|'''GOBLIN (MG)''']]
+|45 [MEDIUM]
+|6B 1M
+| A=537.6/537.6 ''S=250''
+|
+|-
+|[[Vehicles/GOBLIN (SRM)|'''GOBLIN (SRM)''']]
+|45 [MEDIUM]
+|1B 3M
+| A=534.4/534.4 ''S=250''
+|
+|-
+|[[Vehicles/GOBLIN ISV|'''GOBLIN ISV''']]
+|45 [MEDIUM]
+|2B 1E 1M 1S
+| A=697.6/697.6 ''S=250''
+|
+|-
+|[[Vehicles/GOBLIN MEDIUM TANK|'''GOBLIN MEDIUM TANK''']]
+|45 [MEDIUM]
+|1B 1E
+| A=528/528 ''S=250''
+|
+|-
+|[[Vehicles/GOBLIN-X|'''GOBLIN-X''']]
+|45 [MEDIUM]
+|2B 1E 1M
+| A=732/732 ''S=250''
+|Legendary<br>
+|-
+|colspan="1" rowspan="1" | GORGON
+|[[Vehicles/GORGON|'''GORGON''']]
+|50 [MEDIUM]
+|1E 3M 1S
+| A=827.2/827.2 ''S=250''
+|
+|-
+|colspan="1" rowspan="1" | HADUR FAST SUPPORT VEHICLE
+|[[Vehicles/HADUR FAST SUPPORT VEHICLE|'''HADUR FAST SUPPORT VEHICLE''']]
+|50 [MEDIUM]
+|2B 2E 1M
+| A=403.2/403.2 ''S=250''
+|Clan<br>
+|-
+|colspan="1" rowspan="1" | HETZER (SEALED)
+|[[Vehicles/HETZER (SEALED)|'''HETZER (SEALED)''']]
+|40 [MEDIUM]
+|1B
+| A=448/512 ''S=160''
+|
+|-
+|colspan="1" rowspan="16" | HETZER WHEELED ASSAULT GUN
+|[[Vehicles/HETZER (AC10)|'''HETZER (AC10)''']]
+|40 [MEDIUM]
+|1B
+| A=448/448 ''S=160''
+|
+|-
+|[[Vehicles/HETZER (AC10) UAC10 PIRATE|'''HETZER (AC10) UAC10 PIRATE''']]
+|40 [MEDIUM]
+|1B
+| A=448/448 ''S=160''
+|
+|-
+|[[Vehicles/HETZER (AC10) QUICSELL VBIED|'''HETZER (AC10) QUICSELL VBIED''']]
+|40 [MEDIUM]
+|1B 1S
+| A=448/448 ''S=160''
+|Legendary<br>
+Primitive<br>
+|-
+|[[Vehicles/HETZER (LASER)|'''HETZER (LASER)''']]
+|40 [MEDIUM]
+|4E
+| A=486.4/494.4 ''S=160''
+|
+|-
+|[[Vehicles/HETZER (LBX)|'''HETZER (LBX)''']]
+|40 [MEDIUM]
+|1B
+| A=448/480 ''S=160''
+|
+|-
+|[[Vehicles/HETZER (LRM) PRIMITIVE|'''HETZER (LRM) PRIMITIVE''']]
+|40 [MEDIUM]
+|3M 1S
+| A=384/384 ''S=160''
+|Primitive<br>
+|-
+|[[Vehicles/HETZER (LRM)|'''HETZER (LRM)''']]
+|40 [MEDIUM]
+|2M
+| A=384/384 ''S=160''
+|
+|-
+|[[Vehicles/HETZER (MRM)|'''HETZER (MRM)''']]
+|40 [MEDIUM]
+|2M
+| A=384/384 ''S=160''
+|
+|-
+|[[Vehicles/HETZER (SCOUT)|'''HETZER (SCOUT)''']]
+|40 [MEDIUM]
+|1B
+| A=416/416 ''S=160''
+|
+|-
+|[[Vehicles/HETZER (SRM)|'''HETZER (SRM)''']]
+|40 [MEDIUM]
+|5M
+| A=384/384 ''S=160''
+|
+|-
+|[[Vehicles/HETZER (SRM) PIRATE|'''HETZER (SRM) PIRATE''']]
+|40 [MEDIUM]
+|4M 2S
+| A=384/384 ''S=160''
+|
+|-
+|[[Vehicles/HETZER (THUMPER)|'''HETZER (THUMPER)''']]
+|40 [MEDIUM]
+|1B
+| A=384/384 ''S=160''
+|
+|-
+|[[Vehicles/HETZER (UAC)|'''HETZER (UAC)''']]
+|40 [MEDIUM]
+|1B
+| A=480/536 ''S=160''
+|
+|-
+|[[Vehicles/HETZER WHEELED ASSAULT GUN HVAC|'''HETZER WHEELED ASSAULT GUN HVAC''']]
+|40 [MEDIUM]
+|1B
+| A=384/384 ''S=160''
+|
+|-
+|[[Vehicles/HETZER WHEELED ASSAULT GUN ELITE|'''HETZER WHEELED ASSAULT GUN ELITE''']]
+|40 [MEDIUM]
+|1B
+| A=384/384 ''S=160''
+|
+|-
+|[[Vehicles/HETZER WHEELED ASSAULT GUN|'''HETZER WHEELED ASSAULT GUN''']]
+|40 [MEDIUM]
+|1B
+| A=384/384 ''S=160''
+|
+|-
+|colspan="1" rowspan="2" | IZULA II
+|[[Vehicles/IZULA II 2 PRIMITIVE|'''IZULA II 2 PRIMITIVE''']]
+|50 [MEDIUM]
+|2B 1M 2S
+| A=582.4/582.4 ''S=250''
+|Primitive<br>
+|-
+|[[Vehicles/IZULA TOO 2 PIRATE|'''IZULA TOO 2 PIRATE''']]
+|50 [MEDIUM]
+|2B 2M 2S
+| A=579.2/579.2 ''S=250''
+|
+|-
+|colspan="1" rowspan="1" | IZULA MEDIUM TANK
+|[[Vehicles/IZULA PRIMITIVE|'''IZULA PRIMITIVE''']]
+|45 [MEDIUM]
+|2B 2S
+| A=496/496 ''S=250''
+|Primitive<br>
+|-
+|colspan="1" rowspan="1" | J-37 ORDINANCE TRANSPORT
+|[[Vehicles/J-37 ORDNANCE TRANSPORT J-37|'''J-37 ORDNANCE TRANSPORT J-37''']]
+|50 [MEDIUM]
+|1E
+| A=468/468 ''S=250''
+|
+|-
+|colspan="1" rowspan="1" | JAGDPANZER II
+|[[Vehicles/JAGDPANZER II|'''JAGDPANZER II''']]
+|40 [MEDIUM]
+|3B
+| A=432/512 ''S=160''
+|Legendary<br>
+|-
+|colspan="1" rowspan="1" | JAGUAR II MEDIUM TANK
+|[[Vehicles/JAGUAR II MEDIUM TANK 2|'''JAGUAR II MEDIUM TANK 2''']]
+|45 [MEDIUM]
+|1B 2E 1S
+| A=525.6/557.6 ''S=250''
+|
+|-
+|colspan="1" rowspan="1" | JAGUAR MEDIUM TANK
+|[[Vehicles/JAGUAR MEDIUM TANK|'''JAGUAR MEDIUM TANK''']]
+|45 [MEDIUM]
+|1B 2E 1S
+| A=543.2/567.2 ''S=250''
+|
+|-
+|colspan="1" rowspan="2" | JES-1 TACTICAL MISSILE CARRIER
+|[[Vehicles/JES 1 TACTICAL MISSILE CARRIER|'''JES 1 TACTICAL MISSILE CARRIER''']]
+|50 [MEDIUM]
+|1B 1E 7M
+| A=294.4/294.4 ''S=250''
+|
+|-
+|[[Vehicles/JES 1 TACTICAL MISSILE CARRIER (3082 UPGRADE)|'''JES 1 TACTICAL MISSILE CARRIER (3082 UPGRADE)''']]
+|50 [MEDIUM]
+|1B 1E 7M
+| A=294.4/294.4 ''S=250''
+|
+|-
+|colspan="1" rowspan="2" | JOUST MEDIUM TANK
+|[[Vehicles/JOUST BE700 CLAN|'''JOUST BE700 CLAN''']]
+|40 [MEDIUM]
+|4B 1E 1M
+| A=697.6/737.6 ''S=200''
+|Clan<br>
+|-
+|[[Vehicles/JOUST BE701 CLAN|'''JOUST BE701 CLAN''']]
+|40 [MEDIUM]
+|8B 1E 1M
+| A=600.8/628.8 ''S=200''
+|Clan<br>
+|-
+|colspan="1" rowspan="1" | KALIS MAIN BATTLE TANK
+|[[Vehicles/KALIS MAIN BATTLE TANK|'''KALIS MAIN BATTLE TANK''']]
+|45 [MEDIUM]
+|1B 1M
+| A=457.6/457.6 ''S=250''
+|
+|-
+|colspan="1" rowspan="3" | KANGA MEDIUM HOVERTANK
+|[[Vehicles/KANGA MEDIUM HOVERTANK AC|'''KANGA MEDIUM HOVERTANK AC''']]
+|50 [MEDIUM]
+|2B 1M
+| A=288/288 ''S=200''
+|
+|-
+|[[Vehicles/KANGA MEDIUM HOVERTANK|'''KANGA MEDIUM HOVERTANK''']]
+|50 [MEDIUM]
+|2B 2M
+| A=224/224 ''S=200''
+|
+|-
+|[[Vehicles/KANGA-X KANGA-X|'''KANGA-X KANGA-X''']]
+|50 [MEDIUM]
+|1E 2M
+| A=450.4/464 ''S=250''
+|Clan<br>
+|-
+|colspan="1" rowspan="1" | KESTROS HOVER TANK
+|[[Vehicles/KESTROS HOVER TANK|'''KESTROS HOVER TANK''']]
+|50 [MEDIUM]
+|2B 1E 1M
+| A=400/400 ''S=250''
+|
+|-
+|colspan="1" rowspan="1" | KORVIN KVN-2
+|[[Vehicles/KORVIN KVN-2|'''KORVIN KVN-2''']]
+|50 [MEDIUM]
+|5B 1E 1M
+| A=528/532 ''S=250''
+|
+|-
+|colspan="1" rowspan="1" | KU
+|[[Vehicles/KU WHEELED ASSAULT TANK CLAN|'''KU WHEELED ASSAULT TANK CLAN''']]
+|50 [MEDIUM]
+|1B 2E 1M
+| A=504/583.2 ''S=250''
+|Clan<br>
+|-
+|colspan="1" rowspan="1" | KU WHEELED ASSAULT TANK
+|[[Vehicles/KU WHEELED ASSAULT TANK APC TURHAN2 CLAN|'''KU WHEELED ASSAULT TANK APC TURHAN2 CLAN''']]
+|50 [MEDIUM]
+|2B 2E
+| A=611.2/635.2 ''S=250''
+|Clan<br>
+|-
+|colspan="1" rowspan="11" | LIGHT CARRIER
+|[[Vehicles/LIGHT FLAMER CARRIER|'''LIGHT FLAMER CARRIER''']]
+|40 [MEDIUM]
+|10E
+| A=332.8/332.8 ''S=200''
+|
+|-
+|[[Vehicles/LIGHT HYBRID CARRIER (TBM/LRM) 1010|'''LIGHT HYBRID CARRIER (TBM/LRM) 1010''']]
+|40 [MEDIUM]
+|3M
+| A=313.6/320 ''S=200''
+|
+|-
+|[[Vehicles/LIGHT HYBRID CARRIER (TBM/LRM)|'''LIGHT HYBRID CARRIER (TBM/LRM)''']]
+|40 [MEDIUM]
+|6M 2S
+| A=320/320 ''S=200''
+|
+|-
+|[[Vehicles/LIGHT LRM CARRIER|'''LIGHT LRM CARRIER''']]
+|40 [MEDIUM]
+|3M
+| A=288/288 ''S=200''
+|
+|-
+|[[Vehicles/LIGHT MML CARRIER|'''LIGHT MML CARRIER''']]
+|40 [MEDIUM]
+|6M
+| A=332.8/332.8 ''S=200''
+|
+|-
+|[[Vehicles/LIGHT MORTAR CARRIER FASCAM|'''LIGHT MORTAR CARRIER FASCAM''']]
+|40 [MEDIUM]
+|3B
+| A=288/288 ''S=200''
+|
+|-
+|[[Vehicles/LIGHT MORTAR CARRIER|'''LIGHT MORTAR CARRIER''']]
+|40 [MEDIUM]
+|3B
+| A=288/288 ''S=200''
+|
+|-
+|[[Vehicles/LIGHT MRM CARRIER|'''LIGHT MRM CARRIER''']]
+|40 [MEDIUM]
+|5M
+| A=288/288 ''S=200''
+|
+|-
+|[[Vehicles/LIGHT SRM CARRIER|'''LIGHT SRM CARRIER''']]
+|40 [MEDIUM]
+|5M
+| A=288/288 ''S=200''
+|
+|-
+|[[Vehicles/LIGHT STREAK CARRIER MML|'''LIGHT STREAK CARRIER MML''']]
+|40 [MEDIUM]
+|4M
+| A=281.6/288 ''S=200''
+|Legendary<br>
+|-
+|[[Vehicles/LIGHT TBM5 CARRIER THUNDERBOLT|'''LIGHT TBM5 CARRIER THUNDERBOLT''']]
+|40 [MEDIUM]
+|5M
+| A=352/320 ''S=200''
+|
+|-
+|colspan="1" rowspan="1" | LIGHT MISSILE CARRIER
+|[[Vehicles/LIGHT ROCKET CARRIER RL PRIMITIVE|'''LIGHT ROCKET CARRIER RL PRIMITIVE''']]
+|40 [MEDIUM]
+|6M 2S
+| A=297.6/313.6 ''S=200''
+|Primitive<br>
+|-
+|colspan="1" rowspan="1" | LTV-4 HOVERTANK
+|[[Vehicles/LTV-4 HOVER TANK LTV-4|'''LTV-4 HOVER TANK LTV-4''']]
+|50 [MEDIUM]
+|1E 1M
+| A=377.6/384 ''S=250''
+|
+|-
+|colspan="1" rowspan="1" | LTV-5 HOVERTANK
+|[[Vehicles/LTV-5 HOVER TANK LTV-5|'''LTV-5 HOVER TANK LTV-5''']]
+|50 [MEDIUM]
+|1E 2M
+| A=396.8/396.8 ''S=250''
+|SLDF<br>
+|-
+|colspan="1" rowspan="1" | LTV-6 HOVERTANK
+|[[Vehicles/LTV-6 HOVER TANK LTV-6|'''LTV-6 HOVER TANK LTV-6''']]
+|50 [MEDIUM]
+|1E 1M
+| A=371.2/384 ''S=250''
+|
+|-
+|colspan="1" rowspan="7" | MAXIM HOVER TRANSPORT
+|[[Vehicles/MAXIM HOVER TRANSPORT (ANTI-INFANTRY) APC AI|'''MAXIM HOVER TRANSPORT (ANTI-INFANTRY) APC AI''']]
+|50 [MEDIUM]
+|7B 3M 1S
+| A=416/416 ''S=250''
+|
+|-
+|[[Vehicles/MAXIM HOVER TRANSPORT (FIRE SUPPORT) APC FS|'''MAXIM HOVER TRANSPORT (FIRE SUPPORT) APC FS''']]
+|50 [MEDIUM]
+|2B 3M
+| A=443.2/443.2 ''S=250''
+|
+|-
+|[[Vehicles/MAXIM HOVER TRANSPORT (SRM) APC|'''MAXIM HOVER TRANSPORT (SRM) APC''']]
+|50 [MEDIUM]
+|3B 6M
+| A=355.2/355.2 ''S=250''
+|
+|-
+|[[Vehicles/MAXIM COMMAND VEHICLE APC C3M|'''MAXIM COMMAND VEHICLE APC C3M''']]
+|50 [MEDIUM]
+|5M
+| A=586.4/586.4 ''S=250''
+|
+|-
+|[[Vehicles/MAXIM HOVER TRANSPORT APC CLAN|'''MAXIM HOVER TRANSPORT APC CLAN''']]
+|50 [MEDIUM]
+|2B 4M
+| A=425.6/425.6 ''S=250''
+|Clan<br>
+|-
+|[[Vehicles/MAXIM HOVER TRANSPORT APC 3052|'''MAXIM HOVER TRANSPORT APC 3052''']]
+|50 [MEDIUM]
+|2B 5M 1S
+| A=428.8/428.8 ''S=250''
+|
+|-
+|[[Vehicles/MAXIM HOVER TRANSPORT APC|'''MAXIM HOVER TRANSPORT APC''']]
+|50 [MEDIUM]
+|3B 6M
+| A=355.2/355.2 ''S=250''
+|
+|-
+|colspan="1" rowspan="3" | MAXIM MKII TRANSPORT
+|[[Vehicles/MAXIM MKII TRANSPORT (ECM) APC MKII-ECM|'''MAXIM MKII TRANSPORT (ECM) APC MKII-ECM''']]
+|50 [MEDIUM]
+|2M
+| A=456/456 ''S=250''
+|
+|-
+|[[Vehicles/MAXIM MKII TRANSPORT (INFANTRY SUPPORT) APC MKII-S|'''MAXIM MKII TRANSPORT (INFANTRY SUPPORT) APC MKII-S''']]
+|50 [MEDIUM]
+|2B 2E 2M
+| A=440/436 ''S=250''
+|
+|-
+|[[Vehicles/MAXIM MKII TRANSPORT APC|'''MAXIM MKII TRANSPORT APC''']]
+|50 [MEDIUM]
+|2M
+| A=456/456 ''S=250''
+|
+|-
+|colspan="1" rowspan="1" | MOBILE COMMAND
+|[[Vehicles/MOBILE COMMAND MODULE MOBILEHQ ACM|'''MOBILE COMMAND MODULE MOBILEHQ ACM''']]
+|40 [MEDIUM]
+|1E
+| A=320/320 ''S=200''
+|Legendary<br>
+|-
+|colspan="1" rowspan="5" | MYRMIDON MEDIUM TANK
+|[[Vehicles/MYRMIDON MEDIUM TANK (TYPE 2)|'''MYRMIDON MEDIUM TANK (TYPE 2)''']]
+|40 [MEDIUM]
+|1E 6S
+| A=598.4/598.4 ''S=200''
+|
+|-
+|[[Vehicles/MYRMIDON ANTI-INFANTRY INF|'''MYRMIDON ANTI-INFANTRY INF''']]
+|40 [MEDIUM]
+|6B 1E
+| A=624/624 ''S=200''
+|
+|-
+|[[Vehicles/MYRMIDON MEDIUM TANK|'''MYRMIDON MEDIUM TANK''']]
+|40 [MEDIUM]
+|1E 1M
+| A=592/592 ''S=200''
+|
+|-
+|[[Vehicles/MYRMIDON P (TATE)|'''MYRMIDON P (TATE)''']]
+|40 [MEDIUM]
+|2B 1E
+| A=586.4/586.4 ''S=200''
+|Legendary<br>
+|-
+|[[Vehicles/PIRATE MYRMIDON|'''PIRATE MYRMIDON''']]
+|40 [MEDIUM]
+|2E 1M
+| A=598.4/598.4 ''S=200''
+|
+|-
+|colspan="1" rowspan="1" | NEITH SCOUT VEHICLE
+|[[Vehicles/NEITH SCOUT VEHICLE CLAN|'''NEITH SCOUT VEHICLE CLAN''']]
+|40 [MEDIUM]
+|3B 1E 1S
+| A=480.8/512.8 ''S=200''
+|Clan<br>
+|-
+|colspan="1" rowspan="1" | PADILLA ANTI-MISSILE TANK
+|[[Vehicles/PADILLA ANTI-MISSILE TANK Anti-Missile|'''PADILLA ANTI-MISSILE TANK Anti-Missile''']]
+|55 [MEDIUM]
+|1B 2S
+| A=476.8/480 ''S=300''
+|
+|-
+|colspan="1" rowspan="3" | PADILLA ARTILLERY TANK
+|[[Vehicles/PADILLA ARTILLERY TANK (LTC)|'''PADILLA ARTILLERY TANK (LTC)''']]
+|55 [MEDIUM]
+|1B 2E 1M
+| A=502.4/502.4 ''S=300''
+|
+|-
+|[[Vehicles/PADILLA ARTILLERY TANK (THUMPER)|'''PADILLA ARTILLERY TANK (THUMPER)''']]
+|55 [MEDIUM]
+|1B 2E 4M
+| A=496/496 ''S=300''
+|
+|-
+|[[Vehicles/PADILLA ARTILLERY TANK|'''PADILLA ARTILLERY TANK''']]
+|55 [MEDIUM]
+|1B 2E 2M
+| A=521.6/521.6 ''S=300''
+|
+|-
+|colspan="1" rowspan="1" | PITBULL URBAN COMBAT VEHICLE
+|[[Vehicles/PITBULL URBAN COMBAT VEHICLE|'''PITBULL URBAN COMBAT VEHICLE''']]
+|40 [MEDIUM]
+|5B
+| A=428.8/428.8 ''S=200''
+|
+|-
+|colspan="1" rowspan="7" | POLEMOS WHEELED APC
+|[[Vehicles/POLEMOS WHEELED APC (ANTI VEHICLE) CHEM|'''POLEMOS WHEELED APC (ANTI VEHICLE) CHEM''']]
+|40 [MEDIUM]
+|4B 5E
+| A=509.6/509.6 ''S=200''
+|Clan<br>
+|-
+|[[Vehicles/POLEMOS WHEELED APC (CLOSE ASSUALT) SRM|'''POLEMOS WHEELED APC (CLOSE ASSUALT) SRM''']]
+|40 [MEDIUM]
+|4B 1E 2M
+| A=502.4/502.4 ''S=200''
+|Clan<br>
+|-
+|[[Vehicles/POLEMOS WHEELED APC (FIRE SUPPORT) LRM|'''POLEMOS WHEELED APC (FIRE SUPPORT) LRM''']]
+|40 [MEDIUM]
+|4B 1M
+| A=502.4/502.4 ''S=200''
+|Clan<br>
+|-
+|[[Vehicles/POLEMOS WHEELED APC (INFANTRY SUPPORT) MORTAR|'''POLEMOS WHEELED APC (INFANTRY SUPPORT) MORTAR''']]
+|40 [MEDIUM]
+|5B
+| A=502.4/502.4 ''S=200''
+|Clan<br>
+|-
+|[[Vehicles/POLEMOS WHEELED APC (INFANTRY SUPPRESSION) HMG|'''POLEMOS WHEELED APC (INFANTRY SUPPRESSION) HMG''']]
+|40 [MEDIUM]
+|9B
+| A=505.6/505.6 ''S=200''
+|Clan<br>
+|-
+|[[Vehicles/POLEMOS WHEELED APC (SOCIETY)|'''POLEMOS WHEELED APC (SOCIETY)''']]
+|40 [MEDIUM]
+|4B 1M
+| A=502.4/502.4 ''S=200''
+|Clan<br>
+|-
+|[[Vehicles/POLEMOS WHEELED APC|'''POLEMOS WHEELED APC''']]
+|40 [MEDIUM]
+|5B
+| A=502.4/502.4 ''S=200''
+|Clan<br>
+|-
+|colspan="1" rowspan="3" | PREDATOR TANK DESTROYER
+|[[Vehicles/PREDATOR TANK DESTROYER (LBX)|'''PREDATOR TANK DESTROYER (LBX)''']]
+|45 [MEDIUM]
+|1B
+| A=540/540 ''S=200''
+|
+|-
+|[[Vehicles/PREDATOR TANK DESTROYER 40k|'''PREDATOR TANK DESTROYER 40k''']]
+|45 [MEDIUM]
+|CLASSIFIED
+| CLASSIFIED 
+|
+|-
+|[[Vehicles/PREDATOR TANK DESTROYER|'''PREDATOR TANK DESTROYER''']]
+|45 [MEDIUM]
+|1B
+| A=208/208 ''S=200''
+|
+|-
+|colspan="1" rowspan="8" | PROWLER MULTI-TERRAIN VEHICLE
+|[[Vehicles/PROWLER MULTI-TERRAIN VEHICLE (3140)|'''PROWLER MULTI-TERRAIN VEHICLE (3140)''']]
+|55 [MEDIUM]
+|1E 1M
+| A=668.8/668.8 ''S=300''
+|
+|-
+|[[Vehicles/PROWLER MULTI-TERRAIN VEHICLE (RAF)|'''PROWLER MULTI-TERRAIN VEHICLE (RAF)''']]
+|55 [MEDIUM]
+|2E 1M 1S
+| A=505.6/505.6 ''S=300''
+|
+|-
+|[[Vehicles/PROWLER MULTI-TERRAIN VEHICLE (SECURITY)|'''PROWLER MULTI-TERRAIN VEHICLE (SECURITY)''']]
+|55 [MEDIUM]
+|1E 2M
+| A=505.6/505.6 ''S=300''
+|
+|-
+|[[Vehicles/PROWLER MULTI-TERRAIN VEHICLE (SUPPORT)|'''PROWLER MULTI-TERRAIN VEHICLE (SUPPORT)''']]
+|55 [MEDIUM]
+|2E 2M
+| A=470.4/470.4 ''S=300''
+|
+|-
+|[[Vehicles/PROWLER MULTI-TERRAIN VEHICLE (WOB)|'''PROWLER MULTI-TERRAIN VEHICLE (WOB)''']]
+|55 [MEDIUM]
+|2E 1M 1S
+| A=486.4/486.4 ''S=300''
+|
+|-
+|[[Vehicles/PROWLER MULTI-TERRAIN VEHICLE SUCCESSION|'''PROWLER MULTI-TERRAIN VEHICLE SUCCESSION''']]
+|55 [MEDIUM]
+|2E 2M
+| A=483.2/483.2 ''S=300''
+|
+|-
+|[[Vehicles/PROWLER MULTI-TERRAIN VEHICLE|'''PROWLER MULTI-TERRAIN VEHICLE''']]
+|55 [MEDIUM]
+|2E 2M
+| A=470.4/470.4 ''S=300''
+|
+|-
+|[[Vehicles/PROWLER MULTI-TERRAIN VEHICLE ECM|'''PROWLER MULTI-TERRAIN VEHICLE ECM''']]
+|55 [MEDIUM]
+|2E 2M
+| A=470.4/470.4 ''S=300''
+|
+|-
+|colspan="1" rowspan="1" | R10 COOLANT TRUCK
+|[[Vehicles/R10 COOLANT TRUCK R10-CT|'''R10 COOLANT TRUCK R10-CT''']]
+|45 [MEDIUM]
+|2E
+| A=600.8/600.8 ''S=250''
+|
+|-
+|colspan="1" rowspan="3" | R10 MECHANIZED ICV
+|[[Vehicles/R10 MECHANIZED ICV R10-Prime|'''R10 MECHANIZED ICV R10-Prime''']]
+|45 [MEDIUM]
+|2E 2M
+| A=528.8/528.8 ''S=250''
+|
+|-
+|[[Vehicles/R10-A MECHANIZED ICV R10-A|'''R10-A MECHANIZED ICV R10-A''']]
+|45 [MEDIUM]
+|2B 4E
+| A=557.6/557.6 ''S=250''
+|
+|-
+|[[Vehicles/R10-B MECHANIZED ICV R10-B|'''R10-B MECHANIZED ICV R10-B''']]
+|45 [MEDIUM]
+|1B 2E
+| A=564.8/564.8 ''S=250''
+|
+|-
+|colspan="1" rowspan="4" | RANGER IFV
+|[[Vehicles/RANGER IFV VV1|'''RANGER IFV VV1''']]
+|45 [MEDIUM]
+|2B 2E
+| A=707.2/707.2 ''S=250''
+|
+|-
+|[[Vehicles/RANGER IFV VV2|'''RANGER IFV VV2''']]
+|45 [MEDIUM]
+|8B 2E
+| A=620.8/620.8 ''S=250''
+|
+|-
+|[[Vehicles/RANGER IFV VV1 (INTERDICTOR)|'''RANGER IFV VV1 (INTERDICTOR)''']]
+|45 [MEDIUM]
+|8B 4E
+| A=678.4/678.4 ''S=250''
+|
+|-
+|[[Vehicles/RANGER IFV VV1 (MG)|'''RANGER IFV VV1 (MG)''']]
+|45 [MEDIUM]
+|8B 4E
+| A=678.4/678.4 ''S=250''
+|
+|-
+|colspan="1" rowspan="4" | REGULATOR HOVERTANK
+|[[Vehicles/REGULATOR (ARROW IV)|'''REGULATOR (ARROW IV)''']]
+|45 [MEDIUM]
+|1M
+| A=336/356 ''S=250''
+|
+|-
+|[[Vehicles/REGULATOR (GAUSS) ALAN|'''REGULATOR (GAUSS) ALAN''']]
+|45 [MEDIUM]
+|1B
+| A=374.4/374.4 ''S=250''
+|Legendary<br>
+|-
+|[[Vehicles/REGULATOR (GAUSS)|'''REGULATOR (GAUSS)''']]
+|45 [MEDIUM]
+|1B
+| A=400/428 ''S=250''
+|
+|-
+|[[Vehicles/REGULATOR (RAC/5) RAC5|'''REGULATOR (RAC/5) RAC5''']]
+|45 [MEDIUM]
+|1B
+| A=443.2/443.2 ''S=250''
+|
+|-
+|colspan="1" rowspan="4" | REGULATOR II HOVERTANK
+|[[Vehicles/REGULATOR II HOVERTANK (RAC) 2 HRAC|'''REGULATOR II HOVERTANK (RAC) 2 HRAC''']]
+|50 [MEDIUM]
+|1B
+| A=688/688 ''S=250''
+|
+|-
+|[[Vehicles/REGULATOR II HOVERTANK (RAC) 2|'''REGULATOR II HOVERTANK (RAC) 2''']]
+|50 [MEDIUM]
+|1B
+| A=680/680 ''S=250''
+|
+|-
+|[[Vehicles/REGULATOR II HOVERTANK (STEALTH) 2|'''REGULATOR II HOVERTANK (STEALTH) 2''']]
+|50 [MEDIUM]
+|1B
+| A=531.2/531.2 ''S=250''
+|
+|-
+|[[Vehicles/REGULATOR II HOVERTANK 2|'''REGULATOR II HOVERTANK 2''']]
+|50 [MEDIUM]
+|1B
+| A=680/680 ''S=250''
+|
+|-
+|colspan="1" rowspan="1" | SABAKU KAZE SCOUT HOVERTANK
+|[[Vehicles/SABAKU KAZE|'''SABAKU KAZE''']]
+|50 [MEDIUM]
+|6E 2M
+| A=560/560 ''S=250''
+|
+|-
+|colspan="1" rowspan="1" | SAND DEVIL HOVERTANK
+|[[Vehicles/SAND DEVIL|'''SAND DEVIL''']]
+|50 [MEDIUM]
+|4E
+| A=313.6/313.6 ''S=250''
+|Primitive<br>
+|-
+|colspan="1" rowspan="1" | SARPEDON MAIN BATTLE TANK
+|[[Vehicles/SARPEDON MAIN BATTLE TANK|'''SARPEDON MAIN BATTLE TANK''']]
+|50 [MEDIUM]
+|1B 1E
+| A=515.2/523.2 ''S=250''
+|
+|-
+|colspan="1" rowspan="11" | SCAPHA HOVER TANK
+|[[Vehicles/SCAPHA HOVER TANK|'''SCAPHA HOVER TANK''']]
+|40 [MEDIUM]
+|2E 1S
+| A=480/480 ''S=200''
+|
+|-
+|[[Vehicles/SCAPHA-A HOVER TANK SCAPHA-A|'''SCAPHA-A HOVER TANK SCAPHA-A''']]
+|40 [MEDIUM]
+|1B
+| A=512/512 ''S=200''
+|
+|-
+|[[Vehicles/SCAPHA-B HOVER TANK SCAPHA-B|'''SCAPHA-B HOVER TANK SCAPHA-B''']]
+|40 [MEDIUM]
+|1B
+| A=499.2/499.2 ''S=200''
+|
+|-
+|[[Vehicles/SCAPHA-C HOVER TANK SCAPHA-C|'''SCAPHA-C HOVER TANK SCAPHA-C''']]
+|40 [MEDIUM]
+|1B
+| A=505.6/505.6 ''S=200''
+|
+|-
+|[[Vehicles/SCAPHA-D HOVER TANK SCAPHA-D|'''SCAPHA-D HOVER TANK SCAPHA-D''']]
+|40 [MEDIUM]
+|1E 2S
+| A=512/512 ''S=200''
+|
+|-
+|[[Vehicles/SCAPHA-E HOVER TANK SCAPHA-E|'''SCAPHA-E HOVER TANK SCAPHA-E''']]
+|40 [MEDIUM]
+|1B
+| A=512/512 ''S=200''
+|
+|-
+|[[Vehicles/SCAPHA-F HOVER TANK SCAPHA-F|'''SCAPHA-F HOVER TANK SCAPHA-F''']]
+|40 [MEDIUM]
+|1B 1S
+| A=518.4/518.4 ''S=200''
+|
+|-
+|[[Vehicles/SCAPHA-G HOVER TANK SCAPHA-G|'''SCAPHA-G HOVER TANK SCAPHA-G''']]
+|40 [MEDIUM]
+|2B
+| A=524.8/524.8 ''S=200''
+|
+|-
+|[[Vehicles/SCAPHA-H HOVER TANK SCAPHA-H|'''SCAPHA-H HOVER TANK SCAPHA-H''']]
+|40 [MEDIUM]
+|2E
+| A=524.8/524.8 ''S=200''
+|
+|-
+|[[Vehicles/SCAPHA-I HOVER TANK SCAPHA-I|'''SCAPHA-I HOVER TANK SCAPHA-I''']]
+|40 [MEDIUM]
+|1E
+| A=473.6/480 ''S=200''
+|
+|-
+|[[Vehicles/SCAPHA-J HOVER TANK SCAPHA-J|'''SCAPHA-J HOVER TANK SCAPHA-J''']]
+|40 [MEDIUM]
+|3E
+| A=505.6/505.6 ''S=200''
+|
+|-
+|colspan="1" rowspan="2" | SCHILDKRÖTE LINE TANK
+|[[Vehicles/SCHILDKRÖTE (HPPC) SCHILDKROTE|'''SCHILDKRÖTE (HPPC) SCHILDKROTE''']]
+|50 [MEDIUM]
+|1E 1M 1S
+| A=828/828 ''S=250''
+|
+|-
+|[[Vehicles/SCHILDKRÖTE LINE TANK SCHILDKROTE|'''SCHILDKRÖTE LINE TANK SCHILDKROTE''']]
+|50 [MEDIUM]
+|1B 1E 1S
+| A=804/804 ''S=250''
+|
+|-
+|colspan="1" rowspan="1" | SHERIFF
+|[[Vehicles/SHERIFF INFANTRY SUPPORT TANK|'''SHERIFF INFANTRY SUPPORT TANK''']]
+|50 [MEDIUM]
+|2B 4S
+| A=800/800 ''S=250''
+|
+|-
+|colspan="1" rowspan="2" | SHILLELAGH MISSILE TANK
+|[[Vehicles/SHILLELAGH MISSILE TANK (ORIGINAL)|'''SHILLELAGH MISSILE TANK (ORIGINAL)''']]
+|40 [MEDIUM]
+|1B 1M
+| A=403.2/403.2 ''S=200''
+|
+|-
+|[[Vehicles/SHILLELAGH MISSILE TANK (STANDARD) MML|'''SHILLELAGH MISSILE TANK (STANDARD) MML''']]
+|40 [MEDIUM]
+|2B 3M
+| A=518.4/518.4 ''S=200''
+|
+|-
+|colspan="1" rowspan="1" | SKALPEL HOVERTANK
+|[[Vehicles/SKALPEL HOVERTANK|'''SKALPEL HOVERTANK''']]
+|40 [MEDIUM]
+|2E 1M
+| A=390.4/460 ''S=200''
+|
+|-
+|colspan="1" rowspan="2" | SLDF MEDIUM DRONE
+|[[Vehicles/SLDF MEDIUM DRONE HM SLDFDroneMedium|'''SLDF MEDIUM DRONE HM SLDFDroneMedium''']]
+|45 [MEDIUM]
+|CLASSIFIED
+| CLASSIFIED 
+|
+|-
+|[[Vehicles/SLDF MEDIUM DRONE SLDFDroneMedium|'''SLDF MEDIUM DRONE SLDFDroneMedium''']]
+|45 [MEDIUM]
+|CLASSIFIED
+| CLASSIFIED 
+|
+|-
+|colspan="1" rowspan="5" | SLEIPNIR APC
+|[[Vehicles/SLEIPNIR APC (LRM)|'''SLEIPNIR APC (LRM)''']]
+|50 [MEDIUM]
+|2B 1M
+| A=460.8/460.8 ''S=250''
+|
+|-
+|[[Vehicles/SLEIPNIR APC (SRM)|'''SLEIPNIR APC (SRM)''']]
+|50 [MEDIUM]
+|2B 3M
+| A=467.2/467.2 ''S=250''
+|
+|-
+|[[Vehicles/ALSVIN APC|'''ALSVIN APC''']]
+|50 [MEDIUM]
+|2B 2E 1S
+| A=664.8/664.8 ''S=250''
+|Legendary<br>
+|-
+|[[Vehicles/SLEIPNIR APC|'''SLEIPNIR APC''']]
+|50 [MEDIUM]
+|2B 2E
+| A=480/480 ''S=250''
+|
+|-
+|[[Vehicles/SLEIPNIR APC|'''SLEIPNIR APC''']]
+|50 [MEDIUM]
+|2B 2E
+| A=608/480 ''S=250''
+|
+|-
+|colspan="1" rowspan="4" | SM TANK DESTROYER
+|[[Vehicles/SM1 TANK DESTROYER CLAN RT|'''SM1 TANK DESTROYER CLAN RT''']]
+|50 [MEDIUM]
+|5B
+| A=564.8/580.8 ''S=250''
+|Clan<br>
+|-
+|[[Vehicles/SM1 TELOS|'''SM1 TELOS''']]
+|50 [MEDIUM]
+|1B 1M
+| A=576/576 ''S=250''
+|Legendary<br>
+|-
+|[[Vehicles/SM1A TANK DESTROYER CLAN RT|'''SM1A TANK DESTROYER CLAN RT''']]
+|50 [MEDIUM]
+|5B
+| A=593.6/593.6 ''S=250''
+|Clan<br>
+|-
+|[[Vehicles/SM3 TANK DESTROYER CLAN RT|'''SM3 TANK DESTROYER CLAN RT''']]
+|50 [MEDIUM]
+|5B 1E
+| A=636.8/636.8 ''S=250''
+|Clan<br>
+|-
+|colspan="1" rowspan="2" | SORTEK ASSAULT CRAFT
+|[[Vehicles/SORTEK ASSAULT CRAFT|'''SORTEK ASSAULT CRAFT''']]
+|45 [MEDIUM]
+|2B 1S
+| A=420/420 ''S=200''
+|
+|-
+|[[Vehicles/SORTEK INTERDICTOR LPPC|'''SORTEK INTERDICTOR LPPC''']]
+|45 [MEDIUM]
+|2E 1S
+| A=460/460 ''S=200''
+|
+|-
+|colspan="1" rowspan="3" | STYGIAN STRIKE TANK
+|[[Vehicles/STYGIAN STRIKE TANK (ARMOR)|'''STYGIAN STRIKE TANK (ARMOR)''']]
+|40 [MEDIUM]
+|2E 1M
+| A=531.2/572 ''S=200''
+|
+|-
+|[[Vehicles/STYGIAN STRIKE TANK (WOB)|'''STYGIAN STRIKE TANK (WOB)''']]
+|40 [MEDIUM]
+|2E 1M
+| A=411.2/411.2 ''S=200''
+|
+|-
+|[[Vehicles/STYGIAN STRIKE TANK|'''STYGIAN STRIKE TANK''']]
+|40 [MEDIUM]
+|2E 1M
+| A=387.2/392 ''S=200''
+|
+|-
+|colspan="1" rowspan="1" | TARANTULA HOVERTANK
+|[[Vehicles/TARANTULA HOVERTANK PRIMITIVE|'''TARANTULA HOVERTANK PRIMITIVE''']]
+|40 [MEDIUM]
+|8E
+| A=408.8/408.8 ''S=200''
+|
+|-
+|colspan="1" rowspan="4" | THOR ARTILLERY VEHICLE
+|[[Vehicles/THOR (AC)|'''THOR (AC)''']]
+|55 [MEDIUM]
+|5B 2M
+| A=431.2/431.2 ''S=300''
+|
+|-
+|[[Vehicles/THOR ARTILLERY VEHICLE|'''THOR ARTILLERY VEHICLE''']]
+|55 [MEDIUM]
+|1B 2E
+| A=540/540 ''S=300''
+|
+|-
+|[[Vehicles/THOR ARTILLERY VEHICLE CLAN|'''THOR ARTILLERY VEHICLE CLAN''']]
+|55 [MEDIUM]
+|1B 2E
+| A=576/604 ''S=300''
+|Clan<br>
+|-
+|[[Vehicles/THOR ARTILLERY VEHICLE C3i|'''THOR ARTILLERY VEHICLE C3i''']]
+|55 [MEDIUM]
+|1B
+| A=518.4/518.4 ''S=300''
+|
+|-
+|colspan="1" rowspan="1" | THUNDERER II MEDIUM TANK
+|[[Vehicles/THUNDERER MEDIUM TANK II|'''THUNDERER MEDIUM TANK II''']]
+|55 [MEDIUM]
+|2B 1E
+| A=713.6/713.6 ''S=300''
+|
+|-
+|colspan="1" rowspan="1" | THUNDERER MEDIUM TANK
+|[[Vehicles/THUNDERER MEDIUM TANK|'''THUNDERER MEDIUM TANK''']]
+|55 [MEDIUM]
+|2B 1E
+| A=643.2/643.2 ''S=300''
+|
+|-
+|colspan="1" rowspan="2" | TIGER MEDIUM TANK
+|[[Vehicles/TIGER II MAIN BATTLE TANK|'''TIGER II MAIN BATTLE TANK''']]
+|55 [MEDIUM]
+|1B 2E 1M
+| A=438.4/438.4 ''S=300''
+|
+|-
+|[[Vehicles/TIGER T-12|'''TIGER T-12''']]
+|55 [MEDIUM]
+|4B 1M
+| A=403.2/403.2 ''S=300''
+|
+|-
+|colspan="1" rowspan="3" | TURHAN APC
+|[[Vehicles/TURHAN APC (KURITA) AMS|'''TURHAN APC (KURITA) AMS''']]
+|50 [MEDIUM]
+|2B 2E 2S
+| A=568.8/568.8 ''S=250''
+|
+|-
+|[[Vehicles/TURHAN APC|'''TURHAN APC''']]
+|50 [MEDIUM]
+|2B 2E
+| A=564.8/564.8 ''S=250''
+|
+|-
+|[[Vehicles/TURHAN APC MICROWAVE|'''TURHAN APC MICROWAVE''']]
+|50 [MEDIUM]
+|2B 2E
+| A=522.4/536 ''S=250''
+|Primitive<br>
+|-
+|colspan="1" rowspan="2" | TYR INFANTRY SUPPORT TANK
+|[[Vehicles/TYR INFANTRY SUPPORT TANK (KURITA)|'''TYR INFANTRY SUPPORT TANK (KURITA)''']]
+|45 [MEDIUM]
+|2B 2M
+| A=406.4/416 ''S=250''
+|
+|-
+|[[Vehicles/TYR INFANTRY SUPPORT TANK|'''TYR INFANTRY SUPPORT TANK''']]
+|45 [MEDIUM]
+|1E 2M
+| A=476.8/476.8 ''S=250''
+|Clan<br>
+|-
+|colspan="1" rowspan="3" | URBAN TANK
+|[[Vehicles/URBAN TANK (LRM) UrbanTank Missile|'''URBAN TANK (LRM) UrbanTank Missile''']]
+|45 [MEDIUM]
+|4M
+| A=492.8/500 ''S=250''
+|
+|-
+|[[Vehicles/URBAN TANK (THUMPER) UrbanTank Artillery|'''URBAN TANK (THUMPER) UrbanTank Artillery''']]
+|45 [MEDIUM]
+|1B 1E
+| A=480/500 ''S=250''
+|
+|-
+|[[Vehicles/URBAN TANK (AC) UrbanTank|'''URBAN TANK (AC) UrbanTank''']]
+|45 [MEDIUM]
+|1B 1E
+| A=627.2/627.2 ''S=250''
+|
+|-
+|colspan="1" rowspan="1" | VALI
+|[[Vehicles/VALI|'''VALI''']]
+|40 [MEDIUM]
+|1M
+| A=286.4/286.4 ''S=160''
+|
+|-
+|colspan="1" rowspan="1" | VEDETTE
+|[[Vehicles/VEDETTE VON TEESE PIRATE|'''VEDETTE VON TEESE PIRATE''']]
+|50 [MEDIUM]
+|2B 2M
+| A=422.4/422.4 ''S=250''
+|
+|-
+|colspan="1" rowspan="13" | VEDETTE CAVALRY TANK
+|[[Vehicles/VEDETTE (AC/2) AC2|'''VEDETTE (AC/2) AC2''']]
+|50 [MEDIUM]
+|2B 1M
+| A=400/400 ''S=250''
+|
+|-
+|[[Vehicles/VEDETTE (LASER) LIAO|'''VEDETTE (LASER) LIAO''']]
+|50 [MEDIUM]
+|1B 2E
+| A=419.2/419.2 ''S=250''
+|
+|-
+|[[Vehicles/VEDETTE (LBX)|'''VEDETTE (LBX)''']]
+|50 [MEDIUM]
+|2B
+| A=496/496 ''S=250''
+|
+|-
+|[[Vehicles/VEDETTE (RAC)|'''VEDETTE (RAC)''']]
+|50 [MEDIUM]
+|1B
+| A=321.6/425.6 ''S=250''
+|
+|-
+|[[Vehicles/VEDETTE (UAC/5)|'''VEDETTE (UAC/5)''']]
+|50 [MEDIUM]
+|1B
+| A=472/472 ''S=250''
+|
+|-
+|[[Vehicles/VEDETTE (V9)|'''VEDETTE (V9)''']]
+|50 [MEDIUM]
+|3B
+| A=371.2/384 ''S=250''
+|
+|-
+|[[Vehicles/VEDETTE MEDIUM TANK DD|'''VEDETTE MEDIUM TANK DD''']]
+|50 [MEDIUM]
+|1B 1E
+| A=649.6/649.6 ''S=250''
+|Legendary<br>
+|-
+|[[Vehicles/VEDETTE MEDIUM TANK|'''VEDETTE MEDIUM TANK''']]
+|50 [MEDIUM]
+|2B
+| A=393.6/393.6 ''S=250''
+|
+|-
+|[[Vehicles/VEDETTE MEDIUM TANK (FUEL CELL)|'''VEDETTE MEDIUM TANK (FUEL CELL)''']]
+|50 [MEDIUM]
+|2B 2M 1S
+| A=414.4/414.4 ''S=250''
+|
+|-
+|[[Vehicles/VEDETTE MEDIUM TANK (LGR)|'''VEDETTE MEDIUM TANK (LGR)''']]
+|50 [MEDIUM]
+|1B
+| A=236/236 ''S=250''
+|
+|-
+|[[Vehicles/VEDETTE MEDIUM TANK (V7) V-7|'''VEDETTE MEDIUM TANK (V7) V-7''']]
+|50 [MEDIUM]
+|2B 1E
+| A=448/460.8 ''S=250''
+|
+|-
+|[[Vehicles/VEDETTE MEDIUM TANK (V-G7X) V-G7X|'''VEDETTE MEDIUM TANK (V-G7X) V-G7X''']]
+|50 [MEDIUM]
+|3B 1E
+| A=580.8/612.8 ''S=250''
+|Legendary<br>
+|-
+|[[Vehicles/VEDETTE NETC|'''VEDETTE NETC''']]
+|50 [MEDIUM]
+|2B
+| A=396.8/396.8 ''S=250''
+|
+|-
+|colspan="1" rowspan="3" | WRECKER
+|[[Vehicles/PARTY TRUCK RLPH-DI COLOSPECIAL DISCO PIRATE|'''PARTY TRUCK RLPH-DI COLOSPECIAL DISCO PIRATE''']]
+|55 [MEDIUM]
+|4E
+| A=540/540 ''S=300''
+|Primitive<br>
+|-
+|[[Vehicles/PEPPERBOX PEPPERBOX RLPH-PP COLOSPECIAL PEPPER PIRATE|'''PEPPERBOX PEPPERBOX RLPH-PP COLOSPECIAL PEPPER PIRATE''']]
+|55 [MEDIUM]
+|4B
+| A=432/504 ''S=300''
+|Primitive<br>
+|-
+|[[Vehicles/ROTARY RIFLE WRECKER RLPH-3R COLOSPECIAL PRIMITIVE|'''ROTARY RIFLE WRECKER RLPH-3R COLOSPECIAL PRIMITIVE''']]
+|55 [MEDIUM]
+|1B
+| A=483.2/483.2 ''S=300''
+|Primitive<br>
+|-
+|colspan="1" rowspan="12" | ZEPHYR MEDIUM TANK
+|[[Vehicles/PIRATE ZEPHYR|'''PIRATE ZEPHYR''']]
+|40 [MEDIUM]
+|3E 1M
+| A=568.8/568.8 ''S=200''
+|
+|-
+|[[Vehicles/ROYAL ZEPHYR|'''ROYAL ZEPHYR''']]
+|40 [MEDIUM]
+|4E 2S
+| A=525.6/525.6 ''S=200''
+|SLDF<br>
+|-
+|[[Vehicles/ROYAL ZEPHYR (C) CLAN|'''ROYAL ZEPHYR (C) CLAN''']]
+|40 [MEDIUM]
+|5E 2S
+| A=632.8/632.8 ''S=200''
+|Clan<br>
+|-
+|[[Vehicles/ZEPHYR|'''ZEPHYR''']]
+|40 [MEDIUM]
+|4E 1M 1S
+| A=525.6/525.6 ''S=200''
+|
+|-
+|[[Vehicles/ZEPHYR (C3I)|'''ZEPHYR (C3I)''']]
+|40 [MEDIUM]
+|4E 1M 1S
+| A=525.6/525.6 ''S=200''
+|
+|-
+|[[Vehicles/ZEPHYR (LRM)|'''ZEPHYR (LRM)''']]
+|40 [MEDIUM]
+|2E 2M
+| A=611.2/611.2 ''S=200''
+|
+|-
+|[[Vehicles/ZEPHYR (OMNIDRONE-A) OMNI|'''ZEPHYR (OMNIDRONE-A) OMNI''']]
+|40 [MEDIUM]
+|3E 1M 1S
+| A=525.6/525.6 ''S=200''
+|
+|-
+|[[Vehicles/ZEPHYR (OMNIDRONE-B) OMNI|'''ZEPHYR (OMNIDRONE-B) OMNI''']]
+|40 [MEDIUM]
+|1E 1M
+| A=532.8/532.8 ''S=200''
+|
+|-
+|[[Vehicles/ZEPHYR (OMNIDRONE-C) OMNI|'''ZEPHYR (OMNIDRONE-C) OMNI''']]
+|40 [MEDIUM]
+|2E 1M 4S
+| A=540/540 ''S=200''
+|
+|-
+|[[Vehicles/ZEPHYR (OMNIDRONE-PRIME) OMNI|'''ZEPHYR (OMNIDRONE-PRIME) OMNI''']]
+|40 [MEDIUM]
+|1E 1M
+| A=525.6/525.6 ''S=200''
+|
+|-
+|[[Vehicles/ZEPHYR (SRM2)|'''ZEPHYR (SRM2)''']]
+|40 [MEDIUM]
+|4E 2M
+| A=568.8/568.8 ''S=200''
+|
+|-
+|[[Vehicles/ZEPHYR Z (SOCIETY)|'''ZEPHYR Z (SOCIETY)''']]
+|40 [MEDIUM]
+|2E 2S
+| A=536/536 ''S=200''
+|Clan<br>
+|-
+|colspan="1" rowspan="1" | ZEUS SUPPORT TANK
+|[[Vehicles/ZEUS ZUS-1|'''ZEUS ZUS-1''']]
+|55 [MEDIUM]
+|1B 1M
+| A=432/432 ''S=300''
+|
+
+|}
+
+
+=== Heavy Tanks === 
+
+{| class="wikitable sortable mw-collapsible"
+|+
+! Chassis !! Variant !! Weight !! Hardpoints !! HP !! Special
+|-
+|colspan="1" rowspan="1" | AUGUSTUS MBT
+|[[Vehicles/AUGUSTUS MBT (A3)|'''AUGUSTUS MBT (A3)''']]
+|75 [HEAVY]
+|3B
+| A=624/624 ''S=400''
+|Primitive<br>
+|-
+|colspan="1" rowspan="2" | AXEL
+|[[Vehicles/PIRATE AXEL MK.2 AXELB|'''PIRATE AXEL MK.2 AXELB''']]
+|65 [HEAVY]
+|1B 1E 1M
+| A=700.8/700.8 ''S=350''
+|
+|-
+|[[Vehicles/AXEL ROSE PIRATE|'''AXEL ROSE PIRATE''']]
+|65 [HEAVY]
+|4B 2S
+| A=722.4/722.4 ''S=350''
+|
+|-
+|colspan="1" rowspan="4" | AXEL HEAVY TANK
+|[[Vehicles/AXEL IIC HEAVY TANK AXEL2 CLAN RT|'''AXEL IIC HEAVY TANK AXEL2 CLAN RT''']]
+|65 [HEAVY]
+|2B 1E 2M
+| A=972.8/972.8 ''S=350''
+|Clan<br>
+|-
+|[[Vehicles/AXEL IIC-XL HEAVY TANK AXEL2XL CLAN RT|'''AXEL IIC-XL HEAVY TANK AXEL2XL CLAN RT''']]
+|65 [HEAVY]
+|1B 1E 2M 2S
+| A=951.2/951.2 ''S=350''
+|Clan<br>
+|-
+|[[Vehicles/AXEL MK.1 MK1|'''AXEL MK.1 MK1''']]
+|65 [HEAVY]
+|3B 1M
+| A=691.2/691.2 ''S=350''
+|
+|-
+|[[Vehicles/AXEL MK.2 MK2|'''AXEL MK.2 MK2''']]
+|65 [HEAVY]
+|3B 1E 1M
+| A=659.2/659.2 ''S=350''
+|
+|-
+|colspan="1" rowspan="1" | BARDICHE STRIKE TANK
+|[[Vehicles/BARDICHE STRIKE TANK|'''BARDICHE STRIKE TANK''']]
+|70 [HEAVY]
+|4B 2E 1M 7S
+| A=668.8/668.8 ''S=350''
+|
+|-
+|colspan="1" rowspan="10" | BOLLA
+|[[Vehicles/BOLLA A|'''BOLLA A''']]
+|60 [HEAVY]
+|2B 2S
+| A=681.6/681.6 ''S=300''
+|
+|-
+|[[Vehicles/BOLLA B|'''BOLLA B''']]
+|60 [HEAVY]
+|4B 2M
+| A=691.2/691.2 ''S=300''
+|
+|-
+|[[Vehicles/BOLLA C|'''BOLLA C''']]
+|60 [HEAVY]
+|3B 2M 1S
+| A=672/632 ''S=300''
+|
+|-
+|[[Vehicles/BOLLA E|'''BOLLA E''']]
+|60 [HEAVY]
+|4B 1M 1S
+| A=672/632 ''S=300''
+|Legendary<br>
+|-
+|[[Vehicles/BOLLA F|'''BOLLA F''']]
+|60 [HEAVY]
+|1B 2M 1S
+| A=675.2/675.2 ''S=300''
+|Legendary<br>
+|-
+|[[Vehicles/BOLLA G|'''BOLLA G''']]
+|60 [HEAVY]
+|2B 1E
+| A=675.2/675.2 ''S=300''
+|Legendary<br>
+|-
+|[[Vehicles/BOLLA H|'''BOLLA H''']]
+|60 [HEAVY]
+|3B 1E
+| A=697.6/697.6 ''S=300''
+|Legendary<br>
+|-
+|[[Vehicles/BOLLA I|'''BOLLA I''']]
+|60 [HEAVY]
+|2B 1E 1M
+| A=662.4/662.4 ''S=300''
+|Legendary<br>
+|-
+|[[Vehicles/BOLLA PRIMARY BASE|'''BOLLA PRIMARY BASE''']]
+|60 [HEAVY]
+|CLASSIFIED
+| CLASSIFIED 
+|
+|-
+|[[Vehicles/BOLLA PRIMARY|'''BOLLA PRIMARY''']]
+|60 [HEAVY]
+|3B 2M 1S
+| A=678.4/678.4 ''S=300''
+|
+|-
+|colspan="1" rowspan="7" | BOLLA STEALTH TANK
+|[[Vehicles/BOLLA COMMINUS|'''BOLLA COMMINUS''']]
+|60 [HEAVY]
+|2B 1S
+| A=688/688 ''S=300''
+|Legendary<br>
+|-
+|[[Vehicles/BOLLA DOMINUS|'''BOLLA DOMINUS''']]
+|60 [HEAVY]
+|3B 1E
+| A=697.6/697.6 ''S=300''
+|Legendary<br>
+|-
+|[[Vehicles/BOLLA INFERNUS|'''BOLLA INFERNUS''']]
+|60 [HEAVY]
+|1B 3M
+| A=681.6/681.6 ''S=300''
+|Legendary<br>
+|-
+|[[Vehicles/BOLLA INVICTUS|'''BOLLA INVICTUS''']]
+|60 [HEAVY]
+|2B 2M
+| A=688/688 ''S=300''
+|Legendary<br>
+|-
+|[[Vehicles/BOLLA PRIMARY arty|'''BOLLA PRIMARY arty''']]
+|60 [HEAVY]
+|3B 2M 1S
+| A=678.4/678.4 ''S=300''
+|
+|-
+|[[Vehicles/BOLLA SERPENTIS Black|'''BOLLA SERPENTIS Black''']]
+|60 [HEAVY]
+|1B 2E 2S
+| A=700.8/700.8 ''S=300''
+|Legendary<br>
+|-
+|[[Vehicles/BOLLA STEALTH TANK - D|'''BOLLA STEALTH TANK - D''']]
+|60 [HEAVY]
+|3B 1E
+| A=683.2/683.2 ''S=300''
+|
+|-
+|colspan="1" rowspan="7" | BRUTUS ASSAULT TANK
+|[[Vehicles/BRUTUS (SUPPORT) LRM|'''BRUTUS (SUPPORT) LRM''']]
+|75 [HEAVY]
+|5M
+| A=752/752 ''S=400''
+|
+|-
+|[[Vehicles/BRUTUS ASSAULT TANK|'''BRUTUS ASSAULT TANK''']]
+|75 [HEAVY]
+|2E 4M
+| A=560/560 ''S=400''
+|
+|-
+|[[Vehicles/BRUTUS MK.3 ASSAULT TANK PPC2|'''BRUTUS MK.3 ASSAULT TANK PPC2''']]
+|75 [HEAVY]
+|3E 4M
+| A=579.2/579.2 ''S=400''
+|
+|-
+|[[Vehicles/BRUTUS MK.II ASSAULT TANK PPC|'''BRUTUS MK.II ASSAULT TANK PPC''']]
+|75 [HEAVY]
+|2E 3M
+| A=918.4/918.4 ''S=400''
+|
+|-
+|[[Vehicles/BRUTUS TANK (HPPC)|'''BRUTUS TANK (HPPC)''']]
+|75 [HEAVY]
+|1E 4M
+| A=560/560 ''S=400''
+|
+|-
+|[[Vehicles/EH TWO BRUTAY? BRUTUS PIRATE|'''EH TWO BRUTAY? BRUTUS PIRATE''']]
+|75 [HEAVY]
+|2E 3M 1S
+| A=643.2/643.2 ''S=400''
+|
+|-
+|[[Vehicles/PRIMITIVE BRUTUS PERIPHERY|'''PRIMITIVE BRUTUS PERIPHERY''']]
+|75 [HEAVY]
+|1B 2E 3M
+| A=617.6/617.6 ''S=400''
+|Primitive<br>
+|-
+|colspan="1" rowspan="9" | BULLDOG MBT
+|[[Vehicles/BALROG|'''BALROG''']]
+|60 [HEAVY]
+|1B 4E 2S
+| A=908/916 ''S=300''
+|
+|-
+|[[Vehicles/BULLDOG (AC)|'''BULLDOG (AC)''']]
+|60 [HEAVY]
+|4B 2M
+| A=409.6/416 ''S=300''
+|
+|-
+|[[Vehicles/BULLDOG (HVAC)|'''BULLDOG (HVAC)''']]
+|60 [HEAVY]
+|2B 2M
+| A=486.4/490.4 ''S=300''
+|
+|-
+|[[Vehicles/BULLDOG (LRM)|'''BULLDOG (LRM)''']]
+|60 [HEAVY]
+|1B 3M
+| A=422.4/422.4 ''S=300''
+|
+|-
+|[[Vehicles/BULLDOG (UAC)|'''BULLDOG (UAC)''']]
+|60 [HEAVY]
+|4B 2M
+| A=640/640 ''S=300''
+|
+|-
+|[[Vehicles/BULLDOG MEDIUM TANK|'''BULLDOG MEDIUM TANK''']]
+|60 [HEAVY]
+|1B 1E 2M
+| A=422.4/422.4 ''S=300''
+|
+|-
+|[[Vehicles/BULLDOG MEDIUM TANK (ER LARGE LASER)|'''BULLDOG MEDIUM TANK (ER LARGE LASER)''']]
+|60 [HEAVY]
+|1B 1E 4M
+| A=473.6/489.6 ''S=300''
+|
+|-
+|[[Vehicles/BULLDOG MEDIUM TANK (PA)|'''BULLDOG MEDIUM TANK (PA)''']]
+|60 [HEAVY]
+|1B 2E 5M
+| A=454.4/454.4 ''S=300''
+|
+|-
+|[[Vehicles/BULLDOG MEDIUM TANK (PA) MKII|'''BULLDOG MEDIUM TANK (PA) MKII''']]
+|60 [HEAVY]
+|2B 2E 4M
+| A=441.6/448 ''S=300''
+|
+|-
+|colspan="1" rowspan="3" | BURKE DEFENCE TANK
+|[[Vehicles/BURKE DEFENCE TANK (HEAVY PPC) HPPC|'''BURKE DEFENCE TANK (HEAVY PPC) HPPC''']]
+|75 [HEAVY]
+|2E 1M
+| A=500.8/500.8 ''S=400''
+|
+|-
+|[[Vehicles/BURKE DEFENCE TANK (ROYAL)|'''BURKE DEFENCE TANK (ROYAL)''']]
+|75 [HEAVY]
+|3E 2M
+| A=654.4/654.4 ''S=400''
+|
+|-
+|[[Vehicles/BURKE DEFENCE TANK|'''BURKE DEFENCE TANK''']]
+|75 [HEAVY]
+|3E 1M
+| A=457.6/457.6 ''S=400''
+|
+|-
+|colspan="1" rowspan="38" | CARRIER
+|[[Vehicles/AC/10 CARRIER AC10|'''AC/10 CARRIER AC10''']]
+|60 [HEAVY]
+|2B 2M
+| A=320/320 ''S=240''
+|
+|-
+|[[Vehicles/LB-X CARRIER LBX|'''LB-X CARRIER LBX''']]
+|60 [HEAVY]
+|2B 3M
+| A=464.8/464.8 ''S=240''
+|
+|-
+|[[Vehicles/LRM CARRIER (WOB)|'''LRM CARRIER (WOB)''']]
+|60 [HEAVY]
+|3M 1S
+| A=304/304 ''S=240''
+|
+|-
+|[[Vehicles/LRM CARRIER MK.2 3055|'''LRM CARRIER MK.2 3055''']]
+|60 [HEAVY]
+|3M
+| A=285.6/285.6 ''S=240''
+|
+|-
+|[[Vehicles/LRM CARRIER|'''LRM CARRIER''']]
+|60 [HEAVY]
+|3M
+| A=192/192 ''S=240''
+|
+|-
+|[[Vehicles/MEDIUM-RIFLE CARRIER PRIMITIVE|'''MEDIUM-RIFLE CARRIER PRIMITIVE''']]
+|60 [HEAVY]
+|5B
+| A=384/256 ''S=240''
+|Primitive<br>
+|-
+|[[Vehicles/MORTAR CARRIER|'''MORTAR CARRIER''']]
+|60 [HEAVY]
+|3B
+| A=321.6/321.6 ''S=240''
+|
+|-
+|[[Vehicles/MRM CARRIER|'''MRM CARRIER''']]
+|60 [HEAVY]
+|3M
+| A=214.4/214.4 ''S=240''
+|
+|-
+|[[Vehicles/ROCKET CARRIER RL PRIMITIVE|'''ROCKET CARRIER RL PRIMITIVE''']]
+|60 [HEAVY]
+|9M
+| A=352/352 ''S=240''
+|Primitive<br>
+|-
+|[[Vehicles/SRM CARRIER (WOB)|'''SRM CARRIER (WOB)''']]
+|60 [HEAVY]
+|9M 1S
+| A=300/300 ''S=300''
+|
+|-
+|[[Vehicles/SRM CARRIER MK.2 3054|'''SRM CARRIER MK.2 3054''']]
+|60 [HEAVY]
+|9M 1S
+| A=224/224 ''S=240''
+|
+|-
+|[[Vehicles/SRM CARRIER MK.3 C3|'''SRM CARRIER MK.3 C3''']]
+|60 [HEAVY]
+|9M
+| A=321.6/325.6 ''S=240''
+|
+|-
+|[[Vehicles/SRM CARRIER|'''SRM CARRIER''']]
+|60 [HEAVY]
+|10M
+| A=192/192 ''S=240''
+|
+|-
+|[[Vehicles/SRM CARRIER Inferno|'''SRM CARRIER Inferno''']]
+|60 [HEAVY]
+|10M
+| A=192/212 ''S=240''
+|
+|-
+|[[Vehicles/STREAK MRM CARRIER SMRM RISC|'''STREAK MRM CARRIER SMRM RISC''']]
+|60 [HEAVY]
+|5M 1S
+| A=286.4/286.4 ''S=240''
+|Legendary<br>
+|-
+|[[Vehicles/TBM5 CARRIER|'''TBM5 CARRIER''']]
+|60 [HEAVY]
+|9M
+| A=352/352 ''S=240''
+|
+|-
+|[[Vehicles/LBX AC/2 CARRIER AC2|'''LBX AC/2 CARRIER AC2''']]
+|60 [HEAVY]
+|6B
+| A=352/352 ''S=240''
+|
+|-
+|[[Vehicles/LASER CARRIER MK.2 MPL|'''LASER CARRIER MK.2 MPL''']]
+|60 [HEAVY]
+|6E
+| A=364.8/508 ''S=300''
+|
+|-
+|[[Vehicles/LASER CARRIER|'''LASER CARRIER''']]
+|60 [HEAVY]
+|8E
+| A=268.8/268.8 ''S=240''
+|
+|-
+|[[Vehicles/HYBRID CARRIER (TBM/LRM) 5-15|'''HYBRID CARRIER (TBM/LRM) 5-15''']]
+|60 [HEAVY]
+|6M
+| A=321.6/321.6 ''S=240''
+|
+|-
+|[[Vehicles/AC/2 CARRIER AC2|'''AC/2 CARRIER AC2''']]
+|60 [HEAVY]
+|5B
+| A=192/192 ''S=240''
+|
+|-
+|[[Vehicles/AC/20 CARRIER AC20S|'''AC/20 CARRIER AC20S''']]
+|60 [HEAVY]
+|2B
+| A=320/320 ''S=240''
+|
+|-
+|[[Vehicles/AC/20 CARRIER AC20|'''AC/20 CARRIER AC20''']]
+|60 [HEAVY]
+|2B 1M
+| A=464.8/480.8 ''S=240''
+|
+|-
+|[[Vehicles/ARROW IV CARRIER ARROWIV|'''ARROW IV CARRIER ARROWIV''']]
+|60 [HEAVY]
+|2M
+| A=192/192 ''S=240''
+|
+|-
+|[[Vehicles/ARROW V CARRIER ARROWV SOCIETY|'''ARROW V CARRIER ARROWV SOCIETY''']]
+|60 [HEAVY]
+|2M
+| A=352/304 ''S=240''
+|Clan<br>
+|-
+|[[Vehicles/CLAN ATM CARRIER|'''CLAN ATM CARRIER''']]
+|60 [HEAVY]
+|3M 1S
+| A=379.2/464 ''S=300''
+|Clan<br>
+|-
+|[[Vehicles/CLAN HYBRID CARRIER (ATM/LRM)|'''CLAN HYBRID CARRIER (ATM/LRM)''']]
+|60 [HEAVY]
+|4M 1S
+| A=324.8/380 ''S=300''
+|Clan<br>
+|-
+|[[Vehicles/THUNDERBOLT 20 CARRIER TBOLT|'''THUNDERBOLT 20 CARRIER TBOLT''']]
+|60 [HEAVY]
+|3M
+| A=428.8/428.8 ''S=240''
+|
+|-
+|[[Vehicles/CLAN LRM CARRIER 2|'''CLAN LRM CARRIER 2''']]
+|60 [HEAVY]
+|4M 2S
+| A=379.2/399.2 ''S=300''
+|Clan<br>
+|-
+|[[Vehicles/CLAN MORTAR CARRIER|'''CLAN MORTAR CARRIER''']]
+|60 [HEAVY]
+|4B 1S
+| A=385.6/405.6 ''S=300''
+|Clan<br>
+|-
+|[[Vehicles/CLAN SLRM CARRIER|'''CLAN SLRM CARRIER''']]
+|60 [HEAVY]
+|4M 1S
+| A=368/416 ''S=300''
+|Clan<br>
+|-
+|[[Vehicles/ENHANCED LRM CARRIER|'''ENHANCED LRM CARRIER''']]
+|60 [HEAVY]
+|3M 2S
+| A=256/256 ''S=240''
+|
+|-
+|[[Vehicles/ER-LRM CARRIER EXTENDED|'''ER-LRM CARRIER EXTENDED''']]
+|60 [HEAVY]
+|2M
+| A=321.6/336 ''S=300''
+|
+|-
+|[[Vehicles/HVAC/2 CARRIER HVAC2|'''HVAC/2 CARRIER HVAC2''']]
+|60 [HEAVY]
+|5B
+| A=384/416 ''S=240''
+|
+|-
+|[[Vehicles/HVAC/20 CARRIER HVAC20|'''HVAC/20 CARRIER HVAC20''']]
+|60 [HEAVY]
+|2B
+| A=464.8/464.8 ''S=240''
+|
+|-
+|[[Vehicles/HYBRID CARRIER (TBM/LRM) 10-5|'''HYBRID CARRIER (TBM/LRM) 10-5''']]
+|60 [HEAVY]
+|7M
+| A=285.6/288 ''S=240''
+|
+|-
+|[[Vehicles/CLAN LRM CARRIER|'''CLAN LRM CARRIER''']]
+|60 [HEAVY]
+|4M 2S
+| A=379.2/399.2 ''S=300''
+|Clan<br>
+|-
+|[[Vehicles/UAC/5 CARRIER UAC5|'''UAC/5 CARRIER UAC5''']]
+|60 [HEAVY]
+|3B 1M
+| A=464.8/464.8 ''S=240''
+|
+|-
+|colspan="1" rowspan="9" | DEMON TANK
+|[[Vehicles/DEMON TANK (HGR) WOB|'''DEMON TANK (HGR) WOB''']]
+|60 [HEAVY]
+|1B 2E 1M
+| A=560/552 ''S=240''
+|
+|-
+|[[Vehicles/DEMON (PPC)|'''DEMON (PPC)''']]
+|60 [HEAVY]
+|2E
+| A=620.8/620.8 ''S=300''
+|
+|-
+|[[Vehicles/DEMON CX-2 REFIT CX-2|'''DEMON CX-2 REFIT CX-2''']]
+|60 [HEAVY]
+|1B 2E 4S
+| A=688/688 ''S=300''
+|Legendary<br>
+|-
+|[[Vehicles/DEMON IIC CLAN|'''DEMON IIC CLAN''']]
+|60 [HEAVY]
+|1B 3E 1M
+| A=804.8/804.8 ''S=300''
+|Clan<br>
+|-
+|[[Vehicles/DEMON MBT|'''DEMON MBT''']]
+|60 [HEAVY]
+|1B 2E 1M
+| A=640/640 ''S=300''
+|
+|-
+|[[Vehicles/HORNED DEMON|'''HORNED DEMON''']]
+|60 [HEAVY]
+|1B 4E
+| A=672/672 ''S=300''
+|
+|-
+|[[Vehicles/PIRATE DEMON MBT|'''PIRATE DEMON MBT''']]
+|60 [HEAVY]
+|2E
+| A=608/640 ''S=300''
+|
+|-
+|[[Vehicles/ROYAL DEMON|'''ROYAL DEMON''']]
+|60 [HEAVY]
+|1B 2E 3M
+| A=672/640 ''S=300''
+|SLDF<br>
+|-
+|[[Vehicles/ROYAL DEMON (C) CLAN|'''ROYAL DEMON (C) CLAN''']]
+|60 [HEAVY]
+|1B 2E 3M
+| A=915.2/923.2 ''S=300''
+|Clan<br>
+|-
+|colspan="1" rowspan="4" | GALLANT URBAN ASSAULT VEHICLE
+|[[Vehicles/GALLANT MK.1|'''GALLANT MK.1''']]
+|70 [HEAVY]
+|5B 2M
+| A=1120/1120 ''S=350''
+|
+|-
+|[[Vehicles/GALLANT MK.2 3050|'''GALLANT MK.2 3050''']]
+|70 [HEAVY]
+|2B 3M 1S
+| A=1155.2/1155.2 ''S=350''
+|
+|-
+|[[Vehicles/GALLANT MK.3 FUSION|'''GALLANT MK.3 FUSION''']]
+|70 [HEAVY]
+|4B 1E 3M
+| A=1191.2/1191.2 ''S=350''
+|
+|-
+|[[Vehicles/GALLANT MK.5 3070|'''GALLANT MK.5 3070''']]
+|70 [HEAVY]
+|2B 3M
+| A=1162.4/1162.4 ''S=350''
+|
+|-
+|colspan="1" rowspan="5" | GREMLIN MBT
+|[[Vehicles/GREMLIN 0|'''GREMLIN 0''']]
+|73 [HEAVY]
+|2B 2E
+| A=672/672 ''S=400''
+|
+|-
+|[[Vehicles/GREMLIN 0A|'''GREMLIN 0A''']]
+|73 [HEAVY]
+|1B 2E 2S
+| A=672/672 ''S=400''
+|
+|-
+|[[Vehicles/GREMLIN 0B|'''GREMLIN 0B''']]
+|73 [HEAVY]
+|1E 1M
+| A=672/672 ''S=400''
+|
+|-
+|[[Vehicles/GREMLIN 0C|'''GREMLIN 0C''']]
+|73 [HEAVY]
+|2E 4M 1S
+| A=672/672 ''S=400''
+|
+|-
+|[[Vehicles/GREMLIN 0D|'''GREMLIN 0D''']]
+|73 [HEAVY]
+|1B 2E 1M 1S
+| A=672/672 ''S=400''
+|
+|-
+|colspan="1" rowspan="2" | KOKOU DEFENCE TANK
+|[[Vehicles/KOKOU DEFENCE TANK|'''KOKOU DEFENCE TANK''']]
+|70 [HEAVY]
+|3E 1M
+| A=622.4/657.6 ''S=350''
+|Clan<br>
+|-
+|[[Vehicles/KOKOU DEFENCE TANK (XL)|'''KOKOU DEFENCE TANK (XL)''']]
+|70 [HEAVY]
+|3E 1M
+| A=676/704 ''S=350''
+|Clan<br>
+|-
+|colspan="1" rowspan="1" | LEMAN RUSS
+|[[Vehicles/LEMAN RUSS LemanRuss|'''LEMAN RUSS LemanRuss''']]
+|60 [HEAVY]
+|CLASSIFIED
+| CLASSIFIED 
+|
+|-
+|colspan="1" rowspan="2" | MAGI
+|[[Vehicles/MAGI INFANTRY SUPPORT VEHICLE|'''MAGI INFANTRY SUPPORT VEHICLE''']]
+|70 [HEAVY]
+|2B 3E
+| A=697.6/697.6 ''S=280''
+|
+|-
+|[[Vehicles/MAGI INFANTRY SUPPORT VEHICLE (UCSV)|'''MAGI INFANTRY SUPPORT VEHICLE (UCSV)''']]
+|70 [HEAVY]
+|1B 3E
+| A=697.6/697.6 ''S=280''
+|
+|-
+|colspan="1" rowspan="6" | MANTEUFFEL ATTACK TANK
+|[[Vehicles/MANTEUFFEL ATTACK TANK (PRIME)|'''MANTEUFFEL ATTACK TANK (PRIME)''']]
+|70 [HEAVY]
+|1B 3E
+| A=800.8/800.8 ''S=350''
+|
+|-
+|[[Vehicles/MANTEUFFEL ATTACK TANK (A)|'''MANTEUFFEL ATTACK TANK (A)''']]
+|70 [HEAVY]
+|1B 3E
+| A=786.4/786.4 ''S=350''
+|
+|-
+|[[Vehicles/MANTEUFFEL ATTACK TANK (B)|'''MANTEUFFEL ATTACK TANK (B)''']]
+|70 [HEAVY]
+|1B 3E
+| A=812/812 ''S=350''
+|
+|-
+|[[Vehicles/MANTEUFFEL ATTACK TANK (C)|'''MANTEUFFEL ATTACK TANK (C)''']]
+|70 [HEAVY]
+|3B 2E
+| A=772.8/786.4 ''S=350''
+|
+|-
+|[[Vehicles/MANTEUFFEL ATTACK TANK (D)|'''MANTEUFFEL ATTACK TANK (D)''']]
+|70 [HEAVY]
+|2E 1M 2S
+| A=808/808 ''S=350''
+|
+|-
+|[[Vehicles/MANTEUFFEL ATTACK TANK (E)|'''MANTEUFFEL ATTACK TANK (E)''']]
+|70 [HEAVY]
+|2B 3E
+| A=786.4/786.4 ''S=350''
+|
+|-
+|colspan="1" rowspan="2" | MANTICORE
+|[[Vehicles/PIRATE MANTICORE|'''PIRATE MANTICORE''']]
+|60 [HEAVY]
+|2E 1M 1S
+| A=720/720 ''S=300''
+|
+|-
+|[[Vehicles/PIRATE MANTICORE 2|'''PIRATE MANTICORE 2''']]
+|60 [HEAVY]
+|2E 5M
+| A=732.8/732.8 ''S=300''
+|
+|-
+|colspan="1" rowspan="9" | MANTICORE HEAVY TANK
+|[[Vehicles/COMMAND MANTICORE C3M|'''COMMAND MANTICORE C3M''']]
+|60 [HEAVY]
+|1E 4M
+| A=769.6/769.6 ''S=300''
+|
+|-
+|[[Vehicles/ELITE MANTICORE|'''ELITE MANTICORE''']]
+|60 [HEAVY]
+|2E 2M
+| A=900/900 ''S=300''
+|Legendary<br>
+|-
+|[[Vehicles/MANTICORE (C3)|'''MANTICORE (C3)''']]
+|60 [HEAVY]
+|1E 3M
+| A=684/716 ''S=300''
+|
+|-
+|[[Vehicles/MANTICORE (DAVION) RAC|'''MANTICORE (DAVION) RAC''']]
+|60 [HEAVY]
+|1B 2E 1M
+| A=748/748 ''S=300''
+|
+|-
+|[[Vehicles/MANTICORE (LBX)|'''MANTICORE (LBX)''']]
+|60 [HEAVY]
+|1B 1E 1M
+| A=765.6/765.6 ''S=300''
+|
+|-
+|[[Vehicles/MANTICORE HEAVY TANK BLAZER|'''MANTICORE HEAVY TANK BLAZER''']]
+|60 [HEAVY]
+|1E 2M
+| A=732.8/732.8 ''S=300''
+|
+|-
+|[[Vehicles/MANTICORE HEAVY TANK|'''MANTICORE HEAVY TANK''']]
+|60 [HEAVY]
+|2E 2M
+| A=720/720 ''S=300''
+|
+|-
+|[[Vehicles/MANTICORE IIC CLAN|'''MANTICORE IIC CLAN''']]
+|60 [HEAVY]
+|2E 2M
+| A=762.4/778.4 ''S=300''
+|Clan<br>
+|-
+|[[Vehicles/MANTICORE MK.2 3055|'''MANTICORE MK.2 3055''']]
+|60 [HEAVY]
+|1E 4M
+| A=805.6/813.6 ''S=300''
+|
+|-
+|colspan="1" rowspan="1" | MANTICORE II HEAVY TANK
+|[[Vehicles/MANTICORE II HEAVY TANK 2|'''MANTICORE II HEAVY TANK 2''']]
+|70 [HEAVY]
+|1E 2M
+| A=824/832 ''S=350''
+|
+|-
+|colspan="1" rowspan="1" | MARKSMAN ARTILLERY VEHICLE
+|[[Vehicles/MARKSMAN ARTILLERY VEHICLE (LPPC)|'''MARKSMAN ARTILLERY VEHICLE (LPPC)''']]
+|65 [HEAVY]
+|5B 1E
+| A=542.4/542.4 ''S=350''
+|
+|-
+|colspan="1" rowspan="2" | MARSDEN II
+|[[Vehicles/PIRATE MARSDEN II MARSDENII|'''PIRATE MARSDEN II MARSDENII''']]
+|60 [HEAVY]
+|1B 2M
+| A=1011.2/1011.2 ''S=300''
+|
+|-
+|[[Vehicles/PIRATE MARSDEN II-A MARSDENIIA|'''PIRATE MARSDEN II-A MARSDENIIA''']]
+|60 [HEAVY]
+|1B 1M
+| A=928/992 ''S=300''
+|
+|-
+|colspan="1" rowspan="4" | MARSDEN II MBT
+|[[Vehicles/MARSDEN II MBT MARSDENII Primitive|'''MARSDEN II MBT MARSDENII Primitive''']]
+|60 [HEAVY]
+|3B 2M
+| A=741.6/998.4 ''S=300''
+|Primitive<br>
+|-
+|[[Vehicles/MARSDEN II MBT MARSDENII|'''MARSDEN II MBT MARSDENII''']]
+|60 [HEAVY]
+|3B 2M
+| A=998.4/998.4 ''S=300''
+|
+|-
+|[[Vehicles/MARSDEN II-A MBT MARSDENIIA|'''MARSDEN II-A MBT MARSDENIIA''']]
+|60 [HEAVY]
+|2B 1M
+| A=1008/1008 ''S=300''
+|
+|-
+|[[Vehicles/MARSDEN II-AX MBT MARSDENIIA LBX|'''MARSDEN II-AX MBT MARSDENIIA LBX''']]
+|60 [HEAVY]
+|3B 2M
+| A=1011.2/1011.2 ''S=300''
+|
+|-
+|colspan="1" rowspan="1" | MARSDEN MBT
+|[[Vehicles/MARSDEN MBT|'''MARSDEN MBT''']]
+|65 [HEAVY]
+|3B 2M
+| A=886.4/886.4 ''S=350''
+|Primitive<br>
+|-
+|colspan="1" rowspan="3" | MERKAVA HEAVY TANK
+|[[Vehicles/MERKAVA VII Primitive|'''MERKAVA VII Primitive''']]
+|75 [HEAVY]
+|3B 2M
+| A=332.8/332.8 ''S=400''
+|Primitive<br>
+|-
+|[[Vehicles/MERKAVA VIII PIRATE|'''MERKAVA VIII PIRATE''']]
+|75 [HEAVY]
+|1B 1E 3M 1S
+| A=649.6/649.6 ''S=400''
+|Primitive<br>
+|-
+|[[Vehicles/MERKAVA VIII|'''MERKAVA VIII''']]
+|75 [HEAVY]
+|3B 2M
+| A=672/672 ''S=400''
+|Primitive<br>
+|-
+|colspan="1" rowspan="1" | MHI DEFENSE TANK
+|[[Vehicles/MHI DEFENSE TANK (AA)|'''MHI DEFENSE TANK (AA)''']]
+|60 [HEAVY]
+|5B
+| A=704/704 ''S=300''
+|
+|-
+|colspan="1" rowspan="2" | MOBILE LONG TOM
+|[[Vehicles/LONGTOM LT-MOB-25 NUKE|'''LONGTOM LT-MOB-25 NUKE''']]
+|65 [HEAVY]
+|5B
+| A=560/560 ''S=280''
+|Legendary<br>
+|-
+|[[Vehicles/LONGTOM LT-MOB-25|'''LONGTOM LT-MOB-25''']]
+|65 [HEAVY]
+|5B
+| A=560/560 ''S=280''
+|
+|-
+|colspan="1" rowspan="3" | MOLTKE MBT
+|[[Vehicles/MOLTKE MBT (M1)|'''MOLTKE MBT (M1)''']]
+|75 [HEAVY]
+|2B 1E
+| A=1008/1008 ''S=400''
+|
+|-
+|[[Vehicles/MOLTKE MBT (M2)|'''MOLTKE MBT (M2)''']]
+|75 [HEAVY]
+|1E 5M
+| A=1012/1012 ''S=400''
+|
+|-
+|[[Vehicles/MOLTKE MBT (M3)|'''MOLTKE MBT (M3)''']]
+|75 [HEAVY]
+|2B 1E 1S
+| A=1008/1008 ''S=400''
+|
+|-
+|colspan="1" rowspan="4" | ORO HEAVY TANK
+|[[Vehicles/ORO (AC5) CLAN|'''ORO (AC5) CLAN''']]
+|60 [HEAVY]
+|2B 1E
+| A=625.6/660.8 ''S=300''
+|Clan<br>
+|-
+|[[Vehicles/ORO (GAUSS) CLAN|'''ORO (GAUSS) CLAN''']]
+|60 [HEAVY]
+|1B 1E 1M
+| A=640/665.6 ''S=300''
+|Clan<br>
+|-
+|[[Vehicles/ORO (HAG) CLAN|'''ORO (HAG) CLAN''']]
+|60 [HEAVY]
+|1B 1E
+| A=632.8/664.8 ''S=300''
+|Clan<br>
+|-
+|[[Vehicles/ORO HEAVY TANK CLAN|'''ORO HEAVY TANK CLAN''']]
+|60 [HEAVY]
+|1B 2E
+| A=504/504 ''S=300''
+|Clan<br>
+|-
+|colspan="1" rowspan="2" | PADILLA HEAVY ARTILLERY TANK
+|[[Vehicles/PADILLA HEAVY ARTILLERY TANK (ARROW IV)|'''PADILLA HEAVY ARTILLERY TANK (ARROW IV)''']]
+|75 [HEAVY]
+|2E 1M 2S
+| A=384/384 ''S=320''
+|
+|-
+|[[Vehicles/PADILLA HEAVY ARTILLERY TANK (LRM)|'''PADILLA HEAVY ARTILLERY TANK (LRM)''']]
+|75 [HEAVY]
+|2E 2M 2S
+| A=384/384 ''S=320''
+|
+|-
+|colspan="1" rowspan="1" | PALISADE HEAVY TANK
+|[[Vehicles/PALISADE HEAVY TANK|'''PALISADE HEAVY TANK''']]
+|60 [HEAVY]
+|2B 1M
+| A=777.6/777.6 ''S=300''
+|
+|-
+|colspan="1" rowspan="4" | PATTON HEAVY TANK
+|[[Vehicles/PATTON HEAVY TANK SB|'''PATTON HEAVY TANK SB''']]
+|65 [HEAVY]
+|1B 2E 1M
+| A=1032/1032 ''S=350''
+|Legendary<br>
+|-
+|[[Vehicles/PATTON HEAVY TANK BLAZER|'''PATTON HEAVY TANK BLAZER''']]
+|65 [HEAVY]
+|3E 1M
+| A=959.2/968 ''S=350''
+|
+|-
+|[[Vehicles/PATTON HEAVY TANK|'''PATTON HEAVY TANK''']]
+|65 [HEAVY]
+|1B 2E 1M
+| A=966.4/966.4 ''S=350''
+|
+|-
+|[[Vehicles/PATTON MK.2 UAC|'''PATTON MK.2 UAC''']]
+|65 [HEAVY]
+|4B 2E
+| A=965.6/965.6 ''S=350''
+|
+|-
+|colspan="1" rowspan="5" | PIKE SUPPORT VEHICLE
+|[[Vehicles/ASSAULT PIKE RAC|'''ASSAULT PIKE RAC''']]
+|60 [HEAVY]
+|3B 1E
+| A=686.4/686.4 ''S=300''
+|
+|-
+|[[Vehicles/CLAN PIKE SUPPORT VEHICLE|'''CLAN PIKE SUPPORT VEHICLE''']]
+|60 [HEAVY]
+|5B 1E
+| A=608/652 ''S=300''
+|Clan<br>
+|-
+|[[Vehicles/PERIPHERY PIKE PRIMITIVE|'''PERIPHERY PIKE PRIMITIVE''']]
+|60 [HEAVY]
+|3B
+| A=588.8/588.8 ''S=300''
+|Primitive<br>
+|-
+|[[Vehicles/PIKE SUPPORT VEHICLE|'''PIKE SUPPORT VEHICLE''']]
+|60 [HEAVY]
+|3B 2M
+| A=588.8/588.8 ''S=300''
+|
+|-
+|[[Vehicles/PIKE SUPPORT VEHICLE* HVAC2|'''PIKE SUPPORT VEHICLE* HVAC2''']]
+|60 [HEAVY]
+|3B 1M
+| A=588.8/588.8 ''S=300''
+|
+|-
+|colspan="1" rowspan="1" | PIXIU HEAVY TANK
+|[[Vehicles/PIXIU HEAVY TANK|'''PIXIU HEAVY TANK''']]
+|70 [HEAVY]
+|1B 1E 1M
+| A=684.8/704 ''S=350''
+|
+|-
+|colspan="1" rowspan="8" | PO HEAVY TANK
+|[[Vehicles/PO HEAVY TANK (HVAC)|'''PO HEAVY TANK (HVAC)''']]
+|60 [HEAVY]
+|1B 1M
+| A=475.2/484 ''S=300''
+|
+|-
+|[[Vehicles/PO HEAVY TANK|'''PO HEAVY TANK''']]
+|60 [HEAVY]
+|3B
+| A=691.2/691.2 ''S=300''
+|
+|-
+|[[Vehicles/PO II HEAVY TANK|'''PO II HEAVY TANK''']]
+|60 [HEAVY]
+|3B 4M
+| A=716.8/716.8 ''S=300''
+|
+|-
+|[[Vehicles/PO II-G HEAVY TANK GAUSS|'''PO II-G HEAVY TANK GAUSS''']]
+|60 [HEAVY]
+|3B 4M
+| A=716.8/716.8 ''S=300''
+|
+|-
+|[[Vehicles/PO II-RISC|'''PO II-RISC''']]
+|60 [HEAVY]
+|2B 1M
+| A=790.4/809.6 ''S=300''
+|Legendary<br>
+|-
+|[[Vehicles/PO II-S HEAVY TANK STEALTH|'''PO II-S HEAVY TANK STEALTH''']]
+|60 [HEAVY]
+|3B 2M
+| A=723.2/723.2 ''S=300''
+|
+|-
+|[[Vehicles/PO MK.2 LGAUSS|'''PO MK.2 LGAUSS''']]
+|60 [HEAVY]
+|4B
+| A=588.8/588.8 ''S=300''
+|
+|-
+|[[Vehicles/PO-X HEAVY TANK LBX|'''PO-X HEAVY TANK LBX''']]
+|60 [HEAVY]
+|3B
+| A=697.6/697.6 ''S=300''
+|
+|-
+|colspan="1" rowspan="1" | POLLUX ADA HEAVY TANK
+|[[Vehicles/POLLUX ADA HEAVY TANK|'''POLLUX ADA HEAVY TANK''']]
+|75 [HEAVY]
+|2B 2E
+| A=468/468 ''S=400''
+|
+|-
+|colspan="1" rowspan="2" | RED OCTOBER
+|[[Vehicles/RED OCTOBER REDOCTOBER NUKE|'''RED OCTOBER REDOCTOBER NUKE''']]
+|75 [HEAVY]
+|4M 1S
+| A=416/416 ''S=320''
+|Legendary<br>
+|-
+|[[Vehicles/RED OCTOBER REDOCTOBER|'''RED OCTOBER REDOCTOBER''']]
+|75 [HEAVY]
+|5M 1S
+| A=416/416 ''S=320''
+|Legendary<br>
+|-
+|colspan="1" rowspan="3" | ROMMEL HEAVY TANK
+|[[Vehicles/ROMMEL HEAVY TANK|'''ROMMEL HEAVY TANK''']]
+|65 [HEAVY]
+|1B 1E 1M
+| A=774.4/774.4 ''S=350''
+|
+|-
+|[[Vehicles/ROMMEL HEAVY TANK HOWITZER|'''ROMMEL HEAVY TANK HOWITZER''']]
+|65 [HEAVY]
+|1B 2E 1M
+| A=996/996 ''S=350''
+|Legendary<br>
+|-
+|[[Vehicles/ROMMEL MK.2 GAUSS|'''ROMMEL MK.2 GAUSS''']]
+|65 [HEAVY]
+|6B 2E
+| A=800.8/800.8 ''S=350''
+|
+|-
+|colspan="1" rowspan="1" | ROTTWEILER
+|[[Vehicles/ROTWEILER ROTTWEILER|'''ROTWEILER ROTTWEILER''']]
+|60 [HEAVY]
+|1E 3M 2S
+| A=563.2/563.2 ''S=300''
+|
+|-
+|colspan="1" rowspan="9" | SELF PROPELLED ARTILLERY
+|[[Vehicles/BALLISTA ARTILLERY TANK|'''BALLISTA ARTILLERY TANK''']]
+|55 [HEAVY]
+|4B
+| A=496/496 ''S=300''
+|
+|-
+|[[Vehicles/MARKSMAN ARTILLERY VEHICLE|'''MARKSMAN ARTILLERY VEHICLE''']]
+|65 [HEAVY]
+|1B 1E
+| A=536/536 ''S=350''
+|
+|-
+|[[Vehicles/PEGLEG MARKSMAN PIRATE|'''PEGLEG MARKSMAN PIRATE''']]
+|65 [HEAVY]
+|2B 1E 1M
+| A=568/568 ''S=350''
+|
+|-
+|[[Vehicles/SM2 HEAVY ARTILLERY VEHICLE ARTY|'''SM2 HEAVY ARTILLERY VEHICLE ARTY''']]
+|75 [HEAVY]
+|6B
+| A=1091.2/1091.2 ''S=320''
+|Clan<br>
+|-
+|[[Vehicles/THUMPER ARTILLERY VEHICLE ANGEL|'''THUMPER ARTILLERY VEHICLE ANGEL''']]
+|60 [HEAVY]
+|3B 1E 2M
+| A=764.8/768 ''S=240''
+|
+|-
+|[[Vehicles/THUMPER ARTILLERY VEHICLE|'''THUMPER ARTILLERY VEHICLE''']]
+|60 [HEAVY]
+|5B
+| A=704/704 ''S=240''
+|
+|-
+|[[Vehicles/THUMPER TAV-1 TAV1|'''THUMPER TAV-1 TAV1''']]
+|60 [HEAVY]
+|5B 2E
+| A=825.6/825.6 ''S=300''
+|
+|-
+|[[Vehicles/THUMPER TAV-2 TAV2|'''THUMPER TAV-2 TAV2''']]
+|60 [HEAVY]
+|5B 2E
+| A=825.6/825.6 ''S=300''
+|
+|-
+|[[Vehicles/THUMPY MCTHUMPER THUMPER PIRATE|'''THUMPY MCTHUMPER THUMPER PIRATE''']]
+|60 [HEAVY]
+|2B
+| A=806.4/806.4 ''S=300''
+|
+|-
+|colspan="1" rowspan="2" | SHEPARD
+|[[Vehicles/PIRATE SHEPARD|'''PIRATE SHEPARD''']]
+|60 [HEAVY]
+|3E 2M
+| A=505.6/512 ''S=300''
+|
+|-
+|[[Vehicles/SHEPARD|'''SHEPARD''']]
+|60 [HEAVY]
+|2E 2M
+| A=505.6/512 ''S=300''
+|
+|-
+|colspan="1" rowspan="1" | SHER KHAN MBT
+|[[Vehicles/SHER KHAN MBT|'''SHER KHAN MBT''']]
+|75 [HEAVY]
+|1B 6M 2S
+| A=776.8/784.8 ''S=400''
+|
+|-
+|colspan="1" rowspan="1" | SM2 HEAVY ARTILLERY VEHICLE
+|[[Vehicles/SM2 HEAVY ARTILLERY VEHICLE (LTC) ARTY|'''SM2 HEAVY ARTILLERY VEHICLE (LTC) ARTY''']]
+|75 [HEAVY]
+|6B
+| A=1091.2/1091.2 ''S=320''
+|Clan<br>
+|-
+|colspan="1" rowspan="2" | STURMBLITZ ASSAULT GUN
+|[[Vehicles/STURMBLITZ ASSAULT GUN MK.II UAC|'''STURMBLITZ ASSAULT GUN MK.II UAC''']]
+|75 [HEAVY]
+|1B
+| A=784/784 ''S=320''
+|
+|-
+|[[Vehicles/STURMBLITZ ASSAULT GUN|'''STURMBLITZ ASSAULT GUN''']]
+|75 [HEAVY]
+|1B
+| A=496/520 ''S=320''
+|Primitive<br>
+|-
+|colspan="1" rowspan="1" | TESTUDO SIEGE TANK
+|[[Vehicles/TESTUDO TANK|'''TESTUDO TANK''']]
+|75 [HEAVY]
+|3B 1M
+| A=923.2/924 ''S=400''
+|
+|-
+|colspan="1" rowspan="1" | THUNDERSTRUCK
+|[[Vehicles/THUNDERSTRUCK TBM TANK PIRATE|'''THUNDERSTRUCK TBM TANK PIRATE''']]
+|60 [HEAVY]
+|2E 2M
+| A=652.8/656.8 ''S=300''
+|Legendary<br>
+|-
+|colspan="1" rowspan="2" | TUNGUSKA ANTI AIR TANK
+|[[Vehicles/TUNGUSKA ANTI AIR TANK TunguskaAA|'''TUNGUSKA ANTI AIR TANK TunguskaAA''']]
+|60 [HEAVY]
+|1B 2M
+| A=262.4/316 ''S=300''
+|
+|-
+|[[Vehicles/TUNGUSKA ANTI AIR TANK TunguskaAAII|'''TUNGUSKA ANTI AIR TANK TunguskaAAII''']]
+|60 [HEAVY]
+|1B 2M
+| A=498.4/560 ''S=300''
+|
+|-
+|colspan="1" rowspan="3" | TYPHOON URBAN COMBAT VEHICLE
+|[[Vehicles/TYPHOON URBAN COMBAT VEHICLE (LB-X) LBX|'''TYPHOON URBAN COMBAT VEHICLE (LB-X) LBX''']]
+|70 [HEAVY]
+|2B 1E 2M
+| A=805.6/805.6 ''S=350''
+|
+|-
+|[[Vehicles/TYPHOON URBAN COMBAT VEHICLE (RAC)|'''TYPHOON URBAN COMBAT VEHICLE (RAC)''']]
+|70 [HEAVY]
+|2B 2E 4M
+| A=805.6/805.6 ''S=350''
+|
+|-
+|[[Vehicles/TYPHOON URBAN COMBAT VEHICLE|'''TYPHOON URBAN COMBAT VEHICLE''']]
+|70 [HEAVY]
+|1B 3E 5M
+| A=812.8/812.8 ''S=350''
+|
+|-
+|colspan="1" rowspan="5" | VARGR APC
+|[[Vehicles/VARGR APC (LRM)|'''VARGR APC (LRM)''']]
+|65 [HEAVY]
+|2B 1M
+| A=956.8/956.8 ''S=350''
+|
+|-
+|[[Vehicles/VARGR APC (SRM)|'''VARGR APC (SRM)''']]
+|65 [HEAVY]
+|2B 3M
+| A=963.2/963.2 ''S=350''
+|
+|-
+|[[Vehicles/ARVKR APC Arvakr|'''ARVKR APC Arvakr''']]
+|65 [HEAVY]
+|2B 2E 1S
+| A=968.8/968.8 ''S=350''
+|Legendary<br>
+|-
+|[[Vehicles/VARGR APC|'''VARGR APC''']]
+|65 [HEAVY]
+|2B 2E
+| A=976/976 ''S=350''
+|
+|-
+|[[Vehicles/VARGR APC FUSION|'''VARGR APC FUSION''']]
+|65 [HEAVY]
+|2B 2E 1M
+| A=972.8/972.8 ''S=350''
+|
+|-
+|colspan="1" rowspan="8" | VON LUCKNER MBT
+|[[Vehicles/VON LUCKNER (ROYAL) VONLUCKNER|'''VON LUCKNER (ROYAL) VONLUCKNER''']]
+|75 [HEAVY]
+|2B 1E 5M
+| A=854.4/854.4 ''S=400''
+|
+|-
+|[[Vehicles/VON LUCKNER VNL-K100 VONLUCKNER|'''VON LUCKNER VNL-K100 VONLUCKNER''']]
+|75 [HEAVY]
+|2B 1M
+| A=617.6/617.6 ''S=400''
+|
+|-
+|[[Vehicles/VON LUCKNER VNL-K65N VONLUCKNER|'''VON LUCKNER VNL-K65N VONLUCKNER''']]
+|75 [HEAVY]
+|2B 1E 4M
+| A=736/736 ''S=400''
+|
+|-
+|[[Vehicles/VON LUCKNER VNL-K70 VONLUCKNER|'''VON LUCKNER VNL-K70 VONLUCKNER''']]
+|75 [HEAVY]
+|2B 2E 2M
+| A=742.4/742.4 ''S=400''
+|
+|-
+|[[Vehicles/VON LUCKNER VNL-K70 VONLUCKNER RISC|'''VON LUCKNER VNL-K70 VONLUCKNER RISC''']]
+|75 [HEAVY]
+|3B 1E 2M
+| A=886.4/886.4 ''S=400''
+|Legendary<br>
+|-
+|[[Vehicles/VON LUCKNER VNL-K75N VONLUCKNER|'''VON LUCKNER VNL-K75N VONLUCKNER''']]
+|75 [HEAVY]
+|3B 2E 2M
+| A=733.6/733.6 ''S=400''
+|
+|-
+|[[Vehicles/VON LUCKNER VNL-K90 VONLUCKNER|'''VON LUCKNER VNL-K90 VONLUCKNER''']]
+|75 [HEAVY]
+|3B 3M
+| A=833.6/833.6 ''S=400''
+|
+|-
+|[[Vehicles/VON LUCKNER VNL-X71 VONLUCKNER YAKUZA|'''VON LUCKNER VNL-X71 VONLUCKNER YAKUZA''']]
+|75 [HEAVY]
+|2B 1E 1M
+| A=1016/1016 ''S=400''
+|Legendary<br>
+|-
+|colspan="1" rowspan="3" | WINSTON
+|[[Vehicles/WINSTON MK.1|'''WINSTON MK.1''']]
+|70 [HEAVY]
+|2E 3M 1S
+| A=1160/1160 ''S=350''
+|
+|-
+|[[Vehicles/WINSTON MK.2 LAC|'''WINSTON MK.2 LAC''']]
+|70 [HEAVY]
+|2B 3M 1S
+| A=1168/1168 ''S=350''
+|
+|-
+|[[Vehicles/WINSTON MK.X RX|'''WINSTON MK.X RX''']]
+|70 [HEAVY]
+|3E 2M 1S
+| A=936.8/948.8 ''S=350''
+|Legendary<br>
+|-
+|colspan="1" rowspan="1" | XANCUDO
+|[[Vehicles/XANCUDO PRIMITIVE|'''XANCUDO PRIMITIVE''']]
+|65 [HEAVY]
+|3B 4M 1S
+| A=752/736 ''S=350''
+|Primitive<br>
+|-
+|colspan="1" rowspan="6" | ZHUKOV HEAVY TANK
+|[[Vehicles/ZHUKOV (LBX) RISC|'''ZHUKOV (LBX) RISC''']]
+|75 [HEAVY]
+|2B 1M 1S
+| A=924/924 ''S=400''
+|Legendary<br>
+|-
+|[[Vehicles/ZHUKOV (LBX-WOB)|'''ZHUKOV (LBX-WOB)''']]
+|75 [HEAVY]
+|2B 1M
+| A=675.2/704 ''S=400''
+|
+|-
+|[[Vehicles/ZHUKOV (LIAO)|'''ZHUKOV (LIAO)''']]
+|75 [HEAVY]
+|2B 1M
+| A=748.8/748.8 ''S=400''
+|
+|-
+|[[Vehicles/ZHUKOV (WOB)|'''ZHUKOV (WOB)''']]
+|75 [HEAVY]
+|2E 1M
+| A=816/816 ''S=400''
+|
+|-
+|[[Vehicles/ZHUKOV HEAVY TANK HVAC|'''ZHUKOV HEAVY TANK HVAC''']]
+|75 [HEAVY]
+|2B 1M
+| A=726.4/726.4 ''S=400''
+|
+|-
+|[[Vehicles/ZHUKOV HEAVY TANK|'''ZHUKOV HEAVY TANK''']]
+|75 [HEAVY]
+|2B 1M
+| A=726.4/726.4 ''S=400''
+|
+|-
+|colspan="1" rowspan="1" | ZHUKOV MKII HEAVY TANK
+|[[Vehicles/ZHUKOV MKII HEAVY TANK|'''ZHUKOV MKII HEAVY TANK''']]
+|75 [HEAVY]
+|2B 2S
+| A=755.2/755.2 ''S=400''
+|
+
+|}
+
+
+=== Assault Tanks === 
+
+{| class="wikitable sortable mw-collapsible"
+|+
+! Chassis !! Variant !! Weight !! Hardpoints !! HP !! Special
+|-
+|colspan="1" rowspan="1" | AITHLON ASSAULT TRANSPORT
+|[[Vehicles/AITHLON ASSAULT TRANSPORT CLAN|'''AITHLON ASSAULT TRANSPORT CLAN''']]
+|100 [ASSAULT]
+|1B 4E
+| A=828.8/828.8 ''S=500''
+|Clan<br>
+|-
+|colspan="1" rowspan="3" | AJAX ASSAULT TANK
+|[[Vehicles/AJAX ASSAULT TANK|'''AJAX ASSAULT TANK''']]
+|90 [ASSAULT]
+|2B 2E 1M
+| A=1225.6/1225.6 ''S=450''
+|
+|-
+|[[Vehicles/AJAX ASSAULT TANK - C|'''AJAX ASSAULT TANK - C''']]
+|90 [ASSAULT]
+|1E 5M
+| A=1225.6/1225.6 ''S=450''
+|
+|-
+|[[Vehicles/AJAX-B COMMAND VEHICLE|'''AJAX-B COMMAND VEHICLE''']]
+|90 [ASSAULT]
+|1E 3M
+| A=1244.8/1244.8 ''S=450''
+|
+|-
+|colspan="1" rowspan="7" | ALACORN
+|[[Vehicles/ALACORN IIC-1 CLAN|'''ALACORN IIC-1 CLAN''']]
+|95 [ASSAULT]
+|4B
+| A=1001.6/1001.6 ''S=500''
+|Clan<br>
+|-
+|[[Vehicles/ALACORN IIC-2 IIC-2|'''ALACORN IIC-2 IIC-2''']]
+|95 [ASSAULT]
+|3B
+| A=1008.8/1016.8 ''S=500''
+|Clan<br>
+|-
+|[[Vehicles/ALACORN IIC-3 IIC-3|'''ALACORN IIC-3 IIC-3''']]
+|95 [ASSAULT]
+|3B
+| A=1001.6/1009.6 ''S=500''
+|Clan<br>
+|-
+|[[Vehicles/ALACORN MK.IX RISC|'''ALACORN MK.IX RISC''']]
+|95 [ASSAULT]
+|2B
+| A=1280/1280 ''S=500''
+|Legendary<br>
+|-
+|[[Vehicles/ALACORN MK.VII|'''ALACORN MK.VII''']]
+|95 [ASSAULT]
+|2B
+| A=1280/1280 ''S=500''
+|
+|-
+|[[Vehicles/ALACORN MK.VIII|'''ALACORN MK.VIII''']]
+|95 [ASSAULT]
+|3B 1S
+| A=1380/1640 ''S=500''
+|
+|-
+|[[Vehicles/PIRATE ALACORN MK.VI|'''PIRATE ALACORN MK.VI''']]
+|95 [ASSAULT]
+|3B
+| A=940.8/940.8 ''S=500''
+|
+|-
+|colspan="1" rowspan="4" | ALACORN HEAVY TANK
+|[[Vehicles/ALACORN MK.I|'''ALACORN MK.I''']]
+|95 [ASSAULT]
+|3B
+| A=816/816 ''S=500''
+|
+|-
+|[[Vehicles/ALACORN MK.II|'''ALACORN MK.II''']]
+|95 [ASSAULT]
+|3B
+| A=435.2/435.2 ''S=500''
+|
+|-
+|[[Vehicles/ALACORN MK.VI VI-B|'''ALACORN MK.VI VI-B''']]
+|95 [ASSAULT]
+|3B
+| A=864/864 ''S=500''
+|
+|-
+|[[Vehicles/ALACORN MK.VI|'''ALACORN MK.VI''']]
+|95 [ASSAULT]
+|3B
+| A=864/864 ''S=500''
+|
+|-
+|colspan="1" rowspan="1" | ARROW IV ASSAULT VEHICLE
+|[[Vehicles/ARROW IV ASSAULT VEHICLE ARROWIV|'''ARROW IV ASSAULT VEHICLE ARROWIV''']]
+|80 [ASSAULT]
+|2E 1M 2S
+| A=1116/1116 ''S=400''
+|
+|-
+|colspan="1" rowspan="5" | BEHEMOTH HEAVY TANK
+|[[Vehicles/ADVANCED BEHEMOTH KURITA|'''ADVANCED BEHEMOTH KURITA''']]
+|100 [ASSAULT]
+|4B 6M
+| A=860.8/860.8 ''S=500''
+|
+|-
+|[[Vehicles/BEHEMOTH (ISV) BEHEMOTHF|'''BEHEMOTH (ISV) BEHEMOTHF''']]
+|100 [ASSAULT]
+|6B 3E 6M
+| A=832/832 ''S=500''
+|
+|-
+|[[Vehicles/BEHEMOTH (RANGER) HVAC|'''BEHEMOTH (RANGER) HVAC''']]
+|100 [ASSAULT]
+|5B 2M
+| A=1056/1088 ''S=500''
+|
+|-
+|[[Vehicles/BEHEMOTH (UP-ARMORED) BEHEMOTHA|'''BEHEMOTH (UP-ARMORED) BEHEMOTHA''']]
+|100 [ASSAULT]
+|2B 6M
+| A=1344/1344 ''S=500''
+|
+|-
+|[[Vehicles/BEHEMOTH HEAVY TANK|'''BEHEMOTH HEAVY TANK''']]
+|100 [ASSAULT]
+|6B 10M
+| A=832/832 ''S=500''
+|
+|-
+|colspan="1" rowspan="3" | BEHEMOTH II HEAVY TANK
+|[[Vehicles/BEHEMOTH II HEAVY TANK|'''BEHEMOTH II HEAVY TANK''']]
+|100 [ASSAULT]
+|1B 12M
+| A=1119.2/1119.2 ''S=500''
+|
+|-
+|[[Vehicles/BEHEMOTH II-A HEAVY TANK Custom|'''BEHEMOTH II-A HEAVY TANK Custom''']]
+|100 [ASSAULT]
+|1B 1E 3M 1S
+| A=1133.6/1133.6 ''S=500''
+|
+|-
+|[[Vehicles/BEHEMOTH II-S HEAVY TANK Support|'''BEHEMOTH II-S HEAVY TANK Support''']]
+|100 [ASSAULT]
+|1B 1E 4M
+| A=876.8/877.6 ''S=500''
+|
+|-
+|colspan="1" rowspan="3" | CARNIVORE ASSAULT TANK
+|[[Vehicles/CARNIVORE ASSAULT TANK (EXPORT) SECLINE|'''CARNIVORE ASSAULT TANK (EXPORT) SECLINE''']]
+|80 [ASSAULT]
+|3B 2E
+| A=1008/1008 ''S=400''
+|Clan<br>
+|-
+|[[Vehicles/CARNIVORE ASSAULT TANK|'''CARNIVORE ASSAULT TANK''']]
+|80 [ASSAULT]
+|4B 2E
+| A=1014.4/1014.4 ''S=400''
+|Clan<br>
+|-
+|[[Vehicles/CARNIVORE ASSAULT TANK HAG|'''CARNIVORE ASSAULT TANK HAG''']]
+|80 [ASSAULT]
+|5B 2E 2S
+| A=995.2/995.2 ''S=400''
+|Clan<br>
+|-
+|colspan="1" rowspan="3" | CHALLENGER MBT
+|[[Vehicles/CHALLENGER X MBT|'''CHALLENGER X MBT''']]
+|90 [ASSAULT]
+|2B 3E 3M 1S
+| A=1048/1048 ''S=450''
+|
+|-
+|[[Vehicles/CHALLENGER XI COMMAND VEHICLE|'''CHALLENGER XI COMMAND VEHICLE''']]
+|90 [ASSAULT]
+|2B 1E
+| A=1040.8/1040.8 ''S=450''
+|
+|-
+|[[Vehicles/CHALLENGER XII MBT|'''CHALLENGER XII MBT''']]
+|90 [ASSAULT]
+|2B 2E 2M
+| A=1033.6/1033.6 ''S=450''
+|
+|-
+|colspan="1" rowspan="6" | DEMOLISHER
+|[[Vehicles/CLAN DEMOLISHER MK.1|'''CLAN DEMOLISHER MK.1''']]
+|80 [ASSAULT]
+|8B 2E
+| A=745.6/745.6 ''S=400''
+|Clan<br>
+|-
+|[[Vehicles/CLAN DEMOLISHER MK.2 UAC|'''CLAN DEMOLISHER MK.2 UAC''']]
+|80 [ASSAULT]
+|6B 2E
+| A=748/748 ''S=400''
+|Clan<br>
+|-
+|[[Vehicles/CLAN DEMOLISHER MK.3 GAUSS|'''CLAN DEMOLISHER MK.3 GAUSS''']]
+|80 [ASSAULT]
+|2B 4E
+| A=804.8/808.8 ''S=400''
+|Clan<br>
+|-
+|[[Vehicles/FIRE SUPPORT DEMOLISHER ARROWIV|'''FIRE SUPPORT DEMOLISHER ARROWIV''']]
+|80 [ASSAULT]
+|2E 2M
+| A=625.6/625.6 ''S=400''
+|
+|-
+|[[Vehicles/PLUNDERER PIRATE|'''PLUNDERER PIRATE''']]
+|80 [ASSAULT]
+|4B 4M
+| A=652.8/652.8 ''S=400''
+|
+|-
+|[[Vehicles/THUMOLISHER DEMOLISHER THUMPER PIRATE|'''THUMOLISHER DEMOLISHER THUMPER PIRATE''']]
+|80 [ASSAULT]
+|2B 1S
+| A=678.4/678.4 ''S=400''
+|
+|-
+|colspan="1" rowspan="16" | DEMOLISHER HEAVY TANK
+|[[Vehicles/BOMBAST DEMOLISHER|'''BOMBAST DEMOLISHER''']]
+|80 [ASSAULT]
+|2B 2E 2M
+| A=892/892 ''S=400''
+|
+|-
+|[[Vehicles/BOMBAST DEMOLISHER MK.2 CELL|'''BOMBAST DEMOLISHER MK.2 CELL''']]
+|80 [ASSAULT]
+|4B 2E
+| A=896/904 ''S=400''
+|
+|-
+|[[Vehicles/CRAPRAC DEMOLISHER PRIMITIVE 3|'''CRAPRAC DEMOLISHER PRIMITIVE 3''']]
+|80 [ASSAULT]
+|2B
+| A=678.4/678.4 ''S=400''
+|Primitive<br>
+|-
+|[[Vehicles/DEMOLISHER|'''DEMOLISHER''']]
+|80 [ASSAULT]
+|2B
+| A=652.8/652.8 ''S=400''
+|
+|-
+|[[Vehicles/DEMOLISHER LBX|'''DEMOLISHER LBX''']]
+|80 [ASSAULT]
+|4B
+| A=787.2/788 ''S=400''
+|
+|-
+|[[Vehicles/DEMOLISHER THUMPER|'''DEMOLISHER THUMPER''']]
+|80 [ASSAULT]
+|2B
+| A=640/640 ''S=400''
+|
+|-
+|[[Vehicles/DEMOLISHER SEALED|'''DEMOLISHER SEALED''']]
+|80 [ASSAULT]
+|2B
+| A=622.4/648 ''S=400''
+|
+|-
+|[[Vehicles/DEMOLISHER-D DEMOLISHERD|'''DEMOLISHER-D DEMOLISHERD''']]
+|80 [ASSAULT]
+|6B
+| A=492.8/492.8 ''S=400''
+|
+|-
+|[[Vehicles/DEMOLISHER-G GAUSS|'''DEMOLISHER-G GAUSS''']]
+|80 [ASSAULT]
+|2B 2E
+| A=827.2/827.2 ''S=400''
+|
+|-
+|[[Vehicles/DEMOLISHER-H HVAC20|'''DEMOLISHER-H HVAC20''']]
+|80 [ASSAULT]
+|2B
+| A=729.6/729.6 ''S=400''
+|
+|-
+|[[Vehicles/DEMOLISHER-R DEMOLISHER-R|'''DEMOLISHER-R DEMOLISHER-R''']]
+|80 [ASSAULT]
+|2B
+| A=816/816 ''S=400''
+|
+|-
+|[[Vehicles/DRACONIS DEMOLISHER MRM|'''DRACONIS DEMOLISHER MRM''']]
+|80 [ASSAULT]
+|3M
+| A=769.6/769.6 ''S=400''
+|
+|-
+|[[Vehicles/HPPC DEMOLISHER|'''HPPC DEMOLISHER''']]
+|80 [ASSAULT]
+|2E
+| A=1104/1088 ''S=400''
+|
+|-
+|[[Vehicles/JERYRIGGED DEMOLISHER PRIMITIVE|'''JERYRIGGED DEMOLISHER PRIMITIVE''']]
+|80 [ASSAULT]
+|3B 1E 1M
+| A=672/672 ''S=400''
+|Primitive<br>
+|-
+|[[Vehicles/SALVAGED DEMOLISHER PRIMITIVE 2|'''SALVAGED DEMOLISHER PRIMITIVE 2''']]
+|80 [ASSAULT]
+|4B 2E 2M
+| A=729.6/729.6 ''S=400''
+|Primitive<br>
+|-
+|[[Vehicles/SOCIETY DEMOLISHER MRM|'''SOCIETY DEMOLISHER MRM''']]
+|80 [ASSAULT]
+|2E 2M
+| A=784/769.6 ''S=400''
+|Clan<br>
+|-
+|colspan="1" rowspan="1" | DEMOLISHER II
+|[[Vehicles/DEMOLISHER II-CX DEMOLISHER-II|'''DEMOLISHER II-CX DEMOLISHER-II''']]
+|100 [ASSAULT]
+|2B 1M
+| A=1116.8/1172 ''S=500''
+|Legendary<br>
+|-
+|colspan="1" rowspan="4" | DEMOLISHER II HEAVY TANK
+|[[Vehicles/DEMOLISHER II DEMOLISHER-II|'''DEMOLISHER II DEMOLISHER-II''']]
+|100 [ASSAULT]
+|6B
+| A=1051.2/1051.2 ''S=500''
+|
+|-
+|[[Vehicles/DEMOLISHER II (TBM) DEMOLISHER-II|'''DEMOLISHER II (TBM) DEMOLISHER-II''']]
+|100 [ASSAULT]
+|2E 4M
+| A=1540/1540 ''S=500''
+|
+|-
+|[[Vehicles/DEMOLISHER II-X DEMOLISHER-IIX|'''DEMOLISHER II-X DEMOLISHER-IIX''']]
+|100 [ASSAULT]
+|3B
+| A=1140/1140 ''S=500''
+|Clan<br>
+Legendary<br>
+|-
+|[[Vehicles/TREADNOUGHT|'''TREADNOUGHT''']]
+|100 [ASSAULT]
+|2B 1M 1S
+| A=901.6/1032.8 ''S=500''
+|Clan<br>
+Legendary<br>
+|-
+|colspan="1" rowspan="1" | DEVASTATOR HEAVY TANK
+|[[Vehicles/DEVASTATOR DVE-5B MK.3|'''DEVASTATOR DVE-5B MK.3''']]
+|80 [ASSAULT]
+|2B 4E 1M
+| A=595.2/595.2 ''S=400''
+|
+|-
+|colspan="1" rowspan="1" | ESTEVEZ II
+|[[Vehicles/ESTEVEZ II SUPPORT TANK|'''ESTEVEZ II SUPPORT TANK''']]
+|80 [ASSAULT]
+|5B 2M
+| A=665.6/688 ''S=400''
+|
+|-
+|colspan="1" rowspan="2" | ESTEVEZ MBT
+|[[Vehicles/ESTEVEZ MAIN BATTLE TANK AA|'''ESTEVEZ MAIN BATTLE TANK AA''']]
+|80 [ASSAULT]
+|5B
+| A=1001.6/1001.6 ''S=400''
+|
+|-
+|[[Vehicles/ESTEVEZ MAIN BATTLE TANK|'''ESTEVEZ MAIN BATTLE TANK''']]
+|80 [ASSAULT]
+|5B
+| A=998.4/998.4 ''S=400''
+|
+|-
+|colspan="1" rowspan="1" | FOXHOUND SELF PROELLED GUN
+|[[Vehicles/FOXHOUND|'''FOXHOUND''']]
+|80 [ASSAULT]
+|1B 5M
+| A=661.6/685.6 ''S=400''
+|
+|-
+|colspan="1" rowspan="8" | FURY COMMAND TANK
+|[[Vehicles/FURY COMMAND TANK (C3M)|'''FURY COMMAND TANK (C3M)''']]
+|80 [ASSAULT]
+|1B 2E
+| A=951.2/964.8 ''S=400''
+|
+|-
+|[[Vehicles/FURY COMMAND TANK (C3S)|'''FURY COMMAND TANK (C3S)''']]
+|80 [ASSAULT]
+|2B
+| A=1072.8/1072.8 ''S=400''
+|
+|-
+|[[Vehicles/FURY COMMAND TANK (CX-17) CX-17|'''FURY COMMAND TANK (CX-17) CX-17''']]
+|80 [ASSAULT]
+|2B 1S
+| A=892.8/896 ''S=400''
+|Legendary<br>
+|-
+|[[Vehicles/FURY COMMAND TANK (ROYAL)|'''FURY COMMAND TANK (ROYAL)''']]
+|80 [ASSAULT]
+|1B 1S
+| A=980/980 ''S=400''
+|SLDF<br>
+|-
+|[[Vehicles/FURY COMMAND TANK|'''FURY COMMAND TANK''']]
+|80 [ASSAULT]
+|1B
+| A=944/944 ''S=400''
+|
+|-
+|[[Vehicles/FURY II COMMAND TANK|'''FURY II COMMAND TANK''']]
+|80 [ASSAULT]
+|1B 1E
+| A=1008/1008 ''S=400''
+|
+|-
+|[[Vehicles/FURY III COMMAND TANK|'''FURY III COMMAND TANK''']]
+|80 [ASSAULT]
+|2B 2E
+| A=900/900 ''S=400''
+|
+|-
+|[[Vehicles/FURY IIIM COMMAND TANK|'''FURY IIIM COMMAND TANK''']]
+|80 [ASSAULT]
+|2B 1E
+| A=900/900 ''S=400''
+|
+|-
+|colspan="1" rowspan="1" | GURZIL SUPPORT TANK
+|[[Vehicles/GURZIL SUPPORT TANK CLAN|'''GURZIL SUPPORT TANK CLAN''']]
+|80 [ASSAULT]
+|2B 2E 2M
+| A=828.8/828.8 ''S=400''
+|Clan<br>
+|-
+|colspan="1" rowspan="15" | HEAVY CARRIER
+|[[Vehicles/HEAVY EN-LRM CARRIER NLRM|'''HEAVY EN-LRM CARRIER NLRM''']]
+|80 [ASSAULT]
+|4M
+| A=348.8/348.8 ''S=400''
+|
+|-
+|[[Vehicles/HEAVY ER-LRM CARRIER EXTENDED|'''HEAVY ER-LRM CARRIER EXTENDED''']]
+|80 [ASSAULT]
+|4M
+| A=326.4/392 ''S=400''
+|
+|-
+|[[Vehicles/HEAVY HYBRID CARRIER (TBM10/LRM15) T10L15|'''HEAVY HYBRID CARRIER (TBM10/LRM15) T10L15''']]
+|80 [ASSAULT]
+|6M 2S
+| A=400/400 ''S=400''
+|
+|-
+|[[Vehicles/HEAVY HYBRID CARRIER (TBM15/LRM20) T15L20|'''HEAVY HYBRID CARRIER (TBM15/LRM20) T15L20''']]
+|80 [ASSAULT]
+|4M
+| A=479.2/479.2 ''S=400''
+|
+|-
+|[[Vehicles/HEAVY LASER CARRIER PRIMITIVE|'''HEAVY LASER CARRIER PRIMITIVE''']]
+|80 [ASSAULT]
+|10E
+| A=576/640 ''S=400''
+|Primitive<br>
+|-
+|[[Vehicles/HEAVY LRM CARRIER HEAVYLRM|'''HEAVY LRM CARRIER HEAVYLRM''']]
+|80 [ASSAULT]
+|4M
+| A=256/256 ''S=400''
+|
+|-
+|[[Vehicles/HEAVY MML CARRIER|'''HEAVY MML CARRIER''']]
+|80 [ASSAULT]
+|6M 4S
+| A=409.6/409.6 ''S=400''
+|
+|-
+|[[Vehicles/HEAVY MML CARRIER RISC|'''HEAVY MML CARRIER RISC''']]
+|80 [ASSAULT]
+|5M
+| A=357.6/357.6 ''S=400''
+|Legendary<br>
+|-
+|[[Vehicles/HEAVY MORTAR CARRIER|'''HEAVY MORTAR CARRIER''']]
+|80 [ASSAULT]
+|4B
+| A=321.6/356 ''S=400''
+|
+|-
+|[[Vehicles/HEAVY MRM CARRIER|'''HEAVY MRM CARRIER''']]
+|80 [ASSAULT]
+|4M
+| A=464.8/464.8 ''S=400''
+|
+|-
+|[[Vehicles/HEAVY RIFLE CARRIER PRIMITIVE|'''HEAVY RIFLE CARRIER PRIMITIVE''']]
+|80 [ASSAULT]
+|8B
+| A=390.4/406.4 ''S=400''
+|Primitive<br>
+|-
+|[[Vehicles/HEAVY ROCKET CARRIER RL PRIMITIVE|'''HEAVY ROCKET CARRIER RL PRIMITIVE''']]
+|80 [ASSAULT]
+|10M 2S
+| A=400/440 ''S=400''
+|Primitive<br>
+|-
+|[[Vehicles/HEAVY TBM10 CARRIER|'''HEAVY TBM10 CARRIER''']]
+|80 [ASSAULT]
+|6M
+| A=350.4/356 ''S=400''
+|
+|-
+|[[Vehicles/HEAVY TBM15 CARRIER|'''HEAVY TBM15 CARRIER''']]
+|80 [ASSAULT]
+|4M
+| A=421.6/421.6 ''S=400''
+|
+|-
+|[[Vehicles/JES II TACTICAL MISSILE CARRIER JES-II|'''JES II TACTICAL MISSILE CARRIER JES-II''']]
+|95 [ASSAULT]
+|2E 6M
+| A=704/704 ''S=400''
+|
+|-
+|colspan="1" rowspan="2" | HUITZILOPOCHTLI
+|[[Vehicles/HUITZILOPOCHTLI (AAA) CLAN|'''HUITZILOPOCHTLI (AAA) CLAN''']]
+|85 [ASSAULT]
+|4B 2M
+| A=528/528 ''S=450''
+|Clan<br>
+|-
+|[[Vehicles/HUITZILOPOCHTLI CLAN|'''HUITZILOPOCHTLI CLAN''']]
+|85 [ASSAULT]
+|3B 3E 2M
+| A=374.4/374.4 ''S=450''
+|Clan<br>
+|-
+|colspan="1" rowspan="6" | MARS ASSAULT VEHICLE
+|[[Vehicles/MARS CASSIUS CLAN|'''MARS CASSIUS CLAN''']]
+|100 [ASSAULT]
+|2B 1E 5M
+| A=944/944 ''S=500''
+|Clan<br>
+Legendary<br>
+|-
+|[[Vehicles/MARS MK.1 CLAN|'''MARS MK.1 CLAN''']]
+|100 [ASSAULT]
+|4B 1E 5M
+| A=929.6/929.6 ''S=500''
+|Clan<br>
+|-
+|[[Vehicles/MARS MK.2 XL CLAN|'''MARS MK.2 XL CLAN''']]
+|100 [ASSAULT]
+|2B 1E 5M
+| A=859.2/871.2 ''S=500''
+|Clan<br>
+|-
+|[[Vehicles/MARS MK.3 ATM CLAN|'''MARS MK.3 ATM CLAN''']]
+|100 [ASSAULT]
+|3B 1E 5M
+| A=901.6/901.6 ''S=500''
+|Clan<br>
+|-
+|[[Vehicles/MARS MK.4 HAG CLAN|'''MARS MK.4 HAG CLAN''']]
+|100 [ASSAULT]
+|4B 1E 3M
+| A=1491.2/1491.2 ''S=500''
+|Clan<br>
+|-
+|[[Vehicles/MARS MK.5 STREAKLRM CLAN|'''MARS MK.5 STREAKLRM CLAN''']]
+|100 [ASSAULT]
+|4B 1E 3M
+| A=895.2/907.2 ''S=500''
+|Clan<br>
+|-
+|colspan="1" rowspan="3" | MORRIGU FIRE SUPPORT VEHICLE
+|[[Vehicles/MORRIGU (HAG) CLAN|'''MORRIGU (HAG) CLAN''']]
+|80 [ASSAULT]
+|1B 4M
+| A=854.4/854.4 ''S=400''
+|Clan<br>
+|-
+|[[Vehicles/MORRIGU (LASER) CLAN|'''MORRIGU (LASER) CLAN''']]
+|80 [ASSAULT]
+|3E
+| A=739.2/739.2 ''S=400''
+|Clan<br>
+|-
+|[[Vehicles/MORRIGU FIRE SUPPORT VEHICLE CLAN|'''MORRIGU FIRE SUPPORT VEHICLE CLAN''']]
+|80 [ASSAULT]
+|2E 4M
+| A=841.6/841.6 ''S=400''
+|Clan<br>
+|-
+|colspan="1" rowspan="2" | NARUKAMI HEAVY TANK
+|[[Vehicles/NARUKAMI HEAVY TANK (NK-BC3)|'''NARUKAMI HEAVY TANK (NK-BC3)''']]
+|90 [ASSAULT]
+|2B 1E 1M 2S
+| A=571.2/571.2 ''S=450''
+|
+|-
+|[[Vehicles/NARUKAMI HEAVY TANK|'''NARUKAMI HEAVY TANK''']]
+|90 [ASSAULT]
+|1B 2E 2S
+| A=569.6/569.6 ''S=450''
+|
+|-
+|colspan="1" rowspan="6" | ONTOS HEAVY TANK
+|[[Vehicles/ONTOS MK.1 MK1|'''ONTOS MK.1 MK1''']]
+|95 [ASSAULT]
+|8E 2M
+| A=560/560 ''S=500''
+|
+|-
+|[[Vehicles/ONTOS MK.2 FUSION|'''ONTOS MK.2 FUSION''']]
+|95 [ASSAULT]
+|10E 2M
+| A=768/768 ''S=500''
+|
+|-
+|[[Vehicles/ONTOS MK.3 LRM|'''ONTOS MK.3 LRM''']]
+|95 [ASSAULT]
+|4M
+| A=560/680 ''S=500''
+|
+|-
+|[[Vehicles/ONTOS MK.4 3053|'''ONTOS MK.4 3053''']]
+|95 [ASSAULT]
+|7E 3M 1S
+| A=794.4/794.4 ''S=500''
+|
+|-
+|[[Vehicles/ONTOS MK.5 LIGHTGAUSS|'''ONTOS MK.5 LIGHTGAUSS''']]
+|95 [ASSAULT]
+|3B 2E
+| A=729.6/729.6 ''S=500''
+|
+|-
+|[[Vehicles/ONTOS MK.6 MML|'''ONTOS MK.6 MML''']]
+|95 [ASSAULT]
+|2B 2E 2M
+| A=751.2/771.2 ''S=500''
+|
+|-
+|colspan="1" rowspan="7" | PARTISAN HEAVY TANK
+|[[Vehicles/PARTISAN (AC2)|'''PARTISAN (AC2)''']]
+|80 [ASSAULT]
+|7B
+| A=352/384 ''S=400''
+|
+|-
+|[[Vehicles/PARTISAN (C3)|'''PARTISAN (C3)''']]
+|80 [ASSAULT]
+|4B
+| A=403.2/403.2 ''S=400''
+|
+|-
+|[[Vehicles/PARTISAN (LRM)|'''PARTISAN (LRM)''']]
+|80 [ASSAULT]
+|2B 4M
+| A=396.8/396.8 ''S=400''
+|
+|-
+|[[Vehicles/PARTISAN (QUAD RAC) 4RAC|'''PARTISAN (QUAD RAC) 4RAC''']]
+|80 [ASSAULT]
+|4B
+| A=844.8/844.8 ''S=400''
+|
+|-
+|[[Vehicles/PARTISAN AA (XL) AAA|'''PARTISAN AA (XL) AAA''']]
+|80 [ASSAULT]
+|4B
+| A=572/572 ''S=400''
+|
+|-
+|[[Vehicles/PARTISAN AIR DEFENSE TANK AAA|'''PARTISAN AIR DEFENSE TANK AAA''']]
+|80 [ASSAULT]
+|4B
+| A=596.8/596.8 ''S=400''
+|
+|-
+|[[Vehicles/PARTISAN HEAVY TANK|'''PARTISAN HEAVY TANK''']]
+|80 [ASSAULT]
+|6B
+| A=403.2/403.2 ''S=400''
+|
+|-
+|colspan="1" rowspan="1" | PHOBOS ASSUALT TANK
+|[[Vehicles/PHOBOS ASSUALT TANK|'''PHOBOS ASSUALT TANK''']]
+|100 [ASSAULT]
+|1B 1E 1M
+| A=980.8/996 ''S=500''
+|Clan<br>
+|-
+|colspan="1" rowspan="2" | PUMA
+|[[Vehicles/PUMA PAT-IIC CLAN|'''PUMA PAT-IIC CLAN''']]
+|95 [ASSAULT]
+|2B 3E 6M
+| A=985.6/985.6 ''S=500''
+|Clan<br>
+|-
+|[[Vehicles/PUMA PAT-IIC-2 PUMA-2 CLAN|'''PUMA PAT-IIC-2 PUMA-2 CLAN''']]
+|95 [ASSAULT]
+|3E 8M
+| A=1008/1008 ''S=500''
+|Clan<br>
+|-
+|colspan="1" rowspan="5" | PUMA ASSAULT TANK
+|[[Vehicles/PIRATE PUMA PAT-005|'''PIRATE PUMA PAT-005''']]
+|95 [ASSAULT]
+|3E 4M 3S
+| A=790.4/790.4 ''S=500''
+|
+|-
+|[[Vehicles/PUMA PAT-005|'''PUMA PAT-005''']]
+|95 [ASSAULT]
+|5E 3M
+| A=787.2/787.2 ''S=500''
+|
+|-
+|[[Vehicles/PUMA PAT-005B|'''PUMA PAT-005B''']]
+|95 [ASSAULT]
+|5E 4M
+| A=915.2/915.2 ''S=500''
+|SLDF<br>
+|-
+|[[Vehicles/PUMA PAT-007|'''PUMA PAT-007''']]
+|95 [ASSAULT]
+|4B 5E 3M 1S
+| A=912/912 ''S=500''
+|
+|-
+|[[Vehicles/PUMA PAT-008|'''PUMA PAT-008''']]
+|95 [ASSAULT]
+|1E 3M 6S
+| A=851.2/851.2 ''S=500''
+|
+|-
+|colspan="1" rowspan="7" | RHINO FIRE SUPPORT TANK
+|[[Vehicles/RHINO FIRE SUPPORT TANK (STREAK)|'''RHINO FIRE SUPPORT TANK (STREAK)''']]
+|80 [ASSAULT]
+|2E 4M
+| A=1132/1132 ''S=400''
+|Clan<br>
+|-
+|[[Vehicles/RHINO (FLAMER)|'''RHINO (FLAMER)''']]
+|80 [ASSAULT]
+|3E 3M
+| A=1123.2/1123.2 ''S=400''
+|
+|-
+|[[Vehicles/RHINO (MG)|'''RHINO (MG)''']]
+|80 [ASSAULT]
+|3B 2E 3M
+| A=1123.2/1123.2 ''S=400''
+|
+|-
+|[[Vehicles/RHINO (SL)|'''RHINO (SL)''']]
+|80 [ASSAULT]
+|6E 3M
+| A=1123.2/1123.2 ''S=400''
+|
+|-
+|[[Vehicles/RHINO FIRE SUPPORT TANK|'''RHINO FIRE SUPPORT TANK''']]
+|80 [ASSAULT]
+|2E 3M
+| A=1123.2/1123.2 ''S=400''
+|
+|-
+|[[Vehicles/ROYAL RHINO|'''ROYAL RHINO''']]
+|80 [ASSAULT]
+|2E 3M 1S
+| A=1123.2/1123.2 ''S=400''
+|SLDF<br>
+|-
+|[[Vehicles/ROYAL RHINO (C) CLAN|'''ROYAL RHINO (C) CLAN''']]
+|80 [ASSAULT]
+|2E 3M 5S
+| A=1148.8/1152 ''S=400''
+|Clan<br>
+|-
+|colspan="1" rowspan="1" | SCHILTRON
+|[[Vehicles/SCHILTRON PRIME|'''SCHILTRON PRIME''']]
+|80 [ASSAULT]
+|6E 2M
+| A=972.8/972.8 ''S=400''
+|
+|-
+|colspan="1" rowspan="1" | SCHILTRON FIRE SUPPORT VEHICLE
+|[[Vehicles/SCHILTRON R|'''SCHILTRON R''']]
+|80 [ASSAULT]
+|1E 2M
+| A=751.2/751.2 ''S=400''
+|
+|-
+|colspan="1" rowspan="8" | SCHILTRON SUPPORT VEHICLE
+|[[Vehicles/SCHILTRON A|'''SCHILTRON A''']]
+|80 [ASSAULT]
+|6E 4M
+| A=729.6/729.6 ''S=400''
+|
+|-
+|[[Vehicles/SCHILTRON B|'''SCHILTRON B''']]
+|80 [ASSAULT]
+|4E 4M
+| A=744/744 ''S=400''
+|
+|-
+|[[Vehicles/SCHILTRON C|'''SCHILTRON C''']]
+|80 [ASSAULT]
+|4E
+| A=729.6/729.6 ''S=400''
+|
+|-
+|[[Vehicles/SCHILTRON D|'''SCHILTRON D''']]
+|80 [ASSAULT]
+|2B 1M
+| A=729.6/729.6 ''S=400''
+|
+|-
+|[[Vehicles/SCHILTRON E|'''SCHILTRON E''']]
+|80 [ASSAULT]
+|3B 3E 3M
+| A=744/744 ''S=400''
+|
+|-
+|[[Vehicles/SCHILTRON F|'''SCHILTRON F''']]
+|80 [ASSAULT]
+|1E 8M
+| A=744/744 ''S=400''
+|
+|-
+|[[Vehicles/SCHILTRON G|'''SCHILTRON G''']]
+|80 [ASSAULT]
+|4B 2E
+| A=729.6/729.6 ''S=400''
+|
+|-
+|[[Vehicles/SCHILTRON H|'''SCHILTRON H''']]
+|80 [ASSAULT]
+|4B 2E
+| A=665.6/716 ''S=400''
+|
+|-
+|colspan="1" rowspan="12" | SCHREK FIRE SUPPORT TANK
+|[[Vehicles/SALVAGED SCHREK PRIMITIVE|'''SALVAGED SCHREK PRIMITIVE''']]
+|80 [ASSAULT]
+|3B 7M
+| A=800/800 ''S=400''
+|Primitive<br>
+|-
+|[[Vehicles/SCHREK AC CARRIER|'''SCHREK AC CARRIER''']]
+|80 [ASSAULT]
+|11B
+| A=601.6/601.6 ''S=400''
+|
+|-
+|[[Vehicles/SCHREK COMMAND TANK C3M|'''SCHREK COMMAND TANK C3M''']]
+|80 [ASSAULT]
+|3E 2S
+| A=668.8/668.8 ''S=400''
+|
+|-
+|[[Vehicles/SCHREK GAUSS CARRIER LGR|'''SCHREK GAUSS CARRIER LGR''']]
+|80 [ASSAULT]
+|3B
+| A=552/552 ''S=400''
+|
+|-
+|[[Vehicles/SCHREK LASER CARRIER LL|'''SCHREK LASER CARRIER LL''']]
+|80 [ASSAULT]
+|6E
+| A=508.8/508.8 ''S=400''
+|
+|-
+|[[Vehicles/SCHREK LASER CARRIER (ER LARGE) ERLL|'''SCHREK LASER CARRIER (ER LARGE) ERLL''']]
+|80 [ASSAULT]
+|5E
+| A=531.2/531.2 ''S=400''
+|
+|-
+|[[Vehicles/SCHREK PLASMA CARRIER|'''SCHREK PLASMA CARRIER''']]
+|80 [ASSAULT]
+|5B 3E
+| A=592/592 ''S=400''
+|
+|-
+|[[Vehicles/SCHREK PPC CARRIER|'''SCHREK PPC CARRIER''']]
+|80 [ASSAULT]
+|3E
+| A=489.6/489.6 ''S=400''
+|
+|-
+|[[Vehicles/SCHREK PPC CARRIER (MG)|'''SCHREK PPC CARRIER (MG)''']]
+|80 [ASSAULT]
+|2B 3E
+| A=387.2/387.2 ''S=400''
+|
+|-
+|[[Vehicles/SCHREK SPPC CARRIER|'''SCHREK SPPC CARRIER''']]
+|80 [ASSAULT]
+|3E
+| A=676/676 ''S=400''
+|Legendary<br>
+|-
+|[[Vehicles/SCHREK SUPPORT TANK* ARMOR|'''SCHREK SUPPORT TANK* ARMOR''']]
+|80 [ASSAULT]
+|3E
+| A=612/612 ''S=400''
+|
+|-
+|[[Vehicles/SHREK II SCHREK PIRATE|'''SHREK II SCHREK PIRATE''']]
+|80 [ASSAULT]
+|3E
+| A=630.4/630.4 ''S=400''
+|
+|-
+|colspan="1" rowspan="2" | SLDF HEAVY DRONE
+|[[Vehicles/SLDF HEAVY DRONE HM SLDFDroneHeavy|'''SLDF HEAVY DRONE HM SLDFDroneHeavy''']]
+|80 [ASSAULT]
+|CLASSIFIED
+| CLASSIFIED 
+|
+|-
+|[[Vehicles/SLDF HEAVY DRONE SLDFDroneHeavy|'''SLDF HEAVY DRONE SLDFDroneHeavy''']]
+|80 [ASSAULT]
+|CLASSIFIED
+| CLASSIFIED 
+|
+|-
+|colspan="1" rowspan="16" | WRAITH ASSAULT HOVERCRAFT
+|[[Vehicles/WRAITH UAC20|'''WRAITH UAC20''']]
+|100 [ASSAULT]
+|2B 2M 1S
+| A=857.6/1028 ''S=350''
+|Legendary<br>
+|-
+|[[Vehicles/WRAITH TBOLT|'''WRAITH TBOLT''']]
+|100 [ASSAULT]
+|6M 1S
+| A=857.6/1028 ''S=350''
+|Legendary<br>
+|-
+|[[Vehicles/WRAITH SMRM|'''WRAITH SMRM''']]
+|100 [ASSAULT]
+|8M 1S
+| A=857.6/1028 ''S=350''
+|Legendary<br>
+|-
+|[[Vehicles/WRAITH RISC|'''WRAITH RISC''']]
+|100 [ASSAULT]
+|6M 1S
+| A=857.6/1028 ''S=350''
+|Legendary<br>
+|-
+|[[Vehicles/WRAITH RAC|'''WRAITH RAC''']]
+|100 [ASSAULT]
+|2B 2M 1S
+| A=857.6/1028 ''S=350''
+|Legendary<br>
+|-
+|[[Vehicles/WRAITH PPC|'''WRAITH PPC''']]
+|100 [ASSAULT]
+|1E 4M 1S
+| A=870.4/1028 ''S=350''
+|Legendary<br>
+|-
+|[[Vehicles/WRAITH Pirate|'''WRAITH Pirate''']]
+|100 [ASSAULT]
+|6M 1S
+| A=857.6/1028 ''S=350''
+|Legendary<br>
+|-
+|[[Vehicles/WRAITH MML RISC|'''WRAITH MML RISC''']]
+|100 [ASSAULT]
+|6M 1S
+| A=857.6/1028 ''S=350''
+|Legendary<br>
+|-
+|[[Vehicles/WRAITH MML|'''WRAITH MML''']]
+|100 [ASSAULT]
+|6M 1S
+| A=857.6/1028 ''S=350''
+|Legendary<br>
+|-
+|[[Vehicles/WRAITH LGR|'''WRAITH LGR''']]
+|100 [ASSAULT]
+|2B 2M 1S
+| A=857.6/1028 ''S=350''
+|Legendary<br>
+|-
+|[[Vehicles/WRAITH LBX|'''WRAITH LBX''']]
+|100 [ASSAULT]
+|2B 2M 1S
+| A=857.6/1028 ''S=350''
+|Legendary<br>
+|-
+|[[Vehicles/WRAITH HAMMER|'''WRAITH HAMMER''']]
+|100 [ASSAULT]
+|1B 4M 1S
+| A=857.6/1028 ''S=350''
+|Legendary<br>
+|-
+|[[Vehicles/WRAITH CGR|'''WRAITH CGR''']]
+|100 [ASSAULT]
+|2B 2M 1S
+| A=857.6/1028 ''S=350''
+|Legendary<br>
+|-
+|[[Vehicles/WRAITH ARROW|'''WRAITH ARROW''']]
+|100 [ASSAULT]
+|4M 1S
+| A=857.6/1028 ''S=350''
+|Legendary<br>
+|-
+|[[Vehicles/WRAITH MRM|'''WRAITH MRM''']]
+|100 [ASSAULT]
+|4M 1S
+| A=857.6/1028 ''S=350''
+|Legendary<br>
+|-
+|[[Vehicles/WRAITH ARROW NUKE|'''WRAITH ARROW NUKE''']]
+|100 [ASSAULT]
+|4M 1S
+| A=857.6/1028 ''S=350''
+|Legendary<br>
+
+|}
+
+
+=== Super Heavy Tanks === 
+
+{| class="wikitable sortable mw-collapsible"
+|+
+! Chassis !! Variant !! Weight !! Hardpoints !! HP !! Special
+
+|}
+
+
+==VTOLs==
+
+=== Light VTOL === 
+
+{| class="wikitable sortable mw-collapsible"
+|+
+! Chassis !! Variant !! Weight !! Hardpoints !! HP !! Special
+|-
+|colspan="1" rowspan="1" | BULLFINCH VTOL
+|[[Vehicles/BULLFINCH|'''BULLFINCH''']]
+|15 [LIGHT]
+|1B 2M
+| A=144/148 ''S=100''
+|
+|-
+|colspan="1" rowspan="2" | FERRET
+|[[Vehicles/FERRET ArtyTAG|'''FERRET ArtyTAG''']]
+|5 [LIGHT]
+|2M 1S
+| A=64/68 ''S=50''
+|
+|-
+|[[Vehicles/FERRET RISC|'''FERRET RISC''']]
+|5 [LIGHT]
+|1S
+| A=64/68 ''S=50''
+|Legendary<br>
+|-
+|colspan="1" rowspan="3" | FERRET SCOUT VTOL
+|[[Vehicles/FERRET|'''FERRET''']]
+|5 [LIGHT]
+|1B
+| A=48/48 ''S=50''
+|
+|-
+|[[Vehicles/FERRET ML|'''FERRET ML''']]
+|5 [LIGHT]
+|1E 2S
+| A=96/96 ''S=50''
+|
+|-
+|[[Vehicles/FERRET WOB|'''FERRET WOB''']]
+|5 [LIGHT]
+|1E
+| A=64/68 ''S=50''
+|
+|-
+|colspan="1" rowspan="1" | HAWKEYE
+|[[Vehicles/HAWKEYE|'''HAWKEYE''']]
+|10 [LIGHT]
+|1B
+| A=96/96 ''S=50''
+|
+|-
+|colspan="1" rowspan="1" | HUMMINGBIRD VTOL
+|[[Vehicles/HUMMINGBIRD|'''HUMMINGBIRD''']]
+|10 [LIGHT]
+|1B 2M
+| A=160/164 ''S=50''
+|
+|-
+|colspan="1" rowspan="2" | MANTIS
+|[[Vehicles/MANTIS|'''MANTIS''']]
+|15 [LIGHT]
+|5E
+| A=176/180 ''S=100''
+|
+|-
+|[[Vehicles/MANTIS WOB|'''MANTIS WOB''']]
+|15 [LIGHT]
+|4E
+| A=192/196 ''S=100''
+|
+|-
+|colspan="1" rowspan="2" | MARTEN SCOUT VTOL
+|[[Vehicles/MARTEN SCOUT VTOL (SSRM-4) SSRM4|'''MARTEN SCOUT VTOL (SSRM-4) SSRM4''']]
+|15 [LIGHT]
+|1M
+| A=144/144 ''S=100''
+|
+|-
+|[[Vehicles/MARTEN SCOUT VTOL|'''MARTEN SCOUT VTOL''']]
+|15 [LIGHT]
+|1M
+| A=112/112 ''S=100''
+|
+|-
+|colspan="1" rowspan="1" | MOCKINGBIRD GUNSHIP
+|[[Vehicles/MOCKINGBIRD|'''MOCKINGBIRD''']]
+|15 [LIGHT]
+|4E
+| A=288/292 ''S=100''
+|
+|-
+|colspan="1" rowspan="1" | MOSQUITO
+|[[Vehicles/MOSQUITO|'''MOSQUITO''']]
+|15 [LIGHT]
+|1E 2M
+| A=144/144 ''S=100''
+|
+|-
+|colspan="1" rowspan="1" | OTTER
+|[[Vehicles/OTTER|'''OTTER''']]
+|11 [LIGHT]
+|2M 1S
+| A=196/200 ''S=100''
+|Legendary<br>
+|-
+|colspan="1" rowspan="9" | RIPPER
+|[[Vehicles/MANTIS RISC|'''MANTIS RISC''']]
+|15 [LIGHT]
+|2E 1S
+| A=176/180 ''S=100''
+|Legendary<br>
+|-
+|[[Vehicles/RIPPER SPL|'''RIPPER SPL''']]
+|10 [LIGHT]
+|2E 1M
+| A=108/112 ''S=50''
+|
+|-
+|[[Vehicles/RIPPER WOB|'''RIPPER WOB''']]
+|10 [LIGHT]
+|2E 2M
+| A=80/112 ''S=50''
+|
+|-
+|[[Vehicles/RIPPER MG|'''RIPPER MG''']]
+|10 [LIGHT]
+|2B 1M
+| A=108/112 ''S=50''
+|
+|-
+|[[Vehicles/RIPPER ERML|'''RIPPER ERML''']]
+|10 [LIGHT]
+|2E
+| A=108/112 ''S=50''
+|
+|-
+|[[Vehicles/RIPPER|'''RIPPER''']]
+|10 [LIGHT]
+|2E 1M
+| A=108/112 ''S=50''
+|
+|-
+|[[Vehicles/RIPPER PLPPC|'''RIPPER PLPPC''']]
+|10 [LIGHT]
+|1E
+| A=127.2/131.2 ''S=50''
+|
+|-
+|[[Vehicles/RIPPER Royal|'''RIPPER Royal''']]
+|10 [LIGHT]
+|1E 1M
+| A=108/112 ''S=50''
+|
+|-
+|[[Vehicles/RIPPER Flamer|'''RIPPER Flamer''']]
+|10 [LIGHT]
+|2E 1M
+| A=108/112 ''S=50''
+|
+|-
+|colspan="1" rowspan="1" | RIPPER TRANSPORT VTOL
+|[[Vehicles/RIPPER TRANSPORT VTOL LPPC|'''RIPPER TRANSPORT VTOL LPPC''']]
+|10 [LIGHT]
+|1E
+| A=240/244 ''S=50''
+|
+|-
+|colspan="1" rowspan="3" | SPRINT SCOUT HELICOPTER
+|[[Vehicles/SPRINT SCOUT HELICOPTER|'''SPRINT SCOUT HELICOPTER''']]
+|10 [LIGHT]
+|1S
+| A=80/80 ''S=50''
+|
+|-
+|[[Vehicles/SPRINT SCOUT HELICOPTER C3|'''SPRINT SCOUT HELICOPTER C3''']]
+|10 [LIGHT]
+|2M
+| A=80/80 ''S=50''
+|
+|-
+|[[Vehicles/SPRINT SCOUT HELICOPTER ML|'''SPRINT SCOUT HELICOPTER ML''']]
+|10 [LIGHT]
+|1E
+| A=80/80 ''S=50''
+|
+
+|}
+
+
+=== Medium VTOL === 
+
+{| class="wikitable sortable mw-collapsible"
+|+
+! Chassis !! Variant !! Weight !! Hardpoints !! HP !! Special
+|-
+|colspan="1" rowspan="1" | A-11 GUNSHIP
+|[[Vehicles/A-11 LIGHTNING BOLT A11|'''A-11 LIGHTNING BOLT A11''']]
+|30 [MEDIUM]
+|1E 1S
+| A=416/620 ''S=150''
+|
+|-
+|colspan="1" rowspan="2" | ANHUR TRANSPORT VTOL
+|[[Vehicles/ANHUR TRANSPORT VTOL|'''ANHUR TRANSPORT VTOL''']]
+|30 [MEDIUM]
+|3E
+| A=214.4/230.4 ''S=150''
+|Clan<br>
+|-
+|[[Vehicles/ANHUR TRANSPORT VTOL BA|'''ANHUR TRANSPORT VTOL BA''']]
+|30 [MEDIUM]
+|2B 2E
+| A=214.4/230.4 ''S=150''
+|Clan<br>
+|-
+|colspan="1" rowspan="1" | AWACS
+|[[Vehicles/AWACS|'''AWACS''']]
+|30 [MEDIUM]
+|3M 3S
+| A=384/160 ''S=150''
+|
+|-
+|colspan="1" rowspan="4" | BALAC
+|[[Vehicles/BALAC ATM|'''BALAC ATM''']]
+|25 [MEDIUM]
+|1E 2M
+| A=214.4/222.4 ''S=150''
+|Clan<br>
+|-
+|[[Vehicles/BALAC Spotter|'''BALAC Spotter''']]
+|25 [MEDIUM]
+|2M 1S
+| A=214.4/222.4 ''S=150''
+|Clan<br>
+|-
+|[[Vehicles/BALAC WOB|'''BALAC WOB''']]
+|25 [MEDIUM]
+|1E 2M
+| A=294.4/302.4 ''S=150''
+|Clan<br>
+|-
+|[[Vehicles/BALAC RISC|'''BALAC RISC''']]
+|25 [MEDIUM]
+|1E 2M
+| A=192/220 ''S=150''
+|Clan<br>
+Legendary<br>
+|-
+|colspan="1" rowspan="4" | CAVALRY ATTACK HELICOPTER
+|[[Vehicles/CAVALRY (LRM) HELICOPTER|'''CAVALRY (LRM) HELICOPTER''']]
+|25 [MEDIUM]
+|2M
+| A=240/240 ''S=150''
+|
+|-
+|[[Vehicles/CAVALRY (SRM) HELICOPTER|'''CAVALRY (SRM) HELICOPTER''']]
+|25 [MEDIUM]
+|5M
+| A=176/176 ''S=150''
+|
+|-
+|[[Vehicles/CAVALRY (TAG) HELICOPTER|'''CAVALRY (TAG) HELICOPTER''']]
+|25 [MEDIUM]
+|1M 1S
+| A=339.2/339.2 ''S=150''
+|
+|-
+|[[Vehicles/CAVALRY ATTACK HELICOPTER|'''CAVALRY ATTACK HELICOPTER''']]
+|25 [MEDIUM]
+|4M
+| A=240/240 ''S=150''
+|
+|-
+|colspan="1" rowspan="2" | COBRA TRANSPORT VTOL
+|[[Vehicles/COBRA COMMAND VTOL|'''COBRA COMMAND VTOL''']]
+|30 [MEDIUM]
+|1E 2S
+| A=192/192 ''S=150''
+|
+|-
+|[[Vehicles/COBRA TRANSPORT VTOL|'''COBRA TRANSPORT VTOL''']]
+|30 [MEDIUM]
+|1E 2S
+| A=192/192 ''S=150''
+|
+|-
+|colspan="1" rowspan="2" | CYRANO GUNSHIP
+|[[Vehicles/CYRANO GUNSHIP (ROYAL)|'''CYRANO GUNSHIP (ROYAL)''']]
+|30 [MEDIUM]
+|1E 3S
+| A=250.4/250.4 ''S=150''
+|
+|-
+|[[Vehicles/CYRANO GUNSHIP|'''CYRANO GUNSHIP''']]
+|30 [MEDIUM]
+|1E
+| A=71.2/72 ''S=150''
+|
+|-
+|colspan="1" rowspan="2" | DI MULTIPURPOSE VTOL
+|[[Vehicles/DI GUNSHIP|'''DI GUNSHIP''']]
+|25 [MEDIUM]
+|1E 1M
+| A=460/460 ''S=180''
+|
+|-
+|[[Vehicles/DI MULTIPURPOSE VTOL MULTI|'''DI MULTIPURPOSE VTOL MULTI''']]
+|25 [MEDIUM]
+|1E 1S
+| A=460/460 ''S=180''
+|
+|-
+|colspan="1" rowspan="9" | DONAR ATTACK HELICOPTER
+|[[Vehicles/DONAR ATTACK HELICOPTER (IATM) Society|'''DONAR ATTACK HELICOPTER (IATM) Society''']]
+|21 [MEDIUM]
+|2M
+| A=321.6/321.6 ''S=150''
+|Clan<br>
+|-
+|[[Vehicles/DONAR ATTACK HELICOPTER (IATM) Society Nova|'''DONAR ATTACK HELICOPTER (IATM) Society Nova''']]
+|21 [MEDIUM]
+|1M 1S
+| A=321.6/341.6 ''S=150''
+|Clan<br>
+|-
+|[[Vehicles/DONAR ATTACK HELICOPTER (IATM) Society|'''DONAR ATTACK HELICOPTER (IATM) Society''']]
+|21 [MEDIUM]
+|2M
+| A=212/264 ''S=150''
+|Clan<br>
+|-
+|[[Vehicles/DONAR ATTACK HELICOPTER (IATM) Society Nova|'''DONAR ATTACK HELICOPTER (IATM) Society Nova''']]
+|21 [MEDIUM]
+|1M 1S
+| A=264/264 ''S=150''
+|Clan<br>
+|-
+|[[Vehicles/DONAR (CAS)|'''DONAR (CAS)''']]
+|21 [MEDIUM]
+|2E 1M 1S
+| A=321.6/333.6 ''S=150''
+|Clan<br>
+|-
+|[[Vehicles/DONAR (RECON)|'''DONAR (RECON)''']]
+|21 [MEDIUM]
+|1E 1S
+| A=321.6/333.6 ''S=150''
+|Clan<br>
+|-
+|[[Vehicles/DONAR ATTACK HELICOPTER Society ERL|'''DONAR ATTACK HELICOPTER Society ERL''']]
+|21 [MEDIUM]
+|1E 1M
+| A=321.6/340.8 ''S=150''
+|Clan<br>
+|-
+|[[Vehicles/DONAR ATTACK HELICOPTER Society ERL|'''DONAR ATTACK HELICOPTER Society ERL''']]
+|21 [MEDIUM]
+|1E 1M
+| A=264/341.6 ''S=150''
+|Clan<br>
+|-
+|[[Vehicles/DONAR ATTACK HELICOPTER|'''DONAR ATTACK HELICOPTER''']]
+|21 [MEDIUM]
+|1E 2M
+| A=321.6/333.6 ''S=150''
+|Clan<br>
+|-
+|colspan="1" rowspan="1" | DURGA ATTACK HELICOPTER
+|[[Vehicles/DURGA ATTACK HELICOPTER|'''DURGA ATTACK HELICOPTER''']]
+|25 [MEDIUM]
+|3E 1M
+| A=304/304 ''S=150''
+|Clan<br>
+|-
+|colspan="1" rowspan="4" | HAWK MOTH
+|[[Vehicles/HAWK MOTH HawkMoth WOB|'''HAWK MOTH HawkMoth WOB''']]
+|25 [MEDIUM]
+|3B 1E
+| A=260/260 ''S=180''
+|
+|-
+|[[Vehicles/HAWK MOTH HawkMoth ARMOUR|'''HAWK MOTH HawkMoth ARMOUR''']]
+|25 [MEDIUM]
+|1B
+| A=196/196 ''S=150''
+|
+|-
+|[[Vehicles/HAWK MOTH HawkMoth LGauss|'''HAWK MOTH HawkMoth LGauss''']]
+|25 [MEDIUM]
+|1B
+| A=124.8/140.8 ''S=150''
+|
+|-
+|[[Vehicles/SOCIETY HAWK MOTH HawkMoth LGauss|'''SOCIETY HAWK MOTH HawkMoth LGauss''']]
+|25 [MEDIUM]
+|1B
+| A=212/140.8 ''S=150''
+|Clan<br>
+|-
+|colspan="1" rowspan="1" | HAWK MOTH GUNSHIP
+|[[Vehicles/HAWK MOTH GUNSHIP HawkMoth TBolt|'''HAWK MOTH GUNSHIP HawkMoth TBolt''']]
+|25 [MEDIUM]
+|2M 1S
+| A=260/268 ''S=150''
+|
+|-
+|colspan="1" rowspan="5" | NIGHTSHADE ECM VTOL
+|[[Vehicles/NIGHTSHADE (ARMOR)|'''NIGHTSHADE (ARMOR)''']]
+|25 [MEDIUM]
+|1E
+| A=208/208 ''S=150''
+|
+|-
+|[[Vehicles/NIGHTSHADE (LAC)|'''NIGHTSHADE (LAC)''']]
+|25 [MEDIUM]
+|1B 1S
+| A=268/276 ''S=150''
+|
+|-
+|[[Vehicles/NIGHTSHADE (LPPC)|'''NIGHTSHADE (LPPC)''']]
+|25 [MEDIUM]
+|1E
+| A=196/204 ''S=150''
+|
+|-
+|[[Vehicles/NIGHTSHADE (ROYAL)|'''NIGHTSHADE (ROYAL)''']]
+|25 [MEDIUM]
+|1E 2M 1S
+| A=214.4/214.4 ''S=150''
+|
+|-
+|[[Vehicles/NIGHTSHADE ECM VTOL|'''NIGHTSHADE ECM VTOL''']]
+|25 [MEDIUM]
+|1E
+| A=144/144 ''S=150''
+|
+|-
+|colspan="1" rowspan="1" | PINTO ATTACK VTOL
+|[[Vehicles/PINTO ATTACK VTOL|'''PINTO ATTACK VTOL''']]
+|30 [MEDIUM]
+|3E 1M
+| A=319.2/319.2 ''S=150''
+|
+|-
+|colspan="1" rowspan="1" | RED KITE ATTACK VTOL
+|[[Vehicles/RED KITE ATTACK VTOL REDKITE|'''RED KITE ATTACK VTOL REDKITE''']]
+|25 [MEDIUM]
+|6E
+| A=232/232 ''S=180''
+|
+|-
+|colspan="1" rowspan="1" | STRIKE FALCON ATTACK VTOL
+|[[Vehicles/STRIKE FALCON ATTACK VTOL StrikeFalcon|'''STRIKE FALCON ATTACK VTOL StrikeFalcon''']]
+|30 [MEDIUM]
+|4B 2M
+| A=224/152 ''S=150''
+|
+|-
+|colspan="1" rowspan="3" | STRIX STEALTH VTOL
+|[[Vehicles/STRIX STEALTH VTOL|'''STRIX STEALTH VTOL''']]
+|30 [MEDIUM]
+|1B 2E
+| A=300.8/300.8 ''S=180''
+|Clan<br>
+|-
+|[[Vehicles/STRIX STEALTH VTOL RRAC2|'''STRIX STEALTH VTOL RRAC2''']]
+|30 [MEDIUM]
+|1B 1E
+| A=236.8/244.8 ''S=180''
+|Clan<br>
+|-
+|[[Vehicles/STRIX STEALTH VTOL PPZ|'''STRIX STEALTH VTOL PPZ''']]
+|30 [MEDIUM]
+|1E 2S
+| A=268.8/276.8 ''S=180''
+|
+|-
+|colspan="1" rowspan="4" | VECTOR
+|[[Vehicles/VECTOR (ATTACK)|'''VECTOR (ATTACK)''']]
+|20 [MEDIUM]
+|1E 2M
+| A=215.2/248 ''S=100''
+|
+|-
+|[[Vehicles/VECTOR (EWS)|'''VECTOR (EWS)''']]
+|20 [MEDIUM]
+|4E 1S
+| A=215.2/248 ''S=100''
+|
+|-
+|[[Vehicles/VECTOR (SCOUT)|'''VECTOR (SCOUT)''']]
+|20 [MEDIUM]
+|4E 1S
+| A=215.2/248 ''S=100''
+|
+|-
+|[[Vehicles/VECTOR|'''VECTOR''']]
+|20 [MEDIUM]
+|3E
+| A=215.2/248 ''S=100''
+|
+|-
+|colspan="1" rowspan="1" | VENATOR
+|[[Vehicles/VENATOR|'''VENATOR''']]
+|25 [MEDIUM]
+|1B
+| A=176/184 ''S=150''
+|
+|-
+|colspan="1" rowspan="6" | WARRIOR
+|[[Vehicles/WARRIOR H8|'''WARRIOR H8''']]
+|20 [MEDIUM]
+|3M
+| A=196/204 ''S=100''
+|
+|-
+|[[Vehicles/WARRIOR H7C|'''WARRIOR H7C''']]
+|21 [MEDIUM]
+|2M
+| A=176/184 ''S=150''
+|
+|-
+|[[Vehicles/WARRIOR H7B|'''WARRIOR H7B''']]
+|21 [MEDIUM]
+|1E 2M
+| A=297.6/305.6 ''S=150''
+|
+|-
+|[[Vehicles/WARRIOR H7A|'''WARRIOR H7A''']]
+|21 [MEDIUM]
+|2B
+| A=112/120 ''S=150''
+|
+|-
+|[[Vehicles/WARRIOR H7|'''WARRIOR H7''']]
+|21 [MEDIUM]
+|1B 1M
+| A=112/120 ''S=150''
+|
+|-
+|[[Vehicles/WARRIOR WOB|'''WARRIOR WOB''']]
+|20 [MEDIUM]
+|1B 1M
+| A=178.4/186.4 ''S=100''
+|
+|-
+|colspan="1" rowspan="3" | YELLOW JACKET
+|[[Vehicles/YELLOW JACKET YellowJacket Pirate|'''YELLOW JACKET YellowJacket Pirate''']]
+|30 [MEDIUM]
+|1E 1M 1S
+| A=224/200 ''S=150''
+|
+|-
+|[[Vehicles/YELLOW JACKET YellowJacket PPLASMA|'''YELLOW JACKET YellowJacket PPLASMA''']]
+|30 [MEDIUM]
+|1E
+| A=268/276 ''S=150''
+|
+|-
+|[[Vehicles/YELLOW JACKET YellowJacket RISC|'''YELLOW JACKET YellowJacket RISC''']]
+|30 [MEDIUM]
+|1M 1S
+| A=272/280 ''S=150''
+|Legendary<br>
+|-
+|colspan="1" rowspan="8" | YELLOW JACKET GUNSHIP
+|[[Vehicles/YELLOW JACKET YellowJacket WOB|'''YELLOW JACKET YellowJacket WOB''']]
+|30 [MEDIUM]
+|1B
+| A=308/316 ''S=150''
+|
+|-
+|[[Vehicles/YELLOW JACKET YellowJacket Periphery|'''YELLOW JACKET YellowJacket Periphery''']]
+|30 [MEDIUM]
+|1B 2M
+| A=224/232 ''S=150''
+|
+|-
+|[[Vehicles/YELLOW JACKET YellowJacket Gauss|'''YELLOW JACKET YellowJacket Gauss''']]
+|30 [MEDIUM]
+|1B
+| A=223.2/231.2 ''S=150''
+|
+|-
+|[[Vehicles/YELLOW JACKET YellowJacket AMMO|'''YELLOW JACKET YellowJacket AMMO''']]
+|30 [MEDIUM]
+|1B
+| A=160/160 ''S=150''
+|
+|-
+|[[Vehicles/YELLOW JACKET YellowJacket Arrow Nuke|'''YELLOW JACKET YellowJacket Arrow Nuke''']]
+|30 [MEDIUM]
+|1M
+| A=223.2/223.2 ''S=150''
+|Legendary<br>
+|-
+|[[Vehicles/YELLOW JACKET GUNSHIP YellowJacket RAC5|'''YELLOW JACKET GUNSHIP YellowJacket RAC5''']]
+|30 [MEDIUM]
+|1B
+| A=320/248 ''S=150''
+|
+|-
+|[[Vehicles/YELLOW JACKET GUNSHIP YellowJacket HRAC5|'''YELLOW JACKET GUNSHIP YellowJacket HRAC5''']]
+|30 [MEDIUM]
+|1B
+| A=286.4/286.4 ''S=150''
+|Legendary<br>
+|-
+|[[Vehicles/YELLOW JACKET GUNSHIP YellowJacket Arrow|'''YELLOW JACKET GUNSHIP YellowJacket Arrow''']]
+|30 [MEDIUM]
+|1M
+| A=224/208 ''S=150''
+|
+
+|}
+
+
+=== Heavy VTOL === 
+
+{| class="wikitable sortable mw-collapsible"
+|+
+! Chassis !! Variant !! Weight !! Hardpoints !! HP !! Special
+|-
+|colspan="1" rowspan="1" | 35 TON GUNSHIP
+|[[Vehicles/35 TON GUNSHIP WIPTOL35 BASE|'''35 TON GUNSHIP WIPTOL35 BASE''']]
+|35 [HEAVY]
+|CLASSIFIED
+| CLASSIFIED 
+|
+|-
+|colspan="1" rowspan="1" | 40 TON GUNSHIP
+|[[Vehicles/40 TON GUNSHIP WIPTOL BASE|'''40 TON GUNSHIP WIPTOL BASE''']]
+|40 [HEAVY]
+|CLASSIFIED
+| CLASSIFIED 
+|
+|-
+|colspan="1" rowspan="1" | GARUDA
+|[[Vehicles/GARUDA|'''GARUDA''']]
+|40 [HEAVY]
+|1E 1M 1S
+| A=538.4/538.4 ''S=320''
+|Clan<br>
+|-
+|colspan="1" rowspan="4" | IFRIT STRIKE CRAFT
+|[[Vehicles/IFRIT MALAKIM SNUB|'''IFRIT MALAKIM SNUB''']]
+|40 [HEAVY]
+|2B 1E 6M 3S
+| A=270.4/624 ''S=280''
+|
+|-
+|[[Vehicles/IFRIT SHAKUSH LAC|'''IFRIT SHAKUSH LAC''']]
+|40 [HEAVY]
+|1B 4M 3S
+| A=398.4/624 ''S=280''
+|
+|-
+|[[Vehicles/IFRIT STRIKE CRAFT SRM|'''IFRIT STRIKE CRAFT SRM''']]
+|40 [HEAVY]
+|12M 3S
+| A=398.4/624 ''S=280''
+|
+|-
+|[[Vehicles/IFRIT TUMTIR HMRM|'''IFRIT TUMTIR HMRM''']]
+|40 [HEAVY]
+|3M 3S
+| A=398.4/624 ''S=280''
+|
+|-
+|colspan="1" rowspan="13" | NIDHOGG GUNSHIP
+|[[Vehicles/NIDHOGG GUNSHIP Pirate|'''NIDHOGG GUNSHIP Pirate''']]
+|45 [HEAVY]
+|3E 2M 4S
+| A=640/664 ''S=350''
+|
+|-
+|[[Vehicles/NIDHOGG GUNSHIP WOB|'''NIDHOGG GUNSHIP WOB''']]
+|45 [HEAVY]
+|1E 6M 2S
+| A=640/672 ''S=350''
+|
+|-
+|[[Vehicles/NIDHOGG GUNSHIP Stealth|'''NIDHOGG GUNSHIP Stealth''']]
+|45 [HEAVY]
+|1B 2M 2S
+| A=576/652 ''S=350''
+|
+|-
+|[[Vehicles/NIDHOGG GUNSHIP UAC10|'''NIDHOGG GUNSHIP UAC10''']]
+|45 [HEAVY]
+|1B 2E 2M 2S
+| A=640/672 ''S=350''
+|
+|-
+|[[Vehicles/NIDHOGG GUNSHIP Gauss|'''NIDHOGG GUNSHIP Gauss''']]
+|45 [HEAVY]
+|1B 2E 2S
+| A=640/672 ''S=350''
+|
+|-
+|[[Vehicles/NIDHOGG GUNSHIP HVAC2|'''NIDHOGG GUNSHIP HVAC2''']]
+|45 [HEAVY]
+|2B 2M 2S
+| A=574.4/624 ''S=350''
+|
+|-
+|[[Vehicles/NIDHOGG GUNSHIP CLAN|'''NIDHOGG GUNSHIP CLAN''']]
+|45 [HEAVY]
+|CLASSIFIED
+| CLASSIFIED 
+|Clan<br>
+|-
+|[[Vehicles/NIDHOGG GUNSHIP Bomber2|'''NIDHOGG GUNSHIP Bomber2''']]
+|45 [HEAVY]
+|1E 10M 2S
+| A=640/672 ''S=350''
+|
+|-
+|[[Vehicles/NIDHOGG GUNSHIP Bomber|'''NIDHOGG GUNSHIP Bomber''']]
+|45 [HEAVY]
+|1E 4M 2S
+| A=640/672 ''S=350''
+|
+|-
+|[[Vehicles/NIDHOGG GUNSHIP BASE|'''NIDHOGG GUNSHIP BASE''']]
+|45 [HEAVY]
+|CLASSIFIED
+| CLASSIFIED 
+|
+|-
+|[[Vehicles/NIDHOGG GUNSHIP|'''NIDHOGG GUNSHIP''']]
+|45 [HEAVY]
+|1B 4M 2S
+| A=640/672 ''S=350''
+|
+|-
+|[[Vehicles/NIDHOGG GUNSHIP HVAC20|'''NIDHOGG GUNSHIP HVAC20''']]
+|45 [HEAVY]
+|1B 2M 2S
+| A=640/648 ''S=350''
+|
+|-
+|[[Vehicles/NIDHOGG GUNSHIP RISC|'''NIDHOGG GUNSHIP RISC''']]
+|45 [HEAVY]
+|1B 4M 4S
+| A=640/672 ''S=350''
+|Legendary<br>
+
+|}
+
+
+=== Assault VTOL === 
+
+{| class="wikitable sortable mw-collapsible"
+|+
+! Chassis !! Variant !! Weight !! Hardpoints !! HP !! Special
+|-
+|colspan="1" rowspan="11" | CASCATELLE
+|[[Vehicles/CASCATELLE BASE|'''CASCATELLE BASE''']]
+|60 [ASSAULT]
+|CLASSIFIED
+| CLASSIFIED 
+|
+|-
+|[[Vehicles/CASCATELLE RISC|'''CASCATELLE RISC''']]
+|60 [ASSAULT]
+|1E 6M 2S
+| A=620/624 ''S=420''
+|Legendary<br>
+|-
+|[[Vehicles/CASCATELLE TBM|'''CASCATELLE TBM''']]
+|60 [ASSAULT]
+|1E 7M 2S
+| A=560/568 ''S=420''
+|
+|-
+|[[Vehicles/CASCATELLE Pirate|'''CASCATELLE Pirate''']]
+|60 [ASSAULT]
+|1B 2E 4M 1S
+| A=554.4/562.4 ''S=420''
+|
+|-
+|[[Vehicles/CASCATELLE Artillery|'''CASCATELLE Artillery''']]
+|60 [ASSAULT]
+|1B 4M 2S
+| A=496/504 ''S=420''
+|
+|-
+|[[Vehicles/CASCATELLE PLASMA|'''CASCATELLE PLASMA''']]
+|60 [ASSAULT]
+|6E 8M 1S
+| A=496/504 ''S=420''
+|
+|-
+|[[Vehicles/CASCATELLE RAC2|'''CASCATELLE RAC2''']]
+|60 [ASSAULT]
+|2B 4M 2S
+| A=496/512 ''S=420''
+|
+|-
+|[[Vehicles/CASCATELLE HGAUSS|'''CASCATELLE HGAUSS''']]
+|60 [ASSAULT]
+|1B 4M 1S
+| A=656/664 ''S=420''
+|
+|-
+|[[Vehicles/CASCATELLE LRM|'''CASCATELLE LRM''']]
+|60 [ASSAULT]
+|2E 6M 2S
+| A=411.2/472 ''S=420''
+|
+|-
+|[[Vehicles/CASCATELLE MARS|'''CASCATELLE MARS''']]
+|60 [ASSAULT]
+|2E 7M 1S
+| A=423.2/472 ''S=420''
+|
+|-
+|[[Vehicles/CASCATELLE PERIPHERY|'''CASCATELLE PERIPHERY''']]
+|60 [ASSAULT]
+|4E 8M 1S
+| A=568/576 ''S=420''
+|
+|-
+|colspan="1" rowspan="9" | SETH STEALTH BOMBER
+|[[Vehicles/SETH STEALTH BOMBER LaserBlast|'''SETH STEALTH BOMBER LaserBlast''']]
+|55 [ASSAULT]
+|12E 4M 2S
+| A=562.4/570.4 ''S=420''
+|
+|-
+|[[Vehicles/SETH STEALTH BOMBER RISC|'''SETH STEALTH BOMBER RISC''']]
+|55 [ASSAULT]
+|2E 2M 2S
+| A=563.2/579.2 ''S=420''
+|Legendary<br>
+|-
+|[[Vehicles/SETH STEALTH BOMBER Arrow|'''SETH STEALTH BOMBER Arrow''']]
+|55 [ASSAULT]
+|2E 8M 2S
+| A=563.2/563.2 ''S=420''
+|
+|-
+|[[Vehicles/SETH STEALTH BOMBER WOB|'''SETH STEALTH BOMBER WOB''']]
+|55 [ASSAULT]
+|1E 5M 2S
+| A=562.4/570.4 ''S=420''
+|
+|-
+|[[Vehicles/SETH STEALTH BOMBER Fire|'''SETH STEALTH BOMBER Fire''']]
+|55 [ASSAULT]
+|2E 10M 2S
+| A=562.4/570.4 ''S=420''
+|
+|-
+|[[Vehicles/SETH STEALTH BOMBER Snub|'''SETH STEALTH BOMBER Snub''']]
+|55 [ASSAULT]
+|1E 5M 3S
+| A=562.4/570.4 ''S=420''
+|
+|-
+|[[Vehicles/SETH STEALTH BOMBER BASE|'''SETH STEALTH BOMBER BASE''']]
+|55 [ASSAULT]
+|CLASSIFIED
+| CLASSIFIED 
+|
+|-
+|[[Vehicles/SETH STEALTH BOMBER LBX5|'''SETH STEALTH BOMBER LBX5''']]
+|55 [ASSAULT]
+|2B 2E 4M 2S
+| A=562.4/570.4 ''S=420''
+|
+|-
+|[[Vehicles/SETH STEALTH BOMBER AOERL|'''SETH STEALTH BOMBER AOERL''']]
+|55 [ASSAULT]
+|2E 10M 3S
+| A=562.4/570.4 ''S=420''
+|
+|-
+|colspan="1" rowspan="9" | WARTHOG CAS
+|[[Vehicles/WARTHOG CAS RRAC10|'''WARTHOG CAS RRAC10''']]
+|51 [ASSAULT]
+|1B 2M 3S
+| A=760/856 ''S=420''
+|
+|-
+|[[Vehicles/WARTHOG CAS WOB|'''WARTHOG CAS WOB''']]
+|51 [ASSAULT]
+|1B 4M 3S
+| A=760/856 ''S=420''
+|
+|-
+|[[Vehicles/WARTHOG CAS UAC2|'''WARTHOG CAS UAC2''']]
+|51 [ASSAULT]
+|2B 2E 2M 3S
+| A=760/856 ''S=420''
+|
+|-
+|[[Vehicles/WARTHOG CAS PIRATE|'''WARTHOG CAS PIRATE''']]
+|51 [ASSAULT]
+|1B 2M 3S
+| A=772/852 ''S=420''
+|
+|-
+|[[Vehicles/WARTHOG CAS LRAC5|'''WARTHOG CAS LRAC5''']]
+|51 [ASSAULT]
+|1B 2E 2M 3S
+| A=760/856 ''S=420''
+|
+|-
+|[[Vehicles/WARTHOG CAS ELITE|'''WARTHOG CAS ELITE''']]
+|51 [ASSAULT]
+|1B 1E 4M 3S
+| A=608/828 ''S=420''
+|Legendary<br>
+|-
+|[[Vehicles/WARTHOG CAS BASE|'''WARTHOG CAS BASE''']]
+|51 [ASSAULT]
+|CLASSIFIED
+| CLASSIFIED 
+|
+|-
+|[[Vehicles/WARTHOG CAS RISC|'''WARTHOG CAS RISC''']]
+|51 [ASSAULT]
+|1B 2M 3S
+| A=760/856 ''S=420''
+|Legendary<br>
+|-
+|[[Vehicles/WARTHOG CAS RRAC5|'''WARTHOG CAS RRAC5''']]
+|51 [ASSAULT]
+|1B 1E 2M 3S
+| A=760/856 ''S=420''
+|
+
+|}
+
+
+{{-stop-}}

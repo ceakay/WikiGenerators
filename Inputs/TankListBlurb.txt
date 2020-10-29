@@ -1,0 +1,31 @@
+[This page was recently overhauled with scripted generation. Please report any errors on [https://discord.gg/roguetech Discord] to @ceakay]
+
+Old page can be found here: [[Vehicles (Deprecated)]]
+
+A list of every Vehicle and their variants currently found in Roguetech. Click on each vehicle to find a list of variants and their attached weapons/equipment. Unless other wise stated,  vehicles will use re-purposed HBS assets, these are referenced in the Vehicle Model category. Please post any errors or inconsistencies you find, in the Roguetech discord so we can correct them.
+
+==Table Legend==
+{| class="wikitable mw-collapsible mw-collapsed"
+|+
+| Hardpoint Abbreviations:
+* (B) Ballistic
+* (E) Energy
+* (M) Missile
+* (S) Support (aka AntiPersonnel)
+* (O) OmniPoint
+* (JJ) JumpJet
+|-
+| HP Abbreviations:
+* (A) Armor (X/Y)
+** (X) Set Armor / (Y) Max Armor
+* (S) Structure
+|-
+| Special Tags
+*'''Clan:''' Clan vehicles hit hard and faster than their Inner Sphere counterparts. Equipped with the latest products of Clan science, these vehicles are a treasure trove of Clan technology - if you can kill it. Clan tank crews, except Hell's Horses, have less training or combat experience than their IS counterparts which has resulted in lower quality crews. '''Equipped with Clan weapons and technology as standard.'''
+
+*'''Legendary:''' Rare, experimental, and unusually powerful and expensive units. Generally only a maximum of one such unit can spawn per lance.
+
+*'''Primitive:'''  If it ain't broke, don't fix it. If it breaks, swap in something else and its as good as new. These units are generally poorly equipped in comparison to regular IS units, with low tech alternatives to conventional technology.  '''Lower tech alternative vehicles.'''
+
+*'''SLDF:''' Dating back to the Star League days, and often featuring what was once Lostech, SLDF Royal units are mostly found in the ranks of Comstar, at least in the Inner Sphere. The Clans still field some models they brought with them on the Exodus largely unchanged, despite their own advancing technology. Generally a cut above average IS units they're considered good enough for second line and garrison units.
+|}
