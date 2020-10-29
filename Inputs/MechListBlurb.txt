@@ -12,11 +12,12 @@ Fixed equipment cannot be removed from a mech. In exchange for this lack of flex
 {| class="wikitable mw-collapsible mw-collapsed"
 |+
 | Hardpoint Abbreviations:
+* (O) OmniPoint
 * (B) Ballistic
 * (E) Energy
 * (M) Missile
 * (S) Support (aka AntiPersonnel)
-* (O) OmniPoint
+* (BA) BattleArmor
 * (JJ) JumpJet
 |-
 | HP Abbreviations:
