@@ -229,7 +229,6 @@ foreach ($Cat in $CatOrder) {
             if (-not $Mech.BLACKLIST) {
                 #loadout subtable
                 $LoadoutText = "`r`n==Mech Bay==`r`n"
-                $LoadoutText += "Tonnage: $($Mech.Tonnage)`r`n"
                 $LoadoutText += "`r`n"+'##LoadoutQuirkText##'+"`r`n"
                 $LoadoutText += "`r`n{| class=`"wikitable`"`r`n"
                 $LoadoutText += "|-`r`n! !! !! Left !! Center !! Right`r`n"
