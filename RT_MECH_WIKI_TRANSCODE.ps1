@@ -213,30 +213,67 @@ foreach ($Cat in $CatOrder) {
             }
             $TagText = "|$($TagText.Trim())`r`n"
             $ChassisTable = $TagText+$ChassisTable
-            #loadout
+            #HP fix
+            #FUUUUUUUU imported as object. create a holder hash, dump object to hash, convert object to hashtable and overwrite
+            $HPItems = @($($mech.HP.psobject.Properties | select -Property Name).Name)
+            foreach ($HPItem in $HPItems) {
+                $HolderHashHP = @{}
+                $Mech.HP.$HPItem.psobject.Properties | foreach { $HolderHashHP[$_.Name] = $_.Value }
+                $Mech.HP.$HPItem = @{}
+                $Mech.HP.$HPItem = $HolderHashHP
+                $HolderHPTotal = 0
+                $Mech.HP.$HPItem.GetEnumerator() | foreach { $HolderHPTotal += $_.Value }
+                $Mech.HP.$HPItem.Add("Total", $HolderHPTotal)
+            }
+            #loadout/HP
             if (-not $Mech.BLACKLIST) {
                 #loadout subtable
-                $LoadoutText = "`r`n==Loadout==`r`n"
+                $LoadoutText = "`r`n==Mech Bay==`r`n"
+                $LoadoutText += "Tonnage: $($Mech.Tonnage)`r`n"
                 $LoadoutText += "`r`n"+'##LoadoutQuirkText##'+"`r`n"
                 $LoadoutText += "`r`n{| class=`"wikitable`"`r`n"
                 $LoadoutText += "|-`r`n! !! !! Left !! Center !! Right`r`n"
                 
                 $TableRowCount = 0
                 foreach ($TableRow in $HPSort) {
-                    $LoadoutText += "|-`r`n! rowspan=`"3`" | '''$($TableRowNames[$TableRowCount])'''`r`n"
-                    $TableRowCount++
-                    #MexPage HardPoints SubRow
-                    $LoadoutText += "! HardPoints`r`n"
-                    foreach ($TableLoc in $TableRow) {
-                        $LoadoutText += "! ["
-                        foreach ($Mount in $Mounts) {
-                            $MountName = $MountsLongHash.$Mount
-                            $MountCount = $($Mech.Hardpoint.$($HPLongSortHash.$TableLoc) | ? {$_ -match $MountName}).Count
-                            if ($MountCount -gt 0) {
-                                $LoadoutText += " $MountCount$Mount"
+                    $LoadoutText += "|-`r`n! rowspan=`"4`" | '''$($TableRowNames[$TableRowCount])'''`r`n"
+                    #MexPage Health/HP
+                    $LoadoutText += "! Health`r`n"
+                    if ($TableRowCount -eq 1) {
+                        #Torso Row
+                        foreach ($TableLoc in $TableRow) {
+                            if (-not !$TableLoc) {
+                                $LoadoutText += "! FA="+$($Mech.HP.SetArmor.$($TableLoc+"F"))+"/"+$($Mech.HP.MaxArmor.$($TableLoc+"F"))+" RA="+$($Mech.HP.SetArmor.$($TableLoc+"R"))+"/"+$($Mech.HP.MaxArmor.$($TableLoc+"R"))+"<br>''S=$($Mech.HP.Structure.$TableLoc)''`r`n"
+                            } else {
+                                $LoadoutText += "! `r`n"
                             }
                         }
-                        $LoadoutText += " ]`r`n"
+                    } else {
+                        foreach ($TableLoc in $TableRow) {
+                            if (-not !$TableLoc) {
+                                $LoadoutText += "! A=$($Mech.HP.SetArmor.$TableLoc)/$($Mech.HP.MaxArmor.$TableLoc)<br>''S=$($Mech.HP.Structure.$TableLoc)''`r`n"
+                            } else {
+                                $LoadoutText += "! `r`n"
+                            }
+                        }
+                    }
+                    $TableRowCount++
+                    #MexPage HardPoints SubRow
+                    $LoadoutText += "|-`r`n! HardPoints`r`n"
+                    foreach ($TableLoc in $TableRow) {
+                        if (-not !$TableLoc) {
+                            $LoadoutText += "! ["
+                            foreach ($Mount in $Mounts) {
+                                $MountName = $MountsLongHash.$Mount
+                                $MountCount = $($Mech.Hardpoint.$($HPLongSortHash.$TableLoc) | ? {$_ -match $MountName}).Count
+                                if ($MountCount -gt 0) {
+                                    $LoadoutText += " $MountCount$Mount"
+                                }
+                            }
+                            $LoadoutText += " ]`r`n"
+                        } else {
+                            $LoadoutText += "! `r`n"
+                        }
                     }
                     #Fixed SubRow
                     $LoadoutText += "|-`r`n! Fixed`r`n"
@@ -248,7 +285,9 @@ foreach ($Cat in $CatOrder) {
                                 if (-not !$($ItemFriendlyHash.$($FixedItem.Name))) {
                                     $FixedItemObj = $GearObject | where {$_.Description.Id -like $FixedItem.Name}
                                     if ($FixedItemObj.Custom.Category.CategoryID -match "quirk") {
-                                        $LoadoutQuirkText += "* QUIRK: $($ItemFriendlyHash.$($FixedItem.Name))`r`n"
+                                        $LoadoutQuirkText = "* QUIRK: $($ItemFriendlyHash.$($FixedItem.Name))`r`n" + $LoadoutQuirkText
+                                    } elseif ($FixedItemObj.Custom.Category.CategoryID -match "special") {
+                                        $LoadoutQuirkText += "* Special: $($ItemFriendlyHash.$($FixedItem.Name))`r`n"
                                     } else {
                                         $LoadoutText += "* $($FixedItem.Count)x $($ItemFriendlyHash.$($FixedItem.Name))`r`n"
                                     }
@@ -266,7 +305,9 @@ foreach ($Cat in $CatOrder) {
                                 if (-not !$($ItemFriendlyHash.$($FixedItem.Name))) {
                                     $FixedItemObj = $GearObject | where {$_.Description.Id -like $FixedItem.Name}
                                     if ($FixedItemObj.Custom.Category.CategoryID -match "quirk") {
-                                        $LoadoutQuirkText += "* QUIRK: $($ItemFriendlyHash.$($FixedItem.Name))`r`n"
+                                        $LoadoutQuirkText = "* QUIRK: $($ItemFriendlyHash.$($FixedItem.Name))`r`n" + $LoadoutQuirkText
+                                    } elseif ($FixedItemObj.Custom.Category.CategoryID -match "special") {
+                                        $LoadoutQuirkText += "* Special: $($ItemFriendlyHash.$($FixedItem.Name))`r`n"
                                     } else {
                                         $LoadoutText += "* $($FixedItem.Count)x $($ItemFriendlyHash.$($FixedItem.Name))`r`n"
                                     }
@@ -280,54 +321,15 @@ foreach ($Cat in $CatOrder) {
                 #do $$LoadoutQuirkText$$ replacement
                 $LoadoutText = $($LoadoutText -split ("##LoadoutQuirkText##")) -join $LoadoutQuirkText
             }
-            #HP
-            $HPItems = @($($mech.HP.psobject.Properties | select -Property Name).Name)
-            foreach ($HPItem in $HPItems) {
-                #FUUUUUUUU imported as object. create a holder hash, dump object to hash, convert object to hashtable and overwrite
-                $HolderHashHP = @{}
-                $Mech.HP.$HPItem.psobject.Properties | foreach { $HolderHashHP[$_.Name] = $_.Value }
-                $Mech.HP.$HPItem = @{}
-                $Mech.HP.$HPItem = $HolderHashHP
-                $HolderHPTotal = 0
-                $Mech.HP.$HPItem.GetEnumerator() | foreach { $HolderHPTotal += $_.Value }
-                $Mech.HP.$HPItem.Add("Total", $HolderHPTotal)
-            }
+
+            #HP Main Only
             if (-not $Mech.BLACKLIST) {
-                $HPText = "| A=$($Mech.HP.SetArmor.Total)/$($Mech.HP.MaxArmor.Total) ''S=$($Mech.HP.Structure.Total)''`r`n"
-                $HPMexText = "`r`n==Mech Stats==`r`n"
-                $HPMexText += "Tonnage: $($Mech.Tonnage)`r`n"
-                $HPMexText += "`r`n{| class=`"wikitable`"`r`n"
-                $HPMexText += "|-`r`n! Armor+Structure !! Left !! Center !! Right`r`n"
-                $HPMexText += "|-`r`n! '''Arms/Head'''"
-                $HPTopSort | foreach {
-                    if (-not !$_) {
-                        $HPMexText += "`r`n| A=$($Mech.HP.SetArmor.$_)/$($Mech.HP.MaxArmor.$_)<br>''S=$($Mech.HP.Structure.$_)''"
-                    } else {
-                        $HPMexText += "`r`n| "
-                    }
-                }
-                $HPMexText += "`r`n|-`r`n! '''Torso'''"
-                $HPMidSort | foreach {
-                    if (-not !$_) {
-                        $HPMexText += "`r`n| FA="+$($Mech.HP.SetArmor.$($_+"F"))+"/"+$($Mech.HP.MaxArmor.$($_+"F"))+"<br>RA="+$($Mech.HP.SetArmor.$($_+"R"))+"/"+$($Mech.HP.MaxArmor.$($_+"R"))+"<br>''S=$($Mech.HP.Structure.$_)''"
-                    } else {
-                        $HPMexText += "`r`n| "
-                    }
-                }
-                $HPMexText += "`r`n|-`r`n! '''Legs'''"
-                $HPBotSort | foreach {
-                    if (-not !$_) {
-                        $HPMexText += "`r`n| A=$($Mech.HP.SetArmor.$_)/$($Mech.HP.MaxArmor.$_)<br>''S=$($Mech.HP.Structure.$_)''"
-                    } else {
-                        $HPMexText += "`r`n| "
-                    }
-                }
-                $HPMexText += "`r`n|-`r`n! colspan=`"4`" style=`"text-align: center;`" | '''TOTAL:''' A=$($Mech.HP.SetArmor.Total)/$($Mech.HP.MaxArmor.Total) ''S=$($Mech.HP.Structure.Total)''`r`n"
-                $HPMexText += "`r`n|}`r`n"
+                $HPText = "A=$($Mech.HP.SetArmor.Total)/$($Mech.HP.MaxArmor.Total) ''S=$($Mech.HP.Structure.Total)''"
             } else {
-                $HPText = "| CLASSIFIED `r`n"
+                $HPText = "CLASSIFIED"
             }
-            $ChassisTable = $HPText+$ChassisTable
+            $ChassisTable = "| "+$HPText+"`r`n"+$ChassisTable
+
             #main page hardpoints - list in $mounts in order of display
             if ($Mech.BLACKLIST) {
                 $MountsText = "CLASSIFIED"
@@ -339,13 +341,13 @@ foreach ($Cat in $CatOrder) {
                     }
                 }
             }
-            $MountsText = "|$($MountsText.Trim())`r`n"
-            $ChassisTable = $MountsText+$ChassisTable
+            $MountsText = "$($MountsText.Trim())"
+            $ChassisTable = "| "+$MountsText+"`r`n"+$ChassisTable
             #Weight
             $ChassisTable = "|$($Mech.Tonnage) [$CatFriendly]`r`n"+$ChassisTable
             #factions
             if (-not $Mech.BLACKLIST) {
-                $FactionText = "`r`n==Factions==`r`n`r`n"
+                $FactionText = ""
                 # need to sort out for removing groups. Buried in here to only start parsing a stripped group when writing
                 $GroupsArray = @($($GroupObject | select -ExcludeProperty BLACKLIST | Get-Member -MemberType NoteProperty).Name | ? {$_ -notlike '*BLACKLIST*'})
                 # $Factionlist = working list
@@ -365,11 +367,11 @@ foreach ($Cat in $CatOrder) {
                 }
                 #parse FactionList and GroupList into Friendly
                 foreach ($FactionGroup in $GroupList) {
-                    $FactionText += "* [[$($($GroupFriendlyObject | where -Property TagTitle -Like $FactionGroup).Friendly)]]`r`n"
+                    $FactionText += "`r`n[[$($($GroupFriendlyObject | where -Property TagTitle -Like $FactionGroup).Friendly)]]"
                 }
                 foreach ($Faction in $FactionList) {
                     if (-not !$($FactionFriendlyObject.$Faction)) {
-                        $FactionText += "* [[$($FactionFriendlyObject.$Faction)]]`r`n"
+                        $FactionText += "`r`n[[$($FactionFriendlyObject.$Faction)]]"
                     }
                 }
             }
@@ -412,25 +414,35 @@ foreach ($Cat in $CatOrder) {
             $ChassisTable = "|-`r`n|$($VariantText.Trim())`r`n"+$ChassisTable
 
             #Compatible Variants
-            $CompatVarText = "==Compatible Variants==`r`n"
+            $CompatVarText = ""
             if (-not !$Mech.PrefabID) {
                 if ($Mech.Special.Count -gt 0) {
                     if ([bool]($Mech.Special | ? {$_ -match 'OMNI'})) {
-                        $CompatVarText += "This mech is an Omnimech and follows [[Guides/Mech Bay|Omnimech assembly rules]].`r`n"
+                        $CompatVarText += "`r`n-[[Guides/Mech Bay|Omnimech]]-.`r`n"
                     } else { 
-                        $CompatVarText += "This mech is a special mech and follows [[Guides/Mech Bay|special assembly rules]].`r`n"
+                        $CompatVarText += "`r`n-[[Guides/Mech Bay|Special]]-`r`n"
                     }
                 }
                 foreach ($CompatVar in $PrefabID.$($Mech.PrefabID).$($Mech.Tonnage)) {
-                    $CompatVarText += "`r`n* [[Mechs/"+$CompatVar+"|"+$CompatVar+"]]"
+                    $CompatVarText += "`r`n[[Mechs/"+$CompatVar+"|"+$CompatVar+"]]"
                 }
             } else {
-                $CompatVarText += "This mech has no compatible variants.`r`n"
+                $CompatVarText += "`r`nNo Compatible"
             }
 
             #setup MexPage
             $WikiMexTable += "{{-start-}}`r`n'''"+$WikiPageTitle+"/"+$VariantGlue+"'''`r`n"
             if (-not $Mech.BLACKLIST) {
+                #Setup Infobox
+                $WikiMexTable += "{{Infobox MechPage`r`n"
+                $WikiMexTable += "| signature  = $($Mech.Name.Variant)`r`n"
+                $WikiMexTable += "| class      = $($CatFriendly)`r`n"
+                $WikiMexTable += "| tonnage    = $($Mech.Tonnage)`r`n"
+                $WikiMexTable += "| hardpoints = $($MountsText)`r`n"
+                $WikiMexTable += "| health     = $($HPText)`r`n"
+                $WikiMexTable += "| variants   = $CompatVarText`r`n"
+                $WikiMexTable += "| factions   = $FactionText`r`n"
+                $WikiMexTable += "}}`r`n"
                 $BlurbCheck = $(datachop '__/' 1 $Mech.Blurb)
                 if (-not !$BlurbCheck) {
                     $BlurbCheck = $(datachop '/__' 0 $BlurbCheck)
@@ -457,14 +469,12 @@ foreach ($Cat in $CatOrder) {
                     $MechBlurb += "`r`n|}"
                 }
                 $WikiMexTable += "`r`n==Description==`r`n`r`n"+$MechBlurb+"`r`n"
-                $WikiMexTable += "`r`n"+$HPMexText+"`r`n"
                 $WikiMexTable += "`r`n"+$LoadoutText+"`r`n"
-                $WikiMexTable += "`r`n"+$CompatVarText+"`r`n"
-                $WikiMexTable += "`r`n"+$FactionText+"`r`n"
             } else {
                 $WikiMexTable += "#REDIRECT [[Classified]]`r`n"
             }
             $WikiMexTable +="{{-stop-}}`r`n"
+            pause
         }
         #remove leading row mark
         $ChassisTable = $($($ChassisTable.Substring(2)).Trim())
