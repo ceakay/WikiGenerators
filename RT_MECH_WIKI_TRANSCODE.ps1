@@ -473,7 +473,6 @@ foreach ($Cat in $CatOrder) {
                 $WikiMexTable += "#REDIRECT [[Classified]]`r`n"
             }
             $WikiMexTable +="{{-stop-}}`r`n"
-            pause
         }
         #remove leading row mark
         $ChassisTable = $($($ChassisTable.Substring(2)).Trim())
