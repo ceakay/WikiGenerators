@@ -351,6 +351,11 @@ foreach ($Cat in $CatOrder) {
                 $GroupsArray = @($($GroupObject | select -ExcludeProperty BLACKLIST | Get-Member -MemberType NoteProperty).Name | ? {$_ -notlike '*BLACKLIST*'})
                 # $Factionlist = working list
                 $FactionList = $Mech.Factions | Where-Object {$_ -NotIn $FactionIgnoreList}
+                #clansgeneric
+                if ([bool]($FactionList -match 'ClansGeneric')) {
+                    $Mech.CLAN = $true
+                    $FactionList = $($FactionList | Where-Object {($_ -notlike "ClansGeneric")})
+                }
                 #check each group
                 $GroupList = @()
                 foreach ($Group in $GroupsArray) {
@@ -364,15 +369,18 @@ foreach ($Cat in $CatOrder) {
                         }
                     }
                 }
+                
+
                 #parse FactionList and GroupList into Friendly
                 foreach ($FactionGroup in $GroupList) {
-                    $FactionText += "`r`n[[$($($GroupFriendlyObject | where -Property TagTitle -Like $FactionGroup).Friendly)]]"
+                    $FactionText += "`r`n* [[$($($GroupFriendlyObject | where -Property TagTitle -Like $FactionGroup).Friendly)]]"
                 }
                 foreach ($Faction in $FactionList) {
                     if (-not !$($FactionFriendlyObject.$Faction)) {
-                        $FactionText += "`r`n[[$($FactionFriendlyObject.$Faction)]]"
+                        $FactionText += "`r`n* [[$($FactionFriendlyObject.$Faction)]]"
                     }
                 }
+                $FactionText = "`r`n<div align=`"left`">"+$FactionText+"`r`n</div>"
             }
             #variant/signature
             #if blacklist, link to classified mech
@@ -417,17 +425,19 @@ foreach ($Cat in $CatOrder) {
             if (-not !$Mech.PrefabID) {
                 if ($Mech.Special.Count -gt 0) {
                     if ([bool]($Mech.Special | ? {$_ -match 'OMNI'})) {
-                        $CompatVarText += "`r`n-[[Guides/Mech Bay|Omnimech]]-.`r`n"
+                        $CompatVarText += "`r`n-[[Guides/Mech Bay|Omnimech]]-`r`n"
                     } else { 
                         $CompatVarText += "`r`n-[[Guides/Mech Bay|Special]]-`r`n"
                     }
                 }
-                foreach ($CompatVar in $PrefabID.$($Mech.PrefabID).$($Mech.Tonnage)) {
-                    $CompatVarText += "`r`n[[Mechs/"+$CompatVar+"|"+$CompatVar+"]]"
+                $CompatVarList = $PrefabID.$($Mech.PrefabID).$($Mech.Tonnage) | sort
+                foreach ($CompatVar in $CompatVarList) {
+                    $CompatVarText += "`r`n* [[Mechs/"+$CompatVar+"|"+$CompatVar+"]]"
                 }
             } else {
                 $CompatVarText += "`r`nNo Compatible"
             }
+            $CompatVarText = "`r`n<div align=`"left`">"+$CompatVarText+"`r`n</div>"
 
             #setup MexPage
             $WikiMexTable += "{{-start-}}`r`n'''"+$WikiPageTitle+"/"+$VariantGlue+"'''`r`n"
