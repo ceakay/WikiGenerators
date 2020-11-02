@@ -1,5 +1,0 @@
-Comparing
-CDEF=,,,,
-MDEF=,unit_vehicle_clan,unit_legendary,unit_primitive,unit_sldf
-===================,headerlines,4
-|CONFLICT| ,CDef // MDef, || ,Missing Tag, |Missing in| ,file
