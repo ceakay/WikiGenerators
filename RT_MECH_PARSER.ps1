@@ -264,6 +264,7 @@ foreach ($MDefFileObject in $MDefFileObjectList) {
         $Mech.Name | Add-Member -MemberType NoteProperty -Name "Hero" -Value "$($MechHeroName.ToUpper())" -Force
         #1 Name - /description - << "UIName": >>
         $MechCName = $CDefObject.Description.UIName
+        $Mech.Name | Add-Member -MemberType NoteProperty -Name "MechUIName" -Value "$($MDefObject.Description.UIName)"
         $Mech.Name | Add-Member -MemberType NoteProperty -Name "Chassis" -Value "$($MechCName.ToUpper())"
         #1.1 Unique Name
         if ($($MDefObject.Description.UIName) -notlike "*$MechCName*") {
