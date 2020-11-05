@@ -1,4 +1,6 @@
-﻿$PIDs = @()
+﻿date
+
+$PIDs = @()
 $PIDS += (Start-Process pwsh -ArgumentList "$PSScriptRoot\RT_GEAR_PARSER.ps1" -PassThru).Id
 $PIDS += (Start-Process pwsh -ArgumentList "$PSScriptRoot\RT_MECH_PARSER.ps1" -PassThru).Id
 $PIDS += (Start-Process pwsh -ArgumentList "$PSScriptRoot\RT_TANK_PARSER.ps1" -PassThru).Id

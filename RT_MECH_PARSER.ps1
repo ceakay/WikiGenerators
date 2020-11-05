@@ -264,6 +264,7 @@ foreach ($MDefFileObject in $MDefFileObjectList) {
         $Mech.Name | Add-Member -MemberType NoteProperty -Name "Hero" -Value "$($MechHeroName.ToUpper())" -Force
         #1 Name - /description - << "UIName": >>
         $MechCName = $CDefObject.Description.UIName
+        $Mech.Name | Add-Member -MemberType NoteProperty -Name "MechUIName" -Value "$($MDefObject.Description.UIName)"
         $Mech.Name | Add-Member -MemberType NoteProperty -Name "Chassis" -Value "$($MechCName.ToUpper())"
         #1.1 Unique Name
         if ($($MDefObject.Description.UIName) -notlike "*$MechCName*") {
@@ -434,9 +435,17 @@ foreach ($MDefFileObject in $MDefFileObjectList) {
         } else {
             $Mech | Add-Member -MemberType NoteProperty -Name "PrefabID" -Value $CDefObject.PrefabBase
         }
+
         #12 - Chassisdef
         $Mech | Add-Member -MemberType NoteProperty -Name "ChassisID" -Value $MDefObject.ChassisID
 
+        #13 - ArmActuatorSupport
+        if ([bool]($CDefObject.Custom.ArmActuatorSupport)) {
+            $Mech | Add-Member -MemberType NoteProperty -Name "ArmActuatorSupport" -Value $([pscustomobject]@{})
+            $Mech.ArmActuatorSupport | Add-Member -MemberType NoteProperty -Name "LA" -Value $CDefObject.Custom.ArmActuatorSupport.LeftLimit
+            $Mech.ArmActuatorSupport | Add-Member -MemberType NoteProperty -Name "RA" -Value $CDefObject.Custom.ArmActuatorSupport.RightLimit
+        }
+        
         if (-not !$Mech.PrefabID) {
             #Create prefabid if not exist
             if (!$(iex $('$PrefabID.'+"'"+$($Mech.PrefabID)+"'"))) {

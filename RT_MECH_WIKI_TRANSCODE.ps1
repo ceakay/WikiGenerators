@@ -86,9 +86,15 @@ $GearFile = $RTScriptroot+"\\Outputs\\GearTable.json"
 $GearObject = Get-Content $GearFile -raw | ConvertFrom-Json
 $ItemFriendlyHash = @{}
 foreach ($Item in $GearObject) {
-    #$ItemObject = Get-Content $Item.FullName -Raw | ConvertFrom-Json
     if (-not !$Item.Description.UIName) {
         try {$ItemFriendlyHash.Add($Item.Description.Id,$Item.Description.UIName)} catch {Write-Host "Dupe: $($Item.Description.Id)"}
+    }
+}
+#build Item Slots hash
+$ItemSlotsHash = @{}
+foreach ($Item in $GearObject) {
+    if (-not !$Item.InventorySize) {
+        try {$ItemSlotsHash.Add($Item.Description.Id,$Item.InventorySize)} catch {Write-Host "Dupe: $($Item.Description.Id)"}
     }
 }
 
@@ -278,6 +284,11 @@ foreach ($Cat in $CatOrder) {
                     $LoadoutText += "|-`r`n! Fixed`r`n"
                     foreach ($TableLoc in $TableRow) {
                         $LoadoutText += "|`r`n"
+                        if ([bool]($Mech.ArmActuatorSupport)) {
+                            if (($TableLoc -eq 'LA') -or ($TableLoc -eq 'RA')) {
+                                $LoadoutText += "Arm Limit: $($Mech.ArmActuatorSupport.$TableLoc)`r`n"
+                            }
+                        }
                         if ($TableLoc -ne '') {
                             $TableLocItemArray = $Mech.Loadout.Fixed.$($TableLoc) | group | sort Name
                             foreach ($FixedItem in $TableLocItemArray) {
@@ -288,7 +299,7 @@ foreach ($Cat in $CatOrder) {
                                     } elseif ($FixedItemObj.Custom.Category.CategoryID -match "special") {
                                         $LoadoutQuirkText += "* Special: $($ItemFriendlyHash.$($FixedItem.Name))`r`n"
                                     } else {
-                                        $LoadoutText += "* $($FixedItem.Count)x $($ItemFriendlyHash.$($FixedItem.Name))`r`n"
+                                        $LoadoutText += "* $($FixedItem.Count)x $($ItemFriendlyHash.$($FixedItem.Name)) [$($ItemSlotsHash.$($FixedItem.Name))]`r`n"
                                     }
                                 }
                             }
@@ -308,7 +319,7 @@ foreach ($Cat in $CatOrder) {
                                     } elseif ($FixedItemObj.Custom.Category.CategoryID -match "special") {
                                         $LoadoutQuirkText += "* Special: $($ItemFriendlyHash.$($FixedItem.Name))`r`n"
                                     } else {
-                                        $LoadoutText += "* $($FixedItem.Count)x $($ItemFriendlyHash.$($FixedItem.Name))`r`n"
+                                        $LoadoutText += "* $($FixedItem.Count)x $($ItemFriendlyHash.$($FixedItem.Name)) [$($ItemSlotsHash.$($FixedItem.Name))]`r`n"
                                     }
                                 }
                             }
@@ -444,6 +455,7 @@ foreach ($Cat in $CatOrder) {
             if (-not $Mech.BLACKLIST) {
                 #Setup Infobox
                 $WikiMexTable += "{{Infobox MechPage`r`n"
+                $WikiMexTable += "| name = $($Mech.Name.MechUIName)`r`n"
                 $WikiMexTable += "| signature  = $($Mech.Name.Variant)`r`n"
                 $WikiMexTable += "| class      = $($CatFriendly)`r`n"
                 $WikiMexTable += "| tonnage    = $($Mech.Tonnage)`r`n"
