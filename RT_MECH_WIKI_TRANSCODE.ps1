@@ -284,6 +284,11 @@ foreach ($Cat in $CatOrder) {
                     $LoadoutText += "|-`r`n! Fixed`r`n"
                     foreach ($TableLoc in $TableRow) {
                         $LoadoutText += "|`r`n"
+                        if ([bool]($Mech.ArmActuatorSupport)) {
+                            if (($TableLoc -eq 'LA') -or ($TableLoc -eq 'RA')) {
+                                $LoadoutText += "Arm Limit: $($Mech.ArmActuatorSupport.$TableLoc)`r`n"
+                            }
+                        }
                         if ($TableLoc -ne '') {
                             $TableLocItemArray = $Mech.Loadout.Fixed.$($TableLoc) | group | sort Name
                             foreach ($FixedItem in $TableLocItemArray) {
