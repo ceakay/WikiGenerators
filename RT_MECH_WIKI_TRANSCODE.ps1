@@ -461,6 +461,7 @@ foreach ($Cat in $CatOrder) {
                 $WikiMexTable += "| tonnage    = $($Mech.Tonnage)`r`n"
                 $WikiMexTable += "| hardpoints = $($MountsText)`r`n"
                 $WikiMexTable += "| health     = $($HPText)`r`n"
+                $WikiMexTable += "| rtmodule   = $($Mech.Mod)`r`n"
                 $WikiMexTable += "| variants   = $CompatVarText`r`n"
                 $WikiMexTable += "| factions   = $FactionText`r`n"
                 $WikiMexTable += "}}`r`n"
@@ -507,7 +508,7 @@ foreach ($Cat in $CatOrder) {
             $IconName = $((Get-Culture).TextInfo.ToTitleCase($($($Mech.Name.Chassis).ToLower())) -replace('[-_\W+]',''))
         }   
         #chassis name
-        $ChassisTable = "|colspan=`"1`" rowspan=`"$VariantCount`" |{{FP icon|$IconName.png|$($Mech.Name.Chassis)}}`r`n"+$ChassisTable
+        $ChassisTable = "|colspan=`"1`" rowspan=`"$VariantCount`" style=`"vertical-align:middle;text-align:center;`" | [[File:$IconName.png|link=|120px]]`r`n$($Mech.Name.Chassis)`r`n"+$ChassisTable
         #chassis table header
         $ChassisTable = "`r`n|-`r`n"+$ChassisTable
         $WikiTable += $ChassisTable
