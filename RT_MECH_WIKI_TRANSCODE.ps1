@@ -176,11 +176,12 @@ foreach ($Cat in $CatOrder) {
 == $CatHeaderName == 
 {| class="wikitable sortable mw-collapsible"
 |+
-! Name
+! scope="col" style="width: 50px;" | Name
 ! Signature
-! Weight !! Hardpoints 
+! Weight
+! Hardpoints 
 ! HP
-! Special`r`n
+! Special
 "@
     $WikiTable += $CatHeader
     $MechsFilteredObject = $MechsMasterObject | where -Property class -contains $Cat | sort -Property ({$_.Name.Chassis}, {$_.Name.Variant}, {$_.Name.SubVariant}, {$_.Name.Unique}, {$_.Name.Hero})
