@@ -41,6 +41,10 @@ $GroupingCSVObject = Import-Csv -Path "$GroupingFile"
 $PWBRoot = "D:\\PYWikiBot"
 $PrefabIDFile = "$RTScriptroot\\Outputs\\PrefabID.json"
 
+
+$BlacklistFile = "$RTScriptroot\\Inputs\\Blacklist.csv"
+$BlacklistOverride = $(Import-Csv -Path "$BlacklistFile").Blacklist
+
 #holy shit this can't import properly
 $GroupKeyList = $($GroupingCSVObject | Get-Member -MemberType Properties).Name
 $GroupObject = [pscustomobject]@{}
@@ -405,12 +409,10 @@ foreach ($Cat in $CatOrder) {
                 $VariantGlue += " aka $($Mech.Name.Unique)"
             }
             if ([bool]($BlacklistOverride | ? {$filePathMDef -match $_})) {
-                $VariantGlue += " FP"
+                $VariantGlue += " FP $($Mech.Mod)"
             }
             #unresolvable conflicts override
-            if ([bool]($BlacklistOverride | ? {$filePathMDef -match $_})) {
-                $VariantGlue += " $($Mech.Mod)"
-            } elseif ($Mech.Name.Variant -eq 'CGR-C') {
+            if ($Mech.Name.Variant -eq 'CGR-C') {
                 $VariantGlue += " -$($Mech.Name.Chassis)-"
             } elseif ($Mech.Name.Variant -eq 'MAD-BH') {
                 $VariantGlue += " -$($Mech.Name.Chassis)-"
