@@ -180,7 +180,7 @@ foreach ($Cat in $CatOrder) {
 == $CatHeaderName == 
 {| class="wikitable sortable mw-collapsible"
 |+
-! scope="col" style="width: 50px;" | Name
+! scope="col" style="width: 150px;" | Name
 ! Signature
 ! Weight
 ! Hardpoints 
@@ -222,7 +222,7 @@ foreach ($Cat in $CatOrder) {
             foreach ($Tag in $Mech.Special) {
                 $TagText += "[[Guides/Mech_Bay|$($($SpecialsObject | where -Property TagTitle -contains $Tag).Friendly)]]<br>`r`n"
             }
-            $TagText = "|$($TagText.Trim())`r`n"
+            $TagText = "|<small>$($TagText.Trim())</small>`r`n"
             $ChassisTable = $TagText+$ChassisTable
             #HP fix
             #FUUUUUUUU imported as object. create a holder hash, dump object to hash, convert object to hashtable and overwrite
@@ -493,6 +493,9 @@ foreach ($Cat in $CatOrder) {
                     }
                     $MechBlurb += "`r`n|}"
                 }
+                #Regex cleanup
+                $MechBlurb = $MechBlurb -Replace ('<color=(.*?)>(.*?)<\/color>','<span style="color:$1;">$2</span>') #replace color tag
+                $MechBlurb = $MechBlurb -Replace ('<b>(.*?)<\/b>','$1') #remove bold
                 $WikiMexTable += "`r`n==Description==`r`n`r`n"+$MechBlurb+"`r`n"
                 $WikiMexTable += "`r`n"+$LoadoutText+"`r`n"
             } else {

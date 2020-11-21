@@ -18,6 +18,7 @@ $ComponentObjectList = @()
 #get a list of jsons
 #construct mega component object list
 $JSONList = Get-ChildItem $CacheRoot -Recurse -Filter "*.json"
+$JSONList = $JSONList | ? {($_.FullName -notmatch 'Heavy Metal') -and ($_.FullName -notmatch 'VanillaNoLoot') -and ($_.FullName -notmatch 'HeavyMetal')}
 $i = 0
 $WonkyList = @()
 foreach ($JSONFile in $JSONList) {
@@ -27,7 +28,9 @@ foreach ($JSONFile in $JSONList) {
         try {
             $JSONObject = $($JSONRaw | ConvertFrom-Json)
             $JSONObject.Description.UIName = $JSONObject.Description.UIName.Replace("/","")
-            $UINameArray = $($JSONObject.Description.UIName -split (" \+"))
+            if ($JSONObject.Description.UIName -notmatch '\+\d') {
+                $UINameArray = $($JSONObject.Description.UIName -split (" \+"))
+            }
             if ($UINameArray.Count -gt 1) {
                 $JSONObject.Description.UIName = $UINameArray[0] + " Mk$($UINameArray.Count - 1)"
                 if ($JSONObject.ComponentTags.items -match 'blacklist') {

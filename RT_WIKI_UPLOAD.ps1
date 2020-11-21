@@ -23,3 +23,4 @@ cls
 py $PWBRoot\\pwb.py pagefromfile -file:$WikiPageMexFileUTF8 -notitle -force -pt:0
 cls
 
+#push gear navbox first, then remainder pages

@@ -1,0 +1,1 @@
+Gear that does not do direct damage, but rather boosts a mech combat ability.
