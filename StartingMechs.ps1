@@ -269,6 +269,7 @@ foreach ($GroupName in $GroupNamesArray) {
             if (!$CDefFileObject) {
                 $CDefFileObject = Get-ChildItem $CacheRoot -Recurse -Filter "$fileNameCDef"
             }
+            try {$CDefObject = ConvertFrom-Json $(Get-Content $CDefFileObject.FullName -raw)} catch {Write-Host $CDefFileObject.FullName}
             #2 Signature - / - << "VariantName": >> - $MechVarActual
                 #also handles Hero Names
             $Mech | Add-Member -MemberType NoteProperty -Name "Name" -Value ([pscustomobject]@{})
