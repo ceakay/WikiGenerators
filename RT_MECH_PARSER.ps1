@@ -424,6 +424,11 @@ foreach ($MDefFileObject in $MDefFileObjectList) {
         }
         #Grab and trim Mech Blurb
         $MechBlurb = $MDefObject.Description.Details
+        
+        #Regex cleanup
+        $MechBlurb = $($($MechBlurb.Split("`n")) -Replace ('^[ \t]*','')) -Join ("`n") #split by lines, trim leading spaces/tabs, rejoin
+        $MechBlurb = $MechBlurb -Replace ('<color=(.*?)>(.*?)<\/color>','<span style="color:$1;">$2</span>') #replace color tag
+        $MechBlurb = $MechBlurb -Replace ('<b>(.*?)<\/b>','$1') #remove bold
         $Mech | Add-Member -MemberType NoteProperty -Name "Blurb" -Value $MechBlurb
         #11 - PrefabID
         # if custom AV exists
@@ -445,45 +450,6 @@ foreach ($MDefFileObject in $MDefFileObjectList) {
             $Mech.ArmActuatorSupport | Add-Member -MemberType NoteProperty -Name "LA" -Value $CDefObject.Custom.ArmActuatorSupport.LeftLimit
             $Mech.ArmActuatorSupport | Add-Member -MemberType NoteProperty -Name "RA" -Value $CDefObject.Custom.ArmActuatorSupport.RightLimit
         }
-        
-        if (-not !$Mech.PrefabID) {
-            #Create prefabid if not exist
-            if (!$(iex $('$PrefabID.'+"'"+$($Mech.PrefabID)+"'"))) {
-                $PrefabID | Add-Member -MemberType NoteProperty -Name "$($Mech.PrefabID)" -Value $([pscustomobject]@{})
-            }
-            #create tonnage sub id if not exist
-            if (!$(iex "$('$PrefabID.'+"'"+$($Mech.PrefabID)+"'"+'.'+$($Mech.Tonnage))")) {
-                $PrefabID.$($Mech.PrefabID) | Add-Member -MemberType NoteProperty -Name $($Mech.Tonnage) -Value @()
-            }
-            #add wikilongname to PrefabID Object
-            $VariantLink = $($Mech.Name.Variant)
-            $VariantGlue = $($VariantLink+$($Mech.Name.SubVariant)).Trim()
-            if (-not !$Mech.Name.Hero) {
-                $VariantGlue += " ($($Mech.Name.Hero))"
-            }
-            if (-not !$mech.Name.Unique) {
-                $VariantGlue += " aka $($Mech.Name.Unique)"
-            }
-            #unresolvable conflicts override
-            if ([bool]($BlacklistOverride | ? {$filePathMDef -match $_})) {
-                $VariantGlue += " $($Mech.Mod)"
-            } elseif ($Mech.Name.Variant -eq 'CGR-C') {
-                $VariantGlue += " -$($Mech.Name.Chassis)-"
-            } elseif ($Mech.Name.Variant -eq 'MAD-BH') {
-                $VariantGlue += " -$($Mech.Name.Chassis)-"
-            } elseif ($Mech.Name.Variant -eq 'MAD-4S') {
-                $VariantGlue += " -$($Mech.Name.Chassis)-"
-            } elseif ($Mech.Name.Variant -eq 'BZK-P') {
-                $VariantGlue += " -$($Mech.Name.Chassis)-"
-            } elseif ($Mech.Name.Variant -eq 'BZK-RX') {
-                $VariantGlue += " -$($Mech.Name.Chassis)-"
-            } elseif ($Mech.Name.Variant -eq 'OSR-4C') {
-                $VariantGlue += " -$($Mech.Name.Chassis)-"
-            }
-
-            $PrefabID.$($Mech.PrefabID).$($Mech.Tonnage) += $VariantGlue
-        }
-        
 
         ###START OVERRIDES SECTION
         #convert to proto to power
@@ -561,6 +527,49 @@ foreach ($MDefFileObject in $MDefFileObjectList) {
             $Mech.Name.Hero = 'Laser'
         }
         ###END OVERRIDES SECTION
+        
+        #Prep VariantGlue
+        $VariantLink = $($Mech.Name.Variant)
+        $VariantGlue = $($VariantLink+$($Mech.Name.SubVariant)).Trim()
+        if (-not !$Mech.Name.Hero) {
+            $VariantGlue += " ($($Mech.Name.Hero))"
+        }
+        if (-not !$mech.Name.Unique) {
+            $VariantGlue += " aka $($Mech.Name.Unique)"
+        }
+        #variantglue unresolvable conflicts override
+        if ([bool]($BlacklistOverride | ? {$filePathMDef -match $_})) {
+            $VariantGlue += " $($Mech.Mod)"
+        } elseif ($Mech.Name.Variant -eq 'CGR-C') {
+            $VariantGlue += " -$($Mech.Name.Chassis)-"
+        } elseif ($Mech.Name.Variant -eq 'MAD-BH') {
+            $VariantGlue += " -$($Mech.Name.Chassis)-"
+        } elseif ($Mech.Name.Variant -eq 'MAD-4S') {
+            $VariantGlue += " -$($Mech.Name.Chassis)-"
+        } elseif ($Mech.Name.Variant -eq 'BZK-P') {
+            $VariantGlue += " -$($Mech.Name.Chassis)-"
+        } elseif ($Mech.Name.Variant -eq 'BZK-RX') {
+            $VariantGlue += " -$($Mech.Name.Chassis)-"
+        } elseif ($Mech.Name.Variant -eq 'OSR-4C') {
+            $VariantGlue += " -$($Mech.Name.Chassis)-"
+        }
+
+        #PrefabID/Compatible Variants
+        if (-not !$Mech.PrefabID) {
+            #Create prefabid if not exist
+            if (!$(iex $('$PrefabID.'+"'"+$($Mech.PrefabID)+"'"))) {
+                $PrefabID | Add-Member -MemberType NoteProperty -Name "$($Mech.PrefabID)" -Value $([pscustomobject]@{})
+            }
+            #create tonnage sub id if not exist
+            if (!$(iex "$('$PrefabID.'+"'"+$($Mech.PrefabID)+"'"+'.'+$($Mech.Tonnage))")) {
+                $PrefabID.$($Mech.PrefabID) | Add-Member -MemberType NoteProperty -Name $($Mech.Tonnage) -Value @()
+            }
+            
+            $PrefabID.$($Mech.PrefabID).$($Mech.Tonnage) += $VariantGlue
+        }
+
+        $Mech.Name | Add-Member -NotePropertyName 'LinkName' -NotePropertyValue $VariantGlue
+        
         #add mechobject to $mechs
         $Mechs += $Mech
     } else {

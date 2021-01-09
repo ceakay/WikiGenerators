@@ -180,6 +180,28 @@ $JobFunctions = {
                 $ItemText += "* $BonusText`r`n"
             }
             $ItemText += "</ul>`r`n`r`n"
+            if ($Item.ComponentType -match 'AmmunitionBox') {
+                $ItemText += "=Ammo Stats=`r`n"
+                $ItemText += @"
+{| class="wikitable"
+! colspan="2" | Ammo
+! colspan="3" | <small>Component Explosion<br>Self Damage Per Round</small>
+|-
+!<small>Capacity</small>
+!<small>Cost Per Round</small>
+!<small>Norm</small>
+!<small>Heat</small>
+!<small>Stab</small>
+|-
+| $($Item.Capacity)
+| $($Item.Custom.AmmoCost.PerUnitCost)
+| $($Item.Custom.ComponentExplosion.ExplosionDamagePerAmmo)
+| $($Item.Custom.ComponentExplosion.HeatDamagePerAmmo)
+| $($Item.Custom.ComponentExplosion.StabilityDamagePerAmmo)
+|}
+
+"@
+            }
             if ($Item.ComponentType -match 'weapon') {
                 $ItemText += "=Weapon Stats=`r`n"  
                 $ItemText += @"
@@ -376,7 +398,7 @@ $MajorCatsHash = @{
 
 #Load Master List, remove blacklisted
 Write-Progress -Id 0 -Activity "Loading Master Object"
-$MasterList = [System.Collections.ArrayList]@($(Get-Content $EquipFile -Raw | ConvertFrom-Json) | ? {$_.ComponentTags.items -notcontains "blacklisted"}) | ? {!$_.Custom.Lootable.ItemID} | ? {$_.Description.ID -notmatch 'emod_engineslots'}  | ? {$_.Description.ID -notmatch 'Gear_LegJet_Assault_Lower'} 
+$MasterList = [System.Collections.ArrayList]@($(Get-Content $EquipFile -Raw | ConvertFrom-Json) | ? {$_.ComponentTags.items -notcontains "blacklisted"}) | ? {$_.Description.ID -notmatch 'emod_engineslots_size'}  | ? {$_.Description.ID -notmatch 'Gear_LegJet_Assault_Lower'} 
 
 #Load Filters List
 Write-Progress -Id 0 -Activity "Loading Custom Filters"
@@ -450,7 +472,7 @@ $Navbox = @"
 
 "@
 #Purge Folder
-Remove-Item "$GearOutFolder\\*"
+Remove-Item "$GearOutFolder\\*" -Recurse -Force
 New-Item -ItemType Directory $ItemOutFolder
 
 #Build Item Pages via jobs
@@ -465,7 +487,7 @@ for ($JobCount=0;$JobCount -lt $Counter; $JobCount++) {
         $JobInputObject = $MasterList[$(0+($JobCount*$Divisor))..$(($Divisor*(1+$JobCount))-1)]
     }
     $JobOutputFile = $ItemOutFolder+"\\Chunk$JobCount.txt"
-    Start-Job -Name $("ItemJob"+$JobCount) -InitializationScript $JobFunctions -ScriptBlock {RT-CreateGearPages -InputObject $using:JobInputObject -BonusDescriptionHash $using:BonusDescHash -OutputFile $using:JobOutputFile}
+    Start-Job -Name $("ItemJob"+$JobCount) -InitializationScript $JobFunctions -ScriptBlock {RT-CreateGearPages -InputObject $using:JobInputObject -BonusDescriptionHash $using:BonusDescHash -OutputFile $using:JobOutputFile} | Out-Null
 }
 
 #Build TOC pages
@@ -536,14 +558,15 @@ foreach ($MajorKey in $FiltersList.Caption) {
     $MajorPage | Out-File "$GearOutFolder\\$MajorPageFile" -Encoding utf8 -Force
     $j=0
 }
-$GearPage | Out-File "$GearOutFolder\\Gear.txt" -Encoding utf8 -Force
+$GearPage = "{{NavboxEquipment}}`r`n`r`n" + $GearPage
+$GearPage | Out-File "$GearOutFolder\\GearMain.txt" -Encoding utf8 -Force
 
 $Navbox += "}}"
 $Navbox = "{{-start-}}`r`n'''Template:NavboxEquipment'''`r`n$Navbox`r`n{{-stop-}}"
 $Navbox | Out-File "$GearOutFolder\\!Navbox.txt" -Encoding utf8 -Force
 
-#Join into a supersized file for pwb upload
-$(Get-ChildItem .\Outputs\Gear -Recurse -Exclude '!*').FullName | % {Get-Content $_ -Raw | Out-File "$GearOutFolder\\!UploadMe.txt" -Encoding utf8 -Append}
+#Join into a supersized file for pwb upload - TOC Pages
+$(Get-ChildItem $GearOutFolder -Filter 'Gear*').FullName | % {Get-Content $_ -Raw | Out-File "$GearOutFolder\\!TOCPages.txt" -Encoding utf8 -Append}
 
 while((Get-Job | Where-Object {$_.State -ne "Completed"}).Count -gt 0) {
     Start-Sleep -Milliseconds 250
@@ -554,3 +577,6 @@ while((Get-Job | Where-Object {$_.State -ne "Completed"}).Count -gt 0) {
 }
 #Cleanup Averages Job
 Get-Job | Remove-Job
+
+#Join into a supersized file for pwb upload - Item Pages
+$(Get-ChildItem $ItemOutFolder -Recurse -Exclude '!*').FullName | % {Get-Content $_ -Raw | Out-File "$GearOutFolder\\!ItemPages.txt" -Encoding utf8 -Append}

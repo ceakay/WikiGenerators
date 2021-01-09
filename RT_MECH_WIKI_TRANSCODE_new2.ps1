@@ -1,15 +1,15 @@
 ﻿###FUNCTIONS
+$AutomaticVariables = Get-Variable
+function RT-ScriptVars {
+    Compare-Object (Get-Variable) $AutomaticVariables -Property Name -PassThru | Where -Property Name -ne "AutomaticVariables"
+}
+
 #data chopper function
     #args: delimiter, position, input
 function datachop {
     $array = @($args[2] -split "$($args[0])")    
     return $array[$args[1]]
 }
-
-###SETTINGS
-#disable when testing!
-# moved uploading to own script
-$UploadToWiki = $false
 
 #SET CONSTANTS
 ###
@@ -64,17 +64,7 @@ foreach ($FactionFriendlyFile in $FactionFriendlyFileList) {
     $FactionDefObj = Get-Content $FactionFriendlyFile.VersionInfo.FileName -Raw | ConvertFrom-Json
     try {$FactionFriendlyObject | Add-Member -Type NoteProperty -Name $FactionDefObj.factionID -Value $($FactionDefObj.Name).Replace("the ","")} catch { $FactionFriendlyFile }
 }
-<#
-foreach ($Key in $GroupKeyList) {
-    foreach ($FactionName in $GroupObject.$Key) {
-        $FactionDefFileObj = $(Get-ChildItem $RTroot -Recurse -Filter "faction_$FactionName.json" -ErrorAction SilentlyContinue)
-        if (-not !$FactionDefFileObj) {
-            $FactionDefObj = $(Get-Content $FactionDefFileObj.VersionInfo.FileName -Raw | ConvertFrom-Json)
-            $FactionFriendlyObject | Add-Member -Type NoteProperty -Name $FactionName -Value $($FactionDefObj.Name).Replace("the ","")
-        }
-    }
-}
-#>
+
 #FactionIgnoreList
 $FactionIgnoreObj = Import-Csv "$RTScriptroot\\Inputs\\FactionIgnoreList.csv"
 $FactionIgnoreList = @($FactionIgnoreObj.IgnoreUs)
@@ -114,7 +104,6 @@ write-progress -activity 'Forming Wiki Table'
 #init table text
 $ClassTable = "" 
 $WikiTable = "Last Updated RT Version $RTVersion`r`n`r`n"
-$WikiMexTable = ""
 
 #Lead Page name goes here in wikimedia bold
 $WikiPageTitle = "Mechs"
@@ -126,8 +115,14 @@ $PrefabID = $(Get-Content $PrefabIDFile -Raw | ConvertFrom-Json)
 
 #categories
 $CatOrder = @('POWER','LIGHT','MEDIUM','HEAVY','ASSAULT','SHEAVY')
-$CatTitles = @('Power Armour','Light Mechs','Medium Mechs','Heavy Mechs','Assault Mechs','Super Heavies')
-$CatTonnage = @('Under 20','20-35','40-55','60-75','80-100','Over 100')
+<#$CatTitles = @{
+    POWER = 'Power Armour'
+    LIGHT = 'Light Mechs'
+    MEDIUM = 'Medium Mechs'
+    HEAVY = 'Heavy Mechs'
+    ASSAULT = 'Assault Mechs'
+    SHEAVY = 'Super Heavies'
+}#>
 
 #SortTable
 $HPTopSort = @('LA','HD','RA')
@@ -170,33 +165,21 @@ foreach ($TextFile in $TextFileList) {
     $TextObject += $TextFile | Get-Content -raw | ConvertFrom-Json
 }
 
-$f = 0
-$h = 0
-foreach ($Cat in $CatOrder) {
-    $CatHeaderName = $CatTitles[$h]
-    $h++ 
-    write-progress -activity "Filling Category" -Status "$h of $($CatOrder.Count)" -Id 1
-#generate header
-    $CatFriendly = $($CatObject | where -Property TagTitle -Contains $Cat).Friendly
-    $CatHeader = @"
-== $CatHeaderName == 
-{| class="wikitable sortable mw-collapsible"
-|+
-! scope="col" style="width: 150px;" | Name
-! Signature
-! Weight
-! Hardpoints 
-! HP
-! Special
-"@
-    $WikiTable += $CatHeader
-    $MechsFilteredObject = $MechsMasterObject | where -Property class -contains $Cat | sort -Property ({$_.Name.Chassis}, {$_.Name.Variant}, {$_.Name.SubVariant}, {$_.Name.Unique}, {$_.Name.Hero})
-    $MechsChassisGroup = $MechsFilteredObject | Group-Object -Property {$_.name.chassis}
+$CatBlock = {
+    #use all declared variables and plunk into scriptblock
+    $CatBlockVarList = $using:CatBlockVarList
+    foreach ($VarPair in $CatBlockVarList.GetEnumerator()) {
+        Set-Variable -Name $($VarPair.Name) -Value $($VarPair.Value)
+    }
+    #functionlol
+    function datachop {
+        $array = @($args[2] -split "$($args[0])")    
+        return $array[$args[1]]
+    }
+    $WikiTable = ""
+    $WikiMexTable = ""
     #build chassis table
-    $g = 0
     foreach ($MechsChassis in $MechsChassisGroup) {
-        $g++
-        write-progress -activity "Chassis" -Status "$g of $($MechsChassisGroup.Count)" -Id 2 -ParentId 1
         #build table from bottom up, need to 'join' factions
         $ChassisTable = ""
         $VariantCount = $MechsChassis.Count
@@ -206,11 +189,8 @@ foreach ($Cat in $CatOrder) {
         $FactionGroupCounter = 0
         for ($i=0; $i -lt $VariantCount; $i++) {
             write-progress -activity "Variant" -Status "$($i + 1) of $VariantCount" -Id 3 -ParentId 2
-            $f++
-            write-progress -activity "Total" -Status "$f of $($MechsMasterObject.Count)"
             #init
             $Mech = $Mechs[$i]
-            $j = $i
             $TagText = ""
             $MountsText = ""
             $FactionText = ""
@@ -239,108 +219,108 @@ foreach ($Cat in $CatOrder) {
                 $Mech.HP.$HPItem.Add("Total", $HolderHPTotal)
             }
             #loadout/HP
-            if (-not $Mech.BLACKLIST) {
-                #loadout subtable
-                $LoadoutText = "`r`n==Mech Bay==`r`n"
-                $LoadoutText += "`r`n"+'##LoadoutQuirkText##'+"`r`n"
-                $LoadoutText += "`r`n{| class=`"wikitable`"`r`n"
-                $LoadoutText += "|-`r`n! !! !! Left !! Center !! Right`r`n"
+            $LoadoutQuirkText = ""
+
+            #loadout subtable
+            $LoadoutText = "`r`n==Mech Bay==`r`n"
+            $LoadoutText += "`r`n"+'##LoadoutQuirkText##'+"`r`n"
+            $LoadoutText += "`r`n{| class=`"wikitable`"`r`n"
+            $LoadoutText += "|-`r`n! !! !! Left !! Center !! Right`r`n"
                 
-                $TableRowCount = 0
-                foreach ($TableRow in $HPSort) {
-                    $LoadoutText += "|-`r`n! rowspan=`"4`" | '''$($TableRowNames[$TableRowCount])'''`r`n"
-                    #MexPage Health/HP
-                    $LoadoutText += "! Health`r`n"
-                    if ($TableRowCount -eq 1) {
-                        #Torso Row
-                        foreach ($TableLoc in $TableRow) {
-                            if (-not !$TableLoc) {
-                                $LoadoutText += "! FA="+$($Mech.HP.SetArmor.$($TableLoc+"F"))+"/"+$($Mech.HP.MaxArmor.$($TableLoc+"F"))+" RA="+$($Mech.HP.SetArmor.$($TableLoc+"R"))+"/"+$($Mech.HP.MaxArmor.$($TableLoc+"R"))+"<br>''S=$($Mech.HP.Structure.$TableLoc)''`r`n"
-                            } else {
-                                $LoadoutText += "! `r`n"
-                            }
-                        }
-                    } else {
-                        foreach ($TableLoc in $TableRow) {
-                            if (-not !$TableLoc) {
-                                $LoadoutText += "! A=$($Mech.HP.SetArmor.$TableLoc)/$($Mech.HP.MaxArmor.$TableLoc)<br>''S=$($Mech.HP.Structure.$TableLoc)''`r`n"
-                            } else {
-                                $LoadoutText += "! `r`n"
-                            }
-                        }
-                    }
-                    $TableRowCount++
-                    #MexPage HardPoints SubRow
-                    $LoadoutText += "|-`r`n! HardPoints`r`n"
+            $TableRowCount = 0
+            foreach ($TableRow in $HPSort) {
+                $LoadoutText += "|-`r`n! rowspan=`"4`" | '''$($TableRowNames[$TableRowCount])'''`r`n"
+                #MexPage Health/HP
+                $LoadoutText += "! Health`r`n"
+                if ($TableRowCount -eq 1) {
+                    #Torso Row
                     foreach ($TableLoc in $TableRow) {
                         if (-not !$TableLoc) {
-                            $LoadoutText += "! ["
-                            foreach ($Mount in $Mounts) {
-                                $MountName = $MountsLongHash.$Mount
-                                $MountCount = $($Mech.Hardpoint.$($HPLongSortHash.$TableLoc) | ? {$_ -match $MountName}).Count
-                                if ($MountCount -gt 0) {
-                                    $LoadoutText += " $MountCount$Mount"
-                                }
-                            }
-                            $LoadoutText += " ]`r`n"
+                            $LoadoutText += "! FA="+$($Mech.HP.SetArmor.$($TableLoc+"F"))+"/"+$($Mech.HP.MaxArmor.$($TableLoc+"F"))+" RA="+$($Mech.HP.SetArmor.$($TableLoc+"R"))+"/"+$($Mech.HP.MaxArmor.$($TableLoc+"R"))+"<br>''S=$($Mech.HP.Structure.$TableLoc)''`r`n"
                         } else {
                             $LoadoutText += "! `r`n"
                         }
                     }
-                    #Fixed SubRow
-                    $LoadoutText += "|-`r`n! Fixed`r`n"
+                } else {
                     foreach ($TableLoc in $TableRow) {
-                        $LoadoutText += "|`r`n"
-                        if ([bool]($Mech.ArmActuatorSupport)) {
-                            if (($TableLoc -eq 'LA') -or ($TableLoc -eq 'RA')) {
-                                $LoadoutText += "Arm Limit: $($Mech.ArmActuatorSupport.$TableLoc)`r`n"
-                            }
-                        }
-                        if ($TableLoc -ne '') {
-                            $TableLocItemArray = $Mech.Loadout.Fixed.$($TableLoc) | group | sort Name
-                            foreach ($FixedItem in $TableLocItemArray) {
-                                if (-not !$($ItemFriendlyHash.$($FixedItem.Name))) {
-                                    $FixedItemObj = $GearObject | where {$_.Description.Id -like $FixedItem.Name}
-                                    $ItemFriendlyName = $($ItemFriendlyHash.$($FixedItem.Name))
-                                    if ($FixedItemObj.Custom.Category.CategoryID -match "positivequirk") {
-                                        $LoadoutQuirkText = "* QUIRK: [[Gear/$ItemFriendlyName|$ItemFriendlyName]]`r`n" + $LoadoutQuirkText
-                                    } elseif ($FixedItemObj.Custom.Category.CategoryID -match "special") {
-                                        $LoadoutQuirkText += "* Special: Fixed - [[Gear/$ItemFriendlyName|$ItemFriendlyName]]`r`n"
-                                    } else {
-                                        $LoadoutText += "* $($FixedItem.Count)x [[Gear/$ItemFriendlyName|$ItemFriendlyName]] [$($ItemSlotsHash.$($FixedItem.Name))]`r`n"
-                                    }
-                                }
-                            }
+                        if (-not !$TableLoc) {
+                            $LoadoutText += "! A=$($Mech.HP.SetArmor.$TableLoc)/$($Mech.HP.MaxArmor.$TableLoc)<br>''S=$($Mech.HP.Structure.$TableLoc)''`r`n"
+                        } else {
+                            $LoadoutText += "! `r`n"
                         }
                     }
-                    #Dynamic SubRow
-                    $LoadoutText += "|-`r`n! Dynamic`r`n"
-                    foreach ($TableLoc in $TableRow) {
-                        $LoadoutText += "|`r`n"
-                        if ($TableLoc -ne '') {
-                            $TableLocItemArray = $Mech.Loadout.Dynamic.$($TableLoc) | group | sort Name
-                            foreach ($FixedItem in $TableLocItemArray) {
-                                if (-not !$($ItemFriendlyHash.$($FixedItem.Name))) {
-                                    $FixedItemObj = $GearObject | where {$_.Description.Id -like $FixedItem.Name}
-                                    $ItemFriendlyName = $($ItemFriendlyHash.$($FixedItem.Name))
-                                    if ($FixedItemObj.Custom.Category.CategoryID -match "positivequirk") {
-                                        $LoadoutQuirkText = "* QUIRK: [[Gear/$ItemFriendlyName|$ItemFriendlyName]]`r`n" + $LoadoutQuirkText
-                                    } elseif ($FixedItemObj.Custom.Category.CategoryID -match "special") {
-                                        $LoadoutQuirkText += "* Special: Dynmc - [[Gear/$ItemFriendlyName|$ItemFriendlyName]]`r`n"
-                                    } else {
-                                        $LoadoutText += "* $($FixedItem.Count)x [[Gear/$ItemFriendlyName|$ItemFriendlyName]] [$($ItemSlotsHash.$($FixedItem.Name))]`r`n"
-                                    }
+                }
+                $TableRowCount++
+                #MexPage HardPoints SubRow
+                $LoadoutText += "|-`r`n! HardPoints`r`n"
+                foreach ($TableLoc in $TableRow) {
+                    if (-not !$TableLoc) {
+                        $LoadoutText += "! ["
+                        foreach ($Mount in $Mounts) {
+                            $MountName = $MountsLongHash.$Mount
+                            $MountCount = $($Mech.Hardpoint.$($HPLongSortHash.$TableLoc) | ? {$_ -match $MountName}).Count
+                            if ($MountCount -gt 0) {
+                                $LoadoutText += " $MountCount$Mount"
+                            }
+                        }
+                        $LoadoutText += " ]`r`n"
+                    } else {
+                        $LoadoutText += "! `r`n"
+                    }
+                }
+                #Fixed SubRow
+                $LoadoutText += "|-`r`n! Fixed`r`n"
+                foreach ($TableLoc in $TableRow) {
+                    $LoadoutText += "|`r`n"
+                    if ([bool]($Mech.ArmActuatorSupport)) {
+                        if (($TableLoc -eq 'LA') -or ($TableLoc -eq 'RA')) {
+                            $LoadoutText += "Arm Limit: $($Mech.ArmActuatorSupport.$TableLoc)`r`n"
+                        }
+                    }
+                    if ($TableLoc -ne '') {
+                        $TableLocItemArray = $Mech.Loadout.Fixed.$($TableLoc) | group | sort Name
+                        foreach ($FixedItem in $TableLocItemArray) {
+                            if (-not !$($ItemFriendlyHash.$($FixedItem.Name))) {
+                                $FixedItemObj = $GearObject | where {$_.Description.Id -like $FixedItem.Name}
+                                $ItemFriendlyName = $($ItemFriendlyHash.$($FixedItem.Name))
+                                if ($FixedItemObj.Custom.Category.CategoryID -match "positivequirk") {
+                                    $LoadoutQuirkText = "* QUIRK: [[Gear/$ItemFriendlyName|$ItemFriendlyName]]`r`n" + $LoadoutQuirkText
+                                } elseif ($FixedItemObj.Custom.Category.CategoryID -match "special") {
+                                    $LoadoutQuirkText += "* Special: Fixed - [[Gear/$ItemFriendlyName|$ItemFriendlyName]]`r`n"
+                                } else {
+                                    $LoadoutText += "* $($FixedItem.Count)x [[Gear/$ItemFriendlyName|$ItemFriendlyName]] [$($ItemSlotsHash.$($FixedItem.Name))]`r`n"
                                 }
                             }
                         }
                     }
                 }
-                #wrap loadout
-                $LoadoutText = "$($LoadoutText.Trim())`r`n|}`r`n"
-                #do $$LoadoutQuirkText$$ replacement
-                $LoadoutText = $($LoadoutText -split ("##LoadoutQuirkText##")) -join $LoadoutQuirkText
+                #Dynamic SubRow
+                $LoadoutText += "|-`r`n! Dynamic`r`n"
+                foreach ($TableLoc in $TableRow) {
+                    $LoadoutText += "|`r`n"
+                    if ($TableLoc -ne '') {
+                        $TableLocItemArray = $Mech.Loadout.Dynamic.$($TableLoc) | group | sort Name
+                        foreach ($FixedItem in $TableLocItemArray) {
+                            if (-not !$($ItemFriendlyHash.$($FixedItem.Name))) {
+                                $FixedItemObj = $GearObject | where {$_.Description.Id -like $FixedItem.Name}
+                                $ItemFriendlyName = $($ItemFriendlyHash.$($FixedItem.Name))
+                                if ($FixedItemObj.Custom.Category.CategoryID -match "positivequirk") {
+                                    $LoadoutQuirkText = "* QUIRK: [[Gear/$ItemFriendlyName|$ItemFriendlyName]]`r`n" + $LoadoutQuirkText
+                                } elseif ($FixedItemObj.Custom.Category.CategoryID -match "special") {
+                                    $LoadoutQuirkText += "* Special: Dynamic - [[Gear/$ItemFriendlyName|$ItemFriendlyName]]`r`n"
+                                } else {
+                                    $LoadoutText += "* $($FixedItem.Count)x [[Gear/$ItemFriendlyName|$ItemFriendlyName]] [$($ItemSlotsHash.$($FixedItem.Name))]`r`n"
+                                }
+                            }
+                        }
+                    }
+                }
             }
-
+            #wrap loadout
+            $LoadoutText = "$($LoadoutText.Trim())`r`n|}`r`n"
+            #do $$LoadoutQuirkText$$ replacement
+            $LoadoutText = $($LoadoutText -split ("##LoadoutQuirkText##")) -join $LoadoutQuirkText
+            
             #HP Main Only
             if (-not $Mech.BLACKLIST) {
                 $HPText = "A=$($Mech.HP.SetArmor.Total)/$($Mech.HP.MaxArmor.Total) ''S=$($Mech.HP.Structure.Total)''"
@@ -475,6 +455,9 @@ foreach ($Cat in $CatOrder) {
                     }
                     $MechBlurb += "`r`n|}"
                 }
+                #Regex cleanup
+                $MechBlurb = $MechBlurb -Replace ('<color=(.*?)>(.*?)<\/color>','<span style="color:$1;">$2</span>') #replace color tag
+                $MechBlurb = $MechBlurb -Replace ('<b>(.*?)<\/b>','$1') #remove bold
                 $WikiMexTable += "`r`n==Description==`r`n`r`n"+$MechBlurb+"`r`n"
                 $WikiMexTable += "`r`n"+$LoadoutText+"`r`n"
             } else {
@@ -496,25 +479,67 @@ foreach ($Cat in $CatOrder) {
         $ChassisTable = "|colspan=`"1`" rowspan=`"$VariantCount`" style=`"vertical-align:middle;text-align:center;`" | [[File:$IconName.png|link=|120px]]`r`n$($Mech.Name.Chassis)`r`n"+$ChassisTable
         #chassis table header
         $ChassisTable = "`r`n|-`r`n"+$ChassisTable
-        $WikiTable += $ChassisTable
 
     }
-    #generate Footer
-    $CatFooter = "`r`n|}`r`n`r`n"
-    $WikiTable += $CatFooter
+    $ChassisTable | Set-Content -Encoding UTF8 "$RTScriptroot\\Outputs\\Mechs\\CatBlock\\##CatBlockText$z##.txt"
+    $WikiPageMexFileUTF8 = $WikiPageMexFileUTF8.Replace(".UTF8","$z.UTF8")
+    $WikiMexTable | Set-Content -Encoding UTF8 $WikiPageMexFileUTF8
 }
+
+
+$z = 0
+foreach ($Cat in $CatOrder) {
+    #Declare CatBlock
+    $z++
+    $CatBlockFile = "$RTScriptroot\\Outputs\\Mechs\\CatBlock\\##CatBlockText$z##.txt"
+    $CatHeaderName = $($CatObject | where -Property TagTitle -Contains $Cat).FTitle
+    $CatHeader = @"
+== $CatHeaderName == 
+{| class="wikitable sortable mw-collapsible"
+|+
+! scope="col" style="width: 150px;" | Name
+! Signature
+! Weight
+! Hardpoints 
+! HP
+! Special
+"@
+    $CatFooter = "`r`n|}`r`n`r`n"
+    $CatBlockText = $CatHeader+"##CatBlockText$z##"+$CatFooter
+    
+    #Filter mechs
+    $MechsFilteredObject = $MechsMasterObject | where -Property class -contains $Cat | sort -Property ({$_.Name.Chassis}, {$_.Name.Variant}, {$_.Name.SubVariant}, {$_.Name.Unique}, {$_.Name.Hero})
+    $MechsChassisGroup = $MechsFilteredObject | Group-Object -Property {$_.name.chassis}
+
+    $WikiMexTable = ""
+
+    $CatBlockVarList = RT-ScriptVars
+    Start-Job -Name $("CatBlockJob"+$z) -ScriptBlock $CatBlock | Out-Null #start job with $CatBlock
+    $WikiTable += $CatBlockText
+}
+
+#wait for jobbed sections to finish
+while((Get-Job | Where-Object {$_.State -ne "Completed"}).Count -gt 0) {
+    Start-Sleep -Milliseconds 250
+    Write-Progress -id 0 -Activity 'Waiting for jobs'
+    foreach ($job in (Get-Job)) {
+        Write-Progress -Id $job.Id -Activity $job.Name -Status $job.State -ParentId 0
+    }
+}
+#Cleanup Averages Job
+Get-Job | Remove-Job
+
+#WikiMexTable subout
+for ($m=1; $m -le $($CatOrder.Count); $m++) {
+    $Search = "##CatBlockText$m##"
+    $CatBlockFile = "$RTScriptroot\\Outputs\\Mechs\\CatBlock\\##CatBlockText$m##.txt"
+    $CatBlockText = Get-Content $CatBlockFile -Raw
+    $WikiTable = $WikiTable.Replace($Search,$CatBlockText)
+}
+
 #save it to file at end
 $WikiTable = "{{-start-}}`r`n"+$WikiTable+"`r`n{{-stop-}}"
+
 $WikiTable > $WikiPageFile
-$WikiMexTable > $WikiPageMexFile
-#Convert UTF8
 Get-Content $WikiPageFile | Set-Content -Encoding UTF8 $WikiPageFileUTF8
-Get-Content $WikiPageMexFile | Set-Content -Encoding UTF8 $WikiPageMexFileUTF8
-if ($UploadToWiki) {
-    py $PWBRoot\\pwb.py login
-    cls
-    py $PWBRoot\\pwb.py pagefromfile -file:$WikiPageFileUTF8 -notitle -force -pt:0
-    cls
-    py $PWBRoot\\pwb.py pagefromfile -file:$WikiPageMexFileUTF8 -notitle -force -pt:0
-    cls
-}
+

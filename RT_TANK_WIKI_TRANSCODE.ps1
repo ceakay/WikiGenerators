@@ -363,7 +363,7 @@ foreach ($VTOL in $VTOLOrder) {
                     } else {
                         $MechBlurb = $Mech.Blurb
                     }
-                    $WikiMexTable += "`r`n==Description==`r`n`r`n"+$MechBlurb+"`r`n"
+                    $WikiMexTable += "`r`n==Description==`r`n`r`nTonnage: $($Mech.Tonnage)`r`n`r`n"+$MechBlurb+"`r`n"
                     $WikiMexTable += "`r`n"+$HPMexText+"`r`n"
                     $WikiMexTable += "`r`n"+$LoadoutText+"`r`n"
                     $WikiMexTable += "`r`n"+$FactionText+"`r`n"

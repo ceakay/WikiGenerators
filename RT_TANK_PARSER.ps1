@@ -14,8 +14,8 @@ function datachop {
 #SETTINGS
 ###
 #HPValueMod is for the dynamic math to change actual combat values.
-$ArmorValueMod = 0.8
-$StructureValueMod = 2
+$ArmorValueMod = 1
+$StructureValueMod = 1
 
 
 #SET CONSTANTS
@@ -120,6 +120,21 @@ MDEF=,$($SpecialMDef -join ",")
 ===================,headerlines,4
 |CONFLICT| ,CDef // MDef, || ,Missing Tag, |Missing in| ,file
 "@ | Out-File -FilePath $conflictfile -Encoding ascii
+
+Write-Host @"
+
+
+
+
+
+
+
+
+
+
+
+
+"@
 
 $i = 0
 foreach ($MDefFileObject in $MDefFileObjectList) { 
@@ -392,6 +407,10 @@ foreach ($MDefFileObject in $MDefFileObjectList) {
         }
         #Grab and trim Mech Blurb
         $MechBlurb = $MDefObject.Description.Details
+        #Regex cleanup
+        $MechBlurb = $($($MechBlurb.Split("`n")) -Replace ('^[ \t]*','')) -Join ("`n") #split by lines, trim leading spaces/tabs, rejoin
+        $MechBlurb = $MechBlurb -Replace ('<color=(.*?)>(.*?)<\/color>','<span style="color:$1;">$2</span>') #replace color tag
+        $MechBlurb = $MechBlurb -Replace ('<b>(.*?)<\/b>','$1') #remove bold
         $Mech | Add-Member -MemberType NoteProperty -Name "Blurb" -Value $MechBlurb
         ###START OVERRIDES SECTION
         
@@ -400,6 +419,7 @@ foreach ($MDefFileObject in $MDefFileObjectList) {
         $Mechs += $Mech
     } else {
         Write-Error -Message "Error with ChassisID in $filePathMDef"
+        pause
     }
 }
 #load overrides

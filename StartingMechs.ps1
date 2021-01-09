@@ -44,7 +44,7 @@ Each start will pick from a number of tables. Below is a list of the tables used
 
 #The Factions Section
 
-$CareersFile = "D:\RogueTech\RtlCache\RtCache\BTRandomStartByDifficultyMenu\Menus\CareerDifficultySettings.json"
+$CareersFile = "D:\RogueTech\RtlCache\RtCache\IRTweaks\Menus\CareerDifficultySettings.json"
 $CareersBigObject = Get-Content $CareersFile -Raw | ConvertFrom-Json
 $CareersObjects = $($CareersBigObject.difficultyList | ? {$_.ID -match 'diff_startingplanet'}).Options
 foreach ($CareersObject in $CareersObjects) {
@@ -89,7 +89,7 @@ foreach ($GroupedName in $GroupedNamesArray) {
     $ListsHolder = @()
     foreach ($GroupedFile in $StartingMechsListsGrouped.$GroupedName) {
         $ModName = Split-Path $(Split-Path $(Split-Path $GroupedFile -Parent) -Parent) -Leaf
-        if ($ModName -match'BTRandomStartByDifficultyMenu') {
+        if ($ModName -match'IRTweaks') {
             $ModName = 'Base 3061'
         }
         $ListsHolder += Get-Content $GroupedFile | select -Skip 1 | % {$_ += ",$ModName";$_} | ConvertFrom-Csv -Header 'ID', 'Type', 'Quantity', 'Rarity', 'ModName'

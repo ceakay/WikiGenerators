@@ -18,7 +18,7 @@ $ComponentObjectList = @()
 #get a list of jsons
 #construct mega component object list
 $JSONList = Get-ChildItem $CacheRoot -Recurse -Filter "*.json"
-$JSONList = $JSONList | ? {($_.FullName -notmatch 'Heavy Metal') -and ($_.FullName -notmatch 'VanillaNoLoot') -and ($_.FullName -notmatch 'HeavyMetal')}
+$JSONList = $JSONList | ? {($_.FullName -notmatch 'VanillaNoLoot')}
 $i = 0
 $WonkyList = @()
 foreach ($JSONFile in $JSONList) {
@@ -28,6 +28,8 @@ foreach ($JSONFile in $JSONList) {
         try {
             $JSONObject = $($JSONRaw | ConvertFrom-Json)
             $JSONObject.Description.UIName = $JSONObject.Description.UIName.Replace("/","")
+            $JSONObject.Description.UIName = $JSONObject.Description.UIName.Replace("[","(")
+            $JSONObject.Description.UIName = $JSONObject.Description.UIName.Replace("]",")")
             if ($JSONObject.Description.UIName -notmatch '\+\d') {
                 $UINameArray = $($JSONObject.Description.UIName -split (" \+"))
             }
