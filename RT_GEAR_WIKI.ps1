@@ -1,4 +1,44 @@
-﻿###FUNCTIONS
+﻿Write-Host @"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+"@
+
+###FUNCTIONS
 #data chopper function
     #args: delimiter, position, input
 function datachop {
@@ -203,7 +243,7 @@ $JobFunctions = {
 "@
             }
             if ($Item.ComponentType -match 'weapon') {
-                $ItemText += "=Weapon Stats=`r`n"  
+                $ItemText += "=Weapon Stats=`r`n`r`nCategory: $($Item.Category)`r`n`r`nType: $($Item.Type)`r`n`r`nSubType: $($Item.WeaponSubType)`r`n"  
                 $ItemText += @"
 {| class="wikitable"
 ! colspan="3" |
@@ -253,10 +293,10 @@ $JobFunctions = {
                     $ItemBaseIndirectFireCapable = ""
                 }
                 foreach ($Stat in $BaseArrayZero) {
-                    iex $('$ItemBase'+$Stat+' = $($Item.'+$Stat+'); if (!$ItemBase'+$Stat+') {$ItemBase'+$Stat+' = 0}')
+                    iex $('$ItemBase'+$Stat+' = $($Item.'+$Stat+'); if ($ItemBase'+$Stat+' -eq $null) {$ItemBase'+$Stat+' = 0}')
                 }
                 foreach ($Stat in $BaseArrayOne) {
-                    iex $('$ItemBase'+$Stat+' = $($Item.'+$Stat+'); if (!$ItemBase'+$Stat+') {$ItemBase'+$Stat+' = 1}')
+                    iex $('$ItemBase'+$Stat+' = $($Item.'+$Stat+'); if ($ItemBase'+$Stat+' -eq $null) {$ItemBase'+$Stat+' = 1}')
                 }
 
                 if (!$Item.Modes) {
@@ -429,7 +469,7 @@ foreach ($HashItem in $MinorCatHash.GetEnumerator()) {
     catch {$HashItem}
 }
 
-#Build Minor Cat Groups - probably won't need
+#Build Minor Cat Groups
 Write-Progress -Id 0 -Activity "Building Groups"
 $GroupedList = [pscustomobject]@{}
 foreach ($MasterObject in $MasterList) {
@@ -457,7 +497,6 @@ foreach ($BonusDescFile in $BonusDescFiles) {
 $RTVersion = $(Get-Content "$CacheRoot\\RogueTech Core\\mod.json" -Raw | ConvertFrom-Json).Version
 $GearPage = "Last Updated RT Version $RTVersion`r`n`r`n" + $(Get-Content $GearPageBlurbFile -Raw)+"`r`n`r`n"
 
-
 ###BUILD PAGES
 #Inits
 $i = $j = $k = $l = 0
@@ -473,10 +512,11 @@ $Navbox = @"
 "@
 #Purge Folder
 Remove-Item "$GearOutFolder\\*" -Recurse -Force
-New-Item -ItemType Directory $ItemOutFolder
+$null = New-Item -ItemType Directory $ItemOutFolder
+
 
 #Build Item Pages via jobs
-$Divisor = 100
+$Divisor = 100 #Even numbers only
 $Rounder = ($Divisor / 2) - 1
 $Counter = [int]$(($MasterList.Count + $Rounder) / $Divisor)
 for ($JobCount=0;$JobCount -lt $Counter; $JobCount++) {
@@ -510,7 +550,7 @@ foreach ($MajorKey in $FiltersList.Caption) {
             catch {$AllMajorEquipFilter.$($LowerFilter.psobject.Properties.Name) += $LowerFilter.psobject.Properties.Value}
         }
     }
-    if (!$AllMajorEquipFilter.ComponentTypes -and !$AllMajorEquipFilter.Categories -and $AllMajorEquipFilter.NotCategories) {
+    if (!$AllMajorEquipFilter.ComponentTypes -and !$AllMajorEquipFilter.Categories -and !$AllMajorEquipFilter.NotCategories) {
         $AllMajorEquip = $MasterList
     } else {
         $AllMajorEquip = RT-DynamicFiter -InputObject $MasterList -ComponentTypes $AllMajorEquipFilter.ComponentTypes -Categories $AllMajorEquipFilter.Categories -NotCategories $AllMajorEquipFilter.NotCategories
@@ -525,7 +565,7 @@ foreach ($MajorKey in $FiltersList.Caption) {
         $Navbox += "• [[$MinorLink|$MinorName]] "
         $MajorPage += "[[$MinorLink]]`r`n`r`n"
         $MinorPageFile =  "Gear-$MajorName-$MinorName.txt"
-        if (!$MinorFilter.Filter.ComponentTypes -and !$MinorFilter.Filter.Categories -and $MinorFilter.Filter.NotCategories) {
+        if (!$MinorFilter.Filter.ComponentTypes -and !$MinorFilter.Filter.Categories -and !$MinorFilter.Filter.NotCategories) {
             $AllMinorEquip = $AllMajorEquip
         } else {
             $AllMinorEquip = RT-DynamicFiter -InputObject $AllMajorEquip -ComponentTypes $MinorFilter.Filter.ComponentTypes -Categories $MinorFilter.Filter.Categories -NotCategories $MinorFilter.Filter.NotCategories
@@ -537,7 +577,8 @@ foreach ($MajorKey in $FiltersList.Caption) {
             Write-Progress -Id 2 -Activity "Building Item Groups" -Status "$k of $($MinorCats.Count)" -ParentId 1
             #Hash the name out
             $MinorPage += "==$MinorCat==`r`n`r`n"
-            $ItemList = $($GroupedList.$MinorCat | select {$_.Description.UIName}).'$_.Description.UIName'
+            $FilteredItemList = RT-DynamicFiter -InputObject $($GroupedList.$MinorCat) -ComponentTypes $MinorFilter.Filter.ComponentTypes -Categories $MinorFilter.Filter.Categories -NotCategories $MinorFilter.Filter.NotCategories
+            $ItemList = $($FilteredItemList | select {$_.Description.UIName}).'$_.Description.UIName'
             if (-not !$ItemList) {
                 $ItemList = $ItemList | Sort-STNumerical
             }
