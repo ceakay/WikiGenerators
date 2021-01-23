@@ -1,4 +1,44 @@
-﻿###FUNCTIONS
+﻿Write-Host @"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+"@
+
+###FUNCTIONS
 #data chopper function
     #args: delimiter, position, input
 function datachop {
@@ -419,13 +459,13 @@ foreach ($Cat in $CatOrder) {
             #Compatible Variants
             $CompatVarText = ""
             if (-not !$Mech.PrefabID) {
-                if ($Mech.Special.Count -gt 0) {
+                <#if ($Mech.Special.Count -gt 0) {
                     if ([bool]($Mech.Special | ? {$_ -match 'OMNI'})) {
                         $CompatVarText += "`r`n-[[Guides/Mech Bay|Omnimech]]-`r`n"
                     } else { 
                         $CompatVarText += "`r`n-[[Guides/Mech Bay|Special]]-`r`n"
                     }
-                }
+                }#>
                 $CompatVarList = $PrefabID.$($Mech.PrefabID).$($Mech.Tonnage) | sort
                 foreach ($CompatVar in $CompatVarList) {
                     $CompatVarText += "`r`n* [[Mechs/"+$CompatVar+"|"+$CompatVar+"]]"
@@ -473,6 +513,17 @@ foreach ($Cat in $CatOrder) {
                     foreach ($ChassisAffinity in $ChassisAffinities) {
                         $MechBlurb += "`r`n* $($ChassisAffinity.levelName) ($($ChassisAffinity.missionsRequired)): $($ChassisAffinity.decription)"
                     }
+                    $MechBlurb += "`r`n|}"
+                }
+                #Mech Tags
+                if ($Mech.Special.Count -gt 0) {
+                    $MechBlurb += "`r`n{| class=`"wikitable`"`r`n|-`r`n! [[Guides/Mech Bay|Special Tags]]`r`n|-`r`n|"
+                    $MechBlurbSpecialTags = ""
+                    foreach ($MechSpecial in $Mech.Special) {
+                        $MechBlurbSpecialTags += "$($($SpecialsObject | where -Property TagTitle -contains $MechSpecial).Friendly) - "
+                    }
+                    $MechBlurbSpecialTags = $MechBlurbSpecialTags.Trim(' - ')
+                    $MechBlurb += "`r`n" + $MechBlurbSpecialTags
                     $MechBlurb += "`r`n|}"
                 }
                 $WikiMexTable += "`r`n==Description==`r`n`r`n"+$MechBlurb+"`r`n"

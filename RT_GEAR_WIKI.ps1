@@ -360,7 +360,7 @@ $JobFunctions = {
 | $ModeDefault
 | $ModeMode
 | $ModeAmmoCategory
-| $($ItemBaseDamage + $Mode.Damage)
+| $($ItemBaseDamage + $Mode.Damage + $Mode.DamagePerShot)
 | $($ItemBaseHeatDamage + $Mode.HeatDamage)
 | $($ItemBaseInstability + $Mode.Instability)
 | $($ItemBaseShotsWhenFired + $Mode.ShotsWhenFired)
@@ -389,6 +389,11 @@ $JobFunctions = {
             #Regex cleanup
             $ItemText = $ItemText -Replace ('<color=(.*?)>(.*?)<\/color>','<span style="color:$1;">$2</span>') #replace color tag
             $ItemText = $ItemText -Replace ('<b>(.*?)<\/b>','$1') #remove bold
+
+            #Lazy Blacklisted
+            if ($Item.ComponentTags.items -contains "blacklisted") {
+                $ItemText = "{{-start-}}`r`n'''Gear/$($Item.Description.UIName)'''`r`n#REDIRECT [[Classified]]`r`n"
+            }
 
             #Close
             $ItemText += "{{-stop-}}`r`n"
@@ -438,7 +443,7 @@ $MajorCatsHash = @{
 
 #Load Master List, remove blacklisted
 Write-Progress -Id 0 -Activity "Loading Master Object"
-$MasterList = [System.Collections.ArrayList]@($(Get-Content $EquipFile -Raw | ConvertFrom-Json) | ? {$_.ComponentTags.items -notcontains "blacklisted"}) | ? {$_.Description.ID -notmatch 'emod_engineslots_size'}  | ? {$_.Description.ID -notmatch 'Gear_LegJet_Assault_Lower'} 
+$MasterList = [System.Collections.ArrayList]@($(Get-Content $EquipFile -Raw | ConvertFrom-Json) | ? {$_.Description.ID -notmatch 'emod_engineslots_size'}  | ? {$_.Description.ID -notmatch 'Gear_LegJet_Assault_Lower'}) #| ? {$_.ComponentTags.items -notcontains "blacklisted"})
 
 #Load Filters List
 Write-Progress -Id 0 -Activity "Loading Custom Filters"

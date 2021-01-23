@@ -1,4 +1,44 @@
-﻿###SET CONSTANTS
+﻿Write-Host @"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+"@
+
+###SET CONSTANTS
 ###
 #RogueTech Dir (Where RTLauncher exists)
 $RTroot = "D:\\RogueTech"

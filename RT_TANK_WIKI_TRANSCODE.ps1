@@ -1,4 +1,44 @@
-﻿###FUNCTIONS
+﻿Write-Host @"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+"@
+
+###FUNCTIONS
 #data chopper function
     #args: delimiter, position, input
 function datachop {
