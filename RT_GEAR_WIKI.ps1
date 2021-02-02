@@ -277,7 +277,7 @@ $JobFunctions = {
 !<small>Indirect</small>
 
 "@
-                $BaseArrayZero = @('Damage','HeatDamage','Instability','HeatGenerated','AccuracyModifier','EvasivePipsIgnored','AttackRecoil','APCriticalChanceMultiplier','APArmorShardsMod','APMaxArmorThickness')
+                $BaseArrayZero = @('Damage','HeatDamage','Instability','HeatGenerated','AccuracyModifier','EvasivePipsIgnored','RefireModifier','APCriticalChanceMultiplier','APArmorShardsMod','APMaxArmorThickness')
                 $BaseArrayOne = @('ShotsWhenFired','ProjectilesPerShot')
                 $ItemBaseDefault = ""
                 $ItemBaseMode = ""
@@ -312,7 +312,7 @@ $JobFunctions = {
 | $ItemBaseShotsWhenFired
 | $ItemBaseProjectilesPerShot
 | $ItemBaseHeatGenerated
-| $ItemBaseAttackRecoil
+| $ItemBaseRefireModifier
 | $ItemBaseAccuracyModifier
 | $ItemBaseEvasivePipsIgnored
 | $ItemBaseAPCriticalChanceMultiplier
@@ -366,7 +366,7 @@ $JobFunctions = {
 | $($ItemBaseShotsWhenFired + $Mode.ShotsWhenFired)
 | $($ItemBaseProjectilesPerShot + $Mode.ProjectilesPerShot)
 | $($ItemBaseHeatGenerated + $Mode.HeatGenerated)
-| $($ItemBaseAttackRecoil + $Mode.AttackRecoil)
+| $($ItemBaseRefireModifier + $Mode.RefireModifier)
 | $($ItemBaseAccuracyModifier + $Mode.AccuracyModifier)
 | $($ItemBaseEvasivePipsIgnored + $Mode.EvasivePipsIgnored)
 | $($ItemBaseAPCriticalChanceMultiplier + $Mode.APCriticalChanceMultiplier)
