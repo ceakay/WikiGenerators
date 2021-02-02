@@ -191,7 +191,7 @@ $JobFunctions = {
             #Build gear page
             $ItemText = "{{-start-}}`r`n'''Gear/$($Item.Description.UIName)'''`r`n"
             $ItemText += "{{tocright}}`r`n"
-            $ItemText += "=Description=`r`n`r`n$($($($Item.Description.Details -split ("`n")) | % {$_.Trim()}) -join ("`r`n"))`r`n"
+            $ItemText += "=Description=`r`n`r`nID: $($Item.Description.ID)`r`n`r`n$($($($Item.Description.Details -split ("`n")) | % {$_.Trim()}) -join ("`r`n"))`r`n"
             $ItemText += "=Attributes=`r`n`r`n"
             $ItemText += @"
 {|class="wikitable"
