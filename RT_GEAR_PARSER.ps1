@@ -87,7 +87,7 @@ foreach ($JSONFile in $JSONList) {
             }
             $ComponentObjectList += $JSONObject
         } catch {
-            Write-Host $JSONFile
+            "GearParser|Error parsing: " + $JSONFile | Out-File $RTScriptroot\ErrorLog.txt -Append
         }
     }
     $i++

@@ -102,7 +102,12 @@ write-progress -activity 'Gathering Faction Friendly Names'
 $FactionFriendlyFileList = Get-ChildItem $RTroot -Recurse -Filter "faction_*.json" -ErrorAction SilentlyContinue
 foreach ($FactionFriendlyFile in $FactionFriendlyFileList) {
     $FactionDefObj = Get-Content $FactionFriendlyFile.VersionInfo.FileName -Raw | ConvertFrom-Json
-    try {$FactionFriendlyObject | Add-Member -Type NoteProperty -Name $FactionDefObj.factionID -Value $($FactionDefObj.Name).Replace("the ","")} catch { $FactionFriendlyFile }
+    try {
+        $FactionFriendlyObject | Add-Member -Type NoteProperty -Name $FactionDefObj.factionID -Value $($FactionDefObj.Name).Replace("the ","")
+    } catch { 
+        $FactionFriendlyFile
+        "MechWiki|Faction error: " + $($FactionDefObj.factionID) | Out-File $RTScriptroot\ErrorLog.txt -Append
+    }
 }
 <#
 foreach ($Key in $GroupKeyList) {
@@ -122,6 +127,7 @@ $FactionIgnoreList = @($FactionIgnoreObj.IgnoreUs)
 $IconFilesList = Get-ChildItem $CacheRoot -Recurse -Filter "*.dds"
 
 #Build Item Friendly Name Hash
+#build Item Slots hash
 <#
 Write-Progress -Activity 'Gathering Item Friendly Names'
 $AllJSON = Get-ChildItem $CacheRoot -Recurse -Filter "*.json" -Include 'Ammo*','Ammunition*','BoltOn*','default_*','emod*','gear*','hand*','lootable*','LoreGear*','NoBoxAmmo*','Omni*','PA*','PartialWing*','protomech*','prototype*','quirk_*','supercharged*','special_*','weapon*','zeusx*' -ErrorAction SilentlyContinue
@@ -129,18 +135,17 @@ $AllJSON = Get-ChildItem $CacheRoot -Recurse -Filter "*.json" -Include 'Ammo*','
 $GearFile = $RTScriptroot+"\\Outputs\\GearTable.json"
 $GearObject = Get-Content $GearFile -raw | ConvertFrom-Json
 $ItemFriendlyHash = @{}
-foreach ($Item in $GearObject) {
-    if (-not !$Item.Description.UIName) {
-        try {$ItemFriendlyHash.Add($Item.Description.Id,$Item.Description.UIName)} catch {Write-Host "Dupe: $($Item.Description.Id)"}
-    }
-}
-#build Item Slots hash
 $ItemSlotsHash = @{}
 foreach ($Item in $GearObject) {
+    #Build Item Friendly Name Hash
+    if (-not !$Item.Description.UIName) {
+        try {$ItemFriendlyHash.Add($Item.Description.Id,$Item.Description.UIName)} catch {"MechWiki|Dupe gear ID: $($Item.Description.Id)" | Out-File $RTScriptroot\ErrorLog.txt -Append}
+    }
+    #build Item Slots hash
     if (-not !$Item.InventorySize) {
-        try {$ItemSlotsHash.Add($Item.Description.Id,$Item.InventorySize)} catch {Write-Host "Dupe: $($Item.Description.Id)"}
+        try {$ItemSlotsHash.Add($Item.Description.Id,$Item.InventorySize)} catch {""}
     } else {
-        try {$ItemSlotsHash.Add($Item.Description.Id,1)} catch {Write-Host "Dupe: $($Item.Description.Id)"}
+        try {$ItemSlotsHash.Add($Item.Description.Id,1)} catch {""}
     }
 }
 

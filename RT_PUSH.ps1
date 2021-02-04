@@ -1,6 +1,6 @@
-﻿date
+﻿$RTScriptroot = "D:\\RogueTech\\WikiGenerators"
 
-$RTScriptroot = "D:\\RogueTech\\WikiGenerators"
+"Date: " + $(date) | Out-File $RTScriptroot\ErrorLog.txt -Append
 
 $WikiPID = (Start-Process pwsh -ArgumentList "$RTScriptroot\StartingMechs.ps1" -PassThru).Id
 $StatusText = 'StartingMechs'

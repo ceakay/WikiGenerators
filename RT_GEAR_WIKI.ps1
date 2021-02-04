@@ -471,7 +471,7 @@ foreach ($MinorCatFile in $MinorCatFiles) {
 $MinorCatHashReverse = @{}
 foreach ($HashItem in $MinorCatHash.GetEnumerator()) {
     try {$MinorCatHashReverse.Add($HashItem.Value,$HashItem.Key)}
-    catch {$HashItem}
+    catch {"GearWiki|Cannot create CatHash: " + $HashItem | Out-File $RTScriptroot\ErrorLog.txt -Append}
 }
 
 #Build Minor Cat Groups
@@ -604,7 +604,7 @@ foreach ($MajorKey in $FiltersList.Caption) {
     $MajorPage | Out-File "$GearOutFolder\\$MajorPageFile" -Encoding utf8 -Force
     $j=0
 }
-$GearPage = "{{NavboxEquipment}}`r`n`r`n" + $GearPage
+$GearPage = "`r`n{{-start-}}`r`n'''Gear'''`r`n{{NavboxEquipment}}`r`n`r`n" + $GearPage + "`r`n{{-stop-}}`r`n"
 $GearPage | Out-File "$GearOutFolder\\GearMain.txt" -Encoding utf8 -Force
 
 $Navbox += "}}"

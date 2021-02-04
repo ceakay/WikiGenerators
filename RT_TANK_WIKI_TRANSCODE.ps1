@@ -116,7 +116,7 @@ $ItemFriendlyHash = @{}
 foreach ($Item in $GearObject) {
     #$ItemObject = Get-Content $Item.FullName -Raw | ConvertFrom-Json
     if (-not !$Item.Description.UIName) {
-        try {$ItemFriendlyHash.Add($Item.Description.Id,$Item.Description.UIName)} catch {Write-Host "Dupe: $($Item.Description.Id)"}
+        try {$ItemFriendlyHash.Add($Item.Description.Id,$Item.Description.UIName)} catch {"TankWiki|Dupe gear ID: $($Item.Description.Id)" | Out-File $RTScriptroot\ErrorLog.txt -Append}
     }
 }
 
