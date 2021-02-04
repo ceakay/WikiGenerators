@@ -193,7 +193,7 @@ foreach ($MDefFileObject in $MDefFileObjectList) {
     $filePathMDef = $MDefFileObject.VersionInfo.FileName
     $fileNameMDef = $MDefFileObject.Name
     $FileObjectModRoot = "$($MDefFileObject.DirectoryName)\\.."
-    try {$MDefObject = ConvertFrom-Json $(Get-Content $filePathMDef -raw)} catch {"TankParser|Parsing vehicledef: " + $filePathMDef | Out-File $RTScriptroot\ErrorLog.txt -Append}
+    try {$MDefObject = ConvertFrom-Json $(Get-Content $filePathMDef -raw)} catch {"TankParser|Parsing vehicledef: " + $filePathMDef | Out-File $RTScriptroot\ErrorLog.txt -Append -Encoding utf8}
     $fileNameCDef = "$($MDefObject.ChassisID).$($CDefFileType)"
     $CDefFileObject = Get-ChildItem $FileObjectModRoot -Recurse -Filter "$fileNameCDef"
     #if not found in modroot, try everything
@@ -203,7 +203,7 @@ foreach ($MDefFileObject in $MDefFileObjectList) {
     #error with CDef definition if still nothing
     if (-not !$CDefFileObject) {
         $filePathCDef = $CDefFileObject.VersionInfo.FileName
-        try {$CDefObject = $(Get-Content $filePathCDef -raw | ConvertFrom-Json)} catch {"TankParser|Parsing vehiclechassisdef: " + $filePathCDef | Out-File $RTScriptroot\ErrorLog.txt -Append}
+        try {$CDefObject = $(Get-Content $filePathCDef -raw | ConvertFrom-Json)} catch {"TankParser|Parsing vehiclechassisdef: " + $filePathCDef | Out-File $RTScriptroot\ErrorLog.txt -Append -Encoding utf8}
     
         #init mech object for storage
         $Mech = $([PSCustomObject] @{
