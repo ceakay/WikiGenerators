@@ -106,7 +106,7 @@ foreach ($FactionFriendlyFile in $FactionFriendlyFileList) {
         $FactionFriendlyObject | Add-Member -Type NoteProperty -Name $FactionDefObj.factionID -Value $($FactionDefObj.Name).Replace("the ","")
     } catch { 
         $FactionFriendlyFile
-        "MechWiki|Faction error: " + $($FactionDefObj.factionID) | Out-File $RTScriptroot\ErrorLog.txt -Append
+        "MechWiki|Faction error: " + $($FactionDefObj.factionID) | Out-File $RTScriptroot\ErrorLog.txt -Append -Encoding utf8
     }
 }
 <#
@@ -139,7 +139,7 @@ $ItemSlotsHash = @{}
 foreach ($Item in $GearObject) {
     #Build Item Friendly Name Hash
     if (-not !$Item.Description.UIName) {
-        try {$ItemFriendlyHash.Add($Item.Description.Id,$Item.Description.UIName)} catch {"MechWiki|Dupe gear ID: $($Item.Description.Id)" | Out-File $RTScriptroot\ErrorLog.txt -Append}
+        try {$ItemFriendlyHash.Add($Item.Description.Id,$Item.Description.UIName)} catch {"MechWiki|Dupe gear ID: $($Item.Description.Id)" | Out-File $RTScriptroot\ErrorLog.txt -Append -Encoding utf8}
     }
     #build Item Slots hash
     if (-not !$Item.InventorySize) {
@@ -148,6 +148,7 @@ foreach ($Item in $GearObject) {
         try {$ItemSlotsHash.Add($Item.Description.Id,1)} catch {""}
     }
 }
+
 
 #Build ChassisAffinities
 $AffinitiesFile = "$CacheRoot\\MechAffinity\\settings.json"

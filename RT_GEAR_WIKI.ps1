@@ -471,7 +471,7 @@ foreach ($MinorCatFile in $MinorCatFiles) {
 $MinorCatHashReverse = @{}
 foreach ($HashItem in $MinorCatHash.GetEnumerator()) {
     try {$MinorCatHashReverse.Add($HashItem.Value,$HashItem.Key)}
-    catch {"GearWiki|Cannot create CatHash: " + $HashItem | Out-File $RTScriptroot\ErrorLog.txt -Append}
+    catch {"GearWiki|Cannot create CatHash: " + $HashItem | Out-File $RTScriptroot\ErrorLog.txt -Append -Encoding utf8}
 }
 
 #Build Minor Cat Groups

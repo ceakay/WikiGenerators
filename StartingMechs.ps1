@@ -149,7 +149,7 @@ foreach ($GroupName in $GroupNamesArray) {
                 $MechDefFile = Get-ChildItem -Path $CacheRoot -Recurse -Filter "$($MechItem.ID).json"
             }
             try {$MechDef = Get-Content $MechDefFile.FullName -Raw | ConvertFrom-Json}
-            catch {"StartingMechs|Cannot find MechDef: $($MechItem.ID)" | Out-File $RTScriptroot\ErrorLog.txt -Append}
+            catch {"StartingMechs|Cannot find MechDef: $($MechItem.ID)" | Out-File $RTScriptroot\ErrorLog.txt -Append -Encoding utf8}
             $Mech | Add-Member -MemberType NoteProperty -Name 'ModName' -Value $(Split-Path $(Split-Path $(Split-Path $MechDefFile.FullName -Parent) -Parent) -Leaf)
             $fileNameCDef = "$($MechDef.ChassisID).json"
             $ChassDefFile = Get-ChildItem $($CacheRoot + "\" + $Mech.ModName) -Recurse -Filter "$fileNameCDef"
@@ -173,7 +173,7 @@ foreach ($GroupName in $GroupNamesArray) {
                 $MechVarActual = "ZEU-9WD"
             }
             try {$Mech.Name | Add-Member -MemberType NoteProperty -Name "Variant" -Value "$($MechVarActual.ToUpper())"}
-            catch {"StartingMechs|Def missing Name: " + $MechID | Out-File $RTScriptroot\ErrorLog.txt -Append}
+            catch {"StartingMechs|Def missing Name: " + $MechID | Out-File $RTScriptroot\ErrorLog.txt -Append -Encoding utf8}
             $MechVar = $MechVarActual
             for ($k = 0 ; $k -lt $($MechVarActual.Length) ; $k++) {
                 if ($MechID -notlike "*$MechVar*") {
@@ -262,14 +262,14 @@ foreach ($GroupName in $GroupNamesArray) {
             $filePathMDef = $MDefFileObject.VersionInfo.FileName
             $fileNameMDef = $MDefFileObject.Name
             $FileObjectModRoot = "$($MDefFileObject.DirectoryName)\\.."
-            try {$MDefObject = ConvertFrom-Json $(Get-Content $filePathMDef -raw)} catch {"StartingMechs|Error parsing vehicledef: "+ $filePathMDef | Out-File $RTScriptroot\ErrorLog.txt -Append}
+            try {$MDefObject = ConvertFrom-Json $(Get-Content $filePathMDef -raw)} catch {"StartingMechs|Error parsing vehicledef: "+ $filePathMDef | Out-File $RTScriptroot\ErrorLog.txt -Append -Encoding utf8}
             $fileNameCDef = "$($MDefObject.ChassisID).json"
             $CDefFileObject = Get-ChildItem $FileObjectModRoot -Recurse -Filter "$fileNameCDef"
             #if not found in modroot, try everything
             if (!$CDefFileObject) {
                 $CDefFileObject = Get-ChildItem $CacheRoot -Recurse -Filter "$fileNameCDef"
             }
-            try {$CDefObject = ConvertFrom-Json $(Get-Content $CDefFileObject.FullName -raw)} catch {"StartingMechs|Error parsing vehiclechassisdef: " + $CDefFileObject.FullName | Out-File $RTScriptroot\ErrorLog.txt -Append}
+            try {$CDefObject = ConvertFrom-Json $(Get-Content $CDefFileObject.FullName -raw)} catch {"StartingMechs|Error parsing vehiclechassisdef: " + $CDefFileObject.FullName | Out-File $RTScriptroot\ErrorLog.txt -Append -Encoding utf8}
             #2 Signature - / - << "VariantName": >> - $MechVarActual
                 #also handles Hero Names
             $Mech | Add-Member -MemberType NoteProperty -Name "Name" -Value ([pscustomobject]@{})
