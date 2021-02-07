@@ -148,6 +148,10 @@ $Mechs = @()
 #Build an objecthash of PrefabID
 $PrefabID = [pscustomobject]@{}
 
+#Build object for gearusedby
+$GearUsedBy = [pscustomobject]@{}
+$GearUsedByFile = "$RTScriptroot\\Outputs\\GearUsedBy.json"
+
 #create conflict file
 #ascii required for excel cuz M$
 @"
@@ -609,6 +613,15 @@ foreach ($MDefFileObject in $MDefFileObjectList) {
         }
 
         $Mech.Name | Add-Member -NotePropertyName 'LinkName' -NotePropertyValue $VariantGlue
+
+        #Parse Loadout list to gearusedby.json
+        $MechUsesGearList = $($(@($FixedLoadout.Group.ComponentDefID) + @($DynamicLoadout.Group.ComponentDefID)) | group).Name
+        foreach ($MechUsesGear in $MechUsesGearList) {
+            if (!($GearUsedBy.psobject.Properties.Name -contains $MechUsesGear)) {
+                $GearUsedBy | Add-Member -NotePropertyName $MechUsesGear -NotePropertyValue @()
+            }
+            $GearUsedBy.$MechUsesGear += $Mech.Name.LinkName
+        }
         
         #add mechobject to $mechs
         $Mechs += $Mech
@@ -620,6 +633,7 @@ foreach ($MDefFileObject in $MDefFileObjectList) {
 #save to file
 $Mechs | ConvertTo-Json -Depth 10 | Out-File $MechsFile -Force
 $PrefabID | ConvertTo-Json -Depth 10 | Out-File $PrefabIDFile -Force
+$GearUsedBy | ConvertTo-Json -Depth 10 | Out-File $GearUsedByFile -Force
 #Work bustedmechs
 $Mechs | % { 
     $VariantLink = $($_.Name.Variant)

@@ -182,9 +182,54 @@ $JobFunctions = {
             $BonusDescriptionHash,
 
             [Parameter(Mandatory = $True)]
+            $MechUsedByListObject,
+
+            [Parameter(Mandatory = $True)]
             $OutputFile
 
         )
+
+        function Sort-STNumerical {
+            [CmdletBinding()]
+            Param(
+                [Parameter(
+                    Mandatory = $True,
+                    ValueFromPipeline = $True,
+                    ValueFromPipelineByPropertyName = $True)]
+                [System.Object[]]
+                $InputObject,
+        
+                [ValidateRange(2, 100)]
+                [Byte]
+                $MaximumDigitCount = 100,
+
+                [Switch]$Descending
+            )
+    
+            Begin {
+                [System.Object[]] $InnerInputObject = @()
+        
+                [Bool] $SortDescending = $False
+                if ($Descending) {
+                    $SortDescending = $True
+                }
+            }
+    
+            Process {
+                $InnerInputObject += $InputObject
+            }
+
+            End {
+                $InnerInputObject |
+                    Sort-Object -Property `
+                        @{ Expression = {
+                            [Regex]::Replace($_, '(\d+)', {
+                                "{0:D$MaximumDigitCount}" -f [Int64] $Args[0].Value })
+                            }
+                        },
+                        @{ Expression = { $_ } } -Descending:$SortDescending
+            }
+        }
 
         $ReturnText = $null
         foreach ($Item in $InputObject) {
@@ -384,7 +429,22 @@ $JobFunctions = {
                 }
                 $ItemText += "|}`r`n"
             }
-                
+
+            #List Mechs Used By
+            $ItemMechListColToggleMax = 3
+            $ItemMechListColToggle = $ItemMechListColToggleMax - 1
+            $ItemText += "`r`n=Used By Mechs=`r`n<small>`r`n{| class=`"wikitable mw-collapsible mw-collapsed`"`r`n|-`r`n! colspan=`"$ItemMechListColToggleMax`"|<big>Mechs</big>`r`n"
+            $MechUsedByList = $($MechUsedByListObject.$($Item.Description.ID)) | Sort-STNumerical
+            foreach ($MechUsedBy in $MechUsedByList) {
+                $ItemMechListColToggle += 1
+                if ($ItemMechListColToggle -eq $ItemMechListColToggleMax) {
+                    $ItemMechListColToggle = 0
+                    $ItemText += "|-`r`n"
+                }
+                $ItemText += "| [[Mechs/"+$MechUsedBy+"|"+$MechUsedBy+"]]`r`n"
+            }
+            $ItemText += "|}`r`n</small>`r`n"
+
 
             #Regex cleanup
             $ItemText = $ItemText -Replace ('<color=(.*?)>(.*?)<\/color>','<span style="color:$1;">$2</span>') #replace color tag
@@ -450,6 +510,10 @@ Write-Progress -Id 0 -Activity "Loading Custom Filters"
 $FiltersList = $(Get-Content $FiltersFile -Raw | ConvertFrom-Json).Settings.Tabs
 #Remove 'Show'
 $FiltersList.Buttons | ? {$_.Tooltip} | % { if ($_.Tooltip -match 'Show ') {$_.Tooltip = datachop 'Show ' 1 $_.Tooltip}}
+
+#Load GearUsedBy
+$GearUsedByFile = "$RTScriptroot\\Outputs\\GearUsedBy.json"
+$GearUsedBy = Get-Content $GearUsedByFile -Raw | ConvertFrom-Json
 
 #Build minor cat hash
 Write-Progress -Id 0 -Activity "Building Hashes"
@@ -521,6 +585,7 @@ $null = New-Item -ItemType Directory $ItemOutFolder
 
 
 #Build Item Pages via jobs
+Get-Job | Remove-Job -Force #Cleanup Leftover Jobs
 $Divisor = 100 #Even numbers only
 $Rounder = ($Divisor / 2) - 1
 $Counter = [int]$(($MasterList.Count + $Rounder) / $Divisor)
@@ -532,7 +597,7 @@ for ($JobCount=0;$JobCount -lt $Counter; $JobCount++) {
         $JobInputObject = $MasterList[$(0+($JobCount*$Divisor))..$(($Divisor*(1+$JobCount))-1)]
     }
     $JobOutputFile = $ItemOutFolder+"\\Chunk$JobCount.txt"
-    Start-Job -Name $("ItemJob"+$JobCount) -InitializationScript $JobFunctions -ScriptBlock {RT-CreateGearPages -InputObject $using:JobInputObject -BonusDescriptionHash $using:BonusDescHash -OutputFile $using:JobOutputFile} | Out-Null
+    Start-Job -Name $("ItemJob"+$JobCount) -InitializationScript $JobFunctions -ScriptBlock {RT-CreateGearPages -InputObject $using:JobInputObject -BonusDescriptionHash $using:BonusDescHash -MechUsedByListObject $using:GearUsedBy -OutputFile $using:JobOutputFile} | Out-Null
 }
 
 #Build TOC pages
@@ -589,7 +654,7 @@ foreach ($MajorKey in $FiltersList.Caption) {
             }
             foreach ($Item in $ItemList) {
                 $l++
-                Write-Progress -Id 3 -Activity "Populating Items" -Status "$k of $($ItemList.Count)" -ParentId 2
+                Write-Progress -Id 3 -Activity "Populating Items" -Status "$l of $($ItemList.Count)" -ParentId 2
                 $MinorPage += "* [[Gear/$Item|$Item]]`r`n"
             }
             $l=0
