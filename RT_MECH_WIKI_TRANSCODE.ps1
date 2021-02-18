@@ -101,12 +101,15 @@ $FactionFriendlyObject = [pscustomobject]@{}
 write-progress -activity 'Gathering Faction Friendly Names'
 $FactionFriendlyFileList = Get-ChildItem $RTroot -Recurse -Filter "faction_*.json" -ErrorAction SilentlyContinue
 foreach ($FactionFriendlyFile in $FactionFriendlyFileList) {
-    $FactionDefObj = Get-Content $FactionFriendlyFile.VersionInfo.FileName -Raw | ConvertFrom-Json
+    try { 
+        $FactionDefObj = Get-Content $FactionFriendlyFile.VersionInfo.FileName -Raw | ConvertFrom-Json
+    } catch {
+        "MechWiki|FactionFile error: " + $FactionFriendlyFile.VersionInfo.FileName | Out-File $RTScriptroot\ErrorLog.txt -Append -Encoding utf8
+    }
     try {
-        $FactionFriendlyObject | Add-Member -Type NoteProperty -Name $FactionDefObj.factionID -Value $($FactionDefObj.Name).Replace("the ","")
+        $FactionFriendlyObject | Add-Member -Type NoteProperty -Name $FactionDefObj.factionID -Value $($FactionDefObj.Name).Replace("the ","") -Force
     } catch { 
-        $FactionFriendlyFile
-        "MechWiki|Faction error: " + $($FactionDefObj.factionID) | Out-File $RTScriptroot\ErrorLog.txt -Append -Encoding utf8
+        "MechWiki|Faction error: " + $($FactionDefObj.factionID) + $($FactionFriendlyFile.VersionInfo.FileName) | Out-File $RTScriptroot\ErrorLog.txt -Append -Encoding utf8
     }
 }
 <#
@@ -322,8 +325,8 @@ foreach ($Cat in $CatOrder) {
                         if (-not !$TableLoc) {
                             $LoadoutText += "! ["
                             foreach ($Mount in $Mounts) {
-                                $MountName = $MountsLongHash.$Mount
-                                $MountCount = $($Mech.Hardpoint.$($HPLongSortHash.$TableLoc) | ? {$_ -match $MountName}).Count
+                                $MountTag = $($MountsObject | where -Property Friendly -like $Mount).TagTitle
+                                $MountCount = $Mech.WeaponMounts.$MountTag
                                 if ($MountCount -gt 0) {
                                     $LoadoutText += " $MountCount$Mount"
                                 }

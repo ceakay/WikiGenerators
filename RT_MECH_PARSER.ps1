@@ -615,14 +615,16 @@ foreach ($MDefFileObject in $MDefFileObjectList) {
         $Mech.Name | Add-Member -NotePropertyName 'LinkName' -NotePropertyValue $VariantGlue
 
         #Parse Loadout list to gearusedby.json
-        $MechUsesGearList = $($(@($FixedLoadout.Group.ComponentDefID) + @($DynamicLoadout.Group.ComponentDefID)) | group).Name
-        foreach ($MechUsesGear in $MechUsesGearList) {
-            if (!($GearUsedBy.psobject.Properties.Name -contains $MechUsesGear)) {
-                $GearUsedBy | Add-Member -NotePropertyName $MechUsesGear -NotePropertyValue @()
+        if (!$Mech.BLACKLIST) {
+            $MechUsesGearList = $($(@($FixedLoadout.Group.ComponentDefID) + @($DynamicLoadout.Group.ComponentDefID)) | group).Name
+            foreach ($MechUsesGear in $MechUsesGearList) {
+                if (!($GearUsedBy.psobject.Properties.Name -contains $MechUsesGear)) {
+                    $GearUsedBy | Add-Member -NotePropertyName $MechUsesGear -NotePropertyValue @()
+                }
+                $GearUsedBy.$MechUsesGear += $Mech.Name.LinkName
             }
-            $GearUsedBy.$MechUsesGear += $Mech.Name.LinkName
         }
-        
+
         #add mechobject to $mechs
         $Mechs += $Mech
     } else {
