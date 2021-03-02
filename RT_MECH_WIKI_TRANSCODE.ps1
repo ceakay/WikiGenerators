@@ -153,9 +153,21 @@ foreach ($Item in $GearObject) {
 }
 
 
-#Build ChassisAffinities
+#Build Affinities
 $AffinitiesFile = "$CacheRoot\\MechAffinity\\settings.json"
 $CAffinitiesMaster = $(Get-Content $AffinitiesFile -Raw | ConvertFrom-Json).chassisAffinities
+$EquipAffinitiesMaster = $(Get-Content $AffinitiesFile -Raw | ConvertFrom-Json).quirkAffinities
+$EquipAffinitiesIDNumHash = @{}
+$EquipAffinitiesIDNameHash = @{}
+$EquipAffinitiesIDDescHash = @{}
+foreach ($EquipAffinity in $EquipAffinitiesMaster) {
+    foreach ($AffinityItem in $EquipAffinity.quirkNames) {
+        $EquipAffinitiesIDNumHash.Add($AffinityItem,$EquipAffinity.affinityLevels.missionsRequired)
+        $EquipAffinitiesIDNameHash.Add($AffinityItem,$EquipAffinity.affinityLevels.levelName)
+        $EquipAffinitiesIDDescHash.Add($AffinityItem,$EquipAffinity.affinityLevels.decription)
+    }
+}
+
 
 $RTVersion = $(Get-Content "$CacheRoot\\RogueTech Core\\mod.json" -raw | ConvertFrom-Json).Version
 
@@ -202,7 +214,7 @@ $MountsLongHash = @{
     B = 'Ballistic'
     E = 'Energy'
     M = 'Missile'
-    S = 'Support'
+    S = 'AntiPersonnel'
     BA = 'BattleArmor'
     JJ = 'JumpJet'
 }
@@ -222,6 +234,7 @@ foreach ($TextFile in $TextFileList) {
 $f = 0
 $h = 0
 foreach ($Cat in $CatOrder) {
+    #if ($f -ge 10) {break} #for testing
     $CatHeaderName = $CatTitles[$h]
     $h++ 
     write-progress -activity "Filling Category" -Status "$h of $($CatOrder.Count)" -Id 1
@@ -268,6 +281,7 @@ foreach ($Cat in $CatOrder) {
             $VariantText = ""
             $LoadoutText = ""
             $LoadoutQuirkText = ""
+            $LoadoutAffinityText = ""
             $HPText = ""
             #special
             foreach ($Tag in $Mech.Special) {
@@ -292,6 +306,10 @@ foreach ($Cat in $CatOrder) {
                 #loadout subtable
                 $LoadoutText = "`r`n==Mech Bay==`r`n"
                 $LoadoutText += "`r`n"+'##LoadoutQuirkText##'+"`r`n"
+                $LoadoutText += "`r`n{| class=`"wikitable`"`r`n"
+                $LoadoutText += "|-`r`n! Fixed Gear || Affinity`r`n"
+                $LoadoutText += "##LoadoutAffinityText##"
+                $LoadoutText += "|}`r`n"
                 $LoadoutText += "`r`n{| class=`"wikitable`"`r`n"
                 $LoadoutText += "|-`r`n! !! !! Left !! Center !! Right`r`n"
                 
@@ -325,8 +343,7 @@ foreach ($Cat in $CatOrder) {
                         if (-not !$TableLoc) {
                             $LoadoutText += "! ["
                             foreach ($Mount in $Mounts) {
-                                $MountTag = $($MountsObject | where -Property Friendly -like $Mount).TagTitle
-                                $MountCount = $Mech.WeaponMounts.$MountTag
+                                $MountCount = $($Mech.Hardpoint.$($HPLongSortHash.$TableLoc) | ? {$_ -eq $MountsLongHash.$Mount}).Count
                                 if ($MountCount -gt 0) {
                                     $LoadoutText += " $MountCount$Mount"
                                 }
@@ -358,6 +375,10 @@ foreach ($Cat in $CatOrder) {
                                     } else {
                                         $LoadoutText += "* $($FixedItem.Count)x [[Gear/$ItemFriendlyName|$ItemFriendlyName]] [$($ItemSlotsHash.$($FixedItem.Name))]`r`n"
                                     }
+                                    if ([bool]($EquipAffinitiesIDNameHash.$($FixedItem.Name))) {
+                                        $FixedItemID = $FixedItem.Name
+                                        $LoadoutAffinityText += "|-`r`n| [[Gear/$ItemFriendlyName|$ItemFriendlyName]] || $($EquipAffinitiesIDNameHash.$FixedItemID) ($($EquipAffinitiesIDNumHash.$FixedItemID)): $($EquipAffinitiesIDDescHash.$FixedItemID)`r`n"
+                                    }
                                 }
                             }
                         }
@@ -386,8 +407,9 @@ foreach ($Cat in $CatOrder) {
                 }
                 #wrap loadout
                 $LoadoutText = "$($LoadoutText.Trim())`r`n|}`r`n"
-                #do $$LoadoutQuirkText$$ replacement
+                #do ##LoadoutQuirkText## replacement
                 $LoadoutText = $($LoadoutText -split ("##LoadoutQuirkText##")) -join $LoadoutQuirkText
+                $LoadoutText = $($LoadoutText -split ("##LoadoutAffinityText##")) -join $LoadoutAffinityText
             }
 
             #HP Main Only

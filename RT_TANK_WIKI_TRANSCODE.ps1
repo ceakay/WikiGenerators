@@ -137,7 +137,7 @@ $WikiTable = "'''$WikiPageTitle'''`r`n" + $WikiTable
 $MechsMasterObject = $(Get-Content $TableFile -Raw | ConvertFrom-Json)
 
 #categories
-$TanksClassOrder = @('LIGHT','MEDIUM','HEAVY','ASSAULT','SHEAVY')
+$TanksClassOrder = @('LIGHT','MEDIUM','HEAVY','ASSAULT','SHTANK')
 $TanksClassTitles = @('Light Tanks','Medium Tanks','Heavy Tanks','Assault Tanks','Super Heavy Tanks')
 $TanksClassTonnage = @('20-35','40-55','60-75','80-100','Over 100')
 $VTOLsClassOrder = @('LIGHT','MEDIUM','HEAVY','ASSAULT')

@@ -121,6 +121,18 @@ for ($h = 0; $h -lt $($MDefExclusion.Count); $h++) {
     $MDefExclusion[$h] = "*$($MDefExclusion[$h])*"
 }
     
+#Affinities
+$AffinitiesFile = "$CacheRoot\\MechAffinity\\settings.json"
+$EquipAffinitiesMaster = $(Get-Content $AffinitiesFile -Raw | ConvertFrom-Json).quirkAffinities
+$EquipAffinitiesIDNameHash = @{}
+foreach ($EquipAffinity in $EquipAffinitiesMaster) {
+    foreach ($AffinityItem in $EquipAffinity.quirkNames) {
+        $EquipAffinitiesIDNameHash.Add($AffinityItem,$EquipAffinity.affinityLevels.levelName)
+    }
+}
+$FixedAffinityObject = [pscustomobject]@{}
+$FixedAffinityFile = "$RTScriptroot\\Outputs\\FixedAffinity.json"
+
 #IMPORT OBJECT TABLES
 ###
 #faction table
@@ -625,6 +637,18 @@ foreach ($MDefFileObject in $MDefFileObjectList) {
             }
         }
 
+        #Parse Affinities to File
+        $FixedList = [string[]]$FixedLoadout.Group.ComponentDefID
+        $AffinityList = [string[]]$EquipAffinitiesIDNameHash.Keys
+        if (-not !$FixedList) {
+            foreach ($FixedAffinityItem in $(compare $AffinityList $FixedList -ExcludeDifferent -IncludeEqual).InputObject) {
+                if ($FixedAffinityObject.psobject.Properties.Name -notcontains $FixedAffinityItem) {
+                    $FixedAffinityObject | Add-Member -NotePropertyName $FixedAffinityItem -NotePropertyValue @()
+                }
+                $FixedAffinityObject.$FixedAffinityItem += $Mech.Name.LinkName
+            }
+        }
+
         #add mechobject to $mechs
         $Mechs += $Mech
     } else {
@@ -636,6 +660,8 @@ foreach ($MDefFileObject in $MDefFileObjectList) {
 $Mechs | ConvertTo-Json -Depth 10 | Out-File $MechsFile -Force
 $PrefabID | ConvertTo-Json -Depth 10 | Out-File $PrefabIDFile -Force
 $GearUsedBy | ConvertTo-Json -Depth 10 | Out-File $GearUsedByFile -Force
+$FixedAffinityObject | ConvertTo-Json -Depth 100 | Out-File $FixedAffinityFile -Force
+
 #Work bustedmechs
 $Mechs | % { 
     $VariantLink = $($_.Name.Variant)

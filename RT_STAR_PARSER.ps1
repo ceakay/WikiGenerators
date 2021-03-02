@@ -17,9 +17,13 @@ $StarObjectList = @()
 #construct mega component object list
 $JSONList = Get-ChildItem $CacheRoot -Recurse -Filter "StarSystemDef*.json"
 $i = 0
+$FunkyNameList = @()
 foreach ($JSONFile in $JSONList) {
     Write-Progress -Activity "Collecting Star Systems" -Status "$($i+1) of $($JSONList.Count) JSONs found."
     $JSONRaw = Get-Content $JSONFile.FullName -Raw
+    if ($JSONRaw -match '\\u') {
+        $FunkyNameList += $JSONFile.FullName
+    }
     $StarObjectList += $($JSONRaw | ConvertFrom-Json)
     $i++
 }

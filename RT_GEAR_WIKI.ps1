@@ -185,6 +185,12 @@ $JobFunctions = {
             $MechUsedByListObject,
 
             [Parameter(Mandatory = $True)]
+            $FixedAffinityObject,
+
+            [Parameter(Mandatory = $True)]
+            $EquipAffinitiesRef,
+
+            [Parameter(Mandatory = $True)]
             $OutputFile
 
         )
@@ -445,6 +451,26 @@ $JobFunctions = {
             }
             $ItemText += "|}`r`n</small>`r`n"
 
+            #List Affinity used by.
+            $ItemID = $Item.Description.ID
+            $ItemAff = $($EquipAffinitiesRef | ? {$_.ID -eq $ItemID})
+            if (-not !$ItemAff) {
+                $ItemText += "=Affinity Provided=`r`n`r`n{| class=`"wikitable`"`r`n|-`r`n! Gear Affinity`r`n|-`r`n|"
+                $ItemText += "`r`n* $($ItemAff.Name) ($($ItemAff.Num)): $($ItemAff.Description)"
+                $ItemText += "`r`n|}`r`n`r`n<small>`r`n{| class=`"wikitable mw-collapsible mw-collapsed`"`r`n|-`r`n! colspan=`"$ItemMechListColToggleMax`"|<big>Affinity To Mechs</big>`r`n"
+                $ItemMechListColToggleMax = 3
+                $ItemMechListColToggle = $ItemMechListColToggleMax - 1
+                $GearAffinityMechList = $($FixedAffinityObject.$($ItemID)) | Sort-STNumerical
+                foreach ($GearAffinityMech in $GearAffinityMechList) {
+                    $ItemMechListColToggle += 1
+                    if ($ItemMechListColToggle -eq $ItemMechListColToggleMax) {
+                        $ItemMechListColToggle = 0
+                        $ItemText += "|-`r`n"
+                    }
+                    $ItemText += "| [[Mechs/"+$GearAffinityMech+"|"+$GearAffinityMech+"]]`r`n"
+                }
+                $ItemText += "|}`r`n</small>`r`n`r`n"
+            }
 
             #Regex cleanup
             $ItemText = $ItemText -Replace ('<color=(.*?)>(.*?)<\/color>','<span style="color:$1;">$2</span>') #replace color tag
@@ -514,6 +540,23 @@ $FiltersList.Buttons | ? {$_.Tooltip} | % { if ($_.Tooltip -match 'Show ') {$_.T
 #Load GearUsedBy
 $GearUsedByFile = "$RTScriptroot\\Outputs\\GearUsedBy.json"
 $GearUsedBy = Get-Content $GearUsedByFile -Raw | ConvertFrom-Json
+
+#Load Gear Affinities
+$AffinitiesFile = "$CacheRoot\\MechAffinity\\settings.json"
+$FixedAffinityFile = "$RTScriptroot\\Outputs\\FixedAffinity.json"
+$EquipAffinitiesMaster = $(Get-Content $AffinitiesFile -Raw | ConvertFrom-Json).quirkAffinities
+$EquipAffinitiesRef = @()
+foreach ($EquipAffinity in $EquipAffinitiesMaster) {
+    foreach ($AffinityItem in $EquipAffinity.quirkNames) {
+        $EquipAffinitiesRef += [pscustomobject]@{
+            ID = $AffinityItem
+            Num = $EquipAffinity.affinityLevels.missionsRequired
+            Name = $EquipAffinity.affinityLevels.levelName
+            Description = $EquipAffinity.affinityLevels.decription
+        }
+    }
+}
+$FixedAffinityObject = Get-Content $FixedAffinityFile -Raw | ConvertFrom-Json
 
 #Build minor cat hash
 Write-Progress -Id 0 -Activity "Building Hashes"
@@ -597,7 +640,7 @@ for ($JobCount=0;$JobCount -lt $Counter; $JobCount++) {
         $JobInputObject = $MasterList[$(0+($JobCount*$Divisor))..$(($Divisor*(1+$JobCount))-1)]
     }
     $JobOutputFile = $ItemOutFolder+"\\Chunk$JobCount.txt"
-    Start-Job -Name $("ItemJob"+$JobCount) -InitializationScript $JobFunctions -ScriptBlock {RT-CreateGearPages -InputObject $using:JobInputObject -BonusDescriptionHash $using:BonusDescHash -MechUsedByListObject $using:GearUsedBy -OutputFile $using:JobOutputFile} | Out-Null
+    Start-Job -Name $("ItemJob"+$JobCount) -InitializationScript $JobFunctions -ScriptBlock {RT-CreateGearPages -InputObject $using:JobInputObject -BonusDescriptionHash $using:BonusDescHash -MechUsedByListObject $using:GearUsedBy -FixedAffinityObject $using:FixedAffinityObject -EquipAffinitiesRef $using:EquipAffinitiesRef -OutputFile $using:JobOutputFile} | Out-Null
 }
 
 #Build TOC pages
