@@ -1,9 +1,9 @@
-TagTitle,CDEF,MDEF,Friendly
-LIGHT,LIGHT,unit_light,LIGHT
-MEDIUM,MEDIUM,unit_medium,MEDIUM
-HEAVY,HEAVY,unit_heavy,HEAVY
-ASSAULT,ASSAULT,unit_assault,ASSAULT
-SHEAVY,,unit_superheavy,SUPER HEAVY
-SHTANK,,unit_superheavytank,Super Heavy Tanks
-POWER,,unit_powerarmor,PA
-PROTO,,unit_protomech,PM
+TagTitle,CDEF,MDEF,Friendly,FTitle
+LIGHT,LIGHT,unit_light,LIGHT,Light Mechs
+MEDIUM,MEDIUM,unit_medium,MEDIUM,Medium Mechs
+HEAVY,HEAVY,unit_heavy,HEAVY,Heavy Mechs
+ASSAULT,ASSAULT,unit_assault,ASSAULT,Assault Mechs
+SHEAVY,,unit_superheavy,SUPER HEAVY,Super Heavies
+SHTANK,,unit_superheavytank,Super Heavy Tanks,Super Heavies
+POWER,,unit_powerarmor,PA,Power Armour
+PROTO,,unit_protomech,PM,Power Armour

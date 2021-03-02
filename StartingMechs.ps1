@@ -20,8 +20,11 @@ $RTScriptroot = "D:\\RogueTech\\WikiGenerators"
 cd $RTScriptroot
 #cache path
 $CacheRoot = "$RTroot\\RtlCache\\RtCache"
+$RTVersion = $(Get-Content "$CacheRoot\\RogueTech Core\\mod.json" -raw | ConvertFrom-Json).Version
 $TheText = "{{-start-}}`r`n'''Starting Mechs by Faction Choice'''`r`n"
 $TheText += @"
+Last Updated: $RTVersion
+
 In the 1.6 update, HBS reworked Battletech’s starter selection process. Starters are now randomly picked from defined pools of mechs, with each pool corresponding to a slot in the starting lance. We've adopted this system to make faction-specific starter mech pools.
 
 When starting a new career, your choice of faction determines the mech pools you roll on. It also determines a relationship bonus (or sometimes malus) with at least one faction in the game.
@@ -32,15 +35,16 @@ These pools use [http://www.masterunitlist.info/Era/FactionEraDetails?FactionId=
 
 __TOC__
 
-= Factions =
+= Starts =
 
-Please note that this page is not exhaustively complete, as other modules of Roguetech also inject potential starting mechs. An attempt has been made to account for this, but is currently in progress.
+Each start will pick from a number of tables. Below is a list of the tables used, as well the number of picks for each table. This will provide you your starting lance. 
 
 "@
 
+
 #The Factions Section
 
-$CareersFile = "D:\RogueTech\RtlCache\RtCache\BTRandomStartByDifficultyMenu\Menus\CareerDifficultySettings.json"
+$CareersFile = "D:\RogueTech\RtlCache\RtCache\IRTweaks\Menus\CareerDifficultySettings.json"
 $CareersBigObject = Get-Content $CareersFile -Raw | ConvertFrom-Json
 $CareersObjects = $($CareersBigObject.difficultyList | ? {$_.ID -match 'diff_startingplanet'}).Options
 foreach ($CareersObject in $CareersObjects) {
@@ -85,7 +89,7 @@ foreach ($GroupedName in $GroupedNamesArray) {
     $ListsHolder = @()
     foreach ($GroupedFile in $StartingMechsListsGrouped.$GroupedName) {
         $ModName = Split-Path $(Split-Path $(Split-Path $GroupedFile -Parent) -Parent) -Leaf
-        if ($ModName -match'BTRandomStartByDifficultyMenu') {
+        if ($ModName -match'IRTweaks') {
             $ModName = 'Base 3061'
         }
         $ListsHolder += Get-Content $GroupedFile | select -Skip 1 | % {$_ += ",$ModName";$_} | ConvertFrom-Csv -Header 'ID', 'Type', 'Quantity', 'Rarity', 'ModName'
@@ -109,7 +113,6 @@ The tables are formatted like so:
 !No. of Units
 !Entry Weight
 !Module
-
 |-
 |Unit Entry
 |Type
@@ -119,13 +122,9 @@ The tables are formatted like so:
 |-
 |}
 
-Please note some tables might be incomplete. Other modules inside Roguetech will dynamically modify these starting tables depending on whether they are installed or not; an attempt has been made to account for this, but some additions may well have been missed. If a mech is added by a specific module or set of modules this will be noted in the Module column; these modules are the options you choose in the Roguetech Launcher configuration screen. (Examples: the different DLC support modules, superheavy mechs, Pirate tech, Urbocalypse.) If this column is blank you don't need any extra install options to have a shot at that starter mech.
-
 In order to understand these entries it may be helpful to check [https://www.sarna.net/wiki/Main_Page Sarna] or Roguetech's [[Full_List_of_Mechs|Full List of Mechs]].
 
  When pointed to a particular table, the starting mechbay population algorithm adds all of the numerical entry weights up together and then rolls 1dN, where N is the total of the weights in that table. This means that a unit with a weight of 4 has four times the likelihood of being selected than a unit with a weight of 1, but the actual percentage chance of any unit's selection depends on the total weight number of the table.
- 
- At the moment, unit type is always mechs; however, there are plans to potentially include other unit types (such as vehicles). Similarly the number of units is always 1, but with the addition of different unit types this may change.
 
 "@
 
@@ -140,7 +139,7 @@ foreach ($GroupName in $GroupNamesArray) {
 !Entry Weight
 !Module
 "@
-    foreach ($MechItem in $StartingMechsLists.$GroupName) {
+    foreach ($MechItem in $($StartingMechsLists.$GroupName | ? {$_})) {
         $i++
         Write-Progress -Activity "Number $i - $($MechItem.ID)"
         $Mech = [pscustomobject]@{}
@@ -149,7 +148,8 @@ foreach ($GroupName in $GroupNamesArray) {
             if ($MechDefFile.Count -lt 1) {
                 $MechDefFile = Get-ChildItem -Path $CacheRoot -Recurse -Filter "$($MechItem.ID).json"
             }
-            $MechDef = Get-Content $MechDefFile.FullName -Raw | ConvertFrom-Json
+            try {$MechDef = Get-Content $MechDefFile.FullName -Raw | ConvertFrom-Json}
+            catch {"StartingMechs|Cannot find MechDef: $($MechItem.ID)" | Out-File $RTScriptroot\ErrorLog.txt -Append -Encoding utf8}
             $Mech | Add-Member -MemberType NoteProperty -Name 'ModName' -Value $(Split-Path $(Split-Path $(Split-Path $MechDefFile.FullName -Parent) -Parent) -Leaf)
             $fileNameCDef = "$($MechDef.ChassisID).json"
             $ChassDefFile = Get-ChildItem $($CacheRoot + "\" + $Mech.ModName) -Recurse -Filter "$fileNameCDef"
@@ -159,7 +159,7 @@ foreach ($GroupName in $GroupNamesArray) {
             }
             try {$ChassDef = Get-Content $ChassDefFile.FullName -Raw | ConvertFrom-Json}
             catch {
-                "$($MechDefFile.Name) $fileNameCDef"
+                "StartingMechs|Cannot find ChassisDef: $($MechDefFile.Name) $fileNameCDef" | Out-File $RTScriptroot\ErrorLog.txt -Append
             }
 
             $MechID = $MechItem.ID
@@ -173,12 +173,12 @@ foreach ($GroupName in $GroupNamesArray) {
                 $MechVarActual = "ZEU-9WD"
             }
             try {$Mech.Name | Add-Member -MemberType NoteProperty -Name "Variant" -Value "$($MechVarActual.ToUpper())"}
-            catch {$MechID; pause}
+            catch {"StartingMechs|Def missing Name: " + $MechID | Out-File $RTScriptroot\ErrorLog.txt -Append -Encoding utf8}
             $MechVar = $MechVarActual
             for ($k = 0 ; $k -lt $($MechVarActual.Length) ; $k++) {
                 if ($MechID -notlike "*$MechVar*") {
                     try {$MechVar = $MechVar.Substring(0,$($MechVar.Length) - 1)}
-                    catch {$MechID; $MechVarActual; Pause}
+                    catch {"StartingMechs|Error parsing MechVar: " + $MechID + $MechVarActual | Out-File $RTScriptroot\ErrorLog.txt -Append}
                 } 
                 if ($($MechVar.Length) -le 3) {
                     $MechVar = $MechVarActual
@@ -262,13 +262,14 @@ foreach ($GroupName in $GroupNamesArray) {
             $filePathMDef = $MDefFileObject.VersionInfo.FileName
             $fileNameMDef = $MDefFileObject.Name
             $FileObjectModRoot = "$($MDefFileObject.DirectoryName)\\.."
-            try {$MDefObject = ConvertFrom-Json $(Get-Content $filePathMDef -raw)} catch {Write-Host $filePathMDef}
+            try {$MDefObject = ConvertFrom-Json $(Get-Content $filePathMDef -raw)} catch {"StartingMechs|Error parsing vehicledef: "+ $filePathMDef | Out-File $RTScriptroot\ErrorLog.txt -Append -Encoding utf8}
             $fileNameCDef = "$($MDefObject.ChassisID).json"
             $CDefFileObject = Get-ChildItem $FileObjectModRoot -Recurse -Filter "$fileNameCDef"
             #if not found in modroot, try everything
             if (!$CDefFileObject) {
                 $CDefFileObject = Get-ChildItem $CacheRoot -Recurse -Filter "$fileNameCDef"
             }
+            try {$CDefObject = ConvertFrom-Json $(Get-Content $CDefFileObject.FullName -raw)} catch {"StartingMechs|Error parsing vehiclechassisdef: " + $CDefFileObject.FullName | Out-File $RTScriptroot\ErrorLog.txt -Append -Encoding utf8}
             #2 Signature - / - << "VariantName": >> - $MechVarActual
                 #also handles Hero Names
             $Mech | Add-Member -MemberType NoteProperty -Name "Name" -Value ([pscustomobject]@{})
@@ -359,4 +360,4 @@ $OutFile = "D:\\RogueTech\\WikiGenerators\\Outputs\\StartingMechs.UTF8"
 $TheText | Set-Content -Encoding UTF8 $OutFile
 
 $PWBRoot = "D:\\PYWikiBot"
-py $PWBRoot\\pwb.py pagefromfile -file:$ColourOutFile -notitle -force -pt:0
+py $PWBRoot\\pwb.py pagefromfile -file:$OutFile -notitle -force -pt:0

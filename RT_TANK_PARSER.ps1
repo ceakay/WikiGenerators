@@ -1,3 +1,43 @@
+Write-Host @"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+"@
+
 #This parses ChassDef and MechDef for info
 #
 #
@@ -14,8 +54,8 @@ function datachop {
 #SETTINGS
 ###
 #HPValueMod is for the dynamic math to change actual combat values.
-$ArmorValueMod = 0.8
-$StructureValueMod = 2
+$ArmorValueMod = 1
+$StructureValueMod = 1
 
 
 #SET CONSTANTS
@@ -121,6 +161,21 @@ MDEF=,$($SpecialMDef -join ",")
 |CONFLICT| ,CDef // MDef, || ,Missing Tag, |Missing in| ,file
 "@ | Out-File -FilePath $conflictfile -Encoding ascii
 
+Write-Host @"
+
+
+
+
+
+
+
+
+
+
+
+
+"@
+
 $i = 0
 foreach ($MDefFileObject in $MDefFileObjectList) { 
     $i++
@@ -138,7 +193,7 @@ foreach ($MDefFileObject in $MDefFileObjectList) {
     $filePathMDef = $MDefFileObject.VersionInfo.FileName
     $fileNameMDef = $MDefFileObject.Name
     $FileObjectModRoot = "$($MDefFileObject.DirectoryName)\\.."
-    try {$MDefObject = ConvertFrom-Json $(Get-Content $filePathMDef -raw)} catch {Write-Host $filePathMDef}
+    try {$MDefObject = ConvertFrom-Json $(Get-Content $filePathMDef -raw)} catch {"TankParser|Parsing vehicledef: " + $filePathMDef | Out-File $RTScriptroot\ErrorLog.txt -Append -Encoding utf8}
     $fileNameCDef = "$($MDefObject.ChassisID).$($CDefFileType)"
     $CDefFileObject = Get-ChildItem $FileObjectModRoot -Recurse -Filter "$fileNameCDef"
     #if not found in modroot, try everything
@@ -148,7 +203,7 @@ foreach ($MDefFileObject in $MDefFileObjectList) {
     #error with CDef definition if still nothing
     if (-not !$CDefFileObject) {
         $filePathCDef = $CDefFileObject.VersionInfo.FileName
-        try {$CDefObject = $(Get-Content $filePathCDef -raw | ConvertFrom-Json)} catch {Write-Host $filePathCDef}
+        try {$CDefObject = $(Get-Content $filePathCDef -raw | ConvertFrom-Json)} catch {"TankParser|Parsing vehiclechassisdef: " + $filePathCDef | Out-File $RTScriptroot\ErrorLog.txt -Append -Encoding utf8}
     
         #init mech object for storage
         $Mech = $([PSCustomObject] @{
@@ -392,6 +447,10 @@ foreach ($MDefFileObject in $MDefFileObjectList) {
         }
         #Grab and trim Mech Blurb
         $MechBlurb = $MDefObject.Description.Details
+        #Regex cleanup
+        $MechBlurb = $($($MechBlurb.Split("`n")) -Replace ('^[ \t]*','')) -Join ("`n") #split by lines, trim leading spaces/tabs, rejoin
+        $MechBlurb = $MechBlurb -Replace ('<color=(.*?)>(.*?)<\/color>','<span style="color:$1;">$2</span>') #replace color tag
+        $MechBlurb = $MechBlurb -Replace ('<b>(.*?)<\/b>','$1') #remove bold
         $Mech | Add-Member -MemberType NoteProperty -Name "Blurb" -Value $MechBlurb
         ###START OVERRIDES SECTION
         
@@ -400,6 +459,7 @@ foreach ($MDefFileObject in $MDefFileObjectList) {
         $Mechs += $Mech
     } else {
         Write-Error -Message "Error with ChassisID in $filePathMDef"
+        pause
     }
 }
 #load overrides

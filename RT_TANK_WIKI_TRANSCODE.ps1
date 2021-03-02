@@ -1,4 +1,44 @@
-﻿###FUNCTIONS
+﻿Write-Host @"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+"@
+
+###FUNCTIONS
 #data chopper function
     #args: delimiter, position, input
 function datachop {
@@ -76,7 +116,7 @@ $ItemFriendlyHash = @{}
 foreach ($Item in $GearObject) {
     #$ItemObject = Get-Content $Item.FullName -Raw | ConvertFrom-Json
     if (-not !$Item.Description.UIName) {
-        try {$ItemFriendlyHash.Add($Item.Description.Id,$Item.Description.UIName)} catch {Write-Host "Dupe: $($Item.Description.Id)"}
+        try {$ItemFriendlyHash.Add($Item.Description.Id,$Item.Description.UIName)} catch {"TankWiki|Dupe gear ID: $($Item.Description.Id)" | Out-File $RTScriptroot\ErrorLog.txt -Append -Encoding utf8}
     }
 }
 
@@ -97,7 +137,7 @@ $WikiTable = "'''$WikiPageTitle'''`r`n" + $WikiTable
 $MechsMasterObject = $(Get-Content $TableFile -Raw | ConvertFrom-Json)
 
 #categories
-$TanksClassOrder = @('LIGHT','MEDIUM','HEAVY','ASSAULT','SHEAVY')
+$TanksClassOrder = @('LIGHT','MEDIUM','HEAVY','ASSAULT','SHTANK')
 $TanksClassTitles = @('Light Tanks','Medium Tanks','Heavy Tanks','Assault Tanks','Super Heavy Tanks')
 $TanksClassTonnage = @('20-35','40-55','60-75','80-100','Over 100')
 $VTOLsClassOrder = @('LIGHT','MEDIUM','HEAVY','ASSAULT')
@@ -363,7 +403,7 @@ foreach ($VTOL in $VTOLOrder) {
                     } else {
                         $MechBlurb = $Mech.Blurb
                     }
-                    $WikiMexTable += "`r`n==Description==`r`n`r`n"+$MechBlurb+"`r`n"
+                    $WikiMexTable += "`r`n==Description==`r`n`r`nTonnage: $($Mech.Tonnage)`r`n`r`n"+$MechBlurb+"`r`n"
                     $WikiMexTable += "`r`n"+$HPMexText+"`r`n"
                     $WikiMexTable += "`r`n"+$LoadoutText+"`r`n"
                     $WikiMexTable += "`r`n"+$FactionText+"`r`n"
