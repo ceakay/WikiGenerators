@@ -308,7 +308,7 @@ foreach ($Item in $InputObject) {
 
     #Lazy Blacklisted
     if ($Item.ComponentTags.items -contains "blacklisted") {
-        $ItemText = "{{-start-}}`r`n'''Gear/$($Item.Description.UIName)'''`r`n#REDIRECT [[Classified]]`r`n"
+        $ItemText = "{{-start-}}`r`n'''Gear/$($Item.Description.UIName)'''`r`n#REDIRECT [[Classified]]`r`n`r`n$($Item.Description.ID)`r`n"
     }
 
     #Close

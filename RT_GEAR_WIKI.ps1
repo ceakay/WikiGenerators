@@ -216,6 +216,46 @@ $MajorCatsHash = @{
 Write-Progress -Id 0 -Activity "Loading Master Object"
 $MasterList = [System.Collections.ArrayList]@($(Get-Content $EquipFile -Raw | ConvertFrom-Json) | ? {$_.Description.ID -notmatch 'emod_engineslots_size'}  | ? {$_.Description.ID -notmatch 'Gear_LegJet_Assault_Lower'}) #| ? {$_.ComponentTags.items -notcontains "blacklisted"})
 
+#Cleanup Duplicates
+#Check if group contains single or only blacklisted
+Write-Progress -Id 0 -Activity "Scrubbing BlacklistOnly and BlacklistSingle"
+$DuplicatesGroup = $($($MasterList | Group {$_.Description.UIName}) | ? {$_.Count -ge 2})
+$BlacklistOnlyList = @()
+$BlacklistSingleList = @()
+foreach ($DuplicatesGroupItem in $DuplicatesGroup) {
+    if ($($DuplicatesGroupItem.Group | ? {$_.ComponentTags.items -notcontains 'BLACKLISTED'}).Count -eq 0) {
+        $BlacklistOnlyList += $DuplicatesGroupItem.Group.Description.Id
+    } 
+    elseif ($($DuplicatesGroupItem.Group | ? {$_.ComponentTags.items -notcontains 'BLACKLISTED'}).Count -eq 1) {
+        $BlacklistSingleList += $($DuplicatesGroupItem.Group | ? {$_.ComponentTags.items -notcontains 'BLACKLISTED'}).Description.Id
+    }
+}
+$MasterList = $MasterList | ? {$_.Description.Id -notin $BlacklistOnlyList}
+$MasterList = $MasterList | ? {$_.Description.Id -notin $BlacklistSingleList}
+#Remove Deprecated
+$MasterList = $MasterList | ? {$_.Description.UIName -notmatch 'DEPRECATED!'} | ? {$_.Description.UIName -notmatch 'DEPRECIATED!'}
+#Remove Linked
+Write-Progress -Id 0 -Activity "Scrubbing Linked"
+$LinkedList = $MasterList.Custom.Linked.Links.ComponentDefId | select
+$MasterList = $MasterList | ? {$_.Description.Id -notin $LinkedList}
+#Remove Lootables
+Write-Progress -Id 0 -Activity "Scrubbing Lootables"
+$LootableKeepList = $MasterList.Custom.Lootable.ItemID | select
+$DuplicatesGroup = $($($MasterList | Group {$_.Description.UIName}) | ? {$_.Count -ge 2})
+$LootableList = @()
+foreach ($DuplicatesGroupItem in $DuplicatesGroup.Group) {
+    if ($DuplicatesGroupItem.Description.Id -notin $LootableKeepList) {
+        $LootableList += $DuplicatesGroupItem.Description.Id
+    }
+}
+$MasterList = $MasterList | ? {$_.Description.Id -notin $LootableList}
+
+#Remove from hard ignore - GearIgnore.CSV
+Write-Progress -Id 0 -Activity "Removing from manual list"
+$GearIgnoreFile = $RTScriptroot+"\\Inputs\\GearIgnore.csv"
+$GearIgnoreList = $(Get-Content $GearIgnoreFile -Raw | ConvertFrom-Csv).GearIgnore
+$MasterList = $MasterList | ? {$_.Description.Id -notin $GearIgnoreList}
+
 #Load Filters List
 Write-Progress -Id 0 -Activity "Loading Custom Filters"
 $FiltersList = $(Get-Content $FiltersFile -Raw | ConvertFrom-Json).Settings.Tabs
