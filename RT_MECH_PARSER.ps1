@@ -693,6 +693,8 @@ $Mechs | % {
         $VariantGlue += " -$($_.Name.Chassis)-"
     } elseif ($_.Name.Variant -eq 'OSR-4C') {
         $VariantGlue += " -$($_.Name.Chassis)-"
+    } elseif ($_.Name.Variant -eq 'HND-1') {
+        $VariantGlue += " -$($_.Name.Chassis)-"
     }
     $_ | Add-Member -NotePropertyName TempID -NotePropertyValue $VariantGlue -Force
 }
