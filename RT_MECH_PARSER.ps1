@@ -204,7 +204,7 @@ foreach ($MDefFileObject in $MDefFileObjectList) {
     #error with CDef definition if still nothing
     if (-not !$CDefFileObject) {
         $filePathCDef = $CDefFileObject.VersionInfo.FileName
-        try {$CDefObject = $(Get-Content $filePathCDef -raw | ConvertFrom-Json)} catch {"MechParser|Parsing chassisdef: " + $filePathCDef | Out-File $RTScriptroot\ErrorLog.txt -Append -Encoding utf8}
+        try {$CDefObject = $($(Get-Content $filePathCDef -raw).Replace("`"WeaponMount`"", "`"WeaponMountID`"") | ConvertFrom-Json)} catch {"MechParser|Parsing chassisdef: " + $filePathCDef | Out-File $RTScriptroot\ErrorLog.txt -Append -Encoding utf8} #make weaponmount consistent
     
         #init mech object for storage
         $Mech = $([PSCustomObject] @{
@@ -384,17 +384,15 @@ foreach ($MDefFileObject in $MDefFileObjectList) {
                 if ($Hardpoint.Omni) {
                     $OmniSlot++
                     $Mech.Hardpoint.$LocationName += 'Omni'
-                #don't count WeaponMountID (mod slots)
-                } elseif ((-not !$Hardpoint.WeaponMount) -and (-not $Hardpoint.Omni)) {
-                    #exclude NotSet
-                    if ($Hardpoint.WeaponMount -ne "NotSet") {
-                        $(Get-Variable "$($Hardpoint.WeaponMount)Slot").Value++
-                        $Mech.Hardpoint.$LocationName += "$($Hardpoint.WeaponMount)"
-                    }
-                #except for the BA slots urrrggg
+                #the BA slots
                 } elseif (($Hardpoint.WeaponMountID -like "BattleArmor") -and (-not $Hardpoint.Omni)) {
                     $BattleArmorSlot++
                     $Mech.Hardpoint.$LocationName += "$($Hardpoint.WeaponMountID)"
+                } else {
+                    if (-not ($Hardpoint.WeaponMountID -match 'NotSet' -or $Hardpoint.WeaponMountID -match 'SpecialMelee' -or $Hardpoint.WeaponMountID -match 'Special')) {
+                        $(Get-Variable "$($Hardpoint.WeaponMountID)Slot").Value++
+                        $Mech.Hardpoint.$LocationName += "$($Hardpoint.WeaponMountID)"
+                    }
                 }
             }
         }

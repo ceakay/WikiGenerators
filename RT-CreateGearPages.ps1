@@ -236,7 +236,7 @@ foreach ($Item in $InputObject) {
 | $ModeMode
 | $ModeAmmoCategory
 | $($ItemBaseDamage + $Mode.Damage + $Mode.DamagePerShot)
-| $($ItemBaseHeatDamage + $Mode.HeatDamage)
+| $($ItemBaseHeatDamage + $Mode.HeatDamage + $Mode.HeatDamagePerShot)
 | $($ItemBaseInstability + $Mode.Instability)
 | $($ItemBaseShotsWhenFired + $Mode.ShotsWhenFired)
 | $($ItemBaseProjectilesPerShot + $Mode.ProjectilesPerShot)
