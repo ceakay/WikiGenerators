@@ -511,7 +511,8 @@ foreach ($Cat in $CatOrder) {
             if (-not $Mech.BLACKLIST) {
                 #Setup Infobox
                 $WikiMexTable += "{{Infobox MechPage`r`n"
-                $WikiMexTable += "| name = $($Mech.Name.MechUIName)`r`n"
+                $WikiMexTable += "| name       = $($Mech.Name.MechUIName)`r`n"
+                $WikiMexTable += "| icon       = $($Mech.Icon + '.png')`r`n"
                 $WikiMexTable += "| signature  = $($Mech.Name.Variant)`r`n"
                 $WikiMexTable += "| class      = $($CatFriendly)`r`n"
                 $WikiMexTable += "| tonnage    = $($Mech.Tonnage)`r`n"

@@ -15,17 +15,21 @@ Wait-Process -Id $PIDs #wait for parsers to finish. transcoders may need mulitpl
 $PIDs = @()
 $RefHash = @{}
 
-$MechPID += (Start-Process pwsh -ArgumentList "$RTScriptroot\RT_MECH_WIKI_TRANSCODE.ps1" -PassThru).Id
-$PIDs += $MechPID
-$RefHash.Add($MechPID,'Mech')
+$CreditsPID = (Start-Process pwsh -ArgumentList "$RTScriptroot\RT_Credits.ps1" -PassThru).Id
+$PIDs += $CreditsPID
+$RefHash.Add($GearPID,'Credits')
+
+$GearPID = (Start-Process pwsh -ArgumentList "$RTScriptroot\RT_GEAR_WIKI.ps1" -PassThru).Id
+$PIDs += $GearPID
+$RefHash.Add($GearPID,'Gear')
 
 $TankPID = (Start-Process pwsh -ArgumentList "$RTScriptroot\RT_TANK_WIKI_TRANSCODE.ps1" -PassThru).Id
 $PIDs += $TankPID
 $RefHash.Add($TankPID,'Tank')
 
-$GearPID = (Start-Process pwsh -ArgumentList "$RTScriptroot\RT_GEAR_WIKI.ps1" -PassThru).Id
-$PIDs += $GearPID
-$RefHash.Add($GearPID,'Gear')
+$MechPID += (Start-Process pwsh -ArgumentList "$RTScriptroot\RT_MECH_WIKI_TRANSCODE.ps1" -PassThru).Id
+$PIDs += $MechPID
+$RefHash.Add($MechPID,'Mech')
 
 $FinishedPIDs = @()
 $PIDs = $PIDs | ? {$_}
