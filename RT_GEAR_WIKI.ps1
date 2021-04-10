@@ -188,7 +188,6 @@ cd $RTScriptroot
 #cache path
 $CacheRoot = "$RTroot\\RtlCache\\RtCache"
 $MinorCatPath = $CacheRoot+"\\RogueTech Core\\categories"
-$BonusDescPath = $CacheRoot+"\\RogueTech Core\\bonusDescriptions"
 
 #masterfile
 $EquipFile = $RTScriptroot+"\\Outputs\\GearTable.json"
@@ -212,7 +211,7 @@ $MajorCatsHash = @{
     EQUIP = "Equipment"
 }
 
-#Load Master List, remove blacklisted
+#Load Master List
 Write-Progress -Id 0 -Activity "Loading Master Object"
 $MasterList = [System.Collections.ArrayList]@($(Get-Content $EquipFile -Raw | ConvertFrom-Json) | ? {$_.Description.ID -notmatch 'emod_engineslots_size'}  | ? {$_.Description.ID -notmatch 'Gear_LegJet_Assault_Lower'}) #| ? {$_.ComponentTags.items -notcontains "blacklisted"})
 
@@ -247,20 +246,17 @@ $MasterList = $MasterList | ? {$_.Description.Id -notin $BlacklistSingleList}
 Write-Progress -Id 0 -Activity "Scrubbing Lootables"
 $LootableKeepList = $MasterList.Custom.Lootable.ItemID | select
 $DuplicatesGroup = $($($MasterList | Group {$_.Description.UIName}) | ? {$_.Count -ge 2})
-$LootableList = @()
-foreach ($DuplicatesGroupItem in $DuplicatesGroup.Group) {
-    if ($DuplicatesGroupItem.Description.Id -notin $LootableKeepList) {
-        $LootableList += $DuplicatesGroupItem.Description.Id
-    }
-}
+$LootableList = $($DuplicatesGroup.Group | ? {-not !$_.Custom.Lootable.ItemID}).Description.ID
 $MasterList = $MasterList | ? {$_.Description.Id -notin $LootableList}
-
-<#Remove from hard ignore - GearIgnore.CSV
+#Remove from hard ignore - GearIgnore.CSV
 Write-Progress -Id 0 -Activity "Removing from manual list"
 $GearIgnoreFile = $RTScriptroot+"\\Inputs\\GearIgnore.csv"
 $GearIgnoreList = $(Get-Content $GearIgnoreFile -Raw | ConvertFrom-Csv).GearIgnore
 $MasterList = $MasterList | ? {$_.Description.Id -notin $GearIgnoreList}
-#>
+#CustomOverrides
+$($MasterList | ? {$_.Description.ID -eq 'Weapon_Laser_TAG_HeyListen'}).Description.UIName = 'TAG (NAVI)'
+$($MasterList | ? {$_.Description.ID -eq 'Gear_Cockpit_SensorsB_Standard'}).Description.UIName = 'Sensors (B)'
+
 
 #Load Filters List
 Write-Progress -Id 0 -Activity "Loading Custom Filters"
@@ -327,7 +323,7 @@ foreach ($MasterObject in $MasterList) {
 }
 
 #Build BonusDescriptions
-$BonusDescFiles = Get-ChildItem $BonusDescPath -Filter "BonusDescriptions*.json"
+$BonusDescFiles = Get-ChildItem $CacheRoot -Recurse -Filter "BonusDescriptions*.json"
 $BonusDescHash = @{}
 foreach ($BonusDescFile in $BonusDescFiles) {
     $BonusDescObject = $(Get-Content $BonusDescFile.FullName -Raw | ConvertFrom-Json).Settings

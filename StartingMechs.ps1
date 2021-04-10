@@ -76,7 +76,7 @@ foreach ($CareersObject in $CareersObjects) {
 
 #The Tables Section
 
-$StartingMechsListsCSVs = $(Get-ChildItem $CacheRoot -Recurse -Filter "itemcollection_mechs*.csv" | select name, fullname) | group name
+$StartingMechsListsCSVs = $(Get-ChildItem $CacheRoot -Recurse -Filter "itemcollection_mechs*.csv" | select name, fullname | ? {$_.Name -ne 'itemCollection_Mechs_rare.csv'}) | group name
 $StartingMechsListsGrouped = [pscustomobject]@{}
 $GroupedNamesArray = @()
 $StartingMechsListsCSVs.GetEnumerator() | % {
@@ -90,7 +90,7 @@ foreach ($GroupedName in $GroupedNamesArray) {
     foreach ($GroupedFile in $StartingMechsListsGrouped.$GroupedName) {
         $ModName = Split-Path $(Split-Path $(Split-Path $GroupedFile -Parent) -Parent) -Leaf
         if ($ModName -match'IRTweaks') {
-            $ModName = 'Base 3061'
+            $ModName = ''
         }
         $ListsHolder += Get-Content $GroupedFile | select -Skip 1 | % {$_ += ",$ModName";$_} | ConvertFrom-Csv -Header 'ID', 'Type', 'Quantity', 'Rarity', 'ModName'
     }

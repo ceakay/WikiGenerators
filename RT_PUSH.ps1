@@ -17,7 +17,7 @@ $RefHash = @{}
 
 $CreditsPID = (Start-Process pwsh -ArgumentList "$RTScriptroot\RT_Credits.ps1" -PassThru).Id
 $PIDs += $CreditsPID
-$RefHash.Add($GearPID,'Credits')
+$RefHash.Add($CreditsPID,'Credits')
 
 $GearPID = (Start-Process pwsh -ArgumentList "$RTScriptroot\RT_GEAR_WIKI.ps1" -PassThru).Id
 $PIDs += $GearPID

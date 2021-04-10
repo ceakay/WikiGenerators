@@ -362,7 +362,7 @@ foreach ($MDefFileObject in $MDefFileObjectList) {
                     #same location, tag is: << "BLACKLISTED" >>
                     #if found flag BLACKLISTED as TRUE
         $Mech | Add-Member -MemberType NoteProperty -Name "BLACKLIST" -Value $false
-        if ($MDefObject.VehicleTags.items -contains $GroupObject.BLACKLIST) {
+        if (($MDefObject.VehicleTags.items -contains $GroupObject.BLACKLIST) -or ($MDefObject.RequiredToSpawnCompanyTags.items.Count -gt 0)) {
                 $Mech.BLACKLIST = $true
         }
             #need some kind of wombocombo script to "group" for WIKIGROUPS clans/IS/mercs/periphery/etc...

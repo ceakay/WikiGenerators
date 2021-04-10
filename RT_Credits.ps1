@@ -33,7 +33,7 @@ $WikiText = "Last Updated RT Version $($(Get-Content "$CacheRoot\\RogueTech Core
 
 $ModsTable = "{| class=`"wikitable`"`r`n|-`r`n! Mod !! Author`r`n"
 foreach ($Mod in $ModArray) {
-    $ModsTable += "|-`r`n| $($Mod.Name) || $($Mod.Author)`r`n"
+    $ModsTable += "|-`r`n| [[Mods/$($Mod.Name)|$($Mod.Name)]] || $($Mod.Author)`r`n"
 }
 $ModsTable += "|}`r`n"
 

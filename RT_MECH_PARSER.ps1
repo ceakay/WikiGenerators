@@ -344,9 +344,10 @@ foreach ($MDefFileObject in $MDefFileObjectList) {
                     #same location, tag is: << "BLACKLISTED" >>
                     #if found flag BLACKLISTED as TRUE
         $Mech | Add-Member -MemberType NoteProperty -Name "BLACKLIST" -Value $false
-        if ($MDefObject.MechTags.items -contains $GroupObject.BLACKLIST) {
+        if (($MDefObject.MechTags.items -contains $GroupObject.BLACKLIST) -or ($MDefObject.RequiredToSpawnCompanyTags.items.Count -gt 0)) {
             $Mech.BLACKLIST = $true
-        }
+        }   
+
         #Blacklist Override. Flashpoint/FP mechs generally.
         if ([bool]($BlacklistOverride | ? {$filePathMDef -match $_})) {
             $Mech.BLACKLIST = $true
@@ -606,6 +607,10 @@ foreach ($MDefFileObject in $MDefFileObjectList) {
             $VariantGlue += " -$($Mech.Name.Chassis)-"
         } elseif ($Mech.Name.Variant -eq 'OSR-4C') {
             $VariantGlue += " -$($Mech.Name.Chassis)-"
+        } elseif ($Mech.Name.Variant -eq 'HND-1') {
+            $VariantGlue += " -$($Mech.Name.Chassis)-"
+        } elseif ($Mech.Name.Variant -eq 'HND-3') {
+            $VariantGlue += " -$($Mech.Name.Chassis)-"
         }
 
         #PrefabID/Compatible Variants
@@ -623,7 +628,7 @@ foreach ($MDefFileObject in $MDefFileObjectList) {
         }
 
         $Mech.Name | Add-Member -NotePropertyName 'LinkName' -NotePropertyValue $VariantGlue
-
+        
         #Parse Loadout list to gearusedby.json
         if (!$Mech.BLACKLIST) {
             $MechUsesGearList = $($(@($FixedLoadout.Group.ComponentDefID) + @($DynamicLoadout.Group.ComponentDefID)) | group).Name
@@ -638,12 +643,14 @@ foreach ($MDefFileObject in $MDefFileObjectList) {
         #Parse Affinities to File
         $FixedList = [string[]]$FixedLoadout.Group.ComponentDefID
         $AffinityList = [string[]]$EquipAffinitiesIDNameHash.Keys
-        if (-not !$FixedList) {
-            foreach ($FixedAffinityItem in $(compare $AffinityList $FixedList -ExcludeDifferent -IncludeEqual).InputObject) {
-                if ($FixedAffinityObject.psobject.Properties.Name -notcontains $FixedAffinityItem) {
-                    $FixedAffinityObject | Add-Member -NotePropertyName $FixedAffinityItem -NotePropertyValue @()
+        if (!$Mech.BLACKLIST) {
+            if (-not !$FixedList) {
+                foreach ($FixedAffinityItem in $(compare $AffinityList $FixedList -ExcludeDifferent -IncludeEqual).InputObject) {
+                    if ($FixedAffinityObject.psobject.Properties.Name -notcontains $FixedAffinityItem) {
+                        $FixedAffinityObject | Add-Member -NotePropertyName $FixedAffinityItem -NotePropertyValue @()
+                    }
+                    $FixedAffinityObject.$FixedAffinityItem += $Mech.Name.LinkName
                 }
-                $FixedAffinityObject.$FixedAffinityItem += $Mech.Name.LinkName
             }
         }
 
@@ -654,6 +661,11 @@ foreach ($MDefFileObject in $MDefFileObjectList) {
     }
 }
 #load overrides
+#CleanupDupes
+$DupeLinkName = $Mechs | group {$_.Name.LinkName} | ? {$_.Count -ge 2}
+foreach ($DupeLinkNameMech in $($DupeLinkName.Group | ? {$_.Mod -ne 'Base 3061'})) {
+    $DupeLinkNameMech.Name.LinkName += " $($DupeLinkNameMech.Mod)"
+}
 #save to file
 $Mechs | ConvertTo-Json -Depth 10 | Out-File $MechsFile -Force
 $PrefabID | ConvertTo-Json -Depth 10 | Out-File $PrefabIDFile -Force
