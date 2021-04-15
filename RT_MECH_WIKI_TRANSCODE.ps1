@@ -222,6 +222,10 @@ $MountsLongHash = @{
 #load blurb
 $WikiTable += $(Get-Content $Blurb -raw) + "`r`n"
 
+#Generate MDefLinkName hash with $MechsMasterObject
+$MechMDefLinkHash = @{}
+$MechsMasterObject | % {$MechMDefLinkHash.Add($_.MechDefFile, $_.Name.LinkName)}
+
 #Localization File
 Write-Progress -Activity "Scanning Text Objects"
 $TextFileName = "Localization.json"
@@ -396,7 +400,7 @@ foreach ($Cat in $CatOrder) {
                                     if ($FixedItemObj.Custom.Category.CategoryID -match "positivequirk") {
                                         $LoadoutQuirkText = "* QUIRK: [[Gear/$ItemFriendlyName|$ItemFriendlyName]]`r`n" + $LoadoutQuirkText
                                     } elseif ($FixedItemObj.Custom.Category.CategoryID -match "special") {
-                                        $LoadoutQuirkText += "* Special: Dynmc - [[Gear/$ItemFriendlyName|$ItemFriendlyName]]`r`n"
+                                        $LoadoutQuirkText += "* Special: Dynamic - [[Gear/$ItemFriendlyName|$ItemFriendlyName]]`r`n"
                                     } else {
                                         $LoadoutText += "* $($FixedItem.Count)x [[Gear/$ItemFriendlyName|$ItemFriendlyName]] [$($ItemSlotsHash.$($FixedItem.Name))]`r`n"
                                     }
@@ -499,7 +503,8 @@ foreach ($Cat in $CatOrder) {
                 }#>
                 $CompatVarList = $PrefabID.$($Mech.PrefabID).$($Mech.Tonnage) | sort
                 foreach ($CompatVar in $CompatVarList) {
-                    $CompatVarText += "`r`n* [[Mechs/"+$CompatVar+"|"+$CompatVar+"]]"
+                    $CompatVarLinkName = $($MechMDefLinkHash.$CompatVar)
+                    $CompatVarText += "`r`n* [[Mechs/"+$CompatVarLinkName+"|"+$CompatVarLinkName+"]]"
                 }
             } else {
                 $CompatVarText += "`r`nNo Compatible"

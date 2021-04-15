@@ -164,6 +164,9 @@ $PrefabID = [pscustomobject]@{}
 $GearUsedBy = [pscustomobject]@{}
 $GearUsedByFile = "$RTScriptroot\\Outputs\\GearUsedBy.json"
 
+#DupeLinkHolderArray
+$DupeLinkHolderArray = @()
+
 #create conflict file
 #ascii required for excel cuz M$
 @"
@@ -612,6 +615,25 @@ foreach ($MDefFileObject in $MDefFileObjectList) {
         } elseif ($Mech.Name.Variant -eq 'HND-3') {
             $VariantGlue += " -$($Mech.Name.Chassis)-"
         }
+        
+        #DupeCleaner
+        #check if duped, add to holder array and rename original
+        if (@($Mechs | ? {$_.Name.LinkName -eq $VariantGlue}).Count -eq 1) {
+            $DupeLinkHolderArray += $VariantGlue
+            $DupeLinkHolder = $($Mechs | ? {$_.Name.LinkName -eq $VariantGlue})
+            if ($DupeLinkHolder.Mod -ne 'Base 3061') {
+                $DupeLinkHolder.Name.LinkName = $DupeLinkHolder.Name.LinkName + " " + $DupeLinkHolder.Mod
+            }
+        }
+        #if current is in holderarray, add mech's mod to link before creating.
+        if ($DupeLinkHolderArray -contains $VariantGlue) {
+            if ($Mech.Mod -ne 'Base 3061') {
+                $VariantGlue += " $($Mech.Mod)"
+            }
+        }
+
+        $Mech.Name | Add-Member -NotePropertyName 'LinkName' -NotePropertyValue $VariantGlue
+
 
         #PrefabID/Compatible Variants
         if (-not !$Mech.PrefabID) {
@@ -624,10 +646,8 @@ foreach ($MDefFileObject in $MDefFileObjectList) {
                 $PrefabID.$($Mech.PrefabID) | Add-Member -MemberType NoteProperty -Name $($Mech.Tonnage) -Value @()
             }
             
-            $PrefabID.$($Mech.PrefabID).$($Mech.Tonnage) += $VariantGlue
+            $PrefabID.$($Mech.PrefabID).$($Mech.Tonnage) += $Mech.MechDefFile
         }
-
-        $Mech.Name | Add-Member -NotePropertyName 'LinkName' -NotePropertyValue $VariantGlue
         
         #Parse Loadout list to gearusedby.json
         if (!$Mech.BLACKLIST) {
@@ -663,49 +683,19 @@ foreach ($MDefFileObject in $MDefFileObjectList) {
 #load overrides
 #CleanupDupes
 $DupeLinkName = $Mechs | group {$_.Name.LinkName} | ? {$_.Count -ge 2}
+<#
 foreach ($DupeLinkNameMech in $($DupeLinkName.Group | ? {$_.Mod -ne 'Base 3061'})) {
     $DupeLinkNameMech.Name.LinkName += " $($DupeLinkNameMech.Mod)"
+}
+#>
+$DupeLinkName = $Mechs | group {$_.Name.LinkName} | ? {$_.Count -ge 2}
+if ($DupeLinkName.Count -gt 0) {
+    Write-Host "Dupe LinkNames found"
+    $DupeLinkName
+    pause
 }
 #save to file
 $Mechs | ConvertTo-Json -Depth 10 | Out-File $MechsFile -Force
 $PrefabID | ConvertTo-Json -Depth 10 | Out-File $PrefabIDFile -Force
 $GearUsedBy | ConvertTo-Json -Depth 10 | Out-File $GearUsedByFile -Force
 $FixedAffinityObject | ConvertTo-Json -Depth 100 | Out-File $FixedAffinityFile -Force
-
-#Work bustedmechs
-$Mechs | % { 
-    $VariantLink = $($_.Name.Variant)
-    $VariantGlue = $($VariantLink+$($_.Name.SubVariant)).Trim()
-    if (-not !$_.Name.Hero) {
-        $VariantGlue += " ($($_.Name.Hero))"
-    }
-    if (-not !$_.Name.Unique) {
-        $VariantGlue += " aka $($_.Name.Unique)"
-    }
-    foreach ($BlackOverride in $BlacklistOverride) {
-        if ($_.MechDefFile -match $BlackOverride) {
-             $VariantGlue += " $($_.Mod)"
-             break
-        }
-    }
-    #unresolvable conflicts override
-    if ([bool]($BlacklistOverride | ? {$filePathMDef -match $_})) {
-        $VariantGlue += " $($_.Mod)"
-    } elseif ($_.Name.Variant -eq 'CGR-C') {
-        $VariantGlue += " -$($_.Name.Chassis)-"
-    } elseif ($_.Name.Variant -eq 'MAD-BH') {
-        $VariantGlue += " -$($_.Name.Chassis)-"
-    } elseif ($_.Name.Variant -eq 'MAD-4S') {
-        $VariantGlue += " -$($_.Name.Chassis)-"
-    } elseif ($_.Name.Variant -eq 'BZK-P') {
-        $VariantGlue += " -$($_.Name.Chassis)-"
-    } elseif ($_.Name.Variant -eq 'BZK-RX') {
-        $VariantGlue += " -$($_.Name.Chassis)-"
-    } elseif ($_.Name.Variant -eq 'OSR-4C') {
-        $VariantGlue += " -$($_.Name.Chassis)-"
-    } elseif ($_.Name.Variant -eq 'HND-1') {
-        $VariantGlue += " -$($_.Name.Chassis)-"
-    }
-    $_ | Add-Member -NotePropertyName TempID -NotePropertyValue $VariantGlue -Force
-}
-$Mechs | group -Property TempID | ? {$_.count -gt 1} | ConvertTo-Json -Depth 100 | Out-File "$RTScriptroot\\Outputs\\bustedmechs.json" -Force
