@@ -293,7 +293,7 @@ foreach ($Cat in $CatOrder) {
             }
             $TagText = "|<small>$($TagText.Trim())</small>`r`n"
             $ChassisTable = $TagText+$ChassisTable
-            #HP fix
+            <#HP fix
             #FUUUUUUUU imported as object. create a holder hash, dump object to hash, convert object to hashtable and overwrite
             $HPItems = @($($mech.HP.psobject.Properties | select -Property Name).Name)
             foreach ($HPItem in $HPItems) {
@@ -304,7 +304,7 @@ foreach ($Cat in $CatOrder) {
                 $HolderHPTotal = 0
                 $Mech.HP.$HPItem.GetEnumerator() | foreach { $HolderHPTotal += $_.Value }
                 $Mech.HP.$HPItem.Add("Total", $HolderHPTotal)
-            }
+            }#>
             #loadout/HP
             if (-not $Mech.BLACKLIST) {
                 #loadout subtable

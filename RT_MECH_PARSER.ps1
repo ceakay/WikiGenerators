@@ -450,6 +450,7 @@ foreach ($MDefFileObject in $MDefFileObjectList) {
             LL = $($CDefObject.Locations | where -Property Location -Like "LeftLeg").InternalStructure
             RL = $($CDefObject.Locations | where -Property Location -Like "RightLeg").InternalStructure
         }
+        $Mech.HP.Structure.Add('Total',$($Mech.HP.Structure.Values | % -Begin {$HPTotalHolder = 0} -Process {$HPTotalHolder += $_} -End {$HPTotalHolder}))
         # SetArmor
         $Mech.HP | Add-Member -MemberType NoteProperty -Name "SetArmor" -Value @{}
         $Mech.HP.SetArmor = @{
@@ -465,6 +466,7 @@ foreach ($MDefFileObject in $MDefFileObjectList) {
             LL = $($MDefObject.Locations | where -Property Location -Like "LeftLeg").AssignedArmor
             RL = $($MDefObject.Locations | where -Property Location -Like "RightLeg").AssignedArmor
         }
+        $Mech.HP.SetArmor.Add('Total',$($Mech.HP.SetArmor.Values | % -Begin {$HPTotalHolder = 0} -Process {$HPTotalHolder += $_} -End {$HPTotalHolder}))
         # MaxArmor
         $Mech.HP | Add-Member -MemberType NoteProperty -Name "MaxArmor" -Value @{}
         $Mech.HP.MaxArmor = @{
@@ -480,6 +482,7 @@ foreach ($MDefFileObject in $MDefFileObjectList) {
             LL = $($CDefObject.Locations | where -Property Location -Like "LeftLeg").MaxArmor
             RL = $($CDefObject.Locations | where -Property Location -Like "RightLeg").MaxArmor
         }
+        $Mech.HP.MaxArmor.Add('Total',$($Mech.HP.MaxArmor.Values | % -Begin {$HPTotalHolder = 0} -Process {$HPTotalHolder += $_} -End {$HPTotalHolder}))
         #Grab and trim Mech Blurb
         $MechBlurb = $MDefObject.Description.Details
         

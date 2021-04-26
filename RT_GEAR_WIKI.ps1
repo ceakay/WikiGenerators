@@ -356,12 +356,18 @@ $null = New-Item -ItemType Directory $ItemOutFolder
 
 #Build Item Pages via jobs
 Get-Job | Remove-Job -Force #Cleanup Leftover Jobs
-$Divisor = 100 #Even numbers only
-$Rounder = ($Divisor / 2) - 1
-$Counter = [int]$(($MasterList.Count + $Rounder) / $Divisor)
-for ($JobCount=0;$JobCount -lt $Counter; $JobCount++) {
+
+$ThreadCount = 16 #Number of desired threads
+#get trimmed count
+$Divisor = (($MechsMasterObject.Count - ($MechsMasterObject.Count % $ThreadCount)) / $ThreadCount)
+#if there's remainder, round it up
+if ($MechsMasterObject.Count % $ThreadCount -ne 0) {
+    $Divisor++ 
+}
+
+for ($JobCount=0;$JobCount -lt $ThreadCount; $JobCount++) {
     #start job to build item page from $masterlist
-    if ($JobCount -eq $Counter - 1) {
+    if ($JobCount -eq $ThreadCount - 1) {
         $JobInputObject = $MasterList[$(0+($JobCount*$Divisor))..$($($MasterList.Count)-1)]
     } else {
         $JobInputObject = $MasterList[$(0+($JobCount*$Divisor))..$(($Divisor*(1+$JobCount))-1)]
