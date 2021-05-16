@@ -37,5 +37,5 @@ foreach ($Mod in $ModArray) {
 }
 $ModsTable += "|}`r`n"
 
-$WikiText = "{{-start-}}`r`n'''Credits'''`r`n" + $WikiText + "`r`n{{-stop-}}`r`n"
+$WikiText = "{{-start-}}`r`n@@@Credits@@@`r`n" + $WikiText + "`r`n{{-stop-}}`r`n"
 $WikiText -replace ('##ModsTable##',$ModsTable) | Out-File -Encoding utf8 $CreditsFile

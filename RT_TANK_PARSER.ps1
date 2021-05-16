@@ -455,6 +455,54 @@ foreach ($MDefFileObject in $MDefFileObjectList) {
         ###START OVERRIDES SECTION
         
         ###END OVERRIDES SECTION
+
+        #Prep VariantGlue
+        $VariantLink = $($Mech.Name.Full)
+        $VariantGlue = $($VariantLink+" "+$($Mech.Name.SubVar)).Trim()
+        if (-not !$Mech.Name.Hero) {
+            $VariantGlue += " ($($Mech.Name.Hero))"
+        }
+        if (-not !$mech.Name.Unique) {
+            $VariantGlue += " aka $($Mech.Name.Unique)"
+        }
+        #variantglue unresolvable conflicts override
+        if ([bool]($BlacklistOverride | ? {$filePathMDef -match $_})) {
+            $VariantGlue += " $($Mech.Mod)"
+        } elseif ($Mech.Name.Full -eq 'CGR-C') {
+            $VariantGlue += " -$($Mech.Name.Chassis)-"
+        } elseif ($Mech.Name.Full -eq 'MAD-BH') {
+            $VariantGlue += " -$($Mech.Name.Chassis)-"
+        } elseif ($Mech.Name.Full -eq 'MAD-4S') {
+            $VariantGlue += " -$($Mech.Name.Chassis)-"
+        } elseif ($Mech.Name.Full -eq 'BZK-P') {
+            $VariantGlue += " -$($Mech.Name.Chassis)-"
+        } elseif ($Mech.Name.Full -eq 'BZK-RX') {
+            $VariantGlue += " -$($Mech.Name.Chassis)-"
+        } elseif ($Mech.Name.Full -eq 'OSR-4C') {
+            $VariantGlue += " -$($Mech.Name.Chassis)-"
+        } elseif ($Mech.Name.Full -eq 'HND-1') {
+            $VariantGlue += " -$($Mech.Name.Chassis)-"
+        } elseif ($Mech.Name.Full -eq 'HND-3') {
+            $VariantGlue += " -$($Mech.Name.Chassis)-"
+        }
+        
+        #DupeCleaner
+        #check if duped, add to holder array and rename original
+        if (@($Mechs | ? {$_.Name.LinkName -eq $VariantGlue}).Count -eq 1) {
+            $DupeLinkHolderArray += $VariantGlue
+            $DupeLinkHolder = $($Mechs | ? {$_.Name.LinkName -eq $VariantGlue})
+            if ($DupeLinkHolder.Mod -ne 'Base 3061') {
+                $DupeLinkHolder.Name.LinkName = $DupeLinkHolder.Name.LinkName + " " + $DupeLinkHolder.Mod
+            }
+        }
+        #if current is in holderarray, add mech's mod to link before creating.
+        if ($DupeLinkHolderArray -contains $VariantGlue) {
+            if ($Mech.Mod -ne 'Base 3061') {
+                $VariantGlue += " $($Mech.Mod)"
+            }
+        }
+        $Mech.Name | Add-Member -NotePropertyName 'LinkName' -NotePropertyValue $VariantGlue
+
         #add mechobject to $mechs
         $Mechs += $Mech
     } else {
@@ -463,5 +511,14 @@ foreach ($MDefFileObject in $MDefFileObjectList) {
     }
 }
 #load overrides
+#CleanupDupes
+
+#DirtyDupes
+$DupeLinkName = $Mechs | group {$_.Name.LinkName} | ? {$_.Count -ge 2}
+if ($DupeLinkName.Count -gt 0) {
+    Write-Host "Dupe LinkNames found"
+    $DupeLinkName
+    pause
+}
 #save to file
 $Mechs | ConvertTo-Json -Depth 10 | Out-File $MechsFile -Force

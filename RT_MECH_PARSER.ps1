@@ -634,7 +634,6 @@ foreach ($MDefFileObject in $MDefFileObjectList) {
                 $VariantGlue += " $($Mech.Mod)"
             }
         }
-
         $Mech.Name | Add-Member -NotePropertyName 'LinkName' -NotePropertyValue $VariantGlue
 
 
@@ -685,12 +684,8 @@ foreach ($MDefFileObject in $MDefFileObjectList) {
 }
 #load overrides
 #CleanupDupes
-$DupeLinkName = $Mechs | group {$_.Name.LinkName} | ? {$_.Count -ge 2}
-<#
-foreach ($DupeLinkNameMech in $($DupeLinkName.Group | ? {$_.Mod -ne 'Base 3061'})) {
-    $DupeLinkNameMech.Name.LinkName += " $($DupeLinkNameMech.Mod)"
-}
-#>
+
+#DirtyDupes
 $DupeLinkName = $Mechs | group {$_.Name.LinkName} | ? {$_.Count -ge 2}
 if ($DupeLinkName.Count -gt 0) {
     Write-Host "Dupe LinkNames found"

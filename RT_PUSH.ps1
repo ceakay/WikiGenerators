@@ -2,15 +2,16 @@
 
 "Date: " + $(date) | Out-File $RTScriptroot\ErrorLog.txt -Append -Encoding utf8
 
-$WikiPID = (Start-Process pwsh -ArgumentList "$RTScriptroot\StartingMechs.ps1" -WindowStyle Minimized -PassThru).Id
-$StatusText = 'StartingMechs'
-#starting mechs is dirty combo script. just get it out of the way.
-
 $PIDs = @()
 $PIDS += (Start-Process pwsh -ArgumentList "$RTScriptroot\RT_GEAR_PARSER.ps1" -WindowStyle Minimized -PassThru).Id
 $PIDS += (Start-Process pwsh -ArgumentList "$RTScriptroot\RT_MECH_PARSER.ps1" -WindowStyle Minimized -PassThru).Id
 $PIDS += (Start-Process pwsh -ArgumentList "$RTScriptroot\RT_TANK_PARSER.ps1" -WindowStyle Minimized -PassThru).Id
 Wait-Process -Id $PIDs #wait for parsers to finish. transcoders may need mulitple
+
+$WikiPID = (Start-Process pwsh -ArgumentList "$RTScriptroot\StartingMechs.ps1" -WindowStyle Minimized -PassThru).Id
+$StatusText = 'StartingMechs'
+#starting mechs is dirty combo script. just get it out of the way.
+Wait-Process -Id $WikiPID
 
 $PIDs = @()
 $RefHash = @{}
@@ -31,6 +32,10 @@ $MechPID += (Start-Process pwsh -ArgumentList "$RTScriptroot\RT_MECH_WIKI_TRANSC
 $PIDs += $MechPID
 $RefHash.Add($MechPID,'Mech')
 
+foreach ($PriorPID in $PIDs) {
+    Get-CimInstance -ClassName win32_process -Filter "ProcessID = $PriorPID" | Invoke-CimMethod -MethodName SetPriority -Arguments @{Priority = 16384}
+}
+
 $FinishedPIDs = @()
 $PIDs = $PIDs | ? {$_}
 $CompareArray = $($(Compare-Object $PIDs $FinishedPIDs) | ? {$_.SideIndicator -match '<='}).InputObject
@@ -50,5 +55,5 @@ while (-not !$CompareArray) {
         }
     }
     Write-Progress -id 0 -Activity "Waiting for $StatusText $TypeStatus"
-    Start-Sleep -Milliseconds 1000
+    Start-Sleep -Milliseconds 250
 }

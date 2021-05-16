@@ -436,20 +436,20 @@ foreach ($MajorKey in $FiltersList.Caption) {
             $l=0
             $MinorPage += "`r`n"
         }
-        $MinorPage = "{{-start-}}`r`n'''$MinorLink'''`r`n{{NavboxEquipment}}`r`n{{Tocright}}`r`n$MinorPage`r`n{{-stop-}}"
+        $MinorPage = "{{-start-}}`r`n@@@$MinorLink@@@`r`n{{NavboxEquipment}}`r`n{{Tocright}}`r`n$MinorPage`r`n{{-stop-}}"
         $MinorPage | Out-File "$GearOutFolder\\$MinorPageFile" -Encoding utf8 -Force
         $k=0
     }
     $Navbox += "•`r`n"
-    $MajorPage = "{{-start-}}`r`n'''$MajorLink'''`r`n{{NavboxEquipment}}`r`n{{Tocright}}`r`n$MajorPage`r`n{{-stop-}}"
+    $MajorPage = "{{-start-}}`r`n@@@$MajorLink@@@`r`n{{NavboxEquipment}}`r`n{{Tocright}}`r`n$MajorPage`r`n{{-stop-}}"
     $MajorPage | Out-File "$GearOutFolder\\$MajorPageFile" -Encoding utf8 -Force
     $j=0
 }
-$GearPage = "`r`n{{-start-}}`r`n'''Gear'''`r`n{{NavboxEquipment}}`r`n`r`n" + $GearPage + "`r`n{{-stop-}}`r`n"
+$GearPage = "`r`n{{-start-}}`r`n@@@Gear@@@`r`n{{NavboxEquipment}}`r`n`r`n" + $GearPage + "`r`n{{-stop-}}`r`n"
 $GearPage | Out-File "$GearOutFolder\\GearMain.txt" -Encoding utf8 -Force
 
 $Navbox += "}}"
-$Navbox = "{{-start-}}`r`n'''Template:NavboxEquipment'''`r`n$Navbox`r`n{{-stop-}}"
+$Navbox = "{{-start-}}`r`n@@@Template:NavboxEquipment@@@`r`n$Navbox`r`n{{-stop-}}"
 $Navbox | Out-File "$GearOutFolder\\!Navbox.txt" -Encoding utf8 -Force
 
 #Join into a supersized file for pwb upload - TOC Pages

@@ -64,19 +64,23 @@ function Sort-STNumerical {
 $ReturnText = $null
 foreach ($Item in $InputObject) {
     #Build gear page
-    $ItemText = "{{-start-}}`r`n'''Gear/$($Item.Description.UIName)'''`r`n"
+    $ItemText = "{{-start-}}`r`n@@@Gear/$($Item.Description.UIName)@@@`r`n"
     $ItemText += "{{tocright}}`r`n"
     $ItemText += "=Description=`r`n`r`nID: $($Item.Description.ID)`r`n`r`nManufacturer: $($Item.Description.Manufacturer)`r`n`r`n$($($($Item.Description.Details -split ("`n")) | % {$_.Trim()}) -join ("`r`n"))`r`n"
     $ItemText += "=Attributes=`r`n`r`n"
     $ItemText += @"
 {|class="wikitable"
-!Tonnage
-!Slots
-!Value
+! Tonnage
+! Slots
+! Value
+! Allowed Locations
+! Disallowed Locations
 |-
 | $($Item.Tonnage)
 | $($Item.InventorySize)
 | $($Item.Description.Cost)
+| $($Item.AllowedLocations)
+| $($Item.DisallowedLocations)
 |}
 
 
@@ -249,7 +253,7 @@ foreach ($Item in $InputObject) {
 | $($ItemBaseAPMaxArmorThickness + $Mode.APMaxArmorThickness)
 | $([int]$($ItemBaseMinRange + $Mode.MinRange))
 | $([int]$($ItemBaseShortRange + $Mode.ShortRange))
-| $([int]$($ItemBaseMiddleRange + $Mode.MiddleRange))
+| $([int]$($ItemBaseMiddleRange + $Mode.MediumRange))
 | $([int]$($ItemBaseLongRange + $Mode.LongRange))
 | $([int]$($ItemBaseMaxRange + $Mode.MaxRange))
 | $ModeIndirectFireCapable
@@ -308,7 +312,7 @@ foreach ($Item in $InputObject) {
 
     #Lazy Blacklisted
     if ($Item.ComponentTags.items -contains "blacklisted") {
-        $ItemText = "{{-start-}}`r`n'''Gear/$($Item.Description.UIName)'''`r`n#REDIRECT [[Classified]]`r`n`r`n$($Item.Description.ID)`r`n"
+        $ItemText = "{{-start-}}`r`n@@@Gear/$($Item.Description.UIName)@@@`r`n#REDIRECT [[Classified]]`r`n`r`n$($Item.Description.ID)`r`n"
     }
 
     #Close
