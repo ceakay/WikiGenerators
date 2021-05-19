@@ -23,4 +23,4 @@ foreach ($Image in $ImageList) {
 #Script Root
 $PWBRoot = "D:\\PYWikiBot"
 
-py $PWBRoot\\pwb.py upload -force -pt:0 -recursive -keep -ignorewarn -noverify -summary:"BotUpdate" $ImageOutFolder -descfile:"$($ImageOutFolder+ 'BotUpdate.txt')"
+py $PWBRoot\\pwb.py upload -pt:0 -recursive -keep -ignorewarn -noverify -summary:"BotUpdate" $ImageOutFolder -descfile:"$($ImageOutFolder+ 'BotUpdate.txt')"
