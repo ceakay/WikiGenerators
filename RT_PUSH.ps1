@@ -6,6 +6,7 @@ $PIDs = @()
 $PIDS += (Start-Process pwsh -ArgumentList "$RTScriptroot\RT_GEAR_PARSER.ps1" -WindowStyle Minimized -PassThru).Id
 $PIDS += (Start-Process pwsh -ArgumentList "$RTScriptroot\RT_MECH_PARSER.ps1" -WindowStyle Minimized -PassThru).Id
 $PIDS += (Start-Process pwsh -ArgumentList "$RTScriptroot\RT_TANK_PARSER.ps1" -WindowStyle Minimized -PassThru).Id
+$PIDS += (Start-Process pwsh -ArgumentList "$RTScriptroot\RT_STAR_PARSER.ps1" -WindowStyle Minimized -PassThru).Id
 Wait-Process -Id $PIDs #wait for parsers to finish. transcoders may need mulitple
 
 $WikiPID = (Start-Process pwsh -ArgumentList "$RTScriptroot\StartingMechs.ps1" -WindowStyle Minimized -PassThru).Id

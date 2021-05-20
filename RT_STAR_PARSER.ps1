@@ -27,6 +27,6 @@ foreach ($JSONFile in $JSONList) {
     $StarObjectList += $($JSONRaw | ConvertFrom-Json)
     $i++
 }
-Write-Output "$($StarObjectList.Count) Star Systems  collected"
+Write-Output "$($StarObjectList.Count) Star Systems collected"
 #output to file 
 $StarObjectList | ConvertTo-Json -Depth 10 > $StarFile
