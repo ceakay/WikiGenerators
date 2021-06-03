@@ -85,6 +85,9 @@ foreach ($JSONFile in $JSONList) {
                     Blacklist = $BlacklistComponent
                 }
             }
+            $JSONObject | Add-Member -NotePropertyName Wiki -NotePropertyValue $([pscustomobject]@{})
+            $JSONObject.Wiki | Add-Member -NotePropertyName Mod -NotePropertyValue $($($($JSONFile.FullName -split $CacheRoot)[1] -split "\\")[1])
+            $JSONObject.Wiki | Add-Member -NotePropertyName ModSubFolder -NotePropertyValue $($($($JSONFile.FullName -split $CacheRoot)[1] -split "\\")[2])
             $ComponentObjectList += $JSONObject
         } catch {
             "GearParser|Error parsing: " + $JSONFile | Out-File $RTScriptroot\ErrorLog.txt -Append -Encoding utf8
