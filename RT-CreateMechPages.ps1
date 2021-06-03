@@ -63,6 +63,9 @@
     $SpecialsObject,
 
     [Parameter(Mandatory = $True)]
+    $WikiPageTitle,
+
+    [Parameter(Mandatory = $True)]
     $OutputFile
 
 )
@@ -74,9 +77,6 @@ function datachop {
     $array = @($args[2] -split "$($args[0])")    
     return $array[$args[1]]
 }
-
-##INITS
-$WikiPageTitle = 'Mechs'
 
 $ReturnText = ""
 foreach ($Mech in $InputObject) {
@@ -143,8 +143,9 @@ foreach ($Mech in $InputObject) {
         foreach ($FactionGroup in $GroupList) {
             $FactionText += "`r`n* [[$($($GroupFriendlyObject | where -Property TagTitle -Like $FactionGroup).Friendly)]]"
         }
+        
         foreach ($Faction in $FactionList) {
-            if (-not !$($FactionFriendlyObject.$Faction)) {
+            if ((-not !$($FactionFriendlyObject.$Faction)) -or ($($FactionFriendlyObject.$Faction) -ne '')) {
                 $FactionText += "`r`n* [[$($FactionFriendlyObject.$Faction)]]"
             }
         }
