@@ -676,6 +676,11 @@ foreach ($MDefFileObject in $MDefFileObjectList) {
             }
         }
 
+        #Add the raw defobjects
+        $Mech | Add-Member -NotePropertyName Wiki -NotePropertyValue $([pscustomobject]@{})
+        $Mech.Wiki | Add-Member -NotePropertyName MDef -NotePropertyValue $MDefObject
+        $Mech.Wiki | Add-Member -NotePropertyName CDef -NotePropertyValue $CDefObject
+
         #add mechobject to $mechs
         $Mechs += $Mech
     } else {
