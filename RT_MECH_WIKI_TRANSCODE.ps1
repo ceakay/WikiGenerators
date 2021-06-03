@@ -259,7 +259,7 @@ for ($JobCount=0;$JobCount -lt $ThreadCount; $JobCount++) {
         $JobInputObject = $MechsMasterObject[$(0+($JobCount*$Divisor))..$(($Divisor*(1+$JobCount))-1)]
     }
     $JobOutputFile = $JobOutFolder+"\\Chunk$JobCount.txt"
-    Start-Job -Name $("ItemJob"+$JobCount) -FilePath D:\RogueTech\WikiGenerators\RT-CreateMechPages.ps1 -ArgumentList $JobInputObject,$Mounts,$MountsObject,$GroupObject,$CAffinitiesMaster,$HPSort,$TableRowNames,$ItemFriendlyHash,$GearObject,$ItemSlotsHash,$EquipAffinitiesIDNameHash,$EquipAffinitiesIDNumHash,$EquipAffinitiesIDDescHash,$PrefabID,$FactionIgnoreList,$MechMDefLinkHash,$GroupFriendlyObject,$FactionFriendlyObject,$HPLongSortHash,$MountsLongHash,$SpecialsObject,$JobOutputFile | Out-Null
+    Start-Job -Name $("ItemJob"+$JobCount) -FilePath D:\RogueTech\WikiGenerators\RT-CreateMechPages.ps1 -ArgumentList $JobInputObject,$Mounts,$MountsObject,$GroupObject,$CAffinitiesMaster,$HPSort,$TableRowNames,$ItemFriendlyHash,$GearObject,$ItemSlotsHash,$EquipAffinitiesIDNameHash,$EquipAffinitiesIDNumHash,$EquipAffinitiesIDDescHash,$PrefabID,$FactionIgnoreList,$MechMDefLinkHash,$GroupFriendlyObject,$FactionFriendlyObject,$HPLongSortHash,$MountsLongHash,$SpecialsObject,$WikiPageTitle,$JobOutputFile | Out-Null
 }
 
 #END PAGE JOBS HERE
