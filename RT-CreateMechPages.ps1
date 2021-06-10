@@ -145,7 +145,7 @@ foreach ($Mech in $InputObject) {
         }
         
         foreach ($Faction in $FactionList) {
-            if ((-not !$($FactionFriendlyObject.$Faction)) -or ($($FactionFriendlyObject.$Faction) -ne '')) {
+            if ((-not !$($FactionFriendlyObject.$Faction)) -and ($($FactionFriendlyObject.$Faction) -ne '')) {
                 $FactionText += "`r`n* [[$($FactionFriendlyObject.$Faction)]]"
             }
         }
