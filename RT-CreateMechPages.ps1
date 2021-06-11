@@ -145,8 +145,9 @@ foreach ($Mech in $InputObject) {
         }
         
         foreach ($Faction in $FactionList) {
-            if ((-not !$($FactionFriendlyObject.$Faction)) -and ($($FactionFriendlyObject.$Faction) -ne '')) {
-                $FactionText += "`r`n* [[$($FactionFriendlyObject.$Faction)]]"
+            $FactionFriendlyName = $($FactionFriendlyObject.$Faction) | ? {$_}
+            if (-not !$FactionFriendlyName) {
+                $FactionText += "`r`n* [[$FactionFriendlyName]]"
             }
         }
         $FactionText = "`r`n<div align=`"left`">"+$FactionText+"`r`n</div>"
