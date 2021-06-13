@@ -141,7 +141,7 @@ foreach ($Mech in $InputObject) {
         }
         #parse FactionList and GroupList into Friendly
         foreach ($FactionGroup in $GroupList) {
-            $FactionText += "`r`n* [[$($($GroupFriendlyObject | where -Property TagTitle -Like $FactionGroup).Friendly)]] Group"
+            $FactionText += "`r`n* [[$($($GroupFriendlyObject | where -Property TagTitle -Like $FactionGroup).Friendly)]] Faction Group"
         }
         
         $FactionListFriendly = @()
