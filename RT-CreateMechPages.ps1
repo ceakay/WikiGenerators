@@ -141,14 +141,23 @@ foreach ($Mech in $InputObject) {
         }
         #parse FactionList and GroupList into Friendly
         foreach ($FactionGroup in $GroupList) {
-            $FactionText += "`r`n* [[$($($GroupFriendlyObject | where -Property TagTitle -Like $FactionGroup).Friendly)]]"
+            $FactionText += "`r`n* [[$($($GroupFriendlyObject | where -Property TagTitle -Like $FactionGroup).Friendly)]] Group"
         }
         
+        $FactionListFriendly = @()
+        #generate faction list with friendly names
         foreach ($Faction in $FactionList) {
-            $FactionFriendlyName = $($FactionFriendlyObject.$Faction) | ? {$_}
+            $FactionFriendlyName = $($FactionFriendlyObject."$Faction") | ? {$_} #trim any blank faction returns
             if (-not !$FactionFriendlyName) {
-                $FactionText += "`r`n* [[$FactionFriendlyName]]"
+                if ($FactionFriendlyName.Trim().Length -gt 0) {
+                    $FactionListFriendly += $FactionFriendlyName
+                }
             }
+        }
+        #sort friendly list and print factions
+        $FactionListFriendly = $FactionListFriendly | sort
+        foreach ($FactionFriendlyName in $FactionListFriendly) {
+            $FactionText += "`r`n* [[$FactionFriendlyName]]"
         }
         $FactionText = "`r`n<div align=`"left`">"+$FactionText+"`r`n</div>"
 
