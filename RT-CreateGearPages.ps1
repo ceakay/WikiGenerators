@@ -311,7 +311,7 @@ foreach ($Item in $InputObject) {
     $ItemText = $ItemText -Replace ('<b>(.*?)<\/b>','$1') #remove bold
 
     #Lazy Blacklisted
-    if ($Item.ComponentTags.items -contains "blacklisted") {
+    if (($Item.ComponentTags.items -contains "blacklisted") -and ($Item.ComponentTags.items -notcontains "WikiWL")) {
         $ItemText = "{{-start-}}`r`n@@@Gear/$($Item.Description.UIName)@@@`r`n#REDIRECT [[Classified]]`r`n`r`n$($Item.Description.ID)`r`n"
     }
 
