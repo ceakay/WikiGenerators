@@ -1,12 +1,12 @@
 ﻿#SET CONSTANTS
 ###
 #RogueTech Dir (Where RTLauncher exists)
-$RTroot = "D:\\RogueTech"
+$RTroot = "D:\RogueTech"
 #Script Root
-$RTScriptroot = "D:\\RogueTech\\WikiGenerators"
+$RTScriptroot = "D:\RogueTech\WikiGenerators"
 cd $RTScriptroot
 #cache path
-$CacheRoot = "$RTroot\\RtlCache\\RtCache"
+$CacheRoot = "$RTroot\RtlCache\RtCache"
 
 $ImageInFolder = "D:\RogueTech\RtlCache\RtCache\MechPortraitsCrew\"
 $ImageOutFolder = "D:\RogueTech\WikiGenerators\Outputs\Portraits\"
@@ -23,4 +23,4 @@ foreach ($Image in $ImageList) {
 #Script Root
 $PWBRoot = "D:\\PYWikiBot"
 
-py $PWBRoot\\pwb.py upload -pt:0 -recursive -keep -ignorewarn -noverify -summary:"BotUpdate" $ImageOutFolder -descfile:"$($ImageOutFolder+ 'BotUpdate.txt')"
+py $PWBRoot\\pwb.py upload -pt:0 -recursive -keep -ignorewarn -noverify -summary:"BotUpdate" $ImageOutFolder -descfile:"$($RTScriptroot+ '\BotUpdate.txt')"
