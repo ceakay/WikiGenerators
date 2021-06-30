@@ -358,7 +358,6 @@ foreach ($Cat in $CatOrder) {
                 $VariantText += "`'`'aka $($Mech.Name.Unique)`'`'`r`n"
             }
             $ChassisTable = "|-`r`n|$($VariantText.Trim())`r`n"+$ChassisTable
-
         }
         #remove leading row mark
         $ChassisTable = $($($ChassisTable.Substring(2)).Trim())
