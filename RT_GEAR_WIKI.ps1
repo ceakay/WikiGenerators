@@ -171,325 +171,10 @@ function RT-DynamicFiter {
     }
 }
 
-$JobFunctions = {
-    function RT-CreateGearPages {
-        [CmdletBinding()]
-        Param(
-            [Parameter(Mandatory = $True)]
-            $InputObject,
-        
-            [Parameter(Mandatory = $True)]
-            $BonusDescriptionHash,
+<# This got moved to it's own PS1 script because it's too damn big
+function RT-CreateGearPages {
 
-            [Parameter(Mandatory = $True)]
-            $MechUsedByListObject,
-
-            [Parameter(Mandatory = $True)]
-            $FixedAffinityObject,
-
-            [Parameter(Mandatory = $True)]
-            $EquipAffinitiesRef,
-
-            [Parameter(Mandatory = $True)]
-            $OutputFile
-
-        )
-
-        function Sort-STNumerical {
-            [CmdletBinding()]
-            Param(
-                [Parameter(
-                    Mandatory = $True,
-                    ValueFromPipeline = $True,
-                    ValueFromPipelineByPropertyName = $True)]
-                [System.Object[]]
-                $InputObject,
-        
-                [ValidateRange(2, 100)]
-                [Byte]
-                $MaximumDigitCount = 100,
-
-                [Switch]$Descending
-            )
-    
-            Begin {
-                [System.Object[]] $InnerInputObject = @()
-        
-                [Bool] $SortDescending = $False
-                if ($Descending) {
-                    $SortDescending = $True
-                }
-            }
-    
-            Process {
-                $InnerInputObject += $InputObject
-            }
-
-            End {
-                $InnerInputObject |
-                    Sort-Object -Property `
-                        @{ Expression = {
-                            [Regex]::Replace($_, '(\d+)', {
-                                "{0:D$MaximumDigitCount}" -f [Int64] $Args[0].Value })
-                            }
-                        },
-                        @{ Expression = { $_ } } -Descending:$SortDescending
-            }
-        }
-
-        $ReturnText = $null
-        foreach ($Item in $InputObject) {
-            #Build gear page
-            $ItemText = "{{-start-}}`r`n'''Gear/$($Item.Description.UIName)'''`r`n"
-            $ItemText += "{{tocright}}`r`n"
-            $ItemText += "=Description=`r`n`r`nID: $($Item.Description.ID)`r`n`r`n$($($($Item.Description.Details -split ("`n")) | % {$_.Trim()}) -join ("`r`n"))`r`n"
-            $ItemText += "=Attributes=`r`n`r`n"
-            $ItemText += @"
-{|class="wikitable"
-!Tonnage
-!Slots
-!Value
-|-
-|$($Item.Tonnage)
-|$($Item.InventorySize)
-|$($Item.Description.Cost)
-|}
-
-
-"@
-            $ItemText += "<ul style=`"color: #ff8000;`">`r`n"
-            foreach ($Bonus in $Item.Custom.BonusDescriptions.Bonuses) {
-                $Bonus = @($Bonus -split (":"))
-                $BonusName = $Bonus[0].Trim()
-                $BonusText = $($BonusDescriptionHash.$BonusName)
-                if ($Bonus.Count -gt 1) {
-                    $BonusSubstitute = @($Bonus[1] -split (','))
-                    for ($i=0;$i -lt $BonusSubstitute.Count; $i++) {
-                        $BonusText = Invoke-Expression $('$BonusText -Replace ("\{'+$i+'\}","'+$($BonusSubstitute[$i]).Trim()+'")')
-                    }
-                }
-                $ItemText += "* $BonusText`r`n"
-            }
-            $ItemText += "</ul>`r`n`r`n"
-            if ($Item.ComponentType -match 'AmmunitionBox') {
-                $ItemText += "=Ammo Stats=`r`n"
-                $ItemText += @"
-{| class="wikitable"
-! colspan="2" | Ammo
-! colspan="3" | <small>Component Explosion<br>Self Damage Per Round</small>
-|-
-!<small>Capacity</small>
-!<small>Cost Per Round</small>
-!<small>Norm</small>
-!<small>Heat</small>
-!<small>Stab</small>
-|-
-| $($Item.Capacity)
-| $($Item.Custom.AmmoCost.PerUnitCost)
-| $($Item.Custom.ComponentExplosion.ExplosionDamagePerAmmo)
-| $($Item.Custom.ComponentExplosion.HeatDamagePerAmmo)
-| $($Item.Custom.ComponentExplosion.StabilityDamagePerAmmo)
-|}
-
-"@
-            }
-            if ($Item.ComponentType -match 'weapon') {
-                $ItemText += "=Weapon Stats=`r`n`r`nCategory: $($Item.Category)`r`n`r`nType: $($Item.Type)`r`n`r`nSubType: $($Item.WeaponSubType)`r`n"  
-                $ItemText += @"
-{| class="wikitable"
-! colspan="3" |
-! colspan="3" | Damage
-! colspan="4" | Per salvo
-! colspan="2" | Modifiers
-! colspan="3" | [[TAC]]
-! colspan="5" | Range
-! colspan="1" | Other
-|-
-!<small>Default</small>
-!<small>Mode</small>
-!<small>Ammo</small>
-!<small>Norm</small>
-!<small>Heat</small>
-!<small>Stab</small>
-!<small>Rounds</small>
-!<small>Projectiles</small>
-!<small>Heat</small>
-!<small>Recoil</small>
-!<small>Accuracy</small>
-!<small>Evasion ignored</small>
-!<small>Chance</small>
-!<small>Shards</small>
-!<small>Armor</small>
-!<small>Min</small>
-!<small>Short</small>
-!<small>Medium</small>
-!<small>Long</small>
-!<small>Max</small>
-!<small>Indirect</small>
-
-"@
-                $BaseArrayZero = @('Damage','HeatDamage','Instability','HeatGenerated','AccuracyModifier','EvasivePipsIgnored','RefireModifier','APCriticalChanceMultiplier','APArmorShardsMod','APMaxArmorThickness')
-                $BaseArrayOne = @('ShotsWhenFired','ProjectilesPerShot')
-                $ItemBaseDefault = ""
-                $ItemBaseMode = ""
-                $ItemBaseAmmoCategory = $($Item.AmmoCategory)
-                $ItemBaseMinRange = $($Item.MinRange)
-                $ItemBaseShortRange = $($Item.RangeSplit[0])
-                $ItemBaseMiddleRange = $($Item.RangeSplit[1])
-                $ItemBaseLongRange = $($Item.RangeSplit[2])
-                $ItemBaseMaxRange = $($Item.MaxRange)
-                if ($Item.IndirectFireCapable) {
-                    $ItemBaseIndirectFireCapable = "&#10004;"
-                } else {
-                    $ItemBaseIndirectFireCapable = ""
-                }
-                foreach ($Stat in $BaseArrayZero) {
-                    iex $('$ItemBase'+$Stat+' = $($Item.'+$Stat+'); if ($ItemBase'+$Stat+' -eq $null) {$ItemBase'+$Stat+' = 0}')
-                }
-                foreach ($Stat in $BaseArrayOne) {
-                    iex $('$ItemBase'+$Stat+' = $($Item.'+$Stat+'); if ($ItemBase'+$Stat+' -eq $null) {$ItemBase'+$Stat+' = 1}')
-                }
-
-                if (!$Item.Modes) {
-                    $ItemBaseDefault = "&#10004;"
-                    $ItemText += @"
-|-
-| $ItemBaseDefault
-| $ItemBaseMode
-| $ItemBaseAmmoCategory
-| $ItemBaseDamage
-| $ItemBaseHeatDamage
-| $ItemBaseInstability
-| $ItemBaseShotsWhenFired
-| $ItemBaseProjectilesPerShot
-| $ItemBaseHeatGenerated
-| $ItemBaseRefireModifier
-| $ItemBaseAccuracyModifier
-| $ItemBaseEvasivePipsIgnored
-| $ItemBaseAPCriticalChanceMultiplier
-| $ItemBaseAPArmorShardsMod
-| $ItemBaseAPMaxArmorThickness
-| $ItemBaseMinRange
-| $ItemBaseShortRange
-| $ItemBaseMiddleRange
-| $ItemBaseLongRange
-| $ItemBaseMaxRange
-| $ItemBaseIndirectFireCapable
-
-"@
-                } else {
-                    foreach ($Mode in $($Item.Modes)) {
-                        #Modedefault
-                        if ($Mode.isBaseMode) {
-                            $ModeDefault = "&#10004;"
-                        } else {
-                            $ModeDefault = $ItemBaseDefault
-                        }
-                        #modeuiname
-                        if ($Mode.UIName) {
-                            $ModeMode = $Mode.UIName
-                        } else {
-                            $ModeMode = $ItemBaseMode
-                        }
-                        #modeAmmo
-                        if ($Mode.AmmoCategory) {
-                            $ModeAmmoCategory = $Mode.AmmoCategory
-                        } else {
-                            $ModeAmmoCategory = $ItemBaseAmmoCategory
-                        }
-                        #modeindirect
-                        if ($Mode.IndirectFireCapable) {
-                            $ModeIndirectFireCapable = "&#10004;"
-                        } elseif (-not $Mode.IndirectFireCapable) {
-                            $ModeIndirectFireCapable = ""
-                        } else {
-                            $ModeIndirectFireCapable = $ItemBaseIndirectFireCapable
-                        }
-
-                        $ItemText += @"
-|-
-| $ModeDefault
-| $ModeMode
-| $ModeAmmoCategory
-| $($ItemBaseDamage + $Mode.Damage + $Mode.DamagePerShot)
-| $($ItemBaseHeatDamage + $Mode.HeatDamage)
-| $($ItemBaseInstability + $Mode.Instability)
-| $($ItemBaseShotsWhenFired + $Mode.ShotsWhenFired)
-| $($ItemBaseProjectilesPerShot + $Mode.ProjectilesPerShot)
-| $($ItemBaseHeatGenerated + $Mode.HeatGenerated)
-| $($ItemBaseRefireModifier + $Mode.RefireModifier)
-| $($ItemBaseAccuracyModifier + $Mode.AccuracyModifier)
-| $($ItemBaseEvasivePipsIgnored + $Mode.EvasivePipsIgnored)
-| $($ItemBaseAPCriticalChanceMultiplier + $Mode.APCriticalChanceMultiplier)
-| $($ItemBaseAPArmorShardsMod + $Mode.APArmorShardsMod)
-| $($ItemBaseAPMaxArmorThickness + $Mode.APMaxArmorThickness)
-| $([int]$($ItemBaseMinRange + $Mode.MinRange))
-| $([int]$($ItemBaseShortRange + $Mode.ShortRange))
-| $([int]$($ItemBaseMiddleRange + $Mode.MiddleRange))
-| $([int]$($ItemBaseLongRange + $Mode.LongRange))
-| $([int]$($ItemBaseMaxRange + $Mode.MaxRange))
-| $ModeIndirectFireCapable
-
-"@
-                    }
-                }
-                $ItemText += "|}`r`n"
-            }
-
-            #List Mechs Used By
-            $ItemMechListColToggleMax = 3
-            $ItemMechListColToggle = $ItemMechListColToggleMax - 1
-            $ItemText += "`r`n=Used By Mechs=`r`n<small>`r`n{| class=`"wikitable mw-collapsible mw-collapsed`"`r`n|-`r`n! colspan=`"$ItemMechListColToggleMax`"|<big>Mechs</big>`r`n"
-            $MechUsedByList = $($MechUsedByListObject.$($Item.Description.ID)) | Sort-STNumerical
-            foreach ($MechUsedBy in $MechUsedByList) {
-                $ItemMechListColToggle += 1
-                if ($ItemMechListColToggle -eq $ItemMechListColToggleMax) {
-                    $ItemMechListColToggle = 0
-                    $ItemText += "|-`r`n"
-                }
-                $ItemText += "| [[Mechs/"+$MechUsedBy+"|"+$MechUsedBy+"]]`r`n"
-            }
-            $ItemText += "|}`r`n</small>`r`n"
-
-            #List Affinity used by.
-            $ItemID = $Item.Description.ID
-            $ItemAff = $($EquipAffinitiesRef | ? {$_.ID -eq $ItemID})
-            if (-not !$ItemAff) {
-                $ItemText += "=Affinity Provided=`r`n`r`n{| class=`"wikitable`"`r`n|-`r`n! Gear Affinity`r`n|-`r`n|"
-                $ItemText += "`r`n* $($ItemAff.Name) ($($ItemAff.Num)): $($ItemAff.Description)"
-                $ItemText += "`r`n|}`r`n`r`n<small>`r`n{| class=`"wikitable mw-collapsible mw-collapsed`"`r`n|-`r`n! colspan=`"$ItemMechListColToggleMax`"|<big>Affinity To Mechs</big>`r`n"
-                $ItemMechListColToggleMax = 3
-                $ItemMechListColToggle = $ItemMechListColToggleMax - 1
-                $GearAffinityMechList = $($FixedAffinityObject.$($ItemID)) | Sort-STNumerical
-                foreach ($GearAffinityMech in $GearAffinityMechList) {
-                    $ItemMechListColToggle += 1
-                    if ($ItemMechListColToggle -eq $ItemMechListColToggleMax) {
-                        $ItemMechListColToggle = 0
-                        $ItemText += "|-`r`n"
-                    }
-                    $ItemText += "| [[Mechs/"+$GearAffinityMech+"|"+$GearAffinityMech+"]]`r`n"
-                }
-                $ItemText += "|}`r`n</small>`r`n`r`n"
-            }
-
-            #Regex cleanup
-            $ItemText = $ItemText -Replace ('<color=(.*?)>(.*?)<\/color>','<span style="color:$1;">$2</span>') #replace color tag
-            $ItemText = $ItemText -Replace ('<b>(.*?)<\/b>','$1') #remove bold
-
-            #Lazy Blacklisted
-            if ($Item.ComponentTags.items -contains "blacklisted") {
-                $ItemText = "{{-start-}}`r`n'''Gear/$($Item.Description.UIName)'''`r`n#REDIRECT [[Classified]]`r`n"
-            }
-
-            #Close
-            $ItemText += "{{-stop-}}`r`n"
-            $ReturnText += $ItemText
-        }
-
-        $ReturnText | Out-File "$OutputFile" -Encoding utf8 -Force
-
-    }
-}
+#>
 
 ###SETTINGS
 
@@ -503,7 +188,6 @@ cd $RTScriptroot
 #cache path
 $CacheRoot = "$RTroot\\RtlCache\\RtCache"
 $MinorCatPath = $CacheRoot+"\\RogueTech Core\\categories"
-$BonusDescPath = $CacheRoot+"\\RogueTech Core\\bonusDescriptions"
 
 #masterfile
 $EquipFile = $RTScriptroot+"\\Outputs\\GearTable.json"
@@ -527,9 +211,52 @@ $MajorCatsHash = @{
     EQUIP = "Equipment"
 }
 
-#Load Master List, remove blacklisted
+#Load Master List
 Write-Progress -Id 0 -Activity "Loading Master Object"
 $MasterList = [System.Collections.ArrayList]@($(Get-Content $EquipFile -Raw | ConvertFrom-Json) | ? {$_.Description.ID -notmatch 'emod_engineslots_size'}  | ? {$_.Description.ID -notmatch 'Gear_LegJet_Assault_Lower'}) #| ? {$_.ComponentTags.items -notcontains "blacklisted"})
+
+#Cleanup Duplicates
+#Remove Deprecated
+Write-Progress -Id 0 -Activity "Scrubbing Deprecated"
+$MasterList = $MasterList | ? {$_.Description.UIName -notmatch 'DEPRECATED!'} | ? {$_.Description.UIName -notmatch 'DEPRECIATED!'}
+#Remove Linked
+Write-Progress -Id 0 -Activity "Scrubbing Linked"
+$LinkedList = $MasterList.Custom.Linked.Links.ComponentDefId | select
+$MasterList = $MasterList | ? {$_.Description.Id -notin $LinkedList}
+#Check if group contains single or only blacklisted
+Write-Progress -Id 0 -Activity "Scrubbing BlacklistOnly and BlacklistSingle"
+$DuplicatesGroup = $($($MasterList | Group {$_.Description.UIName}) | ? {$_.Count -ge 2})
+$BlacklistOnlyList = @()
+$BlacklistSingleList = @()
+foreach ($DuplicatesGroupItem in $DuplicatesGroup) {
+    if (@($DuplicatesGroupItem.Group | ? {$_.ComponentTags.items -notcontains 'BLACKLISTED'}).Count -eq 0) {
+        $DupeCounter = 0
+        if (@($DuplicatesGroupItem.Group.Description.Id).Count -gt 1) {
+            $DupeCounter = @($DuplicatesGroupItem.Group.Description.Id).Count - 2
+        }
+        $BlacklistOnlyList += $DuplicatesGroupItem.Group.Description.Id[0..$DupeCounter] #Pick anything to create a classified page with
+    } 
+    elseif (@($DuplicatesGroupItem.Group | ? {$_.ComponentTags.items -notcontains 'BLACKLISTED'}).Count -ge 1) {
+        $BlacklistSingleList += $($DuplicatesGroupItem.Group | ? {$_.ComponentTags.items -contains 'BLACKLISTED'}).Description.Id #If 1 or more are not blacklisted, delete the blacklisted items.
+    }
+}
+$MasterList = $MasterList | ? {$_.Description.Id -notin $BlacklistOnlyList}
+$MasterList = $MasterList | ? {$_.Description.Id -notin $BlacklistSingleList}
+#Remove Lootables
+Write-Progress -Id 0 -Activity "Scrubbing Lootables"
+$LootableKeepList = $MasterList.Custom.Lootable.ItemID | select
+$DuplicatesGroup = $($($MasterList | Group {$_.Description.UIName}) | ? {$_.Count -ge 2})
+$LootableList = $($DuplicatesGroup.Group | ? {-not !$_.Custom.Lootable.ItemID}).Description.ID
+$MasterList = $MasterList | ? {$_.Description.Id -notin $LootableList}
+#Remove from hard ignore - GearIgnore.CSV
+Write-Progress -Id 0 -Activity "Removing from manual list"
+$GearIgnoreFile = $RTScriptroot+"\\Inputs\\GearIgnore.csv"
+$GearIgnoreList = $(Get-Content $GearIgnoreFile -Raw | ConvertFrom-Csv).GearIgnore
+$MasterList = $MasterList | ? {$_.Description.Id -notin $GearIgnoreList}
+#CustomOverrides
+$($MasterList | ? {$_.Description.ID -eq 'Weapon_Laser_TAG_HeyListen'}).Description.UIName = 'TAG (NAVI)'
+$($MasterList | ? {$_.Description.ID -eq 'Gear_Cockpit_SensorsB_Standard'}).Description.UIName = 'Sensors (B)'
+
 
 #Load Filters List
 Write-Progress -Id 0 -Activity "Loading Custom Filters"
@@ -545,10 +272,10 @@ $GearUsedBy = Get-Content $GearUsedByFile -Raw | ConvertFrom-Json
 $AffinitiesFile = "$CacheRoot\\MechAffinity\\settings.json"
 $FixedAffinityFile = "$RTScriptroot\\Outputs\\FixedAffinity.json"
 $EquipAffinitiesMaster = $(Get-Content $AffinitiesFile -Raw | ConvertFrom-Json).quirkAffinities
-$EquipAffinitiesRef = @()
+$JobEquipAffinitiesRef = @()
 foreach ($EquipAffinity in $EquipAffinitiesMaster) {
     foreach ($AffinityItem in $EquipAffinity.quirkNames) {
-        $EquipAffinitiesRef += [pscustomobject]@{
+        $JobEquipAffinitiesRef += [pscustomobject]@{
             ID = $AffinityItem
             Num = $EquipAffinity.affinityLevels.missionsRequired
             Name = $EquipAffinity.affinityLevels.levelName
@@ -556,7 +283,7 @@ foreach ($EquipAffinity in $EquipAffinitiesMaster) {
         }
     }
 }
-$FixedAffinityObject = Get-Content $FixedAffinityFile -Raw | ConvertFrom-Json
+$JobFixedAffinityObject = Get-Content $FixedAffinityFile -Raw | ConvertFrom-Json
 
 #Build minor cat hash
 Write-Progress -Id 0 -Activity "Building Hashes"
@@ -596,7 +323,7 @@ foreach ($MasterObject in $MasterList) {
 }
 
 #Build BonusDescriptions
-$BonusDescFiles = Get-ChildItem $BonusDescPath -Filter "BonusDescriptions*.json"
+$BonusDescFiles = Get-ChildItem $CacheRoot -Recurse -Filter "BonusDescriptions*.json"
 $BonusDescHash = @{}
 foreach ($BonusDescFile in $BonusDescFiles) {
     $BonusDescObject = $(Get-Content $BonusDescFile.FullName -Raw | ConvertFrom-Json).Settings
@@ -629,18 +356,24 @@ $null = New-Item -ItemType Directory $ItemOutFolder
 
 #Build Item Pages via jobs
 Get-Job | Remove-Job -Force #Cleanup Leftover Jobs
-$Divisor = 100 #Even numbers only
-$Rounder = ($Divisor / 2) - 1
-$Counter = [int]$(($MasterList.Count + $Rounder) / $Divisor)
-for ($JobCount=0;$JobCount -lt $Counter; $JobCount++) {
+
+$ThreadCount = 16 #Number of desired threads
+#get trimmed count
+$Divisor = (($MechsMasterObject.Count - ($MechsMasterObject.Count % $ThreadCount)) / $ThreadCount)
+#if there's remainder, round it up
+if ($MechsMasterObject.Count % $ThreadCount -ne 0) {
+    $Divisor++ 
+}
+
+for ($JobCount=0;$JobCount -lt $ThreadCount; $JobCount++) {
     #start job to build item page from $masterlist
-    if ($JobCount -eq $Counter - 1) {
+    if ($JobCount -eq $ThreadCount - 1) {
         $JobInputObject = $MasterList[$(0+($JobCount*$Divisor))..$($($MasterList.Count)-1)]
     } else {
         $JobInputObject = $MasterList[$(0+($JobCount*$Divisor))..$(($Divisor*(1+$JobCount))-1)]
     }
     $JobOutputFile = $ItemOutFolder+"\\Chunk$JobCount.txt"
-    Start-Job -Name $("ItemJob"+$JobCount) -InitializationScript $JobFunctions -ScriptBlock {RT-CreateGearPages -InputObject $using:JobInputObject -BonusDescriptionHash $using:BonusDescHash -MechUsedByListObject $using:GearUsedBy -FixedAffinityObject $using:FixedAffinityObject -EquipAffinitiesRef $using:EquipAffinitiesRef -OutputFile $using:JobOutputFile} | Out-Null
+    Start-Job -Name $("ItemJob"+$JobCount) -FilePath D:\RogueTech\WikiGenerators\RT-CreateGearPages.ps1 -ArgumentList $JobInputObject,$BonusDescHash,$GearUsedBy,$JobFixedAffinityObject,$JobEquipAffinitiesRef,$JobOutputFile | Out-Null
 }
 
 #Build TOC pages
@@ -703,20 +436,20 @@ foreach ($MajorKey in $FiltersList.Caption) {
             $l=0
             $MinorPage += "`r`n"
         }
-        $MinorPage = "{{-start-}}`r`n'''$MinorLink'''`r`n{{NavboxEquipment}}`r`n{{Tocright}}`r`n$MinorPage`r`n{{-stop-}}"
+        $MinorPage = "{{-start-}}`r`n@@@$MinorLink@@@`r`n{{NavboxEquipment}}`r`n{{Tocright}}`r`n$MinorPage`r`n{{-stop-}}"
         $MinorPage | Out-File "$GearOutFolder\\$MinorPageFile" -Encoding utf8 -Force
         $k=0
     }
     $Navbox += "•`r`n"
-    $MajorPage = "{{-start-}}`r`n'''$MajorLink'''`r`n{{NavboxEquipment}}`r`n{{Tocright}}`r`n$MajorPage`r`n{{-stop-}}"
+    $MajorPage = "{{-start-}}`r`n@@@$MajorLink@@@`r`n{{NavboxEquipment}}`r`n{{Tocright}}`r`n$MajorPage`r`n{{-stop-}}"
     $MajorPage | Out-File "$GearOutFolder\\$MajorPageFile" -Encoding utf8 -Force
     $j=0
 }
-$GearPage = "`r`n{{-start-}}`r`n'''Gear'''`r`n{{NavboxEquipment}}`r`n`r`n" + $GearPage + "`r`n{{-stop-}}`r`n"
+$GearPage = "`r`n{{-start-}}`r`n@@@Gear@@@`r`n{{NavboxEquipment}}`r`n`r`n" + $GearPage + "`r`n{{-stop-}}`r`n"
 $GearPage | Out-File "$GearOutFolder\\GearMain.txt" -Encoding utf8 -Force
 
 $Navbox += "}}"
-$Navbox = "{{-start-}}`r`n'''Template:NavboxEquipment'''`r`n$Navbox`r`n{{-stop-}}"
+$Navbox = "{{-start-}}`r`n@@@Template:NavboxEquipment@@@`r`n$Navbox`r`n{{-stop-}}"
 $Navbox | Out-File "$GearOutFolder\\!Navbox.txt" -Encoding utf8 -Force
 
 #Join into a supersized file for pwb upload - TOC Pages

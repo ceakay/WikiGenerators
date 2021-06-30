@@ -164,6 +164,9 @@ $PrefabID = [pscustomobject]@{}
 $GearUsedBy = [pscustomobject]@{}
 $GearUsedByFile = "$RTScriptroot\\Outputs\\GearUsedBy.json"
 
+#DupeLinkHolderArray
+$DupeLinkHolderArray = @()
+
 #create conflict file
 #ascii required for excel cuz M$
 @"
@@ -204,7 +207,7 @@ foreach ($MDefFileObject in $MDefFileObjectList) {
     #error with CDef definition if still nothing
     if (-not !$CDefFileObject) {
         $filePathCDef = $CDefFileObject.VersionInfo.FileName
-        try {$CDefObject = $(Get-Content $filePathCDef -raw | ConvertFrom-Json)} catch {"MechParser|Parsing chassisdef: " + $filePathCDef | Out-File $RTScriptroot\ErrorLog.txt -Append -Encoding utf8}
+        try {$CDefObject = $($(Get-Content $filePathCDef -raw).Replace("`"WeaponMount`"", "`"WeaponMountID`"") | ConvertFrom-Json)} catch {"MechParser|Parsing chassisdef: " + $filePathCDef | Out-File $RTScriptroot\ErrorLog.txt -Append -Encoding utf8} #make weaponmount consistent
     
         #init mech object for storage
         $Mech = $([PSCustomObject] @{
@@ -344,9 +347,10 @@ foreach ($MDefFileObject in $MDefFileObjectList) {
                     #same location, tag is: << "BLACKLISTED" >>
                     #if found flag BLACKLISTED as TRUE
         $Mech | Add-Member -MemberType NoteProperty -Name "BLACKLIST" -Value $false
-        if ($MDefObject.MechTags.items -contains $GroupObject.BLACKLIST) {
+        if (($MDefObject.MechTags.items -contains $GroupObject.BLACKLIST) -or ($MDefObject.RequiredToSpawnCompanyTags.items.Count -gt 0)) {
             $Mech.BLACKLIST = $true
-        }
+        }   
+
         #Blacklist Override. Flashpoint/FP mechs generally.
         if ([bool]($BlacklistOverride | ? {$filePathMDef -match $_})) {
             $Mech.BLACKLIST = $true
@@ -384,17 +388,15 @@ foreach ($MDefFileObject in $MDefFileObjectList) {
                 if ($Hardpoint.Omni) {
                     $OmniSlot++
                     $Mech.Hardpoint.$LocationName += 'Omni'
-                #don't count WeaponMountID (mod slots)
-                } elseif ((-not !$Hardpoint.WeaponMount) -and (-not $Hardpoint.Omni)) {
-                    #exclude NotSet
-                    if ($Hardpoint.WeaponMount -ne "NotSet") {
-                        $(Get-Variable "$($Hardpoint.WeaponMount)Slot").Value++
-                        $Mech.Hardpoint.$LocationName += "$($Hardpoint.WeaponMount)"
-                    }
-                #except for the BA slots urrrggg
+                #the BA slots
                 } elseif (($Hardpoint.WeaponMountID -like "BattleArmor") -and (-not $Hardpoint.Omni)) {
                     $BattleArmorSlot++
                     $Mech.Hardpoint.$LocationName += "$($Hardpoint.WeaponMountID)"
+                } else {
+                    if (-not ($Hardpoint.WeaponMountID -match 'NotSet' -or $Hardpoint.WeaponMountID -match 'SpecialMelee' -or $Hardpoint.WeaponMountID -match 'Special')) {
+                        $(Get-Variable "$($Hardpoint.WeaponMountID)Slot").Value++
+                        $Mech.Hardpoint.$LocationName += "$($Hardpoint.WeaponMountID)"
+                    }
                 }
             }
         }
@@ -448,6 +450,7 @@ foreach ($MDefFileObject in $MDefFileObjectList) {
             LL = $($CDefObject.Locations | where -Property Location -Like "LeftLeg").InternalStructure
             RL = $($CDefObject.Locations | where -Property Location -Like "RightLeg").InternalStructure
         }
+        $Mech.HP.Structure.Add('Total',$($Mech.HP.Structure.Values | % -Begin {$HPTotalHolder = 0} -Process {$HPTotalHolder += $_} -End {$HPTotalHolder}))
         # SetArmor
         $Mech.HP | Add-Member -MemberType NoteProperty -Name "SetArmor" -Value @{}
         $Mech.HP.SetArmor = @{
@@ -463,6 +466,7 @@ foreach ($MDefFileObject in $MDefFileObjectList) {
             LL = $($MDefObject.Locations | where -Property Location -Like "LeftLeg").AssignedArmor
             RL = $($MDefObject.Locations | where -Property Location -Like "RightLeg").AssignedArmor
         }
+        $Mech.HP.SetArmor.Add('Total',$($Mech.HP.SetArmor.Values | % -Begin {$HPTotalHolder = 0} -Process {$HPTotalHolder += $_} -End {$HPTotalHolder}))
         # MaxArmor
         $Mech.HP | Add-Member -MemberType NoteProperty -Name "MaxArmor" -Value @{}
         $Mech.HP.MaxArmor = @{
@@ -478,6 +482,7 @@ foreach ($MDefFileObject in $MDefFileObjectList) {
             LL = $($CDefObject.Locations | where -Property Location -Like "LeftLeg").MaxArmor
             RL = $($CDefObject.Locations | where -Property Location -Like "RightLeg").MaxArmor
         }
+        $Mech.HP.MaxArmor.Add('Total',$($Mech.HP.MaxArmor.Values | % -Begin {$HPTotalHolder = 0} -Process {$HPTotalHolder += $_} -End {$HPTotalHolder}))
         #Grab and trim Mech Blurb
         $MechBlurb = $MDefObject.Description.Details
         
@@ -608,7 +613,28 @@ foreach ($MDefFileObject in $MDefFileObjectList) {
             $VariantGlue += " -$($Mech.Name.Chassis)-"
         } elseif ($Mech.Name.Variant -eq 'OSR-4C') {
             $VariantGlue += " -$($Mech.Name.Chassis)-"
+        } elseif ($Mech.Name.Variant -eq 'HND-1') {
+            $VariantGlue += " -$($Mech.Name.Chassis)-"
+        } elseif ($Mech.Name.Variant -eq 'HND-3') {
+            $VariantGlue += " -$($Mech.Name.Chassis)-"
         }
+        
+        #DupeCleaner
+        #check if duped, add to holder array and rename original
+        if (@($Mechs | ? {$_.Name.LinkName -eq $VariantGlue}).Count -eq 1) {
+            $DupeLinkHolderArray += $VariantGlue
+            $DupeLinkHolder = $($Mechs | ? {$_.Name.LinkName -eq $VariantGlue})
+            if ($DupeLinkHolder.Mod -ne 'Base 3061') {
+                $DupeLinkHolder.Name.LinkName = $DupeLinkHolder.Name.LinkName + " " + $DupeLinkHolder.Mod
+            }
+        }
+        #if current is in holderarray, add mech's mod to link before creating.
+        if ($DupeLinkHolderArray -contains $VariantGlue) {
+            if ($Mech.Mod -ne 'Base 3061') {
+                $VariantGlue += " $($Mech.Mod)"
+            }
+        }
+        $Mech.Name | Add-Member -NotePropertyName 'LinkName' -NotePropertyValue $VariantGlue
 
         #PrefabID/Compatible Variants
         if (-not !$Mech.PrefabID) {
@@ -619,13 +645,10 @@ foreach ($MDefFileObject in $MDefFileObjectList) {
             #create tonnage sub id if not exist
             if (!$(iex "$('$PrefabID.'+"'"+$($Mech.PrefabID)+"'"+'.'+$($Mech.Tonnage))")) {
                 $PrefabID.$($Mech.PrefabID) | Add-Member -MemberType NoteProperty -Name $($Mech.Tonnage) -Value @()
-            }
-            
-            $PrefabID.$($Mech.PrefabID).$($Mech.Tonnage) += $VariantGlue
+            }            
+            $PrefabID.$($Mech.PrefabID).$($Mech.Tonnage) += $Mech.MechDefFile
         }
-
-        $Mech.Name | Add-Member -NotePropertyName 'LinkName' -NotePropertyValue $VariantGlue
-
+        
         #Parse Loadout list to gearusedby.json
         if (!$Mech.BLACKLIST) {
             $MechUsesGearList = $($(@($FixedLoadout.Group.ComponentDefID) + @($DynamicLoadout.Group.ComponentDefID)) | group).Name
@@ -640,14 +663,21 @@ foreach ($MDefFileObject in $MDefFileObjectList) {
         #Parse Affinities to File
         $FixedList = [string[]]$FixedLoadout.Group.ComponentDefID
         $AffinityList = [string[]]$EquipAffinitiesIDNameHash.Keys
-        if (-not !$FixedList) {
-            foreach ($FixedAffinityItem in $(compare $AffinityList $FixedList -ExcludeDifferent -IncludeEqual).InputObject) {
-                if ($FixedAffinityObject.psobject.Properties.Name -notcontains $FixedAffinityItem) {
-                    $FixedAffinityObject | Add-Member -NotePropertyName $FixedAffinityItem -NotePropertyValue @()
+        if (!$Mech.BLACKLIST) {
+            if (-not !$FixedList) {
+                foreach ($FixedAffinityItem in $(compare $AffinityList $FixedList -ExcludeDifferent -IncludeEqual).InputObject) {
+                    if ($FixedAffinityObject.psobject.Properties.Name -notcontains $FixedAffinityItem) {
+                        $FixedAffinityObject | Add-Member -NotePropertyName $FixedAffinityItem -NotePropertyValue @()
+                    }
+                    $FixedAffinityObject.$FixedAffinityItem += $Mech.Name.LinkName
                 }
-                $FixedAffinityObject.$FixedAffinityItem += $Mech.Name.LinkName
             }
         }
+
+        #Add the raw defobjects
+        $Mech | Add-Member -NotePropertyName Wiki -NotePropertyValue $([pscustomobject]@{})
+        $Mech.Wiki | Add-Member -NotePropertyName MDef -NotePropertyValue $MDefObject
+        $Mech.Wiki | Add-Member -NotePropertyName CDef -NotePropertyValue $CDefObject
 
         #add mechobject to $mechs
         $Mechs += $Mech
@@ -656,44 +686,17 @@ foreach ($MDefFileObject in $MDefFileObjectList) {
     }
 }
 #load overrides
+#CleanupDupes
+
+#DirtyDupes
+$DupeLinkName = $Mechs | group {$_.Name.LinkName} | ? {$_.Count -ge 2}
+if ($DupeLinkName.Count -gt 0) {
+    Write-Host "Dupe LinkNames found"
+    $DupeLinkName
+    pause
+}
 #save to file
 $Mechs | ConvertTo-Json -Depth 10 | Out-File $MechsFile -Force
 $PrefabID | ConvertTo-Json -Depth 10 | Out-File $PrefabIDFile -Force
 $GearUsedBy | ConvertTo-Json -Depth 10 | Out-File $GearUsedByFile -Force
 $FixedAffinityObject | ConvertTo-Json -Depth 100 | Out-File $FixedAffinityFile -Force
-
-#Work bustedmechs
-$Mechs | % { 
-    $VariantLink = $($_.Name.Variant)
-    $VariantGlue = $($VariantLink+$($_.Name.SubVariant)).Trim()
-    if (-not !$_.Name.Hero) {
-        $VariantGlue += " ($($_.Name.Hero))"
-    }
-    if (-not !$_.Name.Unique) {
-        $VariantGlue += " aka $($_.Name.Unique)"
-    }
-    foreach ($BlackOverride in $BlacklistOverride) {
-        if ($_.MechDefFile -match $BlackOverride) {
-             $VariantGlue += " $($_.Mod)"
-             break
-        }
-    }
-    #unresolvable conflicts override
-    if ([bool]($BlacklistOverride | ? {$filePathMDef -match $_})) {
-        $VariantGlue += " $($_.Mod)"
-    } elseif ($_.Name.Variant -eq 'CGR-C') {
-        $VariantGlue += " -$($_.Name.Chassis)-"
-    } elseif ($_.Name.Variant -eq 'MAD-BH') {
-        $VariantGlue += " -$($_.Name.Chassis)-"
-    } elseif ($_.Name.Variant -eq 'MAD-4S') {
-        $VariantGlue += " -$($_.Name.Chassis)-"
-    } elseif ($_.Name.Variant -eq 'BZK-P') {
-        $VariantGlue += " -$($_.Name.Chassis)-"
-    } elseif ($_.Name.Variant -eq 'BZK-RX') {
-        $VariantGlue += " -$($_.Name.Chassis)-"
-    } elseif ($_.Name.Variant -eq 'OSR-4C') {
-        $VariantGlue += " -$($_.Name.Chassis)-"
-    }
-    $_ | Add-Member -NotePropertyName TempID -NotePropertyValue $VariantGlue -Force
-}
-$Mechs | group -Property TempID | ? {$_.count -gt 1} | ConvertTo-Json -Depth 100 | Out-File "$RTScriptroot\\Outputs\\bustedmechs.json" -Force

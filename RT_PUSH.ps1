@@ -2,30 +2,40 @@
 
 "Date: " + $(date) | Out-File $RTScriptroot\ErrorLog.txt -Append -Encoding utf8
 
-$WikiPID = (Start-Process pwsh -ArgumentList "$RTScriptroot\StartingMechs.ps1" -PassThru).Id
+$PIDs = @()
+$PIDS += (Start-Process pwsh -ArgumentList "$RTScriptroot\RT_GEAR_PARSER.ps1" -WindowStyle Minimized -PassThru).Id
+$PIDS += (Start-Process pwsh -ArgumentList "$RTScriptroot\RT_MECH_PARSER.ps1" -WindowStyle Minimized -PassThru).Id
+$PIDS += (Start-Process pwsh -ArgumentList "$RTScriptroot\RT_TANK_PARSER.ps1" -WindowStyle Minimized -PassThru).Id
+$PIDS += (Start-Process pwsh -ArgumentList "$RTScriptroot\RT_STAR_PARSER.ps1" -WindowStyle Minimized -PassThru).Id
+Wait-Process -Id $PIDs #wait for parsers to finish. transcoders may need mulitple
+
+$WikiPID = (Start-Process pwsh -ArgumentList "$RTScriptroot\StartingMechs.ps1" -WindowStyle Minimized -PassThru).Id
 $StatusText = 'StartingMechs'
 #starting mechs is dirty combo script. just get it out of the way.
-
-$PIDs = @()
-$PIDS += (Start-Process pwsh -ArgumentList "$RTScriptroot\RT_GEAR_PARSER.ps1" -PassThru).Id
-$PIDS += (Start-Process pwsh -ArgumentList "$RTScriptroot\RT_MECH_PARSER.ps1" -PassThru).Id
-$PIDS += (Start-Process pwsh -ArgumentList "$RTScriptroot\RT_TANK_PARSER.ps1" -PassThru).Id
-Wait-Process -Id $PIDs #wait for parsers to finish. transcoders may need mulitple
+Wait-Process -Id $WikiPID
 
 $PIDs = @()
 $RefHash = @{}
 
-$MechPID += (Start-Process pwsh -ArgumentList "$RTScriptroot\RT_MECH_WIKI_TRANSCODE.ps1" -PassThru).Id
-$PIDs += $MechPID
-$RefHash.Add($MechPID,'Mech')
+$CreditsPID = (Start-Process pwsh -ArgumentList "$RTScriptroot\RT_Credits.ps1" -WindowStyle Minimized -PassThru).Id
+$PIDs += $CreditsPID
+$RefHash.Add($CreditsPID,'Credits')
 
-$TankPID = (Start-Process pwsh -ArgumentList "$RTScriptroot\RT_TANK_WIKI_TRANSCODE.ps1" -PassThru).Id
+$GearPID = (Start-Process pwsh -ArgumentList "$RTScriptroot\RT_GEAR_WIKI.ps1" -WindowStyle Minimized -PassThru).Id
+$PIDs += $GearPID
+$RefHash.Add($GearPID,'Gear')
+
+$TankPID = (Start-Process pwsh -ArgumentList "$RTScriptroot\RT_TANK_WIKI_TRANSCODE.ps1" -WindowStyle Minimized -PassThru).Id
 $PIDs += $TankPID
 $RefHash.Add($TankPID,'Tank')
 
-$GearPID = (Start-Process pwsh -ArgumentList "$RTScriptroot\RT_GEAR_WIKI.ps1" -PassThru).Id
-$PIDs += $GearPID
-$RefHash.Add($GearPID,'Gear')
+$MechPID += (Start-Process pwsh -ArgumentList "$RTScriptroot\RT_MECH_WIKI_TRANSCODE.ps1" -WindowStyle Minimized -PassThru).Id
+$PIDs += $MechPID
+$RefHash.Add($MechPID,'Mech')
+
+foreach ($PriorPID in $PIDs) {
+    Get-CimInstance -ClassName win32_process -Filter "ProcessID = $PriorPID" | Invoke-CimMethod -MethodName SetPriority -Arguments @{Priority = 16384}
+}
 
 $FinishedPIDs = @()
 $PIDs = $PIDs | ? {$_}
@@ -39,12 +49,12 @@ while (-not !$CompareArray) {
         foreach ($PIDThing in $CompareArray) { #iterate thru each piditem in comparearray (non-uploaded)
             $StatusText = $($RefHash.$PIDThing)
             if (-not [bool]$(Get-Process -Id $PIDThing -ErrorAction SilentlyContinue)) { #if the PIDitem does not exist, start new upload
-                $WikiPID = (Start-Process pwsh -ArgumentList "$RTScriptroot\RT_WIKI_UPLOAD_$StatusText.ps1" -PassThru).Id
+                $WikiPID = (Start-Process pwsh -ArgumentList "$RTScriptroot\RT_WIKI_UPLOAD_$StatusText.ps1" -WindowStyle Minimized -PassThru).Id
                 $FinishedPIDs += $PIDThing
                 break #stop iterating since new process started
             }
         }
     }
     Write-Progress -id 0 -Activity "Waiting for $StatusText $TypeStatus"
-    Start-Sleep -Milliseconds 1000
+    Start-Sleep -Milliseconds 250
 }

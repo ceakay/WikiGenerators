@@ -11,6 +11,89 @@ function datachop {
     }
 }
 
+function Sort-STNumerical {
+    [CmdletBinding()]
+    Param(
+        [Parameter(
+            Mandatory = $True,
+            ValueFromPipeline = $True,
+            ValueFromPipelineByPropertyName = $True)]
+        [System.Object[]]
+        $InputObject,
+        
+        [ValidateRange(2, 100)]
+        [Byte]
+        $MaximumDigitCount = 100,
+
+        [Switch]$Descending
+    )
+    
+    Begin {
+        [System.Object[]] $InnerInputObject = @()
+        
+        [Bool] $SortDescending = $False
+        if ($Descending) {
+            $SortDescending = $True
+        }
+    }
+    
+    Process {
+        $InnerInputObject += $InputObject
+    }
+
+    End {
+        $InnerInputObject |
+            Sort-Object -Property `
+                @{ Expression = {
+                    [Regex]::Replace($_, '(\d+)', {
+                        "{0:D$MaximumDigitCount}" -f [Int64] $Args[0].Value })
+                    }
+                },
+                @{ Expression = { $_ } } -Descending:$SortDescending
+    }
+}
+
+Write-Host @"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+"@
+
+
 #SET CONSTANTS
 ###
 #RogueTech Dir (Where RTLauncher exists)
@@ -20,8 +103,18 @@ $RTScriptroot = "D:\\RogueTech\\WikiGenerators"
 cd $RTScriptroot
 #cache path
 $CacheRoot = "$RTroot\\RtlCache\\RtCache"
+
+#The MegaHash for friendlyname
+$DefLinkNameHash = @{}
+$Mechs = Get-Content $RTScriptroot\\Outputs\\MechListTable.json -raw | ConvertFrom-Json
+$Tanks = Get-Content $RTScriptroot\\Outputs\\TankListTable.json -raw | ConvertFrom-Json
+$Gears = Get-Content $RTScriptroot\\Outputs\\GearTable.json -raw | ConvertFrom-Json
+$Mechs | select @{Name = 'DefName'; Expression = {if (!$_.MechDefFile) {"$($_.Description.ID)"} else {"$($($_.MechDefFile -split '\\')[-1].Split('.')[0])"}}}, @{Name = 'LinkName'; Expression = {if (!$_.Name.LinkName) {$_.Description.UIName} else {$_.Name.LinkName}}} | % {if (!$($DefLinkNameHash.$($_.DefName))) {$DefLinkNameHash.Add($_.DefName, $_.LinkName)}}
+$Tanks | select @{Name = 'DefName'; Expression = {if (!$_.MechDefFile) {"$($_.Description.ID)"} else {"$($($_.MechDefFile -split '\\')[-1].Split('.')[0])"}}}, @{Name = 'LinkName'; Expression = {if (!$_.Name.LinkName) {$_.Description.UIName} else {$_.Name.LinkName}}} | % {if (!$($DefLinkNameHash.$($_.DefName))) {$DefLinkNameHash.Add($_.DefName, $_.LinkName)}}
+$Gears | select @{Name = 'DefName'; Expression = {if (!$_.MechDefFile) {"$($_.Description.ID)"} else {"$($($_.MechDefFile -split '\\')[-1].Split('.')[0])"}}}, @{Name = 'LinkName'; Expression = {if (!$_.Name.LinkName) {$_.Description.UIName} else {$_.Name.LinkName}}} | % {if (!$($DefLinkNameHash.$($_.DefName))) {$DefLinkNameHash.Add($_.DefName, $_.LinkName)}}
+
 $RTVersion = $(Get-Content "$CacheRoot\\RogueTech Core\\mod.json" -raw | ConvertFrom-Json).Version
-$TheText = "{{-start-}}`r`n'''Starting Mechs by Faction Choice'''`r`n"
+$TheText = "{{-start-}}`r`n@@@Starting Equipment@@@`r`n"
 $TheText += @"
 Last Updated: $RTVersion
 
@@ -76,7 +169,7 @@ foreach ($CareersObject in $CareersObjects) {
 
 #The Tables Section
 
-$StartingMechsListsCSVs = $(Get-ChildItem $CacheRoot -Recurse -Filter "itemcollection_mechs*.csv" | select name, fullname) | group name
+$StartingMechsListsCSVs = $(Get-ChildItem $CacheRoot -Recurse -Filter "itemcollection_mechs*.csv" | select name, fullname | ? {$_.Name -ne 'itemCollection_Mechs_rare.csv'}) | group name
 $StartingMechsListsGrouped = [pscustomobject]@{}
 $GroupedNamesArray = @()
 $StartingMechsListsCSVs.GetEnumerator() | % {
@@ -89,8 +182,8 @@ foreach ($GroupedName in $GroupedNamesArray) {
     $ListsHolder = @()
     foreach ($GroupedFile in $StartingMechsListsGrouped.$GroupedName) {
         $ModName = Split-Path $(Split-Path $(Split-Path $GroupedFile -Parent) -Parent) -Leaf
-        if ($ModName -match'IRTweaks') {
-            $ModName = 'Base 3061'
+        if ($ModName -match'IRTweaks' -or $BGModName -match 'RogueTech Core') {
+            $ModName = $null
         }
         $ListsHolder += Get-Content $GroupedFile | select -Skip 1 | % {$_ += ",$ModName";$_} | ConvertFrom-Csv -Header 'ID', 'Type', 'Quantity', 'Rarity', 'ModName'
     }
@@ -142,222 +235,140 @@ foreach ($GroupName in $GroupNamesArray) {
     foreach ($MechItem in $($StartingMechsLists.$GroupName | ? {$_})) {
         $i++
         Write-Progress -Activity "Number $i - $($MechItem.ID)"
-        $Mech = [pscustomobject]@{}
         if ($MechItem.ID -match 'mechdef') {
-            $MechDefFile = Get-ChildItem -Path $($CacheRoot + "\" + $MechItem.ModName) -Recurse -Filter "*$($MechItem.ID).json"
-            if ($MechDefFile.Count -lt 1) {
-                $MechDefFile = Get-ChildItem -Path $CacheRoot -Recurse -Filter "$($MechItem.ID).json"
-            }
-            try {$MechDef = Get-Content $MechDefFile.FullName -Raw | ConvertFrom-Json}
-            catch {"StartingMechs|Cannot find MechDef: $($MechItem.ID)" | Out-File $RTScriptroot\ErrorLog.txt -Append -Encoding utf8}
-            $Mech | Add-Member -MemberType NoteProperty -Name 'ModName' -Value $(Split-Path $(Split-Path $(Split-Path $MechDefFile.FullName -Parent) -Parent) -Leaf)
-            $fileNameCDef = "$($MechDef.ChassisID).json"
-            $ChassDefFile = Get-ChildItem $($CacheRoot + "\" + $Mech.ModName) -Recurse -Filter "$fileNameCDef"
-            #if not found in modroot, try everything
-            if (!$ChassDefFile) {
-                $ChassDefFile = Get-ChildItem $CacheRoot -Recurse -Filter "$fileNameCDef"
-            }
-            try {$ChassDef = Get-Content $ChassDefFile.FullName -Raw | ConvertFrom-Json}
-            catch {
-                "StartingMechs|Cannot find ChassisDef: $($MechDefFile.Name) $fileNameCDef" | Out-File $RTScriptroot\ErrorLog.txt -Append
-            }
-
-            $MechID = $MechItem.ID
-            #2 Signature - / - << "VariantName": >> - $MechVarActual
-                #also handles Hero Names
-            $Mech | Add-Member -MemberType NoteProperty -Name "Name" -Value ([pscustomobject]@{})
-            $MechVarActual = $ChassDef.VariantName
-            ###Variant override
-            #custom override for ZEUX0003
-            if ($MechVarActual -eq "ZEUX0003") {
-                $MechVarActual = "ZEU-9WD"
-            }
-            try {$Mech.Name | Add-Member -MemberType NoteProperty -Name "Variant" -Value "$($MechVarActual.ToUpper())"}
-            catch {"StartingMechs|Def missing Name: " + $MechID | Out-File $RTScriptroot\ErrorLog.txt -Append -Encoding utf8}
-            $MechVar = $MechVarActual
-            for ($k = 0 ; $k -lt $($MechVarActual.Length) ; $k++) {
-                if ($MechID -notlike "*$MechVar*") {
-                    try {$MechVar = $MechVar.Substring(0,$($MechVar.Length) - 1)}
-                    catch {"StartingMechs|Error parsing MechVar: " + $MechID + $MechVarActual | Out-File $RTScriptroot\ErrorLog.txt -Append}
-                } 
-                if ($($MechVar.Length) -le 3) {
-                    $MechVar = $MechVarActual
-                    break
-                }
-            }
-            if (-not !$(datachop "$MechVar" 1 $MechID)) {
-                $MechPostVar = $(datachop "$MechVar" 1 $MechID)
-                $MechPostVar = $MechPostVar.Trim('_')
-                $MechPostVar = $MechPostVar.Split("_")
-                $MechSubVar = $MechPostVar[0]
-                if ($MechPostVar.Count -gt 1) {
-                    $MechHeroName = $MechPostVar[1..$($MechPostVar.Length -1)]
-                    $MechHeroName = $MechHeroName -join (" ")
-                } else {
-                    $MechHeroName = ""
-                }
-            #override for incubus - filename doesn't containt variant
-            } elseif ($MechVarActual -eq 'INC-II') {
-                $MechPostVar = $(datachop "incubus_II" 1 $MechID)
-                $MechPostVar = $MechPostVar.Trim('_')
-                $MechPostVar = $MechPostVar.Split("_")
-                $MechSubVar = $MechPostVar[0]
-                if ($MechPostVar.Count -gt 1) {
-                    $MechHeroName = $MechPostVar[1..$($MechPostVar.Length -1)]
-                    $MechHeroName = $MechHeroName -join (" ")
-                } else {
-                    $MechHeroName = ""
-                }
-            } else {
-                $MechSubVar = ""
-                $MechHeroName = ""
-            }
-            $Mech.Name | Add-Member -MemberType NoteProperty -Name "SubVariant" -Value "$($MechSubVar.ToUpper())" -Force
-            $Mech.Name | Add-Member -MemberType NoteProperty -Name "Hero" -Value "$($MechHeroName.ToUpper())" -Force
-            #1 Name - /description - << "UIName": >>
-            $MechCName = $ChassDef.Description.UIName
-            $Mech.Name | Add-Member -MemberType NoteProperty -Name "Chassis" -Value "$($MechCName.ToUpper())"
-            #1.1 Unique Name
-            if ($($MechDef.Description.UIName) -notlike "*$MechCName*") {
-                $MechQName = datachop " $MechVar" 0 "$($MechDef.Description.UIName)"
-            } else {
-                $MechQName = ""
-            }
-            $Mech.Name | Add-Member -MemberType NoteProperty -Name "Unique" -Value "$($MechQName.ToUpper())"
-
-            #add wikilongname to PrefabID Object
-            $VariantLink = $($Mech.Name.Variant)
-            $VariantGlue = $($VariantLink+$($Mech.Name.SubVariant)).Trim()
-            if (-not !$Mech.Name.Hero) {
-                $VariantGlue += " ($($Mech.Name.Hero))"
-            }
-            if (-not !$mech.Name.Unique) {
-                $VariantGlue += " aka $($Mech.Name.Unique)"
-            }
-            #unresolvable conflicts override
-            if ([bool]($BlacklistOverride | ? {$MechDefFile.FullName -match $_})) {
-                $VariantGlue += " $($Mech.Mod)"
-            } elseif ($Mech.Name.Variant -eq 'CGR-C') {
-                $VariantGlue += " -$($Mech.Name.Chassis)-"
-            } elseif ($Mech.Name.Variant -eq 'MAD-BH') {
-                $VariantGlue += " -$($Mech.Name.Chassis)-"
-            } elseif ($Mech.Name.Variant -eq 'MAD-4S') {
-                $VariantGlue += " -$($Mech.Name.Chassis)-"
-            } elseif ($Mech.Name.Variant -eq 'BZK-P') {
-                $VariantGlue += " -$($Mech.Name.Chassis)-"
-            } elseif ($Mech.Name.Variant -eq 'BZK-RX') {
-                $VariantGlue += " -$($Mech.Name.Chassis)-"
-            } elseif ($Mech.Name.Variant -eq 'OSR-4C') {
-                $VariantGlue += " -$($Mech.Name.Chassis)-"
-            }
-            $TheText += "`r`n|-`r`n| [[Mechs/$VariantGlue|$VariantGlue]]`r`n| $($MechItem.Type)`r`n| $($MechItem.Quantity)`r`n| $($MechItem.Rarity)`r`n| $($MechItem.ModName)"
-            if ($Mech.ModName -ne $MechItem.ModName) {
-                $TheText += " | MechMod: $($Mech.ModName)"
-            }
+            $TheText += "`r`n|-`r`n| [[Mechs/$($DefLinkNameHash.$($MechItem.ID))|$($DefLinkNameHash.$($MechItem.ID))]]`r`n| Mech `r`n| $($MechItem.Quantity)`r`n| $($MechItem.Rarity)`r`n| $($MechItem.ModName)"
+        } elseif ($MechItem.ID -match 'vehicledef') {
+            $TheText += "`r`n|-`r`n| [[Vehicles/$($DefLinkNameHash.$($MechItem.ID))|$($DefLinkNameHash.$($MechItem.ID))]]`r`n| Vehicle `r`n| $($MechItem.Quantity)`r`n| $($MechItem.Rarity)`r`n| $($MechItem.ModName)"
         } else {
-            #do vehicle name fuckery here
-            #setup CDef and MDef objects
-            $Mech | Add-Member -MemberType NoteProperty -Name ID -Value $(datachop 'vehicledef_' 1 $MechItem.ID)
-            $MDefFileObject = Get-ChildItem -Path $($CacheRoot + "\" + $MechItem.ModName) -Recurse -Filter "*$($MechItem.ID).json"
-            $filePathMDef = $MDefFileObject.VersionInfo.FileName
-            $fileNameMDef = $MDefFileObject.Name
-            $FileObjectModRoot = "$($MDefFileObject.DirectoryName)\\.."
-            try {$MDefObject = ConvertFrom-Json $(Get-Content $filePathMDef -raw)} catch {"StartingMechs|Error parsing vehicledef: "+ $filePathMDef | Out-File $RTScriptroot\ErrorLog.txt -Append -Encoding utf8}
-            $fileNameCDef = "$($MDefObject.ChassisID).json"
-            $CDefFileObject = Get-ChildItem $FileObjectModRoot -Recurse -Filter "$fileNameCDef"
-            #if not found in modroot, try everything
-            if (!$CDefFileObject) {
-                $CDefFileObject = Get-ChildItem $CacheRoot -Recurse -Filter "$fileNameCDef"
-            }
-            try {$CDefObject = ConvertFrom-Json $(Get-Content $CDefFileObject.FullName -raw)} catch {"StartingMechs|Error parsing vehiclechassisdef: " + $CDefFileObject.FullName | Out-File $RTScriptroot\ErrorLog.txt -Append -Encoding utf8}
-            #2 Signature - / - << "VariantName": >> - $MechVarActual
-                #also handles Hero Names
-            $Mech | Add-Member -MemberType NoteProperty -Name "Name" -Value ([pscustomobject]@{})
-            #1 Name - /description - << "UIName": >>
-            #Chassis Name
-            #parse for localization
-            $LocalCheck = $(datachop '__/' 1 $CDefObject.Description.Name)
-            if (-not !$LocalCheck) {
-                $LocalCheck = $(datachop '/__' 0 $LocalCheck)
-                if ($($TextObject | where -Property "Name" -Like $LocalCheck).Count -eq 1) {
-                    $LocalBlurb = $($TextObject | where -Property "Name" -Like $LocalCheck).Original
-                } elseif ($($TextObject | where -Property "Name" -Like $LocalCheck).Count -gt 1) {
-                    $LocalBlurb = $($TextObject | where -Property "Name" -Like $LocalCheck)[0].Original
-                }
-                $MechCName = $LocalBlurb
-            } else {
-                $MechCName = $CDefObject.Description.Name
-            }
-            #Red October Override
-            if ($MechCName -like "? ? ?") {
-                $MechCName = "Red October"
-            }
-
-            #Full Name (mechdef)
-            $LocalCheck = $(datachop '__/' 1 $MDefObject.Description.Name)
-            if (-not !$LocalCheck) {
-                $LocalCheck = $(datachop '/__' 0 $LocalCheck)
-                if ($($TextObject | where -Property "Name" -Like $LocalCheck).Count -eq 1) {
-                    $LocalBlurb = $($TextObject | where -Property "Name" -Like $LocalCheck).Original
-                } elseif ($($TextObject | where -Property "Name" -Like $LocalCheck).Count -gt 1) {
-                    $LocalBlurb = $($TextObject | where -Property "Name" -Like $LocalCheck)[0].Original
-                }
-                $MechFullName = $LocalBlurb
-            } else {
-                $MechFullName = $MDefObject.Description.Name
-            }
-            #Chop the chassis name out for Variant Name. 
-            $MechSplitName = $MechFullName -split $MechCName
-            $MechVName = ""
-            $n = 0
-            foreach ($NamePart in $MechSplitName) {
-                $MechVName += " "+$NamePart
-            }
-            $MechVName = $MechVName.Trim()
-            if (!$MechVName) {
-                $MechVName = $MechCName
-            }
-            #If full is null, replace with Cname
-            if (!$MechFullName) {
-                $MechFullName = $MechCName
-            }
-            #If Variant name is less than 5 characters, just use full name
-            # I think this is deprecated, but can't be fucked
-            if ($MechVName.Length -lt 5) {
-                $MechVName = $MechFullName
-            }
-            $Mech.Name | Add-Member -MemberType NoteProperty -Name "Chassis" -Value "$($MechCName.ToUpper())"
-            $Mech.Name | Add-Member -MemberType NoteProperty -Name "Variant" -Value "$($MechVName.ToUpper())"
-            $Mech.Name | Add-Member -MemberType NoteProperty -Name "Full" -Value "$($MechFullName.ToUpper())"
-            #Create Link Name
-            $SubVar = ""
-            $NameArray = $($Mech.Name.Full -Replace "(\W+)","_").Trim("_").Split("_")
-            $IDArray = $Mech.ID.Split("_")
-            foreach ($NameItem in $NameArray) {
-                $IDArray = [Array]$($IDArray | where { $_ -ne $NameItem })
-            }
-            foreach ($IDItem in $IDArray) {
-                $SubVar += $IDItem + " "
-            }
-            $VariantLink = $($Mech.Name.Full + " " + $SubVar).Trim().ToUpper()
-            $Mech.Name | Add-Member -MemberType NoteProperty -Name "SubVar" -Value $SubVar
-            $VariantLink = $($Mech.Name.Full + " " + $Mech.Name.SubVar)
-            $VariantLink = $VariantLink.Replace("'","")
-            $VariantLink = $VariantLink.Trim()
-            $VariantGlue = $VariantLink
-
-            $TheText += "`r`n|-`r`n| [[Vehicles/$VariantGlue|$VariantGlue]]`r`n| Vehicle`r`n| $($MechItem.Quantity)`r`n| $($MechItem.Rarity)`r`n| $($MechItem.ModName)"
-            if ($Mech.ModName -ne $MechItem.ModName) {
-                $TheText += " <> MechMod: $($Mech.ModName)"
-            }
+            $TheText += "`r`n|-`r`n| [[Gear/$($DefLinkNameHash.$($MechItem.ID))|$($DefLinkNameHash.$($MechItem.ID))]]`r`n| Gear `r`n| $($MechItem.Quantity)`r`n| $($MechItem.Rarity)`r`n| $($MechItem.ModName)"
         }
         
     }
-$TheText += "`r`n|}"
+    $TheText += "`r`n|}"
 }
+
+#The Careers Section
+$TheText += @"
+
+= Backgrounds =
+
+Each background career will award a lootbox of bonus equipment on your second day. Similar to starts, these pick from tables. 
+
+"@
+
+$StartingBackgroundsJSONs = $(Get-ChildItem $CacheRoot -Recurse -Filter "background_career*.json"| sort BaseName | select name, fullname, @{Name = "Mod"; Expression = {$(Split-Path $_.FullName -Parent).Split('\\')[-2]}} | ? {$_.Name -ne 'itemCollection_Mechs_rare.csv'})
+$StartingBackgroundsJSONs | ? {$_.Mod -eq 'RogueBackgrounds'} | % {$_.Mod = $null} #remove base careers 'mod'
+$BGTableNameHash = @{}
+
+foreach ($BackgroundsJSON in $StartingBackgroundsJSONs) {
+    $BackgroundsObject = Get-Content $BackgroundsJSON.FullName -Raw | ConvertFrom-Json
+    $BackgroundsObject | Add-Member -NotePropertyName Mod -NotePropertyValue $BackgroundsJSON.Mod
+    $BackgroundsEventID = $BackgroundsObject.Results.ForceEvents.EventID
+    $BackgroundsItemCollectionReference = $(Get-Content $(Get-ChildItem $CacheRoot -Recurse -Filter "$BackgroundsEventID*.json").FullName -Raw | ConvertFrom-Json).Options.ResultSets.Results.Actions.value
+    $TheText += "`r`n`r`n== $($BackgroundsObject.Description.Name) ==`r`n"
+    if (-not !$BackgroundsItemCollectionReference) {
+        if ($BackgroundsItemCollectionReference -match 'vehicledef_AWACS') {
+            $TheText += "`r`n`r`nNo bonus equipment picks awarded. [[Vehicles/AWACS|AWACS]] awarded directly to roster."
+        } else {
+            $BackgroundsItemCollection = $(Get-Content $(Get-ChildItem $CacheRoot -Recurse -Filter "$BackgroundsItemCollectionReference*.csv").FullName) | Select -Skip 1 | ConvertFrom-Csv -Header Name, Type, Picks, Chance
+
+            $TheText += @"
+`r`n{| class="wikitable" style="text-align: left;"
+! Table Used
+! Picks on Table
+"@
+            foreach ($BackgroundTables in $BackgroundsItemCollection) {
+                $TableNameArray = $($BackgroundTables.Name -split '_')
+                $TableName = $($($TableNameArray[1..$($TableNameArray.Count - 1)]) -join ' ').ToUpper()
+                if (!$($BGTableNameHash.$($BackgroundTables.Name))) {
+                    $BGTableNameHash.Add($BackgroundTables.Name, $TableName)
+                }
+                $TheText += @"
+
+|-
+| [[#$TableName|$TableName]]
+| $($BackgroundTables.Picks)
+"@
+            }
+            $TheText += "`r`n|}"
+        }
+    } else {
+        $TheText += "`r`n`r`nNo bonus equipment picks awarded."
+    }
+}
+
+#Backgrounds Tables
+#Need to parse collections for recursive references #Raza5WHY
+#yes, i'm doing needless loops. I can't be fucked to clean this up.
+do {
+    $CollectionsFound = 0
+    foreach ($Collection in @($BGTableNameHash.GetEnumerator())) {
+        $CollectionRefIDArray = $($(Get-Content $(Get-ChildItem $CacheRoot -Recurse -Filter "$($Collection.Name)*.csv").FullName) | Select -Skip 1 | ? {$_ -match 'Reference'} | ConvertFrom-Csv -Header Name, Type, Picks, Chance).Name
+        foreach ($CollectionRefID in $CollectionRefIDArray) {
+            $CollectionRefNameArray = $($CollectionRefID -split '_')
+            $CollectionRefName = $($($CollectionRefNameArray[1..$($CollectionRefNameArray.Count - 1)]) -join ' ').ToUpper()
+            if (!$($BGTableNameHash.$($CollectionRefID))) {
+                $BGTableNameHash.Add($CollectionRefID, $CollectionRefName)
+                $CollectionsFound++
+            }
+        }
+    }
+} while ($CollectionsFound -ne 0)
+
+$TheText += @"
+
+= Background Tables =
+
+The tables that backgrounds pick from.
+
+"@
+
+$BGTableNameArray = @($BGTableNameHash.GetEnumerator()).Value | Sort-STNumerical
+
+
+foreach ($BGTableName in $BGTableNameArray) {
+    $TheText += "`r`n`r`n== $($BGTableName) ==`r`n"
+    $BGTable = $($BGTableNameHash.GetEnumerator() | ? {$_.Value -eq $BGTableName}).Name
+    $BGTableFiles = $(Get-ChildItem $CacheRoot -Filter "$BGTable.csv" -Recurse).FullName
+    $BGTableLists = @()
+    foreach ($BGTableFile in $BGTableFiles) {
+        $BGModName = Split-Path $(Split-Path $(Split-Path $BGTableFile -Parent) -Parent) -Leaf
+        if ($BGModName -match 'RogueBackgrounds' -or $BGModName -match 'RogueTech Core') {
+            $BGModName = $null
+        }
+        $BGTableLists += Get-Content $BGTableFile | select -Skip 1 | % {$_ += ",$BGModName";$_} | ConvertFrom-Csv -Header 'ID', 'Type', 'Quantity', 'Rarity', 'ModName'
+    }
+
+    $TheText += @"
+`r`n{| class="wikitable" style="text-align: left;"
+!Unit Designation
+!Unit Type
+!No. of Units
+!Entry Weight
+!Module
+"@
+    foreach ($MechItem in $BGTableLists) {
+        $i++
+        Write-Progress -Activity "Number $i - $($MechItem.ID)"
+        if ($MechItem.Type -match 'Reference') {
+            $TheText += "`r`n|-`r`n| [[#$($BGTableNameHash.$($MechItem.ID))|$($BGTableNameHash.$($MechItem.ID))]]`r`n| Reference `r`n| $($MechItem.Quantity)`r`n| $($MechItem.Rarity)`r`n| $($MechItem.ModName)"
+        } elseif ($MechItem.ID -match 'mechdef') {
+            $TheText += "`r`n|-`r`n| [[Mechs/$($DefLinkNameHash.$($MechItem.ID))|$($DefLinkNameHash.$($MechItem.ID))]]`r`n| Mech `r`n| $($MechItem.Quantity)`r`n| $($MechItem.Rarity)`r`n| $($MechItem.ModName)"
+        } elseif ($MechItem.ID -match 'vehicledef') {
+            $TheText += "`r`n|-`r`n| [[Vehicles/$($DefLinkNameHash.$($MechItem.ID))|$($DefLinkNameHash.$($MechItem.ID))]]`r`n| Vehicle `r`n| $($MechItem.Quantity)`r`n| $($MechItem.Rarity)`r`n| $($MechItem.ModName)"
+        } else {
+            $TheText += "`r`n|-`r`n| [[Gear/$($DefLinkNameHash.$($MechItem.ID))|$($DefLinkNameHash.$($MechItem.ID))]]`r`n| Gear `r`n| $($MechItem.Quantity)`r`n| $($MechItem.Rarity)`r`n| $($MechItem.ModName)"
+        }
+        
+    }
+    $TheText += "`r`n|}"
+}
+
+#PYWrapper
 $TheText += "`r`n{{-stop-}}"
 $OutFile = "D:\\RogueTech\\WikiGenerators\\Outputs\\StartingMechs.UTF8"
 $TheText | Set-Content -Encoding UTF8 $OutFile
 
 $PWBRoot = "D:\\PYWikiBot"
-py $PWBRoot\\pwb.py pagefromfile -file:$OutFile -notitle -force -pt:0
+$titlestartend = "@@@"
+py $PWBRoot\\pwb.py pagefromfile -file:$OutFile -notitle -force -pt:0 -titlestart:$titlestartend -titleend:$titlestartend

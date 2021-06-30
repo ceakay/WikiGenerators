@@ -131,7 +131,7 @@ $WikiMexTable = ""
 
 #Lead Page name goes here in wikimedia bold
 $WikiPageTitle = "Vehicles"
-$WikiTable = "'''$WikiPageTitle'''`r`n" + $WikiTable
+$WikiTable = "@@@$WikiPageTitle@@@`r`n" + $WikiTable
 
 #load objects
 $MechsMasterObject = $(Get-Content $TableFile -Raw | ConvertFrom-Json)
@@ -248,7 +248,7 @@ foreach ($VTOL in $VTOLOrder) {
                 if ($l -ne 0) {
                     $ChassisTable += "|-`r`n"
                 }
-                $VariantText += "[["+$WikiPageTitle+'/'+$VariantLink+"|'''"+$VariantLink+"''']]`r`n"
+                $VariantText += "[["+$WikiPageTitle+'/'+$($Mech.Name.LinkName)+"|'''"+$($Mech.Name.LinkName)+"''']]`r`n"
                 $ChassisTable += "|$($VariantText.Trim())`r`n"
                 #Weight/Class
                 $ChassisTable += "|$($Mech.Tonnage) [$ClassFriendly]`r`n"
@@ -388,7 +388,7 @@ foreach ($VTOL in $VTOLOrder) {
                     }
                 }
                 #setup MexPage
-                $WikiMexTable += "{{-start-}}`r`n'''"+$WikiPageTitle+'/'+$VariantLink+"'''`r`n"
+                $WikiMexTable += "{{-start-}}`r`n@@@"+$WikiPageTitle+'/'+$($Mech.Name.LinkName)+"@@@`r`n"
                 if ($Mech.BLACKLIST) {
                     $WikiMexTable += "#REDIRECT [[Classified]]`r`n"
                 } else {

@@ -16,6 +16,6 @@ Some of the gear can be fixed in a specific mech model, it can be identified by 
 *[[Guides/Visibility|Visibility Guide]]
 *[[Guides/Accuracy|Accuracy Guide]]
 
-===Equpment Categories===
+===Equipment Categories===
 
 These categories are organized in the same fashion that you see in MechBay. As a result, some gear may show up in multiple areas of the lists, as they are part of mulitple categories.
