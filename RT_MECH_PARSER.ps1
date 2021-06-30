@@ -636,7 +636,6 @@ foreach ($MDefFileObject in $MDefFileObjectList) {
         }
         $Mech.Name | Add-Member -NotePropertyName 'LinkName' -NotePropertyValue $VariantGlue
 
-
         #PrefabID/Compatible Variants
         if (-not !$Mech.PrefabID) {
             #Create prefabid if not exist
@@ -646,8 +645,7 @@ foreach ($MDefFileObject in $MDefFileObjectList) {
             #create tonnage sub id if not exist
             if (!$(iex "$('$PrefabID.'+"'"+$($Mech.PrefabID)+"'"+'.'+$($Mech.Tonnage))")) {
                 $PrefabID.$($Mech.PrefabID) | Add-Member -MemberType NoteProperty -Name $($Mech.Tonnage) -Value @()
-            }
-            
+            }            
             $PrefabID.$($Mech.PrefabID).$($Mech.Tonnage) += $Mech.MechDefFile
         }
         
