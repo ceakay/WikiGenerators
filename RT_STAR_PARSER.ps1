@@ -29,4 +29,4 @@ foreach ($JSONFile in $JSONList) {
 }
 Write-Output "$($StarObjectList.Count) Star Systems collected"
 #output to file 
-$StarObjectList | ConvertTo-Json -Depth 10 > $StarFile
+$StarObjectList | ConvertTo-Json -Depth 99 > $StarFile
