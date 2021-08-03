@@ -467,3 +467,113 @@ Get-Job | Remove-Job
 
 #Join into a supersized file for pwb upload - Item Pages
 $(Get-ChildItem $ItemOutFolder -Recurse -Exclude '!*').FullName | % {Get-Content $_ -Raw | Out-File "$GearOutFolder\\!ItemPages.txt" -Encoding utf8 -Append}
+
+
+###PART DEUX UNIT_AFFINITIES
+#Affinities
+$AffinitiesFile = "$CacheRoot\\MechAffinity\\settings.json"
+$EquipAffinitiesMaster = $(Get-Content $AffinitiesFile -Raw | ConvertFrom-Json).quirkAffinities | select @{Name='missionsRequired'; Expression={$_.affinityLevels.missionsRequired}},  @{Name='levelName'; Expression={$_.affinityLevels.levelName}}, @{Name='decription'; Expression={$_.affinityLevels.decription}}, @{Name='quirkNames'; Expression={$_.quirkNames}} | sort -Property missionsRequired, levelName | ?{$_}
+$ChassisAffinitiesMaster = $(Get-Content $AffinitiesFile -Raw | ConvertFrom-Json).chassisAffinities | select @{Name='missionsRequired'; Expression={$_.affinityLevels.missionsRequired}},  @{Name='levelName'; Expression={$_.affinityLevels.levelName}}, @{Name='decription'; Expression={$_.affinityLevels.decription}} -Unique | sort -Property missionsRequired, levelName | ?{$_}
+$GlobalAffinitiesMaster = $(Get-Content $AffinitiesFile -Raw | ConvertFrom-Json).globalAffinities | sort -Property missionsRequired | ?{$_}
+
+$UAText = @"
+== Overview ==
+Pilots gain one point of Affinity for each mission they undertake in a certain chassis to represent their familiarity with a particular 'Mech. The more missions they perform in that 'Mech, the better they will perform when called to do so again. This increase in skill manifests as bonuses applied to the 'Mech when the pilot reaches certain levels of Affinity.
+
+== Decay ==
+Affinities decay if the pilot spends too long without doing a mission in a given chassis. This timer is tracked separately for all chassis a pilot has Affinity in.
+
+By default, a pilot's Affinity with a given chassis will begin to decay 31 days after their last mission in that chassis. Once decay begins, the pilot will lose 1 Affinity in the given chassis per day unless and until they drop in that chassis.
+
+Repairing the Argo's Beta and Gamma Pods increases the time before Affinity begins to decay by 10 days each. Upgrading the Argo's Training pods prevents Affinities from decaying below a certain value; with maximum upgrades, Affinity Decay will not decrease a pilot's Affinity below 40.
+
+== Global Bonuses ==
+In addition to mech-specific bonuses, all chassis grant the same bonuses at 5, 10, 60, and 100 Affinity:
+
+{| class="wikitable"
+|-
+! Missions Required !! Name !! Description
+
+"@
+
+#Global Bonus
+foreach ($GlobalBonus in $GlobalAffinitiesMaster) {
+    $UAText += @"
+|-
+| $($GlobalBonus.missionsRequired) || $($GlobalBonus.levelName) || $($GlobalBonus.decription)
+
+"@
+}
+
+$UAText += @"
+|}
+
+== Chassis Affinities ==
+Chassis can provide additional affinity bonuses. You can find more information about each affinity under specific [[Mechs]] pages. 
+
+=== List Of All Chassis Affinities ===
+Mech Lists would be too long, please use search function instead.
+
+{| class="wikitable sortable"
+! Missions Required !! Name !! Description
+
+"@
+
+#Chassis Bonus
+foreach ($ChassisBonus in $ChassisAffinitiesMaster) {
+    $UAText += @"
+|-
+| $($ChassisBonus.missionsRequired) || $($ChassisBonus.levelName) || $($ChassisBonus.decription)
+
+"@
+}
+
+$UAText += @"
+|}
+
+== Gear Affinities == 
+When gear is Fixed to a chassis and cannot be removed, it can provided additional affinity bonuses to the mech it is attached to. You can find which Mechs under specific [[Gear]] pages. While these affinities are provided by the gear, they remain tracked by the chassis. 
+
+=== List of all Gear Affinities ===
+{| class="wikitable sortable"
+! Missions Required !! Name !! Description !! Gear List
+
+"@
+
+#Gear Bonus
+foreach ($GearBonus in $EquipAffinitiesMaster) {
+    $quirkNames = @()
+    foreach ($quirkName in $GearBonus.quirkNames) {
+        $quirkNames += $quirkName
+    }
+    $UAGearArray = @()
+    foreach ($quirkID in $quirkNames) {
+        $UAGearName = $($MasterList | ? {$_.Description.ID -eq $quirkID}).Description.UIName
+        if (($UAGearName -eq '') -or (!$UAGearName)) {
+            $UAGearArray += "''BLACKLISTED''"
+        } else {
+            $UAGearArray += "[[Gear/$UAGearName|$UAGearName]]"
+        }
+    }
+    $UAText += @"
+|-
+| $($GearBonus.missionsRequired) || $($GearBonus.levelName) || $($GearBonus.decription) || $($UAGearArray -join ("<br>"))
+
+"@
+}
+
+$UAText += @"
+|}
+
+[[Category:Guides]]
+
+"@
+
+$UAText =@"
+{{-start-}}
+@@@Unit Affinities@@@
+$UAText
+{{-stop-}}
+"@
+
+$UAText | Out-File "$RTScriptroot\Outputs\Unit_Affinities.utf8" -Encoding utf8 -Force
