@@ -178,6 +178,8 @@ MDEF=,$($SpecialMDef -join ",")
 "@ | Out-File -FilePath $conflictfile -Encoding ascii
 
 $i = 0
+#Testing Filter
+#$MDefFileObjectList = $MDefFileObjectList | ? {$_.Name -match 'DIRGE'}
 foreach ($MDefFileObject in $MDefFileObjectList) { 
     $i++
     write-progress -activity "Scanning files" -Status "$i of $($MDefFileObjectList.Count)"
@@ -434,6 +436,13 @@ foreach ($MDefFileObject in $MDefFileObjectList) {
         }
         $FixedLoadout | % { $Mech.Loadout.Fixed.$($LocationHash.$($_.Name)) = $_.Group.ComponentDefID }
         $DynamicLoadout | % { $Mech.Loadout.Dynamic.$($LocationHash.$($_.Name)) = $_.Group.ComponentDefID }
+        #Handle special loadouts
+        if ($CDefObject.Custom.ArmActuatorSupport.LeftDefaultShoulder) {
+            $Mech.Loadout.Fixed.LA += $CDefObject.Custom.ArmActuatorSupport.LeftDefaultShoulder
+        }
+        if ($CDefObject.Custom.ArmActuatorSupport.RightDefaultShoulder) {
+            $Mech.Loadout.Fixed.RA += $CDefObject.Custom.ArmActuatorSupport.RightDefaultShoulder
+        }
         # grab icon name
         $Mech | Add-Member -MemberType NoteProperty -Name "Icon" -Value $($CDefObject.Description.Icon)
         # grab HP amounts
@@ -693,7 +702,7 @@ $DupeLinkName = $Mechs | group {$_.Name.LinkName} | ? {$_.Count -ge 2}
 if ($DupeLinkName.Count -gt 0) {
     Write-Host "Dupe LinkNames found"
     $DupeLinkName
-    pause
+    #pause
 }
 #save to file
 $Mechs | ConvertTo-Json -Depth 10 | Out-File $MechsFile -Force
