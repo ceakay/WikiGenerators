@@ -66,6 +66,12 @@
     $WikiPageTitle,
 
     [Parameter(Mandatory = $True)]
+    $CustomGear,
+
+    [Parameter(Mandatory = $True)]
+    $METagDict,
+
+    [Parameter(Mandatory = $True)]
     $OutputFile
 
 )
@@ -80,6 +86,80 @@ function datachop {
 
 $ReturnText = ""
 foreach ($Mech in $InputObject) {
+    #Build INSITU table in mech object
+    # Grab InSitu gear
+    # Check CDef first, the MEDict
+    if ($Mech.Loadout.Dynamic.psobject.Properties.name -contains 'HD') { #For Mechs
+        $MechDefaultGearList = @($Mech.Wiki.CDef.Custom.ChassisDefaults) #Load any from cdef
+        if (-not !$MechDefaultGearList) {
+            foreach ($MechDefaultGear in $MechDefaultGearList) {
+                $DefGearLoc = $($HPLongSortHash.GetEnumerator() | ? {$_.Value -eq $MechDefaultGear.Location}).Key
+                $Mech.Loadout.InSitu.$DefGearLoc += $MechDefaultGear.DefID
+            }
+        }
+        #Dict - TaggedFirst
+        $RevTagFileList = $METagDict.TagFileList.Clone()
+        [array]::Reverse($RevTagFileList)
+        #TaggedFile
+        foreach ($ValidDefTag in $METagDict.TagList) { #for each tag in ordered tag
+            if ($Mech.Wiki.CDef.ChassisTags.items -contains $ValidDefTag) { #if chassis is tagged
+                foreach ($DefItem in $METagDict.Defaults.Tagged | ? {$_.Tag -eq $ValidDefTag}) { #process each item into insitu loadout
+                    #Check if CategoryID is in use
+                    if ((-not !$Mech.Loadout.InSitu.psobject.Properties.Value) -and (-not !$DefItem.CategoryID)) {
+                        $CatIDCheck = Compare-Object -IncludeEqual -ExcludeDifferent @($($CustomGear.$($DefItem.CategoryID))) @($Mech.Loadout.InSitu.psobject.Properties.Value) -ErrorAction SilentlyContinue
+                        if ($CatIDCheck.InputObject.Count -eq 0) { #if no items insitu fill categoryid req
+                            $Mech.Loadout.InSitu.$($($HPLongSortHash.GetEnumerator() | ? {$_.Value -eq $DefItem.Location}).Key) += $DefItem.DefID
+                        }
+                    } else {
+                        $Mech.Loadout.InSitu.$($($HPLongSortHash.GetEnumerator() | ? {$_.Value -eq $DefItem.Location}).Key) += $DefItem.DefID
+                    }
+                }
+            }
+        }
+        #SpecialistFile
+        foreach ($DefItem in $METagDict.Defaults.Specialist) { #process each item into fixed loadout
+            #Check if CategoryID is in use
+            if ((-not !$Mech.Loadout.Fixed.psobject.Properties.Value) -and (-not !$DefItem.CategoryID)) {
+                $CatIDCheck = Compare-Object -IncludeEqual -ExcludeDifferent @($($CustomGear.$($DefItem.CategoryID))) @($Mech.Loadout.Fixed.psobject.Properties.Value) -ErrorAction SilentlyContinue
+                if ($CatIDCheck.InputObject.Count -eq 0) { #if no items insitu fill categoryid req
+                    $Mech.Loadout.Fixed.$($($HPLongSortHash.GetEnumerator() | ? {$_.Value -eq $DefItem.Location}).Key) += $DefItem.DefID
+                }
+            } else {
+                $Mech.Loadout.Fixed.$($($HPLongSortHash.GetEnumerator() | ? {$_.Value -eq $DefItem.Location}).Key) += $DefItem.DefID
+            }
+        }
+        #MechEngineerFile
+        foreach ($DefItem in $METagDict.Defaults.MechEngineer) { #process each item into insitu loadout
+            #Check if CategoryID is in use
+            if ((-not !$Mech.Loadout.InSitu.psobject.Properties.Value) -and (-not !$DefItem.CategoryID)) {
+                if (($DefItem.Location -match 'Right') -or ($DefItem.Location -match 'Left')) {
+                    $CatIDCheck = Compare-Object -IncludeEqual -ExcludeDifferent @($($CustomGear.$($DefItem.CategoryID))) @($Mech.Loadout.InSitu.$($($HPLongSortHash.GetEnumerator() | ? {$_.Value -eq $DefItem.Location}).Key)) -ErrorAction SilentlyContinue
+                } else {
+                    $CatIDCheck = Compare-Object -IncludeEqual -ExcludeDifferent @($($CustomGear.$($DefItem.CategoryID))) @($Mech.Loadout.InSitu.psobject.Properties.Value) -ErrorAction SilentlyContinue
+                }
+                if ($CatIDCheck.InputObject.Count -eq 0) { #if no items insitu fill categoryid req
+                    $Mech.Loadout.InSitu.$($($HPLongSortHash.GetEnumerator() | ? {$_.Value -eq $DefItem.Location}).Key) += $DefItem.DefID
+                }
+            } else {
+                $Mech.Loadout.InSitu.$($($HPLongSortHash.GetEnumerator() | ? {$_.Value -eq $DefItem.Location}).Key) += $DefItem.DefID
+            }
+        }    
+    }
+    <#Mirror Left/Right
+    #Legs
+    if (-not !$Mech.Loadout.InSitu.LL) {
+        $Mech.Loadout.InSitu.RL = $Mech.Loadout.InSitu.LL
+    } else {
+        $Mech.Loadout.InSitu.LL = $Mech.Loadout.InSitu.RL
+    }
+    #arms
+    if (-not !$Mech.Loadout.InSitu.LA) {
+        $Mech.Loadout.InSitu.RA = $Mech.Loadout.InSitu.LA
+    } else {
+        $Mech.Loadout.InSitu.LA = $Mech.Loadout.InSitu.RA
+    }
+    #>
+
     #setup MexPage
     $WikiMexTable = "{{-start-}}`r`n@@@"+$WikiPageTitle+"/"+$($Mech.Name.LinkName)+"@@@`r`n"
     if (-not $Mech.BLACKLIST) {
@@ -175,6 +255,7 @@ foreach ($Mech in $InputObject) {
         $LoadoutQuirkText = ""
                 
         $TableRowCount = 0
+        
         foreach ($TableRow in $HPSort) {
             $LoadoutText += "|-`r`n! rowspan=`"4`" | '''$($TableRowNames[$TableRowCount])'''`r`n"
             #MexPage Health/HP
@@ -223,6 +304,23 @@ foreach ($Mech in $InputObject) {
                         $LoadoutText += "Arm Limit: $($Mech.ArmActuatorSupport.$TableLoc)`r`n"
                     }
                 }
+                #InSitu Stuff
+                if ($TableLoc -ne '') {
+                    $TableLocItemArray = $Mech.Loadout.InSitu.$($TableLoc) | group | sort Name
+                    foreach ($FixedItem in $TableLocItemArray) {
+                        if (-not !$($ItemFriendlyHash.$($FixedItem.Name))) {
+                            $FixedItemObj = $GearObject | where {$_.Description.Id -like $FixedItem.Name}
+                            $ItemFriendlyName = $($ItemFriendlyHash.$($FixedItem.Name))
+                            if ($FixedItemObj.Custom.Category.CategoryID -match "positivequirk") {
+                                $LoadoutQuirkText = "* QUIRK: [[Gear/$ItemFriendlyName|$ItemFriendlyName]]`r`n" + $LoadoutQuirkText
+                            } else {
+                                $LoadoutText += "* InSitu: $($FixedItem.Count)x [[Gear/$ItemFriendlyName|$ItemFriendlyName]] [$($ItemSlotsHash.$($FixedItem.Name))]`r`n"
+                            }
+                        }
+                    }
+                }
+
+                #Fixed Stuff
                 if ($TableLoc -ne '') {
                     $TableLocItemArray = $Mech.Loadout.Fixed.$($TableLoc) | group | sort Name
                     foreach ($FixedItem in $TableLocItemArray) {

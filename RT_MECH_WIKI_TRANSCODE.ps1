@@ -112,17 +112,7 @@ foreach ($FactionFriendlyFile in $FactionFriendlyFileList) {
         "MechWiki|Faction error: " + $($FactionDefObj.factionID) + $($FactionFriendlyFile.VersionInfo.FileName) | Out-File $RTScriptroot\ErrorLog.txt -Append -Encoding utf8
     }
 }
-<#
-foreach ($Key in $GroupKeyList) {
-    foreach ($FactionName in $GroupObject.$Key) {
-        $FactionDefFileObj = $(Get-ChildItem $RTroot -Recurse -Filter "faction_$FactionName.json" -ErrorAction SilentlyContinue)
-        if (-not !$FactionDefFileObj) {
-            $FactionDefObj = $(Get-Content $FactionDefFileObj.VersionInfo.FileName -Raw | ConvertFrom-Json)
-            $FactionFriendlyObject | Add-Member -Type NoteProperty -Name $FactionName -Value $($FactionDefObj.Name).Replace("the ","")
-        }
-    }
-}
-#>
+
 #FactionIgnoreList
 $FactionIgnoreObj = Import-Csv "$RTScriptroot\\Inputs\\FactionIgnoreList.csv"
 $FactionIgnoreList = @($FactionIgnoreObj.IgnoreUs)
@@ -131,10 +121,7 @@ $IconFilesList = Get-ChildItem $CacheRoot -Recurse -Filter "*.dds"
 
 #Build Item Friendly Name Hash
 #build Item Slots hash
-<#
-Write-Progress -Activity 'Gathering Item Friendly Names'
-$AllJSON = Get-ChildItem $CacheRoot -Recurse -Filter "*.json" -Include 'Ammo*','Ammunition*','BoltOn*','default_*','emod*','gear*','hand*','lootable*','LoreGear*','NoBoxAmmo*','Omni*','PA*','PartialWing*','protomech*','prototype*','quirk_*','supercharged*','special_*','weapon*','zeusx*' -ErrorAction SilentlyContinue
-#>
+
 $GearFile = $RTScriptroot+"\\Outputs\\GearTable.json"
 $GearObject = Get-Content $GearFile -raw | ConvertFrom-Json
 $ItemFriendlyHash = @{}
@@ -151,7 +138,6 @@ foreach ($Item in $GearObject) {
         try {$ItemSlotsHash.Add($Item.Description.Id,1)} catch {""}
     }
 }
-
 
 #Build Affinities
 $AffinitiesFile = "$CacheRoot\\MechAffinity\\settings.json"
@@ -222,6 +208,7 @@ $MountsLongHash = @{
 #load blurb
 $WikiTable += $(Get-Content $Blurb -raw) + "`r`n"
 
+write-progress -activity 'Loading Mechs'
 #Generate MDefLinkName hash with $MechsMasterObject
 $MechMDefLinkHash = @{}
 $MechsMasterObject | % {$MechMDefLinkHash.Add($_.MechDefFile, $_.Name.LinkName)}
@@ -233,6 +220,38 @@ $TextFileList = $(Get-ChildItem $CacheRoot -Recurse -Filter $TextFileName)
 $TextObject = $null
 foreach ($TextFile in $TextFileList) {
     $TextObject += $TextFile | Get-Content -raw | ConvertFrom-Json
+}
+
+write-progress -activity 'Building INSITU dictionaries'
+###Build METag dict
+$METagRefFileList = Get-ChildItem $($CacheRoot+'\RogueTech Core\defaults\') -Filter *.json 
+$METagDict = [pscustomobject]@{
+    TagList = @()
+    TagCatList = @()
+    TagFileList = @()
+    Defaults = [pscustomobject]@{}
+}
+
+foreach ($METagRefFile in $METagRefFileList) {
+    $MEFileName = $($($($METagRefFile.Name) -split 'Defaults_')[1] -split '.json')[0]
+    $METagDict.Defaults | Add-Member -NotePropertyName $MEFileName -NotePropertyValue $(Get-Content $METagRefFile.FullName -Raw | ConvertFrom-Json).Settings
+    $METagDict.TagFileList += $MEFileName
+}
+
+#get all cat IDs
+$TagList = @()
+$TagCatList = @()
+foreach ($DefCat in $METagDict.Defaults.psobject.Properties.Name) {
+    $TagCatList += $METagDict.Defaults.$DefCat.CategoryID
+}
+$TagCatList = $TagCatList | select -Unique
+$METagDict.TagCatList = $TagCatList
+$METagDict.TagList = $METagDict.Defaults.Tagged.Tag | select -Unique
+
+#Build CustomGear dict
+$CustomGear = [pscustomobject]@{}
+foreach ($TagCat in $TagCatList) {
+    $CustomGear | Add-Member -NotePropertyName $TagCat -NotePropertyValue @($($GearObject | ? {$_.Custom.Category.CategoryID -contains $TagCat} | select {$_.Description.ID}).'$_.Description.ID')
 }
 
 #START PAGE JOBS HERE
@@ -259,7 +278,7 @@ for ($JobCount=0;$JobCount -lt $ThreadCount; $JobCount++) {
         $JobInputObject = $MechsMasterObject[$(0+($JobCount*$Divisor))..$(($Divisor*(1+$JobCount))-1)]
     }
     $JobOutputFile = $JobOutFolder+"\\Chunk$JobCount.txt"
-    Start-Job -Name $("ItemJob"+$JobCount) -FilePath D:\RogueTech\WikiGenerators\RT-CreateMechPages.ps1 -ArgumentList $JobInputObject,$Mounts,$MountsObject,$GroupObject,$CAffinitiesMaster,$HPSort,$TableRowNames,$ItemFriendlyHash,$GearObject,$ItemSlotsHash,$EquipAffinitiesIDNameHash,$EquipAffinitiesIDNumHash,$EquipAffinitiesIDDescHash,$PrefabID,$FactionIgnoreList,$MechMDefLinkHash,$GroupFriendlyObject,$FactionFriendlyObject,$HPLongSortHash,$MountsLongHash,$SpecialsObject,$WikiPageTitle,$JobOutputFile | Out-Null
+    Start-Job -Name $("ItemJob"+$JobCount) -FilePath D:\RogueTech\WikiGenerators\RT-CreateMechPages.ps1 -ArgumentList $JobInputObject,$Mounts,$MountsObject,$GroupObject,$CAffinitiesMaster,$HPSort,$TableRowNames,$ItemFriendlyHash,$GearObject,$ItemSlotsHash,$EquipAffinitiesIDNameHash,$EquipAffinitiesIDNumHash,$EquipAffinitiesIDDescHash,$PrefabID,$FactionIgnoreList,$MechMDefLinkHash,$GroupFriendlyObject,$FactionFriendlyObject,$HPLongSortHash,$MountsLongHash,$SpecialsObject,$WikiPageTitle,$CustomGear,$METagDict,$JobOutputFile | Out-Null
 }
 
 #END PAGE JOBS HERE

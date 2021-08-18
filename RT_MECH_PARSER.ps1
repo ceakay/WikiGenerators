@@ -179,7 +179,7 @@ MDEF=,$($SpecialMDef -join ",")
 
 $i = 0
 #Testing Filter
-#$MDefFileObjectList = $MDefFileObjectList | ? {$_.Name -match 'DIRGE'}
+#$MDefFileObjectList = $MDefFileObjectList | ? {$_.Name -match 'WMR-IIC-Z'}
 foreach ($MDefFileObject in $MDefFileObjectList) { 
     $i++
     write-progress -activity "Scanning files" -Status "$i of $($MDefFileObjectList.Count)"
@@ -429,10 +429,12 @@ foreach ($MDefFileObject in $MDefFileObjectList) {
         $Mech.Loadout = $([pscustomobject]@{
             Dynamic = [pscustomobject]@{}
             Fixed = [pscustomobject]@{}
+            InSitu = [pscustomobject]@{}
         })
         foreach ($LocationEnum in $LocationHash.GetEnumerator()) {
             $Mech.Loadout.Dynamic | Add-Member -MemberType NoteProperty -Name $LocationEnum.Value -Value @()
             $Mech.Loadout.Fixed | Add-Member -MemberType NoteProperty -Name $LocationEnum.Value -Value @()
+            $Mech.Loadout.InSitu | Add-Member -MemberType NoteProperty -Name $LocationEnum.Value -Value @()
         }
         $FixedLoadout | % { $Mech.Loadout.Fixed.$($LocationHash.$($_.Name)) = $_.Group.ComponentDefID }
         $DynamicLoadout | % { $Mech.Loadout.Dynamic.$($LocationHash.$($_.Name)) = $_.Group.ComponentDefID }
@@ -443,6 +445,7 @@ foreach ($MDefFileObject in $MDefFileObjectList) {
         if ($CDefObject.Custom.ArmActuatorSupport.RightDefaultShoulder) {
             $Mech.Loadout.Fixed.RA += $CDefObject.Custom.ArmActuatorSupport.RightDefaultShoulder
         }
+
         # grab icon name
         $Mech | Add-Member -MemberType NoteProperty -Name "Icon" -Value $($CDefObject.Description.Icon)
         # grab HP amounts
