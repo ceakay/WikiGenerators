@@ -215,47 +215,18 @@ $MajorCatsHash = @{
 Write-Progress -Id 0 -Activity "Loading Master Object"
 $MasterList = [System.Collections.ArrayList]@($(Get-Content $EquipFile -Raw | ConvertFrom-Json) | ? {$_.Description.ID -notmatch 'emod_engineslots_size'}  | ? {$_.Description.ID -notmatch 'Gear_LegJet_Assault_Lower'}) #| ? {$_.ComponentTags.items -notcontains "blacklisted"})
 
+#Create UINameHash
+Write-Progress -Id 0 -Activity "Creating IDUINaameHash"
+$IDUINameHash = @{}
+$MasterList | % { $IDUINameHash.Add($_.Description.Id,$_.Description.UIName) }
+
 #Cleanup Duplicates
-#Remove Deprecated
-Write-Progress -Id 0 -Activity "Scrubbing Deprecated"
-$MasterList = $MasterList | ? {$_.Description.UIName -notmatch 'DEPRECATED!'} | ? {$_.Description.UIName -notmatch 'DEPRECIATED!'}
-#Remove Linked
-Write-Progress -Id 0 -Activity "Scrubbing Linked"
-$LinkedList = $MasterList.Custom.Linked.Links.ComponentDefId | select
-$MasterList = $MasterList | ? {$_.Description.Id -notin $LinkedList}
-#Check if group contains single or only blacklisted
-Write-Progress -Id 0 -Activity "Scrubbing BlacklistOnly and BlacklistSingle"
-$DuplicatesGroup = $($($MasterList | Group {$_.Description.UIName}) | ? {$_.Count -ge 2})
-$BlacklistOnlyList = @()
-$BlacklistSingleList = @()
-foreach ($DuplicatesGroupItem in $DuplicatesGroup) {
-    if (@($DuplicatesGroupItem.Group | ? {$_.ComponentTags.items -notcontains 'BLACKLISTED'}).Count -eq 0) {
-        $DupeCounter = 0
-        if (@($DuplicatesGroupItem.Group.Description.Id).Count -gt 1) {
-            $DupeCounter = @($DuplicatesGroupItem.Group.Description.Id).Count - 2
-        }
-        $BlacklistOnlyList += $DuplicatesGroupItem.Group.Description.Id[0..$DupeCounter] #Pick anything to create a classified page with
-    } 
-    elseif (@($DuplicatesGroupItem.Group | ? {$_.ComponentTags.items -notcontains 'BLACKLISTED'}).Count -ge 1) {
-        $BlacklistSingleList += $($DuplicatesGroupItem.Group | ? {$_.ComponentTags.items -contains 'BLACKLISTED'}).Description.Id #If 1 or more are not blacklisted, delete the blacklisted items.
-    }
-}
-$MasterList = $MasterList | ? {$_.Description.Id -notin $BlacklistOnlyList}
-$MasterList = $MasterList | ? {$_.Description.Id -notin $BlacklistSingleList}
-#Remove Lootables
-Write-Progress -Id 0 -Activity "Scrubbing Lootables"
-$LootableKeepList = $MasterList.Custom.Lootable.ItemID | select
-$DuplicatesGroup = $($($MasterList | Group {$_.Description.UIName}) | ? {$_.Count -ge 2})
-$LootableList = $($DuplicatesGroup.Group | ? {-not !$_.Custom.Lootable.ItemID}).Description.ID
-$MasterList = $MasterList | ? {$_.Description.Id -notin $LootableList}
+###MOVED TO PARSER
 #Remove from hard ignore - GearIgnore.CSV
 Write-Progress -Id 0 -Activity "Removing from manual list"
 $GearIgnoreFile = $RTScriptroot+"\\Inputs\\GearIgnore.csv"
 $GearIgnoreList = $(Get-Content $GearIgnoreFile -Raw | ConvertFrom-Csv).GearIgnore
 $MasterList = $MasterList | ? {$_.Description.Id -notin $GearIgnoreList}
-#CustomOverrides
-$($MasterList | ? {$_.Description.ID -eq 'Weapon_Laser_TAG_HeyListen'}).Description.UIName = 'TAG (NAVI)'
-$($MasterList | ? {$_.Description.ID -eq 'Gear_Cockpit_SensorsB_Standard'}).Description.UIName = 'Sensors (B)'
 
 
 #Load Filters List
@@ -302,6 +273,9 @@ foreach ($MinorCatFile in $MinorCatFiles) {
         $MinorCatHash.Add($($MinorCatItem.Name), $($MinorCatItem.DisplayName))
     }
 }
+#MinorCatHash unlinked items
+###
+###
 $MinorCatHashReverse = @{}
 foreach ($HashItem in $MinorCatHash.GetEnumerator()) {
     try {$MinorCatHashReverse.Add($HashItem.Value,$HashItem.Key)}
@@ -373,7 +347,7 @@ for ($JobCount=0;$JobCount -lt $ThreadCount; $JobCount++) {
         $JobInputObject = $MasterList[$(0+($JobCount*$Divisor))..$(($Divisor*(1+$JobCount))-1)]
     }
     $JobOutputFile = $ItemOutFolder+"\\Chunk$JobCount.txt"
-    Start-Job -Name $("ItemJob"+$JobCount) -FilePath D:\RogueTech\WikiGenerators\RT-CreateGearPages.ps1 -ArgumentList $JobInputObject,$BonusDescHash,$GearUsedBy,$JobFixedAffinityObject,$JobEquipAffinitiesRef,$JobOutputFile | Out-Null
+    Start-Job -Name $("ItemJob"+$JobCount) -FilePath D:\RogueTech\WikiGenerators\RT-CreateGearPages.ps1 -ArgumentList $JobInputObject,$BonusDescHash,$GearUsedBy,$JobFixedAffinityObject,$JobEquipAffinitiesRef,$IDUINameHash,$JobOutputFile | Out-Null
 }
 
 #Build TOC pages

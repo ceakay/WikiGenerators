@@ -349,6 +349,10 @@ foreach ($MDefFileObject in $MDefFileObjectList) {
                     #same location, tag is: << "BLACKLISTED" >>
                     #if found flag BLACKLISTED as TRUE
         $Mech | Add-Member -MemberType NoteProperty -Name "BLACKLIST" -Value $false
+        #Force BLACKLISTED if WIKIBL
+        if ($MDefObject.MechTags.items -contains 'WikiBL') {
+            $MDefObject.MechTags.items += "BLACKLISTED"
+        }
         if (($MDefObject.MechTags.items -contains $GroupObject.BLACKLIST) -or ($MDefObject.RequiredToSpawnCompanyTags.items.Count -gt 0)) {
             $Mech.BLACKLIST = $true
         }   
@@ -424,6 +428,7 @@ foreach ($MDefFileObject in $MDefFileObjectList) {
             'RightLeg' = 'RL'
         }
         $FixedLoadout = $CDefObject.FixedEquipment | select ComponentDefID, MountedLocation | group MountedLocation
+        $AllFixedLoadout = $FixedLoadout | select *
         $DynamicLoadout = $MDefObject.Inventory | select ComponentDefID, MountedLocation | group MountedLocation
         $Mech | Add-Member -MemberType NoteProperty -Name "Loadout" -Value ([pscustomobject]@{})
         $Mech.Loadout = $([pscustomobject]@{
@@ -663,7 +668,7 @@ foreach ($MDefFileObject in $MDefFileObjectList) {
         
         #Parse Loadout list to gearusedby.json
         if (!$Mech.BLACKLIST) {
-            $MechUsesGearList = $($(@($FixedLoadout.Group.ComponentDefID) + @($DynamicLoadout.Group.ComponentDefID)) | group).Name
+            $MechUsesGearList = $($(@($AllFixedLoadout.Group.ComponentDefID) + @($DynamicLoadout.Group.ComponentDefID)) | group).Name
             foreach ($MechUsesGear in $MechUsesGearList) {
                 if (!($GearUsedBy.psobject.Properties.Name -contains $MechUsesGear)) {
                     $GearUsedBy | Add-Member -NotePropertyName $MechUsesGear -NotePropertyValue @()
@@ -673,7 +678,7 @@ foreach ($MDefFileObject in $MDefFileObjectList) {
         }
 
         #Parse Affinities to File
-        $FixedList = [string[]]$FixedLoadout.Group.ComponentDefID
+        $FixedList = [string[]]$AllFixedLoadout.Group.ComponentDefID
         $AffinityList = [string[]]$EquipAffinitiesIDNameHash.Keys
         if (!$Mech.BLACKLIST) {
             if (-not !$FixedList) {

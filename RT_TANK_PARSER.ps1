@@ -362,6 +362,10 @@ foreach ($MDefFileObject in $MDefFileObjectList) {
                     #same location, tag is: << "BLACKLISTED" >>
                     #if found flag BLACKLISTED as TRUE
         $Mech | Add-Member -MemberType NoteProperty -Name "BLACKLIST" -Value $false
+        #Force BLACKLISTED if WIKIBL
+        if ($MDefObject.MechTags.items -contains 'WikiBL') {
+            $MDefObject.MechTags.items += "BLACKLISTED"
+        }
         if (($MDefObject.VehicleTags.items -contains $GroupObject.BLACKLIST) -or ($MDefObject.RequiredToSpawnCompanyTags.items.Count -gt 0)) {
                 $Mech.BLACKLIST = $true
         }

@@ -70,6 +70,10 @@ foreach ($JSONFile in $JSONList) {
     if ($JSONRaw -like $ComponentFilter) {
         try {
             $JSONObject = $($JSONRaw | ConvertFrom-Json)
+            #Force BLACKLISTED if WIKIBL
+            if ($JSONObject.ComponentTags.items -contains "WikiBL") {
+                $JSONObject.ComponentTags.items += "BLACKLISTED"
+            }
             $JSONObject.Description.UIName = $JSONObject.Description.UIName.Replace("/","")
             $JSONObject.Description.UIName = $JSONObject.Description.UIName.Replace("[","(")
             $JSONObject.Description.UIName = $JSONObject.Description.UIName.Replace("]",")")
@@ -101,6 +105,27 @@ foreach ($JSONFile in $JSONList) {
     $i++
 }
 Write-Output "$($ComponentObjectList.Count) components collected"
+#Remove Deprecated/DLC
+Write-Progress -Id 0 -Activity "Scrubbing Deprecated"
+$ComponentObjectList = $ComponentObjectList | ? {$_.Description.UIName -notmatch 'DEPRECATED'} | ? {$_.Description.UIName -notmatch 'DEPRECIATED'} | ? {$_.Description.UIName -notmatch 'INSTALL DLC MODULE'}
+#Remove Linked
+Write-Progress -Id 0 -Activity "Scrubbing Linked"
+$LinkedList = $ComponentObjectList.Custom.Linked.Links.ComponentDefId | select
+$ComponentObjectList = $ComponentObjectList | ? {$_.Description.Id -notin $LinkedList}
+#CustomOverrides
+$($ComponentObjectList | ? {$_.Description.ID -eq 'Weapon_Laser_TAG_HeyListen'}).Description.UIName = 'TAG (NAVI)'
+#id no longer exists $($ComponentObjectList | ? {$_.Description.ID -eq 'Gear_Cockpit_SensorsB_Standard'}).Description.UIName = 'Sensors (B)'
+#Make all UINames Unique
+$DuplicatesGroup = $($($ComponentObjectList | Group {$_.Description.UIName}) | ? {$_.Count -ge 2})
+foreach ($Dupe in $DuplicatesGroup.Name) {
+    $DupeCounter = 0
+    $ComponentObjectList | ? {$_.Description.UIName -eq $Dupe} | ForEach-Object -Process {
+        $DupeCounter++
+        $_.Description.UIName = $_.Description.UIName.Trim() + " ($DupeCounter)"
+    }
+}
+
 #output to file 
 $ComponentObjectList | ConvertTo-Json -Depth 99 > $GearFile
 $WonkyList | Export-Csv $WonkyFile -NoTypeInformation
+

@@ -15,6 +15,9 @@
     $EquipAffinitiesRef,
 
     [Parameter(Mandatory = $True)]
+    $IDUINameHash,
+
+    [Parameter(Mandatory = $True)]
     $OutputFile
 
 )
@@ -122,7 +125,12 @@ foreach ($Item in $InputObject) {
 "@
     }
     if ($Item.ComponentType -match 'weapon') {
-        $ItemText += "=Weapon Stats=`r`n`r`nCategory: $($Item.Category)`r`n`r`nType: $($Item.Type)`r`n`r`nSubType: $($Item.WeaponSubType)`r`n"  
+        if ($Item.Category) {
+            $ItemCategory = $Item.Category
+        } else {
+            $ItemCategory = $Item.weaponCategoryID
+        }
+        $ItemText += "=Weapon Stats=`r`n`r`nCategory: $($ItemCategory)`r`n`r`nType: $($Item.Type)`r`n`r`nSubType: $($Item.WeaponSubType)`r`n"  
         $ItemText += @"
 {| class="wikitable"
 ! colspan="3" |
@@ -233,13 +241,17 @@ foreach ($Item in $InputObject) {
                 } else {
                     $ModeIndirectFireCapable = $ItemBaseIndirectFireCapable
                 }
+                #modeDamageMultiplier - set default to 1
+                if (!$Mode.DamageMultiplier) {
+                    $Mode | Add-Member -NotePropertyName 'DamageMultiplier' -NotePropertyValue 1
+                }
 
                 $ItemText += @"
 |-
 | $ModeDefault
 | $ModeMode
 | $ModeAmmoCategory
-| $($ItemBaseDamage + $Mode.Damage + $Mode.DamagePerShot)
+| $($($ItemBaseDamage + $Mode.Damage + $Mode.DamagePerShot) * $Mode.DamageMultiplier)
 | $($ItemBaseHeatDamage + $Mode.HeatDamage + $Mode.HeatDamagePerShot)
 | $($ItemBaseInstability + $Mode.Instability)
 | $($ItemBaseShotsWhenFired + $Mode.ShotsWhenFired)
@@ -310,10 +322,34 @@ foreach ($Item in $InputObject) {
     $ItemText = $ItemText -Replace ('<color=(.*?)>(.*?)<\/color>','<span style="color:$1;">$2</span>') #replace color tag
     $ItemText = $ItemText -Replace ('<b>(.*?)<\/b>','$1') #remove bold
 
-    #Lazy Blacklisted
+    #Lazy Blacklisted 
     if (($Item.ComponentTags.items -contains "blacklisted") -and ($Item.ComponentTags.items -notcontains "WikiWL")) {
-        $ItemText = "{{-start-}}`r`n@@@Gear/$($Item.Description.UIName)@@@`r`n#REDIRECT [[Classified]]`r`n`r`n$($Item.Description.ID)`r`n"
+        $ItemText = "{{-start-}}`r`n@@@Gear/$($Item.Description.UIName)@@@`r`n$($Item.Description.ID)`r`n`r`n"
+        $ItemText += @"
+= WARNING =
+YOU ARE ATTEMPTING TO ACCESS CLASSIFIED INFORMATION.
+
+[[File:BLACKLIST.png|300px|frameless|left]]
+
+ This item or unit has been marked as restricted (not directly for player use) or spoiler by the Developers. 
+ 
+ If you feel this was done in error, open a ticket on [https://discord.gg/roguetech Discord].
+
+"@
     }
+
+    #Lootable
+    $ItemText += "`r`n= Item Salvage Rules ="
+    $ItemText += "`r`nItem can be salvaged by player: "
+    if ($Item.Custom.Flags.flags -contains 'no_salvage') {
+        $ItemText += "No"
+    } else {
+        $ItemText += "Yes"
+    }
+    if ($Item.Custom.Lootable.ItemID) {
+        $ItemText += "`r`nItem salvages into: [[Gear/$($IDUINameHash.$($Item.Custom.Lootable.ItemID))]]"
+    }
+    $ItemText += "`r`n"
 
     #Close
     $ItemText += "{{-stop-}}`r`n"

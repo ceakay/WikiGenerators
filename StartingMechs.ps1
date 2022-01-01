@@ -90,7 +90,7 @@ Write-Host @"
 
 
 
-
+StartingMechs
 "@
 
 
@@ -127,6 +127,13 @@ Most factions will have both light and a medium faction-themed pool of mechs. Mo
 These pools use [http://www.masterunitlist.info/Era/FactionEraDetails?FactionId=18&EraId=13 Comstar’s canonical mechs] and the advanced mechs used by the 5 Great Houses or mercenary troops. The generic Clan pools follow a similar formula, with 2 20/25 ton lists, 2 30 ton lists and a 35/40 ton list providing the 5th pick. These all offer a mixture of Omnimechs, ex [http://www.sarna.net/wiki/Star_League_Defense_Force SLDF] mechs or ex [http://www.sarna.net/wiki/Category:SLDF_Royal_BattleMechs Royal] mechs, each with vastly improved capabilities than their Inner Sphere counterparts.
 
 __TOC__
+
+= Starting Planet Galaxy Map =
+{| class="wikitable mw-collapsible mw-collapsed"
+! Starting Planet Galaxy Map
+|-
+| (Click map to view full size)<br>[[Image:RTMapProjSmall.png|alt=Starting Planet Galaxy Map|750px|link=https://static.wikia.nocookie.net/roguetech_gamepedia_en/images/4/4e/RTMapProjSmall.png/revision/latest]]
+|}
 
 = Starts =
 
