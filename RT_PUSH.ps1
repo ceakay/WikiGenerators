@@ -9,9 +9,15 @@ $PIDS += (Start-Process pwsh -ArgumentList "$RTScriptroot\RT_TANK_PARSER.ps1" -W
 $PIDS += (Start-Process pwsh -ArgumentList "$RTScriptroot\RT_STAR_PARSER.ps1" -WindowStyle Minimized -PassThru).Id
 Wait-Process -Id $PIDs #wait for parsers to finish. transcoders may need mulitple
 
+$BASpawnPID = (Start-Process pwsh -ArgumentList "$RTScriptroot\BASpawnPools.ps1" -WindowStyle Minimized -PassThru).Id
+$StatusText = 'BASpawnPools'
+Write-Progress -id 0 -Activity "Waiting for $StatusText $TypeStatus"
+Wait-Process -Id $BASpawnPID
+
 $WikiPID = (Start-Process pwsh -ArgumentList "$RTScriptroot\StartingMechs.ps1" -WindowStyle Minimized -PassThru).Id
 $StatusText = 'StartingMechs'
-#starting mechs is dirty combo script. just get it out of the way.
+Write-Progress -id 0 -Activity "Waiting for $StatusText $TypeStatus"
+#dirty combo scripts. just get em out of the way.
 #Wait-Process -Id $WikiPID
 
 $PIDs = @()
