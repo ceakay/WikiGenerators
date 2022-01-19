@@ -161,7 +161,7 @@ foreach ($Mech in $InputObject) {
     #>
 
     #setup MexPage
-    $WikiMexTable = "{{-start-}}`r`n@@@"+$WikiPageTitle+"/"+$($Mech.Name.LinkName)+"@@@`r`n"
+    $WikiMexTable = "{{-start-}}`r`n@@@"+$WikiPageTitle+"/"+$($Mech.Name.LinkName)+"@@@`r`n[https://discord.gg/roguetech BOT PAGE] || RTVer: $RTVersion`r`n"
     if (-not $Mech.BLACKLIST) {
 
         #MountsText

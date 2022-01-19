@@ -63,12 +63,15 @@ function Sort-STNumerical {
                 @{ Expression = { $_ } } -Descending:$SortDescending
     }
 }
+#RTVersion
+$RTVersion = $(Get-Content "D:\\RogueTech\\RtlCache\\RtCache\\RogueTech Core\\mod.json" -raw | ConvertFrom-Json).Version
 
 $ReturnText = $null
 foreach ($Item in $InputObject) {
     #Build gear page
     $ItemText = "{{-start-}}`r`n@@@Gear/$($Item.Description.UIName)@@@`r`n"
     $ItemText += "{{tocright}}`r`n"
+    $ItemText += "[https://discord.gg/roguetech BOT PAGE] || RTVer: $RTVersion"
     $ItemText += "=Description=`r`n`r`nID: $($Item.Description.ID)`r`n`r`nManufacturer: $($Item.Description.Manufacturer)`r`n`r`n$($($($Item.Description.Details -split ("`n")) | % {$_.Trim()}) -join ("`r`n"))`r`n"
     $ItemText += "=Attributes=`r`n`r`n"
     $ItemText += @"
