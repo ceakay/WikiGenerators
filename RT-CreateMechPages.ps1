@@ -84,6 +84,11 @@ function datachop {
     return $array[$args[1]]
 }
 
+#RTVer
+$RTroot = "D:\\RogueTech"
+$CacheRoot = "$RTroot\\RtlCache\\RtCache"
+$RTVersion = $(Get-Content "$CacheRoot\\RogueTech Core\\mod.json" -raw | ConvertFrom-Json).Version
+
 $ReturnText = ""
 foreach ($Mech in $InputObject) {
     #Build INSITU table in mech object
@@ -161,7 +166,7 @@ foreach ($Mech in $InputObject) {
     #>
 
     #setup MexPage
-    $WikiMexTable = "{{-start-}}`r`n@@@"+$WikiPageTitle+"/"+$($Mech.Name.LinkName)+"@@@`r`n[https://discord.gg/roguetech BOT PAGE] || RTVer: $RTVersion`r`n"
+    $WikiMexTable = "{{-start-}}`r`n@@@"+$WikiPageTitle+"/"+$($Mech.Name.LinkName)+"@@@"
     if (-not $Mech.BLACKLIST) {
 
         #MountsText
@@ -371,6 +376,7 @@ foreach ($Mech in $InputObject) {
         $LoadoutText = $($LoadoutText -split ("##LoadoutAffinityText##")) -join $LoadoutAffinityText
 
         #Setup Infobox
+        $WikiMexTable += "[https://discord.gg/roguetech BOT PAGE] || RTVer: $RTVersion || ID: $($Mech.MechDefFile)`r`n`r`n"
         $WikiMexTable += "{{Infobox MechPage`r`n"
         $WikiMexTable += "| name       = $($Mech.Name.MechUIName)`r`n"
         $WikiMexTable += "| icon       = $($Mech.Icon + '.png')`r`n"
@@ -422,7 +428,7 @@ foreach ($Mech in $InputObject) {
         $WikiMexTable += "`r`n==Description==`r`n`r`n"+$MechBlurb+"`r`n"
         $WikiMexTable += "`r`n"+$LoadoutText+"`r`n"
     } else {
-        $WikiMexTable += "#REDIRECT [[Classified]]`r`n`r`n$($Mech.MechDefFile)`r`n"
+        $WikiMexTable += "#REDIRECT [[Classified]]`r`n`r`n[https://discord.gg/roguetech BOT PAGE] || RTVer: $RTVersion || ID: $($Mech.MechDefFile)`r`n"
     }
     $WikiMexTable +="{{-stop-}}`r`n"
     $ReturnText += $WikiMexTable

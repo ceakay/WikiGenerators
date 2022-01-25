@@ -213,7 +213,7 @@ $MajorCatsHash = @{
 
 #Load Master List
 Write-Progress -Id 0 -Activity "Loading Master Object"
-$MasterList = [System.Collections.ArrayList]@($(Get-Content $EquipFile -Raw | ConvertFrom-Json) | ? {$_.Description.ID -notmatch 'emod_engineslots_size'}  | ? {$_.Description.ID -notmatch 'Gear_LegJet_Assault_Lower'}) #| ? {$_.ComponentTags.items -notcontains "blacklisted"})
+$MasterList = [System.Collections.ArrayList]@($(Get-Content $EquipFile -Raw | ConvertFrom-Json) | ? {$_.Description.ID -notmatch 'Gear_LegJet_Assault_Lower'}) #| ? {$_.ComponentTags.items -notcontains "blacklisted"})
 
 #Create UINameHash
 Write-Progress -Id 0 -Activity "Creating IDUINaameHash"
