@@ -150,20 +150,6 @@ foreach ($Mech in $InputObject) {
             }
         }    
     }
-    <#Mirror Left/Right
-    #Legs
-    if (-not !$Mech.Loadout.InSitu.LL) {
-        $Mech.Loadout.InSitu.RL = $Mech.Loadout.InSitu.LL
-    } else {
-        $Mech.Loadout.InSitu.LL = $Mech.Loadout.InSitu.RL
-    }
-    #arms
-    if (-not !$Mech.Loadout.InSitu.LA) {
-        $Mech.Loadout.InSitu.RA = $Mech.Loadout.InSitu.LA
-    } else {
-        $Mech.Loadout.InSitu.LA = $Mech.Loadout.InSitu.RA
-    }
-    #>
 
     #setup MexPage
     $WikiMexTable = "{{-start-}}`r`n@@@"+$WikiPageTitle+"/"+$($Mech.Name.LinkName)+"@@@"

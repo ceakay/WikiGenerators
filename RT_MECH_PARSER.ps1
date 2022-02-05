@@ -428,6 +428,7 @@ foreach ($MDefFileObject in $MDefFileObjectList) {
             'RightLeg' = 'RL'
         }
         $FixedLoadout = $CDefObject.FixedEquipment | select ComponentDefID, MountedLocation | group MountedLocation
+        $InSituLoadoutFixed = @($CDefObject.Custom.ChassisDefaults.Clone() | select @{N='ComponentDefID'; E={$_.DefID}}, @{N='MountedLocation'; E={$_.Location}}, @{N='ComponentDefType'; E={$_.Type}})
         $AllFixedLoadout = $FixedLoadout | select *
         $DynamicLoadout = $MDefObject.Inventory | select ComponentDefID, MountedLocation | group MountedLocation
         $Mech | Add-Member -MemberType NoteProperty -Name "Loadout" -Value ([pscustomobject]@{})
@@ -668,7 +669,7 @@ foreach ($MDefFileObject in $MDefFileObjectList) {
         
         #Parse Loadout list to gearusedby.json
         if (!$Mech.BLACKLIST) {
-            $MechUsesGearList = $($(@($AllFixedLoadout.Group.ComponentDefID) + @($DynamicLoadout.Group.ComponentDefID)) | group).Name
+            $MechUsesGearList = $($(@($AllFixedLoadout.Group.ComponentDefID) + @($DynamicLoadout.Group.ComponentDefID)) + @($InSituLoadoutFixed.ComponentDefID) | group).Name
             foreach ($MechUsesGear in $MechUsesGearList) {
                 if (!($GearUsedBy.psobject.Properties.Name -contains $MechUsesGear)) {
                     $GearUsedBy | Add-Member -NotePropertyName $MechUsesGear -NotePropertyValue @()
