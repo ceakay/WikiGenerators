@@ -453,7 +453,7 @@ foreach ($MDefFileObject in $MDefFileObjectList) {
         $MechBlurb = $MDefObject.Description.Details
         #Regex cleanup
         $MechBlurb = $($($MechBlurb.Split("`n")) -Replace ('^[ \t]*','')) -Join ("`n") #split by lines, trim leading spaces/tabs, rejoin
-        $MechBlurb = $MechBlurb -Replace ('<color=(.*?)>(.*?)<\/color>','<span style="color:$1;">$2</span>') #replace color tag
+        $MechBlurb = $MechBlurb -Replace ('<color=(.*?)>((.|\n|\r)*?)<\/color>','<span style="color:$1;">$2</span>') #replace color tag
         $MechBlurb = $MechBlurb -Replace ('<b>(.*?)<\/b>','$1') #remove bold
         $Mech | Add-Member -MemberType NoteProperty -Name "Blurb" -Value $MechBlurb
         ###START OVERRIDES SECTION

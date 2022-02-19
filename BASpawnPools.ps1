@@ -108,6 +108,7 @@ $RTScriptroot = "D:\\RogueTech\\WikiGenerators"
 cd $RTScriptroot
 #cache path
 $CacheRoot = "$RTroot\\RtlCache\\RtCache"
+$RTVersion = $(Get-Content "$CacheRoot\\RogueTech Core\\mod.json" -raw | ConvertFrom-Json).Version
 
 #Load StratOps mod.json
 $StratOps = Get-Content $CacheRoot\\StrategicOperations\\mod.json -Raw | ConvertFrom-Json
@@ -129,7 +130,6 @@ $Mechs | select @{Name = 'DefName'; Expression = {if (!$_.MechDefFile) {"$($_.De
 $Tanks | select @{Name = 'DefName'; Expression = {if (!$_.MechDefFile) {"$($_.Description.ID)"} else {"$($($_.MechDefFile -split '\\')[-1].Split('.')[0])"}}}, @{Name = 'LinkName'; Expression = {if (!$_.Name.LinkName) {$_.Description.UIName} else {$_.Name.LinkName}}} | % {if (!$($DefLinkNameHash.$($_.DefName))) {$DefLinkNameHash.Add($_.DefName, $_.LinkName)}}
 $Gears | select @{Name = 'DefName'; Expression = {if (!$_.MechDefFile) {"$($_.Description.ID)"} else {"$($($_.MechDefFile -split '\\')[-1].Split('.')[0])"}}}, @{Name = 'LinkName'; Expression = {if (!$_.Name.LinkName) {$_.Description.UIName} else {$_.Name.LinkName}}} | % {if (!$($DefLinkNameHash.$($_.DefName))) {$DefLinkNameHash.Add($_.DefName, $_.LinkName)}}
 
-$RTVersion = $(Get-Content "$CacheRoot\\RogueTech Core\\mod.json" -raw | ConvertFrom-Json).Version
 $TheText = "{{-start-}}`r`n@@@BattleArmor Spawn Pools@@@`r`n"
 $TheText += @"
 Last Updated: $RTVersion
