@@ -63,7 +63,6 @@ $ComponentObjectList = @()
 $JSONList = Get-ChildItem $CacheRoot -Recurse -Filter "*.json"
 $JSONList = $JSONList | ? {($_.FullName -notmatch 'VanillaNoLoot')}
 $i = 0
-$WonkyList = @()
 foreach ($JSONFile in $JSONList) {
     Write-Progress -Activity "Collecting Components" -Status "$($i+1) of $($JSONList.Count) JSONs found."
     $JSONRaw = Get-Content $JSONFile.FullName -Raw
@@ -74,6 +73,7 @@ foreach ($JSONFile in $JSONList) {
             if ($JSONObject.ComponentTags.items -contains "WikiBL") {
                 $JSONObject.ComponentTags.items += "BLACKLISTED"
             }
+            #UINameFixes
             $JSONObject.Description.UIName = $JSONObject.Description.UIName.Trim() #remove whitespaces
             $JSONObject.Description.UIName = $JSONObject.Description.UIName.Replace("/","") #remove backslash for urls
             $JSONObject.Description.UIName = $JSONObject.Description.UIName.Replace("#","") #remove hash for urls
@@ -84,15 +84,6 @@ foreach ($JSONFile in $JSONList) {
             }
             if ($UINameArray.Count -gt 1) {
                 $JSONObject.Description.UIName = $UINameArray[0] + " Mk$($UINameArray.Count - 1)"
-                if ($JSONObject.ComponentTags.items -match 'blacklist') {
-                    $BlacklistComponent = $true
-                } else {
-                    $BlacklistComponent = $false
-                }
-                $WonkyList += [pscustomobject]@{
-                    File = $JSONFile.FullName
-                    Blacklist = $BlacklistComponent
-                }
             }
             $JSONObject | Add-Member -NotePropertyName Wiki -NotePropertyValue $([pscustomobject]@{})
             $JSONObject.Wiki | Add-Member -NotePropertyName Mod -NotePropertyValue $($($($JSONFile.FullName -split $CacheRoot)[1] -split "\\")[1])

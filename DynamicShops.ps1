@@ -128,7 +128,7 @@ $StarObjectList = Get-Content -Raw $StarFile | ConvertFrom-Json
 #Init IDLinkHash
 $IDLinkHash = @{}
 
-#Load Gear
+#Load Gear to IDLinkHash
 $GearFile = $RTScriptroot+"\\Outputs\\GearTable.json"
 $GearObjectList = Get-Content -Raw $GearFile | ConvertFrom-Json
 $GearObjectList | ? {$_.Description.UIName -ne ''} | foreach { $IDLinkHash[$($_.Description.ID)] = "Gear/$($_.Description.UIName)" }
