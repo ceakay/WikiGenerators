@@ -148,6 +148,7 @@ Function Get-DSResultsBySystem {
 }
 
 #Load cache functions
+
 Function Load-Stars($CacheRoot) {
     #construct object lists
     #Stars/Systems
@@ -163,8 +164,8 @@ Function Load-Stars($CacheRoot) {
     return $StarObjectList
 }
 
+#SubWindow functions
 
-#Feature functions
 Function DynShops {
     param (
         [Parameter(Mandatory=$true, Position=0)][string]$CacheRoot,
@@ -172,6 +173,13 @@ Function DynShops {
     )
 
     [void][System.Reflection.Assembly]::LoadWithPartialName("System.Windows.Forms")
+    
+    $winDynShopsMain = New-Object System.Windows.Forms.Form
+    $winDynShopsMain.ClientSize = '700,700'
+    $winDynShopsMain.FormBorderStyle = "FixedToolWindow"
+    $winDynShopsMain.Text = "Dynamic Shops"
+    $winDynShopsMain.BackColor = "#222222"
+    $winDynShopsMain.ForeColor = "#FFFFFF"
 
     #Faction Stuff
     $DynShopsMod = Get-Content $CacheRoot\\DynamicShops\\mod.json -Raw | ConvertFrom-Json
@@ -219,6 +227,7 @@ Function DynShops {
     
     #Load ItemCollections
     $ICFileList = Get-ChildItem "$CacheRoot\DynamicShops" -Recurse -Filter "*.csv"
+    $ICFileList = $($ICFileList | ? {$_.basename -ne "ItemCollection_Smugglers"})
     $ICDef = @()
     foreach ($ICFile in $ICFileList) {
         $ICDef += [pscustomobject]@{
@@ -227,28 +236,27 @@ Function DynShops {
         }
     }
     foreach ($ICGroup in $ICDef) {
-        $ICEmbeddedLists = $null
-        do {
-            $ICEmbeddedLists = $ICGroup.object | ? {-not (Compare-Object $ICDef.name $_.itemname | ? SideIndicator -eq '=>')}
+        $ICEmbeddedLists = $ICGroup.object | ? {-not (Compare-Object $ICDef.name $_.itemname | ? SideIndicator -eq '=>')}
+        while (-not !$ICEmbeddedLists) {
             foreach ($ICEmbeddedList in $ICEmbeddedLists) {
                 #store reference name
                 $ResolveMe = $ICEmbeddedList.itemname
                 #remove reference, add reference contents
                 $ICGroup.object = [array]$($ICGroup.object | ? {$_.itemname -ne $ResolveMe}) + $($ICDef | ? {$_.name -eq $ResolveMe}).object
             }
-        } while (-not !$ICEmbeddedLists)
-        Write-Output ".`r`n"
+            $ICEmbeddedLists = $ICGroup.object | ? {-not (Compare-Object $ICDef.name $_.itemname | ? SideIndicator -eq '=>')}
+        }  
     }
-        
-        
+
+    #Init IDLinkHash
+    $IDLinkHash = @{}
+    #Load Gear to IDLinkHash
+    $GearFile = $RTScriptroot+"\\Outputs\\GearTable.json"
+    $GearObjectList = Get-Content -Raw $GearFile | ConvertFrom-Json
+    $GearObjectList | ? {$_.Description.UIName -ne ''} | foreach { $IDLinkHash[$($_.Description.ID)] = "Gear/$($_.Description.UIName)" }
 
 
-    $winDynShopsMain = New-Object System.Windows.Forms.Form
-    $winDynShopsMain.ClientSize = '700,700'
-    $winDynShopsMain.FormBorderStyle = "FixedToolWindow"
-    $winDynShopsMain.Text = "Dynamic Shops"
-    $winDynShopsMain.BackColor = "#222222"
-    $winDynShopsMain.ForeColor = "#FFFFFF"
+    #>
 
     #Start ShopsBySystem
 
@@ -414,6 +422,7 @@ $DSSystemRep
 
     #Start ShopsByItem
 
+    $labelStatus.Text = "Dynamic Shops Loaded"
     $winDynShopsMain.ShowDialog()
 }
 
@@ -482,9 +491,50 @@ $btnCacheValid.Add_Click({
         $btnCacheValid.Text = "Cache Locked In"
         $CacheDir = $txtCacheDir.Text
         #enable all remaining functions
-        $labelStatus.Text = "Loading caches - this may take a while... Systems (1/$CacheTotal)"
-        Start-Sleep -Milliseconds 100
-        $script:StarObjectList = Load-Stars($CacheDir)
+        $i = 0
+        $JSONObjectList = @()
+        $JSONList = Get-ChildItem $CacheDir -Recurse -Filter "*.json"
+        $labelStatus.Text = "Loading cache JSONs - this may take a while... ($i/$($JSONList.Count))"
+        foreach ($JSONFile in $JSONList) {
+            $i++
+            $JSONObject = $(Get-Content $JSONFile.FullName -Raw | ConvertFrom-Json -ErrorAction SilentlyContinue)
+            $JSONObject | Add-Member -NotePropertyName JSONFileInfo -NotePropertyValue $($JSONFile | ? {$_})
+            $JSONObject | Add-Member -NotePropertyName Mod -NotePropertyValue $($($($JSONFile.FullName).Split($CacheDir))[1].Split("\")[1])
+            $JSONObjectList += $JSONObject
+            $labelStatus.Text = "Loading cache JSONs - this may take a while... ($i/$($JSONList.Count))"
+            if ($i%100 -eq 0) {
+                Start-Sleep -Milliseconds 1
+            }
+        }
+        $script:MegaJSON = $JSONObjectList
+        $labelStatus.Text = "Building refence DBs - Systems (1/$CacheTotal)"
+        Start-Sleep -Milliseconds 1
+        $script:StarObjectList = $($JSONObjectList | ? {$_.CoreSystemID})
+        $labelStatus.Text = "Building refence DBs - Mechs (2/$CacheTotal)"
+        Start-Sleep -Milliseconds 1
+        $MechzOL = $($JSONObjectList | ? {$_.MechTags})
+        foreach ($MechzObj in $MechzOL) {
+            $PathToFile = $(Get-ChildItem -Path "$CacheDir\$($MechzObj.Mod)" -Recurse -Filter $($MechzObj.ChassisID + ".json")).FullName
+            if (!$PathToFile) {
+                $PathToFile = $(Get-ChildItem -Path "$CacheDir\" -Recurse -Filter $($MechzObj.ChassisID + ".json")).FullName
+            }
+            $MechzObj | Add-Member -NotePropertyName CDef -NotePropertyValue $(Get-Content $PathToFile -Raw | ConvertFrom-Json)
+        }
+        $script:MechObjectList = $MechzOL
+        $labelStatus.Text = "Building refence DBs - Tanks (3/$CacheTotal)"
+        Start-Sleep -Milliseconds 1
+        $TankzOL = $($JSONObjectList | ? {$_.MechTags})
+        foreach ($TankzObj in $TankzOL) {
+            $PathToFile = $(Get-ChildItem -Path "$CacheDir\$($TankzObj.Mod)" -Recurse -Filter $($TankzObj.ChassisID + ".json")).FullName
+            if (!$PathToFile) {
+                $PathToFile = $(Get-ChildItem -Path "$CacheDir\" -Recurse -Filter $($TankzObj.ChassisID + ".json")).FullName
+            }
+            $TankzObj | Add-Member -NotePropertyName CDef -NotePropertyValue $(Get-Content $PathToFile -Raw | ConvertFrom-Json)
+        }
+        $script:TankObjectList = $TankzOL
+        $labelStatus.Text = "Building refence DBs - Gears (4/$CacheTotal)"
+        Start-Sleep -Milliseconds 1
+        $script:GearObjectList = $($JSONObjectList | ? {$_.ComponentType})
         $labelStatus.Text = "Cache Loaded"
         $btnStartDynShops.Enabled = $true
     }
@@ -506,11 +556,11 @@ $btnStartDynShops.TextAlign = "MiddleCenter"
 $btnStartDynShops.Enabled = $false
 $btnStartDynShops.Location = New-Object System.Drawing.Point(10,70)
 $btnStartDynShops.Add_Click({
+    $labelStatus.Text = "Loading Dynamic Shops. This will take a a couple minutes to process all shop files."
+    Start-Sleep -Milliseconds 1
     DynShops -CacheRoot $CacheDir -StarObjectList $StarObjectList
 })
 $RefToolMain.Controls.Add($btnStartDynShops)
-
-
 
 
 
