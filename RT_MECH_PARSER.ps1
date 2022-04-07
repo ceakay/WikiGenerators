@@ -428,7 +428,7 @@ foreach ($MDefFileObject in $MDefFileObjectList) {
             'RightLeg' = 'RL'
         }
         $FixedLoadout = $CDefObject.FixedEquipment | select ComponentDefID, MountedLocation | group MountedLocation
-        $InSituLoadoutFixed = @($CDefObject.Custom.ChassisDefaults.Clone() | select @{N='ComponentDefID'; E={$_.DefID}}, @{N='MountedLocation'; E={$_.Location}}, @{N='ComponentDefType'; E={$_.Type}})
+        $InSituLoadoutFixed = @($CDefObject.Custom.ChassisDefaults | select @{N='ComponentDefID'; E={$_.DefID}}, @{N='MountedLocation'; E={$_.Location}}, @{N='ComponentDefType'; E={$_.Type}})
         $AllFixedLoadout = $FixedLoadout | select *
         $DynamicLoadout = $MDefObject.Inventory | select ComponentDefID, MountedLocation | group MountedLocation
         $Mech | Add-Member -MemberType NoteProperty -Name "Loadout" -Value ([pscustomobject]@{})
@@ -442,8 +442,8 @@ foreach ($MDefFileObject in $MDefFileObjectList) {
             $Mech.Loadout.Fixed | Add-Member -MemberType NoteProperty -Name $LocationEnum.Value -Value @()
             $Mech.Loadout.InSitu | Add-Member -MemberType NoteProperty -Name $LocationEnum.Value -Value @()
         }
-        $FixedLoadout | % { $Mech.Loadout.Fixed.$($LocationHash.$($_.Name)) = $_.Group.ComponentDefID }
-        $DynamicLoadout | % { $Mech.Loadout.Dynamic.$($LocationHash.$($_.Name)) = $_.Group.ComponentDefID }
+        $FixedLoadout | % { $Mech.Loadout.Fixed.$($LocationHash.$($_.Name)) = @($_.Group.ComponentDefID) }
+        $DynamicLoadout | % { $Mech.Loadout.Dynamic.$($LocationHash.$($_.Name)) = @($_.Group.ComponentDefID) }
         #Handle special loadouts
         if ($CDefObject.Custom.ArmActuatorSupport.LeftDefaultShoulder) {
             $Mech.Loadout.Fixed.LA += $CDefObject.Custom.ArmActuatorSupport.LeftDefaultShoulder
