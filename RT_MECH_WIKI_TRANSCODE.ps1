@@ -124,8 +124,8 @@ $IconFilesList = Get-ChildItem $CacheRoot -Recurse -Filter "*.dds"
 
 $GearFile = $RTScriptroot+"\\Outputs\\GearTable.json"
 $GearObject = Get-Content $GearFile -raw | ConvertFrom-Json
-$ItemFriendlyHash = @{}
-$ItemSlotsHash = @{}
+$ItemFriendlyHash = New-Object system.collections.hashtable
+$ItemSlotsHash = New-Object system.collections.hashtable
 foreach ($Item in $GearObject) {
     #Build Item Friendly Name Hash
     if (-not !$Item.Description.UIName) {
@@ -143,9 +143,9 @@ foreach ($Item in $GearObject) {
 $AffinitiesFile = "$CacheRoot\\MechAffinity\\settings.json"
 $CAffinitiesMaster = $(Get-Content $AffinitiesFile -Raw | ConvertFrom-Json).chassisAffinities
 $EquipAffinitiesMaster = $(Get-Content $AffinitiesFile -Raw | ConvertFrom-Json).quirkAffinities
-$EquipAffinitiesIDNumHash = @{}
-$EquipAffinitiesIDNameHash = @{}
-$EquipAffinitiesIDDescHash = @{}
+$EquipAffinitiesIDNumHash = New-Object system.collections.hashtable
+$EquipAffinitiesIDNameHash = New-Object system.collections.hashtable
+$EquipAffinitiesIDDescHash = New-Object system.collections.hashtable
 foreach ($EquipAffinity in $EquipAffinitiesMaster) {
     foreach ($AffinityItem in $EquipAffinity.quirkNames) {
         $EquipAffinitiesIDNumHash.Add($AffinityItem,$EquipAffinity.affinityLevels.missionsRequired)
@@ -210,7 +210,7 @@ $WikiTable += $(Get-Content $Blurb -raw) + "`r`n"
 
 write-progress -activity 'Loading Mechs'
 #Generate MDefLinkName hash with $MechsMasterObject
-$MechMDefLinkHash = @{}
+$MechMDefLinkHash = New-Object system.collections.hashtable
 $MechsMasterObject | % {$MechMDefLinkHash.Add($_.MechDefFile, $_.Name.LinkName)}
 
 #Localization File

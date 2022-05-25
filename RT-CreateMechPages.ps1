@@ -168,7 +168,7 @@ foreach ($Mech in $InputObject) {
 
         #Compatible Variants
         $CompatVarText = ""
-        if (-not !$Mech.PrefabID) {
+        if ((-not !$Mech.PrefabID) -and (-not $Mech.Wiki.CDef.Custom.AssemblyVariant.Exclude)) {
             <#if ($Mech.Special.Count -gt 0) {
                 if ([bool]($Mech.Special | ? {$_ -match 'OMNI'})) {
                     $CompatVarText += "`r`n-[[Guides/Mech Bay|Omnimech]]-`r`n"

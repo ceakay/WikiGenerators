@@ -137,9 +137,9 @@ __TOC__
 | (Click map to view full size)<br>[[Image:RTMapProjSmall.png|alt=Starting Planet Galaxy Map|750px|link=https://static.wikia.nocookie.net/roguetech_gamepedia_en/images/4/4e/RTMapProjSmall.png/revision/latest]]
 |}
 
-= Starts =
+= Starts (aka Company Type) =
 
-Each start will pick from a number of tables. Below is a list of the tables used, as well the number of picks for each table. This will provide you your starting lance. 
+Each start will pick from a number of tables. Below is a list of the tables used, as well the number of picks for each table. This will provide you your starting lance.
 
 "@
 
@@ -277,7 +277,7 @@ foreach ($BackgroundsJSON in $StartingBackgroundsJSONs) {
     $TheText += "`r`n`r`n== $($BackgroundsObject.Description.Name) ==`r`n"
     if (-not !$BackgroundsItemCollectionReference) {
         if ($BackgroundsItemCollectionReference -match 'vehicledef_AWACS') {
-            $TheText += "`r`n`r`nNo bonus equipment picks awarded. [[Vehicles/AWACS|AWACS]] awarded directly to roster."
+            $TheText += "`r`n`r`nNo bonus random picks from tables awarded. Event choice of either [[Vehicles/AWACS|AWACS]] or [[Vehicles/ORACLE ACMVMOBILEHQ ACM|ORACLE]] awarded directly to roster."
         } else {
             $BackgroundsItemCollection = $(Get-Content $(Get-ChildItem $CacheRoot -Recurse -Filter "$BackgroundsItemCollectionReference*.csv").FullName) | Select -Skip 1 | ConvertFrom-Csv -Header Name, Type, Picks, Chance
 

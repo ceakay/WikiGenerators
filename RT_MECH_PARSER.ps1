@@ -512,10 +512,10 @@ foreach ($MDefFileObject in $MDefFileObjectList) {
         #11 - PrefabID
         # if custom AV exists
         if (-not !$CDefObject.Custom.AssemblyVariant.PrefabID) {
-            # if exclude is false
-            if ($CDefObject.Custom.AssemblyVariant.Exclude -eq $false) {
+            # if exclude is false -- not in use
+            # if ($CDefObject.Custom.AssemblyVariant.Exclude -eq $false) {
                 $Mech | Add-Member -MemberType NoteProperty -Name "PrefabID" -Value $CDefObject.Custom.AssemblyVariant.PrefabID
-            }
+            # }
         } else {
             $Mech | Add-Member -MemberType NoteProperty -Name "PrefabID" -Value $CDefObject.PrefabBase
         }
