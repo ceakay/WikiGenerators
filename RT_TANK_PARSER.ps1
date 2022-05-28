@@ -69,7 +69,7 @@ cd $RTScriptroot
 $CacheRoot = "$RTroot\\RtlCache\\RtCache"
 #stringarray - factions - sort by display alpha
     #fuck this. build it from \RogueTech Core\Faction.json
-$FactionFile = "$CacheRoot\\RogueTech Core\\Faction.json"
+$FactionFile = "$CacheRoot\Core\RogueTechCore\Faction.json"
 
 #save file
 $MechsFile = "$RTScriptroot\\Outputs\\TankListTable.json"

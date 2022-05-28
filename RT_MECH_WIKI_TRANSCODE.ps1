@@ -140,7 +140,7 @@ foreach ($Item in $GearObject) {
 }
 
 #Build Affinities
-$AffinitiesFile = "$CacheRoot\\MechAffinity\\settings.json"
+$AffinitiesFile = "$CacheRoot\Core\MechAffinity\settings.json"
 $CAffinitiesMaster = $(Get-Content $AffinitiesFile -Raw | ConvertFrom-Json).chassisAffinities
 $EquipAffinitiesMaster = $(Get-Content $AffinitiesFile -Raw | ConvertFrom-Json).quirkAffinities
 $EquipAffinitiesIDNumHash = New-Object system.collections.hashtable
@@ -155,7 +155,7 @@ foreach ($EquipAffinity in $EquipAffinitiesMaster) {
 }
 
 
-$RTVersion = $(Get-Content "$CacheRoot\\RogueTech Core\\mod.json" -raw | ConvertFrom-Json).Version
+$RTVersion = $(Get-Content "$CacheRoot\Core\RogueTechCore\mod.json" -raw | ConvertFrom-Json).Version
 
 write-progress -activity 'Forming Wiki Table'
 #init table text
@@ -224,7 +224,7 @@ foreach ($TextFile in $TextFileList) {
 
 write-progress -activity 'Building INSITU dictionaries'
 ###Build METag dict
-$METagRefFileList = Get-ChildItem $($CacheRoot+'\RogueTech Core\defaults\') -Filter *.json 
+$METagRefFileList = Get-ChildItem $($CacheRoot+'Core\RogueTechCore\defaults\') -Filter *.json 
 $METagDict = [pscustomobject]@{
     TagList = @()
     TagCatList = @()

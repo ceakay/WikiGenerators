@@ -121,7 +121,7 @@ foreach ($Item in $GearObject) {
 }
 
 #Get RT Version
-$RTVersion = $(Get-Content "$CacheRoot\\RogueTech Core\\mod.json" -raw | ConvertFrom-Json).Version
+$RTVersion = $(Get-Content "$CacheRoot\Core\RogueTechCore\mod.json" -raw | ConvertFrom-Json).Version
 
 write-progress -activity 'Forming Wiki Table'
 #init table text

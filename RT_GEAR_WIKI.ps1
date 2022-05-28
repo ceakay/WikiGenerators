@@ -187,13 +187,13 @@ $RTScriptroot = "D:\\RogueTech\\WikiGenerators"
 cd $RTScriptroot
 #cache path
 $CacheRoot = "$RTroot\\RtlCache\\RtCache"
-$MinorCatPath = $CacheRoot+"\\RogueTech Core\\categories"
+$MinorCatPath = $CacheRoot+"\Core\RogueTechCore\categories"
 
 #masterfile
 $EquipFile = $RTScriptroot+"\\Outputs\\GearTable.json"
 
 #FiltersFile
-$FiltersFile = $CacheRoot+"\\CustomFilters\\mod.json"
+$FiltersFile = $CacheRoot+"\Core\CustomFilters\mod.json"
 
 #other files
 #blurbfiles
@@ -240,7 +240,7 @@ $GearUsedByFile = "$RTScriptroot\\Outputs\\GearUsedBy.json"
 $GearUsedBy = Get-Content $GearUsedByFile -Raw | ConvertFrom-Json
 
 #Load Gear Affinities
-$AffinitiesFile = "$CacheRoot\\MechAffinity\\settings.json"
+$AffinitiesFile = "$CacheRoot\Core\MechAffinity\settings.json"
 $FixedAffinityFile = "$RTScriptroot\\Outputs\\FixedAffinity.json"
 $EquipAffinitiesMaster = $(Get-Content $AffinitiesFile -Raw | ConvertFrom-Json).quirkAffinities
 $JobEquipAffinitiesRef = @()
@@ -307,7 +307,7 @@ foreach ($BonusDescFile in $BonusDescFiles) {
 }
 
 #Init Pages Text from blurbfiles
-$RTVersion = $(Get-Content "$CacheRoot\\RogueTech Core\\mod.json" -Raw | ConvertFrom-Json).Version
+$RTVersion = $(Get-Content "$CacheRoot\Core\RogueTech Core\mod.json" -Raw | ConvertFrom-Json).Version
 $GearPage = "Last Updated RT Version $RTVersion`r`n`r`n" + $(Get-Content $GearPageBlurbFile -Raw)+"`r`n`r`n"
 
 ###BUILD PAGES
@@ -445,7 +445,7 @@ $(Get-ChildItem $ItemOutFolder -Recurse -Exclude '!*').FullName | % {Get-Content
 
 ###PART DEUX UNIT_AFFINITIES
 #Affinities
-$AffinitiesFile = "$CacheRoot\\MechAffinity\\settings.json"
+$AffinitiesFile = "$CacheRoot\Core\MechAffinity\settings.json"
 $EquipAffinitiesMaster = $(Get-Content $AffinitiesFile -Raw | ConvertFrom-Json).quirkAffinities | select @{Name='missionsRequired'; Expression={$_.affinityLevels.missionsRequired}},  @{Name='levelName'; Expression={$_.affinityLevels.levelName}}, @{Name='decription'; Expression={$_.affinityLevels.decription}}, @{Name='quirkNames'; Expression={$_.quirkNames}} | sort -Property missionsRequired, levelName | ?{$_}
 $ChassisAffinitiesMaster = $(Get-Content $AffinitiesFile -Raw | ConvertFrom-Json).chassisAffinities | select @{Name='missionsRequired'; Expression={$_.affinityLevels.missionsRequired}},  @{Name='levelName'; Expression={$_.affinityLevels.levelName}}, @{Name='decription'; Expression={$_.affinityLevels.decription}} -Unique | sort -Property missionsRequired, levelName | ?{$_}
 $GlobalAffinitiesMaster = $(Get-Content $AffinitiesFile -Raw | ConvertFrom-Json).globalAffinities | sort -Property missionsRequired | ?{$_}

@@ -69,7 +69,7 @@ cd $RTScriptroot
 $CacheRoot = "$RTroot\\RtlCache\\RtCache"
 #stringarray - factions - sort by display alpha
     #fuck this. build it from \RogueTech Core\Faction.json
-$FactionFile = "$CacheRoot\\RogueTech Core\\Faction.json"
+$FactionFile = "$CacheRoot\\Core\\RogueTechCore\\Faction.json"
 
 #PrefabIDFile
 $PrefabIDFile = "$RTScriptroot\\Outputs\\PrefabID.json"
@@ -122,7 +122,7 @@ for ($h = 0; $h -lt $($MDefExclusion.Count); $h++) {
 }
     
 #Affinities
-$AffinitiesFile = "$CacheRoot\\MechAffinity\\settings.json"
+$AffinitiesFile = "$CacheRoot\\Core\\MechAffinity\\settings.json"
 $EquipAffinitiesMaster = $(Get-Content $AffinitiesFile -Raw | ConvertFrom-Json).quirkAffinities
 $EquipAffinitiesIDNameHash = @{}
 foreach ($EquipAffinity in $EquipAffinitiesMaster) {

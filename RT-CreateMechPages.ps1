@@ -87,7 +87,7 @@ function datachop {
 #RTVer
 $RTroot = "D:\\RogueTech"
 $CacheRoot = "$RTroot\\RtlCache\\RtCache"
-$RTVersion = $(Get-Content "$CacheRoot\\RogueTech Core\\mod.json" -raw | ConvertFrom-Json).Version
+$RTVersion = $(Get-Content "$CacheRoot\Core\RogueTechCore\mod.json" -raw | ConvertFrom-Json).Version
 
 $ReturnText = ""
 foreach ($Mech in $InputObject) {

@@ -113,7 +113,7 @@ $Mechs | select @{Name = 'DefName'; Expression = {if (!$_.MechDefFile) {"$($_.De
 $Tanks | select @{Name = 'DefName'; Expression = {if (!$_.MechDefFile) {"$($_.Description.ID)"} else {"$($($_.MechDefFile -split '\\')[-1].Split('.')[0])"}}}, @{Name = 'LinkName'; Expression = {if (!$_.Name.LinkName) {$_.Description.UIName} else {$_.Name.LinkName}}} | % {if (!$($DefLinkNameHash.$($_.DefName))) {$DefLinkNameHash.Add($_.DefName, $_.LinkName)}}
 $Gears | select @{Name = 'DefName'; Expression = {if (!$_.MechDefFile) {"$($_.Description.ID)"} else {"$($($_.MechDefFile -split '\\')[-1].Split('.')[0])"}}}, @{Name = 'LinkName'; Expression = {if (!$_.Name.LinkName) {$_.Description.UIName} else {$_.Name.LinkName}}} | % {if (!$($DefLinkNameHash.$($_.DefName))) {$DefLinkNameHash.Add($_.DefName, $_.LinkName)}}
 
-$RTVersion = $(Get-Content "$CacheRoot\\RogueTech Core\\mod.json" -raw | ConvertFrom-Json).Version
+$RTVersion = $(Get-Content "$CacheRoot\\Core\\RogueTechCore\\mod.json" -raw | ConvertFrom-Json).Version
 $TheText = "{{-start-}}`r`n@@@Starting Equipment@@@`r`n"
 $TheText += @"
 Last Updated: $RTVersion
@@ -146,7 +146,7 @@ Each start will pick from a number of tables. Below is a list of the tables used
 
 #The Factions Section
 
-$CareersFile = "D:\RogueTech\RtlCache\RtCache\IRTweaks\Menus\CareerDifficultySettings.json"
+$CareersFile = "$CacheRoot\Core\IRTweaks\Menus\CareerDifficultySettings.json"
 $CareersBigObject = Get-Content $CareersFile -Raw | ConvertFrom-Json
 $CareersObjects = $($CareersBigObject.difficultyList | ? {$_.ID -match 'diff_startingplanet'}).Options
 foreach ($CareersObject in $CareersObjects) {
