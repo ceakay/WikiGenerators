@@ -20,11 +20,6 @@ Fixed equipment cannot be removed from a mech. In exchange for this lack of flex
 * (BA) BattleArmor
 * (JJ) JumpJet
 |-
-| HP Abbreviations:
-* (A) Armor (X/Y)
-** (X) Set Armor / (Y) Max Armor
-* (S) Structure
-|-
 | Special Tags
 * Clan: Advanced tech mechs from beyond Exodus Road. 
 * Omnimechs: Have a fixed set of internal components but can be repaired quickly and can be refit with a different loadout almost instantaneously

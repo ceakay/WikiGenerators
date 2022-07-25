@@ -120,5 +120,5 @@ foreach ($Dupe in $DuplicatesGroup.Name) {
 
 #output to file 
 $ComponentObjectList | ConvertTo-Json -Depth 99 > $GearFile
-$WonkyList | Export-Csv $WonkyFile -NoTypeInformation
+#$WonkyList | Export-Csv $WonkyFile -NoTypeInformation
 

@@ -8,7 +8,7 @@ cd $RTScriptroot
 #cache path
 $CacheRoot = "$RTroot\RtlCache\RtCache"
 
-$ImageInFolder = "D:\RogueTech\RtlCache\RtCache\MechPortraitsCrew\"
+$ImageInFolder = "$CacheRoot\InstallOptions\MechPortraits\MechPortraitsCrew\"
 $ImageOutFolder = "D:\RogueTech\WikiGenerators\Outputs\Portraits\"
 
 New-Alias Magick D:\RogueTech\WikiGenerators\Tools\Magick\magick.exe -Force

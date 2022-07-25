@@ -179,7 +179,7 @@ MDEF=,$($SpecialMDef -join ",")
 
 $i = 0
 #Testing Filter
-#$MDefFileObjectList = $MDefFileObjectList | ? {$_.Name -match 'WMR-IIC-Z'}
+#$MDefFileObjectList = $MDefFileObjectList | ? {$_.Name -match 'ALM-7D'}
 foreach ($MDefFileObject in $MDefFileObjectList) { 
     $i++
     write-progress -activity "Scanning files" -Status "$i of $($MDefFileObjectList.Count)"
@@ -247,7 +247,8 @@ foreach ($MDefFileObject in $MDefFileObjectList) {
         }
 
         # grab Mod Name
-        $ModName = $($(datachop $CacheRoot 1 $MDefFileObject.DirectoryName) -split "\\")[1]
+        $ModPathArray = $($($(datachop $CacheRoot 1 $MDefFileObject.DirectoryName) -split "\\") | ? {$_})
+        $ModName = $ModPathArray[0..($ModPathArray.Count-2)] -join '-'
         $Mech | Add-Member -MemberType NoteProperty -Name "Mod" -Value $ModName
 
         #4 Weight - / - << "Tonnage": >>
@@ -350,7 +351,7 @@ foreach ($MDefFileObject in $MDefFileObjectList) {
                     #if found flag BLACKLISTED as TRUE
         $Mech | Add-Member -MemberType NoteProperty -Name "BLACKLIST" -Value $false
         #Force BLACKLISTED if WIKIBL
-        if ($MDefObject.MechTags.items -contains 'WikiBL') {
+        if (($MDefObject.MechTags.items -contains 'WikiBL') -or ($CDefObject.ChassisTags.items -contains "nosalvage")) {
             $MDefObject.MechTags.items += "BLACKLISTED"
         }
         if (($MDefObject.MechTags.items -contains $GroupObject.BLACKLIST) -or ($MDefObject.RequiredToSpawnCompanyTags.items.Count -gt 0)) {
@@ -604,6 +605,30 @@ foreach ($MDefFileObject in $MDefFileObjectList) {
         }
         if ($Mech.ID -match 'salamander_laser') {
             $Mech.Name.Hero = 'Laser'
+        }
+        #Longinus WoBs
+        if ($Mech.ID -match 'longinus_david_WoB') {
+            $Mech.Name.SubVariant += 'WoB'
+        }
+        if ($Mech.ID -match 'longinus_flamer_WoB') {
+            $Mech.Name.SubVariant += 'WoB'
+        }
+        if ($Mech.ID -match 'longinus_laser_WoB') {
+            $Mech.Name.SubVariant += 'WoB'
+        }
+        if ($Mech.ID -match 'longinus_mg_WoB') {
+            $Mech.Name.SubVariant += 'WoB'
+        }
+        # kobold cs
+        if ($Mech.ID -match 'kobold_laser_cs') {
+            $Mech.Name.SubVariant += 'CS'
+        }
+        if ($Mech.ID -match 'kobold_mg_cs') {
+            $Mech.Name.SubVariant += 'CS'
+        }
+        # rav MH
+        if ($Mech.ID -match 'ravager_RAV-MH') {
+            $Mech.Name.SubVariant += 'MH'
         }
         ###END OVERRIDES SECTION
         

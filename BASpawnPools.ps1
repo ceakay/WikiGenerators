@@ -108,10 +108,10 @@ $RTScriptroot = "D:\\RogueTech\\WikiGenerators"
 cd $RTScriptroot
 #cache path
 $CacheRoot = "$RTroot\\RtlCache\\RtCache"
-$RTVersion = $(Get-Content "$CacheRoot\\RogueTech Core\\mod.json" -raw | ConvertFrom-Json).Version
+$RTVersion = $(Get-Content "$CacheRoot\Core\RogueTechCore\mod.json" -raw | ConvertFrom-Json).Version
 
 #Load StratOps mod.json
-$StratOps = Get-Content $CacheRoot\\StrategicOperations\\mod.json -Raw | ConvertFrom-Json
+$StratOps = Get-Content $CacheRoot\Core\StrategicOperations\mod.json -Raw | ConvertFrom-Json
 
 #FactionFriendlyHash
 $FactionFriendlyHash = @{}

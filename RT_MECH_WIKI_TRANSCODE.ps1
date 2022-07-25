@@ -224,7 +224,7 @@ foreach ($TextFile in $TextFileList) {
 
 write-progress -activity 'Building INSITU dictionaries'
 ###Build METag dict
-$METagRefFileList = Get-ChildItem $($CacheRoot+'Core\RogueTechCore\defaults\') -Filter *.json 
+$METagRefFileList = Get-ChildItem $($CacheRoot+'\Core\RogueTechCore\defaults\') -Filter *.json 
 $METagDict = [pscustomobject]@{
     TagList = @()
     TagCatList = @()
@@ -299,8 +299,7 @@ foreach ($Cat in $CatOrder) {
 ! scope="col" style="width: 150px;" | Name
 ! Signature
 ! Weight
-! Hardpoints 
-! HP
+! Hardpoints
 ! Special
 "@
     $WikiTable += $CatHeader
@@ -342,14 +341,14 @@ foreach ($Cat in $CatOrder) {
             $TagText = "|<small>$($TagText.Trim())</small>`r`n"
             $ChassisTable = $TagText+$ChassisTable
 
-            #HP Main Only
+            <#HP Main Only
             if (-not $Mech.BLACKLIST) {
                 $HPText = "A=$($Mech.HP.SetArmor.Total)/$($Mech.HP.MaxArmor.Total) ''S=$($Mech.HP.Structure.Total)''"
             } else {
                 $HPText = "CLASSIFIED"
             }
             $ChassisTable = "| "+$HPText+"`r`n"+$ChassisTable
-
+            #>
             #main page hardpoints - list in $mounts in order of display
             if ($Mech.BLACKLIST) {
                 $MountsText = "CLASSIFIED"
@@ -409,7 +408,9 @@ while((Get-Job | Where-Object {$_.State -ne "Completed"}).Count -gt 0) {
     Start-Sleep -Milliseconds 250
     Write-Progress -id 0 -Activity 'Waiting for Item jobs'
     foreach ($job in (Get-Job)) {
-        Write-Progress -Id $job.Id -Activity $job.Name -Status $job.State -ParentId 0
+        if ($job.State -ne 'Completed') {
+            Write-Progress -Id $job.Id -Activity $job.Name -Status $job.State -ParentId 0
+        }
     }
 }
 #Cleanup Averages Job

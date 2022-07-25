@@ -112,7 +112,7 @@ $IconFilesList = Get-ChildItem $CacheRoot -Recurse -Filter "*.dds"
 Write-Progress -Activity 'Gathering Item Friendly Names'
 $GearFile = $RTScriptroot+"\\Outputs\\GearTable.json"
 $GearObject = Get-Content $GearFile -raw | ConvertFrom-Json
-$ItemFriendlyHash = @{}
+$ItemFriendlyHash = New-Object system.collections.hashtable
 foreach ($Item in $GearObject) {
     #$ItemObject = Get-Content $Item.FullName -Raw | ConvertFrom-Json
     if (-not !$Item.Description.UIName) {

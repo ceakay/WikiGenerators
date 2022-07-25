@@ -29,7 +29,7 @@ foreach ($File in $FileList.FullName) {
     }
 }
 
-$WikiText = "Last Updated RT Version $($(Get-Content "$CacheRoot\Core\RogueTech Core\mod.json" -raw | ConvertFrom-Json).Version)`r`n`r`n" + $(Get-Content "$RTScriptroot\Inputs\Blurbs\Credits.txt" -Raw)
+$WikiText = "Last Updated RT Version $($(Get-Content "$CacheRoot\Core\RogueTechCore\mod.json" -raw | ConvertFrom-Json).Version)`r`n`r`n" + $(Get-Content "$RTScriptroot\Inputs\Blurbs\Credits.txt" -Raw)
 
 $ModsTable = "{| class=`"wikitable`"`r`n|-`r`n! Mod !! Author`r`n"
 foreach ($Mod in $ModArray) {

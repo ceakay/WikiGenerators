@@ -64,7 +64,7 @@ function Sort-STNumerical {
     }
 }
 #RTVersion
-$RTVersion = $(Get-Content "D:\\RogueTech\\RtlCache\\RtCache\\RogueTech Core\\mod.json" -raw | ConvertFrom-Json).Version
+$RTVersion = $(Get-Content "D:\RogueTech\RtlCache\RtCache\Core\RogueTechCore\mod.json" -raw | ConvertFrom-Json).Version
 
 $ReturnText = $null
 foreach ($Item in $InputObject) {

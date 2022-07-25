@@ -217,7 +217,7 @@ $MasterList = [System.Collections.ArrayList]@($(Get-Content $EquipFile -Raw | Co
 
 #Create UINameHash
 Write-Progress -Id 0 -Activity "Creating IDUINaameHash"
-$IDUINameHash = @{}
+$IDUINameHash = New-Object system.collections.hashtable
 $MasterList | % { $IDUINameHash.Add($_.Description.Id,$_.Description.UIName) }
 
 #Cleanup Duplicates
@@ -307,7 +307,7 @@ foreach ($BonusDescFile in $BonusDescFiles) {
 }
 
 #Init Pages Text from blurbfiles
-$RTVersion = $(Get-Content "$CacheRoot\Core\RogueTech Core\mod.json" -Raw | ConvertFrom-Json).Version
+$RTVersion = $(Get-Content "$CacheRoot\Core\RogueTechCore\mod.json" -Raw | ConvertFrom-Json).Version
 $GearPage = "Last Updated RT Version $RTVersion`r`n`r`n" + $(Get-Content $GearPageBlurbFile -Raw)+"`r`n`r`n"
 
 ###BUILD PAGES
@@ -433,7 +433,9 @@ while((Get-Job | Where-Object {$_.State -ne "Completed"}).Count -gt 0) {
     Start-Sleep -Milliseconds 250
     Write-Progress -id 0 -Activity 'Waiting for Item jobs'
     foreach ($job in (Get-Job)) {
-        Write-Progress -Id $job.Id -Activity $job.Name -Status $job.State -ParentId 0
+        if ($job.State -ne 'Completed') {
+            Write-Progress -Id $job.Id -Activity $job.Name -Status $job.State -ParentId 0
+        }
     }
 }
 #Cleanup Averages Job

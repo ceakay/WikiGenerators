@@ -105,7 +105,7 @@ cd $RTScriptroot
 $CacheRoot = "$RTroot\\RtlCache\\RtCache"
 
 #The MegaHash for friendlyname
-$DefLinkNameHash = @{}
+$DefLinkNameHash = New-Object system.collections.hashtable
 $Mechs = Get-Content $RTScriptroot\\Outputs\\MechListTable.json -raw | ConvertFrom-Json
 $Tanks = Get-Content $RTScriptroot\\Outputs\\TankListTable.json -raw | ConvertFrom-Json
 $Gears = Get-Content $RTScriptroot\\Outputs\\GearTable.json -raw | ConvertFrom-Json
