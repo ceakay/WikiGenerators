@@ -140,9 +140,23 @@ foreach ($Item in $GearObject) {
 }
 
 #Build Affinities
-$AffinitiesFile = "$CacheRoot\Core\MechAffinity\settings.json"
-$CAffinitiesMaster = $(Get-Content $AffinitiesFile -Raw | ConvertFrom-Json).chassisAffinities
-$EquipAffinitiesMaster = $(Get-Content $AffinitiesFile -Raw | ConvertFrom-Json).quirkAffinities
+write-progress -activity 'Building Affinities'
+$AffFolder = "$CacheRoot\Core\MechAffinity\AffinityDefs"
+$AffFileList = Get-ChildItem $AffFolder
+$CAffinitiesMaster = @()
+$EquipAffinitiesMaster = @()
+foreach ($AffFile in $AffFileList.FullName) {
+    $AffHolder = Get-Content $AffFile -Raw | ConvertFrom-Json
+    switch ($AffHolder.affinityType) {
+        "Chassis" {
+            $CAffinitiesMaster += $AffHolder.affinityData
+        }
+        "quirk" {
+            $EquipAffinitiesMaster += $AffHolder.affinityData
+        }
+    }
+}
+
 $EquipAffinitiesIDNumHash = New-Object system.collections.hashtable
 $EquipAffinitiesIDNameHash = New-Object system.collections.hashtable
 $EquipAffinitiesIDDescHash = New-Object system.collections.hashtable
