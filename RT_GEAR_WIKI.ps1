@@ -447,10 +447,11 @@ $(Get-ChildItem $ItemOutFolder -Recurse -Exclude '!*').FullName | % {Get-Content
 
 ###PART DEUX UNIT_AFFINITIES
 #Affinities
-$AffinitiesFile = "$CacheRoot\Core\MechAffinity\settings.json"
-$EquipAffinitiesMaster = $(Get-Content $AffinitiesFile -Raw | ConvertFrom-Json).quirkAffinities | select @{Name='missionsRequired'; Expression={$_.affinityLevels.missionsRequired}},  @{Name='levelName'; Expression={$_.affinityLevels.levelName}}, @{Name='decription'; Expression={$_.affinityLevels.decription}}, @{Name='quirkNames'; Expression={$_.quirkNames}} | sort -Property missionsRequired, levelName | ?{$_}
-$ChassisAffinitiesMaster = $(Get-Content $AffinitiesFile -Raw | ConvertFrom-Json).chassisAffinities | select @{Name='missionsRequired'; Expression={$_.affinityLevels.missionsRequired}},  @{Name='levelName'; Expression={$_.affinityLevels.levelName}}, @{Name='decription'; Expression={$_.affinityLevels.decription}} -Unique | sort -Property missionsRequired, levelName | ?{$_}
-$GlobalAffinitiesMaster = $(Get-Content $AffinitiesFile -Raw | ConvertFrom-Json).globalAffinities | sort -Property missionsRequired | ?{$_}
+$AffinitiesFolder = "$CacheRoot\Core\MechAffinity\"
+$AffinitiesMaster = Get-ChildItem "$AffinitiesFolder\AffinityDefs" | % {Get-Content $_.FullName -raw} | ConvertFrom-Json
+$GlobalAffinitiesMaster = $($AffinitiesMaster | ? {$_.affinityType -eq "Global"}).affinityData | sort missionsRequired | ? {$_}
+$EquipAffinitiesMaster = $($AffinitiesMaster | ? {$_.affinityType -eq "Quirk"}).affinityData | select @{Name='missionsRequired'; Expression={$_.affinityLevels.missionsRequired}},  @{Name='levelName'; Expression={$_.affinityLevels.levelName}}, @{Name='decription'; Expression={$_.affinityLevels.decription}}, @{Name='quirkNames'; Expression={$_.quirkNames}} | sort -Property missionsRequired, levelName | ?{$_}
+$ChassisAffinitiesMaster = $($AffinitiesMaster | ? {$_.affinityType -eq "Chassis"}).affinityData | select @{Name='missionsRequired'; Expression={$_.affinityLevels.missionsRequired}},  @{Name='levelName'; Expression={$_.affinityLevels.levelName}}, @{Name='decription'; Expression={$_.affinityLevels.decription}} -Unique | sort -Property missionsRequired, levelName | ?{$_}
 
 $UAText = @"
 == Overview ==
