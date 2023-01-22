@@ -213,7 +213,7 @@ $MajorCatsHash = @{
 
 #Load Master List
 Write-Progress -Id 0 -Activity "Loading Master Object"
-$MasterList = [System.Collections.ArrayList]@($(Get-Content $EquipFile -Raw | ConvertFrom-Json) | ? {$_.Description.ID -notmatch 'Gear_LegJet_Assault_Lower'}) #| ? {$_.ComponentTags.items -notcontains "blacklisted"})
+$MasterList = [System.Collections.ArrayList]@($(Get-Content $EquipFile -Raw | ConvertFrom-Json)) #| ? {$_.Description.ID -notmatch 'Gear_LegJet_Assault_Lower'}) | ? {$_.ComponentTags.items -notcontains "blacklisted"})
 
 #Create UINameHash
 Write-Progress -Id 0 -Activity "Creating IDUINaameHash"
@@ -222,12 +222,12 @@ $MasterList | % { $IDUINameHash.Add($_.Description.Id,$_.Description.UIName) }
 
 #Cleanup Duplicates
 ###MOVED TO PARSER
+
 #Remove from hard ignore - GearIgnore.CSV
 Write-Progress -Id 0 -Activity "Removing from manual list"
 $GearIgnoreFile = $RTScriptroot+"\\Inputs\\GearIgnore.csv"
 $GearIgnoreList = $(Get-Content $GearIgnoreFile -Raw | ConvertFrom-Csv).GearIgnore
 $MasterList = $MasterList | ? {$_.Description.Id -notin $GearIgnoreList}
-
 
 #Load Filters List
 Write-Progress -Id 0 -Activity "Loading Custom Filters"
@@ -333,9 +333,9 @@ Get-Job | Remove-Job -Force #Cleanup Leftover Jobs
 
 $ThreadCount = 16 #Number of desired threads
 #get trimmed count
-$Divisor = (($MechsMasterObject.Count - ($MechsMasterObject.Count % $ThreadCount)) / $ThreadCount)
+$Divisor = (($MasterList.Count - ($MasterList.Count % $ThreadCount)) / $ThreadCount)
 #if there's remainder, round it up
-if ($MechsMasterObject.Count % $ThreadCount -ne 0) {
+if ($MasterList.Count % $ThreadCount -ne 0) {
     $Divisor++ 
 }
 
@@ -447,10 +447,11 @@ $(Get-ChildItem $ItemOutFolder -Recurse -Exclude '!*').FullName | % {Get-Content
 
 ###PART DEUX UNIT_AFFINITIES
 #Affinities
-$AffinitiesFile = "$CacheRoot\Core\MechAffinity\settings.json"
-$EquipAffinitiesMaster = $(Get-Content $AffinitiesFile -Raw | ConvertFrom-Json).quirkAffinities | select @{Name='missionsRequired'; Expression={$_.affinityLevels.missionsRequired}},  @{Name='levelName'; Expression={$_.affinityLevels.levelName}}, @{Name='decription'; Expression={$_.affinityLevels.decription}}, @{Name='quirkNames'; Expression={$_.quirkNames}} | sort -Property missionsRequired, levelName | ?{$_}
-$ChassisAffinitiesMaster = $(Get-Content $AffinitiesFile -Raw | ConvertFrom-Json).chassisAffinities | select @{Name='missionsRequired'; Expression={$_.affinityLevels.missionsRequired}},  @{Name='levelName'; Expression={$_.affinityLevels.levelName}}, @{Name='decription'; Expression={$_.affinityLevels.decription}} -Unique | sort -Property missionsRequired, levelName | ?{$_}
-$GlobalAffinitiesMaster = $(Get-Content $AffinitiesFile -Raw | ConvertFrom-Json).globalAffinities | sort -Property missionsRequired | ?{$_}
+$AffinitiesFolder = "$CacheRoot\Core\MechAffinity\"
+$AffinitiesMaster = Get-ChildItem "$AffinitiesFolder\AffinityDefs" | % {Get-Content $_.FullName -raw} | ConvertFrom-Json
+$GlobalAffinitiesMaster = $($AffinitiesMaster | ? {$_.affinityType -eq "Global"}).affinityData | sort missionsRequired | ? {$_}
+$EquipAffinitiesMaster = $($AffinitiesMaster | ? {$_.affinityType -eq "Quirk"}).affinityData | select @{Name='missionsRequired'; Expression={$_.affinityLevels.missionsRequired}},  @{Name='levelName'; Expression={$_.affinityLevels.levelName}}, @{Name='decription'; Expression={$_.affinityLevels.decription}}, @{Name='quirkNames'; Expression={$_.quirkNames}} | sort -Property missionsRequired, levelName | ?{$_}
+$ChassisAffinitiesMaster = $($AffinitiesMaster | ? {$_.affinityType -eq "Chassis"}).affinityData | select @{Name='missionsRequired'; Expression={$_.affinityLevels.missionsRequired}},  @{Name='levelName'; Expression={$_.affinityLevels.levelName}}, @{Name='decription'; Expression={$_.affinityLevels.decription}} -Unique | sort -Property missionsRequired, levelName | ?{$_}
 
 $UAText = @"
 == Overview ==

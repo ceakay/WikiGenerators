@@ -61,7 +61,8 @@ $ComponentObjectList = @()
 #get a list of jsons
 #construct mega component object list
 $JSONList = Get-ChildItem $CacheRoot -Recurse -Filter "*.json"
-$JSONList = $JSONList | ? {($_.FullName -notmatch 'VanillaNoLoot')}
+#ignore these files/folders
+$JSONList = $JSONList | ? {($_.FullName -notmatch 'VanillaNoLoot' -and $_.FullName -notmatch 'CustomActivatableEquipment')}
 $i = 0
 foreach ($JSONFile in $JSONList) {
     Write-Progress -Activity "Collecting Components" -Status "$($i+1) of $($JSONList.Count) JSONs found."
