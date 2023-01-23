@@ -98,8 +98,8 @@ foreach ($Mech in $InputObject) {
         $MechDefaultGearList = @($Mech.Wiki.CDef.Custom.ChassisDefaults) #Load any from cdef
         if (-not !$MechDefaultGearList) {
             foreach ($MechDefaultGear in $MechDefaultGearList) {
-                $DefGearLoc = $($HPLongSortHash.GetEnumerator() | ? {$_.Value -eq $MechDefaultGear.Location}).Key
-                $Mech.Loadout.InSitu.$DefGearLoc += $MechDefaultGear.DefID
+                $DefGearLoc = $($HPLongSortHash.GetEnumerator() | ? {$_.Value -eq $MechDefaultGear.Defaults.Location}).Key
+                $Mech.Loadout.InSitu.$DefGearLoc += $MechDefaultGear.Defaults.DefID
             }
         }
         #Dict - TaggedFirst
