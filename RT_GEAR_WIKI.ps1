@@ -193,7 +193,7 @@ $MinorCatPath = $CacheRoot+"\Core\RogueTechCore\categories"
 $EquipFile = $RTScriptroot+"\\Outputs\\GearTable.json"
 
 #FiltersFile
-$FiltersFile = $CacheRoot+"\Core\CustomFilters\mod.json"
+$FiltersFile = $CacheRoot+"\Core\CustomFilters\RogueTechTabs.json"
 
 #other files
 #blurbfiles
@@ -231,7 +231,7 @@ $MasterList = $MasterList | ? {$_.Description.Id -notin $GearIgnoreList}
 
 #Load Filters List
 Write-Progress -Id 0 -Activity "Loading Custom Filters"
-$FiltersList = $(Get-Content $FiltersFile -Raw | ConvertFrom-Json).Settings.Tabs
+$FiltersList = $(Get-Content $FiltersFile -Raw | ConvertFrom-Json)
 #Remove 'Show'
 $FiltersList.Buttons | ? {$_.Tooltip} | % { if ($_.Tooltip -match 'Show ') {$_.Tooltip = datachop 'Show ' 1 $_.Tooltip}}
 

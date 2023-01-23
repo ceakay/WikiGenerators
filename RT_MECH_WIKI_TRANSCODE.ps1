@@ -208,7 +208,7 @@ $HPLongSortHash = @{
 }
 
 #Mounts
-$Mounts = @('O','B','E','M','S','BA','JJ')
+$Mounts = @('O','B','E','M','S','BA','HH','WM','IB','JJ')
 $MountsLongHash = @{
     O = 'Omni'
     B = 'Ballistic'
@@ -216,6 +216,9 @@ $MountsLongHash = @{
     M = 'Missile'
     S = 'AntiPersonnel'
     BA = 'BattleArmor'
+    HH = 'SpecialHandHeld'
+    WM = 'WingMountedWeapon'
+    IB = 'InternalBombBay'
     JJ = 'JumpJet'
 }
 
@@ -269,6 +272,7 @@ foreach ($TagCat in $TagCatList) {
 }
 
 #START PAGE JOBS HERE
+write-progress -activity 'Threading Jobs'
 $WikiOutFolder = $RTScriptroot+"\\Outputs\\Mechs"
 $JobOutFolder = $WikiOutFolder+"\\Job"
 #Purge Folder

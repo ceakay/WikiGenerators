@@ -389,6 +389,9 @@ foreach ($MDefFileObject in $MDefFileObjectList) {
         $MissileSlot = 0
         $AntiPersonnelSlot = 0
         $BattleArmorSlot = 0
+        $SpecialHandHeldSlot = 0
+        $WingMountedWeaponSlot = 0
+        $InternalBombBaySlot = 0
         foreach ($Location in $CDefObject.Locations) {
             foreach ($Hardpoint in $Location.Hardpoints) {
                 #Omni - if Omni true, add to omni count instead
@@ -414,6 +417,9 @@ foreach ($MDefFileObject in $MDefFileObjectList) {
             MissileSlot = $MissileSlot
             SupportSlot = $AntiPersonnelSlot
             BASlot = $BattleArmorSlot
+            HHSlot = $SpecialHandHeldSlot
+            WingSlot = $WingMountedWeaponSlot
+            IBombSlot = $InternalBombBaySlot
             JJSlot = $CDefObject.MaxJumpjets
         })
         #8 Grab loadout: weapons, ECM, etc.

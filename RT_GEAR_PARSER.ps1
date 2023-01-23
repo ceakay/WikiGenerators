@@ -107,7 +107,7 @@ Write-Progress -Id 0 -Activity "Scrubbing Linked"
 $LinkedList = $ComponentObjectList.Custom.Linked.Links.ComponentDefId | select
 $ComponentObjectList = $ComponentObjectList | ? {$_.Description.Id -notin $LinkedList}
 #CustomOverrides
-$($ComponentObjectList | ? {$_.Description.ID -eq 'Weapon_Laser_TAG_HeyListen'}).Description.UIName = 'TAG (NAVI)'
+#fixed yay! $($ComponentObjectList | ? {$_.Description.ID -eq 'Weapon_Laser_TAG_HeyListen'}).Description.UIName = 'TAG (NAVI)'
 #id no longer exists $($ComponentObjectList | ? {$_.Description.ID -eq 'Gear_Cockpit_SensorsB_Standard'}).Description.UIName = 'Sensors (B)'
 #Make all UINames Unique
 $DuplicatesGroup = $($($ComponentObjectList | Group {$_.Description.UIName}) | ? {$_.Count -ge 2})

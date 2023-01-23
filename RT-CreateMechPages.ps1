@@ -93,7 +93,7 @@ $ReturnText = ""
 foreach ($Mech in $InputObject) {
     #Build INSITU table in mech object
     # Grab InSitu gear
-    # Check CDef first, the MEDict
+    # Check CDef first, then MEDict
     if ($Mech.Loadout.Dynamic.psobject.Properties.name -contains 'HD') { #For Mechs
         $MechDefaultGearList = @($Mech.Wiki.CDef.Custom.ChassisDefaults) #Load any from cdef
         if (-not !$MechDefaultGearList) {
@@ -105,7 +105,7 @@ foreach ($Mech in $InputObject) {
         #Dict - TaggedFirst
         $RevTagFileList = $METagDict.TagFileList.Clone()
         [array]::Reverse($RevTagFileList)
-        #TaggedFile
+        <#TaggedFile -- File no longer exists
         foreach ($ValidDefTag in $METagDict.TagList) { #for each tag in ordered tag
             if ($Mech.Wiki.CDef.ChassisTags.items -contains $ValidDefTag) { #if chassis is tagged
                 foreach ($DefItem in $METagDict.Defaults.Tagged | ? {$_.Tag -eq $ValidDefTag}) { #process each item into insitu loadout
@@ -121,32 +121,37 @@ foreach ($Mech in $InputObject) {
                 }
             }
         }
+        #>
         #SpecialistFile
-        foreach ($DefItem in $METagDict.Defaults.Specialist) { #process each item into fixed loadout
+        foreach ($DefItemTop in $METagDict.Defaults.Specialist) { #process each item into fixed loadout
             #Check if CategoryID is in use
-            if ((-not !$Mech.Loadout.Fixed.psobject.Properties.Value) -and (-not !$DefItem.CategoryID)) {
-                $CatIDCheck = Compare-Object -IncludeEqual -ExcludeDifferent @($($CustomGear.$($DefItem.CategoryID))) @($Mech.Loadout.Fixed.psobject.Properties.Value) -ErrorAction SilentlyContinue
-                if ($CatIDCheck.InputObject.Count -eq 0) { #if no items insitu fill categoryid req
+            foreach ($DefItem in $DefItemTop.Defaults) {
+                if ((-not !$Mech.Loadout.Fixed.psobject.Properties.Value) -and (-not !$DefItemTop.CategoryID)) {
+                    $CatIDCheck = Compare-Object -IncludeEqual -ExcludeDifferent @($($CustomGear.$($DefItemTop.CategoryID))) @($Mech.Loadout.Fixed.psobject.Properties.Value) -ErrorAction SilentlyContinue
+                    if ($CatIDCheck.InputObject.Count -eq 0) { #if no items insitu fill categoryid req
+                        $Mech.Loadout.Fixed.$($($HPLongSortHash.GetEnumerator() | ? {$_.Value -eq $DefItem.Location}).Key) += $DefItem.DefID
+                    }
+                } else {
                     $Mech.Loadout.Fixed.$($($HPLongSortHash.GetEnumerator() | ? {$_.Value -eq $DefItem.Location}).Key) += $DefItem.DefID
                 }
-            } else {
-                $Mech.Loadout.Fixed.$($($HPLongSortHash.GetEnumerator() | ? {$_.Value -eq $DefItem.Location}).Key) += $DefItem.DefID
             }
         }
         #MechEngineerFile
-        foreach ($DefItem in $METagDict.Defaults.MechEngineer) { #process each item into insitu loadout
+        foreach ($DefItemTop in $METagDict.Defaults.MechEngineer) { #process each item into insitu loadout
             #Check if CategoryID is in use
-            if ((-not !$Mech.Loadout.InSitu.psobject.Properties.Value) -and (-not !$DefItem.CategoryID)) {
-                if (($DefItem.Location -match 'Right') -or ($DefItem.Location -match 'Left')) {
-                    $CatIDCheck = Compare-Object -IncludeEqual -ExcludeDifferent @($($CustomGear.$($DefItem.CategoryID))) @($Mech.Loadout.InSitu.$($($HPLongSortHash.GetEnumerator() | ? {$_.Value -eq $DefItem.Location}).Key)) -ErrorAction SilentlyContinue
+            foreach ($DefItem in $DefItemTop.Defaults) {
+                if ((-not !$Mech.Loadout.InSitu.psobject.Properties.Value) -and (-not !$DefItemTop.CategoryID)) {
+                    if (($DefItem.Location -match 'Right') -or ($DefItem.Location -match 'Left')) {
+                        $CatIDCheck = Compare-Object -IncludeEqual -ExcludeDifferent @($($CustomGear.$($DefItemTop.CategoryID))) @($Mech.Loadout.InSitu.$($($HPLongSortHash.GetEnumerator() | ? {$_.Value -eq $DefItem.Location}).Key)) -ErrorAction SilentlyContinue
+                    } else {
+                        $CatIDCheck = Compare-Object -IncludeEqual -ExcludeDifferent @($($CustomGear.$($DefItemTop.CategoryID))) @($Mech.Loadout.InSitu.psobject.Properties.Value) -ErrorAction SilentlyContinue
+                    }
+                    if ($CatIDCheck.InputObject.Count -eq 0) { #if no items insitu fill categoryid req
+                        $Mech.Loadout.InSitu.$($($HPLongSortHash.GetEnumerator() | ? {$_.Value -eq $DefItem.Location}).Key) += $DefItem.DefID
+                    }
                 } else {
-                    $CatIDCheck = Compare-Object -IncludeEqual -ExcludeDifferent @($($CustomGear.$($DefItem.CategoryID))) @($Mech.Loadout.InSitu.psobject.Properties.Value) -ErrorAction SilentlyContinue
-                }
-                if ($CatIDCheck.InputObject.Count -eq 0) { #if no items insitu fill categoryid req
                     $Mech.Loadout.InSitu.$($($HPLongSortHash.GetEnumerator() | ? {$_.Value -eq $DefItem.Location}).Key) += $DefItem.DefID
                 }
-            } else {
-                $Mech.Loadout.InSitu.$($($HPLongSortHash.GetEnumerator() | ? {$_.Value -eq $DefItem.Location}).Key) += $DefItem.DefID
             }
         }    
     }

@@ -256,7 +256,7 @@ foreach ($VTOL in $VTOLOrder) {
                 if ($Mech.BLACKLIST) {
                     $MountsText = "CLASSIFIED"
                 } else {
-                    $Mounts = @('O','B','E','M','S','BA','JJ')
+                    $Mounts = @('O','B','E','M','S','BA','HH','WM','IB','JJ')
                     foreach ($Mount in $Mounts) {
                         $MountTag = $($MountsObject | where -Property Friendly -like $Mount).TagTitle
                         if ($($Mech.WeaponMounts | select -ExpandProperty $MountTag) -gt 0) {
