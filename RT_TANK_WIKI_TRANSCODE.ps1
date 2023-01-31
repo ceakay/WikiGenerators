@@ -389,6 +389,7 @@ foreach ($VTOL in $VTOLOrder) {
                 }
                 #setup MexPage
                 $WikiMexTable += "{{-start-}}`r`n@@@"+$WikiPageTitle+'/'+$($Mech.Name.LinkName)+"@@@`r`n"
+                $WikiMexTable += "[https://discord.gg/roguetech BOT PAGE] || RTVer: $RTVersion || ID: $($Mech.MechDefFile)`r`n`r`n"
                 if ($Mech.BLACKLIST) {
                     $WikiMexTable += "#REDIRECT [[Classified]]`r`n"
                 } else {

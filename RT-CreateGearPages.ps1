@@ -92,7 +92,7 @@ foreach ($Item in $InputObject) {
 
 "@
     $ItemText += "<ul style=`"color: #ff8000;`">`r`n"
-    foreach ($Bonus in $Item.Custom.BonusDescriptions.Bonuses) {
+    foreach ($Bonus in $Item.Custom.BonusDescriptions) {
         $Bonus = @($Bonus -split (":"))
         $BonusName = $Bonus[0].Trim()
         $BonusText = $($BonusDescriptionHash.$BonusName)
