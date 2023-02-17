@@ -344,7 +344,7 @@ YOU ARE ATTEMPTING TO ACCESS CLASSIFIED INFORMATION.
     #Lootable
     $ItemText += "`r`n= Item Salvage Rules ="
     $ItemText += "`r`nItem can be salvaged by player: "
-    if ($Item.Custom.Flags.flags -contains 'no_salvage') {
+    if ($Item.Custom.Flags -contains 'no_salvage') {
         $ItemText += "No"
     } else {
         $ItemText += "Yes"

@@ -48,7 +48,7 @@ cd $RTScriptroot
 #cache path
 $CacheRoot = "$RTroot\\RtlCache\\RtCache"
 #Define component unique
-$ComponentFilter = "*`"ComponentType`"*"
+$ComponentFilter = "*`"ComponentTags`"*"
 $GearFile = $RTScriptroot+"\\Outputs\\GearTable.json"
 $WonkyFile = $RTScriptroot+"\\Outputs\\WonkyGear.csv"
 #Hard Remove Gear

@@ -215,6 +215,9 @@ foreach ($MDefFileObject in $MDefFileObjectList) {
         $MechID = $(datachop ".$CDefFileType" 0 $(datachop "$($CDefMask)_" 1 "$fileNameCDef"))
         $Mech | Add-Member -MemberType NoteProperty -Name "ID" -Value $mechID
 
+        #Cost - Mech
+        $Mech | Add-Member -MemberType NoteProperty -Name "Cost" -Value $MDefObject.Description.Cost
+
         # VTOL work
         $Mech | Add-Member -MemberType NoteProperty -Name "VTOL" -Value $false
         if ($MDefObject.VehicleTags.items.Contains("unit_vtol")) {

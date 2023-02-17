@@ -389,10 +389,10 @@ foreach ($VTOL in $VTOLOrder) {
                 }
                 #setup MexPage
                 $WikiMexTable += "{{-start-}}`r`n@@@"+$WikiPageTitle+'/'+$($Mech.Name.LinkName)+"@@@`r`n"
-                $WikiMexTable += "[https://discord.gg/roguetech BOT PAGE] || RTVer: $RTVersion || ID: $($Mech.MechDefFile)`r`n`r`n"
                 if ($Mech.BLACKLIST) {
-                    $WikiMexTable += "#REDIRECT [[Classified]]`r`n"
+                    $WikiMexTable += "#REDIRECT [[Classified]]`r`n`r`n[https://discord.gg/roguetech BOT PAGE] || RTVer: $RTVersion || ID: $($Mech.MechDefFile)`r`n`r`n"
                 } else {
+                    $WikiMexTable += "[https://discord.gg/roguetech BOT PAGE] || RTVer: $RTVersion || ID: $($Mech.MechDefFile)`r`n`r`n"
                     $BlurbCheck = $(datachop '__/' 1 $Mech.Blurb)
                     if (-not !$BlurbCheck) {
                         $BlurbCheck = $(datachop '/__' 0 $BlurbCheck)
@@ -404,7 +404,7 @@ foreach ($VTOL in $VTOLOrder) {
                     } else {
                         $MechBlurb = $Mech.Blurb
                     }
-                    $WikiMexTable += "`r`n==Description==`r`n`r`nTonnage: $($Mech.Tonnage)`r`n`r`n"+$MechBlurb+"`r`n"
+                    $WikiMexTable += "`r`n==Description==`r`n`r`nTonnage: $($Mech.Tonnage)`r`n`r`nCost: $($Mech.Cost)`r`n`r`n"+$MechBlurb+"`r`n"
                     $WikiMexTable += "`r`n"+$HPMexText+"`r`n"
                     $WikiMexTable += "`r`n"+$LoadoutText+"`r`n"
                     $WikiMexTable += "`r`n"+$FactionText+"`r`n"
