@@ -3,7 +3,7 @@ LIGHT,LIGHT,unit_light,LIGHT,Light Mechs
 MEDIUM,MEDIUM,unit_medium,MEDIUM,Medium Mechs
 HEAVY,HEAVY,unit_heavy,HEAVY,Heavy Mechs
 ASSAULT,ASSAULT,unit_assault,ASSAULT,Assault Mechs
-SHEAVY,,unit_superheavy,SUPER HEAVY,Super Heavies
-SHTANK,,unit_superheavytank,Super Heavy Tanks,Super Heavies
+SHEAVY,,unit_superheavy_mech,SUPER HEAVY,Super Heavies
+SHTANK,,unit_superheavy_vehicle,Super Heavy Tanks,Super Heavies
 POWER,,unit_powerarmor,PA,Power Armour
 PROTO,,unit_protomech,PM,Power Armour
