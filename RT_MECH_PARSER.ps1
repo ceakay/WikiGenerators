@@ -179,7 +179,7 @@ MDEF=,$($SpecialMDef -join ",")
 
 $i = 0
 #Testing Filter
-#$MDefFileObjectList = $MDefFileObjectList | ? {$_.Name -match 'ALM-7D'}
+#$MDefFileObjectList = $MDefFileObjectList | ? {$_.Name -match 'ALM-7D'}; $MDefFileObject = $MDefFileObjectList
 foreach ($MDefFileObject in $MDefFileObjectList) { 
     $i++
     write-progress -activity "Scanning files" -Status "$i of $($MDefFileObjectList.Count)"
@@ -252,7 +252,7 @@ foreach ($MDefFileObject in $MDefFileObjectList) {
         $Mech | Add-Member -MemberType NoteProperty -Name "Mod" -Value $ModName
 
         #4 Weight - / - << "Tonnage": >>
-        $Mech | Add-Member -MemberType NoteProperty -Name "Tonnage" -Value $CDefObject.Tonnage
+        $Mech | Add-Member -MemberType NoteProperty -Name "Tonnage" -Value $([int]$CDefObject.Tonnage)
 
         #5 Weight Class
         #Do tag work
@@ -378,7 +378,7 @@ foreach ($MDefFileObject in $MDefFileObjectList) {
             }
         }
 
-        #6 Hardpoints - /locations - << "WeaponMount": >>
+        #6 Hardpoints - /locations - << "WeaponMountID": >>
         $Mech | Add-Member -MemberType NoteProperty -Name "WeaponMounts" -Value ([pscustomobject]@{})
         $OmniSlot = 0
         $EnergySlot  = 0
@@ -386,6 +386,9 @@ foreach ($MDefFileObject in $MDefFileObjectList) {
         $MissileSlot = 0
         $AntiPersonnelSlot = 0
         $BattleArmorSlot = 0
+        $SpecialHandHeldSlot = 0
+        $WingMountedWeaponSlot = 0
+        $InternalBombBaySlot = 0
         $Mech | Add-Member -MemberType NoteProperty -Name "Hardpoint" -Value ([pscustomobject]@{})
         foreach ($Location in $CDefObject.Locations) {
             $LocationName = $Location.Location
@@ -415,6 +418,9 @@ foreach ($MDefFileObject in $MDefFileObjectList) {
             MissileSlot = $MissileSlot
             SupportSlot = $AntiPersonnelSlot
             BASlot = $BattleArmorSlot
+            HHSlot = $SpecialHandHeldSlot
+            WingSlot = $WingMountedWeaponSlot
+            IBombSlot = $InternalBombBaySlot
             JJSlot = $CDefObject.MaxJumpjets
         })
         #8 Grab loadout: weapons, ECM, etc.
@@ -429,7 +435,7 @@ foreach ($MDefFileObject in $MDefFileObjectList) {
             'RightLeg' = 'RL'
         }
         $FixedLoadout = $CDefObject.FixedEquipment | select ComponentDefID, MountedLocation | group MountedLocation
-        $InSituLoadoutFixed = @($CDefObject.Custom.ChassisDefaults | select @{N='ComponentDefID'; E={$_.DefID}}, @{N='MountedLocation'; E={$_.Location}}, @{N='ComponentDefType'; E={$_.Type}})
+        $InSituLoadoutFixed = @($CDefObject.Custom.ChassisDefaults.Defaults | select @{N='ComponentDefID'; E={$_.DefID}}, @{N='MountedLocation'; E={$_.Location}}, @{N='ComponentDefType'; E={$_.Type}}) + @($CDefObject.Custom.MultiDefaults | select @{N='ComponentDefID'; E={$_.DefID}}, @{N='MountedLocation'; E={$_.Location}}, @{N='ComponentDefType'; E={$_.Type}})
         $AllFixedLoadout = $FixedLoadout | select *
         $DynamicLoadout = $MDefObject.Inventory | select ComponentDefID, MountedLocation | group MountedLocation
         $Mech | Add-Member -MemberType NoteProperty -Name "Loadout" -Value ([pscustomobject]@{})
@@ -445,13 +451,14 @@ foreach ($MDefFileObject in $MDefFileObjectList) {
         }
         $FixedLoadout | % { $Mech.Loadout.Fixed.$($LocationHash.$($_.Name)) = @($_.Group.ComponentDefID) }
         $DynamicLoadout | % { $Mech.Loadout.Dynamic.$($LocationHash.$($_.Name)) = @($_.Group.ComponentDefID) }
-        #Handle special loadouts
+        <#Handle special loadouts ###Don't think I need this anymore... FIXME
         if ($CDefObject.Custom.ArmActuatorSupport.LeftDefaultShoulder) {
             $Mech.Loadout.Fixed.LA += $CDefObject.Custom.ArmActuatorSupport.LeftDefaultShoulder
         }
         if ($CDefObject.Custom.ArmActuatorSupport.RightDefaultShoulder) {
             $Mech.Loadout.Fixed.RA += $CDefObject.Custom.ArmActuatorSupport.RightDefaultShoulder
         }
+        #>
 
         # grab icon name
         $Mech | Add-Member -MemberType NoteProperty -Name "Icon" -Value $($CDefObject.Description.Icon)
@@ -525,12 +532,21 @@ foreach ($MDefFileObject in $MDefFileObjectList) {
         $Mech | Add-Member -MemberType NoteProperty -Name "ChassisID" -Value $MDefObject.ChassisID
 
         #13 - ArmActuatorSupport
-        if ([bool]($CDefObject.Custom.ArmActuatorSupport)) {
-            $Mech | Add-Member -MemberType NoteProperty -Name "ArmActuatorSupport" -Value $([pscustomobject]@{})
-            $Mech.ArmActuatorSupport | Add-Member -MemberType NoteProperty -Name "LA" -Value $CDefObject.Custom.ArmActuatorSupport.LeftLimit
-            $Mech.ArmActuatorSupport | Add-Member -MemberType NoteProperty -Name "RA" -Value $CDefObject.Custom.ArmActuatorSupport.RightLimit
+        $Mech | Add-Member -MemberType NoteProperty -Name "ArmActuatorSupport" -Value $([pscustomobject]@{})
+        $AASLeftLimit = "Hands"
+        $AASLeftLimit = switch ($CDefObject.ChassisTags.items) {
+            "ArmLimitUpperLeft" {"Upper"}
+            "ArmLimitLowerLeft" {"Lower"}
         }
-
+        $AASRightLimit = "Hands"
+        $AASLeftLimit = switch ($CDefObject.ChassisTags.items) {
+            "ArmLimitUpperRight" {"Upper"}
+            "ArmLimitLowerRight" {"Lower"}
+        }
+        
+        $Mech.ArmActuatorSupport | Add-Member -MemberType NoteProperty -Name "LA" -Value $AASLeftLimit
+        $Mech.ArmActuatorSupport | Add-Member -MemberType NoteProperty -Name "RA" -Value $AASRightLimit
+        
         ###START OVERRIDES SECTION
         #convert to proto to power
         #

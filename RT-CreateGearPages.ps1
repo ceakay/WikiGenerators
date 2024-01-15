@@ -92,7 +92,7 @@ foreach ($Item in $InputObject) {
 
 "@
     $ItemText += "<ul style=`"color: #ff8000;`">`r`n"
-    foreach ($Bonus in $Item.Custom.BonusDescriptions.Bonuses) {
+    foreach ($Bonus in $Item.Custom.BonusDescriptions) {
         $Bonus = @($Bonus -split (":"))
         $BonusName = $Bonus[0].Trim()
         $BonusText = $($BonusDescriptionHash.$BonusName)
@@ -344,7 +344,7 @@ YOU ARE ATTEMPTING TO ACCESS CLASSIFIED INFORMATION.
     #Lootable
     $ItemText += "`r`n= Item Salvage Rules ="
     $ItemText += "`r`nItem can be salvaged by player: "
-    if ($Item.Custom.Flags.flags -contains 'no_salvage') {
+    if ($Item.Custom.Flags -contains 'no_salvage') {
         $ItemText += "No"
     } else {
         $ItemText += "Yes"

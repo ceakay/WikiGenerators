@@ -215,6 +215,9 @@ foreach ($MDefFileObject in $MDefFileObjectList) {
         $MechID = $(datachop ".$CDefFileType" 0 $(datachop "$($CDefMask)_" 1 "$fileNameCDef"))
         $Mech | Add-Member -MemberType NoteProperty -Name "ID" -Value $mechID
 
+        #Cost - Mech
+        $Mech | Add-Member -MemberType NoteProperty -Name "Cost" -Value $MDefObject.Description.Cost
+
         # VTOL work
         $Mech | Add-Member -MemberType NoteProperty -Name "VTOL" -Value $false
         if ($MDefObject.VehicleTags.items.Contains("unit_vtol")) {
@@ -389,6 +392,9 @@ foreach ($MDefFileObject in $MDefFileObjectList) {
         $MissileSlot = 0
         $AntiPersonnelSlot = 0
         $BattleArmorSlot = 0
+        $SpecialHandHeldSlot = 0
+        $WingMountedWeaponSlot = 0
+        $InternalBombBaySlot = 0
         foreach ($Location in $CDefObject.Locations) {
             foreach ($Hardpoint in $Location.Hardpoints) {
                 #Omni - if Omni true, add to omni count instead
@@ -414,6 +420,9 @@ foreach ($MDefFileObject in $MDefFileObjectList) {
             MissileSlot = $MissileSlot
             SupportSlot = $AntiPersonnelSlot
             BASlot = $BattleArmorSlot
+            HHSlot = $SpecialHandHeldSlot
+            WingSlot = $WingMountedWeaponSlot
+            IBombSlot = $InternalBombBaySlot
             JJSlot = $CDefObject.MaxJumpjets
         })
         #8 Grab loadout: weapons, ECM, etc.

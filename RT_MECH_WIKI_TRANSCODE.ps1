@@ -208,7 +208,7 @@ $HPLongSortHash = @{
 }
 
 #Mounts
-$Mounts = @('O','B','E','M','S','BA','JJ')
+$Mounts = @('O','B','E','M','S','BA','HH','WM','IB','JJ')
 $MountsLongHash = @{
     O = 'Omni'
     B = 'Ballistic'
@@ -216,6 +216,9 @@ $MountsLongHash = @{
     M = 'Missile'
     S = 'AntiPersonnel'
     BA = 'BattleArmor'
+    HH = 'SpecialHandHeld'
+    WM = 'WingMountedWeapon'
+    IB = 'InternalBombBay'
     JJ = 'JumpJet'
 }
 
@@ -269,6 +272,7 @@ foreach ($TagCat in $TagCatList) {
 }
 
 #START PAGE JOBS HERE
+write-progress -activity 'Threading Jobs'
 $WikiOutFolder = $RTScriptroot+"\\Outputs\\Mechs"
 $JobOutFolder = $WikiOutFolder+"\\Job"
 #Purge Folder
@@ -292,6 +296,7 @@ for ($JobCount=0;$JobCount -lt $ThreadCount; $JobCount++) {
         $JobInputObject = $MechsMasterObject[$(0+($JobCount*$Divisor))..$(($Divisor*(1+$JobCount))-1)]
     }
     $JobOutputFile = $JobOutFolder+"\\Chunk$JobCount.txt"
+    $JobInputObject | Export-Csv -Path $($JobOutFolder+"\Debug$JobCount.txt") -NoTypeInformation
     Start-Job -Name $("ItemJob"+$JobCount) -FilePath D:\RogueTech\WikiGenerators\RT-CreateMechPages.ps1 -ArgumentList $JobInputObject,$Mounts,$MountsObject,$GroupObject,$CAffinitiesMaster,$HPSort,$TableRowNames,$ItemFriendlyHash,$GearObject,$ItemSlotsHash,$EquipAffinitiesIDNameHash,$EquipAffinitiesIDNumHash,$EquipAffinitiesIDDescHash,$PrefabID,$FactionIgnoreList,$MechMDefLinkHash,$GroupFriendlyObject,$FactionFriendlyObject,$HPLongSortHash,$MountsLongHash,$SpecialsObject,$WikiPageTitle,$CustomGear,$METagDict,$JobOutputFile | Out-Null
 }
 
